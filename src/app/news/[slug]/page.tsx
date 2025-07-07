@@ -9,7 +9,13 @@ interface News {
   slug: { current: string };
   publishedAt: string;
   excerpt?: string;
-  content?: any[];
+  content?: {
+    _type: string;
+    children: {
+      _type: string;
+      text: string;
+    }[];
+  }[];
   category?: string;
   featured?: boolean;
 }
@@ -134,7 +140,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
           <div className="prose prose-lg max-w-none">
             {news.content && news.content.map((block, index) => (
               <div key={index} className="mb-6">
-                {block.children?.map((child: any, childIndex: number) => (
+                {block.children?.map((child, childIndex: number) => (
                   <p key={childIndex} className="text-gray-700 leading-relaxed whitespace-pre-line">
                     {child.text}
                   </p>
