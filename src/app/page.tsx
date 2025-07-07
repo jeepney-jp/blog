@@ -80,6 +80,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* News Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">最新のお知らせ</h2>
+            <p className="text-lg text-gray-600">
+              事務所からの重要なお知らせをご確認ください
+            </p>
+          </div>
+          <div className="grid gap-6">
+            <article className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+              <div className="flex items-start justify-between">
+                <div className="flex-1">
+                  <div className="flex items-center space-x-4 mb-2">
+                    <time className="text-sm text-gray-500">
+                      2025年7月7日
+                    </time>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                      重要
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                      注目
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    <Link 
+                      href="/news/jimusho-kaisetsu-oshirase"
+                      className="hover:text-blue-600 transition-colors"
+                    >
+                      事務所開設のお知らせ
+                    </Link>
+                  </h3>
+                  <p className="text-gray-600 mb-4">フォルティア行政書士事務所を開設いたしました</p>
+                  <Link
+                    href="/news/jimusho-kaisetsu-oshirase"
+                    className="text-blue-600 hover:text-blue-800 font-medium"
+                  >
+                    続きを読む →
+                  </Link>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/news"
+              className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+            >
+              すべてのお知らせを見る
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-gray-100 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
