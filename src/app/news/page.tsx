@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getNews } from "../../../lib/sanity";
+// import { getNews } from "../../../lib/sanity";
 
 // ニュースの型定義
 interface News {
@@ -13,7 +13,18 @@ interface News {
 }
 
 export default async function NewsPage() {
-  const news: News[] = await getNews();
+  // 一時的にテストデータを使用
+  const news: News[] = [
+    {
+      _id: "test1",
+      title: "事務所開設のお知らせ",
+      slug: { current: "jimusho-kaisetsu-oshirase" },
+      publishedAt: "2025-07-07",
+      excerpt: "フォルティア行政書士事務所を開設いたしました",
+      category: "important",
+      featured: true
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
