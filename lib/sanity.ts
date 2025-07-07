@@ -51,3 +51,58 @@ export async function getFeaturedNews(limit: number = 3) {
     }
   `)
 }
+
+// お客様の声取得用のクエリ
+export async function getTestimonials() {
+  return await client.fetch(`
+    *[_type == "testimonials"] | order(publishedAt desc) {
+      _id,
+      clientName,
+      slug,
+      rating,
+      comment,
+      serviceType,
+      clientIndustry,
+      clientLocation,
+      featured,
+      publishedAt,
+      clientImage
+    }
+  `)
+}
+
+// 個別お客様の声取得用のクエリ
+export async function getTestimonialBySlug(slug: string) {
+  return await client.fetch(`
+    *[_type == "testimonials" && slug.current == $slug][0] {
+      _id,
+      clientName,
+      slug,
+      rating,
+      comment,
+      serviceType,
+      clientIndustry,
+      clientLocation,
+      featured,
+      publishedAt,
+      clientImage
+    }
+  `, { slug })
+}
+
+// 注目お客様の声取得用のクエリ
+export async function getFeaturedTestimonials(limit: number = 3) {
+  return await client.fetch(`
+    *[_type == "testimonials" && featured == true] | order(rating desc, publishedAt desc)[0...${limit}] {
+      _id,
+      clientName,
+      slug,
+      rating,
+      comment,
+      serviceType,
+      clientIndustry,
+      clientLocation,
+      publishedAt
+    }
+  `)
+}
