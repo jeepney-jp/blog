@@ -20,6 +20,12 @@ export default function Home() {
               <Link href="/services" className="text-gray-600 hover:text-gray-900">
                 サービス
               </Link>
+              <Link href="/news" className="text-gray-600 hover:text-gray-900">
+                お知らせ
+              </Link>
+              <Link href="/testimonials" className="text-gray-600 hover:text-gray-900">
+                お客様の声
+              </Link>
               <Link href="/contact" className="text-gray-600 hover:text-gray-900">
                 お問い合わせ
               </Link>
@@ -129,6 +135,132 @@ export default function Home() {
               className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
             >
               すべてのお知らせを見る
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">お客様の声</h2>
+            <p className="text-lg text-gray-600">
+              ご利用いただいたお客様からの貴重なご意見をご紹介します
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400 text-lg">
+                  ★★★★★
+                </div>
+                <span className="ml-2 text-sm text-gray-600">(5/5)</span>
+              </div>
+              <div className="mb-4">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                  許認可申請
+                </span>
+                <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                  注目の声
+                </span>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                許認可申請でお世話になりました。複雑な手続きでしたが、丁寧に説明していただき、スムーズに許可が下りました。
+              </p>
+              <div className="border-t pt-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-medium text-gray-900">田中様</p>
+                    <p className="text-sm text-gray-500">建設業 (東京都)</p>
+                  </div>
+                  <time className="text-sm text-gray-500">2025年7月6日</time>
+                </div>
+              </div>
+              <div className="mt-4">
+                <Link
+                  href="/testimonials/tanaka-san"
+                  className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                >
+                  詳細を見る →
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400 text-lg">
+                  ★★★★★
+                </div>
+                <span className="ml-2 text-sm text-gray-600">(5/5)</span>
+              </div>
+              <div className="mb-4">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                  相続手続き
+                </span>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                相続手続きが想像以上に複雑で困っていましたが、親切に対応していただき、無事に完了できました。
+              </p>
+              <div className="border-t pt-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-medium text-gray-900">佐藤様</p>
+                    <p className="text-sm text-gray-500">個人 (千葉県)</p>
+                  </div>
+                  <time className="text-sm text-gray-500">2025年7月5日</time>
+                </div>
+              </div>
+              <div className="mt-4">
+                <Link
+                  href="/testimonials/sato-san"
+                  className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                >
+                  詳細を見る →
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400 text-lg">
+                  ★★★★☆
+                </div>
+                <span className="ml-2 text-sm text-gray-600">(4/5)</span>
+              </div>
+              <div className="mb-4">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                  会社設立
+                </span>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                会社設立でお願いしました。必要書類の準備から法務局への提出まで、すべてサポートしていただきました。
+              </p>
+              <div className="border-t pt-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-medium text-gray-900">鈴木様</p>
+                    <p className="text-sm text-gray-500">IT業 (神奈川県)</p>
+                  </div>
+                  <time className="text-sm text-gray-500">2025年7月4日</time>
+                </div>
+              </div>
+              <div className="mt-4">
+                <Link
+                  href="/testimonials/suzuki-san"
+                  className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                >
+                  詳細を見る →
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/testimonials"
+              className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+            >
+              すべてのお客様の声を見る
             </Link>
           </div>
         </div>
