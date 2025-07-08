@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 // import { getBlogs } from "../../../lib/sanity";
 
 // ブログ記事の型定義
