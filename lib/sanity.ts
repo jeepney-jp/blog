@@ -106,3 +106,77 @@ export async function getFeaturedTestimonials(limit: number = 3) {
     }
   `)
 }
+
+// ブログ記事取得用のクエリ
+export async function getBlogs() {
+  return await client.fetch(`
+    *[_type == "blog"] | order(publishedAt desc) {
+      _id,
+      title,
+      slug,
+      excerpt,
+      category,
+      tags,
+      featured,
+      readingTime,
+      publishedAt,
+      updatedAt,
+      featuredImage
+    }
+  `)
+}
+
+// 個別ブログ記事取得用のクエリ
+export async function getBlogBySlug(slug: string) {
+  return await client.fetch(`
+    *[_type == "blog" && slug.current == $slug][0] {
+      _id,
+      title,
+      slug,
+      excerpt,
+      content,
+      category,
+      tags,
+      featured,
+      readingTime,
+      publishedAt,
+      updatedAt,
+      metaDescription,
+      featuredImage
+    }
+  `, { slug })
+}
+
+// 注目ブログ記事取得用のクエリ
+export async function getFeaturedBlogs(limit: number = 3) {
+  return await client.fetch(`
+    *[_type == "blog" && featured == true] | order(publishedAt desc)[0...${limit}] {
+      _id,
+      title,
+      slug,
+      excerpt,
+      category,
+      tags,
+      readingTime,
+      publishedAt,
+      featuredImage
+    }
+  `)
+}
+
+// カテゴリ別ブログ記事取得用のクエリ
+export async function getBlogsByCategory(category: string) {
+  return await client.fetch(`
+    *[_type == "blog" && category == $category] | order(publishedAt desc) {
+      _id,
+      title,
+      slug,
+      excerpt,
+      category,
+      tags,
+      readingTime,
+      publishedAt,
+      featuredImage
+    }
+  `, { category })
+}
