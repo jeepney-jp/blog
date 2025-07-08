@@ -165,6 +165,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Features Section */}
+      <section className="bg-gray-100 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">当事務所の特徴</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">豊富な実績</h3>
+              <p className="text-gray-600">
+                20年間で3,000件以上の手続きを処理してきた豊富な実績があります。
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">迅速対応</h3>
+              <p className="text-gray-600">
+                お客様のご要望に応じて、可能な限り迅速な対応を心がけています。
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">丁寧な説明</h3>
+              <p className="text-gray-600">
+                複雑な手続きも分かりやすく説明し、お客様の不安を解消します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
