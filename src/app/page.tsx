@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -29,8 +31,6 @@ function CounterAnimation({ end, duration = 2000 }: { end: number; duration?: nu
 
   return <span>{count.toLocaleString()}</span>;
 }
-
-"use client";
 
 export default function Home() {
   return (
