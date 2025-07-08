@@ -7,6 +7,7 @@ function CounterAnimation({ end, duration = 2000 }: { end: number; duration?: nu
   const [count, setCount] = useState(0);
 
   useEffect(() => {
+    console.log(`CounterAnimation started for end: ${end}`);
     let startTime: number | null = null;
     const startCount = 0;
 
@@ -70,7 +71,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white min-h-screen flex items-center">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white min-h-screen flex items-center py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
             <h2 className="text-4xl font-bold mb-4">
@@ -87,7 +88,7 @@ export default function Home() {
             </Link>
             
             {/* Stats Section */}
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="text-5xl font-bold mb-2">
                   <CounterAnimation end={1000} />
