@@ -1,4 +1,37 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
+function CounterAnimation({ end, duration = 2000 }: { end: number; duration?: number }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log(`CounterAnimation started for end: ${end}`);
+    let startTime: number | null = null;
+    const startCount = 0;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // イージング関数（ease-out）
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const currentCount = Math.floor(startCount + (end - startCount) * easeOut);
+      
+      setCount(currentCount);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [end, duration]);
+
+  return <span>{count.toLocaleString()}</span>;
+}
 
 export default function Home() {
   return (
@@ -38,7 +71,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white min-h-screen flex items-center">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white min-h-screen flex items-center py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
             <h2 className="text-4xl font-bold mb-4">
@@ -53,6 +86,31 @@ export default function Home() {
             >
               無料相談のお申込み
             </Link>
+            
+            {/* Stats Section */}
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="text-5xl font-bold mb-2">
+                  <CounterAnimation end={1000} />
+                  <span className="text-3xl">+</span>
+                </div>
+                <div className="text-lg opacity-90">年間問合せ件数</div>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl font-bold mb-2">
+                  <CounterAnimation end={100} />
+                  <span className="text-3xl">+</span>
+                </div>
+                <div className="text-lg opacity-90">年間申請件数</div>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl font-bold mb-2">
+                  <CounterAnimation end={98} />
+                  <span className="text-3xl">%</span>
+                </div>
+                <div className="text-lg opacity-90">申請許可率</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
