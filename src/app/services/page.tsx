@@ -39,122 +39,117 @@ export default function Services() {
       {/* Services Content */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             
-            {/* 許認可申請 */}
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">許認可申請</h2>
-              <p className="text-gray-600 mb-6">
-                各種事業に必要な許認可申請を迅速に処理いたします。
-              </p>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-gray-900">建設業許可</h3>
-                  <p className="text-sm text-gray-600">一般建設業許可・特定建設業許可</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">宅建業免許</h3>
-                  <p className="text-sm text-gray-600">不動産業開始のための必須免許</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">飲食店営業許可</h3>
-                  <p className="text-sm text-gray-600">飲食店開業に必要な許可申請</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">古物商許可</h3>
-                  <p className="text-sm text-gray-600">中古品売買業のための許可</p>
-                </div>
+            {/* 外国人関連業務 */}
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
               </div>
-              <div className="mt-6">
-                <p className="text-sm text-blue-600 font-semibold">料金: 50,000円〜</p>
-              </div>
+              <h3 className="text-lg font-semibold text-gray-900">外国人関連業務</h3>
             </div>
 
-            {/* 相続手続き */}
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">相続手続き</h2>
-              <p className="text-gray-600 mb-6">
-                相続に関する各種手続きを丁寧にサポートします。
-              </p>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-gray-900">相続人調査</h3>
-                  <p className="text-sm text-gray-600">戸籍収集による相続人確定</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">遺産分割協議書作成</h3>
-                  <p className="text-sm text-gray-600">相続人間の協議内容を書面化</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">相続放棄</h3>
-                  <p className="text-sm text-gray-600">家庭裁判所への申述手続き</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">遺言書作成</h3>
-                  <p className="text-sm text-gray-600">公正証書遺言の作成サポート</p>
-                </div>
+            {/* 建設・宅地建物取引業関連業務 */}
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
               </div>
-              <div className="mt-6">
-                <p className="text-sm text-blue-600 font-semibold">料金: 30,000円〜</p>
-              </div>
+              <h3 className="text-lg font-semibold text-gray-900">建設・宅建業関連</h3>
             </div>
 
-            {/* 会社設立 */}
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">会社設立</h2>
-              <p className="text-gray-600 mb-6">
-                株式会社・合同会社の設立手続きを完全サポートします。
-              </p>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-gray-900">定款作成</h3>
-                  <p className="text-sm text-gray-600">会社の基本ルールを定める定款作成</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">法人登記</h3>
-                  <p className="text-sm text-gray-600">法務局での会社設立登記</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">各種届出</h3>
-                  <p className="text-sm text-gray-600">税務署・労働基準監督署等への届出</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">印鑑作成</h3>
-                  <p className="text-sm text-gray-600">会社実印・銀行印の作成手配</p>
-                </div>
+            {/* 自動車関連業務 */}
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
-              <div className="mt-6">
-                <p className="text-sm text-blue-600 font-semibold">料金: 100,000円〜</p>
-              </div>
+              <h3 className="text-lg font-semibold text-gray-900">自動車関連業務</h3>
             </div>
 
-            {/* 契約書作成 */}
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">契約書作成</h2>
-              <p className="text-gray-600 mb-6">
-                各種契約書の作成・チェックを行います。
-              </p>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-gray-900">売買契約書</h3>
-                  <p className="text-sm text-gray-600">不動産・動産の売買契約書</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">業務委託契約書</h3>
-                  <p className="text-sm text-gray-600">フリーランス向け業務委託契約</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">賃貸借契約書</h3>
-                  <p className="text-sm text-gray-600">建物・土地の賃貸借契約書</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">秘密保持契約書</h3>
-                  <p className="text-sm text-gray-600">機密情報保護のための契約書</p>
-                </div>
+            {/* 飲食・風俗営業関連業務 */}
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                </svg>
               </div>
-              <div className="mt-6">
-                <p className="text-sm text-blue-600 font-semibold">料金: 20,000円〜</p>
+              <h3 className="text-lg font-semibold text-gray-900">飲食・風俗営業</h3>
+            </div>
+
+            {/* 廃棄物処理業許可関連業務 */}
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
               </div>
+              <h3 className="text-lg font-semibold text-gray-900">廃棄物処理業許可</h3>
+            </div>
+
+            {/* 旅行・旅館業関連業務 */}
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900">旅行・旅館業</h3>
+            </div>
+
+            {/* 法人設立業務 */}
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900">法人設立業務</h3>
+            </div>
+
+            {/* 営業許可 */}
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900">営業許可</h3>
+            </div>
+
+            {/* 土地関連業務 */}
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900">土地関連業務</h3>
+            </div>
+
+            {/* 権利義務・事実証明業務 */}
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900">権利義務・事実証明</h3>
+            </div>
+
+            {/* その他の業務 */}
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900">その他の業務</h3>
             </div>
 
           </div>
@@ -184,7 +179,40 @@ export default function Services() {
                 <tbody className="bg-white divide-y divide-gray-200">
                   <tr>
                     <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                      在留資格認定証明書交付申請
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                      50,000円
+                    </td>
+                    <td className="px-6 py-4 text-gray-600">
+                      基本料金
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
                       建設業許可申請
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                      150,000円
+                    </td>
+                    <td className="px-6 py-4 text-gray-600">
+                      新規申請の場合
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                      車庫証明申請
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                      15,000円
+                    </td>
+                    <td className="px-6 py-4 text-gray-600">
+                      一般的な場合
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                      飲食店営業許可申請
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-gray-600">
                       80,000円
@@ -195,35 +223,24 @@ export default function Services() {
                   </tr>
                   <tr>
                     <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
-                      宅建業免許申請
+                      一般廃棄物収集運搬業許可
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-gray-600">
-                      70,000円
+                      120,000円
                     </td>
                     <td className="px-6 py-4 text-gray-600">
-                      知事免許の場合
+                      新規申請の場合
                     </td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
-                      相続人調査
+                      旅行業登録申請
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-gray-600">
-                      30,000円
+                      200,000円
                     </td>
                     <td className="px-6 py-4 text-gray-600">
-                      戸籍収集含む
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
-                      遺産分割協議書作成
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-gray-600">
-                      50,000円
-                    </td>
-                    <td className="px-6 py-4 text-gray-600">
-                      相続人5名まで
+                      第３種旅行業の場合
                     </td>
                   </tr>
                   <tr>
@@ -231,10 +248,43 @@ export default function Services() {
                       株式会社設立
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-gray-600">
-                      100,000円
+                      150,000円
                     </td>
                     <td className="px-6 py-4 text-gray-600">
                       定款作成・認証含む
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                      古物商許可申請
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                      60,000円
+                    </td>
+                    <td className="px-6 py-4 text-gray-600">
+                      新規申請の場合
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                      農地転用許可申請
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                      100,000円
+                    </td>
+                    <td className="px-6 py-4 text-gray-600">
+                      4条許可の場合
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                      契約書作成
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                      30,000円
+                    </td>
+                    <td className="px-6 py-4 text-gray-600">
+                      一般的な契約書
                     </td>
                   </tr>
                 </tbody>
