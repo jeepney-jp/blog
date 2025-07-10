@@ -116,7 +116,7 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">事務所案内</h2>
@@ -166,7 +166,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-gray-100 py-16">
+      <section className="bg-gray-100 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">当事務所の特徴</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -202,7 +202,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">主要サービス</h2>
@@ -234,7 +234,7 @@ export default function Home() {
       </section>
 
       {/* News Section */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">最新のお知らせ</h2>
@@ -288,7 +288,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">お客様の声</h2>
@@ -414,7 +414,7 @@ export default function Home() {
       </section>
 
       {/* Blog Section */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">お役立ち情報</h2>
@@ -552,7 +552,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gray-100 py-16">
+      <section className="bg-gray-100 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             お困りごとはございませんか？
