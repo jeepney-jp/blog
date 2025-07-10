@@ -20,7 +20,7 @@ export default async function NewsPage() {
       title: "事務所開設のお知らせ",
       slug: { current: "jimusho-kaisetsu-oshirase" },
       publishedAt: "2025-07-07",
-      excerpt: "フォルティア行政書士事務所を開設いたしました",
+      excerpt: "フォルティア行政書士事務所事務所を開設いたしました",
       category: "important",
       featured: true
     }
@@ -34,7 +34,7 @@ export default async function NewsPage() {
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <Link href="/">
-                <h1 className="text-2xl font-bold text-gray-900">フォルティア行政書士</h1>
+                <h1 className="text-2xl font-bold text-gray-900">フォルティア行政書士事務所</h1>
               </Link>
             </div>
             <nav className="hidden md:flex space-x-8">
@@ -63,7 +63,7 @@ export default async function NewsPage() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">お知らせ</h1>
           <p className="text-lg text-gray-600">
-            フォルティア行政書士からの最新情報をお届けします。
+            フォルティア行政書士事務所からの最新情報をお届けします。
           </p>
         </div>
 
