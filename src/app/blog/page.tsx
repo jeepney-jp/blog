@@ -309,7 +309,7 @@ export default async function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <Link href="/">
-                <h3 className="text-lg font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer">フォルティア行政書士事務所</h3>
+                <h3 className="text-lg font-semibold mb-4 hover:text-blue-300 transition-colors cursor-pointer underline-offset-2 hover:underline">フォルティア行政書士事務所</h3>
               </Link>
               <p className="text-gray-400">
                 〒100-0001<br />
