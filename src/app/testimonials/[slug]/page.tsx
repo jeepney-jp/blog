@@ -34,7 +34,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
     clientName: "田中様",
     slug: { current: "tanaka-san" },
     rating: 5,
-    comment: "許認可申請でお世話になりました。複雑な手続きでしたが、丁寧に説明していただき、スムーズに許可が下りました。\n\n最初は自分で手続きを進めようと思っていましたが、必要書類の多さと複雑さに困り果てていました。フォルティア行政書士事務所にご相談したところ、必要な書類を整理して教えていただき、作成まで代行していただけました。\n\n担当の方は非常に親切で、分からないことがあると何度でも丁寧に説明してくださいました。料金も事前に明確に提示していただき、追加費用もなく安心できました。\n\nおかげで予定よりも早く許可が下り、事業を開始することができました。本当にありがとうございました。同じような手続きでお困りの方には、ぜひお勧めしたいと思います。",
+    comment: "許認可申請でお世話になりました。複雑な手続きでしたが、丁寧に説明していただき、スムーズに許可が下りました。\n\n最初は自分で手続きを進めようと思っていましたが、必要書類の多さと複雑さに困り果てていました。フォルティア行政書士事務所事務所にご相談したところ、必要な書類を整理して教えていただき、作成まで代行していただけました。\n\n担当の方は非常に親切で、分からないことがあると何度でも丁寧に説明してくださいました。料金も事前に明確に提示していただき、追加費用もなく安心できました。\n\nおかげで予定よりも早く許可が下り、事業を開始することができました。本当にありがとうございました。同じような手続きでお困りの方には、ぜひお勧めしたいと思います。",
     serviceType: "license",
     clientIndustry: "建設業",
     clientLocation: "東京都",
@@ -45,7 +45,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
     clientName: "佐藤様",
     slug: { current: "sato-san" },
     rating: 5,
-    comment: "相続手続きが想像以上に複雑で困っていましたが、親切に対応していただき、無事に完了できました。料金も明確で安心でした。\n\n父が亡くなり、相続手続きを進める必要がありましたが、何から始めれば良いか全く分からない状態でした。インターネットで調べても情報が多すぎて混乱するばかりでした。\n\nフォルティア行政書士事務所にご相談したところ、最初の面談で手続きの全体像を分かりやすく説明していただき、とても安心しました。必要な書類の取得から各種手続きまで、ステップバイステップでサポートしていただけました。\n\n特に印象的だったのは、家族の状況を丁寧にヒアリングしていただき、最適な手続き方法を提案してくださったことです。おかげで余計な費用をかけずに、効率的に手続きを完了することができました。",
+    comment: "相続手続きが想像以上に複雑で困っていましたが、親切に対応していただき、無事に完了できました。料金も明確で安心でした。\n\n父が亡くなり、相続手続きを進める必要がありましたが、何から始めれば良いか全く分からない状態でした。インターネットで調べても情報が多すぎて混乱するばかりでした。\n\nフォルティア行政書士事務所事務所にご相談したところ、最初の面談で手続きの全体像を分かりやすく説明していただき、とても安心しました。必要な書類の取得から各種手続きまで、ステップバイステップでサポートしていただけました。\n\n特に印象的だったのは、家族の状況を丁寧にヒアリングしていただき、最適な手続き方法を提案してくださったことです。おかげで余計な費用をかけずに、効率的に手続きを完了することができました。",
     serviceType: "inheritance",
     clientIndustry: "個人",
     clientLocation: "千葉県",
@@ -56,7 +56,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
     clientName: "鈴木様",
     slug: { current: "suzuki-san" },
     rating: 4,
-    comment: "会社設立でお願いしました。必要書類の準備から法務局への提出まで、すべてサポートしていただきました。\n\n起業を決意したものの、会社設立の手続きについて全く知識がありませんでした。知人の紹介でフォルティア行政書士事務所を知り、ご相談させていただきました。\n\n定款の作成から必要書類の準備、法務局への提出まで、一連の手続きをワンストップでサポートしていただけました。特に、事業内容に応じた定款の内容についてアドバイスをいただけたのが非常に助かりました。\n\n手続きの進捗も随時報告していただき、安心してお任せすることができました。設立後の各種手続きについてもアドバイスをいただき、スムーズに事業をスタートすることができました。",
+    comment: "会社設立でお願いしました。必要書類の準備から法務局への提出まで、すべてサポートしていただきました。\n\n起業を決意したものの、会社設立の手続きについて全く知識がありませんでした。知人の紹介でフォルティア行政書士事務所事務所を知り、ご相談させていただきました。\n\n定款の作成から必要書類の準備、法務局への提出まで、一連の手続きをワンストップでサポートしていただけました。特に、事業内容に応じた定款の内容についてアドバイスをいただけたのが非常に助かりました。\n\n手続きの進捗も随時報告していただき、安心してお任せすることができました。設立後の各種手続きについてもアドバイスをいただき、スムーズに事業をスタートすることができました。",
     serviceType: "incorporation",
     clientIndustry: "IT業",
     clientLocation: "神奈川県",
@@ -84,7 +84,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <Link href="/">
-                <h1 className="text-2xl font-bold text-gray-900">フォルティア行政書士</h1>
+                <h1 className="text-2xl font-bold text-gray-900">フォルティア行政書士事務所</h1>
               </Link>
             </div>
             <nav className="hidden md:flex space-x-8">
@@ -251,7 +251,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">フォルティア行政書士</h3>
+              <h3 className="text-lg font-semibold mb-4">フォルティア行政書士事務所</h3>
               <p className="text-gray-400">
                 〒100-0001<br />
                 東京都千代田区千代田1-1-1<br />
@@ -275,7 +275,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 フォルティア行政書士. All rights reserved.</p>
+            <p>&copy; 2024 フォルティア行政書士事務所. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -77,7 +77,7 @@ export default async function TestimonialsPage() {
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <Link href="/">
-                <h1 className="text-2xl font-bold text-gray-900">フォルティア行政書士</h1>
+                <h1 className="text-2xl font-bold text-gray-900">フォルティア行政書士事務所</h1>
               </Link>
             </div>
             <nav className="hidden md:flex space-x-8">
@@ -239,7 +239,7 @@ export default async function TestimonialsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">フォルティア行政書士</h3>
+              <h3 className="text-lg font-semibold mb-4">フォルティア行政書士事務所</h3>
               <p className="text-gray-400">
                 〒100-0001<br />
                 東京都千代田区千代田1-1-1<br />
@@ -263,7 +263,7 @@ export default async function TestimonialsPage() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 フォルティア行政書士. All rights reserved.</p>
+            <p>&copy; 2024 フォルティア行政書士事務所. All rights reserved.</p>
           </div>
         </div>
       </footer>
