@@ -239,7 +239,9 @@ export default async function TestimonialsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">フォルティア行政書士事務所</h3>
+              <Link href="/">
+                <h3 className="text-lg font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer">フォルティア行政書士事務所</h3>
+              </Link>
               <p className="text-gray-400">
                 〒100-0001<br />
                 東京都千代田区千代田1-1-1<br />
