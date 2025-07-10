@@ -213,98 +213,24 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             
             {/* 外国人関連業務 */}
-            <div className="group relative bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 text-center overflow-hidden">
-              {/* 通常表示 */}
-              <div className="group-hover:opacity-0 transition-opacity duration-300">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900">外国人関連業務</h3>
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
               </div>
-              
-              {/* ホバー時表示 */}
-              <div className="absolute inset-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center">
-                <div className="space-y-3">
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-blue-600 mr-2 text-sm">✓</span>
-                    <span className="text-sm font-medium">在留資格許可</span>
-                  </div>
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-blue-600 mr-2 text-sm">✓</span>
-                    <span className="text-sm font-medium">国籍取得</span>
-                  </div>
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-blue-600 mr-2 text-sm">✓</span>
-                    <span className="text-sm font-medium">帰化許可</span>
-                  </div>
-                </div>
-              </div>
+              <h3 className="text-lg font-semibold text-gray-900">外国人関連業務</h3>
             </div>
 
             {/* 建設・宅建業関連 */}
-            <div className="group relative bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 text-center overflow-hidden">
-              {/* 通常表示 */}
-              <div className="group-hover:opacity-0 transition-opacity duration-300">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900">建設・宅建業関連</h3>
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
               </div>
-              
-              {/* ホバー時表示 */}
-              <div className="absolute inset-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center">
-                <div className="space-y-1 text-xs">
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-green-600 mr-1">✓</span>
-                    <span className="font-medium">建設業許可</span>
-                  </div>
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-green-600 mr-1">✓</span>
-                    <span className="font-medium">経営事項審査</span>
-                  </div>
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-green-600 mr-1">✓</span>
-                    <span className="font-medium">入札参加資格登録</span>
-                  </div>
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-green-600 mr-1">✓</span>
-                    <span className="font-medium">建築士事務所登録</span>
-                  </div>
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-green-600 mr-1">✓</span>
-                    <span className="font-medium">測量業者登録</span>
-                  </div>
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-green-600 mr-1">✓</span>
-                    <span className="font-medium">解体工事業者登録</span>
-                  </div>
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-green-600 mr-1">✓</span>
-                    <span className="font-medium">宅建業者免許</span>
-                  </div>
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-green-600 mr-1">✓</span>
-                    <span className="font-medium">宅建士資格登録</span>
-                  </div>
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-green-600 mr-1">✓</span>
-                    <span className="font-medium">マンション管理業者登録</span>
-                  </div>
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-green-600 mr-1">✓</span>
-                    <span className="font-medium">電気工事業者登録</span>
-                  </div>
-                  <div className="flex items-center justify-center text-gray-700">
-                    <span className="text-green-600 mr-1">✓</span>
-                    <span className="font-medium">浄化槽工事業登録</span>
-                  </div>
-                </div>
-              </div>
+              <h3 className="text-lg font-semibold text-gray-900">建設・宅建業関連</h3>
             </div>
 
             {/* 自動車関連業務 */}
