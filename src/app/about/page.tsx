@@ -8,7 +8,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900">フォルティア行政書士事務所</h1>
+              <h1 className="text-xl font-bold">
+                <span className="text-blue-600">フォルティア</span>
+                <span className="text-gray-600 ml-1">行政書士事務所</span>
+              </h1>
             </div>
             <nav className="hidden md:flex space-x-8">
               <Link href="/" className="text-gray-600 hover:text-gray-900">
@@ -129,7 +132,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <Link href="/">
-                <h3 className="text-lg font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer">フォルティア行政書士事務所</h3>
+                <h3 className="text-base font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer"><span className="text-blue-400">フォルティア</span><span className="text-gray-300 ml-1">行政書士事務所</span></h3>
               </Link>
               <p className="text-gray-400">
                 〒100-0001<br />
