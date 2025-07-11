@@ -80,43 +80,53 @@ export default function Home() {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
-              信頼できる行政書士として
-            </h2>
-            <p className="text-xl mb-8 text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
-              許認可申請から相続手続きまで、お客様のビジネスと人生をサポートします
-            </p>
-            <Link
-              href="/contact"
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              無料相談のお申込み
-            </Link>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full z-10 flex items-center">
+          <div className="flex w-full">
+            {/* Left side - Main text */}
+            <div className="flex-1 flex items-center">
+              <div>
+                <h2 className="text-4xl font-bold text-gray-800 leading-tight" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
+                  人と社会を繋げる、<br />
+                  リーガルサービス
+                </h2>
+              </div>
+            </div>
             
-            {/* Stats Section */}
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Right side - Contact button */}
+            <div className="flex-1 flex justify-end items-end pb-16">
+              <Link
+                href="/contact"
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+              >
+                無料相談のお申込み
+              </Link>
+            </div>
+          </div>
+        </div>
+        
+        {/* Stats Section */}
+        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div className="text-center">
-                <div className="text-5xl font-bold mb-2">
+                <div className="text-5xl font-bold mb-2 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
                   <CounterAnimation end={1000} />
                   <span className="text-3xl">+</span>
                 </div>
-                <div className="text-lg opacity-90">年間問合せ件数</div>
+                <div className="text-lg text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>年間問合せ件数</div>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold mb-2">
+                <div className="text-5xl font-bold mb-2 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
                   <CounterAnimation end={100} />
                   <span className="text-3xl">+</span>
                 </div>
-                <div className="text-lg opacity-90">年間申請件数</div>
+                <div className="text-lg text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>年間申請件数</div>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold mb-2">
+                <div className="text-5xl font-bold mb-2 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
                   <CounterAnimation end={98} />
                   <span className="text-3xl">%</span>
                 </div>
-                <div className="text-lg opacity-90">申請許可率</div>
+                <div className="text-lg text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>申請許可率</div>
               </div>
             </div>
           </div>
