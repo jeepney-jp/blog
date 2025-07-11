@@ -9,7 +9,7 @@ export default function Contact() {
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <h1 className="text-xl font-bold">
-                <span className="text-blue-600">フォルティア</span>
+                <span className="text-gray-600">フォルティア</span>
                 <span className="text-gray-600 ml-1">行政書士事務所</span>
               </h1>
             </div>
@@ -238,7 +238,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <Link href="/">
-                <h3 className="text-base font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer"><span className="text-blue-400">フォルティア</span><span className="text-gray-300 ml-1">行政書士事務所</span></h3>
+                <h3 className="text-base font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer"><span className="text-gray-300">フォルティア</span><span className="text-gray-300 ml-1">行政書士事務所</span></h3>
               </Link>
               <p className="text-gray-400">
                 〒100-0001<br />
