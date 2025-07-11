@@ -74,10 +74,13 @@ export default function Home() {
       <section 
         className="relative text-white min-h-screen flex items-center py-12"
         style={{
-          background: 'linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899, #06b6d4)',
-          backgroundSize: '300% 300%'
+          backgroundImage: "url('/hero-background.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       >
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-purple-900/50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
           <div className="text-center">
             <h2 className="text-4xl font-bold mb-4">
