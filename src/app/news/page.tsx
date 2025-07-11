@@ -34,7 +34,7 @@ export default async function NewsPage() {
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <Link href="/">
-                <h1 className="text-xl font-bold"><span className="text-blue-600">フォルティア</span><span className="text-gray-600 ml-1">行政書士事務所</span></h1>
+                <h1 className="text-xl font-bold"><span className="text-gray-600">フォルティア</span><span className="text-gray-600 ml-1">行政書士事務所</span></h1>
               </Link>
             </div>
             <nav className="hidden md:flex space-x-8">
