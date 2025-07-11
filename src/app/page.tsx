@@ -88,13 +88,15 @@ export default function Home() {
               </Link>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden">
-                <div className="relative h-80">
-                  <img 
-                    src="/office-building.jpg" 
-                    alt="事務所ビル" 
-                    className="w-full h-full object-cover rounded-lg"
-                  />
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg overflow-hidden h-80 flex items-center justify-center">
+                <div className="text-center text-blue-800">
+                  <div className="w-20 h-20 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">プロフェッショナルなサービス</h3>
+                  <p className="text-blue-700">信頼と実績の行政書士事務所</p>
                 </div>
               </div>
             </div>
