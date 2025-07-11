@@ -91,20 +91,11 @@ export default function Home() {
               </Link>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden">
-                <div className="aspect-w-16 aspect-h-12 bg-gradient-to-br from-blue-400 to-blue-600 relative">
-                  <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                      </div>
-                      <p className="text-lg font-medium">Professional Team</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src="/office-consultation.jpg" 
+                alt="事務所での相談風景" 
+                className="w-full h-auto rounded-lg shadow-lg object-cover"
+              />
             </div>
           </div>
         </div>
