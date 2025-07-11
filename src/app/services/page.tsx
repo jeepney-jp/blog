@@ -308,6 +308,7 @@ export default function Services() {
             className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
             無料相談のお申込み
+          </Link>
         </div>
       </section>
 

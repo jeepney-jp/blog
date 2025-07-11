@@ -85,6 +85,7 @@ export default function Home() {
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
+              </Link>
             </div>
             <div className="relative">
               <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden">
@@ -298,6 +299,7 @@ export default function Home() {
                       className="hover:text-blue-600 transition-colors"
                     >
                       事務所開設のお知らせ
+                    </Link>
                   </h3>
                   <p className="text-gray-600 mb-4">フォルティア行政書士事務所事務所を開設いたしました</p>
                   <Link
@@ -305,6 +307,7 @@ export default function Home() {
                     className="text-blue-600 hover:text-blue-800 font-medium"
                   >
                     続きを読む →
+                  </Link>
                 </div>
               </div>
             </article>
@@ -315,6 +318,7 @@ export default function Home() {
               className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
             >
               すべてのお知らせを見る
+            </Link>
           </div>
         </div>
       </section>
@@ -362,6 +366,7 @@ export default function Home() {
                   className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                 >
                   詳細を見る →
+                </Link>
               </div>
             </div>
 
@@ -395,6 +400,7 @@ export default function Home() {
                   className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                 >
                   詳細を見る →
+                </Link>
               </div>
             </div>
 
@@ -428,6 +434,7 @@ export default function Home() {
                   className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                 >
                   詳細を見る →
+                </Link>
               </div>
             </div>
           </div>
@@ -467,6 +474,7 @@ export default function Home() {
                   className="hover:text-blue-600 transition-colors"
                 >
                   建設業許可の取得方法と必要書類を徹底解説
+                </Link>
               </h3>
               <p className="text-gray-600 mb-4 line-clamp-3">
                 建設業を営むために必要な許可の種類、取得要件、必要書類について分かりやすく解説します。
@@ -486,6 +494,7 @@ export default function Home() {
                   className="text-blue-600 hover:text-blue-800 font-medium"
                 >
                   続きを読む →
+                </Link>
               </div>
             </article>
 
@@ -505,6 +514,7 @@ export default function Home() {
                   className="hover:text-blue-600 transition-colors"
                 >
                   相続放棄の手続きと注意点｜3ヶ月の期限に要注意
+                </Link>
               </h3>
               <p className="text-gray-600 mb-4 line-clamp-3">
                 相続放棄の手続き方法、必要書類、注意すべきポイントについて詳しく解説します。
@@ -524,6 +534,7 @@ export default function Home() {
                   className="text-blue-600 hover:text-blue-800 font-medium"
                 >
                   続きを読む →
+                </Link>
               </div>
             </article>
 
@@ -540,6 +551,7 @@ export default function Home() {
                   className="hover:text-blue-600 transition-colors"
                 >
                   合同会社設立のメリット・デメリットと設立手続きの流れ
+                </Link>
               </h3>
               <p className="text-gray-600 mb-4 line-clamp-3">
                 合同会社の特徴、株式会社との違い、設立手続きの流れについて分かりやすく解説します。
@@ -559,6 +571,7 @@ export default function Home() {
                   className="text-blue-600 hover:text-blue-800 font-medium"
                 >
                   続きを読む →
+                </Link>
               </div>
             </article>
           </div>
@@ -568,6 +581,7 @@ export default function Home() {
               className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
             >
               すべてのお役立ち情報を見る
+            </Link>
           </div>
         </div>
       </section>
@@ -587,11 +601,13 @@ export default function Home() {
               className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
             >
               お問い合わせ
+            </Link>
             <Link
               href="/services"
               className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
             >
               サービス詳細
+            </Link>
           </div>
         </div>
       </section>
@@ -603,6 +619,7 @@ export default function Home() {
             <div>
               <Link href="/">
                 <h3 className="text-base font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer"><span className="text-gray-300">フォルティア</span><span className="text-gray-300 ml-1">行政書士事務所</span></h3>
+              </Link>
               <p className="text-gray-400">
                 〒100-0001<br />
                 東京都千代田区千代田1-1-1<br />
