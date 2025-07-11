@@ -90,16 +90,22 @@ export default async function BlogPage() {
             <nav className="hidden md:flex space-x-8">
               <Link href="/about" className="text-gray-600 hover:text-gray-900">
                 事務所概要
+              </Link>
               <Link href="/services" className="text-gray-600 hover:text-gray-900">
                 サービス
+              </Link>
               <Link href="/news" className="text-gray-600 hover:text-gray-900">
                 お知らせ
+              </Link>
               <Link href="/blog" className="text-blue-600 font-semibold">
                 お役立ち情報
+              </Link>
               <Link href="/testimonials" className="text-gray-600 hover:text-gray-900">
                 お客様の声
+              </Link>
               <Link href="/contact" className="text-gray-600 hover:text-gray-900">
                 お問い合わせ
+              </Link>
             </nav>
           </div>
         </div>
@@ -201,6 +207,7 @@ export default async function BlogPage() {
                       className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                     >
                       続きを読む →
+                    </Link>
                   </div>
                 </div>
               </article>
@@ -262,6 +269,7 @@ export default async function BlogPage() {
                       className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                     >
                       続きを読む →
+                    </Link>
                   </div>
                 </div>
               </article>
@@ -283,6 +291,7 @@ export default async function BlogPage() {
               className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
             >
               無料相談のお申し込み
+            </Link>
           </div>
         </div>
       </main>

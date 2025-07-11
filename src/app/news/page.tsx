@@ -39,12 +39,16 @@ export default async function NewsPage() {
             <nav className="hidden md:flex space-x-8">
               <Link href="/about" className="text-gray-600 hover:text-gray-900">
                 事務所概要
+              </Link>
               <Link href="/services" className="text-gray-600 hover:text-gray-900">
                 サービス
+              </Link>
               <Link href="/news" className="text-blue-600 font-semibold">
                 お知らせ
+              </Link>
               <Link href="/contact" className="text-gray-600 hover:text-gray-900">
                 お問い合わせ
+              </Link>
             </nav>
           </div>
         </div>
@@ -107,6 +111,7 @@ export default async function NewsPage() {
                       className="text-blue-600 hover:text-blue-800 font-medium"
                     >
                       続きを読む →
+                    </Link>
                   </div>
                 </div>
               </article>

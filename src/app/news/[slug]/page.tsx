@@ -66,12 +66,16 @@ export default async function NewsDetailPage({ params }: PageProps) {
             <nav className="hidden md:flex space-x-8">
               <Link href="/about" className="text-gray-600 hover:text-gray-900">
                 事務所概要
+              </Link>
               <Link href="/services" className="text-gray-600 hover:text-gray-900">
                 サービス
+              </Link>
               <Link href="/news" className="text-blue-600 font-semibold">
                 お知らせ
+              </Link>
               <Link href="/contact" className="text-gray-600 hover:text-gray-900">
                 お問い合わせ
+              </Link>
             </nav>
           </div>
         </div>
@@ -147,11 +151,13 @@ export default async function NewsDetailPage({ params }: PageProps) {
                 className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
               >
                 ← お知らせ一覧に戻る
+              </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
               >
                 お問い合わせ
+              </Link>
             </div>
           </div>
         </div>
