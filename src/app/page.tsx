@@ -1,36 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-function CounterAnimation({ end, duration = 2000 }: { end: number; duration?: number }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    console.log(`CounterAnimation started for end: ${end}`);
-    let startTime: number | null = null;
-    const startCount = 0;
-
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      const currentCount = Math.floor(startCount + (end - startCount) * easeOut);
-      
-      setCount(currentCount);
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    requestAnimationFrame(animate);
-  }, [end, duration]);
-
-  return <span>{count.toLocaleString()}</span>;
-}
 
 export default function Home() {
   return (
@@ -99,31 +70,6 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
-                <CounterAnimation end={1000} />
-                <span className="text-3xl">+</span>
-              </div>
-              <div className="text-lg text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>年間問合せ件数</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
-                <CounterAnimation end={100} />
-                <span className="text-3xl">+</span>
-              </div>
-              <div className="text-lg text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>年間申請件数</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold mb-2 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
-                <CounterAnimation end={98} />
-                <span className="text-3xl">%</span>
-              </div>
-              <div className="text-lg text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>申請許可率</div>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section className="py-24 bg-gray-50">
