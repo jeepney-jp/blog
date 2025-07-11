@@ -13,7 +13,10 @@ export default function Home() {
                 <span className="text-gray-600 ml-1">行政書士事務所</span>
               </h1>
             </div>
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex items-center space-x-8">
+              <Link href="/" className="text-gray-600 hover:text-gray-900">
+                ホーム
+              </Link>
               <Link href="/about" className="text-gray-600 hover:text-gray-900">
                 事務所概要
               </Link>
@@ -29,7 +32,7 @@ export default function Home() {
               <Link href="/testimonials" className="text-gray-600 hover:text-gray-900">
                 お客様の声
               </Link>
-              <Link href="/contact" className="text-gray-600 hover:text-gray-900">
+              <Link href="/contact" className="bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors">
                 お問い合わせ
               </Link>
             </nav>
