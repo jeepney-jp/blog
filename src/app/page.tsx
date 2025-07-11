@@ -89,14 +89,12 @@ export default function Home() {
             </div>
             <div className="relative">
               <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden">
-                <div className="aspect-w-16 aspect-h-12 relative">
+                <div className="relative h-80">
                   <img 
                     src="/office-building.jpg" 
                     alt="事務所ビル" 
                     className="w-full h-full object-cover rounded-lg"
-                    style={{ height: '400px' }}
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-20 rounded-lg"></div>
                 </div>
               </div>
             </div>
