@@ -71,13 +71,21 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white min-h-screen flex items-center py-12">
+      <section 
+        className="relative text-white min-h-screen flex items-center py-12"
+        style={{
+          backgroundImage: "url('/hero-background.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-4xl font-bold mb-4 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
               信頼できる行政書士として
             </h2>
-            <p className="text-xl mb-8">
+            <p className="text-xl mb-8 text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
               許認可申請から相続手続きまで、お客様のビジネスと人生をサポートします
             </p>
             <Link
@@ -90,25 +98,25 @@ export default function Home() {
             {/* Stats Section */}
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-5xl font-bold mb-2">
+                <div className="text-5xl font-bold mb-2 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
                   <CounterAnimation end={1000} />
                   <span className="text-3xl">+</span>
                 </div>
-                <div className="text-lg opacity-90">年間問合せ件数</div>
+                <div className="text-lg text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>年間問合せ件数</div>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold mb-2">
+                <div className="text-5xl font-bold mb-2 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
                   <CounterAnimation end={100} />
                   <span className="text-3xl">+</span>
                 </div>
-                <div className="text-lg opacity-90">年間申請件数</div>
+                <div className="text-lg text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>年間申請件数</div>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold mb-2">
+                <div className="text-5xl font-bold mb-2 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
                   <CounterAnimation end={98} />
                   <span className="text-3xl">%</span>
                 </div>
-                <div className="text-lg opacity-90">申請許可率</div>
+                <div className="text-lg text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>申請許可率</div>
               </div>
             </div>
           </div>
