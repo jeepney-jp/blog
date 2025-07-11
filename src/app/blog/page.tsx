@@ -86,6 +86,7 @@ export default async function BlogPage() {
             <div className="flex items-center">
               <Link href="/">
                 <h1 className="text-xl font-bold"><span className="text-gray-600">フォルティア</span><span className="text-gray-600 ml-1">行政書士事務所</span></h1>
+              </Link>
             </div>
             <nav className="hidden md:flex space-x-8">
               <Link href="/about" className="text-gray-600 hover:text-gray-900">

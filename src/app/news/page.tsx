@@ -35,6 +35,7 @@ export default async function NewsPage() {
             <div className="flex items-center">
               <Link href="/">
                 <h1 className="text-xl font-bold"><span className="text-gray-600">フォルティア</span><span className="text-gray-600 ml-1">行政書士事務所</span></h1>
+              </Link>
             </div>
             <nav className="hidden md:flex space-x-8">
               <Link href="/about" className="text-gray-600 hover:text-gray-900">
@@ -102,6 +103,7 @@ export default async function NewsPage() {
                         className="hover:text-blue-600 transition-colors"
                       >
                         {item.title}
+                      </Link>
                     </h2>
                     {item.excerpt && (
                       <p className="text-gray-600 mb-4">{item.excerpt}</p>
