@@ -11,18 +11,12 @@ export default function Services() {
               <h1 className="text-xl font-bold"><span className="text-gray-600">フォルティア</span><span className="text-gray-600 ml-1">行政書士事務所</span></h1>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-600 hover:text-gray-900">
-                ホーム
-              </Link>
               <Link href="/about" className="text-gray-600 hover:text-gray-900">
                 事務所概要
-              </Link>
               <Link href="/services" className="text-blue-600 font-semibold">
                 サービス
-              </Link>
               <Link href="/contact" className="text-gray-600 hover:text-gray-900">
                 お問い合わせ
-              </Link>
             </nav>
           </div>
         </div>
@@ -311,7 +305,6 @@ export default function Services() {
             className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
             無料相談のお申込み
-          </Link>
         </div>
       </section>
 
@@ -322,7 +315,6 @@ export default function Services() {
             <div>
               <Link href="/">
                 <h3 className="text-base font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer"><span className="text-gray-300">フォルティア</span><span className="text-gray-300 ml-1">行政書士事務所</span></h3>
-              </Link>
               <p className="text-gray-400">
                 〒100-0001<br />
                 東京都千代田区千代田1-1-1<br />

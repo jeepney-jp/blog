@@ -86,30 +86,20 @@ export default async function BlogPage() {
             <div className="flex items-center">
               <Link href="/">
                 <h1 className="text-xl font-bold"><span className="text-gray-600">フォルティア</span><span className="text-gray-600 ml-1">行政書士事務所</span></h1>
-              </Link>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-600 hover:text-gray-900">
-                ホーム
-              </Link>
               <Link href="/about" className="text-gray-600 hover:text-gray-900">
                 事務所概要
-              </Link>
               <Link href="/services" className="text-gray-600 hover:text-gray-900">
                 サービス
-              </Link>
               <Link href="/news" className="text-gray-600 hover:text-gray-900">
                 お知らせ
-              </Link>
               <Link href="/blog" className="text-blue-600 font-semibold">
                 お役立ち情報
-              </Link>
               <Link href="/testimonials" className="text-gray-600 hover:text-gray-900">
                 お客様の声
-              </Link>
               <Link href="/contact" className="text-gray-600 hover:text-gray-900">
                 お問い合わせ
-              </Link>
             </nav>
           </div>
         </div>
@@ -121,7 +111,6 @@ export default async function BlogPage() {
           <div className="flex items-center space-x-2 text-sm text-gray-500">
             <Link href="/" className="hover:text-gray-700">
               ホーム
-            </Link>
             <span>／</span>
             <span className="text-gray-900">お役立ち情報</span>
           </div>
@@ -187,7 +176,6 @@ export default async function BlogPage() {
                       className="hover:text-blue-600 transition-colors"
                     >
                       {blog.title}
-                    </Link>
                   </h3>
                   
                   <p className="text-gray-600 leading-relaxed mb-4 line-clamp-3">
@@ -213,7 +201,6 @@ export default async function BlogPage() {
                       className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                     >
                       続きを読む →
-                    </Link>
                   </div>
                 </div>
               </article>
@@ -250,7 +237,6 @@ export default async function BlogPage() {
                       className="hover:text-blue-600 transition-colors"
                     >
                       {blog.title}
-                    </Link>
                   </h3>
                   
                   <p className="text-gray-600 leading-relaxed mb-4 line-clamp-3">
@@ -276,7 +262,6 @@ export default async function BlogPage() {
                       className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                     >
                       続きを読む →
-                    </Link>
                   </div>
                 </div>
               </article>
@@ -298,7 +283,6 @@ export default async function BlogPage() {
               className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
             >
               無料相談のお申し込み
-            </Link>
           </div>
         </div>
       </main>
@@ -310,7 +294,6 @@ export default async function BlogPage() {
             <div>
               <Link href="/">
                 <h3 className="text-base font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer"><span className="text-gray-300">フォルティア</span><span className="text-gray-300 ml-1">行政書士事務所</span></h3>
-              </Link>
               <p className="text-gray-400">
                 〒100-0001<br />
                 東京都千代田区千代田1-1-1<br />
