@@ -20,7 +20,7 @@ export default async function NewsPage() {
       title: "事務所開設のお知らせ",
       slug: { current: "jimusho-kaisetsu-oshirase" },
       publishedAt: "2025-07-07",
-      excerpt: "フォルティア行政書士事務所事務所を開設いたしました",
+      excerpt: "フォルティア行政書士事務所を開設いたしました",
       category: "important",
       featured: true
     }
