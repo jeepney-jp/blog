@@ -80,13 +80,12 @@ export default function Home() {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-purple-900/50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
           <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-4xl font-bold mb-4 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
               信頼できる行政書士として
             </h2>
-            <p className="text-xl mb-8">
+            <p className="text-xl mb-8 text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
               許認可申請から相続手続きまで、お客様のビジネスと人生をサポートします
             </p>
             <Link
