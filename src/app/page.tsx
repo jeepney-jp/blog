@@ -49,18 +49,6 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4 text-gray-800" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
-              信頼できる行政書士として
-            </h2>
-            <p className="text-xl mb-8 text-gray-700" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}}>
-              許認可申請から相続手続きまで、お客様のビジネスと人生をサポートします
-            </p>
-            <Link
-              href="/contact"
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              無料相談のお申込み
-            </Link>
           </div>
         </div>
       </section>
