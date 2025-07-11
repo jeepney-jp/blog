@@ -56,7 +56,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-left max-w-4xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-relaxed tracking-wide">
-              <span className="text-blue-500 block mb-2">人と社会をつなげる、</span>
+              <span className="text-blue-500 block mb-1">人と社会をつなげる、</span>
               <span className="text-blue-500 block">リーガルサービス</span>
             </h1>
           </div>
