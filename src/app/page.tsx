@@ -71,8 +71,13 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white min-h-screen flex items-center py-12" style={{backgroundImage: 'url(/hero-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
-        <div className="absolute inset-0 bg-blue-900 bg-opacity-70"></div>
+      <section 
+        className="relative text-white min-h-screen flex items-center py-12"
+        style={{
+          background: 'linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899, #06b6d4)',
+          backgroundSize: '300% 300%'
+        }}
+      >
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
           <div className="text-center">
             <h2 className="text-4xl font-bold mb-4">
