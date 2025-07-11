@@ -14,9 +14,6 @@ export default function About() {
               </h1>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-600 hover:text-gray-900">
-                ホーム
-              </Link>
               <Link href="/about" className="text-blue-600 font-semibold">
                 事務所概要
               </Link>
