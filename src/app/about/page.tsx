@@ -150,46 +150,50 @@ export default function About() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">メンバー紹介</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {members.map((member) => (
-              <div key={member.id} className="text-center">
-                {/* メンバー写真 */}
-                <div className="mb-4">
-                  <div className="w-48 h-48 mx-auto bg-gray-200 rounded-full overflow-hidden">
-                    <img 
-                      src={member.photo} 
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-                
-                {/* 名前とプラスボタン */}
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <h3 className="text-lg font-semibold">{member.name}</h3>
-                  <button
-                    onClick={() => toggleMember(member.id)}
-                    className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
-                    aria-label={`${member.name}の詳細を${expandedMember === member.id ? '閉じる' : '開く'}`}
-                  >
-                    <svg 
-                      className={`w-4 h-4 transition-transform ${expandedMember === member.id ? 'rotate-45' : ''}`} 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
+              <div key={member.id} className="group">
+                <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                  {/* メンバー写真 - 正方形 */}
+                  <div className="mb-4 relative">
+                    <div className="w-full aspect-square bg-gray-200 rounded-lg overflow-hidden">
+                      <img 
+                        src={member.photo} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                    {/* プラスボタン - 写真の右下に配置 */}
+                    <button
+                      onClick={() => toggleMember(member.id)}
+                      className="absolute bottom-2 right-2 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-all shadow-lg"
+                      aria-label={`${member.name}の詳細を${expandedMember === member.id ? '閉じる' : '開く'}`}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                    </svg>
-                  </button>
-                </div>
-                
-                {/* 自己紹介（展開時） */}
-                <div className={`overflow-hidden transition-all duration-300 ${
-                  expandedMember === member.id ? 'max-h-40' : 'max-h-0'
-                }`}>
-                  <p className="text-gray-600 text-sm px-4">
-                    {member.introduction}
-                  </p>
+                      <svg 
+                        className={`w-5 h-5 transition-transform duration-300 ${expandedMember === member.id ? 'rotate-45' : ''}`} 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  {/* 名前 */}
+                  <h3 className="text-xl font-semibold text-gray-900 text-center mb-3">{member.name}</h3>
+                  
+                  {/* 自己紹介（展開時） */}
+                  <div className={`overflow-hidden transition-all duration-500 ${
+                    expandedMember === member.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                    <div className="pt-4 border-t border-gray-200">
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {member.introduction}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
