@@ -26,13 +26,13 @@ export default function About() {
                   <div className="w-48 h-48 mx-auto bg-gray-200 rounded-full overflow-hidden">
                     <img 
                       src="/ceo-photo.jpg" 
-                      alt="代表 田中太郎" 
+                      alt="代表 鈴木康嗣" 
                       className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
                 <div className="mb-6 text-center">
-                  <h3 className="text-xl font-semibold mb-2">田中 太郎</h3>
+                  <h3 className="text-xl font-semibold mb-2">鈴木 康嗣</h3>
                   <p className="text-gray-600">行政書士・代表</p>
                 </div>
                 <p className="text-gray-700 mb-4">
