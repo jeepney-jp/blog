@@ -18,21 +18,21 @@ export default function About() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
+            <div className="flex flex-col h-full">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">代表者挨拶</h2>
-              <div className="bg-white p-8 rounded-lg shadow-sm">
+              <div className="bg-white p-8 rounded-lg shadow-sm flex-1 flex flex-col">
                 {/* 代表者写真 */}
                 <div className="mb-8">
                   <div className="w-48 h-48 mx-auto bg-gray-200 rounded-full overflow-hidden">
                     <img 
                       src="/ceo-photo.jpg" 
-                      alt="代表 田中太郎" 
+                      alt="代表 鈴木康嗣" 
                       className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
                 <div className="mb-6 text-center">
-                  <h3 className="text-xl font-semibold mb-2">田中 太郎</h3>
+                  <h3 className="text-xl font-semibold mb-2">鈴木 康嗣</h3>
                   <p className="text-gray-600">行政書士・代表</p>
                 </div>
                 <p className="text-gray-700 mb-4">
@@ -47,9 +47,9 @@ export default function About() {
               </div>
             </div>
             
-            <div>
+            <div className="flex flex-col h-full">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">事務所情報</h2>
-              <div className="bg-white p-8 rounded-lg shadow-sm">
+              <div className="bg-white p-8 rounded-lg shadow-sm flex-1">
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-semibold mb-2">設立日</h3>
@@ -61,9 +61,8 @@ export default function About() {
                   <div>
                     <h3 className="text-lg font-semibold mb-2">所在地</h3>
                     <p className="text-gray-700">
-                      〒100-0001<br />
-                      東京都千代田区千代田1-1-1<br />
-                      千代田ビル3階
+                      〒297-0026<br />
+                      千葉県茂原市茂原579
                     </p>
                   </div>
                   
@@ -99,6 +98,29 @@ export default function About() {
         </div>
       </section>
 
+      {/* Map Section */}
+      <section className="py-16 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">アクセス</h2>
+          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6502.435134159015!2d140.2966433!3d35.4246401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022b90562f4a5a3%3A0xc335baa974e81428!2z44CSMjk3LTAwMjYg5Y2D6JGJ55yM6IyC5Y6f5biC6IyC5Y6f77yV77yX77yZ!5e0!3m2!1sja!2sjp!4v1752280876305!5m2!1sja!2sjp"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+            ></iframe>
+          </div>
+          <div className="mt-6 text-center">
+            <p className="text-gray-700 text-lg">
+              〒297-0026 千葉県茂原市茂原579
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-16">
