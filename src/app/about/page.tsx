@@ -52,6 +52,13 @@ export default function About() {
               <div className="bg-white p-8 rounded-lg shadow-sm">
                 <div className="space-y-6">
                   <div>
+                    <h3 className="text-lg font-semibold mb-2">設立日</h3>
+                    <p className="text-gray-700">
+                      2014年
+                    </p>
+                  </div>
+                  
+                  <div>
                     <h3 className="text-lg font-semibold mb-2">所在地</h3>
                     <p className="text-gray-700">
                       〒100-0001<br />
