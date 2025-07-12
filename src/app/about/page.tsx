@@ -21,7 +21,17 @@ export default function About() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">代表者挨拶</h2>
               <div className="bg-white p-8 rounded-lg shadow-sm">
-                <div className="mb-6">
+                {/* 代表者写真 */}
+                <div className="mb-8">
+                  <div className="w-48 h-48 mx-auto bg-gray-200 rounded-full overflow-hidden">
+                    <img 
+                      src="/ceo-photo.jpg" 
+                      alt="代表 田中太郎" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="mb-6 text-center">
                   <h3 className="text-xl font-semibold mb-2">田中 太郎</h3>
                   <p className="text-gray-600">行政書士・代表</p>
                 </div>
