@@ -1,7 +1,55 @@
+"use client";
+
 import Link from "next/link";
 import Header from "@/components/Header";
+import { useState } from "react";
 
 export default function About() {
+  const [expandedMember, setExpandedMember] = useState<number | null>(null);
+
+  const members = [
+    {
+      id: 1,
+      name: "山田 花子",
+      photo: "/member1.jpg",
+      introduction: "行政書士として10年の経験があります。主に建設業許可や産業廃棄物処理業許可を担当しています。お客様の事業がスムーズに進むよう、全力でサポートいたします。"
+    },
+    {
+      id: 2,
+      name: "佐藤 一郎",
+      photo: "/member2.jpg",
+      introduction: "相続・遺言の専門家として、多くのご家族の大切な手続きをお手伝いしてきました。分かりやすい説明と親身な対応を心がけています。"
+    },
+    {
+      id: 3,
+      name: "高橋 美咲",
+      photo: "/member3.jpg",
+      introduction: "外国人の在留資格申請を主に担当しています。国際結婚や就労ビザなど、複雑な手続きも丁寧にサポートいたします。"
+    },
+    {
+      id: 4,
+      name: "渡辺 健太",
+      photo: "/member4.jpg",
+      introduction: "会社設立・法人設立のサポートを専門としています。起業家の皆様の夢の実現に向けて、設立から運営まで幅広くお手伝いします。"
+    },
+    {
+      id: 5,
+      name: "木村 さくら",
+      photo: "/member5.jpg",
+      introduction: "契約書作成や各種法務書類の作成を担当しています。正確で分かりやすい書類作成を心がけ、お客様の権利を守ります。"
+    },
+    {
+      id: 6,
+      name: "中村 大輔",
+      photo: "/member6.jpg",
+      introduction: "自動車関連業務を中心に、運送業許可や車庫証明など幅広く対応しています。迅速な手続きでお客様のビジネスをサポートします。"
+    }
+  ];
+
+  const toggleMember = (id: number) => {
+    setExpandedMember(expandedMember === id ? null : id);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -94,6 +142,57 @@ export default function About() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Members Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">メンバー紹介</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {members.map((member) => (
+              <div key={member.id} className="text-center">
+                {/* メンバー写真 */}
+                <div className="mb-4">
+                  <div className="w-48 h-48 mx-auto bg-gray-200 rounded-full overflow-hidden">
+                    <img 
+                      src={member.photo} 
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                
+                {/* 名前とプラスボタン */}
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <h3 className="text-lg font-semibold">{member.name}</h3>
+                  <button
+                    onClick={() => toggleMember(member.id)}
+                    className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
+                    aria-label={`${member.name}の詳細を${expandedMember === member.id ? '閉じる' : '開く'}`}
+                  >
+                    <svg 
+                      className={`w-4 h-4 transition-transform ${expandedMember === member.id ? 'rotate-45' : ''}`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                    </svg>
+                  </button>
+                </div>
+                
+                {/* 自己紹介（展開時） */}
+                <div className={`overflow-hidden transition-all duration-300 ${
+                  expandedMember === member.id ? 'max-h-40' : 'max-h-0'
+                }`}>
+                  <p className="text-gray-600 text-sm px-4">
+                    {member.introduction}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
