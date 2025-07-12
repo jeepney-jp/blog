@@ -167,11 +167,11 @@ export default function About() {
                     {/* プラスボタン - 写真の右下に配置 */}
                     <button
                       onClick={() => toggleMember(member.id)}
-                      className="absolute bottom-2 right-2 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-all shadow-lg"
+                      className="absolute bottom-2 right-2 w-8 h-8 bg-gray-700 text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all shadow-lg"
                       aria-label={`${member.name}の詳細を${expandedMember === member.id ? '閉じる' : '開く'}`}
                     >
                       <svg 
-                        className={`w-5 h-5 transition-transform duration-300 ${expandedMember === member.id ? 'rotate-45' : ''}`} 
+                        className={`w-4 h-4 transition-transform duration-300 ${expandedMember === member.id ? 'rotate-45' : ''}`} 
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
