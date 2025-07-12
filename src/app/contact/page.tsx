@@ -1,32 +1,10 @@
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function Contact() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <div className="flex items-center">
-              <h1 className="text-xl font-bold">
-                <span className="text-gray-600">フォルティア</span>
-                <span className="text-gray-600 ml-1">行政書士事務所</span>
-              </h1>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/about" className="text-gray-600 hover:text-gray-900">
-                事務所概要
-              </Link>
-              <Link href="/services" className="text-gray-600 hover:text-gray-900">
-                サービス
-              </Link>
-              <Link href="/contact" className="text-blue-600 font-semibold">
-                お問い合わせ
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Page Header */}
       <section className="bg-blue-600 text-white py-16">
