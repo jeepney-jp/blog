@@ -152,8 +152,8 @@ export default function About() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">メンバー紹介</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {members.map((member) => (
-              <div key={member.id} className="group">
-                <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <div key={member.id} className="group h-full">
+                <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow h-full flex flex-col">
                   {/* メンバー写真 - 正方形 */}
                   <div className="mb-4 relative">
                     <div className="w-full aspect-square bg-gray-200 rounded-lg overflow-hidden">
@@ -167,7 +167,7 @@ export default function About() {
                     {/* プラスボタン - 写真の右下に配置 */}
                     <button
                       onClick={() => toggleMember(member.id)}
-                      className="absolute bottom-2 right-2 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-all shadow-lg"
+                      className="absolute bottom-2 right-2 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-all shadow-lg z-10"
                       aria-label={`${member.name}の詳細を${expandedMember === member.id ? '閉じる' : '開く'}`}
                     >
                       <svg 
@@ -184,14 +184,16 @@ export default function About() {
                   {/* 名前 */}
                   <h3 className="text-xl font-semibold text-gray-900 text-center mb-3">{member.name}</h3>
                   
-                  {/* 自己紹介（展開時） */}
-                  <div className={`overflow-hidden transition-all duration-500 ${
-                    expandedMember === member.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  }`}>
-                    <div className="pt-4 border-t border-gray-200">
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        {member.introduction}
-                      </p>
+                  {/* 自己紹介コンテナ - 常に存在 */}
+                  <div className="flex-1">
+                    <div className={`transition-all duration-500 ${
+                      expandedMember === member.id ? 'opacity-100' : 'opacity-0 invisible'
+                    }`}>
+                      <div className="border-t border-gray-200 pt-4">
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {member.introduction}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
