@@ -2,8 +2,16 @@ import Link from "next/link";
 import { sanityClient } from '@/lib/sanity.client';
 import { topPageCategoriesQuery } from '@/lib/queries';
 
+// 型定義
+interface ServiceCategoryItem {
+  _id: string;
+  title: string;
+  slug: string;
+  iconUrl?: string;
+}
+
 // Sanityからサービスカテゴリを取得
-async function getServiceCategories() {
+async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
   // 環境変数が設定されていない場合は空配列を返す
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
     return [];
