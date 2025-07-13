@@ -53,6 +53,10 @@ export interface ServiceCategory {
     _id: string;
     title: string;
   }>;
+  metaTitle?: string;
+  metaDescription?: string;
+  ogImage?: SanityImageAsset;
+  ogImageUrl?: string;
 }
 
 export interface ServiceDetail {
