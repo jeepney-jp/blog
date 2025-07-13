@@ -5,13 +5,15 @@ import { sanityClient } from '@/lib/sanity.client';
 import { 
   serviceDetailQuery, 
   allServiceDetailSlugsQuery,
-  relatedServicesByTagQuery 
+  relatedServicesByTagQuery,
+  relatedServicesQuery 
 } from '@/lib/queries';
 import { ServiceDetail } from '@/lib/types';
 import { PortableText } from '@portabletext/react';
 import Header from '@/components/Header';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { FaqAccordion } from '@/components/FaqAccordion';
+import RelatedServices from '@/components/RelatedServices';
 import Script from 'next/script';
 
 type Props = {
@@ -111,6 +113,15 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   // 関連サービスの取得（新しいrelated フィールドを優先）
   const relatedServices = data.related ? [] : await getRelatedServices(data._id, data.tag || []);
+  
+  // relatedServicesQueryを使用した関連サービス取得
+  const relatedServicesByCategory = data.parentCategoryRef && data.tag && data.tag.length > 0 
+    ? await sanityClient.fetch(relatedServicesQuery, {
+        tags: data.tag,
+        currentSlug: slug,
+        parentCategoryId: data.parentCategoryRef,
+      })
+    : [];
 
   // FAQ構造化データの生成
   const faqStructuredData = data.faq && data.faq.length > 0 ? {
@@ -249,8 +260,16 @@ export default async function ServiceDetailPage({ params }: Props) {
           </section>
         )}
         
+        {/* relatedServicesQueryを使用した関連サービス */}
+        {!data.related && relatedServicesByCategory.length > 0 && (
+          <RelatedServices
+            services={relatedServicesByCategory}
+            currentCategorySlug={category}
+          />
+        )}
+        
         {/* 既存の関連サービス（フォールバック） */}
-        {!data.related && relatedServices.length > 0 && (
+        {!data.related && relatedServicesByCategory.length === 0 && relatedServices.length > 0 && (
           <section aria-label="関連サービス" className="bg-gray-50 rounded-xl p-8">
             <h2 className="text-2xl font-bold text-[#004080] mb-2">
               このようなサービスもご覧になっています

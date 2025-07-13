@@ -5,11 +5,11 @@ import Link from 'next/link';
 type RelatedService = {
   _id: string;
   title: string;
-  slug: { current: string };
+  slug: string;
   overview: string;
   target: string;
   price: string;
-  tag: string[];
+  tag?: string[];
 };
 
 type Props = {
@@ -27,7 +27,7 @@ export default function RelatedServices({ services, currentCategorySlug }: Props
         {services.map((service) => (
           <Link
             key={service._id}
-            href={`/services/${currentCategorySlug}/${service.slug.current}`}
+            href={`/services/${currentCategorySlug}/${service.slug}`}
             className="block border border-gray-200 p-4 rounded-lg hover:shadow-md transition"
           >
             <h3 className="text-lg font-semibold">{service.title}</h3>
