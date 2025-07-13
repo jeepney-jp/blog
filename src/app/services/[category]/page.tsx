@@ -84,10 +84,10 @@ export default async function CategoryPage({ params }: Props) {
       <div className="max-w-6xl mx-auto px-4 py-12 space-y-16">
       {/* パンくず */}
       <Breadcrumbs
-        items={[
-          { label: 'ホーム', href: '/' },
-          { label: 'サービス案内', href: '/services' },
-          { label: data.title },
+        segments={[
+          { name: 'ホーム', href: '/' },
+          { name: 'サービス案内', href: '/services' },
+          { name: data.title, href: `/services/${category}` },
         ]}
       />
 
