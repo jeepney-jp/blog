@@ -5,7 +5,8 @@
 // 1. すべてのカテゴリーのスラッグを取得（動的ルート生成用）
 export const categorySlugsQuery = `
   *[_type == "serviceCategory" && defined(slug.current)] {
-    "slug": slug.current
+    "slug": slug.current,
+    locale
   }
 `;
 
@@ -13,20 +14,22 @@ export const categorySlugsQuery = `
 export const allServiceDetailSlugsQuery = `
   *[_type == "serviceDetail" && defined(slug.current) && defined(parentCategory->slug.current)] {
     "slug": slug.current,
-    "categorySlug": parentCategory->slug.current
+    "categorySlug": parentCategory->slug.current,
+    locale
   }
 `;
 
 // 3. サービスカテゴリー一覧を取得（階層1ページ用）
 export const allServiceCategoriesQuery = `
-  *[_type == "serviceCategory"] | order(orderRank asc, _createdAt asc) {
+  *[_type == "serviceCategory" && locale == $locale] | order(orderRank asc, _createdAt asc) {
     _id,
+    locale,
     title,
     "slug": slug.current,
     catchphrase,
     "iconUrl": icon.asset->url,
     "imageUrl": image.asset->url,
-    "previewServices": *[_type == "serviceDetail" && references(^._id)] | order(orderRank asc, _createdAt asc)[0...3] {
+    "previewServices": *[_type == "serviceDetail" && references(^._id) && locale == $locale] | order(orderRank asc, _createdAt asc)[0...3] {
       _id,
       title
     }
@@ -35,8 +38,9 @@ export const allServiceCategoriesQuery = `
 
 // 4. 特定カテゴリーの詳細と関連サービスを取得（階層2ページ用）
 export const categoryPageQuery = `
-  *[_type == "serviceCategory" && slug.current == $slug][0] {
+  *[_type == "serviceCategory" && slug.current == $slug && locale == $locale][0] {
     _id,
+    locale,
     title,
     "slug": slug.current,
     catchphrase,
@@ -47,7 +51,7 @@ export const categoryPageQuery = `
     "ogImageUrl": ogImage.asset->url,
     "iconUrl": icon.asset->url,
     "imageUrl": image.asset->url,
-    "services": *[_type == "serviceDetail" && references(^._id)] | order(orderRank asc, _createdAt asc) {
+    "services": *[_type == "serviceDetail" && references(^._id) && locale == $locale] | order(orderRank asc, _createdAt asc) {
       _id,
       title,
       "slug": slug.current,
@@ -60,8 +64,9 @@ export const categoryPageQuery = `
 
 // 5. 特定サービス詳細を取得（階層3ページ用）
 export const serviceDetailQuery = `
-  *[_type == "serviceDetail" && slug.current == $slug][0] {
+  *[_type == "serviceDetail" && slug.current == $slug && locale == $locale][0] {
     _id,
+    locale,
     title,
     "slug": slug.current,
     overview,
@@ -87,8 +92,9 @@ export const serviceDetailQuery = `
 
 // 6. トップページ用：カテゴリー一覧（シンプル版）
 export const topPageCategoriesQuery = `
-  *[_type == "serviceCategory"] | order(orderRank asc, _createdAt asc) {
+  *[_type == "serviceCategory" && locale == $locale] | order(orderRank asc, _createdAt asc) {
     _id,
+    locale,
     title,
     "slug": slug.current,
     "iconUrl": icon.asset->url
@@ -97,8 +103,9 @@ export const topPageCategoriesQuery = `
 
 // 7. 関連サービスを取得（同じタグを持つ他のサービス）
 export const relatedServicesByTagQuery = `
-  *[_type == "serviceDetail" && _id != $currentServiceId && count(tag[@in $tags]) > 0] | order(count(tag[@in $tags]) desc, _createdAt desc)[0...3] {
+  *[_type == "serviceDetail" && _id != $currentServiceId && locale == $locale && count(tag[@in $tags]) > 0] | order(count(tag[@in $tags]) desc, _createdAt desc)[0...3] {
     _id,
+    locale,
     title,
     "slug": slug.current,
     overview,

@@ -39,6 +39,7 @@ export interface PortableTextBlock {
 
 export interface ServiceCategory {
   _id: string;
+  locale: string;
   title: string;
   slug: string;
   icon?: SanityImageAsset;
@@ -61,6 +62,7 @@ export interface ServiceCategory {
 
 export interface ServiceDetail {
   _id: string;
+  locale: string;
   title: string;
   slug: string;
   overview?: string;

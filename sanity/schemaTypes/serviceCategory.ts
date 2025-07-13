@@ -10,6 +10,20 @@ export default {
   title: 'サービスカテゴリ',
   fields: [
     {
+      name: 'locale',
+      title: '言語',
+      type: 'string',
+      options: {
+        list: [
+          { title: '日本語', value: 'ja' },
+          { title: 'English', value: 'en' }
+        ],
+        layout: 'radio'
+      },
+      initialValue: 'ja',
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: 'orderRank',
       type: 'number',
       title: '表示順',
