@@ -91,6 +91,7 @@ export interface ServiceDetail {
     title: string;
     slug: string;
   };
+  parentCategoryRef?: string;
   related?: Array<{
     title: string;
     slug: string;
