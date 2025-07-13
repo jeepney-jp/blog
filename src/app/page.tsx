@@ -278,7 +278,7 @@ export default async function Home() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900">その他の業務</h3>
             </div>
-            </div>
+          </div>
           )}
         </div>
       </section>
