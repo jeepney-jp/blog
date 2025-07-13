@@ -82,4 +82,12 @@ export interface ServiceDetail {
     title: string;
     slug: string;
   };
+  related?: Array<{
+    title: string;
+    slug: string;
+    overview?: string;
+    parentCategory: {
+      slug: string;
+    };
+  }>;
 }
