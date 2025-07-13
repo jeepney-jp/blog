@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 // import { getNews } from "../../../lib/sanity";
 
 // ニュースの型定義
@@ -31,14 +32,13 @@ export default async function NewsPage() {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
+      <PageHeader 
+        title="お知らせ"
+        description="フォルティア行政書士事務所からの最新情報をお届けします"
+      />
+
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">お知らせ</h1>
-          <p className="text-lg text-gray-600">
-            フォルティア行政書士事務所からの最新情報をお届けします。
-          </p>
-        </div>
 
         {/* News List */}
         <div className="grid gap-6">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import PageHeader from "@/components/PageHeader";
 import { sanityClient } from '@/lib/sanity.client';
 import { allServiceCategoriesQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
@@ -30,13 +31,10 @@ export default async function Services() {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      {/* Page Header */}
-      <section className="bg-[#004080] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">サービス総合案内</h1>
-          <p className="text-xl">お客様のニーズに合わせた幅広いサービスを提供しています</p>
-        </div>
-      </section>
+      <PageHeader 
+        title="サービス総合案内"
+        description="お客様のニーズに合わせた幅広いサービスを提供しています"
+      />
 
       {/* Services Content */}
       <section className="py-16">
