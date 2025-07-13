@@ -78,16 +78,19 @@ export default {
       name: 'metaTitle',
       type: 'string',
       title: 'SEOタイトル',
+      description: '検索エンジンやブラウザタブに表示されるタイトル'
     },
     {
       name: 'metaDescription',
       type: 'text',
       title: 'SEOディスクリプション',
+      description: '検索結果に表示されるページの説明文（120〜160字推奨）'
     },
     {
       name: 'ogImage',
       type: 'image',
       title: 'OGP画像',
+      description: 'SNSなどでシェアされた時に表示される画像'
     },
   ],
   orderings: [
