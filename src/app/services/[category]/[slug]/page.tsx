@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
-  const data = await sanityClient.fetch(serviceDetailQuery, { slug });
+  const data = await sanityClient.fetch(serviceDetailQuery, { slug, locale: 'ja' });
   
   if (!data) return {};
 
@@ -81,6 +81,7 @@ async function getRelatedServices(currentServiceId: string, tags: string[]): Pro
     return await sanityClient.fetch(relatedServicesByTagQuery, {
       currentServiceId,
       tags,
+      locale: 'ja', // 既存のページのためのフォールバック
     });
   } catch (error) {
     console.error('Failed to fetch related services:', error);
@@ -103,7 +104,7 @@ export default async function ServiceDetailPage({ params }: Props) {
     );
   }
 
-  const data: ServiceDetail = await sanityClient.fetch(serviceDetailQuery, { slug });
+  const data: ServiceDetail = await sanityClient.fetch(serviceDetailQuery, { slug, locale: 'ja' });
 
   if (!data) {
     notFound();

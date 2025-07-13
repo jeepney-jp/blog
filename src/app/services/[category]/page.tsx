@@ -38,6 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const data: ServiceCategory = await sanityClient.fetch(categoryPageQuery, {
     slug: category,
+    locale: 'ja', // 既存のページのためのフォールバック
   });
   
   if (!data) {
@@ -74,6 +75,7 @@ export default async function CategoryPage({ params }: Props) {
   
   const data: ServiceCategory = await sanityClient.fetch(categoryPageQuery, {
     slug: category,
+    locale: 'ja', // 既存のページのためのフォールバック
   });
 
   if (!data) return <div>ページが見つかりません</div>;

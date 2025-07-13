@@ -16,7 +16,8 @@ async function getServiceCategories(): Promise<ServiceCategory[]> {
   }
   
   try {
-    return await sanityClient.fetch(allServiceCategoriesQuery);
+    // 既存のページのためのフォールバック：localeパラメータなしでjaをデフォルトとして使用
+    return await sanityClient.fetch(allServiceCategoriesQuery, { locale: 'ja' });
   } catch (error) {
     console.error('Failed to fetch service categories:', error);
     return [];

@@ -22,7 +22,7 @@ async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
   }
   
   try {
-    const data = await sanityClient.fetch(allServiceCategoriesQuery);
+    const data = await sanityClient.fetch(allServiceCategoriesQuery, { locale: 'ja' });
     return data;
   } catch (error) {
     console.error('Failed to fetch service categories:', error);
