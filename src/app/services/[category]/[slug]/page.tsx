@@ -137,18 +137,52 @@ export default async function ServiceDetailPage({ params }: Props) {
     })),
   } : null;
 
+  // Service構造化データの生成
+  const serviceStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: data.title,
+    description: data.overview || data.metaDescription || '',
+    provider: {
+      '@type': 'LegalService',
+      name: 'フォルティア行政書士事務所',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '茂原579',
+        addressLocality: '茂原市',
+        addressRegion: '千葉県',
+        postalCode: '297-0026',
+        addressCountry: 'JP'
+      }
+    },
+    ...(data.priceMin || data.priceMax || data.price ? {
+      offers: {
+        '@type': 'Offer',
+        price: data.priceMin || data.price || '',
+        priceCurrency: 'JPY',
+        ...(data.priceMin && data.priceMax ? {
+          priceRange: `¥${data.priceMin.toLocaleString()}〜¥${data.priceMax.toLocaleString()}`
+        } : {})
+      }
+    } : {}),
+    areaServed: ['東京都', '千葉県', '埼玉県', '神奈川県']
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      {/* FAQ構造化データ */}
-      {faqStructuredData && (
-        <Script
-          id="faq-structured-data"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
-        />
-      )}
+      {/* 構造化データ */}
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ 
+          __html: JSON.stringify([
+            ...(faqStructuredData ? [faqStructuredData] : []),
+            serviceStructuredData
+          ])
+        }}
+      />
 
       <main className="max-w-6xl mx-auto px-4 py-12 space-y-16">
         {/* パンくず */}
