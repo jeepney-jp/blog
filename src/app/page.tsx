@@ -14,8 +14,14 @@ interface ServiceCategoryItem {
   slug: string;
   iconUrl?: string;
   imageUrl?: string;
-  icon?: any;
-  image?: any;
+  icon?: {
+    _id: string;
+    url: string;
+  };
+  image?: {
+    _id: string;
+    url: string;
+  };
 }
 
 // Sanityからサービスカテゴリを取得
@@ -127,11 +133,14 @@ export default async function Home() {
                 </svg>
               </Link>
             </div>
-            <div className="relative">
-              <img 
+            <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px]">
+              <Image 
                 src="/office-consultation.jpg" 
                 alt="事務所での相談風景" 
-                className="w-full h-auto rounded-lg shadow-lg object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="rounded-lg shadow-lg object-cover"
+                priority
               />
             </div>
           </div>

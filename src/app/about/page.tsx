@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import { useState } from "react";
 
@@ -71,11 +72,13 @@ export default function About() {
               <div className="bg-white p-8 rounded-lg shadow-sm flex-1 flex flex-col">
                 {/* 代表者写真 */}
                 <div className="mb-8">
-                  <div className="w-48 h-48 mx-auto bg-gray-200 rounded-full overflow-hidden">
-                    <img 
+                  <div className="w-48 h-48 mx-auto bg-gray-200 rounded-full overflow-hidden relative">
+                    <Image 
                       src="/ceo-photo.jpg" 
                       alt="代表 鈴木康嗣" 
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="192px"
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -156,11 +159,13 @@ export default function About() {
                 <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
                   {/* メンバー写真 - 正方形 */}
                   <div className="mb-4 relative">
-                    <div className="w-full aspect-square bg-gray-200 rounded-lg overflow-hidden">
-                      <img 
+                    <div className="w-full aspect-square bg-gray-200 rounded-lg overflow-hidden relative">
+                      <Image 
                         src={member.photo} 
                         alt={member.name}
-                        className="w-full h-full object-cover"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover"
                       />
                     </div>
                     
