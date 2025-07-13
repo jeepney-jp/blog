@@ -355,39 +355,63 @@ export default async function Home() {
               事務所からの重要なお知らせをご確認ください
             </p>
           </div>
-          <div className="grid gap-6">
-            <article className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <div className="flex items-center space-x-4 mb-2">
-                    <time className="text-sm text-gray-500">
+          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+            <ul className="divide-y divide-gray-200">
+              <li>
+                <Link 
+                  href="/news/jimusho-kaisetsu-oshirase"
+                  className="block px-6 py-4 hover:bg-gray-50 transition-colors"
+                >
+                  <div className="flex items-center gap-4">
+                    <time className="text-sm text-gray-500 whitespace-nowrap">
                       2025年7月7日
                     </time>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 whitespace-nowrap">
                       重要
                     </span>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                      注目
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    <Link 
-                      href="/news/jimusho-kaisetsu-oshirase"
-                      className="hover:text-blue-600 transition-colors"
-                    >
+                    <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
                       事務所開設のお知らせ
-                    </Link>
-                  </h3>
-                  <p className="text-gray-600 mb-4">フォルティア行政書士事務所事務所を開設いたしました</p>
-                  <Link
-                    href="/news/jimusho-kaisetsu-oshirase"
-                    className="text-blue-600 hover:text-blue-800 font-medium"
-                  >
-                    続きを読む →
-                  </Link>
-                </div>
-              </div>
-            </article>
+                    </h3>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/news/kensetsu-kyoka-shinsei"
+                  className="block px-6 py-4 hover:bg-gray-50 transition-colors"
+                >
+                  <div className="flex items-center gap-4">
+                    <time className="text-sm text-gray-500 whitespace-nowrap">
+                      2025年7月5日
+                    </time>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 whitespace-nowrap">
+                      業務案内
+                    </span>
+                    <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
+                      建設業許可申請の受付を開始しました
+                    </h3>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/news/sozoku-muryo-sodan"
+                  className="block px-6 py-4 hover:bg-gray-50 transition-colors"
+                >
+                  <div className="flex items-center gap-4">
+                    <time className="text-sm text-gray-500 whitespace-nowrap">
+                      2025年6月28日
+                    </time>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 whitespace-nowrap">
+                      重要
+                    </span>
+                    <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
+                      相続・遺言無料相談会を開催します
+                    </h3>
+                  </div>
+                </Link>
+              </li>
+            </ul>
           </div>
           <div className="text-center mt-8">
             <Link
