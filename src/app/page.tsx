@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { sanityClient } from '@/lib/sanity.client';
-import { topPageCategoriesQuery } from '@/lib/queries';
+import { allServiceCategoriesQuery } from '@/lib/queries';
+
+// ISR設定：1日ごとに再生成
+export const revalidate = 86400;
 
 // 型定義
 interface ServiceCategoryItem {
@@ -18,7 +21,7 @@ async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
   }
   
   try {
-    return await sanityClient.fetch(topPageCategoriesQuery);
+    return await sanityClient.fetch(allServiceCategoriesQuery);
   } catch (error) {
     console.error('Failed to fetch service categories:', error);
     return [];
@@ -27,7 +30,6 @@ async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
 
 export default async function Home() {
   const serviceCategories = await getServiceCategories();
-  console.log('Homepage - Fetched categories:', serviceCategories);
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
