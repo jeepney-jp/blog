@@ -10,6 +10,16 @@ export default {
   title: 'サービス詳細',
   fields: [
     {
+      name: 'orderRank',
+      type: 'number',
+      title: '表示順',
+      description: '小さい数字が上位に表示されます',
+      options: {
+        isHighlighted: true,
+      },
+      validation: (Rule: Rule) => Rule.required().integer().min(0),
+    },
+    {
       name: 'title',
       type: 'string',
       title: 'サービス名',
@@ -109,11 +119,6 @@ export default {
       name: 'ogImage',
       type: 'image',
       title: 'OGP画像',
-    },
-    {
-      name: 'orderRank',
-      type: 'number',
-      title: '表示順（小さいほど先頭）',
     },
     {
       name: 'tag',
