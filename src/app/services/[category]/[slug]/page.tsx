@@ -234,25 +234,31 @@ export default async function ServiceDetailPage({ params }: Props) {
 
         {/* 関連サービス */}
         {relatedServices.length > 0 && (
-          <section aria-label="関連サービス" className="bg-white rounded-xl shadow-sm p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              関連サービス
+          <section aria-label="関連サービス" className="bg-gray-50 rounded-xl p-8">
+            <h2 className="text-2xl font-bold text-[#004080] mb-2">
+              このようなサービスもご覧になっています
             </h2>
+            <p className="text-gray-600 mb-6">関連する他のサービスもぜひご確認ください</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedServices.map((service) => (
                 <Link
                   key={service._id}
                   href={`/services/${service.categorySlug}/${service.slug}`}
-                  className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="group bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                 >
-                  <h3 className="font-semibold text-lg text-gray-900 mb-2">
+                  <h3 className="font-semibold text-lg text-gray-900 mb-3 group-hover:text-[#004080] transition-colors">
                     {service.title}
                   </h3>
                   {service.overview && (
-                    <p className="text-sm text-gray-600">{service.overview}</p>
+                    <p className="text-sm text-gray-600 line-clamp-3 mb-4">
+                      {service.overview}
+                    </p>
                   )}
-                  <span className="inline-block mt-4 text-[#004080] hover:text-[#003366] font-medium">
-                    詳しく見る →
+                  <span className="inline-flex items-center text-[#004080] group-hover:text-[#003366] font-medium">
+                    詳しく見る
+                    <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </span>
                 </Link>
               ))}
