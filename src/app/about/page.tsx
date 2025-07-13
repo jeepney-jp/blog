@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 import { useState } from "react";
 
 export default function About() {
@@ -55,13 +56,10 @@ export default function About() {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      {/* Page Header */}
-      <section className="bg-blue-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">事務所概要</h1>
-          <p className="text-xl">フォルティア行政書士事務所について</p>
-        </div>
-      </section>
+      <PageHeader 
+        title="事務所概要"
+        description="フォルティア行政書士事務所について"
+      />
 
       {/* About Content */}
       <section className="py-16">

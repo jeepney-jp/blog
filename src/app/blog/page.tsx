@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 // import { getBlogs } from "../../../lib/sanity";
 
 // ブログ記事の型定義
@@ -82,6 +83,11 @@ export default async function BlogPage() {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
+      <PageHeader 
+        title="お役立ち情報"
+        description="行政書士業務に関する有用な情報や法改正のポイントなど、皆様のお役に立つ情報をお届けします"
+      />
+
       {/* Breadcrumb */}
       <nav className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -94,18 +100,6 @@ export default async function BlogPage() {
           </div>
         </div>
       </nav>
-
-      {/* Page Header */}
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">お役立ち情報</h1>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              行政書士業務に関する有用な情報や法改正のポイントなど、皆様のお役に立つ情報をお届けします。
-            </p>
-          </div>
-        </div>
-      </div>
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

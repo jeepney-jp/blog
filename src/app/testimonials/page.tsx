@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 // import { getTestimonials } from "../../../lib/sanity";
 
 // お客様の声の型定義
@@ -74,6 +75,11 @@ export default async function TestimonialsPage() {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
+      <PageHeader 
+        title="お客様の声"
+        description="当事務所をご利用いただいたお客様からの貴重なご意見・ご感想をご紹介いたします"
+      />
+
       {/* Breadcrumb */}
       <nav className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -86,18 +92,6 @@ export default async function TestimonialsPage() {
           </div>
         </div>
       </nav>
-
-      {/* Page Header */}
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">お客様の声</h1>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              当事務所をご利用いただいたお客様からの貴重なご意見・ご感想をご紹介いたします。
-            </p>
-          </div>
-        </div>
-      </div>
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
