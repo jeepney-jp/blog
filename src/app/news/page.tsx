@@ -107,7 +107,6 @@ export default async function NewsPage() {
                 </li>
               ))}
             </ul>
-            ))
           ) : (
             <div className="bg-white rounded-lg shadow-sm p-12 text-center">
               <p className="text-gray-500 text-lg">お知らせはまだありません。</p>
