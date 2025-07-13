@@ -10,6 +10,10 @@ interface FaqAccordionProps {
 export function FaqAccordion({ faqs }: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  if (!faqs || faqs.length === 0) {
+    return null;
+  }
+
   const toggleItem = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
