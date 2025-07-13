@@ -4,10 +4,10 @@ import { useState } from 'react';
 import { FaqItem } from '@/lib/types';
 
 interface FaqAccordionProps {
-  items: FaqItem[];
+  faqs: FaqItem[];
 }
 
-export default function FaqAccordion({ items }: FaqAccordionProps) {
+export function FaqAccordion({ faqs }: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
@@ -16,13 +16,13 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
 
   return (
     <div className="space-y-4">
-      {items.map((item, index) => (
+      {faqs.map((faq, index) => (
         <div key={index} className="border border-gray-200 rounded-lg">
           <button
             className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
             onClick={() => toggleItem(index)}
           >
-            <span className="font-medium text-gray-900">{item.question}</span>
+            <span className="font-medium text-gray-900">{faq.question}</span>
             <svg
               className={`w-5 h-5 text-gray-500 transition-transform ${
                 openIndex === index ? 'rotate-180' : ''
@@ -41,7 +41,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
           </button>
           {openIndex === index && (
             <div className="px-6 py-4 border-t border-gray-200">
-              <p className="text-gray-700">{item.answer}</p>
+              <p className="text-gray-700">{faq.answer}</p>
             </div>
           )}
         </div>
