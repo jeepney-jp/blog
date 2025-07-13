@@ -1,6 +1,24 @@
 import Link from "next/link";
+import { sanityClient } from '@/lib/sanity.client';
+import { topPageCategoriesQuery } from '@/lib/queries';
 
-export default function Home() {
+// Sanityからサービスカテゴリを取得
+async function getServiceCategories() {
+  // 環境変数が設定されていない場合は空配列を返す
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
+    return [];
+  }
+  
+  try {
+    return await sanityClient.fetch(topPageCategoriesQuery);
+  } catch (error) {
+    console.error('Failed to fetch service categories:', error);
+    return [];
+  }
+}
+
+export default async function Home() {
+  const serviceCategories = await getServiceCategories();
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -260,8 +278,8 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900">その他の業務</h3>
             </div>
-
-          </div>
+            </div>
+          )}
         </div>
       </section>
 
