@@ -158,10 +158,33 @@ export default async function ServiceDetailPage({ params }: Props) {
     ...(data.priceMin || data.priceMax || data.price ? {
       offers: {
         '@type': 'Offer',
-        price: data.priceMin || data.price || '',
         priceCurrency: 'JPY',
         ...(data.priceMin && data.priceMax ? {
-          priceRange: `¥${data.priceMin.toLocaleString()}〜¥${data.priceMax.toLocaleString()}`
+          priceSpecification: {
+            '@type': 'UnitPriceSpecification',
+            minPrice: data.priceMin,
+            maxPrice: data.priceMax,
+            priceCurrency: 'JPY'
+          }
+        } : data.priceMin ? {
+          price: data.priceMin,
+          priceSpecification: {
+            '@type': 'UnitPriceSpecification',
+            minPrice: data.priceMin,
+            priceCurrency: 'JPY'
+          }
+        } : data.priceMax ? {
+          price: data.priceMax,
+          priceSpecification: {
+            '@type': 'UnitPriceSpecification',
+            maxPrice: data.priceMax,
+            priceCurrency: 'JPY'
+          }
+        } : {
+          price: data.price || ''
+        }),
+        ...(data.priceNote ? {
+          description: data.priceNote
         } : {})
       }
     } : {}),
@@ -201,7 +224,28 @@ export default async function ServiceDetailPage({ params }: Props) {
             {data.title}
           </h1>
           {data.overview && (
-            <p className="text-lg text-gray-700">{data.overview}</p>
+            <p className="text-lg text-gray-700 mb-4">{data.overview}</p>
+          )}
+          
+          {/* 料金情報 */}
+          {(data.priceMin || data.priceMax || data.priceNote) && (
+            <div className="bg-blue-50 rounded-lg p-4 inline-block">
+              <div className="flex items-baseline gap-2">
+                <span className="text-sm font-medium text-gray-600">料金目安：</span>
+                <span className="text-xl font-bold text-[#004080]">
+                  {data.priceMin && data.priceMax
+                    ? `¥${data.priceMin.toLocaleString()}〜¥${data.priceMax.toLocaleString()}`
+                    : data.priceMin
+                    ? `¥${data.priceMin.toLocaleString()}〜`
+                    : data.priceMax
+                    ? `〜¥${data.priceMax.toLocaleString()}`
+                    : data.priceNote || data.price || '個別見積り'}
+                </span>
+              </div>
+              {data.priceNote && (data.priceMin || data.priceMax) && (
+                <p className="text-sm text-gray-600 mt-1">{data.priceNote}</p>
+              )}
+            </div>
           )}
         </section>
 
