@@ -3,7 +3,7 @@
 // 対象: serviceCategory および serviceDetail コレクション
 
 // 1. すべてのカテゴリーのスラッグを取得（動的ルート生成用）
-export const allCategorySlugsQuery = `
+export const categorySlugsQuery = `
   *[_type == "serviceCategory" && defined(slug.current)] {
     "slug": slug.current
   }
@@ -30,7 +30,7 @@ export const allServiceCategoriesQuery = `
 `;
 
 // 4. 特定カテゴリーの詳細と関連サービスを取得（階層2ページ用）
-export const serviceCategoryWithDetailsQuery = `
+export const categoryPageQuery = `
   *[_type == "serviceCategory" && slug.current == $slug][0] {
     _id,
     title,

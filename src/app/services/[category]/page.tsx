@@ -2,7 +2,7 @@
 
 import { sanityClient } from '@/lib/sanity.client';
 import { categoryPageQuery, categorySlugsQuery } from '@/lib/queries';
-import { ServiceCategory } from '@/types';
+import { ServiceCategory } from '@/lib/types';
 import { PortableText } from '@portabletext/react';
 import FaqAccordion from '@/components/FaqAccordion';
 import Breadcrumbs from '@/components/Breadcrumbs';
