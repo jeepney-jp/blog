@@ -11,7 +11,7 @@ import { ServiceDetail } from '@/lib/types';
 import { PortableText } from '@portabletext/react';
 import Header from '@/components/Header';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import FaqAccordion from '@/components/FaqAccordion';
+import { FaqAccordion } from '@/components/FaqAccordion';
 import Script from 'next/script';
 
 type Props = {
@@ -228,7 +228,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             <h2 className="text-2xl font-bold text-[#004080] mb-6">
               よくある質問
             </h2>
-            <FaqAccordion items={data.faq} />
+            <FaqAccordion faqs={data.faq} />
           </section>
         )}
 

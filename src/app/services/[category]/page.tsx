@@ -7,7 +7,7 @@ import { categoryPageQuery, categorySlugsQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
 import { PortableText } from '@portabletext/react';
 import Header from '@/components/Header';
-import FaqAccordion from '@/components/FaqAccordion';
+import { FaqAccordion } from '@/components/FaqAccordion';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CtaBanner from '@/components/CtaBanner';
 import ServiceTable from '@/components/ServiceTable';
@@ -110,7 +110,7 @@ export default async function CategoryPage({ params }: Props) {
       {data.faq && data.faq.length > 0 && (
         <section>
           <h2 className="text-2xl font-semibold mb-4">よくあるご質問</h2>
-          <FaqAccordion items={data.faq} />
+          <FaqAccordion faqs={data.faq} />
         </section>
       )}
 
