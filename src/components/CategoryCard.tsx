@@ -1,11 +1,19 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ServiceCategory } from '@/lib/types';
+import { getOptimizedImageProps } from '@/lib/sanityImage';
 
 interface CategoryCardProps {
   category: ServiceCategory;
 }
 
 export default function CategoryCard({ category }: CategoryCardProps) {
+  const imageProps = getOptimizedImageProps(category.image, {
+    width: 400,
+    quality: 80,
+    sizes: '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
+  });
+
   return (
     <Link
       href={`/services/${category.slug}`}
@@ -13,11 +21,16 @@ export default function CategoryCard({ category }: CategoryCardProps) {
     >
       {/* カテゴリー画像 */}
       <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
-        {category.imageUrl ? (
-          <img
-            src={category.imageUrl}
+        {imageProps ? (
+          <Image
+            src={imageProps.src}
             alt={category.title}
-            className="w-full h-full object-cover"
+            width={imageProps.width}
+            height={imageProps.height}
+            sizes={imageProps.sizes}
+            className="object-cover"
+            fill
+            priority={false}
           />
         ) : (
           <div className="flex items-center justify-center h-full">
