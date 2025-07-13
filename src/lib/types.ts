@@ -56,6 +56,7 @@ export interface ServiceCategory {
 }
 
 export interface ServiceDetail {
+  _id: string;
   title: string;
   slug: string;
   overview?: string;
@@ -71,7 +72,9 @@ export interface ServiceDetail {
   metaTitle?: string;
   metaDescription?: string;
   ogImage?: SanityImageAsset;
-  category?: {
+  ogImageUrl?: string;
+  parentCategory?: {
+    _id: string;
     title: string;
     slug: string;
   };
