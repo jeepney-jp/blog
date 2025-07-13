@@ -1,15 +1,38 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import { sanityClient } from '@/lib/sanity.client';
+import { allServiceCategoriesQuery } from '@/lib/queries';
+import { ServiceCategory } from '@/lib/types';
+import CategoryCard from '@/components/CategoryCard';
 
-export default function Services() {
+// ISRの設定：1日ごとに再生成
+export const revalidate = 86400;
+
+// Sanityからカテゴリ一覧を取得
+async function getServiceCategories(): Promise<ServiceCategory[]> {
+  // 環境変数が設定されていない場合は空配列を返す
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
+    return [];
+  }
+  
+  try {
+    return await sanityClient.fetch(allServiceCategoriesQuery);
+  } catch (error) {
+    console.error('Failed to fetch service categories:', error);
+    return [];
+  }
+}
+
+export default async function Services() {
+  const categories = await getServiceCategories();
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
 
       {/* Page Header */}
-      <section className="bg-blue-600 text-white py-16">
+      <section className="bg-[#004080] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">サービス一覧</h1>
+          <h1 className="text-4xl font-bold mb-4">サービス総合案内</h1>
           <p className="text-xl">お客様のニーズに合わせた幅広いサービスを提供しています</p>
         </div>
       </section>
@@ -17,7 +40,16 @@ export default function Services() {
       {/* Services Content */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {/* Sanityからのデータがある場合は動的に表示 */}
+          {categories.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {categories.map((category) => (
+                <CategoryCard key={category._id} category={category} />
+              ))}
+            </div>
+          ) : (
+            /* Sanityが設定されていない場合は既存のハードコーディングされたサービスを表示 */
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             
             {/* 外国人関連業務 */}
             <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
@@ -131,6 +163,7 @@ export default function Services() {
             </div>
 
           </div>
+          )}
         </div>
       </section>
 
