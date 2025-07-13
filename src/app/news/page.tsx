@@ -25,6 +25,33 @@ export default async function NewsPage() {
       excerpt: "フォルティア行政書士事務所を開設いたしました",
       category: "important",
       featured: true
+    },
+    {
+      _id: "test2",
+      title: "建設業許可申請の受付を開始しました",
+      slug: { current: "kensetsu-kyoka-shinsei" },
+      publishedAt: "2025-07-05",
+      excerpt: "建設業許可申請のサポートサービスを開始いたしました。豊富な実績を基に、スムーズな許可取得をお手伝いします",
+      category: "service",
+      featured: false
+    },
+    {
+      _id: "test3",
+      title: "夏季休業のお知らせ",
+      slug: { current: "kaki-kyugyo-oshirase" },
+      publishedAt: "2025-07-03",
+      excerpt: "8月13日から8月16日まで夏季休業とさせていただきます",
+      category: "general",
+      featured: false
+    },
+    {
+      _id: "test4",
+      title: "相続・遺言無料相談会を開催します",
+      slug: { current: "sozoku-muryo-sodan" },
+      publishedAt: "2025-06-28",
+      excerpt: "7月20日(土)に相続・遺言に関する無料相談会を開催いたします。事前予約制となりますので、お早めにお申し込みください",
+      category: "important",
+      featured: true
     }
   ];
 
@@ -41,21 +68,24 @@ export default async function NewsPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         {/* News List */}
-        <div className="grid gap-6">
+        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
           {news.length > 0 ? (
-            news.map((item) => (
-              <article
-                key={item._id}
-                className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-4 mb-2">
-                      <time className="text-sm text-gray-500">
+            <ul className="divide-y divide-gray-200">
+              {news.map((item) => (
+                <li key={item._id}>
+                  <Link 
+                    href={`/news/${item.slug.current}`}
+                    className="block px-6 py-4 hover:bg-gray-50 transition-colors"
+                  >
+                    <div className="flex items-center gap-4">
+                      {/* 日付 */}
+                      <time className="text-sm text-gray-500 whitespace-nowrap">
                         {new Date(item.publishedAt).toLocaleDateString('ja-JP')}
                       </time>
+                      
+                      {/* カテゴリラベル */}
                       {item.category && (
-                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium whitespace-nowrap ${
                           item.category === 'important' 
                             ? 'bg-red-100 text-red-800'
                             : item.category === 'service'
@@ -67,33 +97,16 @@ export default async function NewsPage() {
                            item.category === 'general' ? '一般' : 'その他'}
                         </span>
                       )}
-                      {item.featured && (
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                          注目
-                        </span>
-                      )}
-                    </div>
-                    <h2 className="text-xl font-semibold text-gray-900 mb-2">
-                      <Link 
-                        href={`/news/${item.slug.current}`}
-                        className="hover:text-blue-600 transition-colors"
-                      >
+                      
+                      {/* タイトル */}
+                      <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
                         {item.title}
-                      </Link>
-                    </h2>
-                    {item.excerpt && (
-                      <p className="text-gray-600 mb-4">{item.excerpt}</p>
-                    )}
-                    <Link
-                      href={`/news/${item.slug.current}`}
-                      className="text-blue-600 hover:text-blue-800 font-medium"
-                    >
-                      続きを読む →
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))
+                      </h3>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           ) : (
             <div className="bg-white rounded-lg shadow-sm p-12 text-center">
               <p className="text-gray-500 text-lg">お知らせはまだありません。</p>
