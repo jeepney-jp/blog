@@ -1,0 +1,130 @@
+// ファイル名: schemas/serviceDetail.ts
+// 目的: 行政書士サイトの「中項目詳細ページ」用 Sanity スキーマ定義
+// 関連: 各中項目は親カテゴリ（serviceCategory）と関連付けされる
+
+export default {
+  name: 'serviceDetail',
+  type: 'document',
+  title: 'サービス詳細',
+  fields: [
+    {
+      name: 'title',
+      type: 'string',
+      title: 'サービス名',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'slug',
+      type: 'slug',
+      title: 'スラッグ（URL）',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'parentCategory',
+      type: 'reference',
+      to: [{ type: 'serviceCategory' }],
+      title: '親カテゴリ',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'overview',
+      type: 'text',
+      title: 'サービス概要（1〜2文）',
+    },
+    {
+      name: 'target',
+      type: 'string',
+      title: '対象となる方',
+    },
+    {
+      name: 'price',
+      type: 'string',
+      title: '料金目安',
+    },
+    {
+      name: 'problemStatement',
+      type: 'array',
+      title: 'お悩み提起',
+      of: [{ type: 'block' }],
+    },
+    {
+      name: 'serviceMerits',
+      type: 'array',
+      title: '依頼するメリット',
+      of: [{ type: 'block' }],
+    },
+    {
+      name: 'serviceFlow',
+      type: 'array',
+      title: '手続きの流れ',
+      of: [{ type: 'block' }],
+    },
+    {
+      name: 'priceTable',
+      type: 'array',
+      title: '料金表',
+      of: [{ type: 'block' }],
+    },
+    {
+      name: 'requiredDocuments',
+      type: 'array',
+      title: '必要書類一覧',
+      of: [{ type: 'block' }],
+    },
+    {
+      name: 'faq',
+      type: 'array',
+      title: 'よくある質問',
+      of: [
+        {
+          type: 'object',
+          name: 'faqItem',
+          fields: [
+            { name: 'question', type: 'string', title: '質問' },
+            { name: 'answer', type: 'text', title: '回答' },
+          ],
+        },
+      ],
+      options: {
+        sortable: true,
+      },
+    },
+    {
+      name: 'metaTitle',
+      type: 'string',
+      title: 'SEOタイトル',
+    },
+    {
+      name: 'metaDescription',
+      type: 'text',
+      title: 'SEOディスクリプション',
+    },
+    {
+      name: 'ogImage',
+      type: 'image',
+      title: 'OGP画像',
+    },
+    {
+      name: 'orderRank',
+      type: 'number',
+      title: '表示順（小さいほど先頭）',
+    },
+    {
+      name: 'tag',
+      type: 'array',
+      title: 'タグ（複数可）',
+      of: [{ type: 'string' }],
+    },
+  ],
+  orderings: [
+    {
+      title: '表示順（昇順）',
+      name: 'orderRankAsc',
+      by: [{ field: 'orderRank', direction: 'asc' }],
+    },
+  ],
+};
