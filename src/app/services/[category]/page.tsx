@@ -125,10 +125,7 @@ export default async function CategoryPage({ params }: Props) {
       </div>
 
       {/* CTA */}
-      <CtaBanner
-        text={`${data.title}について無料で相談する`}
-        href={`/contact?service=${data.slug}`}
-      />
+      <CtaBanner categoryTitle={data.title} />
       </div>
 
       {/* Footer */}

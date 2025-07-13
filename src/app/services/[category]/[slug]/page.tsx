@@ -14,6 +14,7 @@ import Header from '@/components/Header';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import RelatedServices from '@/components/RelatedServices';
+import CtaBanner from '@/components/CtaBanner';
 import Script from 'next/script';
 
 type Props = {
@@ -381,22 +382,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         )}
 
         {/* CTA */}
-        <section aria-label="お問い合わせ" className="mx-auto mt-12 text-center">
-          <div className="bg-[#004080] text-white rounded-xl p-8 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4">
-              {data.title}について相談する
-            </h2>
-            <p className="mb-6">
-              お気軽にお問い合わせください。初回相談は無料です。
-            </p>
-            <Link
-              href={`/contact?service=${slug}`}
-              className="inline-block bg-white text-[#004080] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              無料相談を申し込む
-            </Link>
-          </div>
-        </section>
+        <CtaBanner serviceTitle={data.title} />
       </main>
 
       {/* Footer */}
