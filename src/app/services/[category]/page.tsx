@@ -14,6 +14,11 @@ type Props = {
 };
 
 export async function generateStaticParams() {
+  // ビルド時はSanityクエリをスキップ
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
+    return [];
+  }
+  
   const slugs = await sanityClient.fetch(categorySlugsQuery);
   return slugs.map((slug: { slug: string }) => ({ category: slug.slug }));
 }
@@ -27,6 +32,16 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params;
+  
+  // Sanityが設定されていない場合のフォールバック
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
+    return (
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <p className="text-gray-600">Sanityの設定が必要です。環境変数を設定してください。</p>
+      </div>
+    );
+  }
+  
   const data: ServiceCategory = await sanityClient.fetch(categoryPageQuery, {
     slug: category,
   });
