@@ -2,6 +2,8 @@
 // 目的: 行政書士サイトの「中項目詳細ページ」用 Sanity スキーマ定義
 // 関連: 各中項目は親カテゴリ（serviceCategory）と関連付けされる
 
+import { Rule } from 'sanity'
+
 export default {
   name: 'serviceDetail',
   type: 'document',
@@ -11,7 +13,7 @@ export default {
       name: 'title',
       type: 'string',
       title: 'サービス名',
-      validation: Rule => Rule.required(),
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -21,14 +23,14 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-      validation: Rule => Rule.required(),
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'parentCategory',
       type: 'reference',
       to: [{ type: 'serviceCategory' }],
       title: '親カテゴリ',
-      validation: Rule => Rule.required(),
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'overview',

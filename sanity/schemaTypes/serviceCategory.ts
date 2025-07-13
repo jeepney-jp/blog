@@ -2,6 +2,8 @@
 // 目的: 行政書士サイトの階層2ページ「カテゴリー一覧」用のSanityスキーマ定義
 // 注意: 順序制御のため orderRank, SEO強化のため metaTitle, metaDescription, ogImage を含む
 
+import { Rule } from 'sanity'
+
 export default {
   name: 'serviceCategory',
   type: 'document',
@@ -11,7 +13,7 @@ export default {
       name: 'title',
       type: 'string',
       title: 'カテゴリー名',
-      validation: Rule => Rule.required(),
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -21,7 +23,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-      validation: Rule => Rule.required(),
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'icon',
