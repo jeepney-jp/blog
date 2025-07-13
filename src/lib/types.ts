@@ -13,6 +13,7 @@ export interface ServiceDetailLite {
   overview: string;
   target: string;
   price: string;
+  tag?: string[];
 }
 
 // Sanity Image Asset型定義

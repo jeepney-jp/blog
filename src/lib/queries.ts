@@ -53,7 +53,8 @@ export const categoryPageQuery = `
       "slug": slug.current,
       overview,
       target,
-      price
+      price,
+      tag
     }
   }
 `;
