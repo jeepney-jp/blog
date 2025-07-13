@@ -13,6 +13,9 @@ export interface ServiceDetailLite {
   overview: string;
   target: string;
   price: string;
+  priceMin?: number;
+  priceMax?: number;
+  priceNote?: string;
 }
 
 // Sanity Image Asset型定義
@@ -66,6 +69,9 @@ export interface ServiceDetail {
   overview?: string;
   target?: string;
   price?: string;
+  priceMin?: number;
+  priceMax?: number;
+  priceNote?: string;
   problemStatement?: PortableTextBlock[];
   serviceMerits?: PortableTextBlock[];
   serviceFlow?: PortableTextBlock[];
