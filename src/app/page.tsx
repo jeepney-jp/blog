@@ -18,13 +18,11 @@ interface ServiceCategoryItem {
 async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
   // 環境変数が設定されていない場合は空配列を返す
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
-    console.log('環境変数が設定されていません');
     return [];
   }
   
   try {
     const data = await sanityClient.fetch(allServiceCategoriesQuery);
-    console.log('取得したデータ:', data);
     return data;
   } catch (error) {
     console.error('Failed to fetch service categories:', error);
@@ -183,9 +181,6 @@ export default async function Home() {
           </div>
           
           {/* Sanityからのデータがある場合は動的に表示 */}
-          <div className="mb-4 text-sm text-gray-500">
-            デバッグ: カテゴリ数 = {serviceCategories.length}
-          </div>
           {serviceCategories.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {serviceCategories.map((category) => (
