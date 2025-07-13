@@ -10,7 +10,7 @@ import CtaBanner from '@/components/CtaBanner';
 import ServiceTable from '@/components/ServiceTable';
 
 type Props = {
-  params: { category: string };
+  params: Promise<{ category: string }>;
 };
 
 export async function generateStaticParams() {
@@ -19,14 +19,16 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props) {
+  const { category } = await params;
   return {
-    title: `${params.category} | サービスカテゴリ`,
+    title: `${category} | サービスカテゴリ`,
   };
 }
 
 export default async function CategoryPage({ params }: Props) {
+  const { category } = await params;
   const data: ServiceCategory = await sanityClient.fetch(categoryPageQuery, {
-    slug: params.category,
+    slug: category,
   });
 
   if (!data) return <div>ページが見つかりません</div>;
