@@ -4,27 +4,28 @@ import { ServiceDetailLite } from '@/lib/types';
 interface ServiceTableProps {
   services: ServiceDetailLite[];
   categorySlug: string;
+  lang?: string;
 }
 
-export default function ServiceTable({ services, categorySlug }: ServiceTableProps) {
+export default function ServiceTable({ services, categorySlug, lang }: ServiceTableProps) {
   return (
     <section>
-      <h2 className="text-2xl font-semibold mb-6">サービス一覧</h2>
+      <h2 className="text-2xl font-semibold mb-6">{lang === 'en' ? 'Service List' : 'サービス一覧'}</h2>
       <div className="bg-white shadow-sm rounded-lg overflow-hidden">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                サービス名
+                {lang === 'en' ? 'Service Name' : 'サービス名'}
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                対象者
+                {lang === 'en' ? 'Target' : '対象者'}
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                料金目安
+                {lang === 'en' ? 'Price Estimate' : '料金目安'}
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                詳細
+                {lang === 'en' ? 'Details' : '詳細'}
               </th>
             </tr>
           </thead>
@@ -43,10 +44,10 @@ export default function ServiceTable({ services, categorySlug }: ServiceTablePro
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <Link
-                    href={`/services/${categorySlug}/${service.slug}`}
+                    href={lang ? `/${lang}/services/${categorySlug}/${service.slug}` : `/services/${categorySlug}/${service.slug}`}
                     className="text-blue-600 hover:text-blue-900"
                   >
-                    詳細を見る →
+                    {lang === 'en' ? 'View Details →' : '詳細を見る →'}
                   </Link>
                 </td>
               </tr>

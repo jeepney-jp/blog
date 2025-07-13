@@ -64,7 +64,7 @@ export default async function Services({
           {categories.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {categories.map((category) => (
-                <CategoryCard key={category._id} category={category} />
+                <CategoryCard key={category._id} category={category} lang={lang} />
               ))}
             </div>
           ) : (

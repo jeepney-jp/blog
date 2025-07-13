@@ -3,12 +3,16 @@ import { ServiceCategory } from '@/lib/types';
 
 interface CategoryCardProps {
   category: ServiceCategory;
+  lang?: string;
 }
 
-export default function CategoryCard({ category }: CategoryCardProps) {
+export default function CategoryCard({ category, lang }: CategoryCardProps) {
+  // リンクのパスを構築
+  const href = lang ? `/${lang}/services/${category.slug}` : `/services/${category.slug}`;
+  
   return (
     <Link
-      href={`/services/${category.slug}`}
+      href={href}
       className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
     >
       {/* カテゴリー画像 */}
