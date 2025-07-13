@@ -129,7 +129,20 @@ export const relatedServicesByTagQuery = `
   }
 `;
 
-// 8. サイトマップ用：全カテゴリーと全サービスのURL
+// 8. 関連サービスを取得（同じカテゴリ内でタグが共通のサービス）
+export const relatedServicesQuery = `
+  *[_type == "serviceDetail" && references($parentCategoryId) && $currentSlug != slug.current && count(tag[@ in $tags]) > 0][0...4]{
+    _id,
+    title,
+    "slug": slug.current,
+    overview,
+    target,
+    price,
+    tag
+  }
+`;
+
+// 9. サイトマップ用：全カテゴリーと全サービスのURL
 export const sitemapQuery = `
   {
     "categories": *[_type == "serviceCategory"] {
