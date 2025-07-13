@@ -11,7 +11,7 @@ export const categorySlugsQuery = `
 
 // 2. すべてのサービス詳細のスラッグを取得（動的ルート生成用）
 export const allServiceDetailSlugsQuery = `
-  *[_type == "serviceDetail" && defined(slug.current)] {
+  *[_type == "serviceDetail" && defined(slug.current) && defined(parentCategory->slug.current)] {
     "slug": slug.current,
     "categorySlug": parentCategory->slug.current
   }
@@ -95,13 +95,14 @@ export const topPageCategoriesQuery = `
   }
 `;
 
-// 7. 関連サービスを取得（同じカテゴリー内の他のサービス）
-export const relatedServicesQuery = `
-  *[_type == "serviceDetail" && parentCategory._ref == $categoryId && _id != $currentServiceId] | order(orderRank asc, _createdAt asc)[0...5] {
+// 7. 関連サービスを取得（同じタグを持つ他のサービス）
+export const relatedServicesByTagQuery = `
+  *[_type == "serviceDetail" && _id != $currentServiceId && count(tag[@in $tags]) > 0] | order(count(tag[@in $tags]) desc, _createdAt desc)[0...3] {
     _id,
     title,
     "slug": slug.current,
-    overview
+    overview,
+    "categorySlug": parentCategory->slug.current
   }
 `;
 
