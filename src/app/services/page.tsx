@@ -25,6 +25,7 @@ async function getServiceCategories(): Promise<ServiceCategory[]> {
 
 export default async function Services() {
   const categories = await getServiceCategories();
+  console.log('Fetched categories:', categories);
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
