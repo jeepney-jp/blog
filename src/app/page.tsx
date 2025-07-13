@@ -27,6 +27,7 @@ async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
 
 export default async function Home() {
   const serviceCategories = await getServiceCategories();
+  console.log('Homepage - Fetched categories:', serviceCategories);
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}

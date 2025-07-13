@@ -25,7 +25,11 @@ export const allServiceCategoriesQuery = `
     "slug": slug.current,
     catchphrase,
     "iconUrl": icon.asset->url,
-    "imageUrl": image.asset->url
+    "imageUrl": image.asset->url,
+    "previewServices": *[_type == "serviceDetail" && references(^._id)] | order(orderRank asc, _createdAt asc)[0...3] {
+      _id,
+      title
+    }
   }
 `;
 

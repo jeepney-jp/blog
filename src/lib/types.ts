@@ -38,14 +38,21 @@ export interface PortableTextBlock {
 }
 
 export interface ServiceCategory {
+  _id: string;
   title: string;
   slug: string;
   icon?: SanityImageAsset;
   image?: SanityImageAsset;
+  imageUrl?: string;
+  iconUrl?: string;
   catchphrase?: string;
   expertiseDescription?: PortableTextBlock[];
   faq?: FaqItem[];
   services?: ServiceDetailLite[];
+  previewServices?: Array<{
+    _id: string;
+    title: string;
+  }>;
 }
 
 export interface ServiceDetail {
