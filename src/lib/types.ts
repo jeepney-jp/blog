@@ -15,13 +15,35 @@ export interface ServiceDetailLite {
   price: string;
 }
 
+// Sanity Image Asset型定義
+export interface SanityImageAsset {
+  _id: string;
+  url: string;
+}
+
+// Portable Text Block型定義
+export interface PortableTextBlock {
+  _type: 'block';
+  children: Array<{
+    _type: 'span';
+    text: string;
+    marks?: string[];
+  }>;
+  style?: string;
+  markDefs?: Array<{
+    _key: string;
+    _type: string;
+    [key: string]: unknown;
+  }>;
+}
+
 export interface ServiceCategory {
   title: string;
   slug: string;
-  icon?: any; // Sanity Image Object (修正可)
-  image?: any; // Sanity Image Object (修正可)
+  icon?: SanityImageAsset;
+  image?: SanityImageAsset;
   catchphrase?: string;
-  expertiseDescription?: any; // Portable Text（Block Content）
+  expertiseDescription?: PortableTextBlock[];
   faq?: FaqItem[];
   services?: ServiceDetailLite[];
 }
@@ -32,16 +54,16 @@ export interface ServiceDetail {
   overview?: string;
   target?: string;
   price?: string;
-  problemStatement?: any;
-  serviceMerits?: any;
-  serviceFlow?: any;
-  priceTable?: any;
-  requiredDocuments?: any;
+  problemStatement?: PortableTextBlock[];
+  serviceMerits?: PortableTextBlock[];
+  serviceFlow?: PortableTextBlock[];
+  priceTable?: PortableTextBlock[];
+  requiredDocuments?: PortableTextBlock[];
   faq?: FaqItem[];
   tag?: string[];
   metaTitle?: string;
   metaDescription?: string;
-  ogImage?: any;
+  ogImage?: SanityImageAsset;
   category?: {
     title: string;
     slug: string;
