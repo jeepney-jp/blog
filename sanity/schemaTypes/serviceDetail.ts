@@ -125,6 +125,9 @@ export default {
       type: 'array',
       title: 'タグ（複数可）',
       of: [{ type: 'string' }],
+      options: {
+        layout: 'tags'
+      }
     },
   ],
   orderings: [
