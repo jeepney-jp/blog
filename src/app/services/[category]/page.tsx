@@ -11,6 +11,7 @@ import { FaqAccordion } from '@/components/FaqAccordion';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CtaBanner from '@/components/CtaBanner';
 import ServiceTable from '@/components/ServiceTable';
+import Script from 'next/script';
 
 type Props = {
   params: Promise<{ category: string }>;
@@ -78,9 +79,56 @@ export default async function CategoryPage({ params }: Props) {
 
   if (!data) return <div>ページが見つかりません</div>;
 
+  // FAQ構造化データの生成
+  const faqStructuredData = data.faq && data.faq.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: data.faq.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  } : null;
+
+  // Service構造化データの生成
+  const serviceStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: data.title,
+    description: data.catchphrase || data.metaDescription || '',
+    provider: {
+      '@type': 'LegalService',
+      name: 'フォルティア行政書士事務所',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '茂原579',
+        addressLocality: '茂原市',
+        addressRegion: '千葉県',
+        postalCode: '297-0026',
+        addressCountry: 'JP'
+      }
+    },
+    areaServed: ['東京都', '千葉県', '埼玉県', '神奈川県']
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
+      
+      {/* 構造化データ */}
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ 
+          __html: JSON.stringify([
+            ...(faqStructuredData ? [faqStructuredData] : []),
+            serviceStructuredData
+          ])
+        }}
+      />
       <div className="max-w-6xl mx-auto px-4 py-12 space-y-16">
       {/* パンくず */}
       <Breadcrumbs
