@@ -8,48 +8,53 @@ interface BreadcrumbSegment {
 
 interface BreadcrumbsProps {
   segments: BreadcrumbSegment[];
-  includeJsonLd?: boolean;
 }
 
-export default function Breadcrumbs({ segments, includeJsonLd = true }: BreadcrumbsProps) {
-  // JSON-LD構造化データの生成
-  const jsonLd = includeJsonLd ? {
+export default function Breadcrumbs({ segments }: BreadcrumbsProps) {
+  // SEO構造化データの生成
+  const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: segments.map((segment, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       name: segment.name,
-      item: `${process.env.NEXT_PUBLIC_SITE_URL || ''}${segment.href}`,
+      item: `${process.env.NEXT_PUBLIC_BASE_URL || ''}${segment.href}`,
     })),
-  } : null;
+  };
 
   return (
     <>
-      {jsonLd && (
-        <Script
-          id="breadcrumb-jsonld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      )}
-      <nav aria-label="パンくずリスト" className="text-sm mb-6">
-        <ol className="flex flex-wrap items-center">
-          {segments.map((segment, index) => (
-            <li key={index} className="flex items-center">
-              {index > 0 && <span className="mx-2 text-gray-400">{'>'}</span>}
-              {index < segments.length - 1 ? (
-                <Link
-                  href={segment.href}
-                  className="text-blue-600 hover:text-blue-800 hover:underline"
-                >
-                  {segment.name}
-                </Link>
-              ) : (
-                <span className="text-gray-700">{segment.name}</span>
-              )}
-            </li>
-          ))}
+      {/* 構造化データ */}
+      <Script
+        id="breadcrumb-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      
+      {/* パンくずリストUI */}
+      <nav aria-label="パンくずリスト" className="mb-8">
+        <ol className="flex flex-wrap items-center gap-2 text-sm">
+          {segments.map((segment, index) => {
+            const isLast = index === segments.length - 1;
+            return (
+              <li key={segment.href} className="flex items-center">
+                {isLast ? (
+                  <span className="text-gray-900 font-medium">{segment.name}</span>
+                ) : (
+                  <>
+                    <Link 
+                      href={segment.href}
+                      className="text-gray-600 hover:text-gray-900 transition-colors"
+                    >
+                      {segment.name}
+                    </Link>
+                    <span className="mx-2 text-gray-400">＞</span>
+                  </>
+                )}
+              </li>
+            );
+          })}
         </ol>
       </nav>
     </>
