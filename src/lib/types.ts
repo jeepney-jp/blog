@@ -17,6 +17,7 @@ export interface ServiceDetailLite {
   priceMax?: number;
   priceNote?: string;
   orderRank?: number;
+  tag?: string[];
 }
 
 // Sanity Image Asset型定義

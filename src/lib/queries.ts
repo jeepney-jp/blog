@@ -60,7 +60,8 @@ export const categoryPageQuery = `
       priceMin,
       priceMax,
       priceNote,
-      orderRank
+      orderRank,
+      tag
     }
   }
 `;
