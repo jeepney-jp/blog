@@ -1,6 +1,32 @@
 import Link from "next/link";
+import { sanityClient } from '@/lib/sanity.client';
+import { topPageCategoriesQuery } from '@/lib/queries';
 
-export default function Home() {
+// 型定義
+interface ServiceCategoryItem {
+  _id: string;
+  title: string;
+  slug: string;
+  iconUrl?: string;
+}
+
+// Sanityからサービスカテゴリを取得
+async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
+  // 環境変数が設定されていない場合は空配列を返す
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
+    return [];
+  }
+  
+  try {
+    return await sanityClient.fetch(topPageCategoriesQuery);
+  } catch (error) {
+    console.error('Failed to fetch service categories:', error);
+    return [];
+  }
+}
+
+export default async function Home() {
+  const serviceCategories = await getServiceCategories();
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -148,7 +174,32 @@ export default function Home() {
               豊富な経験と専門知識で、お客様のニーズにお応えします
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          
+          {/* Sanityからのデータがある場合は動的に表示 */}
+          {serviceCategories.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {serviceCategories.map((category) => (
+                <Link
+                  key={category._id}
+                  href={`/services/${category.slug}`}
+                  className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center block"
+                >
+                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    {category.iconUrl ? (
+                      <img src={category.iconUrl} alt={category.title} className="w-6 h-6" />
+                    ) : (
+                      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    )}
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900">{category.title}</h3>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            /* Sanityが設定されていない場合は既存のハードコーディングされたサービスを表示 */
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             
             {/* 外国人関連業務 */}
             <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
@@ -260,8 +311,8 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900">その他の業務</h3>
             </div>
-
           </div>
+          )}
         </div>
       </section>
 
