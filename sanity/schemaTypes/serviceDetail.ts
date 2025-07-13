@@ -58,6 +58,24 @@ export default {
       title: '料金目安',
     },
     {
+      name: 'priceMin',
+      title: '料金（最低）',
+      type: 'number',
+      description: '報酬額の下限値（円）'
+    },
+    {
+      name: 'priceMax',
+      title: '料金（最高）',
+      type: 'number',
+      description: '報酬額の上限値（円）'
+    },
+    {
+      name: 'priceNote',
+      title: '料金備考',
+      type: 'string',
+      description: '実費や特記事項など'
+    },
+    {
       name: 'problemStatement',
       type: 'array',
       title: 'お悩み提起',

@@ -56,7 +56,10 @@ export const categoryPageQuery = `
       "slug": slug.current,
       overview,
       target,
-      price
+      price,
+      priceMin,
+      priceMax,
+      priceNote
     }
   }
 `;
@@ -70,6 +73,9 @@ export const serviceDetailQuery = `
     overview,
     target,
     price,
+    priceMin,
+    priceMax,
+    priceNote,
     problemStatement,
     serviceMerits,
     serviceFlow,
