@@ -87,6 +87,14 @@ export const serviceDetailQuery = `
       _id,
       title,
       "slug": slug.current
+    },
+    "related": *[_type == "serviceDetail" && _id != ^._id && count(tag[@ in ^.tag]) > 0][0...4] {
+      title,
+      "slug": slug.current,
+      overview,
+      "parentCategory": parentCategory-> {
+        "slug": slug.current
+      }
     }
   }
 `;
