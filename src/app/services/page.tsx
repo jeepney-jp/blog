@@ -43,9 +43,9 @@ export default async function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* パンくずリスト */}
           <Breadcrumbs
-            items={[
-              { label: 'ホーム', href: '/' },
-              { label: 'サービス総合案内' }
+            segments={[
+              { name: 'ホーム', href: '/' },
+              { name: 'サービス総合案内', href: '/services' }
             ]}
           />
           {/* Sanityからのデータがある場合は動的に表示 */}

@@ -1,26 +1,26 @@
 import Link from 'next/link';
 import Script from 'next/script';
 
-interface BreadcrumbItem {
-  label: string;
-  href?: string;
+interface BreadcrumbSegment {
+  name: string;
+  href: string;
 }
 
 interface BreadcrumbsProps {
-  items: BreadcrumbItem[];
+  segments: BreadcrumbSegment[];
   includeJsonLd?: boolean;
 }
 
-export default function Breadcrumbs({ items, includeJsonLd = true }: BreadcrumbsProps) {
+export default function Breadcrumbs({ segments, includeJsonLd = true }: BreadcrumbsProps) {
   // JSON-LD構造化データの生成
   const jsonLd = includeJsonLd ? {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, index) => ({
+    itemListElement: segments.map((segment, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      name: item.label,
-      ...(item.href && { item: `${process.env.NEXT_PUBLIC_SITE_URL || ''}${item.href}` }),
+      name: segment.name,
+      item: `${process.env.NEXT_PUBLIC_SITE_URL || ''}${segment.href}`,
     })),
   } : null;
 
@@ -35,18 +35,18 @@ export default function Breadcrumbs({ items, includeJsonLd = true }: Breadcrumbs
       )}
       <nav aria-label="パンくずリスト" className="text-sm mb-6">
         <ol className="flex flex-wrap items-center">
-          {items.map((item, index) => (
+          {segments.map((segment, index) => (
             <li key={index} className="flex items-center">
               {index > 0 && <span className="mx-2 text-gray-400">{'>'}</span>}
-              {item.href ? (
+              {index < segments.length - 1 ? (
                 <Link
-                  href={item.href}
+                  href={segment.href}
                   className="text-blue-600 hover:text-blue-800 hover:underline"
                 >
-                  {item.label}
+                  {segment.name}
                 </Link>
               ) : (
-                <span className="text-gray-700">{item.label}</span>
+                <span className="text-gray-700">{segment.name}</span>
               )}
             </li>
           ))}
