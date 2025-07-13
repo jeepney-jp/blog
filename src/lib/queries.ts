@@ -41,7 +41,10 @@ export const categoryPageQuery = `
     "slug": slug.current,
     catchphrase,
     expertiseDescription,
-    faq,
+    faq[] {
+      question,
+      answer
+    },
     metaTitle,
     metaDescription,
     "ogImageUrl": ogImage.asset->url,
@@ -72,7 +75,10 @@ export const serviceDetailQuery = `
     serviceFlow,
     priceTable,
     requiredDocuments,
-    faq,
+    faq[] {
+      question,
+      answer
+    },
     metaTitle,
     metaDescription,
     "ogImageUrl": ogImage.asset->url,
