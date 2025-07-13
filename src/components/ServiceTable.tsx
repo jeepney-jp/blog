@@ -39,7 +39,11 @@ export default function ServiceTable({ services, categorySlug }: ServiceTablePro
                   {service.target}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {service.price}
+                  {service.priceMin && service.priceMax
+                    ? `¥${service.priceMin.toLocaleString()}〜¥${service.priceMax.toLocaleString()}`
+                    : service.priceMin
+                    ? `¥${service.priceMin.toLocaleString()}〜`
+                    : service.priceNote ?? '個別見積り'}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <Link
