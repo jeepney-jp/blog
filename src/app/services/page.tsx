@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { sanityClient } from '@/lib/sanity.client';
 import { allServiceCategoriesQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
@@ -40,6 +41,13 @@ export default async function Services() {
       {/* Services Content */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* パンくずリスト */}
+          <Breadcrumbs
+            items={[
+              { label: 'ホーム', href: '/' },
+              { label: 'サービス総合案内' }
+            ]}
+          />
           {/* Sanityからのデータがある場合は動的に表示 */}
           {categories.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
