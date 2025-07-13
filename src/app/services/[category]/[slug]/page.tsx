@@ -64,8 +64,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// 関連サービスの型定義
+interface RelatedService {
+  _id: string;
+  title: string;
+  slug: string;
+  overview?: string;
+  categorySlug: string;
+}
+
 // 関連サービスの取得
-async function getRelatedServices(currentServiceId: string, tags: string[]): Promise<any[]> {
+async function getRelatedServices(currentServiceId: string, tags: string[]): Promise<RelatedService[]> {
   if (!tags || tags.length === 0) return [];
   
   try {
