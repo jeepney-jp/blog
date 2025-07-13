@@ -41,7 +41,10 @@ export const categoryPageQuery = `
     "slug": slug.current,
     catchphrase,
     expertiseDescription,
-    faq,
+    faq[] {
+      question,
+      answer
+    },
     metaTitle,
     metaDescription,
     "ogImageUrl": ogImage.asset->url,
@@ -54,6 +57,10 @@ export const categoryPageQuery = `
       overview,
       target,
       price,
+      priceMin,
+      priceMax,
+      priceNote,
+      orderRank,
       tag
     }
   }
@@ -68,12 +75,19 @@ export const serviceDetailQuery = `
     overview,
     target,
     price,
+    priceMin,
+    priceMax,
+    priceNote,
+    orderRank,
     problemStatement,
     serviceMerits,
     serviceFlow,
     priceTable,
     requiredDocuments,
-    faq,
+    faq[] {
+      question,
+      answer
+    },
     metaTitle,
     metaDescription,
     "ogImageUrl": ogImage.asset->url,
@@ -82,6 +96,14 @@ export const serviceDetailQuery = `
       _id,
       title,
       "slug": slug.current
+    },
+    "related": *[_type == "serviceDetail" && _id != ^._id && count(tag[@ in ^.tag]) > 0][0...4] {
+      title,
+      "slug": slug.current,
+      overview,
+      "parentCategory": parentCategory-> {
+        "slug": slug.current
+      }
     }
   }
 `;

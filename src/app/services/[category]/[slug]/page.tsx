@@ -11,7 +11,7 @@ import { ServiceDetail } from '@/lib/types';
 import { PortableText } from '@portabletext/react';
 import Header from '@/components/Header';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import FaqAccordion from '@/components/FaqAccordion';
+import { FaqAccordion } from '@/components/FaqAccordion';
 import Script from 'next/script';
 
 type Props = {
@@ -109,8 +109,8 @@ export default async function ServiceDetailPage({ params }: Props) {
     notFound();
   }
 
-  // 関連サービスの取得
-  const relatedServices = await getRelatedServices(data._id, data.tag || []);
+  // 関連サービスの取得（新しいrelated フィールドを優先）
+  const relatedServices = data.related ? [] : await getRelatedServices(data._id, data.tag || []);
 
   // FAQ構造化データの生成
   const faqStructuredData = data.faq && data.faq.length > 0 ? {
@@ -228,12 +228,29 @@ export default async function ServiceDetailPage({ params }: Props) {
             <h2 className="text-2xl font-bold text-[#004080] mb-6">
               よくある質問
             </h2>
-            <FaqAccordion items={data.faq} />
+            <FaqAccordion faqs={data.faq} />
           </section>
         )}
 
         {/* 関連サービス */}
-        {relatedServices.length > 0 && (
+        {data.related && data.related.length > 0 && (
+          <section>
+            <h2 className="text-xl font-bold my-6">関連サービス</h2>
+            <ul className="grid gap-4 md:grid-cols-2">
+              {data.related.map((item) => (
+                <li key={item.slug}>
+                  <Link href={`/services/${item.parentCategory.slug}/${item.slug}`} className="block p-4 border rounded-lg hover:bg-gray-50">
+                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                    <p className="text-sm text-gray-600 mt-2">{item.overview}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+        
+        {/* 既存の関連サービス（フォールバック） */}
+        {!data.related && relatedServices.length > 0 && (
           <section aria-label="関連サービス" className="bg-gray-50 rounded-xl p-8">
             <h2 className="text-2xl font-bold text-[#004080] mb-2">
               このようなサービスもご覧になっています

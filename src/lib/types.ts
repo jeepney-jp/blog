@@ -13,6 +13,10 @@ export interface ServiceDetailLite {
   overview: string;
   target: string;
   price: string;
+  priceMin?: number;
+  priceMax?: number;
+  priceNote?: string;
+  orderRank?: number;
   tag?: string[];
 }
 
@@ -67,6 +71,10 @@ export interface ServiceDetail {
   overview?: string;
   target?: string;
   price?: string;
+  priceMin?: number;
+  priceMax?: number;
+  priceNote?: string;
+  orderRank?: number;
   problemStatement?: PortableTextBlock[];
   serviceMerits?: PortableTextBlock[];
   serviceFlow?: PortableTextBlock[];
@@ -83,4 +91,12 @@ export interface ServiceDetail {
     title: string;
     slug: string;
   };
+  related?: Array<{
+    title: string;
+    slug: string;
+    overview?: string;
+    parentCategory: {
+      slug: string;
+    };
+  }>;
 }
