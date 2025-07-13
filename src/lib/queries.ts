@@ -59,7 +59,8 @@ export const categoryPageQuery = `
       price,
       priceMin,
       priceMax,
-      priceNote
+      priceNote,
+      orderRank
     }
   }
 `;
@@ -76,6 +77,7 @@ export const serviceDetailQuery = `
     priceMin,
     priceMax,
     priceNote,
+    orderRank,
     problemStatement,
     serviceMerits,
     serviceFlow,
