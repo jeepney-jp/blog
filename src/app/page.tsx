@@ -240,6 +240,8 @@ export default async function Home() {
                   width={24}
                   height={24}
                   className="object-contain"
+                  unoptimized
+                  priority
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">外国人関連業務</h3>
@@ -254,6 +256,7 @@ export default async function Home() {
                   width={24}
                   height={24}
                   className="object-contain"
+                  unoptimized
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">建設・宅建業関連</h3>
@@ -268,6 +271,7 @@ export default async function Home() {
                   width={24}
                   height={24}
                   className="object-contain"
+                  unoptimized
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">自動車関連業務</h3>
@@ -282,6 +286,7 @@ export default async function Home() {
                   width={24}
                   height={24}
                   className="object-contain"
+                  unoptimized
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">飲食・風俗営業</h3>
@@ -296,6 +301,7 @@ export default async function Home() {
                   width={24}
                   height={24}
                   className="object-contain"
+                  unoptimized
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">廃棄物処理業許可</h3>
@@ -310,6 +316,7 @@ export default async function Home() {
                   width={24}
                   height={24}
                   className="object-contain"
+                  unoptimized
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">旅行・旅館業</h3>
@@ -324,6 +331,7 @@ export default async function Home() {
                   width={24}
                   height={24}
                   className="object-contain"
+                  unoptimized
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">法人設立業務</h3>
@@ -338,6 +346,7 @@ export default async function Home() {
                   width={24}
                   height={24}
                   className="object-contain"
+                  unoptimized
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">営業許可</h3>
@@ -352,6 +361,7 @@ export default async function Home() {
                   width={24}
                   height={24}
                   className="object-contain"
+                  unoptimized
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">土地関連業務</h3>
@@ -366,6 +376,7 @@ export default async function Home() {
                   width={24}
                   height={24}
                   className="object-contain"
+                  unoptimized
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">権利義務・事実証明</h3>
@@ -380,6 +391,7 @@ export default async function Home() {
                   width={24}
                   height={24}
                   className="object-contain"
+                  unoptimized
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">その他の業務</h3>
