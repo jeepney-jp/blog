@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from 'next/image';
 import { sanityClient } from '@/lib/sanity.client';
 import { allServiceCategoriesQuery } from '@/lib/queries';
-import { getOptimizedImageProps } from '@/lib/sanityImage';
 
 // ISR設定：1日ごとに再生成
 export const revalidate = 86400;
