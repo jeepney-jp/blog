@@ -194,7 +194,7 @@ export default async function Home() {
           
           {/* Sanityからのデータがある場合は動的に表示 */}
           {serviceCategories.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {serviceCategories.map((category) => (
                 <Link
                   key={category._id}
@@ -223,7 +223,7 @@ export default async function Home() {
             </div>
           ) : (
             /* Sanityが設定されていない場合は既存のハードコーディングされたサービスを表示 */
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             
             {/* 外国人関連業務 */}
             <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
