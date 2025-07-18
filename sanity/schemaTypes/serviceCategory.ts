@@ -13,7 +13,7 @@ export default {
       name: 'orderRank',
       type: 'number',
       title: '表示順',
-      hidden: true, // ドラッグ&ドロップで管理するため非表示
+      description: '数値が小さいほど上に表示されます',
     },
     {
       name: 'title',
