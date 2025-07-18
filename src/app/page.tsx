@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { sanityClient } from '@/lib/sanity.client';
 import { allServiceCategoriesQuery } from '@/lib/queries';
 
-// ISR設定：1日ごとに再生成
-export const revalidate = 86400;
+// ISR設定：60秒ごとに再生成（開発中は短めに設定）
+export const revalidate = 60;
 
 // 型定義
 interface ServiceCategoryItem {
