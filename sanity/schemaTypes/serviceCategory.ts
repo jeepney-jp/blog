@@ -13,11 +13,7 @@ export default {
       name: 'orderRank',
       type: 'number',
       title: '表示順',
-      description: '小さい数字が上位に表示されます',
-      options: {
-        isHighlighted: true,
-      },
-      validation: (Rule: Rule) => Rule.required().integer().min(0),
+      hidden: true, // ドラッグ&ドロップで管理するため非表示
     },
     {
       name: 'title',
