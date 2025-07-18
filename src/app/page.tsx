@@ -203,25 +203,20 @@ export default async function Home() {
                   className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center block"
                 >
                   <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 relative overflow-hidden">
-                    {(() => {
-                      const iconProps = getOptimizedImageProps(category.icon, {
-                        width: 48,
-                        quality: 90,
-                      });
-                      return iconProps ? (
-                        <Image
-                          src={iconProps.src}
-                          alt={category.title}
-                          width={24}
-                          height={24}
-                          className="object-contain"
-                        />
-                      ) : (
-                        <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                      );
-                    })()}
+                    {category.iconUrl ? (
+                      <Image
+                        src={category.iconUrl}
+                        alt={category.title}
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                        unoptimized
+                      />
+                    ) : (
+                      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    )}
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900">{category.title}</h3>
                 </Link>
