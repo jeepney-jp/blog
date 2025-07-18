@@ -206,13 +206,13 @@ export default async function Home() {
                       <Image
                         src={category.iconUrl}
                         alt={category.title}
-                        width={48}
-                        height={48}
+                        width={72}
+                        height={72}
                         className="object-contain mx-auto"
                         unoptimized
                       />
                     ) : (
-                      <svg className="w-12 h-12 text-gray-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-[72px] h-[72px] text-gray-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
                     )}
@@ -231,8 +231,8 @@ export default async function Home() {
                 <Image
                   src="/service-foreigner.png"
                   alt="外国人関連業務"
-                  width={48}
-                  height={48}
+                  width={72}
+                  height={72}
                   className="object-contain mx-auto"
                   unoptimized
                   priority
@@ -247,8 +247,8 @@ export default async function Home() {
                 <Image
                   src="/service-construction.png"
                   alt="建設・宅建業関連"
-                  width={48}
-                  height={48}
+                  width={72}
+                  height={72}
                   className="object-contain mx-auto"
                   unoptimized
                 />
@@ -262,8 +262,8 @@ export default async function Home() {
                 <Image
                   src="/service-vehicle.png"
                   alt="自動車関連業務"
-                  width={48}
-                  height={48}
+                  width={72}
+                  height={72}
                   className="object-contain mx-auto"
                   unoptimized
                 />
@@ -277,8 +277,8 @@ export default async function Home() {
                 <Image
                   src="/service-restaurant.png"
                   alt="飲食・風俗営業"
-                  width={48}
-                  height={48}
+                  width={72}
+                  height={72}
                   className="object-contain mx-auto"
                   unoptimized
                 />
@@ -292,8 +292,8 @@ export default async function Home() {
                 <Image
                   src="/service-waste.png"
                   alt="廃棄物処理業許可"
-                  width={48}
-                  height={48}
+                  width={72}
+                  height={72}
                   className="object-contain mx-auto"
                   unoptimized
                 />
@@ -307,8 +307,8 @@ export default async function Home() {
                 <Image
                   src="/service-travel.png"
                   alt="旅行・旅館業"
-                  width={48}
-                  height={48}
+                  width={72}
+                  height={72}
                   className="object-contain mx-auto"
                   unoptimized
                 />
@@ -322,8 +322,8 @@ export default async function Home() {
                 <Image
                   src="/service-corporation.png"
                   alt="法人設立業務"
-                  width={48}
-                  height={48}
+                  width={72}
+                  height={72}
                   className="object-contain mx-auto"
                   unoptimized
                 />
@@ -337,8 +337,8 @@ export default async function Home() {
                 <Image
                   src="/service-license.png"
                   alt="営業許可"
-                  width={48}
-                  height={48}
+                  width={72}
+                  height={72}
                   className="object-contain mx-auto"
                   unoptimized
                 />
@@ -352,8 +352,8 @@ export default async function Home() {
                 <Image
                   src="/service-land.png"
                   alt="土地関連業務"
-                  width={48}
-                  height={48}
+                  width={72}
+                  height={72}
                   className="object-contain mx-auto"
                   unoptimized
                 />
@@ -367,8 +367,8 @@ export default async function Home() {
                 <Image
                   src="/service-document.png"
                   alt="権利義務・事実証明"
-                  width={48}
-                  height={48}
+                  width={72}
+                  height={72}
                   className="object-contain mx-auto"
                   unoptimized
                 />
@@ -382,8 +382,8 @@ export default async function Home() {
                 <Image
                   src="/service-other.png"
                   alt="その他の業務"
-                  width={48}
-                  height={48}
+                  width={72}
+                  height={72}
                   className="object-contain mx-auto"
                   unoptimized
                 />
