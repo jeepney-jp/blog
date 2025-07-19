@@ -8,13 +8,22 @@ interface CategoryCardProps {
 }
 
 export default function CategoryCard({ category }: CategoryCardProps) {
-  // Use image if available, otherwise fallback to icon
-  const imageSource = category.image || category.icon;
-  const imageProps = getOptimizedImageProps(imageSource, {
-    width: 400,
-    quality: 80,
-    sizes: '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
-  });
+  // iconUrlを直接使用するか、imageがある場合はそちらを優先
+  let imageSrc: string | null = null;
+  
+  if (category.image) {
+    const imageProps = getOptimizedImageProps(category.image, {
+      width: 400,
+      quality: 80,
+      sizes: '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
+    });
+    imageSrc = imageProps?.src || null;
+  }
+  
+  // imageが無い、または取得に失敗した場合はiconUrlを使用
+  if (!imageSrc && category.iconUrl) {
+    imageSrc = category.iconUrl;
+  }
 
   return (
     <Link
@@ -23,16 +32,16 @@ export default function CategoryCard({ category }: CategoryCardProps) {
     >
       {/* カテゴリー画像 */}
       <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
-        {imageProps ? (
+        {imageSrc ? (
           <Image
-            src={imageProps.src}
+            src={imageSrc}
             alt={category.title}
-            width={imageProps.width}
-            height={imageProps.height}
-            sizes={imageProps.sizes}
+            width={400}
+            height={300}
             className="object-cover"
             fill
             priority={false}
+            unoptimized
           />
         ) : (
           <div className="flex items-center justify-center h-full">

@@ -15,6 +15,16 @@ export default function DebugCategoryCard({ categories }: DebugCategoryCardProps
       console.log('- image:', category.image);
       console.log('- icon:', category.icon);
       console.log('- iconUrl:', category.iconUrl);
+      
+      // iconUrlの形式をチェック
+      if (category.iconUrl) {
+        console.log('- iconUrl format check:', {
+          url: category.iconUrl,
+          startsWithHTTPS: category.iconUrl.startsWith('https://'),
+          containsCDN: category.iconUrl.includes('cdn.sanity.io'),
+          length: category.iconUrl.length
+        });
+      }
     });
   }, [categories]);
 
