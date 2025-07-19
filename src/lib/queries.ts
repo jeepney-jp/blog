@@ -28,13 +28,25 @@ export const allServiceCategoriesQuery = `
     icon {
       asset-> {
         _id,
-        url
+        url,
+        metadata {
+          dimensions {
+            width,
+            height
+          }
+        }
       }
     },
     image {
       asset-> {
         _id,
-        url
+        url,
+        metadata {
+          dimensions {
+            width,
+            height
+          }
+        }
       }
     },
     "previewServices": *[_type == "serviceDetail" && references(^._id)] | order(orderRank asc, _createdAt asc)[0...3] {
