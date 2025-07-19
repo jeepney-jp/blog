@@ -18,7 +18,9 @@ async function getServiceCategories(): Promise<ServiceCategory[]> {
   }
   
   try {
-    return await sanityClient.fetch(allServiceCategoriesQuery);
+    const data = await sanityClient.fetch(allServiceCategoriesQuery);
+    console.log('Fetched categories:', JSON.stringify(data, null, 2));
+    return data;
   } catch (error) {
     console.error('Failed to fetch service categories:', error);
     return [];
