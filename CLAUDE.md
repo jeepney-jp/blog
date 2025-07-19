@@ -4,6 +4,21 @@
 - Node.js: v22.17.0
 - Sanity: v3.99.0
 
+## 🚀 クイックコマンド
+```bash
+# システムチェック
+./health-check.sh
+
+# 自動修復
+./auto-fix.sh
+
+# Sanity起動
+./start-sanity.sh
+
+# キャッシュクリア付きSanity起動
+./start-sanity.sh --clean
+```
+
 ## 注意事項
 1. **Sanityの起動方法**
    ```bash
