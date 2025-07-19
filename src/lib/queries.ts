@@ -25,7 +25,30 @@ export const allServiceCategoriesQuery = `
     "slug": slug.current,
     catchphrase,
     "iconUrl": icon.asset->url,
-    "imageUrl": image.asset->url,
+    icon {
+      asset-> {
+        _id,
+        url,
+        metadata {
+          dimensions {
+            width,
+            height
+          }
+        }
+      }
+    },
+    image {
+      asset-> {
+        _id,
+        url,
+        metadata {
+          dimensions {
+            width,
+            height
+          }
+        }
+      }
+    },
     "previewServices": *[_type == "serviceDetail" && references(^._id)] | order(orderRank asc, _createdAt asc)[0...3] {
       _id,
       title

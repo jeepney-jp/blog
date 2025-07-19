@@ -5,6 +5,19 @@ echo "🚀 Sanity Studioを起動します..."
 # Sanityディレクトリに移動
 cd /Users/hidakatakurou/Desktop/blog/administrative-lawyer-site/sanity
 
+# 既存のSanityプロセスをチェック
+if pgrep -f "sanity dev" > /dev/null; then
+    echo "⚠️  既存のSanityプロセスが検出されました。終了します..."
+    pkill -f "sanity dev"
+    sleep 2
+fi
+
+# キャッシュクリア（問題がある場合）
+if [ "$1" = "--clean" ]; then
+    echo "🧹 キャッシュをクリアしています..."
+    rm -rf .sanity dist node_modules/.cache node_modules/.vite
+fi
+
 # node_modulesが存在しない場合はインストール
 if [ ! -d "node_modules" ]; then
     echo "📦 依存関係をインストールしています..."
