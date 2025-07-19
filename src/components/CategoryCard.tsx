@@ -8,7 +8,6 @@ interface CategoryCardProps {
 }
 
 export default function CategoryCard({ category }: CategoryCardProps) {
-  console.log('CategoryCard - category:', category.title, 'image:', category.image, 'icon:', category.icon);
   // Use image if available, otherwise fallback to icon
   const imageSource = category.image || category.icon;
   const imageProps = getOptimizedImageProps(imageSource, {
@@ -16,7 +15,6 @@ export default function CategoryCard({ category }: CategoryCardProps) {
     quality: 80,
     sizes: '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
   });
-  console.log('CategoryCard - imageProps:', imageProps);
 
   return (
     <Link

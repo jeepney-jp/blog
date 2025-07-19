@@ -6,6 +6,7 @@ import { sanityClient } from '@/lib/sanity.client';
 import { allServiceCategoriesQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
 import CategoryCard from '@/components/CategoryCard';
+import DebugCategoryCard from '@/components/DebugCategoryCard';
 
 // ISRの設定：1日ごとに再生成
 export const revalidate = 86400;
@@ -19,7 +20,6 @@ async function getServiceCategories(): Promise<ServiceCategory[]> {
   
   try {
     const data = await sanityClient.fetch(allServiceCategoriesQuery);
-    console.log('Fetched categories:', JSON.stringify(data, null, 2));
     return data;
   } catch (error) {
     console.error('Failed to fetch service categories:', error);
@@ -50,11 +50,14 @@ export default async function Services() {
           />
           {/* Sanityからのデータがある場合は動的に表示 */}
           {categories.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {categories.map((category) => (
-                <CategoryCard key={category._id} category={category} />
-              ))}
-            </div>
+            <>
+              <DebugCategoryCard categories={categories} />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {categories.map((category) => (
+                  <CategoryCard key={category._id} category={category} />
+                ))}
+              </div>
+            </>
           ) : (
             /* Sanityが設定されていない場合は既存のハードコーディングされたサービスを表示 */
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
