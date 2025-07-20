@@ -409,7 +409,7 @@ export default async function Home() {
             </div>
           </div>
           )}
-
+          
           {/* すべてのサービスを見るボタン */}
           <div className="text-center mt-12">
             <Link 
