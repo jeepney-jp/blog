@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ServiceCategory } from '@/lib/types';
 import { getOptimizedImageProps } from '@/lib/sanityImage';
+import { PortableText } from '@portabletext/react';
 
 interface CategoryCardProps {
   category: ServiceCategory;
@@ -57,6 +58,13 @@ export default function CategoryCard({ category }: CategoryCardProps) {
         <h3 className="text-xl font-bold text-gray-900 mb-2">{category.title}</h3>
         {category.catchphrase && (
           <p className="text-gray-600 text-sm mb-4">{category.catchphrase}</p>
+        )}
+
+        {/* 専門性のアピール */}
+        {category.expertiseDescription && (
+          <div className="text-gray-700 text-sm mb-4 prose prose-sm max-w-none">
+            <PortableText value={category.expertiseDescription} />
+          </div>
         )}
 
         {/* 中項目プレビュー */}
