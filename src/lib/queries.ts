@@ -24,6 +24,7 @@ export const allServiceCategoriesQuery = `
     title,
     "slug": slug.current,
     catchphrase,
+    expertiseDescription,
     "iconUrl": icon.asset->url + "?w=400&h=300&fit=max&auto=format",
     icon {
       asset-> {
