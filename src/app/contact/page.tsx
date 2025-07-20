@@ -1,18 +1,16 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 
 export default function Contact() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      {/* Page Header */}
-      <section className="bg-blue-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">お問い合わせ</h1>
-          <p className="text-xl">お気軽にご相談ください</p>
-        </div>
-      </section>
+      <PageHeader
+        title="お問い合わせ"
+        description="お気軽にご相談ください"
+      />
 
       {/* Contact Content */}
       <section className="py-16">
