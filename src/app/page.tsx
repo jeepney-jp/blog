@@ -147,71 +147,76 @@ export default async function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-gray-50 py-24">
+      <section className="bg-gray-50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">当事務所の特徴</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 申請実績 */}
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white rounded-lg border border-gray-200 p-8 hover:border-gray-300 hover:shadow-md transition-all duration-300">
               <div className="flex flex-col items-center">
-                <div className="bg-blue-100 p-4 rounded-full mb-6">
-                  <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                <div className="w-16 h-16 bg-gray-900 rounded-lg flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">申請実績1,000件超の信頼</h3>
-                <p className="text-gray-600 text-center">
+                <h3 className="text-xl font-semibold mb-4 text-gray-900">申請実績1,000件超の信頼</h3>
+                <p className="text-gray-600 text-center leading-relaxed">
                   創業以来、1,000件を超える申請を支援し、許可率99％を誇る確かな実績があります。
                 </p>
-                <div className="mt-6 flex items-center space-x-4">
-                  <div className="text-center">
-                    <p className="text-3xl font-bold text-blue-600">1,000+</p>
-                    <p className="text-sm text-gray-500">申請実績</p>
-                  </div>
-                  <div className="h-12 w-px bg-gray-300"></div>
-                  <div className="text-center">
-                    <p className="text-3xl font-bold text-green-600">99%</p>
-                    <p className="text-sm text-gray-500">許可率</p>
+                <div className="mt-6 pt-6 border-t border-gray-100 w-full">
+                  <div className="flex justify-around">
+                    <div className="text-center">
+                      <p className="text-2xl font-bold text-gray-900">1,000+</p>
+                      <p className="text-sm text-gray-500 mt-1">申請実績</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-2xl font-bold text-gray-900">99%</p>
+                      <p className="text-sm text-gray-500 mt-1">許可率</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* 母国語対応 */}
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white rounded-lg border border-gray-200 p-8 hover:border-gray-300 hover:shadow-md transition-all duration-300">
               <div className="flex flex-col items-center">
-                <div className="bg-green-100 p-4 rounded-full mb-6">
-                  <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                <div className="w-16 h-16 bg-gray-900 rounded-lg flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">母国語対応で安心サポート</h3>
-                <p className="text-gray-600 text-center">
+                <h3 className="text-xl font-semibold mb-4 text-gray-900">母国語対応で安心サポート</h3>
+                <p className="text-gray-600 text-center leading-relaxed">
                   ネパール・ベトナム・フィリピン出身のスタッフが母国語で対応し、日本語に不安のある方でも安心してご相談いただけます。
                 </p>
-                <div className="mt-6 flex space-x-3">
-                  <span className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium">ネパール語</span>
-                  <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">ベトナム語</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">フィリピン語</span>
+                <div className="mt-6 pt-6 border-t border-gray-100 w-full">
+                  <div className="flex justify-center space-x-2">
+                    <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">ネパール語</span>
+                    <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">ベトナム語</span>
+                    <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm">フィリピン語</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* 成果報酬制 */}
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white rounded-lg border border-gray-200 p-8 hover:border-gray-300 hover:shadow-md transition-all duration-300">
               <div className="flex flex-col items-center">
-                <div className="bg-yellow-100 p-4 rounded-full mb-6">
-                  <svg className="w-12 h-12 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <div className="w-16 h-16 bg-gray-900 rounded-lg flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">完全成果報酬制で明朗な料金体系</h3>
-                <p className="text-gray-600 text-center">
+                <h3 className="text-xl font-semibold mb-4 text-gray-900">完全成果報酬制で明朗な料金体系</h3>
+                <p className="text-gray-600 text-center leading-relaxed">
                   初期費用は不要で、許可取得後のみ報酬が発生する明瞭な料金体系です。
                 </p>
-                <div className="mt-6 bg-yellow-50 border-2 border-yellow-200 rounded-lg px-4 py-3">
-                  <p className="text-yellow-800 font-bold text-center">初期費用 0円</p>
-                  <p className="text-yellow-600 text-sm text-center mt-1">成功時のみお支払い</p>
+                <div className="mt-6 pt-6 border-t border-gray-100 w-full">
+                  <div className="bg-gray-50 rounded-lg px-4 py-3">
+                    <p className="text-gray-900 font-semibold text-center">初期費用 0円</p>
+                    <p className="text-gray-600 text-sm text-center mt-1">成功時のみお支払い</p>
+                  </div>
                 </div>
               </div>
             </div>
