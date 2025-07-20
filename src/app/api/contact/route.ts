@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { writeClient } from '@/lib/sanity.client';
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,14 +25,24 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 一時的にSanity保存をスキップして、成功レスポンスを返す
-    console.log('問い合わせ受信:', body);
+    // Sanityに保存
+    const contact = await writeClient.create({
+      _type: 'contact',
+      name: body.name,
+      email: body.email,
+      phone: body.phone || '',
+      service: body.service || '',
+      message: body.message,
+      status: 'pending',
+      receivedAt: new Date().toISOString(),
+    });
+
+    console.log('問い合わせをSanityに保存しました:', contact._id);
 
     return NextResponse.json({
       success: true,
       message: 'お問い合わせを受け付けました。担当者より折り返しご連絡いたします。',
-      // 仮のIDを返す
-      id: `contact_${Date.now()}`,
+      id: contact._id,
     });
   } catch (error) {
     console.error('問い合わせ送信エラー:', error);
