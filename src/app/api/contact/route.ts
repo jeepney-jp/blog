@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { client } from '@/lib/sanity.client';
+import { sanityClient } from '@/lib/sanity.client';
 
 export async function POST(request: NextRequest) {
   try {
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Sanityに保存
-    const contact = await client.create({
+    const contact = await sanityClient.create({
       _type: 'contact',
       name: body.name,
       email: body.email,

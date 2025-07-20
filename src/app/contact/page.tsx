@@ -79,7 +79,7 @@ export default function Contact() {
           message: data.error || '送信に失敗しました。',
         });
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: 'error',
         message: 'ネットワークエラーが発生しました。',
