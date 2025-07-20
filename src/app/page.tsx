@@ -812,7 +812,16 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <Link href="/">
-                <h3 className="text-base font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer"><span className="text-gray-300">フォルティア</span><span className="text-gray-300 ml-1">行政書士事務所</span></h3>
+                <div className="flex items-center mb-4 hover:opacity-80 transition-opacity cursor-pointer">
+                  <Image
+                    src="/fortia-logo.png"
+                    alt="フォルティア行政書士事務所"
+                    width={40}
+                    height={40}
+                    className="mr-3"
+                  />
+                  <h3 className="text-base font-semibold"><span className="text-gray-300">フォルティア</span><span className="text-gray-300 ml-1">行政書士事務所</span></h3>
+                </div>
               </Link>
               <p className="text-gray-400">
                 〒100-0001<br />
