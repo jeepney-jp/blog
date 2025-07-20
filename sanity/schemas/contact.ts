@@ -77,7 +77,7 @@ export default defineType({
     },
     prepare(selection) {
       const { title, subtitle, date } = selection
-      const serviceLabels = {
+      const serviceLabels: Record<string, string> = {
         permit: '許認可申請',
         inheritance: '相続手続き',
         company: '会社設立',
