@@ -6,14 +6,14 @@ export default function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
+          <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
                 <Image
                   src="/fortia-logo.png"
                   alt="フォルティア行政書士事務所"
-                  width={40}
-                  height={40}
+                  width={56}
+                  height={56}
                   className="mr-3"
                 />
                 <h1 className="text-xl font-bold">
@@ -46,7 +46,7 @@ export default function Header() {
         </div>
       </header>
       {/* Spacer for fixed header */}
-      <div className="h-20"></div>
+      <div className="h-[88px]"></div>
     </>
   );
 }
