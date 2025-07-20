@@ -196,9 +196,17 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">主要サービス</h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 mb-8">
               豊富な経験と専門知識で、お客様のニーズにお応えします
             </p>
+            
+            {/* ステップガイド */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto mb-8">
+              <div className="flex items-center justify-center space-x-2">
+                <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
+                <p className="text-blue-800 font-medium">まずは、お困りの内容に該当するサービスをクリックしてください</p>
+              </div>
+            </div>
           </div>
           
           {/* Sanityからのデータがある場合は動的に表示 */}
@@ -208,7 +216,7 @@ export default async function Home() {
                 <Link
                   key={category._id}
                   href={`/services/${category.slug}`}
-                  className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center block"
+                  className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center block group"
                 >
                   <div className="mb-4">
                     {category.iconUrl ? (
@@ -226,7 +234,13 @@ export default async function Home() {
                       </svg>
                     )}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{category.title}</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{category.title}</h3>
+                  <p className="text-sm text-blue-600 group-hover:text-blue-700 flex items-center justify-center">
+                    詳しく見る
+                    <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </p>
                 </Link>
               ))}
             </div>
@@ -401,6 +415,19 @@ export default async function Home() {
             </div>
           </div>
           )}
+          
+          {/* すべてのサービスを見るボタン */}
+          <div className="text-center mt-12">
+            <Link 
+              href="/services" 
+              className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              すべてのサービスを見る
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 
