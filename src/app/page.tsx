@@ -209,13 +209,14 @@ export default async function Home() {
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">母国語対応で安心サポート</h3>
                 <p className="text-gray-600 text-center leading-relaxed">
-                  ネパール・ベトナム・フィリピン出身のスタッフが母国語で対応し、日本語に不安のある方でも安心してご相談いただけます。
+                  多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。
                 </p>
                 <div className="mt-6 pt-6 border-t border-gray-100 w-full">
-                  <div className="flex justify-center space-x-2">
-                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">ネパール語</span>
-                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">ベトナム語</span>
-                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">フィリピン語</span>
+                  <div className="flex justify-center space-x-2 flex-wrap">
+                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">英語</span>
+                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">ベトナム語</span>
+                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">ネパール語</span>
+                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">タガログ語</span>
                   </div>
                 </div>
               </div>
