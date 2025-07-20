@@ -152,30 +152,21 @@ export default async function Home() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">当事務所の特徴</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">1</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">豊富な実績</h3>
+              <h3 className="text-xl font-semibold mb-4">申請実績1,000件超の信頼</h3>
               <p className="text-gray-600">
-                20年間で3,000件以上の手続きを処理してきた豊富な実績があります。
+                創業以来、1,000件を超える申請を支援し、許可率99％を誇る確かな実績があります。
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">2</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">迅速対応</h3>
+              <h3 className="text-xl font-semibold mb-4">母国語対応で安心サポート</h3>
               <p className="text-gray-600">
-                お客様のご要望に応じて、可能な限り迅速な対応を心がけています。
+                ネパール・ベトナム・フィリピン出身のスタッフが母国語で対応し、日本語に不安のある方でも安心してご相談いただけます。
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">3</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">丁寧な説明</h3>
+              <h3 className="text-xl font-semibold mb-4">完全成果報酬制で明朗な料金体系</h3>
               <p className="text-gray-600">
-                複雑な手続きも分かりやすく説明し、お客様の不安を解消します。
+                初期費用は不要で、許可取得後のみ報酬が発生する明瞭な料金体系です。
               </p>
             </div>
           </div>
