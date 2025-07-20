@@ -401,6 +401,19 @@ export default async function Home() {
             </div>
           </div>
           )}
+          
+          {/* すべてのサービスを見るボタン */}
+          <div className="text-center mt-12">
+            <Link 
+              href="/services" 
+              className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              すべてのサービスを見る
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 
