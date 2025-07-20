@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from 'next/image';
 import { sanityClient } from '@/lib/sanity.client';
 import { allServiceCategoriesQuery } from '@/lib/queries';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
 export const revalidate = 60;
@@ -44,43 +46,7 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <div className="flex items-center">
-              <Link href="/" className="hover:opacity-80 transition-opacity">
-                <h1 className="text-xl font-bold">
-                  <span className="text-gray-600">フォルティア</span>
-                  <span className="text-gray-600 ml-1">行政書士事務所</span>
-                </h1>
-              </Link>
-            </div>
-            <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/about" className="text-gray-600 hover:text-gray-900">
-                事務所概要
-              </Link>
-              <Link href="/services" className="text-gray-600 hover:text-gray-900">
-                サービス
-              </Link>
-              <Link href="/news" className="text-gray-600 hover:text-gray-900">
-                お知らせ
-              </Link>
-              <Link href="/blog" className="text-gray-600 hover:text-gray-900">
-                お役立ち情報
-              </Link>
-              <Link href="/testimonials" className="text-gray-600 hover:text-gray-900">
-                お客様の声
-              </Link>
-              <Link href="/contact" className="bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors">
-                お問い合わせ
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-      {/* Spacer for fixed header */}
-      <div className="h-20"></div>
+      <Header />
 
       {/* Hero Section */}
       <section 
@@ -807,40 +773,7 @@ export default async function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <Link href="/">
-                <h3 className="text-base font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer"><span className="text-gray-300">フォルティア</span><span className="text-gray-300 ml-1">行政書士事務所</span></h3>
-              </Link>
-              <p className="text-gray-400">
-                〒100-0001<br />
-                東京都千代田区千代田1-1-1<br />
-                TEL: 03-1234-5678
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">営業時間</h3>
-              <p className="text-gray-400">
-                平日: 9:00 - 18:00<br />
-                土曜: 9:00 - 17:00<br />
-                日祝: 休業
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">主要業務エリア</h3>
-              <p className="text-gray-400">
-                東京都、千葉県、埼玉県、神奈川県<br />
-                ※その他地域もご相談ください
-              </p>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 フォルティア行政書士事務所. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
