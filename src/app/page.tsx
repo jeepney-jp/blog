@@ -216,30 +216,42 @@ export default async function Home() {
                 <Link
                   key={category._id}
                   href={`/services/${category.slug}`}
-                  className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center block group"
+                  className="bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 text-center block group relative overflow-hidden"
                 >
-                  <div className="mb-4">
+                  {/* ホバー時のオーバーレイ */}
+                  <div className="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                  
+                  {/* アイコン部分 */}
+                  <div className="p-6 pb-0">
                     {category.iconUrl ? (
                       <Image
                         src={category.iconUrl}
                         alt={category.title}
                         width={108}
                         height={108}
-                        className="object-contain mx-auto"
+                        className="object-contain mx-auto group-hover:scale-110 transition-transform duration-300"
                         unoptimized
                       />
                     ) : (
-                      <svg className="w-[108px] h-[108px] text-gray-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-[108px] h-[108px] text-gray-600 mx-auto group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
                     )}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 flex items-center justify-center">
-                    {category.title}
-                    <svg className="w-5 h-5 ml-2 text-gray-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </h3>
+                  
+                  {/* タイトル部分 */}
+                  <div className="p-4 pt-2">
+                    <h3 className="text-lg font-semibold text-gray-900">{category.title}</h3>
+                  </div>
+                  
+                  {/* ホバー時に表示される矢印 */}
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
                 </Link>
               ))}
             </div>
