@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -7,7 +8,14 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
-              <Link href="/" className="hover:opacity-80 transition-opacity">
+              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+                <Image
+                  src="/fortia-logo.png"
+                  alt="フォルティア行政書士事務所"
+                  width={40}
+                  height={40}
+                  className="mr-3"
+                />
                 <h1 className="text-xl font-bold">
                   <span className="text-gray-600">フォルティア</span>
                   <span className="text-gray-600 ml-1">行政書士事務所</span>
