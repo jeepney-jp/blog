@@ -81,15 +81,13 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-white rounded-lg shadow-sm p-8 relative">
-          {/* Date in top right */}
-          <div className="absolute top-8 right-8">
-            <time className="text-sm text-gray-500">
+        <div className="bg-white rounded-lg shadow-sm p-8">
+          {/* Comment (Heading) */}
+          <div className="mb-6 relative">
+            {/* Date in top left of heading */}
+            <time className="absolute -top-6 left-0 text-sm text-gray-500">
               {new Date(testimonial.publishedAt).toLocaleDateString('ja-JP')}
             </time>
-          </div>
-          {/* Comment (Heading) */}
-          <div className="mb-6">
             <h2 className="text-2xl font-bold text-gray-900 text-center">
               {testimonial.comment}
             </h2>
@@ -159,18 +157,12 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
 
           {/* Navigation */}
           <div className="mt-12 pt-8 border-t border-gray-200">
-            <div className="flex justify-between items-center">
+            <div>
               <Link
                 href="/testimonials"
                 className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
               >
                 ← お客様の声一覧に戻る
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
-              >
-                無料相談のお申し込み
               </Link>
             </div>
           </div>
