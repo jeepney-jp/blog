@@ -237,7 +237,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
 export async function generateStaticParams() {
   const testimonials = await getTestimonials();
   
-  return testimonials.map((testimonial) => ({
+  return testimonials.map((testimonial: any) => ({
     slug: testimonial.slug.current,
   }));
 }
