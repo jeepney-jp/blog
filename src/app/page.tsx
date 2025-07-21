@@ -529,7 +529,6 @@ export default async function Home() {
                 _id: string;
                 clientName: string;
                 slug: { current: string };
-                rating: number;
                 comment: string;
                 serviceType: string;
                 clientIndustry?: string;
@@ -557,19 +556,9 @@ export default async function Home() {
                   
                   {/* コンテンツ部分 */}
                   <div className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="flex text-yellow-400 text-lg">
-                        {'★'.repeat(testimonial.rating)}
-                        {'☆'.repeat(5 - testimonial.rating)}
-                      </div>
-                      <span className="ml-2 text-sm text-gray-600">({testimonial.rating}/5)</span>
-                    </div>
                     <div className="mb-4">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                         {serviceTypeLabels[testimonial.serviceType] || testimonial.serviceType}
-                      </span>
-                      <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                        注目の声
                       </span>
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">{testimonial.clientName}</h3>
@@ -616,12 +605,6 @@ export default async function Home() {
                   
                   {/* コンテンツ部分 */}
                   <div className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="flex text-yellow-400 text-lg">
-                        ★★★★★
-                      </div>
-                      <span className="ml-2 text-sm text-gray-600">(5/5)</span>
-                    </div>
                     <div className="mb-4">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                         許認可申請
@@ -646,12 +629,6 @@ export default async function Home() {
                   
                   {/* コンテンツ部分 */}
                   <div className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="flex text-yellow-400 text-lg">
-                        ★★★★★
-                      </div>
-                      <span className="ml-2 text-sm text-gray-600">(5/5)</span>
-                    </div>
                     <div className="mb-4">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                         相続手続き
@@ -676,12 +653,6 @@ export default async function Home() {
                   
                   {/* コンテンツ部分 */}
                   <div className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="flex text-yellow-400 text-lg">
-                        ★★★★★
-                      </div>
-                      <span className="ml-2 text-sm text-gray-600">(5/5)</span>
-                    </div>
                     <div className="mb-4">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                         会社設立

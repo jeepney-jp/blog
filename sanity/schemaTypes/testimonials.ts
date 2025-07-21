@@ -23,13 +23,6 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'rating',
-      title: '評価',
-      type: 'number',
-      validation: (rule) => rule.required().min(1).max(5),
-      description: '1〜5の星評価',
-    }),
-    defineField({
       name: 'comment',
       title: 'お客様のコメント（見出し）',
       type: 'text',
@@ -223,9 +216,9 @@ export default defineType({
     }),
     defineField({
       name: 'featured',
-      title: '注目の声',
+      title: 'トップページ掲載',
       type: 'boolean',
-      description: 'チェックするとトップページに表示されます',
+      description: 'チェックするとトップページに表示されます（最大3件）',
     }),
     defineField({
       name: 'publishedAt',
@@ -247,12 +240,11 @@ export default defineType({
     select: {
       title: 'clientName',
       subtitle: 'serviceType',
-      rating: 'rating',
+      featured: 'featured',
       media: 'clientImage',
     },
     prepare(selection) {
-      const {title, subtitle, rating} = selection
-      const stars = '★'.repeat(rating || 0) + '☆'.repeat(5 - (rating || 0))
+      const {title, subtitle, featured} = selection
       const serviceTypes: { [key: string]: string } = {
         license: '許認可申請',
         inheritance: '相続手続き',
@@ -261,8 +253,8 @@ export default defineType({
         other: 'その他'
       }
       return {
-        title: `${title} (${stars})`,
-        subtitle: serviceTypes[subtitle] || subtitle,
+        title: title,
+        subtitle: `${serviceTypes[subtitle] || subtitle}${featured ? ' (トップページ掲載)' : ''}`,
       }
     },
   },
@@ -271,14 +263,6 @@ export default defineType({
       title: '公開日（新しい順）',
       name: 'publishedAtDesc',
       by: [
-        {field: 'publishedAt', direction: 'desc'},
-      ],
-    },
-    {
-      title: '評価（高い順）',
-      name: 'ratingDesc',
-      by: [
-        {field: 'rating', direction: 'desc'},
         {field: 'publishedAt', direction: 'desc'},
       ],
     },

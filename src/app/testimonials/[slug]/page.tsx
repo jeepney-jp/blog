@@ -82,6 +82,17 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-sm p-8">
+          {/* Comment (Heading) */}
+          <div className="mb-6 relative">
+            {/* Date in top left of heading */}
+            <time className="absolute -top-6 left-0 text-sm text-gray-500">
+              {new Date(testimonial.publishedAt).toLocaleDateString('ja-JP')}
+            </time>
+            <h2 className="text-2xl font-bold text-gray-900 text-center">
+              {testimonial.comment}
+            </h2>
+          </div>
+
           {/* Client Image */}
           {testimonial.clientImage && (
             <div className="mb-8">
@@ -99,32 +110,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
 
           {/* Testimonial Header */}
           <header className="mb-8">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center space-x-4">
-                <time className="text-sm text-gray-500">
-                  {new Date(testimonial.publishedAt).toLocaleDateString('ja-JP')}
-                </time>
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                  {serviceTypeLabels[testimonial.serviceType] || testimonial.serviceType}
-                </span>
-                {testimonial.featured && (
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                    注目の声
-                  </span>
-                )}
-              </div>
-            </div>
 
-            <h1 className="text-3xl font-bold text-gray-900 mb-6">{testimonial.clientName}のご感想</h1>
-
-            {/* Rating */}
-            <div className="flex items-center mb-6">
-              <div className="flex text-yellow-400 text-2xl mr-4">
-                {'★'.repeat(testimonial.rating)}
-                {'☆'.repeat(5 - testimonial.rating)}
-              </div>
-              <span className="text-lg text-gray-600">({testimonial.rating}/5)</span>
-            </div>
 
             {/* Client Info */}
             <div className="bg-gray-50 rounded-lg p-6">
@@ -157,16 +143,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
           </header>
 
           {/* Testimonial Content */}
-          <div className="prose prose-lg max-w-none">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">お客様のご感想</h2>
-            
-            {/* 見出し的なコメント */}
-            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg mb-8">
-              <div className="text-gray-700 leading-relaxed font-medium">
-                {testimonial.comment}
-              </div>
-            </div>
-            
+          <div className="prose prose-lg max-w-none mt-8">
             {/* 本文（Portable Text） */}
             {testimonial.content && testimonial.content.length > 0 && (
               <div className="mt-8">
@@ -180,18 +157,12 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
 
           {/* Navigation */}
           <div className="mt-12 pt-8 border-t border-gray-200">
-            <div className="flex justify-between items-center">
+            <div>
               <Link
                 href="/testimonials"
                 className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
               >
                 ← お客様の声一覧に戻る
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
-              >
-                無料相談のお申し込み
               </Link>
             </div>
           </div>
