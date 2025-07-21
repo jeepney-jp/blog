@@ -81,7 +81,13 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-white rounded-lg shadow-sm p-8">
+        <div className="bg-white rounded-lg shadow-sm p-8 relative">
+          {/* Date in top right */}
+          <div className="absolute top-8 right-8">
+            <time className="text-sm text-gray-500">
+              {new Date(testimonial.publishedAt).toLocaleDateString('ja-JP')}
+            </time>
+          </div>
           {/* Comment (Heading) */}
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-gray-900 text-center">
@@ -106,18 +112,6 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
 
           {/* Testimonial Header */}
           <header className="mb-8">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center space-x-4">
-                <time className="text-sm text-gray-500">
-                  {new Date(testimonial.publishedAt).toLocaleDateString('ja-JP')}
-                </time>
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                  {serviceTypeLabels[testimonial.serviceType] || testimonial.serviceType}
-                </span>
-              </div>
-            </div>
-
-            <h1 className="text-3xl font-bold text-gray-900 mb-6">{testimonial.clientName}のご感想</h1>
 
 
             {/* Client Info */}
@@ -152,9 +146,6 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
 
           {/* Testimonial Content */}
           <div className="prose prose-lg max-w-none">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">お客様のご感想</h2>
-            
-            
             {/* 本文（Portable Text） */}
             {testimonial.content && testimonial.content.length > 0 && (
               <div className="mt-8">
