@@ -1,67 +1,14 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
-// import { getTestimonials } from "../../../lib/sanity";
+import { getTestimonials } from "../../../lib/sanity";
 
-// お客様の声の型定義
-interface Testimonial {
-  _id: string;
-  clientName: string;
-  slug: { current: string };
-  rating: number;
-  comment: string;
-  serviceType: string;
-  clientIndustry?: string;
-  clientLocation?: string;
-  featured?: boolean;
-  publishedAt: string;
-  clientImage?: {
-    asset: {
-      url: string;
-    };
-  };
-}
+// Next.jsのキャッシュを無効化
+export const revalidate = 0;
 
 export default async function TestimonialsPage() {
-  // 一時的にテストデータを使用
-  const testimonials: Testimonial[] = [
-    {
-      _id: "test1",
-      clientName: "田中様",
-      slug: { current: "tanaka-san" },
-      rating: 5,
-      comment: "許認可申請でお世話になりました。複雑な手続きでしたが、丁寧に説明していただき、スムーズに許可が下りました。本当にありがとうございました。",
-      serviceType: "license",
-      clientIndustry: "建設業",
-      clientLocation: "東京都",
-      featured: true,
-      publishedAt: "2025-07-06"
-    },
-    {
-      _id: "test2",
-      clientName: "佐藤様",
-      slug: { current: "sato-san" },
-      rating: 5,
-      comment: "相続手続きが想像以上に複雑で困っていましたが、親切に対応していただき、無事に完了できました。料金も明確で安心でした。",
-      serviceType: "inheritance",
-      clientIndustry: "個人",
-      clientLocation: "千葉県",
-      featured: false,
-      publishedAt: "2025-07-05"
-    },
-    {
-      _id: "test3",
-      clientName: "鈴木様",
-      slug: { current: "suzuki-san" },
-      rating: 4,
-      comment: "会社設立でお願いしました。必要書類の準備から法務局への提出まで、すべてサポートしていただきました。",
-      serviceType: "incorporation",
-      clientIndustry: "IT業",
-      clientLocation: "神奈川県",
-      featured: false,
-      publishedAt: "2025-07-04"
-    }
-  ];
+  // Sanityからお客様の声データを取得
+  const testimonials = await getTestimonials();
 
   const serviceTypeLabels: { [key: string]: string } = {
     license: "許認可申請",
@@ -116,12 +63,44 @@ export default async function TestimonialsPage() {
           </div>
         </div>
 
+        {/* Debug Info */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="mb-8 p-4 bg-gray-100 rounded">
+            <p className="text-sm text-gray-600">取得されたお客様の声: {testimonials.length}件</p>
+          </div>
+        )}
+
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial: {
+            _id: string;
+            clientName: string;
+            slug: { current: string };
+            rating: number;
+            comment: string;
+            serviceType: string;
+            clientIndustry?: string;
+            clientLocation?: string;
+            featured?: boolean;
+            publishedAt: string;
+            clientImage?: string;
+          }) => (
             <div key={testimonial._id} className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+              {/* Client Image */}
+              {testimonial.clientImage && (
+                <div className="mb-4">
+                  <div className="w-20 h-20 mx-auto rounded-full overflow-hidden">
+                    <img
+                      src={testimonial.clientImage}
+                      alt={testimonial.clientName}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              )}
+
               {/* Rating */}
-              <div className="flex items-center mb-4">
+              <div className="flex items-center justify-center mb-4">
                 <div className="flex text-yellow-400 text-lg">
                   {'★'.repeat(testimonial.rating)}
                   {'☆'.repeat(5 - testimonial.rating)}
