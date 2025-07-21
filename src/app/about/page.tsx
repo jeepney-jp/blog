@@ -163,7 +163,7 @@ export default function About() {
                         alt={member.name}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover"
+                        className="object-cover object-[center_30%]"
                       />
                     </div>
                     
