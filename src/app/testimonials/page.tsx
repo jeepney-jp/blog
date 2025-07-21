@@ -6,25 +6,6 @@ import { getTestimonials } from "../../../lib/sanity";
 // Next.jsのキャッシュを無効化
 export const revalidate = 0;
 
-// お客様の声の型定義
-interface Testimonial {
-  _id: string;
-  clientName: string;
-  slug: { current: string };
-  rating: number;
-  comment: string;
-  serviceType: string;
-  clientIndustry?: string;
-  clientLocation?: string;
-  featured?: boolean;
-  publishedAt: string;
-  clientImage?: {
-    asset: {
-      url: string;
-    };
-  };
-}
-
 export default async function TestimonialsPage() {
   // Sanityからお客様の声データを取得
   const testimonials = await getTestimonials();
