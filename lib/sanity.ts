@@ -102,7 +102,8 @@ export async function getFeaturedTestimonials(limit: number = 3) {
       serviceType,
       clientIndustry,
       clientLocation,
-      publishedAt
+      publishedAt,
+      "clientImage": clientImage.asset->url
     }
   `)
 }
