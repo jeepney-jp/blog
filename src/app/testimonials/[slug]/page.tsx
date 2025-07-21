@@ -143,7 +143,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
           </header>
 
           {/* Testimonial Content */}
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none mt-8">
             {/* 本文（Portable Text） */}
             {testimonial.content && testimonial.content.length > 0 && (
               <div className="mt-8">
