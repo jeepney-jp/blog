@@ -85,12 +85,12 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
           {/* Client Image */}
           {testimonial.clientImage && (
             <div className="mb-8">
-              <div className="w-32 h-32 mx-auto rounded-full overflow-hidden relative">
+              <div className="aspect-[4/3] max-w-md mx-auto bg-gray-100 relative rounded-lg overflow-hidden">
                 <Image
                   src={testimonial.clientImage}
                   alt={testimonial.clientName}
                   fill
-                  sizes="256px"
+                  sizes="(max-width: 768px) 100vw, 448px"
                   className="object-cover"
                 />
               </div>
