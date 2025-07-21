@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
-import { getTestimonials } from "@/lib/sanity";
+import { getTestimonials } from "../../../lib/sanity";
 
 // Next.jsのキャッシュを無効化
 export const revalidate = 0;

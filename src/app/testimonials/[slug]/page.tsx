@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getTestimonialBySlug, getTestimonials } from "@/lib/sanity";
+import { getTestimonialBySlug, getTestimonials } from "../../../../lib/sanity";
 
 // Next.jsのキャッシュを無効化
 export const revalidate = 0;
