@@ -65,7 +65,18 @@ export default async function TestimonialsPage() {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial: {
+            _id: string;
+            clientName: string;
+            slug: { current: string };
+            rating: number;
+            comment: string;
+            serviceType: string;
+            clientIndustry?: string;
+            clientLocation?: string;
+            featured?: boolean;
+            publishedAt: string;
+          }) => (
             <div key={testimonial._id} className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
               {/* Rating */}
               <div className="flex items-center mb-4">
