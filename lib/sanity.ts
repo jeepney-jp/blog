@@ -59,7 +59,6 @@ export async function getTestimonials() {
       _id,
       clientName,
       slug,
-      rating,
       comment,
       content,
       serviceType,
@@ -79,7 +78,6 @@ export async function getTestimonialBySlug(slug: string) {
       _id,
       clientName,
       slug,
-      rating,
       comment,
       content,
       serviceType,
@@ -95,11 +93,10 @@ export async function getTestimonialBySlug(slug: string) {
 // 注目お客様の声取得用のクエリ
 export async function getFeaturedTestimonials(limit: number = 3) {
   return await client.fetch(`
-    *[_type == "testimonials" && featured == true] | order(rating desc, publishedAt desc)[0...${limit}] {
+    *[_type == "testimonials" && featured == true] | order(publishedAt desc)[0...${limit}] {
       _id,
       clientName,
       slug,
-      rating,
       comment,
       serviceType,
       clientIndustry,

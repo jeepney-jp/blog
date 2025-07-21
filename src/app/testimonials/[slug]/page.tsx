@@ -82,6 +82,13 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-sm p-8">
+          {/* Comment (Heading) */}
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 text-center">
+              {testimonial.comment}
+            </h2>
+          </div>
+
           {/* Client Image */}
           {testimonial.clientImage && (
             <div className="mb-8">
@@ -107,24 +114,11 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                   {serviceTypeLabels[testimonial.serviceType] || testimonial.serviceType}
                 </span>
-                {testimonial.featured && (
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                    注目の声
-                  </span>
-                )}
               </div>
             </div>
 
             <h1 className="text-3xl font-bold text-gray-900 mb-6">{testimonial.clientName}のご感想</h1>
 
-            {/* Rating */}
-            <div className="flex items-center mb-6">
-              <div className="flex text-yellow-400 text-2xl mr-4">
-                {'★'.repeat(testimonial.rating)}
-                {'☆'.repeat(5 - testimonial.rating)}
-              </div>
-              <span className="text-lg text-gray-600">({testimonial.rating}/5)</span>
-            </div>
 
             {/* Client Info */}
             <div className="bg-gray-50 rounded-lg p-6">
@@ -160,12 +154,6 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">お客様のご感想</h2>
             
-            {/* 見出し的なコメント */}
-            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg mb-8">
-              <div className="text-gray-700 leading-relaxed font-medium">
-                {testimonial.comment}
-              </div>
-            </div>
             
             {/* 本文（Portable Text） */}
             {testimonial.content && testimonial.content.length > 0 && (

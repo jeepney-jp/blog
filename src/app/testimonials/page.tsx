@@ -77,7 +77,6 @@ export default async function TestimonialsPage() {
             _id: string;
             clientName: string;
             slug: { current: string };
-            rating: number;
             comment: string;
             serviceType: string;
             clientIndustry?: string;
@@ -106,25 +105,12 @@ export default async function TestimonialsPage() {
               
               {/* コンテンツ部分 */}
               <div className="p-6">
-                {/* Rating */}
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400 text-lg">
-                    {'★'.repeat(testimonial.rating)}
-                    {'☆'.repeat(5 - testimonial.rating)}
-                  </div>
-                  <span className="ml-2 text-sm text-gray-600">({testimonial.rating}/5)</span>
-                </div>
 
                 {/* Service Type */}
                 <div className="mb-4">
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                     {serviceTypeLabels[testimonial.serviceType] || testimonial.serviceType}
                   </span>
-                  {testimonial.featured && (
-                    <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                      注目の声
-                    </span>
-                  )}
                 </div>
 
                 {/* Client Name */}
