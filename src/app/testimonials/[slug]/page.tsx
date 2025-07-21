@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-// import { getTestimonialBySlug, getTestimonials } from "../../../../lib/sanity";
+import { getTestimonialBySlug, getTestimonials } from "@/lib/sanity";
+
+// Next.jsのキャッシュを無効化
+export const revalidate = 0;
 
 // お客様の声の型定義
 interface Testimonial {
@@ -28,41 +31,8 @@ interface PageProps {
 export default async function TestimonialDetailPage({ params }: PageProps) {
   const { slug } = await params;
   
-  // 一時的にテストデータを使用
-  const testimonial: Testimonial | null = slug === "tanaka-san" ? {
-    _id: "test1",
-    clientName: "田中様",
-    slug: { current: "tanaka-san" },
-    rating: 5,
-    comment: "許認可申請でお世話になりました。複雑な手続きでしたが、丁寧に説明していただき、スムーズに許可が下りました。\n\n最初は自分で手続きを進めようと思っていましたが、必要書類の多さと複雑さに困り果てていました。フォルティア行政書士事務所事務所にご相談したところ、必要な書類を整理して教えていただき、作成まで代行していただけました。\n\n担当の方は非常に親切で、分からないことがあると何度でも丁寧に説明してくださいました。料金も事前に明確に提示していただき、追加費用もなく安心できました。\n\nおかげで予定よりも早く許可が下り、事業を開始することができました。本当にありがとうございました。同じような手続きでお困りの方には、ぜひお勧めしたいと思います。",
-    serviceType: "license",
-    clientIndustry: "建設業",
-    clientLocation: "東京都",
-    featured: true,
-    publishedAt: "2025-07-06"
-  } : slug === "sato-san" ? {
-    _id: "test2",
-    clientName: "佐藤様",
-    slug: { current: "sato-san" },
-    rating: 5,
-    comment: "相続手続きが想像以上に複雑で困っていましたが、親切に対応していただき、無事に完了できました。料金も明確で安心でした。\n\n父が亡くなり、相続手続きを進める必要がありましたが、何から始めれば良いか全く分からない状態でした。インターネットで調べても情報が多すぎて混乱するばかりでした。\n\nフォルティア行政書士事務所事務所にご相談したところ、最初の面談で手続きの全体像を分かりやすく説明していただき、とても安心しました。必要な書類の取得から各種手続きまで、ステップバイステップでサポートしていただけました。\n\n特に印象的だったのは、家族の状況を丁寧にヒアリングしていただき、最適な手続き方法を提案してくださったことです。おかげで余計な費用をかけずに、効率的に手続きを完了することができました。",
-    serviceType: "inheritance",
-    clientIndustry: "個人",
-    clientLocation: "千葉県",
-    featured: false,
-    publishedAt: "2025-07-05"
-  } : slug === "suzuki-san" ? {
-    _id: "test3",
-    clientName: "鈴木様",
-    slug: { current: "suzuki-san" },
-    rating: 4,
-    comment: "会社設立でお願いしました。必要書類の準備から法務局への提出まで、すべてサポートしていただきました。\n\n起業を決意したものの、会社設立の手続きについて全く知識がありませんでした。知人の紹介でフォルティア行政書士事務所事務所を知り、ご相談させていただきました。\n\n定款の作成から必要書類の準備、法務局への提出まで、一連の手続きをワンストップでサポートしていただけました。特に、事業内容に応じた定款の内容についてアドバイスをいただけたのが非常に助かりました。\n\n手続きの進捗も随時報告していただき、安心してお任せすることができました。設立後の各種手続きについてもアドバイスをいただき、スムーズに事業をスタートすることができました。",
-    serviceType: "incorporation",
-    clientIndustry: "IT業",
-    clientLocation: "神奈川県",
-    featured: false,
-    publishedAt: "2025-07-04"
-  } : null;
+  // Sanityからお客様の声データを取得
+  const testimonial = await getTestimonialBySlug(slug);
 
   if (!testimonial) {
     notFound();
@@ -280,4 +250,13 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
       </footer>
     </div>
   );
+}
+
+// 静的パスの生成
+export async function generateStaticParams() {
+  const testimonials = await getTestimonials();
+  
+  return testimonials.map((testimonial) => ({
+    slug: testimonial.slug.current,
+  }));
 }

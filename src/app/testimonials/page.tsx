@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
-// import { getTestimonials } from "../../../lib/sanity";
+import { getTestimonials } from "@/lib/sanity";
+
+// Next.jsのキャッシュを無効化
+export const revalidate = 0;
 
 // お客様の声の型定義
 interface Testimonial {
@@ -23,45 +26,8 @@ interface Testimonial {
 }
 
 export default async function TestimonialsPage() {
-  // 一時的にテストデータを使用
-  const testimonials: Testimonial[] = [
-    {
-      _id: "test1",
-      clientName: "田中様",
-      slug: { current: "tanaka-san" },
-      rating: 5,
-      comment: "許認可申請でお世話になりました。複雑な手続きでしたが、丁寧に説明していただき、スムーズに許可が下りました。本当にありがとうございました。",
-      serviceType: "license",
-      clientIndustry: "建設業",
-      clientLocation: "東京都",
-      featured: true,
-      publishedAt: "2025-07-06"
-    },
-    {
-      _id: "test2",
-      clientName: "佐藤様",
-      slug: { current: "sato-san" },
-      rating: 5,
-      comment: "相続手続きが想像以上に複雑で困っていましたが、親切に対応していただき、無事に完了できました。料金も明確で安心でした。",
-      serviceType: "inheritance",
-      clientIndustry: "個人",
-      clientLocation: "千葉県",
-      featured: false,
-      publishedAt: "2025-07-05"
-    },
-    {
-      _id: "test3",
-      clientName: "鈴木様",
-      slug: { current: "suzuki-san" },
-      rating: 4,
-      comment: "会社設立でお願いしました。必要書類の準備から法務局への提出まで、すべてサポートしていただきました。",
-      serviceType: "incorporation",
-      clientIndustry: "IT業",
-      clientLocation: "神奈川県",
-      featured: false,
-      publishedAt: "2025-07-04"
-    }
-  ];
+  // Sanityからお客様の声データを取得
+  const testimonials = await getTestimonials();
 
   const serviceTypeLabels: { [key: string]: string } = {
     license: "許認可申請",
