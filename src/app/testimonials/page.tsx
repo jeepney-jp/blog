@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import { getTestimonials } from "../../../lib/sanity";
@@ -89,10 +90,12 @@ export default async function TestimonialsPage() {
               {/* 写真部分 */}
               <div className="aspect-[4/3] bg-gray-100 relative">
                 {testimonial.clientImage ? (
-                  <img
+                  <Image
                     src={testimonial.clientImage}
                     alt={testimonial.clientName}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">
