@@ -63,6 +63,13 @@ export default async function TestimonialsPage() {
           </div>
         </div>
 
+        {/* Debug Info */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="mb-8 p-4 bg-gray-100 rounded">
+            <p className="text-sm text-gray-600">取得されたお客様の声: {testimonials.length}件</p>
+          </div>
+        )}
+
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial: {
@@ -76,10 +83,24 @@ export default async function TestimonialsPage() {
             clientLocation?: string;
             featured?: boolean;
             publishedAt: string;
+            clientImage?: string;
           }) => (
             <div key={testimonial._id} className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+              {/* Client Image */}
+              {testimonial.clientImage && (
+                <div className="mb-4">
+                  <div className="w-20 h-20 mx-auto rounded-full overflow-hidden">
+                    <img
+                      src={testimonial.clientImage}
+                      alt={testimonial.clientName}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              )}
+
               {/* Rating */}
-              <div className="flex items-center mb-4">
+              <div className="flex items-center justify-center mb-4">
                 <div className="flex text-yellow-400 text-lg">
                   {'★'.repeat(testimonial.rating)}
                   {'☆'.repeat(5 - testimonial.rating)}

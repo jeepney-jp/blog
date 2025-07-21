@@ -3,7 +3,7 @@ import { createClient } from '@sanity/client'
 export const client = createClient({
   projectId: 'njgo6ucb',
   dataset: 'production',
-  useCdn: true,
+  useCdn: false, // CDNを無効化して常に最新データを取得
   apiVersion: '2024-01-01',
 })
 
@@ -66,7 +66,7 @@ export async function getTestimonials() {
       clientLocation,
       featured,
       publishedAt,
-      clientImage
+      "clientImage": clientImage.asset->url
     }
   `)
 }
@@ -85,7 +85,7 @@ export async function getTestimonialBySlug(slug: string) {
       clientLocation,
       featured,
       publishedAt,
-      clientImage
+      "clientImage": clientImage.asset->url
     }
   `, { slug })
 }

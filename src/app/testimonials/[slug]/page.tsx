@@ -79,6 +79,19 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-sm p-8">
+          {/* Client Image */}
+          {testimonial.clientImage && (
+            <div className="mb-8">
+              <div className="w-32 h-32 mx-auto rounded-full overflow-hidden">
+                <img
+                  src={testimonial.clientImage}
+                  alt={testimonial.clientName}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          )}
+
           {/* Testimonial Header */}
           <header className="mb-8">
             <div className="flex items-center justify-between mb-6">
