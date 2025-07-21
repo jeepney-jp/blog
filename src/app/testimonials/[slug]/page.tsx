@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTestimonialBySlug, getTestimonials } from "../../../../lib/sanity";
+import { PortableText } from '@portabletext/react';
+import { portableTextComponents } from '@/components/PortableTextComponents';
 
 // Next.jsのキャッシュを無効化
 export const revalidate = 0;
@@ -154,11 +156,23 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
           {/* Testimonial Content */}
           <div className="prose prose-lg max-w-none">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">お客様のご感想</h2>
-            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
-              <div className="text-gray-700 leading-relaxed whitespace-pre-line">
+            
+            {/* 見出し的なコメント */}
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg mb-8">
+              <div className="text-gray-700 leading-relaxed font-medium">
                 {testimonial.comment}
               </div>
             </div>
+            
+            {/* 本文（Portable Text） */}
+            {testimonial.content && testimonial.content.length > 0 && (
+              <div className="mt-8">
+                <PortableText
+                  value={testimonial.content}
+                  components={portableTextComponents}
+                />
+              </div>
+            )}
           </div>
 
           {/* Navigation */}
