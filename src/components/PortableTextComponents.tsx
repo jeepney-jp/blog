@@ -150,14 +150,16 @@ export const portableTextComponents: PortableTextComponents = {
         </a>
       )
     },
-    color: ({ value, children }: { value: ColorValue; children: React.ReactNode }) => {
+    color: ({ value, children }) => {
+      const colorValue = value as ColorValue | undefined;
       return (
-        <span style={{ color: value?.hex || '#000000' }}>
+        <span style={{ color: colorValue?.hex || '#000000' }}>
           {children}
         </span>
       )
     },
-    highlight: ({ value, children }: { value: HighlightValue; children: React.ReactNode }) => {
+    highlight: ({ value, children }) => {
+      const highlightValue = value as HighlightValue | undefined;
       const colors: { [key: string]: string } = {
         yellow: '#fef3c7',
         pink: '#fce7f3',
@@ -165,7 +167,7 @@ export const portableTextComponents: PortableTextComponents = {
         lightgreen: '#d1fae5',
       }
       return (
-        <span style={{ backgroundColor: colors[value?.color] || colors.yellow }}>
+        <span style={{ backgroundColor: colors[highlightValue?.color || ''] || colors.yellow }}>
           {children}
         </span>
       )
