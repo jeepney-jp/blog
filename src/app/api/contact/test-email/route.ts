@@ -1,9 +1,9 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { sendContactEmail } from '@/lib/email';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   // 環境変数のチェック
-  const requiredEnvVars = ['RESEND_API_KEY', 'RESEND_FROM_EMAIL', 'EMAIL_TO'];
+  const requiredEnvVars = ['LOLIPOP_EMAIL', 'LOLIPOP_PASSWORD', 'EMAIL_TO'];
   const missingVars = requiredEnvVars.filter(varName => !process.env[varName]);
   
   if (missingVars.length > 0) {
@@ -11,9 +11,9 @@ export async function GET(request: NextRequest) {
       error: '環境変数が設定されていません',
       missing: missingVars,
       instructions: '.env.localファイルに以下の環境変数を設定してください：\n' +
-        '- RESEND_API_KEY: ResendのAPIキー\n' +
-        '- RESEND_FROM_EMAIL: 送信元メールアドレス（例：noreply@resend.dev）\n' +
-        '- EMAIL_TO: 通知を受け取るメールアドレス（例：info@fortia-office.com）'
+        '- LOLIPOP_EMAIL: ロリポップのメールアドレス（例：info@fortia-office.com）\n' +
+        '- LOLIPOP_PASSWORD: ロリポップのメールパスワード\n' +
+        '- EMAIL_TO: 通知を受け取るメールアドレス'
     }, { status: 500 });
   }
 
@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
       success: true,
       message: 'テストメールを送信しました',
       details: {
-        from: process.env.RESEND_FROM_EMAIL,
+        from: process.env.LOLIPOP_EMAIL,
         to: process.env.EMAIL_TO,
         messageId: result.messageId,
       },
@@ -45,10 +45,10 @@ export async function GET(request: NextRequest) {
       error: 'メール送信に失敗しました',
       details: error instanceof Error ? error.message : '不明なエラー',
       troubleshooting: [
-        '1. ResendのAPIキーが正しいか確認',
-        '2. Resendでドメインの認証が完了しているか確認',
-        '3. 送信元メールアドレスが正しく設定されているか確認',
-        '4. Resendダッシュボードでエラーログを確認'
+        '1. ロリポップのメールパスワードが正しいか確認',
+        '2. メールアドレスが正しく設定されているか確認',
+        '3. ロリポップの管理画面でメールアカウントが有効か確認',
+        '4. SMTPポート（465）がブロックされていないか確認'
       ]
     }, { status: 500 });
   }
