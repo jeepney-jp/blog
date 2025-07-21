@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { writeClient } from '@/lib/sanity.client';
+import { sendContactEmail } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -38,6 +39,22 @@ export async function POST(request: NextRequest) {
     });
 
     console.log('問い合わせをSanityに保存しました:', contact._id);
+
+    // メール送信
+    try {
+      await sendContactEmail({
+        name: body.name,
+        email: body.email,
+        phone: body.phone,
+        service: body.service,
+        message: body.message,
+      });
+      console.log('通知メールを送信しました');
+    } catch (emailError) {
+      // メール送信に失敗してもSanityには保存されているため、エラーログのみ出力
+      console.error('メール送信エラー:', emailError);
+      // メール送信失敗は通知しない（UXを考慮）
+    }
 
     return NextResponse.json({
       success: true,
