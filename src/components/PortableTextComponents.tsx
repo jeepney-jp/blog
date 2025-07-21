@@ -41,9 +41,11 @@ export const portableTextComponents: PortableTextComponents = {
       }
       // Sanityの画像参照を直接URLに変換
       const imageRef = value.asset._ref;
-      const [_file, id, dimensions, format] = imageRef.split('-');
+      const parts = imageRef.split('-');
+      const id = parts[1];
+      const dimensions = parts[2];
+      const format = parts[3];
       const imageUrl = `https://cdn.sanity.io/images/njgo6ucb/production/${id}-${dimensions}.${format}`;
-      if (!imageUrl) return null;
       
       return (
         <figure className="my-8">
