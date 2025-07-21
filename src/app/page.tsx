@@ -538,21 +538,23 @@ export default async function Home() {
               }) => (
                 <div key={testimonial._id} className="bg-white rounded-lg shadow-sm overflow-hidden">
                   {/* 写真部分 */}
-                  <div className="aspect-[4/3] bg-gray-100 relative">
-                    {testimonial.clientImage ? (
-                      <Image
-                        src={testimonial.clientImage}
-                        alt={testimonial.clientName}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <div className="w-20 h-20 bg-gray-300 rounded-full" />
-                      </div>
-                    )}
-                  </div>
+                  <Link href={`/testimonials/${testimonial.slug.current}`}>
+                    <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden group cursor-pointer">
+                      {testimonial.clientImage ? (
+                        <Image
+                          src={testimonial.clientImage}
+                          alt={testimonial.clientName}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <div className="w-20 h-20 bg-gray-300 rounded-full" />
+                        </div>
+                      )}
+                    </div>
+                  </Link>
                   
                   {/* コンテンツ部分 */}
                   <div className="p-6">
@@ -581,10 +583,10 @@ export default async function Home() {
                     <div className="pt-4 border-t">
                       <Link
                         href={`/testimonials/${testimonial.slug.current}`}
-                        className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center"
+                        className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center group"
                       >
                         詳細を見る
-                        <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </Link>
