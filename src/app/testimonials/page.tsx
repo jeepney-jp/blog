@@ -85,74 +85,80 @@ export default async function TestimonialsPage() {
             publishedAt: string;
             clientImage?: string;
           }) => (
-            <div key={testimonial._id} className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-              {/* Client Image */}
-              {testimonial.clientImage && (
-                <div className="mb-4">
-                  <div className="w-20 h-20 mx-auto rounded-full overflow-hidden">
-                    <img
-                      src={testimonial.clientImage}
-                      alt={testimonial.clientName}
-                      className="w-full h-full object-cover"
-                    />
+            <div key={testimonial._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+              {/* 写真部分 */}
+              <div className="aspect-[4/3] bg-gray-100 relative">
+                {testimonial.clientImage ? (
+                  <img
+                    src={testimonial.clientImage}
+                    alt={testimonial.clientName}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="w-20 h-20 bg-gray-300 rounded-full" />
                   </div>
-                </div>
-              )}
-
-              {/* Rating */}
-              <div className="flex items-center justify-center mb-4">
-                <div className="flex text-yellow-400 text-lg">
-                  {'★'.repeat(testimonial.rating)}
-                  {'☆'.repeat(5 - testimonial.rating)}
-                </div>
-                <span className="ml-2 text-sm text-gray-600">({testimonial.rating}/5)</span>
-              </div>
-
-              {/* Service Type */}
-              <div className="mb-4">
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                  {serviceTypeLabels[testimonial.serviceType] || testimonial.serviceType}
-                </span>
-                {testimonial.featured && (
-                  <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                    注目の声
-                  </span>
                 )}
               </div>
+              
+              {/* コンテンツ部分 */}
+              <div className="p-6">
+                {/* Rating */}
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400 text-lg">
+                    {'★'.repeat(testimonial.rating)}
+                    {'☆'.repeat(5 - testimonial.rating)}
+                  </div>
+                  <span className="ml-2 text-sm text-gray-600">({testimonial.rating}/5)</span>
+                </div>
 
-              {/* Comment */}
-              <p className="text-gray-700 leading-relaxed mb-4 line-clamp-4">
-                {testimonial.comment}
-              </p>
+                {/* Service Type */}
+                <div className="mb-4">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                    {serviceTypeLabels[testimonial.serviceType] || testimonial.serviceType}
+                  </span>
+                  {testimonial.featured && (
+                    <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                      注目の声
+                    </span>
+                  )}
+                </div>
 
-              {/* Client Info */}
-              <div className="border-t pt-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-medium text-gray-900">{testimonial.clientName}</p>
-                    <div className="text-sm text-gray-500">
-                      {testimonial.clientIndustry && (
-                        <span>{testimonial.clientIndustry}</span>
-                      )}
-                      {testimonial.clientLocation && (
-                        <span className="ml-2">({testimonial.clientLocation})</span>
-                      )}
-                    </div>
+                {/* Client Name */}
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{testimonial.clientName}</h3>
+
+                {/* Comment */}
+                <p className="text-gray-700 leading-relaxed mb-4 line-clamp-3">
+                  {testimonial.comment}
+                </p>
+
+                {/* Client Info & Date */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-sm text-gray-500">
+                    {testimonial.clientIndustry && (
+                      <span>{testimonial.clientIndustry}</span>
+                    )}
+                    {testimonial.clientLocation && (
+                      <span className="ml-1">({testimonial.clientLocation})</span>
+                    )}
                   </div>
                   <time className="text-sm text-gray-500">
                     {new Date(testimonial.publishedAt).toLocaleDateString('ja-JP')}
                   </time>
                 </div>
-              </div>
 
-              {/* Read More Link */}
-              <div className="mt-4">
-                <Link
-                  href={`/testimonials/${testimonial.slug.current}`}
-                  className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-                >
-                  詳細を見る →
-                </Link>
+                {/* Read More Link */}
+                <div className="pt-4 border-t">
+                  <Link
+                    href={`/testimonials/${testimonial.slug.current}`}
+                    className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center"
+                  >
+                    詳細を見る
+                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

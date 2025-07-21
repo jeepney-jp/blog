@@ -535,126 +535,162 @@ export default async function Home() {
                 clientIndustry?: string;
                 clientLocation?: string;
                 publishedAt: string;
+                clientImage?: string;
               }) => (
-                <div key={testimonial._id} className="bg-white rounded-lg shadow-sm p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="flex text-yellow-400 text-lg">
-                      {'★'.repeat(testimonial.rating)}
-                      {'☆'.repeat(5 - testimonial.rating)}
+                <div key={testimonial._id} className="bg-white rounded-lg shadow-sm overflow-hidden">
+                  {/* 写真部分 */}
+                  <div className="aspect-[4/3] bg-gray-100 relative">
+                    {testimonial.clientImage ? (
+                      <img
+                        src={testimonial.clientImage}
+                        alt={testimonial.clientName}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <div className="w-20 h-20 bg-gray-300 rounded-full" />
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* コンテンツ部分 */}
+                  <div className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="flex text-yellow-400 text-lg">
+                        {'★'.repeat(testimonial.rating)}
+                        {'☆'.repeat(5 - testimonial.rating)}
+                      </div>
+                      <span className="ml-2 text-sm text-gray-600">({testimonial.rating}/5)</span>
                     </div>
-                    <span className="ml-2 text-sm text-gray-600">({testimonial.rating}/5)</span>
-                  </div>
-                  <div className="mb-4">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                      {serviceTypeLabels[testimonial.serviceType] || testimonial.serviceType}
-                    </span>
-                    <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                      注目の声
-                    </span>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed mb-4 line-clamp-3">
-                    {testimonial.comment}
-                  </p>
-                  <div className="border-t pt-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-medium text-gray-900">{testimonial.clientName}</p>
-                        <div className="text-sm text-gray-500">
-                          {testimonial.clientIndustry && (
-                            <span>{testimonial.clientIndustry}</span>
-                          )}
-                          {testimonial.clientLocation && (
-                            <span className="ml-1">({testimonial.clientLocation})</span>
-                          )}
-                        </div>
+                    <div className="mb-4">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                        {serviceTypeLabels[testimonial.serviceType] || testimonial.serviceType}
+                      </span>
+                      <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                        注目の声
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{testimonial.clientName}</h3>
+                    <p className="text-gray-700 leading-relaxed mb-4 line-clamp-3">
+                      {testimonial.comment}
+                    </p>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-sm text-gray-500">
+                        {testimonial.clientIndustry && (
+                          <span>{testimonial.clientIndustry}</span>
+                        )}
+                        {testimonial.clientLocation && (
+                          <span className="ml-1">({testimonial.clientLocation})</span>
+                        )}
                       </div>
                       <time className="text-sm text-gray-500">
                         {new Date(testimonial.publishedAt).toLocaleDateString('ja-JP')}
                       </time>
                     </div>
-                  </div>
-                  <div className="mt-4">
-                    <Link
-                      href={`/testimonials/${testimonial.slug.current}`}
-                      className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-                    >
-                      詳細を見る →
-                    </Link>
+                    <div className="pt-4 border-t">
+                      <Link
+                        href={`/testimonials/${testimonial.slug.current}`}
+                        className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center"
+                      >
+                        詳細を見る
+                        <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))
             ) : (
               // フォールバック
               <>
-                <div className="bg-white rounded-lg shadow-sm p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="flex text-yellow-400 text-lg">
-                      ★★★★★
+                <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                  {/* 写真部分 */}
+                  <div className="aspect-[4/3] bg-gray-100 relative">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="w-20 h-20 bg-gray-300 rounded-full" />
                     </div>
-                    <span className="ml-2 text-sm text-gray-600">(5/5)</span>
                   </div>
-                  <div className="mb-4">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                      許認可申請
-                    </span>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    迅速かつ丁寧な対応で、安心してお任せできました。
-                  </p>
-                  <div className="border-t pt-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-medium text-gray-900">お客様</p>
-                        <p className="text-sm text-gray-500">建設業</p>
+                  
+                  {/* コンテンツ部分 */}
+                  <div className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="flex text-yellow-400 text-lg">
+                        ★★★★★
                       </div>
+                      <span className="ml-2 text-sm text-gray-600">(5/5)</span>
+                    </div>
+                    <div className="mb-4">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                        許認可申請
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">お客様</h3>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      迅速かつ丁寧な対応で、安心してお任せできました。
+                    </p>
+                    <div className="text-sm text-gray-500">
+                      <span>建設業</span>
                     </div>
                   </div>
                 </div>
-                <div className="bg-white rounded-lg shadow-sm p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="flex text-yellow-400 text-lg">
-                      ★★★★★
+                <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                  {/* 写真部分 */}
+                  <div className="aspect-[4/3] bg-gray-100 relative">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="w-20 h-20 bg-gray-300 rounded-full" />
                     </div>
-                    <span className="ml-2 text-sm text-gray-600">(5/5)</span>
                   </div>
-                  <div className="mb-4">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                      相続手続き
-                    </span>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    複雑な手続きも分かりやすく説明していただきました。
-                  </p>
-                  <div className="border-t pt-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-medium text-gray-900">お客様</p>
-                        <p className="text-sm text-gray-500">個人</p>
+                  
+                  {/* コンテンツ部分 */}
+                  <div className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="flex text-yellow-400 text-lg">
+                        ★★★★★
                       </div>
+                      <span className="ml-2 text-sm text-gray-600">(5/5)</span>
+                    </div>
+                    <div className="mb-4">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                        相続手続き
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">お客様</h3>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      複雑な手続きも分かりやすく説明していただきました。
+                    </p>
+                    <div className="text-sm text-gray-500">
+                      <span>個人</span>
                     </div>
                   </div>
                 </div>
-                <div className="bg-white rounded-lg shadow-sm p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="flex text-yellow-400 text-lg">
-                      ★★★★★
+                <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                  {/* 写真部分 */}
+                  <div className="aspect-[4/3] bg-gray-100 relative">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="w-20 h-20 bg-gray-300 rounded-full" />
                     </div>
-                    <span className="ml-2 text-sm text-gray-600">(5/5)</span>
                   </div>
-                  <div className="mb-4">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                      会社設立
-                    </span>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    スムーズに会社設立ができました。
-                  </p>
-                  <div className="border-t pt-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-medium text-gray-900">お客様</p>
-                        <p className="text-sm text-gray-500">IT業</p>
+                  
+                  {/* コンテンツ部分 */}
+                  <div className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="flex text-yellow-400 text-lg">
+                        ★★★★★
                       </div>
+                      <span className="ml-2 text-sm text-gray-600">(5/5)</span>
+                    </div>
+                    <div className="mb-4">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                        会社設立
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">お客様</h3>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      スムーズに会社設立ができました。
+                    </p>
+                    <div className="text-sm text-gray-500">
+                      <span>IT業</span>
                     </div>
                   </div>
                 </div>
