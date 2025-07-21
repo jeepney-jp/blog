@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
+import SuccessModal from "@/components/SuccessModal";
 
 type FormData = {
   name: string;
@@ -28,6 +29,7 @@ export default function Contact() {
     type: 'success' | 'error' | null;
     message: string;
   }>({ type: null, message: '' });
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -65,6 +67,8 @@ export default function Contact() {
           type: 'success',
           message: data.message || 'お問い合わせを受け付けました。',
         });
+        // モーダルを表示
+        setShowModal(true);
         // フォームをリセット
         setFormData({
           name: '',
@@ -350,6 +354,13 @@ export default function Contact() {
           </div>
         </div>
       </footer>
+
+      {/* 成功モーダル */}
+      <SuccessModal 
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        message={submitStatus.message}
+      />
     </div>
   );
 }
