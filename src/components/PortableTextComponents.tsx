@@ -1,17 +1,50 @@
 import { PortableTextComponents } from '@portabletext/react'
 import Image from 'next/image'
-import { urlForImage } from '@/lib/sanityImage'
+import { urlFor } from '@/lib/sanityImage'
+
+interface ImageValue {
+  asset?: {
+    _ref: string;
+  };
+  alt?: string;
+  caption?: string;
+}
+
+interface YouTubeValue {
+  url: string;
+}
+
+interface CodeValue {
+  language?: string;
+  code: string;
+}
+
+interface BlockquoteValue {
+  text: string;
+  cite?: string;
+}
+
+interface ColorValue {
+  hex?: string;
+}
+
+interface HighlightValue {
+  color?: string;
+}
 
 export const portableTextComponents: PortableTextComponents = {
   types: {
-    image: ({ value }: any) => {
+    image: ({ value }: { value: ImageValue }) => {
       if (!value?.asset?._ref) {
         return null
       }
+      const imageUrl = urlFor(value);
+      if (!imageUrl) return null;
+      
       return (
         <figure className="my-8">
           <Image
-            src={urlForImage(value).url()}
+            src={imageUrl.width(800).url()}
             alt={value.alt || '画像'}
             width={800}
             height={600}
@@ -25,7 +58,7 @@ export const portableTextComponents: PortableTextComponents = {
         </figure>
       )
     },
-    youtube: ({ value }: any) => {
+    youtube: ({ value }: { value: YouTubeValue }) => {
       const { url } = value
       if (!url) return null
       
@@ -47,7 +80,7 @@ export const portableTextComponents: PortableTextComponents = {
         </div>
       )
     },
-    code: ({ value }: any) => {
+    code: ({ value }: { value: CodeValue }) => {
       return (
         <pre className="my-6 p-4 bg-gray-100 rounded-lg overflow-x-auto">
           <code className={`language-${value.language || 'text'}`}>
@@ -56,7 +89,7 @@ export const portableTextComponents: PortableTextComponents = {
         </pre>
       )
     },
-    blockquote: ({ value }: any) => {
+    blockquote: ({ value }: { value: BlockquoteValue }) => {
       return (
         <blockquote className="my-6 pl-4 border-l-4 border-blue-500 italic">
           <p className="text-gray-700">{value.text}</p>
@@ -111,14 +144,14 @@ export const portableTextComponents: PortableTextComponents = {
         </a>
       )
     },
-    color: ({ value, children }) => {
+    color: ({ value, children }: { value: ColorValue; children: React.ReactNode }) => {
       return (
         <span style={{ color: value?.hex || '#000000' }}>
           {children}
         </span>
       )
     },
-    highlight: ({ value, children }) => {
+    highlight: ({ value, children }: { value: HighlightValue; children: React.ReactNode }) => {
       const colors: { [key: string]: string } = {
         yellow: '#fef3c7',
         pink: '#fce7f3',

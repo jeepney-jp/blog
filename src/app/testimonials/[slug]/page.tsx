@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTestimonialBySlug, getTestimonials } from "../../../../lib/sanity";
 import { PortableText } from '@portabletext/react';
@@ -84,11 +85,13 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
           {/* Client Image */}
           {testimonial.clientImage && (
             <div className="mb-8">
-              <div className="w-32 h-32 mx-auto rounded-full overflow-hidden">
-                <img
+              <div className="w-32 h-32 mx-auto rounded-full overflow-hidden relative">
+                <Image
                   src={testimonial.clientImage}
                   alt={testimonial.clientName}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="256px"
+                  className="object-cover"
                 />
               </div>
             </div>
