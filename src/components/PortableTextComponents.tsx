@@ -1,10 +1,11 @@
 import { PortableTextComponents } from '@portabletext/react'
 import Image from 'next/image'
-import { urlFor } from '@/lib/sanityImage'
 
 interface ImageValue {
+  _type?: 'image';
   asset?: {
     _ref: string;
+    _type?: 'reference';
   };
   alt?: string;
   caption?: string;
@@ -38,13 +39,16 @@ export const portableTextComponents: PortableTextComponents = {
       if (!value?.asset?._ref) {
         return null
       }
-      const imageUrl = urlFor(value);
+      // Sanityの画像参照を直接URLに変換
+      const imageRef = value.asset._ref;
+      const [_file, id, dimensions, format] = imageRef.split('-');
+      const imageUrl = `https://cdn.sanity.io/images/njgo6ucb/production/${id}-${dimensions}.${format}`;
       if (!imageUrl) return null;
       
       return (
         <figure className="my-8">
           <Image
-            src={imageUrl.width(800).url()}
+            src={imageUrl}
             alt={value.alt || '画像'}
             width={800}
             height={600}
