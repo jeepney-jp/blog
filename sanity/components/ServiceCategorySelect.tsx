@@ -3,7 +3,7 @@ import { useClient } from 'sanity'
 import { set, unset } from 'sanity'
 
 export function ServiceCategorySelect(props: any) {
-  const { onChange, value, schemaType, readOnly, elementProps } = props
+  const { onChange, value, schemaType, readOnly, elementProps, inputId } = props
   const client = useClient({ apiVersion: '2024-01-01' })
   const [categories, setCategories] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
@@ -40,12 +40,13 @@ export function ServiceCategorySelect(props: any) {
   }
 
   if (loading) {
-    return <select disabled><option>読み込み中...</option></select>
+    return <select disabled id={inputId}><option>読み込み中...</option></select>
   }
 
   return (
     <select
       {...elementProps}
+      id={inputId}
       value={value?._ref || ''}
       onChange={handleChange}
       disabled={readOnly}

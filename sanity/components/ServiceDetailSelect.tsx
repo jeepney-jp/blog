@@ -3,7 +3,7 @@ import { useClient } from 'sanity'
 import { set, unset } from 'sanity'
 
 export function ServiceDetailSelect(props: any) {
-  const { onChange, value, document, readOnly, elementProps } = props
+  const { onChange, value, document, readOnly, elementProps, inputId } = props
   const client = useClient({ apiVersion: '2024-01-01' })
   const [services, setServices] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
@@ -50,7 +50,7 @@ export function ServiceDetailSelect(props: any) {
 
   if (!categoryId) {
     return (
-      <select disabled style={{
+      <select disabled id={inputId} style={{
         width: '100%',
         padding: '8px',
         border: '1px solid #ccc',
@@ -64,7 +64,7 @@ export function ServiceDetailSelect(props: any) {
   }
 
   if (loading) {
-    return <select disabled style={{
+    return <select disabled id={inputId} style={{
       width: '100%',
       padding: '8px',
       border: '1px solid #ccc',
@@ -77,6 +77,7 @@ export function ServiceDetailSelect(props: any) {
   return (
     <select
       {...elementProps}
+      id={inputId}
       value={value?._ref || ''}
       onChange={handleChange}
       disabled={readOnly || loading}
