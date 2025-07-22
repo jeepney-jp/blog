@@ -35,27 +35,6 @@ export default async function TestimonialsPage() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Filter Section */}
-        <div className="mb-8">
-          <div className="flex flex-wrap gap-4 justify-center">
-            <button className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium">
-              すべて
-            </button>
-            <button className="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50">
-              許認可申請
-            </button>
-            <button className="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50">
-              相続手続き
-            </button>
-            <button className="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50">
-              会社設立
-            </button>
-            <button className="px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50">
-              契約書作成
-            </button>
-          </div>
-        </div>
-
         {/* Debug Info */}
         {process.env.NODE_ENV === 'development' && (
           <div className="mb-8 p-4 bg-gray-100 rounded">
