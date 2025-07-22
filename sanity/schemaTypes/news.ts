@@ -62,12 +62,6 @@ export default defineType({
       },
       validation: (rule) => rule.required(),
     }),
-    defineField({
-      name: 'featured',
-      title: '注目記事',
-      type: 'boolean',
-      description: 'チェックするとトップページに表示されます',
-    }),
   ],
   preview: {
     select: {
