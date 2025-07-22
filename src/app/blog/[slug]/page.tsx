@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CTASection from '@/components/CTASection';
 // import { getBlogBySlug, getBlogs } from "../../../../lib/sanity";
 
 // ブログ記事の型定義
@@ -203,49 +204,18 @@ export default async function BlogDetailPage({ params }: PageProps) {
               </div>
             )}
 
-            <div className="flex justify-between items-center">
-              <Link
-                href="/blog"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
-              >
-                ← お役立ち情報一覧に戻る
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
-              >
-                この件でご相談
-              </Link>
-            </div>
+            <Link
+              href="/blog"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+            >
+              ← お役立ち情報一覧に戻る
+            </Link>
           </div>
         </article>
-
-        {/* Related CTA */}
-        <div className="mt-12">
-          <div className="bg-blue-50 rounded-lg p-8 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              記事の内容についてご質問がございますか？
-            </h2>
-            <p className="text-gray-600 mb-6">
-              具体的な手続きやご不明な点について、お気軽にご相談ください。初回相談は無料です。
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
-              >
-                無料相談のお申し込み
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center px-6 py-3 text-base font-medium text-blue-600 bg-white border border-blue-600 rounded-md hover:bg-blue-50 transition-colors"
-              >
-                サービス一覧を見る
-              </Link>
-            </div>
-          </div>
-        </div>
       </main>
+
+      {/* CTA Section */}
+      <CTASection />
 
       {/* Footer */}
       <Footer />

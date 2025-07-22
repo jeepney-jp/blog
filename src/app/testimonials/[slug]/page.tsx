@@ -6,6 +6,7 @@ import { PortableText } from '@portabletext/react';
 import { portableTextComponents } from '@/components/PortableTextComponents';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CTASection from '@/components/CTASection';
 
 // Next.jsのキャッシュを無効化
 export const revalidate = 0;
@@ -161,6 +162,9 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
           </div>
         </div>
       </main>
+
+      {/* CTA Section */}
+      <CTASection />
 
       {/* Footer */}
       <Footer />
