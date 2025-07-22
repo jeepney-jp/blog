@@ -2,6 +2,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import {customActionsPlugin} from './plugins/customActions'
 
 export default defineConfig({
   name: 'default',
@@ -10,16 +11,9 @@ export default defineConfig({
   projectId: 'njgo6ucb',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [structureTool(), visionTool(), customActionsPlugin()],
 
   schema: {
     types: schemaTypes,
-  },
-
-  document: {
-    actions: (prev, context) => {
-      // デフォルトアクションをすべて有効にする（削除を含む）
-      return prev
-    },
   },
 })
