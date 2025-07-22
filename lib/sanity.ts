@@ -16,8 +16,7 @@ export async function getNews() {
       slug,
       publishedAt,
       excerpt,
-      category,
-      featured
+      category
     }
   `)
 }
@@ -36,20 +35,6 @@ export async function getNewsBySlug(slug: string) {
       featured
     }
   `, { slug })
-}
-
-// 注目ニュース取得用のクエリ
-export async function getFeaturedNews(limit: number = 3) {
-  return await client.fetch(`
-    *[_type == "news" && featured == true] | order(publishedAt desc)[0...${limit}] {
-      _id,
-      title,
-      slug,
-      publishedAt,
-      excerpt,
-      category
-    }
-  `)
 }
 
 // お客様の声取得用のクエリ

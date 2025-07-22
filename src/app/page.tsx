@@ -5,7 +5,7 @@ import { allServiceCategoriesQuery } from '@/lib/queries';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
-import { getFeaturedTestimonials } from '../../lib/sanity';
+import { getFeaturedTestimonials, getNews } from '../../lib/sanity';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
 export const revalidate = 60;
@@ -27,6 +27,30 @@ interface ServiceCategoryItem {
   };
 }
 
+interface NewsItem {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  publishedAt: string;
+  excerpt?: string;
+  category: string;
+}
+
+// カテゴリマッピング
+const categoryMap: { [key: string]: { name: string; color: string } } = {
+  business_notice: { name: '営業案内', color: 'bg-green-100 text-green-800' },
+  new_services: { name: '新サービス', color: 'bg-blue-100 text-blue-800' },
+  legal_update: { name: '制度改正', color: 'bg-purple-100 text-purple-800' },
+  price_update: { name: '料金改定', color: 'bg-yellow-100 text-yellow-800' },
+  media_appearance: { name: 'メディア', color: 'bg-pink-100 text-pink-800' },
+  website_info: { name: 'サイト更新', color: 'bg-gray-100 text-gray-800' },
+  immigration_notice: { name: '入管関連', color: 'bg-red-100 text-red-800' },
+  case_study: { name: '実績紹介', color: 'bg-indigo-100 text-indigo-800' },
+  press_release: { name: 'リリース', color: 'bg-orange-100 text-orange-800' },
+};
+
 // Sanityからサービスカテゴリを取得
 async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
   // 環境変数が設定されていない場合は空配列を返す
@@ -46,6 +70,9 @@ async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
 export default async function Home() {
   const serviceCategories = await getServiceCategories();
   const featuredTestimonials = await getFeaturedTestimonials(3);
+  const newsItems = await getNews();
+  // 最新5件のみ取得
+  const latestNews = newsItems.slice(0, 5);
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -438,64 +465,40 @@ export default async function Home() {
               事務所からの重要なお知らせをご確認ください
             </p>
           </div>
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <ul className="divide-y divide-gray-200">
-              <li>
-                <Link 
-                  href="/news/jimusho-kaisetsu-oshirase"
-                  className="block px-6 py-4 hover:bg-gray-50 transition-colors"
-                >
-                  <div className="flex items-center gap-4">
-                    <time className="text-sm text-gray-500 whitespace-nowrap">
-                      2025年7月7日
-                    </time>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 whitespace-nowrap">
-                      リリース
-                    </span>
-                    <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
-                      事務所開設のお知らせ
-                    </h3>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/news/kensetsu-kyoka-shinsei"
-                  className="block px-6 py-4 hover:bg-gray-50 transition-colors"
-                >
-                  <div className="flex items-center gap-4">
-                    <time className="text-sm text-gray-500 whitespace-nowrap">
-                      2025年7月5日
-                    </time>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 whitespace-nowrap">
-                      新サービス
-                    </span>
-                    <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
-                      建設業許可申請の受付を開始しました
-                    </h3>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/news/sozoku-muryo-sodan"
-                  className="block px-6 py-4 hover:bg-gray-50 transition-colors"
-                >
-                  <div className="flex items-center gap-4">
-                    <time className="text-sm text-gray-500 whitespace-nowrap">
-                      2025年6月28日
-                    </time>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 whitespace-nowrap">
-                      リリース
-                    </span>
-                    <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
-                      相続・遺言無料相談会を開催します
-                    </h3>
-                  </div>
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {latestNews.length > 0 ? (
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <ul className="divide-y divide-gray-200">
+                {latestNews.map((news: NewsItem) => (
+                  <li key={news._id}>
+                    <Link 
+                      href={`/news/${news.slug.current}`}
+                      className="block px-6 py-4 hover:bg-gray-50 transition-colors"
+                    >
+                      <div className="flex items-center gap-4">
+                        <time className="text-sm text-gray-500 whitespace-nowrap">
+                          {new Date(news.publishedAt).toLocaleDateString('ja-JP')}
+                        </time>
+                        {news.category && categoryMap[news.category] && (
+                          <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium whitespace-nowrap ${
+                            categoryMap[news.category].color
+                          }`}>
+                            {categoryMap[news.category].name}
+                          </span>
+                        )}
+                        <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
+                          {news.title}
+                        </h3>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <div className="bg-white rounded-lg shadow-sm p-12 text-center">
+              <p className="text-gray-500 text-lg">お知らせはまだありません。</p>
+            </div>
+          )}
           <div className="text-center mt-8">
             <Link
               href="/news"
