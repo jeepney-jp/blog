@@ -46,14 +46,6 @@ export default async function Home() {
   const serviceCategories = await getServiceCategories();
   const featuredTestimonials = await getFeaturedTestimonials(3);
   
-  const serviceTypeLabels: { [key: string]: string } = {
-    license: "許認可申請",
-    inheritance: "相続手続き",
-    incorporation: "会社設立",
-    contracts: "契約書作成",
-    other: "その他"
-  };
-  
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -530,7 +522,11 @@ export default async function Home() {
                 clientName: string;
                 slug: { current: string };
                 comment: string;
-                serviceType: string;
+                serviceType?: string;
+                serviceDetail?: {
+                  _id: string;
+                  title: string;
+                };
                 clientIndustry?: string;
                 clientLocation?: string;
                 publishedAt: string;
@@ -560,7 +556,7 @@ export default async function Home() {
                   <div className="p-6">
                     <div className="mb-4">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                        {serviceTypeLabels[testimonial.serviceType] || testimonial.serviceType}
+                        {testimonial.serviceDetail?.title || 'サービス未設定'}
                       </span>
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">{testimonial.clientName}</h3>

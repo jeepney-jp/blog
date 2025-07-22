@@ -24,14 +24,6 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const serviceTypeLabels: { [key: string]: string } = {
-    license: "許認可申請",
-    inheritance: "相続手続き",
-    incorporation: "会社設立",
-    contracts: "契約書作成",
-    other: "その他"
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -98,7 +90,10 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
                 <div>
                   <dt className="text-sm font-medium text-gray-500">ご利用サービス</dt>
                   <dd className="text-base text-gray-900">
-                    {serviceTypeLabels[testimonial.serviceType] || testimonial.serviceType}
+                    {testimonial.serviceDetail?.category?.title && (
+                      <span className="text-sm text-gray-600">{testimonial.serviceDetail.category.title} - </span>
+                    )}
+                    {testimonial.serviceDetail?.title || 'サービス未設定'}
                   </dd>
                 </div>
                 {testimonial.clientIndustry && (

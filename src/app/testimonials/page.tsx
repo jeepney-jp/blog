@@ -11,14 +11,6 @@ export default async function TestimonialsPage() {
   // Sanityからお客様の声データを取得
   const testimonials = await getTestimonials();
 
-  const serviceTypeLabels: { [key: string]: string } = {
-    license: "許認可申請",
-    inheritance: "相続手続き",
-    incorporation: "会社設立",
-    contracts: "契約書作成",
-    other: "その他"
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -79,6 +71,14 @@ export default async function TestimonialsPage() {
             slug: { current: string };
             comment: string;
             serviceType: string;
+            serviceDetail?: {
+              _id: string;
+              title: string;
+              category?: {
+                _id: string;
+                title: string;
+              };
+            };
             clientIndustry?: string;
             clientLocation?: string;
             featured?: boolean;
@@ -111,7 +111,7 @@ export default async function TestimonialsPage() {
                 {/* Service Type */}
                 <div className="mb-4">
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                    {serviceTypeLabels[testimonial.serviceType] || testimonial.serviceType}
+                    {testimonial.serviceDetail?.title || 'サービス未設定'}
                   </span>
                 </div>
 

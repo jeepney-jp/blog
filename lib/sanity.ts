@@ -62,6 +62,14 @@ export async function getTestimonials() {
       comment,
       content,
       serviceType,
+      serviceDetail-> {
+        _id,
+        title,
+        "category": parentCategory-> {
+          _id,
+          title
+        }
+      },
       clientIndustry,
       clientLocation,
       featured,
@@ -81,6 +89,16 @@ export async function getTestimonialBySlug(slug: string) {
       comment,
       content,
       serviceType,
+      serviceDetail-> {
+        _id,
+        title,
+        "slug": slug.current,
+        "category": parentCategory-> {
+          _id,
+          title,
+          "slug": slug.current
+        }
+      },
       clientIndustry,
       clientLocation,
       featured,
@@ -99,6 +117,10 @@ export async function getFeaturedTestimonials(limit: number = 3) {
       slug,
       comment,
       serviceType,
+      serviceDetail-> {
+        _id,
+        title
+      },
       clientIndustry,
       clientLocation,
       publishedAt,

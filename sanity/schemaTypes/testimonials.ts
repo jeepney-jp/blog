@@ -188,9 +188,19 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'serviceType',
+      name: 'serviceDetail',
       title: 'ご利用サービス',
+      type: 'reference',
+      to: [{type: 'serviceDetail'}],
+      validation: (rule) => rule.required(),
+      description: 'お客様が利用されたサービスを選択してください',
+    }),
+    // 旧フィールドを隠しフィールドとして保持（データ移行用）
+    defineField({
+      name: 'serviceType',
+      title: '旧ご利用サービス（非表示）',
       type: 'string',
+      hidden: true,
       options: {
         list: [
           {title: '許認可申請', value: 'license'},
@@ -200,7 +210,6 @@ export default defineType({
           {title: 'その他', value: 'other'},
         ],
       },
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'clientIndustry',
@@ -239,22 +248,20 @@ export default defineType({
   preview: {
     select: {
       title: 'clientName',
-      subtitle: 'serviceType',
+      serviceTitle: 'serviceDetail.title',
+      categoryTitle: 'serviceDetail.category.title',
       featured: 'featured',
       media: 'clientImage',
     },
     prepare(selection) {
-      const {title, subtitle, featured} = selection
-      const serviceTypes: { [key: string]: string } = {
-        license: '許認可申請',
-        inheritance: '相続手続き',
-        incorporation: '会社設立',
-        contracts: '契約書作成',
-        other: 'その他'
-      }
+      const {title, serviceTitle, categoryTitle, featured} = selection
+      const subtitle = serviceTitle 
+        ? `${categoryTitle || ''} - ${serviceTitle}`
+        : '未設定'
       return {
         title: title,
-        subtitle: `${serviceTypes[subtitle] || subtitle}${featured ? ' (トップページ掲載)' : ''}`,
+        subtitle: `${subtitle}${featured ? ' (トップページ掲載)' : ''}`,
+        media: selection.media,
       }
     },
   },
