@@ -4,12 +4,55 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { PortableText } from '@portabletext/react';
+
+interface Staff {
+  _id: string;
+  name: string;
+  nameRomaji: string;
+  position?: string;
+  photo: {
+    asset: {
+      url: string;
+    };
+    alt?: string;
+  };
+  introduction: Array<{
+    _type: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+      marks?: string[];
+    }>;
+    style?: string;
+    listItem?: string;
+  }>;
+  order: number;
+}
 
 export default function About() {
-  const [expandedMember, setExpandedMember] = useState<number | null>(null);
+  const [expandedMember, setExpandedMember] = useState<string | null>(null);
+  const [staff, setStaff] = useState<Staff[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const members = [
+  useEffect(() => {
+    fetchStaff();
+  }, []);
+
+  const fetchStaff = async () => {
+    try {
+      const response = await fetch('/api/staff');
+      const data = await response.json();
+      setStaff(data);
+    } catch (error) {
+      console.error('Error fetching staff:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const hardcodedMembers = [
     {
       id: 1,
       name: "山田 花子｜Hanako Yamada",
@@ -48,7 +91,7 @@ export default function About() {
     }
   ];
 
-  const toggleMember = (id: number) => {
+  const toggleMember = (id: string) => {
     setExpandedMember(expandedMember === id ? null : id);
   };
 
@@ -152,15 +195,20 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">メンバー紹介</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-            {members.map((member) => (
-              <div key={member.id} className="group">
+            {loading ? (
+              <div className="col-span-full text-center py-8">
+                <p className="text-gray-500">読み込み中...</p>
+              </div>
+            ) : staff.length > 0 ? (
+              staff.map((member) => (
+              <div key={member._id} className="group">
                 <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
                   {/* メンバー写真 - 正方形 */}
                   <div className="mb-4 relative">
                     <div className="w-full aspect-square bg-gray-200 rounded-lg overflow-hidden relative">
                       <Image 
-                        src={member.photo} 
-                        alt={member.name}
+                        src={member.photo.asset.url} 
+                        alt={member.photo.alt || member.name}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover object-[center_30%]"
@@ -169,12 +217,12 @@ export default function About() {
                     
                     {/* プラスボタン - 写真の右下に配置 */}
                     <button
-                      onClick={() => toggleMember(member.id)}
+                      onClick={() => toggleMember(member._id)}
                       className="absolute bottom-2 right-2 w-8 h-8 bg-gray-700 text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all shadow-lg"
-                      aria-label={`${member.name}の詳細を${expandedMember === member.id ? '閉じる' : '開く'}`}
+                      aria-label={`${member.name}の詳細を${expandedMember === member._id ? '閉じる' : '開く'}`}
                     >
                       <svg 
-                        className={`w-4 h-4 transition-transform duration-300 ${expandedMember === member.id ? 'rotate-45' : ''}`} 
+                        className={`w-4 h-4 transition-transform duration-300 ${expandedMember === member._id ? 'rotate-45' : ''}`} 
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
@@ -185,21 +233,82 @@ export default function About() {
                   </div>
                   
                   {/* 名前 */}
-                  <h3 className="text-xl font-semibold text-gray-900 text-center mb-3">{member.name}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 text-center mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 text-center mb-3">
+                    {member.nameRomaji}
+                  </p>
+                  {member.position && (
+                    <p className="text-sm text-gray-500 text-center mb-3">
+                      {member.position}
+                    </p>
+                  )}
                   
                   {/* 自己紹介（展開時） */}
                   <div className={`overflow-hidden transition-all duration-500 ${
-                    expandedMember === member.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    expandedMember === member._id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}>
                     <div className="pt-4 border-t border-gray-200">
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        {member.introduction}
-                      </p>
+                      <div className="text-gray-600 text-sm leading-relaxed prose prose-sm max-w-none">
+                        <PortableText value={member.introduction} />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
+              ))
+            ) : (
+              /* フォールバック: Sanityにデータがない場合はハードコードされたデータを表示 */
+              hardcodedMembers.map((member) => (
+                <div key={member.id} className="group">
+                  <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                    {/* メンバー写真 - 正方形 */}
+                    <div className="mb-4 relative">
+                      <div className="w-full aspect-square bg-gray-200 rounded-lg overflow-hidden relative">
+                        <Image 
+                          src={member.photo} 
+                          alt={member.name}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover object-[center_30%]"
+                        />
+                      </div>
+                      
+                      {/* プラスボタン - 写真の右下に配置 */}
+                      <button
+                        onClick={() => toggleMember(member.id.toString())}
+                        className="absolute bottom-2 right-2 w-8 h-8 bg-gray-700 text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all shadow-lg"
+                        aria-label={`${member.name}の詳細を${expandedMember === member.id.toString() ? '閉じる' : '開く'}`}
+                      >
+                        <svg 
+                          className={`w-4 h-4 transition-transform duration-300 ${expandedMember === member.id.toString() ? 'rotate-45' : ''}`} 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    {/* 名前 */}
+                    <h3 className="text-xl font-semibold text-gray-900 text-center mb-3">{member.name}</h3>
+                    
+                    {/* 自己紹介（展開時） */}
+                    <div className={`overflow-hidden transition-all duration-500 ${
+                      expandedMember === member.id.toString() ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}>
+                      <div className="pt-4 border-t border-gray-200">
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {member.introduction}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </section>
