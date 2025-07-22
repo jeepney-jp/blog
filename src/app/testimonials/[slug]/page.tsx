@@ -2,8 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTestimonialBySlug, getTestimonials } from "../../../../lib/sanity";
-import { PortableText } from '@portabletext/react';
-import { portableTextComponents } from '@/components/PortableTextComponents';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';

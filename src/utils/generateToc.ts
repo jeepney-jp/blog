@@ -13,8 +13,8 @@ export function generateTocFromContent(content: PortableTextBlock[]): TocItem[] 
   content.forEach((block) => {
     if (block._type === 'block' && block.style && (block.style === 'h2' || block.style === 'h3')) {
       const text = block.children
-        ?.filter((child: any) => child._type === 'span')
-        .map((child: any) => child.text)
+        ?.filter((child) => child._type === 'span' && 'text' in child)
+        .map((child) => (child as { text: string }).text)
         .join('');
 
       if (text) {

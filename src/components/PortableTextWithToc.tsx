@@ -1,7 +1,7 @@
 import { PortableText, PortableTextComponents } from '@portabletext/react';
 import { PortableTextBlock } from '@portabletext/types';
 import Image from 'next/image';
-import { urlFor } from '@/lib/sanity.client';
+import { urlFor } from '@/lib/sanityImage';
 
 interface PortableTextWithTocProps {
   content: PortableTextBlock[];
