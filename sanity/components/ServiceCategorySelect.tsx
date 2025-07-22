@@ -3,7 +3,7 @@ import { useClient } from 'sanity'
 import { set, unset } from 'sanity'
 
 export function ServiceCategorySelect(props: any) {
-  const { onChange, value, schemaType } = props
+  const { onChange, value, schemaType, readOnly, elementProps } = props
   const client = useClient({ apiVersion: '2024-01-01' })
   const [categories, setCategories] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
@@ -45,15 +45,17 @@ export function ServiceCategorySelect(props: any) {
 
   return (
     <select
+      {...elementProps}
       value={value?._ref || ''}
       onChange={handleChange}
+      disabled={readOnly}
       style={{
         width: '100%',
         padding: '8px',
         border: '1px solid #ccc',
         borderRadius: '4px',
         fontSize: '14px',
-        backgroundColor: 'white'
+        backgroundColor: readOnly ? '#f5f5f5' : 'white'
       }}
     >
       <option value="">サービスカテゴリーを選択してください</option>

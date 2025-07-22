@@ -3,7 +3,7 @@ import { useClient } from 'sanity'
 import { set, unset } from 'sanity'
 
 export function ServiceDetailSelect(props: any) {
-  const { onChange, value, document } = props
+  const { onChange, value, document, readOnly, elementProps } = props
   const client = useClient({ apiVersion: '2024-01-01' })
   const [services, setServices] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
@@ -76,15 +76,17 @@ export function ServiceDetailSelect(props: any) {
 
   return (
     <select
+      {...elementProps}
       value={value?._ref || ''}
       onChange={handleChange}
+      disabled={readOnly || loading}
       style={{
         width: '100%',
         padding: '8px',
         border: '1px solid #ccc',
         borderRadius: '4px',
         fontSize: '14px',
-        backgroundColor: 'white'
+        backgroundColor: readOnly ? '#f5f5f5' : 'white'
       }}
     >
       <option value="">サービス詳細を選択してください</option>
