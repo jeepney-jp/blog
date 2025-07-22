@@ -194,8 +194,8 @@ export default defineType({
       to: [{type: 'serviceCategory'}],
       validation: (rule) => rule.required(),
       description: 'まずサービスカテゴリーを選択してください',
-      options: {
-        disableNew: true,
+      components: {
+        input: () => import('../components/ServiceCategorySelect').then(mod => mod.ServiceCategorySelect),
       }
     }),
     defineField({
@@ -205,23 +205,8 @@ export default defineType({
       to: [{type: 'serviceDetail'}],
       validation: (rule) => rule.required(),
       description: '上記で選択したカテゴリーに属するサービスから選択してください',
-      options: {
-        disableNew: true,
-        filter: ({document}: {document: any}) => {
-          // カテゴリーが選択されていない場合は全て表示
-          if (!document?.serviceCategory?._ref) {
-            return {
-              filter: '_type == "serviceDetail"'
-            }
-          }
-          // 選択されたカテゴリーに属するサービスのみ表示
-          return {
-            filter: 'parentCategory._ref == $categoryId',
-            params: {
-              categoryId: document.serviceCategory._ref
-            }
-          }
-        }
+      components: {
+        input: () => import('../components/ServiceDetailSelect').then(mod => mod.ServiceDetailSelect),
       }
     }),
     // 旧フィールドを隠しフィールドとして保持（データ移行用）
