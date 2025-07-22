@@ -72,7 +72,9 @@ export async function getTestimonialBySlug(slug: string) {
       clientLocation,
       featured,
       publishedAt,
-      "clientImage": clientImage.asset->url
+      "clientImage": clientImage.asset->url,
+      showToc,
+      tocTitle
     }
   `, { slug })
 }

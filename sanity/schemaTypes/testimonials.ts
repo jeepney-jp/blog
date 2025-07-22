@@ -243,6 +243,21 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'showToc',
+      title: '目次を表示',
+      type: 'boolean',
+      description: '本文にH2/H3見出しがある場合、自動的に目次を生成して表示します',
+      initialValue: true,
+    }),
+    defineField({
+      name: 'tocTitle',
+      title: '目次タイトル',
+      type: 'string',
+      description: '目次のタイトル（デフォルト: 目次）',
+      initialValue: '目次',
+      hidden: ({document}) => !document?.showToc,
+    }),
   ],
   preview: {
     select: {
