@@ -194,6 +194,9 @@ export default defineType({
       to: [{type: 'serviceCategory'}],
       validation: (rule) => rule.required(),
       description: 'まずサービスカテゴリーを選択してください',
+      options: {
+        disableNew: true,
+      }
     }),
     defineField({
       name: 'serviceDetail',
@@ -203,6 +206,7 @@ export default defineType({
       validation: (rule) => rule.required(),
       description: '上記で選択したカテゴリーに属するサービスから選択してください',
       options: {
+        disableNew: true,
         filter: ({document}) => {
           // カテゴリーが選択されていない場合は全て表示
           if (!document?.serviceCategory?._ref) {
