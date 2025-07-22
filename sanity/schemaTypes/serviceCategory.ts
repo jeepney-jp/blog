@@ -93,6 +93,13 @@ export default {
       description: 'SNSなどでシェアされた時に表示される画像'
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'catchphrase',
+      media: 'icon'
+    }
+  },
   orderings: [
     {
       title: '表示順（昇順）',

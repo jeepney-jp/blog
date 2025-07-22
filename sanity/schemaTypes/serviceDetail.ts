@@ -151,6 +151,20 @@ export default {
       }
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'overview',
+      category: 'parentCategory.title'
+    },
+    prepare(selection: any) {
+      const {title, subtitle, category} = selection
+      return {
+        title,
+        subtitle: category ? `${category} - ${subtitle || ''}` : subtitle
+      }
+    }
+  },
   orderings: [
     {
       title: '表示順（昇順）',

@@ -181,3 +181,48 @@ export const sitemapQuery = `
     }
   }
 `;
+
+// 10. お客様の声一覧を取得（サービス詳細の関連情報付き）
+export const testimonialsListQuery = `
+  *[_type == "testimonials"] | order(publishedAt desc) {
+    _id,
+    clientName,
+    "slug": slug.current,
+    comment,
+    serviceDetail,
+    clientIndustry,
+    clientLocation,
+    featured,
+    publishedAt,
+    "clientImageUrl": clientImage.asset->url
+  }
+`;
+
+// 11. 特定のお客様の声を取得
+export const testimonialDetailQuery = `
+  *[_type == "testimonials" && slug.current == $slug][0] {
+    _id,
+    clientName,
+    "slug": slug.current,
+    comment,
+    content,
+    serviceDetail,
+    clientIndustry,
+    clientLocation,
+    featured,
+    publishedAt,
+    "clientImageUrl": clientImage.asset->url
+  }
+`;
+
+// 12. トップページ用のお客様の声を取得（featured = true）
+export const featuredTestimonialsQuery = `
+  *[_type == "testimonials" && featured == true] | order(publishedAt desc)[0...3] {
+    _id,
+    clientName,
+    "slug": slug.current,
+    comment,
+    serviceDetail,
+    "clientImageUrl": clientImage.asset->url
+  }
+`;
