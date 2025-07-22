@@ -27,6 +27,17 @@ interface ServiceCategoryItem {
   };
 }
 
+interface NewsItem {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  publishedAt: string;
+  excerpt?: string;
+  category: string;
+}
+
 // カテゴリマッピング
 const categoryMap: { [key: string]: { name: string; color: string } } = {
   business_notice: { name: '営業案内', color: 'bg-green-100 text-green-800' },
@@ -457,7 +468,7 @@ export default async function Home() {
           {latestNews.length > 0 ? (
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
               <ul className="divide-y divide-gray-200">
-                {latestNews.map((news: any) => (
+                {latestNews.map((news: NewsItem) => (
                   <li key={news._id}>
                     <Link 
                       href={`/news/${news.slug.current}`}
