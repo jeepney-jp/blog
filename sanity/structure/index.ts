@@ -1,5 +1,5 @@
 import {StructureBuilder} from 'sanity/structure'
-import {Trash2Icon} from '@sanity/icons'
+import {TrashIcon} from '@sanity/icons'
 
 export const structure = (S: StructureBuilder) =>
   S.list()
@@ -29,7 +29,7 @@ export const structure = (S: StructureBuilder) =>
               S.divider(),
               S.menuItem()
                 .title('全て削除')
-                .icon(Trash2Icon)
+                .icon(TrashIcon)
                 .color('danger')
                 .serialize()
                 .action(async (context) => {
