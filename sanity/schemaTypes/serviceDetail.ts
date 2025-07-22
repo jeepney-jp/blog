@@ -157,8 +157,8 @@ export default {
       subtitle: 'overview',
       category: 'parentCategory.title'
     },
-    prepare(selection) {
-      const {title, subtitle, category} = selection as {title: string; subtitle: string; category: string}
+    prepare(selection: any) {
+      const {title, subtitle, category} = selection
       return {
         title,
         subtitle: category ? `${category} - ${subtitle || ''}` : subtitle
