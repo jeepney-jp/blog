@@ -106,11 +106,6 @@ export default async function NewsDetailPage({ params }: PageProps) {
                   {categoryMap[news.category].name}
                 </span>
               )}
-              {news.featured && (
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                  注目
-                </span>
-              )}
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-4">{news.title}</h1>
             {news.excerpt && (
