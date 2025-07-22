@@ -2,7 +2,6 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
-import {deleteAction} from './documentActions/deleteAction'
 
 export default defineConfig({
   name: 'default',
@@ -19,12 +18,8 @@ export default defineConfig({
 
   document: {
     actions: (prev, context) => {
-      // スタッフドキュメントに削除アクションを追加
-      if (context.schemaType === 'staff') {
-        return [...prev, deleteAction]
-      }
-      // 他のドキュメントタイプにも削除アクションを追加
-      return [...prev, deleteAction]
+      // デフォルトアクションをすべて有効にする（削除を含む）
+      return prev
     },
   },
 })
