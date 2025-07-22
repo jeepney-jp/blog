@@ -62,6 +62,13 @@ export default defineType({
       type: 'boolean',
       description: 'チェックするとトップページに表示されます',
     }),
+    defineField({
+      name: 'isPublished',
+      title: '公開状態',
+      type: 'boolean',
+      initialValue: true,
+      description: 'チェックを外すと非表示になります',
+    }),
   ],
   preview: {
     select: {

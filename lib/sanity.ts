@@ -10,7 +10,7 @@ export const client = createClient({
 // News取得用のクエリ
 export async function getNews() {
   return await client.fetch(`
-    *[_type == "news" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
+    *[_type == "news" && !(_id in path("drafts.**")) && isPublished == true] | order(publishedAt desc) {
       _id,
       title,
       slug,
@@ -25,7 +25,7 @@ export async function getNews() {
 // 個別ニュース取得用のクエリ
 export async function getNewsBySlug(slug: string) {
   return await client.fetch(`
-    *[_type == "news" && slug.current == $slug && !(_id in path("drafts.**"))][0] {
+    *[_type == "news" && slug.current == $slug && !(_id in path("drafts.**")) && isPublished == true][0] {
       _id,
       title,
       slug,
@@ -41,7 +41,7 @@ export async function getNewsBySlug(slug: string) {
 // 注目ニュース取得用のクエリ
 export async function getFeaturedNews(limit: number = 3) {
   return await client.fetch(`
-    *[_type == "news" && featured == true && !(_id in path("drafts.**"))] | order(publishedAt desc)[0...${limit}] {
+    *[_type == "news" && featured == true && !(_id in path("drafts.**")) && isPublished == true] | order(publishedAt desc)[0...${limit}] {
       _id,
       title,
       slug,
@@ -55,7 +55,7 @@ export async function getFeaturedNews(limit: number = 3) {
 // お客様の声取得用のクエリ
 export async function getTestimonials() {
   return await client.fetch(`
-    *[_type == "testimonials" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
+    *[_type == "testimonials" && !(_id in path("drafts.**")) && isPublished == true] | order(publishedAt desc) {
       _id,
       clientName,
       slug,
@@ -75,7 +75,7 @@ export async function getTestimonials() {
 // 個別お客様の声取得用のクエリ
 export async function getTestimonialBySlug(slug: string) {
   return await client.fetch(`
-    *[_type == "testimonials" && slug.current == $slug && !(_id in path("drafts.**"))][0] {
+    *[_type == "testimonials" && slug.current == $slug && !(_id in path("drafts.**")) && isPublished == true][0] {
       _id,
       clientName,
       slug,
@@ -95,7 +95,7 @@ export async function getTestimonialBySlug(slug: string) {
 // 注目お客様の声取得用のクエリ
 export async function getFeaturedTestimonials(limit: number = 3) {
   return await client.fetch(`
-    *[_type == "testimonials" && featured == true && !(_id in path("drafts.**"))] | order(publishedAt desc)[0...${limit}] {
+    *[_type == "testimonials" && featured == true && !(_id in path("drafts.**")) && isPublished == true] | order(publishedAt desc)[0...${limit}] {
       _id,
       clientName,
       slug,
@@ -113,7 +113,7 @@ export async function getFeaturedTestimonials(limit: number = 3) {
 // ブログ記事取得用のクエリ
 export async function getBlogs() {
   return await client.fetch(`
-    *[_type == "blog" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
+    *[_type == "blog" && !(_id in path("drafts.**")) && isPublished == true] | order(publishedAt desc) {
       _id,
       title,
       slug,
@@ -132,7 +132,7 @@ export async function getBlogs() {
 // 個別ブログ記事取得用のクエリ
 export async function getBlogBySlug(slug: string) {
   return await client.fetch(`
-    *[_type == "blog" && slug.current == $slug && !(_id in path("drafts.**"))][0] {
+    *[_type == "blog" && slug.current == $slug && !(_id in path("drafts.**")) && isPublished == true][0] {
       _id,
       title,
       slug,
@@ -153,7 +153,7 @@ export async function getBlogBySlug(slug: string) {
 // 注目ブログ記事取得用のクエリ
 export async function getFeaturedBlogs(limit: number = 3) {
   return await client.fetch(`
-    *[_type == "blog" && featured == true && !(_id in path("drafts.**"))] | order(publishedAt desc)[0...${limit}] {
+    *[_type == "blog" && featured == true && !(_id in path("drafts.**")) && isPublished == true] | order(publishedAt desc)[0...${limit}] {
       _id,
       title,
       slug,
@@ -170,7 +170,7 @@ export async function getFeaturedBlogs(limit: number = 3) {
 // カテゴリ別ブログ記事取得用のクエリ
 export async function getBlogsByCategory(category: string) {
   return await client.fetch(`
-    *[_type == "blog" && category == $category && !(_id in path("drafts.**"))] | order(publishedAt desc) {
+    *[_type == "blog" && category == $category && !(_id in path("drafts.**")) && isPublished == true] | order(publishedAt desc) {
       _id,
       title,
       slug,

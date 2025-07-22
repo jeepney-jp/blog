@@ -92,6 +92,13 @@ export default {
       title: 'OGP画像',
       description: 'SNSなどでシェアされた時に表示される画像'
     },
+    {
+      name: 'isPublished',
+      title: '公開状態',
+      type: 'boolean',
+      initialValue: true,
+      description: 'チェックを外すと非表示になります'
+    },
   ],
   preview: {
     select: {

@@ -243,6 +243,13 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'isPublished',
+      title: '公開状態',
+      type: 'boolean',
+      initialValue: true,
+      description: 'チェックを外すと非表示になります',
+    }),
   ],
   preview: {
     select: {
