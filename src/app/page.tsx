@@ -46,7 +46,6 @@ const categoryMap: { [key: string]: { name: string; color: string } } = {
   price_update: { name: '料金改定', color: 'bg-yellow-100 text-yellow-800' },
   media_appearance: { name: 'メディア', color: 'bg-pink-100 text-pink-800' },
   case_study: { name: '実績紹介', color: 'bg-indigo-100 text-indigo-800' },
-  press_release: { name: 'リリース', color: 'bg-orange-100 text-orange-800' },
 };
 
 // Sanityからサービスカテゴリを取得

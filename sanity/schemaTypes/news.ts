@@ -55,7 +55,6 @@ export default defineType({
           {title: '料金改定', value: 'price_update'},
           {title: 'メディア', value: 'media_appearance'},
           {title: '実績紹介', value: 'case_study'},
-          {title: 'リリース', value: 'press_release'},
         ],
       },
       validation: (rule) => rule.required(),
