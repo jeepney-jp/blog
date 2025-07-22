@@ -2,9 +2,6 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
-import {createDeleteAction} from './documentActions'
-
-const deleteAction = createDeleteAction()
 
 export default defineConfig({
   name: 'default',
@@ -17,12 +14,5 @@ export default defineConfig({
 
   schema: {
     types: schemaTypes,
-  },
-
-  document: {
-    actions: (prev, context) => {
-      // すべてのドキュメントタイプに削除アクションを追加
-      return [...prev, deleteAction]
-    },
   },
 })
