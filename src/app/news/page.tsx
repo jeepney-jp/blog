@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
-// import { getNews } from "../../../lib/sanity";
+import { getNews } from "../../../lib/sanity";
 
 // ニュースの型定義
 interface News {
@@ -28,45 +28,8 @@ const categoryMap: { [key: string]: { name: string; color: string } } = {
 };
 
 export default async function NewsPage() {
-  // 一時的にテストデータを使用
-  const news: News[] = [
-    {
-      _id: "test1",
-      title: "事務所開設のお知らせ",
-      slug: { current: "jimusho-kaisetsu-oshirase" },
-      publishedAt: "2025-07-07",
-      excerpt: "フォルティア行政書士事務所を開設いたしました",
-      category: "press_release",
-      featured: true
-    },
-    {
-      _id: "test2",
-      title: "建設業許可申請の受付を開始しました",
-      slug: { current: "kensetsu-kyoka-shinsei" },
-      publishedAt: "2025-07-05",
-      excerpt: "建設業許可申請のサポートサービスを開始いたしました。豊富な実績を基に、スムーズな許可取得をお手伝いします",
-      category: "new_services",
-      featured: false
-    },
-    {
-      _id: "test3",
-      title: "夏季休業のお知らせ",
-      slug: { current: "kaki-kyugyo-oshirase" },
-      publishedAt: "2025-07-03",
-      excerpt: "8月13日から8月16日まで夏季休業とさせていただきます",
-      category: "business_notice",
-      featured: false
-    },
-    {
-      _id: "test4",
-      title: "相続・遺言無料相談会を開催します",
-      slug: { current: "sozoku-muryo-sodan" },
-      publishedAt: "2025-06-28",
-      excerpt: "7月20日(土)に相続・遺言に関する無料相談会を開催いたします。事前予約制となりますので、お早めにお申し込みください",
-      category: "press_release",
-      featured: true
-    }
-  ];
+  // Sanityからニュースデータを取得
+  const news: News[] = await getNews();
 
   return (
     <div className="min-h-screen bg-gray-50">
