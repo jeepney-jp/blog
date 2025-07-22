@@ -71,23 +71,28 @@ export default function PortableTextWithToc({ content, headingIndexRef }: Portab
       },
     },
     types: {
-      image: ({ value }) => (
-        <figure className="my-8">
-          <Image
-            src={urlFor(value).url()}
-            alt={value.alt || ''}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg"
-            sizes="(max-width: 768px) 100vw, 800px"
-          />
-          {value.caption && (
-            <figcaption className="text-center text-sm text-gray-600 mt-2">
-              {value.caption}
-            </figcaption>
-          )}
-        </figure>
-      ),
+      image: ({ value }) => {
+        const imageUrl = urlFor(value);
+        if (!imageUrl) return null;
+        
+        return (
+          <figure className="my-8">
+            <Image
+              src={imageUrl.url()}
+              alt={value.alt || ''}
+              width={800}
+              height={400}
+              className="w-full h-auto rounded-lg"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
+            {value.caption && (
+              <figcaption className="text-center text-sm text-gray-600 mt-2">
+                {value.caption}
+              </figcaption>
+            )}
+          </figure>
+        );
+      },
       youtube: ({ value }) => {
         const videoId = value.url?.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/)?.[1];
         if (!videoId) return null;
