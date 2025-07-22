@@ -9,6 +9,19 @@ import { getFeaturedTestimonials } from '../../lib/sanity';
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
 export const revalidate = 60;
 
+// カテゴリマッピング
+const categoryMap: { [key: string]: { name: string; color: string } } = {
+  business_notice: { name: '営業案内', color: 'bg-green-100 text-green-800' },
+  new_services: { name: '新サービス', color: 'bg-blue-100 text-blue-800' },
+  legal_update: { name: '制度改正', color: 'bg-purple-100 text-purple-800' },
+  price_update: { name: '料金改定', color: 'bg-yellow-100 text-yellow-800' },
+  media_appearance: { name: 'メディア', color: 'bg-pink-100 text-pink-800' },
+  website_info: { name: 'サイト更新', color: 'bg-gray-100 text-gray-800' },
+  immigration_notice: { name: '入管関連', color: 'bg-red-100 text-red-800' },
+  case_study: { name: '実績紹介', color: 'bg-indigo-100 text-indigo-800' },
+  press_release: { name: 'リリース', color: 'bg-orange-100 text-orange-800' },
+};
+
 // 型定義
 interface ServiceCategoryItem {
   _id: string;
@@ -448,8 +461,8 @@ export default async function Home() {
                     <time className="text-sm text-gray-500 whitespace-nowrap">
                       2025年7月7日
                     </time>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 whitespace-nowrap">
-                      重要
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 whitespace-nowrap">
+                      リリース
                     </span>
                     <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
                       事務所開設のお知らせ
@@ -467,7 +480,7 @@ export default async function Home() {
                       2025年7月5日
                     </time>
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 whitespace-nowrap">
-                      業務案内
+                      新サービス
                     </span>
                     <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
                       建設業許可申請の受付を開始しました
@@ -484,8 +497,8 @@ export default async function Home() {
                     <time className="text-sm text-gray-500 whitespace-nowrap">
                       2025年6月28日
                     </time>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 whitespace-nowrap">
-                      重要
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 whitespace-nowrap">
+                      リリース
                     </span>
                     <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
                       相続・遺言無料相談会を開催します
