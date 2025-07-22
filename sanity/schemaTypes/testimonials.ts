@@ -188,12 +188,37 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'serviceCategory',
+      title: 'サービスカテゴリー（大項目）',
+      type: 'reference',
+      to: [{type: 'serviceCategory'}],
+      validation: (rule) => rule.required(),
+      description: 'まずサービスカテゴリーを選択してください',
+    }),
+    defineField({
       name: 'serviceDetail',
-      title: 'ご利用サービス',
+      title: 'サービス詳細（中項目）',
       type: 'reference',
       to: [{type: 'serviceDetail'}],
       validation: (rule) => rule.required(),
-      description: 'お客様が利用されたサービスを選択してください',
+      description: '上記で選択したカテゴリーに属するサービスから選択してください',
+      options: {
+        filter: ({document}) => {
+          // カテゴリーが選択されていない場合は全て表示
+          if (!document?.serviceCategory?._ref) {
+            return {
+              filter: '_type == "serviceDetail"'
+            }
+          }
+          // 選択されたカテゴリーに属するサービスのみ表示
+          return {
+            filter: 'parentCategory._ref == $categoryId',
+            params: {
+              categoryId: document.serviceCategory._ref
+            }
+          }
+        }
+      }
     }),
     // 旧フィールドを隠しフィールドとして保持（データ移行用）
     defineField({
@@ -248,15 +273,15 @@ export default defineType({
   preview: {
     select: {
       title: 'clientName',
+      categoryTitle: 'serviceCategory.title',
       serviceTitle: 'serviceDetail.title',
-      categoryTitle: 'serviceDetail.category.title',
       featured: 'featured',
       media: 'clientImage',
     },
     prepare(selection) {
-      const {title, serviceTitle, categoryTitle, featured} = selection
-      const subtitle = serviceTitle 
-        ? `${categoryTitle || ''} - ${serviceTitle}`
+      const {title, categoryTitle, serviceTitle, featured} = selection
+      const subtitle = categoryTitle && serviceTitle 
+        ? `${categoryTitle} - ${serviceTitle}`
         : '未設定'
       return {
         title: title,
