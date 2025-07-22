@@ -21,8 +21,6 @@ const categoryMap: { [key: string]: { name: string; color: string } } = {
   legal_update: { name: '制度改正', color: 'bg-purple-100 text-purple-800' },
   price_update: { name: '料金改定', color: 'bg-yellow-100 text-yellow-800' },
   media_appearance: { name: 'メディア', color: 'bg-pink-100 text-pink-800' },
-  website_info: { name: 'サイト更新', color: 'bg-gray-100 text-gray-800' },
-  immigration_notice: { name: '入管関連', color: 'bg-red-100 text-red-800' },
   case_study: { name: '実績紹介', color: 'bg-indigo-100 text-indigo-800' },
   press_release: { name: 'リリース', color: 'bg-orange-100 text-orange-800' },
 };
