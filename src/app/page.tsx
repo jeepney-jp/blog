@@ -448,8 +448,8 @@ export default async function Home() {
                     <time className="text-sm text-gray-500 whitespace-nowrap">
                       2025年7月7日
                     </time>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 whitespace-nowrap">
-                      重要
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 whitespace-nowrap">
+                      リリース
                     </span>
                     <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
                       事務所開設のお知らせ
@@ -467,7 +467,7 @@ export default async function Home() {
                       2025年7月5日
                     </time>
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 whitespace-nowrap">
-                      業務案内
+                      新サービス
                     </span>
                     <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
                       建設業許可申請の受付を開始しました
@@ -484,8 +484,8 @@ export default async function Home() {
                     <time className="text-sm text-gray-500 whitespace-nowrap">
                       2025年6月28日
                     </time>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 whitespace-nowrap">
-                      重要
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 whitespace-nowrap">
+                      リリース
                     </span>
                     <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
                       相続・遺言無料相談会を開催します

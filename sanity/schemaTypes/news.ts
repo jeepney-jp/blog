@@ -49,12 +49,18 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          {title: '一般', value: 'general'},
-          {title: '重要', value: 'important'},
-          {title: '業務案内', value: 'service'},
-          {title: 'その他', value: 'other'},
+          {title: '営業案内', value: 'business_notice'},
+          {title: '新サービス', value: 'new_services'},
+          {title: '制度改正', value: 'legal_update'},
+          {title: '料金改定', value: 'price_update'},
+          {title: 'メディア', value: 'media_appearance'},
+          {title: 'サイト更新', value: 'website_info'},
+          {title: '入管関連', value: 'immigration_notice'},
+          {title: '実績紹介', value: 'case_study'},
+          {title: 'リリース', value: 'press_release'},
         ],
       },
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'featured',
