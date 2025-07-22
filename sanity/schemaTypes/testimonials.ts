@@ -1,4 +1,6 @@
 import {defineField, defineType} from 'sanity'
+import {ServiceCategorySelect} from '../components/ServiceCategorySelect'
+import {ServiceDetailSelect} from '../components/ServiceDetailSelect'
 
 export default defineType({
   name: 'testimonials',
@@ -195,7 +197,7 @@ export default defineType({
       validation: (rule) => rule.required(),
       description: 'まずサービスカテゴリーを選択してください',
       components: {
-        input: () => import('../components/ServiceCategorySelect').then(mod => mod.ServiceCategorySelect),
+        input: ServiceCategorySelect,
       }
     }),
     defineField({
@@ -206,7 +208,7 @@ export default defineType({
       validation: (rule) => rule.required(),
       description: '上記で選択したカテゴリーに属するサービスから選択してください',
       components: {
-        input: () => import('../components/ServiceDetailSelect').then(mod => mod.ServiceDetailSelect),
+        input: ServiceDetailSelect,
       }
     }),
     // 旧フィールドを隠しフィールドとして保持（データ移行用）

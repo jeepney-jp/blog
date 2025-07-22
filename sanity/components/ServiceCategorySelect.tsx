@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useClient } from 'sanity'
-import { Select } from '@sanity/ui'
 import { set, unset } from 'sanity'
 
 export function ServiceCategorySelect(props: any) {
@@ -41,13 +40,21 @@ export function ServiceCategorySelect(props: any) {
   }
 
   if (loading) {
-    return <Select disabled><option>読み込み中...</option></Select>
+    return <select disabled><option>読み込み中...</option></select>
   }
 
   return (
-    <Select
+    <select
       value={value?._ref || ''}
       onChange={handleChange}
+      style={{
+        width: '100%',
+        padding: '8px',
+        border: '1px solid #ccc',
+        borderRadius: '4px',
+        fontSize: '14px',
+        backgroundColor: 'white'
+      }}
     >
       <option value="">サービスカテゴリーを選択してください</option>
       {categories.map((category) => (
@@ -55,6 +62,6 @@ export function ServiceCategorySelect(props: any) {
           {category.title}
         </option>
       ))}
-    </Select>
+    </select>
   )
 }
