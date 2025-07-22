@@ -18,7 +18,16 @@ interface Staff {
     };
     alt?: string;
   };
-  introduction: any[];
+  introduction: Array<{
+    _type: string;
+    children?: Array<{
+      _type: string;
+      text?: string;
+      marks?: string[];
+    }>;
+    style?: string;
+    listItem?: string;
+  }>;
   order: number;
 }
 
