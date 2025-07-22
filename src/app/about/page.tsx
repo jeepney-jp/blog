@@ -113,7 +113,7 @@ export default function About() {
               <div className="bg-white p-8 rounded-lg shadow-sm flex-1 flex flex-col">
                 {/* 代表者写真 */}
                 <div className="mb-8">
-                  <div className="w-48 h-48 mx-auto bg-gray-200 rounded-full overflow-hidden relative">
+                  <div className="w-48 h-48 mx-auto bg-gray-200 rounded-lg overflow-hidden relative">
                     <Image 
                       src="/ceo-photo.jpg" 
                       alt="代表 鈴木康嗣" 
