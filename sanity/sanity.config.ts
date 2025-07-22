@@ -15,4 +15,14 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+
+  document: {
+    // デフォルトのアクションを有効化（削除を含む）
+    actions: (prev) => prev,
+    
+    // 削除の確認ダイアログをカスタマイズ
+    unstable_comments: {
+      enabled: true,
+    },
+  },
 })
