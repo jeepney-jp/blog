@@ -22,6 +22,19 @@ interface News {
   featured?: boolean;
 }
 
+// カテゴリマッピング
+const categoryMap: { [key: string]: { name: string; color: string } } = {
+  business_notice: { name: '営業案内', color: 'bg-green-100 text-green-800' },
+  new_services: { name: '新サービス', color: 'bg-blue-100 text-blue-800' },
+  legal_update: { name: '制度改正', color: 'bg-purple-100 text-purple-800' },
+  price_update: { name: '料金改定', color: 'bg-yellow-100 text-yellow-800' },
+  media_appearance: { name: 'メディア', color: 'bg-pink-100 text-pink-800' },
+  website_info: { name: 'サイト更新', color: 'bg-gray-100 text-gray-800' },
+  immigration_notice: { name: '入管関連', color: 'bg-red-100 text-red-800' },
+  case_study: { name: '実績紹介', color: 'bg-indigo-100 text-indigo-800' },
+  press_release: { name: 'リリース', color: 'bg-orange-100 text-orange-800' },
+};
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -47,7 +60,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
         ]
       }
     ],
-    category: "important",
+    category: "press_release",
     featured: true
   } : null;
 
@@ -86,17 +99,11 @@ export default async function NewsDetailPage({ params }: PageProps) {
               <time className="text-sm text-gray-500">
                 {new Date(news.publishedAt).toLocaleDateString('ja-JP')}
               </time>
-              {news.category && (
+              {news.category && categoryMap[news.category] && (
                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                  news.category === 'important' 
-                    ? 'bg-red-100 text-red-800'
-                    : news.category === 'service'
-                    ? 'bg-blue-100 text-blue-800'
-                    : 'bg-gray-100 text-gray-800'
+                  categoryMap[news.category].color
                 }`}>
-                  {news.category === 'important' ? '重要' : 
-                   news.category === 'service' ? '業務案内' :
-                   news.category === 'general' ? '一般' : 'その他'}
+                  {categoryMap[news.category].name}
                 </span>
               )}
               {news.featured && (
