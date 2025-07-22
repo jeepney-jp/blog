@@ -4,6 +4,7 @@ import { sanityClient } from '@/lib/sanity.client';
 import { allServiceCategoriesQuery } from '@/lib/queries';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CTASection from '@/components/CTASection';
 import { getFeaturedTestimonials } from '../../lib/sanity';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
@@ -817,30 +818,7 @@ export default async function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gray-100 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            お困りごとはございませんか？
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            初回相談は無料です。お気軽にお問い合わせください。
-          </p>
-          <div className="flex justify-center space-x-4">
-            <Link
-              href="/contact"
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-            >
-              お問い合わせ
-            </Link>
-            <Link
-              href="/services"
-              className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-            >
-              サービス詳細
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection />
 
       {/* Footer */}
       <Footer />
