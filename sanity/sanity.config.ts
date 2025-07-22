@@ -2,6 +2,9 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import {createDeleteAction} from './documentActions'
+
+const deleteAction = createDeleteAction()
 
 export default defineConfig({
   name: 'default',
@@ -17,12 +20,9 @@ export default defineConfig({
   },
 
   document: {
-    // デフォルトのアクションを有効化（削除を含む）
-    actions: (prev) => prev,
-    
-    // 削除の確認ダイアログをカスタマイズ
-    unstable_comments: {
-      enabled: true,
+    actions: (prev, context) => {
+      // すべてのドキュメントタイプに削除アクションを追加
+      return [...prev, deleteAction]
     },
   },
 })
