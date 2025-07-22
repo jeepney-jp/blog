@@ -207,7 +207,7 @@ export default defineType({
       description: '上記で選択したカテゴリーに属するサービスから選択してください',
       options: {
         disableNew: true,
-        filter: ({document}) => {
+        filter: ({document}: {document: any}) => {
           // カテゴリーが選択されていない場合は全て表示
           if (!document?.serviceCategory?._ref) {
             return {
