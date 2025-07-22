@@ -70,15 +70,8 @@ export default async function TestimonialsPage() {
             clientName: string;
             slug: { current: string };
             comment: string;
-            serviceType: string;
-            serviceDetail?: {
-              _id: string;
-              title: string;
-              category?: {
-                _id: string;
-                title: string;
-              };
-            };
+            serviceType?: string;
+            serviceDetail?: string;
             clientIndustry?: string;
             clientLocation?: string;
             featured?: boolean;
@@ -111,7 +104,7 @@ export default async function TestimonialsPage() {
                 {/* Service Type */}
                 <div className="mb-4">
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                    {testimonial.serviceDetail?.title || 'サービス未設定'}
+                    {testimonial.serviceDetail || 'サービス未設定'}
                   </span>
                 </div>
 

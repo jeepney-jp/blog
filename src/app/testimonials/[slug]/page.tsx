@@ -90,10 +90,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
                 <div>
                   <dt className="text-sm font-medium text-gray-500">ご利用サービス</dt>
                   <dd className="text-base text-gray-900">
-                    {testimonial.serviceDetail?.category?.title && (
-                      <span className="text-sm text-gray-600">{testimonial.serviceDetail.category.title} - </span>
-                    )}
-                    {testimonial.serviceDetail?.title || 'サービス未設定'}
+                    {testimonial.serviceDetail || 'サービス未設定'}
                   </dd>
                 </div>
                 {testimonial.clientIndustry && (

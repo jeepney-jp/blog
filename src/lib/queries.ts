@@ -189,14 +189,7 @@ export const testimonialsListQuery = `
     clientName,
     "slug": slug.current,
     comment,
-    serviceDetail-> {
-      _id,
-      title,
-      "category": parentCategory-> {
-        _id,
-        title
-      }
-    },
+    serviceDetail,
     clientIndustry,
     clientLocation,
     featured,
@@ -213,16 +206,7 @@ export const testimonialDetailQuery = `
     "slug": slug.current,
     comment,
     content,
-    serviceDetail-> {
-      _id,
-      title,
-      "slug": slug.current,
-      "category": parentCategory-> {
-        _id,
-        title,
-        "slug": slug.current
-      }
-    },
+    serviceDetail,
     clientIndustry,
     clientLocation,
     featured,
@@ -238,9 +222,7 @@ export const featuredTestimonialsQuery = `
     clientName,
     "slug": slug.current,
     comment,
-    serviceDetail-> {
-      title
-    },
+    serviceDetail,
     "clientImageUrl": clientImage.asset->url
   }
 `;

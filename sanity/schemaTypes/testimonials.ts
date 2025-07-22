@@ -1,6 +1,4 @@
 import {defineField, defineType} from 'sanity'
-import {ServiceCategorySelect} from '../components/ServiceCategorySelect'
-import {ServiceDetailSelect} from '../components/ServiceDetailSelect'
 
 export default defineType({
   name: 'testimonials',
@@ -190,26 +188,11 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'serviceCategory',
-      title: 'サービスカテゴリー（大項目）',
-      type: 'reference',
-      to: [{type: 'serviceCategory'}],
-      validation: (rule) => rule.required(),
-      description: 'まずサービスカテゴリーを選択してください',
-      components: {
-        input: ServiceCategorySelect,
-      }
-    }),
-    defineField({
       name: 'serviceDetail',
-      title: 'サービス詳細（中項目）',
-      type: 'reference',
-      to: [{type: 'serviceDetail'}],
+      title: 'ご利用サービス',
+      type: 'string',
       validation: (rule) => rule.required(),
-      description: '上記で選択したカテゴリーに属するサービスから選択してください',
-      components: {
-        input: ServiceDetailSelect,
-      }
+      description: 'お客様が利用されたサービスを入力してください（例：永住ビザ申請、建設業許可申請など）',
     }),
     // 旧フィールドを隠しフィールドとして保持（データ移行用）
     defineField({
@@ -264,19 +247,15 @@ export default defineType({
   preview: {
     select: {
       title: 'clientName',
-      categoryTitle: 'serviceCategory.title',
-      serviceTitle: 'serviceDetail.title',
+      serviceDetail: 'serviceDetail',
       featured: 'featured',
       media: 'clientImage',
     },
     prepare(selection) {
-      const {title, categoryTitle, serviceTitle, featured} = selection
-      const subtitle = categoryTitle && serviceTitle 
-        ? `${categoryTitle} - ${serviceTitle}`
-        : '未設定'
+      const {title, serviceDetail, featured} = selection
       return {
         title: title,
-        subtitle: `${subtitle}${featured ? ' (トップページ掲載)' : ''}`,
+        subtitle: `${serviceDetail || '未設定'}${featured ? ' (トップページ掲載)' : ''}`,
         media: selection.media,
       }
     },

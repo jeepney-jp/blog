@@ -523,10 +523,7 @@ export default async function Home() {
                 slug: { current: string };
                 comment: string;
                 serviceType?: string;
-                serviceDetail?: {
-                  _id: string;
-                  title: string;
-                };
+                serviceDetail?: string;
                 clientIndustry?: string;
                 clientLocation?: string;
                 publishedAt: string;
@@ -556,7 +553,7 @@ export default async function Home() {
                   <div className="p-6">
                     <div className="mb-4">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                        {testimonial.serviceDetail?.title || 'サービス未設定'}
+                        {testimonial.serviceDetail || 'サービス未設定'}
                       </span>
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">{testimonial.clientName}</h3>
