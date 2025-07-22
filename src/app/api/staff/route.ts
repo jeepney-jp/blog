@@ -11,7 +11,7 @@ const client = createClient({
 export async function GET() {
   try {
     const staff = await client.fetch(`
-      *[_type == "staff" && isActive == true] | order(order asc) {
+      *[_type == "staff" && isActive == true && !(_id in path("drafts.**"))] | order(order asc) {
         _id,
         name,
         nameRomaji,
