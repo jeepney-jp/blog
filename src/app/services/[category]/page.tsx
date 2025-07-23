@@ -144,9 +144,6 @@ export default async function CategoryPage({ params }: Props) {
         <h1 className="text-3xl font-bold mb-4">
           【専門家がサポート】{data.title}のご案内
         </h1>
-        {data.expertiseDescription && (
-          <PortableText value={data.expertiseDescription} />
-        )}
       </section>
 
       {/* 中項目テーブル */}

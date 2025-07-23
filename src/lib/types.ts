@@ -51,7 +51,6 @@ export interface ServiceCategory {
   imageUrl?: string;
   iconUrl?: string;
   catchphrase?: string;
-  expertiseDescription?: PortableTextBlock[];
   faq?: FaqItem[];
   services?: ServiceDetailLite[];
   previewServices?: Array<{
