@@ -132,7 +132,9 @@ export async function getBlogBySlug(slug: string) {
       publishedAt,
       updatedAt,
       metaDescription,
-      featuredImage
+      featuredImage,
+      showToc,
+      tocTitle
     }
   `, { slug })
 }
