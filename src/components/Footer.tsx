@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,10 +8,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <Link href="/">
-              <h3 className="text-lg font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer">
-                <span className="text-white">フォルティア</span>
-                <span className="text-white ml-1">行政書士事務所</span>
-              </h3>
+              <div className="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity cursor-pointer">
+                <Image 
+                  src="/fortia-logo（背景透明）.png" 
+                  alt="フォルティア行政書士事務所ロゴ" 
+                  width={40} 
+                  height={40}
+                  className="object-contain"
+                />
+                <h3 className="text-lg font-semibold">
+                  <span className="text-white">フォルティア</span>
+                  <span className="text-white ml-1">行政書士事務所</span>
+                </h3>
+              </div>
             </Link>
             <p className="text-gray-400">
               〒100-0001<br />
