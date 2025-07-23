@@ -1,7 +1,6 @@
 // ファイル名: app/(public)/services/[category]/page.tsx
 
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { sanityClient } from '@/lib/sanity.client';
 import { categoryPageQuery, categorySlugsQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
