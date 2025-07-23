@@ -223,33 +223,9 @@ export default async function ServiceDetailPage({ params }: Props) {
 
         {/* ページタイトル */}
         <section aria-label="ページタイトル">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#004080] mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-[#004080] mb-8">
             {data.title}
           </h1>
-          {data.overview && (
-            <p className="text-lg text-gray-700 mb-4">{data.overview}</p>
-          )}
-          
-          {/* 料金情報 */}
-          {(data.priceMin || data.priceMax || data.priceNote) && (
-            <div className="bg-blue-50 rounded-lg p-4 inline-block">
-              <div className="flex items-baseline gap-2">
-                <span className="text-sm font-medium text-gray-600">料金目安：</span>
-                <span className="text-xl font-bold text-[#004080]">
-                  {data.priceMin && data.priceMax
-                    ? `¥${data.priceMin.toLocaleString()}〜¥${data.priceMax.toLocaleString()}`
-                    : data.priceMin
-                    ? `¥${data.priceMin.toLocaleString()}〜`
-                    : data.priceMax
-                    ? `〜¥${data.priceMax.toLocaleString()}`
-                    : data.priceNote || data.price || '個別見積り'}
-                </span>
-              </div>
-              {data.priceNote && (data.priceMin || data.priceMax) && (
-                <p className="text-sm text-gray-600 mt-1">{data.priceNote}</p>
-              )}
-            </div>
-          )}
         </section>
 
         {/* 本文と目次 */}
