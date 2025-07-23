@@ -229,15 +229,7 @@ export default async function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">主要サービス</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
-            <p className="text-sm text-gray-600 tracking-widest mb-6">OUR SERVICES</p>
-            <div className="mt-8 bg-blue-50 rounded-lg p-4 inline-block">
-              <p className="text-gray-700 flex items-center">
-                <svg className="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                まずは、お困りの内容に該当するサービスをクリックしてください
-              </p>
-            </div>
+            <p className="text-sm text-gray-600 tracking-widest">OUR SERVICES</p>
           </div>
           
           {/* Sanityからのデータがある場合は動的に表示 */}
