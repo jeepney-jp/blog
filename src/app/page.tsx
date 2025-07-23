@@ -96,52 +96,8 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* About Us Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">事務所案内</h2>
-            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
-            <p className="text-sm text-gray-600 tracking-widest">ABOUT US</p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">挑戦する経営者の伴走者</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                行政書士法人フォルティアは、圧倒的なサービス品質で、挑戦する企業から選ばれる行政書士事務所です。
-              </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                2014年に「行政書士法人フォルティア」設立。2022現在、全国4拠点・スタッフ総勢17人。
-              </p>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                「新規ビジネス立ち上げ支援」から「融資や補助金での資金調達」「法人設立」「許認可申請」まで、企業の経営をトータルでサポートしています。
-              </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center bg-gray-900 text-white px-8 py-3 font-medium hover:bg-gray-800 transition-colors"
-              >
-                詳細はこちら
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-            <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px]">
-              <Image 
-                src="/office-consultation.jpg" 
-                alt="事務所での相談風景" 
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="rounded-lg shadow-lg object-cover"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section */}
-      <section className="bg-gray-50 py-24">
+      <section id="features" className="bg-gray-50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">当事務所の特徴</h2>
@@ -615,6 +571,50 @@ export default async function Home() {
             >
               すべてのお客様の声を見る
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">事務所案内</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 tracking-widest">ABOUT US</p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">挑戦する経営者の伴走者</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                行政書士法人フォルティアは、圧倒的なサービス品質で、挑戦する企業から選ばれる行政書士事務所です。
+              </p>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                2014年に「行政書士法人フォルティア」設立。2022現在、全国4拠点・スタッフ総勢17人。
+              </p>
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                「新規ビジネス立ち上げ支援」から「融資や補助金での資金調達」「法人設立」「許認可申請」まで、企業の経営をトータルでサポートしています。
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center bg-gray-900 text-white px-8 py-3 font-medium hover:bg-gray-800 transition-colors"
+              >
+                詳細はこちら
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+            <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px]">
+              <Image 
+                src="/office-consultation.jpg" 
+                alt="事務所での相談風景" 
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="rounded-lg shadow-lg object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
