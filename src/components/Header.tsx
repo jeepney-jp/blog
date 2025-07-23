@@ -29,14 +29,14 @@ export default function Header() {
               <Link href="/services" className="text-gray-600 hover:text-gray-900">
                 サービス
               </Link>
+              <Link href="/testimonials" className="text-gray-600 hover:text-gray-900">
+                お客様の声
+              </Link>
               <Link href="/news" className="text-gray-600 hover:text-gray-900">
                 お知らせ
               </Link>
               <Link href="/blog" className="text-gray-600 hover:text-gray-900">
                 お役立ち情報
-              </Link>
-              <Link href="/testimonials" className="text-gray-600 hover:text-gray-900">
-                お客様の声
               </Link>
               <Link href="/contact" className="bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors">
                 お問い合わせ

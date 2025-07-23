@@ -448,59 +448,6 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* News Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">最新のお知らせ</h2>
-            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
-            <p className="text-sm text-gray-600 tracking-widest">NEWS & UPDATES</p>
-          </div>
-          {latestNews.length > 0 ? (
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <ul className="divide-y divide-gray-200">
-                {latestNews.map((news: NewsItem) => (
-                  <li key={news._id}>
-                    <Link 
-                      href={`/news/${news.slug.current}`}
-                      className="block px-6 py-4 hover:bg-gray-50 transition-colors"
-                    >
-                      <div className="flex items-center gap-4">
-                        <time className="text-sm text-gray-500 whitespace-nowrap">
-                          {new Date(news.publishedAt).toLocaleDateString('ja-JP')}
-                        </time>
-                        {news.category && categoryMap[news.category] && (
-                          <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium whitespace-nowrap ${
-                            categoryMap[news.category].color
-                          }`}>
-                            {categoryMap[news.category].name}
-                          </span>
-                        )}
-                        <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
-                          {news.title}
-                        </h3>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : (
-            <div className="bg-white rounded-lg shadow-sm p-12 text-center">
-              <p className="text-gray-500 text-lg">お知らせはまだありません。</p>
-            </div>
-          )}
-          <div className="text-center mt-8">
-            <Link
-              href="/news"
-              className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
-            >
-              すべてのお知らせを見る
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -667,6 +614,59 @@ export default async function Home() {
               className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
             >
               すべてのお客様の声を見る
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* News Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">最新のお知らせ</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 tracking-widest">NEWS & UPDATES</p>
+          </div>
+          {latestNews.length > 0 ? (
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <ul className="divide-y divide-gray-200">
+                {latestNews.map((news: NewsItem) => (
+                  <li key={news._id}>
+                    <Link 
+                      href={`/news/${news.slug.current}`}
+                      className="block px-6 py-4 hover:bg-gray-50 transition-colors"
+                    >
+                      <div className="flex items-center gap-4">
+                        <time className="text-sm text-gray-500 whitespace-nowrap">
+                          {new Date(news.publishedAt).toLocaleDateString('ja-JP')}
+                        </time>
+                        {news.category && categoryMap[news.category] && (
+                          <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium whitespace-nowrap ${
+                            categoryMap[news.category].color
+                          }`}>
+                            {categoryMap[news.category].name}
+                          </span>
+                        )}
+                        <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
+                          {news.title}
+                        </h3>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <div className="bg-white rounded-lg shadow-sm p-12 text-center">
+              <p className="text-gray-500 text-lg">お知らせはまだありません。</p>
+            </div>
+          )}
+          <div className="text-center mt-8">
+            <Link
+              href="/news"
+              className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+            >
+              すべてのお知らせを見る
             </Link>
           </div>
         </div>
