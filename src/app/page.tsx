@@ -219,7 +219,7 @@ export default async function Home() {
                 <Link
                   key={category._id}
                   href={`/services/${category.slug}`}
-                  className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center block"
+                  className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-50/50 transition-all duration-300 text-center block"
                 >
                   <div className="mb-4">
                     {category.iconUrl ? (
@@ -246,7 +246,7 @@ export default async function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             
             {/* 外国人関連業務 */}
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-50/50 transition-all duration-300 text-center">
               <div className="mb-4">
                 <Image
                   src="/service-foreigner.png"
@@ -262,7 +262,7 @@ export default async function Home() {
             </div>
 
             {/* 建設・宅建業関連 */}
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-50/50 transition-all duration-300 text-center">
               <div className="mb-4">
                 <Image
                   src="/service-construction.png"
@@ -277,7 +277,7 @@ export default async function Home() {
             </div>
 
             {/* 自動車関連業務 */}
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-50/50 transition-all duration-300 text-center">
               <div className="mb-4">
                 <Image
                   src="/service-vehicle.png"
@@ -292,7 +292,7 @@ export default async function Home() {
             </div>
 
             {/* 飲食・風俗営業 */}
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-50/50 transition-all duration-300 text-center">
               <div className="mb-4">
                 <Image
                   src="/service-restaurant.png"
@@ -307,7 +307,7 @@ export default async function Home() {
             </div>
 
             {/* 廃棄物処理業許可 */}
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-50/50 transition-all duration-300 text-center">
               <div className="mb-4">
                 <Image
                   src="/service-waste.png"
@@ -322,7 +322,7 @@ export default async function Home() {
             </div>
 
             {/* 旅行・旅館業 */}
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-50/50 transition-all duration-300 text-center">
               <div className="mb-4">
                 <Image
                   src="/service-travel.png"
@@ -337,7 +337,7 @@ export default async function Home() {
             </div>
 
             {/* 法人設立業務 */}
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-50/50 transition-all duration-300 text-center">
               <div className="mb-4">
                 <Image
                   src="/service-corporation.png"
@@ -352,7 +352,7 @@ export default async function Home() {
             </div>
 
             {/* 営業許可 */}
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-50/50 transition-all duration-300 text-center">
               <div className="mb-4">
                 <Image
                   src="/service-license.png"
@@ -367,7 +367,7 @@ export default async function Home() {
             </div>
 
             {/* 土地関連業務 */}
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-50/50 transition-all duration-300 text-center">
               <div className="mb-4">
                 <Image
                   src="/service-land.png"
@@ -382,7 +382,7 @@ export default async function Home() {
             </div>
 
             {/* 権利義務・事実証明 */}
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-50/50 transition-all duration-300 text-center">
               <div className="mb-4">
                 <Image
                   src="/service-document.png"
@@ -397,7 +397,7 @@ export default async function Home() {
             </div>
 
             {/* その他の業務 */}
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 text-center">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-50/50 transition-all duration-300 text-center">
               <div className="mb-4">
                 <Image
                   src="/service-other.png"
