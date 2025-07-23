@@ -2,16 +2,6 @@ import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
-import { 
-  CheckCircleIcon, 
-  BuildingOfficeIcon,
-  UserGroupIcon,
-  ShieldCheckIcon,
-  ClockIcon,
-  DocumentTextIcon,
-  ScaleIcon,
-  TrophyIcon
-} from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
   title: '当事務所の特徴 | フォルティア行政書士事務所',
@@ -115,19 +105,19 @@ export default function FeaturesPage() {
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 <div className="bg-gray-900 text-white p-4 rounded">
-                  <CheckCircleIcon className="w-6 h-6 mx-auto mb-2" />
+                  <div className="w-6 h-6 mx-auto mb-2 text-center">✓</div>
                   <p className="text-sm">○○○○には○○○○対策、○○○○を○○○○することで○○○○にします。</p>
                 </div>
                 <div className="bg-gray-900 text-white p-4 rounded">
-                  <CheckCircleIcon className="w-6 h-6 mx-auto mb-2" />
+                  <div className="w-6 h-6 mx-auto mb-2 text-center">✓</div>
                   <p className="text-sm">○○○○には○○○○対策、○○○○を○○○○することで○○○○にします。</p>
                 </div>
                 <div className="bg-gray-900 text-white p-4 rounded">
-                  <CheckCircleIcon className="w-6 h-6 mx-auto mb-2" />
+                  <div className="w-6 h-6 mx-auto mb-2 text-center">✓</div>
                   <p className="text-sm">○○○○には○○○○対策、○○○○を○○○○することで○○○○にします。</p>
                 </div>
                 <div className="bg-gray-900 text-white p-4 rounded">
-                  <CheckCircleIcon className="w-6 h-6 mx-auto mb-2" />
+                  <div className="w-6 h-6 mx-auto mb-2 text-center">✓</div>
                   <p className="text-sm">○○○○には○○○○対策、○○○○を○○○○することで○○○○にします。</p>
                 </div>
               </div>
