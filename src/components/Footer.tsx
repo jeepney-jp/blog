@@ -118,11 +118,6 @@ export default async function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/lawyers" className="text-gray-400 hover:text-white transition-colors">
-                  弁護士紹介
-                </Link>
-              </li>
-              <li>
                 <Link href="/testimonials" className="text-gray-400 hover:text-white transition-colors">
                   お客様の声
                 </Link>
