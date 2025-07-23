@@ -41,7 +41,7 @@ export default function Header() {
               <Link href="/blog" className="text-gray-600 hover:text-gray-900">
                 お役立ち情報
               </Link>
-              <Link href="/contact" className="bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors">
+              <Link href="/contact" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                 お問い合わせ
               </Link>
             </nav>
