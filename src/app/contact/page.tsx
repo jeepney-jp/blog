@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import ToastNotification from "@/components/ToastNotification";
