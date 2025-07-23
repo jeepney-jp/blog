@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTestimonialBySlug, getTestimonials } from "../../../../lib/sanity";
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import UnifiedFooter from '@/components/UnifiedFooter';
 import CTASection from '@/components/CTASection';
 import TableOfContents from '@/components/TableOfContents';
 import PortableTextWithToc from '@/components/PortableTextWithToc';
@@ -182,7 +182,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
       <CTASection />
 
       {/* Footer */}
-      <Footer />
+      <UnifiedFooter />
     </div>
   );
 }

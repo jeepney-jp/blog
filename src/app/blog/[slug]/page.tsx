@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import UnifiedFooter from '@/components/UnifiedFooter';
 import CTASection from '@/components/CTASection';
 import TableOfContents from '@/components/TableOfContents';
 import PortableTextWithToc from '@/components/PortableTextWithToc';
@@ -231,7 +231,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
       <CTASection />
 
       {/* Footer */}
-      <Footer />
+      <UnifiedFooter />
     </div>
   );
 }
