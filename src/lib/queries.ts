@@ -222,3 +222,17 @@ export const featuredTestimonialsQuery = `
     "clientImageUrl": clientImage.asset->url
   }
 `;
+
+// 13. フッター用のサービスカテゴリーとサブカテゴリーを取得
+export const serviceCategoriesWithSubcategoriesQuery = `
+  *[_type == "serviceCategory"] | order(orderRank asc, _createdAt asc) {
+    _id,
+    title,
+    "slug": slug.current,
+    "subcategories": *[_type == "serviceDetail" && references(^._id)] | order(orderRank asc, _createdAt asc) {
+      _id,
+      title,
+      "slug": slug.current
+    }
+  }
+`;
