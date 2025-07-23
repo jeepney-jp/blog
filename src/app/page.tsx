@@ -850,13 +850,16 @@ export default async function Home() {
 
       {/* New CTA Section with Background */}
       <section 
-        className="relative py-24 bg-cover bg-center"
+        className="relative py-24 bg-cover bg-center bg-gray-100"
         style={{
-          backgroundImage: "url('/call-center-bg.jpg')",
+          backgroundImage: "url('/call-center-bg.svg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-purple-900/80"></div>
         
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
