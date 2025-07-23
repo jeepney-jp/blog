@@ -23,7 +23,7 @@ export default function Header() {
               </Link>
             </div>
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/#features" className="text-gray-600 hover:text-gray-900">
+              <Link href="/features" className="text-gray-600 hover:text-gray-900">
                 特徴
               </Link>
               <Link href="/services" className="text-gray-600 hover:text-gray-900">
