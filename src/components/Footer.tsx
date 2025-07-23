@@ -10,7 +10,7 @@ export default function Footer() {
             <Link href="/">
               <div className="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity cursor-pointer">
                 <Image 
-                  src="/fortia-logo（背景透明）.png" 
+                  src="/fortia-logo-transparent.png" 
                   alt="フォルティア行政書士事務所ロゴ" 
                   width={40} 
                   height={40}
