@@ -189,7 +189,7 @@ export default async function Home() {
                 </div>
                 <div className="mt-auto">
                   <div className="pt-6 border-t border-gray-100 w-full h-24 flex items-center">
-                    <div className="flex justify-center space-x-2 flex-wrap w-full">
+                    <div className="flex justify-center gap-2 flex-wrap w-full">
                       <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">英語</span>
                       <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">ベトナム語</span>
                       <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">ネパール語</span>
