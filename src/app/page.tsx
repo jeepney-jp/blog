@@ -92,6 +92,23 @@ export default async function Home() {
               <span className="text-blue-500 block mb-1">人と社会をつなげる、</span>
               <span className="text-blue-500 block">リーガルサービス</span>
             </h1>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+              >
+                無料相談はこちらから
+                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+              <Link 
+                href="/services" 
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-600 bg-white rounded-lg hover:bg-blue-50 transition-colors border-2 border-white"
+              >
+                サービス内容を見る
+              </Link>
+            </div>
           </div>
         </div>
       </section>
