@@ -3,7 +3,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import { getTestimonials } from "../../../lib/sanity";
-import Footer from "@/components/Footer";
+import UnifiedFooter from "@/components/UnifiedFooter";
 
 // Next.jsのキャッシュを無効化
 export const revalidate = 0;
@@ -150,7 +150,7 @@ export default async function TestimonialsPage() {
         </div>
       </main>
 
-      <Footer />
+      <UnifiedFooter />
     </div>
   );
 }

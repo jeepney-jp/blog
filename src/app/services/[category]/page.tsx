@@ -10,7 +10,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import CtaBanner from '@/components/CtaBanner';
 import ServiceTable from '@/components/ServiceTable';
 import Script from 'next/script';
-import Footer from '@/components/Footer';
+import UnifiedFooter from '@/components/UnifiedFooter';
 
 type Props = {
   params: Promise<{ category: string }>;
@@ -162,7 +162,7 @@ export default async function CategoryPage({ params }: Props) {
       <CtaBanner categoryTitle={data.title} />
       </div>
 
-      <Footer />
+      <UnifiedFooter />
     </div>
   );
 }

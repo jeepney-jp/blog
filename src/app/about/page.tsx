@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import { useState, useEffect } from "react";
 import { PortableText } from '@portabletext/react';
-import ClientFooter from "@/components/ClientFooter";
+import UnifiedFooter from "@/components/UnifiedFooter";
 
 interface Staff {
   _id: string;
@@ -356,7 +356,7 @@ export default function About() {
         </div>
       </section>
 
-      <ClientFooter />
+      <UnifiedFooter />
     </div>
   );
 }

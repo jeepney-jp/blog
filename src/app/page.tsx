@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { sanityClient } from '@/lib/sanity.client';
 import { allServiceCategoriesQuery } from '@/lib/queries';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import UnifiedFooter from '@/components/UnifiedFooter';
 import CTASection from '@/components/CTASection';
 import { getFeaturedTestimonials, getNews } from '../../lib/sanity';
 
@@ -851,7 +851,7 @@ export default async function Home() {
       <CTASection />
 
       {/* Footer */}
-      <Footer />
+      <UnifiedFooter />
     </div>
   );
 }

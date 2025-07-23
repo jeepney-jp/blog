@@ -4,7 +4,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import ToastNotification from "@/components/ToastNotification";
-import ClientFooter from "@/components/ClientFooter";
+import UnifiedFooter from "@/components/UnifiedFooter";
 
 type FormData = {
   name: string;
@@ -321,7 +321,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <ClientFooter />
+      <UnifiedFooter />
 
       {/* トースト通知 */}
       <ToastNotification 

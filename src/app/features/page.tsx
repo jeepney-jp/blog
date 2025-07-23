@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import UnifiedFooter from '@/components/UnifiedFooter';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -344,7 +344,7 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <Footer />
+      <UnifiedFooter />
     </div>
   );
 }

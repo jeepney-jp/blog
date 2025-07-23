@@ -18,7 +18,7 @@ import Script from 'next/script';
 import { generateTocFromContent } from '@/utils/generateToc';
 import TableOfContents from '@/components/TableOfContents';
 import PortableTextWithToc from '@/components/PortableTextWithToc';
-import Footer from '@/components/Footer';
+import UnifiedFooter from '@/components/UnifiedFooter';
 
 type Props = {
   params: Promise<{ category: string; slug: string }>;
@@ -355,7 +355,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         <CtaBanner serviceTitle={data.title} />
       </main>
 
-      <Footer />
+      <UnifiedFooter />
     </div>
   );
 }

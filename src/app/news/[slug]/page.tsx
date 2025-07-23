@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import UnifiedFooter from '@/components/UnifiedFooter';
 import CTASection from '@/components/CTASection';
 // import { getNewsBySlug, getNews } from "../../../../lib/sanity";
 
@@ -140,7 +140,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
       <CTASection />
 
       {/* Footer */}
-      <Footer />
+      <UnifiedFooter />
     </div>
   );
 }

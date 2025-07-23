@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
-import Footer from "@/components/Footer";
+import UnifiedFooter from "@/components/UnifiedFooter";
 // import { getBlogs } from "../../../lib/sanity";
 
 // ブログ記事の型定義
@@ -265,7 +265,7 @@ export default async function BlogPage() {
         </div>
       </main>
 
-      <Footer />
+      <UnifiedFooter />
     </div>
   );
 }

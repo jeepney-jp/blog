@@ -7,7 +7,7 @@ import { allServiceCategoriesQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
 import CategoryCard from '@/components/CategoryCard';
 import DebugCategoryCard from '@/components/DebugCategoryCard';
-import Footer from '@/components/Footer';
+import UnifiedFooter from '@/components/UnifiedFooter';
 
 // ISRの設定：1日ごとに再生成
 export const revalidate = 86400;
@@ -338,7 +338,7 @@ export default async function Services() {
         </div>
       </section>
 
-      <Footer />
+      <UnifiedFooter />
     </div>
   );
 }

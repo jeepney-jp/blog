@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { sanityClient } from '@/lib/sanity.client';
 import { serviceCategoriesWithSubcategoriesQuery } from '@/lib/queries';
 
@@ -14,19 +17,25 @@ interface ServiceCategory {
   }[];
 }
 
-// Sanityからサービスカテゴリーを取得
-async function getServiceCategories(): Promise<ServiceCategory[]> {
-  try {
-    const data = await sanityClient.fetch(serviceCategoriesWithSubcategoriesQuery);
-    return data || [];
-  } catch (error) {
-    console.error('Failed to fetch service categories for footer:', error);
-    return [];
-  }
-}
+export default function UnifiedFooter() {
+  const [serviceCategories, setServiceCategories] = useState<ServiceCategory[]>([]);
+  const [loading, setLoading] = useState(true);
 
-export default async function Footer() {
-  const serviceCategories = await getServiceCategories();
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const data = await sanityClient.fetch(serviceCategoriesWithSubcategoriesQuery);
+        setServiceCategories(data || []);
+      } catch (error) {
+        console.error('Failed to fetch service categories for footer:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCategories();
+  }, []);
+
   return (
     <footer className="bg-gray-800 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,7 +76,15 @@ export default async function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-lg font-semibold mb-4">サービス</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
-              {serviceCategories.length > 0 ? (
+              {loading ? (
+                // ローディング中の表示
+                <div className="animate-pulse">
+                  <div className="h-4 bg-gray-700 rounded w-3/4 mb-2"></div>
+                  <div className="h-4 bg-gray-700 rounded w-3/4 mb-2"></div>
+                  <div className="h-4 bg-gray-700 rounded w-3/4"></div>
+                </div>
+              ) : serviceCategories.length > 0 ? (
+                // Sanityデータがある場合
                 serviceCategories.map((category) => (
                   <div key={category._id}>
                     <Link 
@@ -93,7 +110,8 @@ export default async function Footer() {
                   </div>
                 ))
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+                // フォールバック（Sanityデータがない場合）
+                <>
                   <Link href="/services" className="text-gray-400 hover:text-white text-sm transition-colors block">
                     外国人関連業務
                   </Link>
@@ -103,7 +121,7 @@ export default async function Footer() {
                   <Link href="/services" className="text-gray-400 hover:text-white text-sm transition-colors block">
                     法人設立業務
                   </Link>
-                </div>
+                </>
               )}
             </div>
           </div>
