@@ -292,7 +292,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
             {/* デスクトップ用サイドバー目次 */}
             {data.showToc && data.content && (() => {
-              const toc = generateToc(data.content);
+              const toc = generateTocFromContent(data.content);
               return toc.length > 0 ? (
                 <aside className="hidden lg:block lg:w-80 lg:sticky lg:top-24 lg:h-fit">
                   <TableOfContents 
