@@ -123,15 +123,17 @@ export default async function Home() {
                     創業以来、1,000件を超える申請を支援し、許可率99％を誇る確かな実績があります。
                   </p>
                 </div>
-                <div className="mt-auto pt-6 border-t border-gray-100 w-full">
-                  <div className="flex justify-around">
-                    <div className="text-center">
-                      <p className="text-2xl font-bold text-blue-600">1,000+</p>
-                      <p className="text-sm text-gray-500 mt-1">申請実績</p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-2xl font-bold text-blue-600">99%</p>
-                      <p className="text-sm text-gray-500 mt-1">許可率</p>
+                <div className="mt-auto">
+                  <div className="pt-6 border-t border-gray-100 w-full h-24 flex items-center">
+                    <div className="flex justify-around w-full">
+                      <div className="text-center">
+                        <p className="text-2xl font-bold text-blue-600">1,000+</p>
+                        <p className="text-sm text-gray-500 mt-1">申請実績</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-2xl font-bold text-blue-600">99%</p>
+                        <p className="text-sm text-gray-500 mt-1">許可率</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -156,10 +158,12 @@ export default async function Home() {
                     初期費用は不要で、許可取得後のみ報酬が発生する明瞭な料金体系です。
                   </p>
                 </div>
-                <div className="mt-auto pt-6 border-t border-gray-100 w-full">
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-3">
-                    <p className="text-blue-900 font-bold text-center text-lg">初期費用 0円</p>
-                    <p className="text-blue-700 text-sm text-center mt-1">成功時のみお支払い</p>
+                <div className="mt-auto">
+                  <div className="pt-6 border-t border-gray-100 w-full h-24 flex items-center">
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-3 w-full">
+                      <p className="text-blue-900 font-bold text-center text-lg">初期費用 0円</p>
+                      <p className="text-blue-700 text-sm text-center mt-1">成功時のみお支払い</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -183,12 +187,14 @@ export default async function Home() {
                     多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。
                   </p>
                 </div>
-                <div className="mt-auto pt-6 border-t border-gray-100 w-full">
-                  <div className="flex justify-center space-x-2 flex-wrap">
-                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">英語</span>
-                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">ベトナム語</span>
-                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">ネパール語</span>
-                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">タガログ語</span>
+                <div className="mt-auto">
+                  <div className="pt-6 border-t border-gray-100 w-full h-24 flex items-center">
+                    <div className="flex justify-center space-x-2 flex-wrap w-full">
+                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">英語</span>
+                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">ベトナム語</span>
+                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">ネパール語</span>
+                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">タガログ語</span>
+                    </div>
                   </div>
                 </div>
               </div>
