@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { sanityClient } from '@/lib/sanity.client';
 import { categoryPageQuery, categorySlugsQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
-import { PortableText } from '@portabletext/react';
 import Header from '@/components/Header';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -144,9 +143,6 @@ export default async function CategoryPage({ params }: Props) {
         <h1 className="text-3xl font-bold mb-4">
           【専門家がサポート】{data.title}のご案内
         </h1>
-        {data.expertiseDescription && (
-          <PortableText value={data.expertiseDescription} />
-        )}
       </section>
 
       {/* 中項目テーブル */}

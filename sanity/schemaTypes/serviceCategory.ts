@@ -51,12 +51,6 @@ export default {
       title: 'キャッチコピー',
     },
     {
-      name: 'expertiseDescription',
-      type: 'array',
-      title: '専門性のアピール',
-      of: [{ type: 'block' }],
-    },
-    {
       name: 'faq',
       type: 'array',
       title: 'よくある質問',
