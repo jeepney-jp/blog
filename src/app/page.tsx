@@ -106,7 +106,7 @@ export default async function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 申請実績 */}
-            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300">
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
               <div className="w-full h-48 mb-4">
                 <Image
                   src="/申請実績1,000件超の信頼.png"
@@ -116,22 +116,22 @@ export default async function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="px-8 pb-8">
-                <div className="flex flex-col items-center">
+              <div className="px-8 pb-8 flex flex-col flex-grow">
+                <div className="flex flex-col items-center flex-grow">
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">申請実績1,000件超の信頼</h3>
-                  <p className="text-gray-600 text-center leading-relaxed">
+                  <p className="text-gray-600 text-center leading-relaxed mb-6">
                     創業以来、1,000件を超える申請を支援し、許可率99％を誇る確かな実績があります。
                   </p>
-                  <div className="mt-6 pt-6 border-t border-gray-100 w-full">
-                    <div className="flex justify-around">
-                      <div className="text-center">
-                        <p className="text-2xl font-bold text-blue-600">1,000+</p>
-                        <p className="text-sm text-gray-500 mt-1">申請実績</p>
-                      </div>
-                      <div className="text-center">
-                        <p className="text-2xl font-bold text-blue-600">99%</p>
-                        <p className="text-sm text-gray-500 mt-1">許可率</p>
-                      </div>
+                </div>
+                <div className="mt-auto pt-6 border-t border-gray-100 w-full">
+                  <div className="flex justify-around">
+                    <div className="text-center">
+                      <p className="text-2xl font-bold text-blue-600">1,000+</p>
+                      <p className="text-sm text-gray-500 mt-1">申請実績</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-2xl font-bold text-blue-600">99%</p>
+                      <p className="text-sm text-gray-500 mt-1">許可率</p>
                     </div>
                   </div>
                 </div>
@@ -139,7 +139,7 @@ export default async function Home() {
             </div>
 
             {/* 成果報酬制 */}
-            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300">
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
               <div className="w-full h-48 mb-4">
                 <Image
                   src="/完全成果報酬制で明朗な料金体系.png"
@@ -149,24 +149,24 @@ export default async function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="px-8 pb-8">
-                <div className="flex flex-col items-center">
+              <div className="px-8 pb-8 flex flex-col flex-grow">
+                <div className="flex flex-col items-center flex-grow">
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">完全成果報酬制で明朗な料金体系</h3>
-                  <p className="text-gray-600 text-center leading-relaxed">
+                  <p className="text-gray-600 text-center leading-relaxed mb-6">
                     初期費用は不要で、許可取得後のみ報酬が発生する明瞭な料金体系です。
                   </p>
-                  <div className="mt-6 pt-6 border-t border-gray-100 w-full">
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-3">
-                      <p className="text-blue-900 font-bold text-center text-lg">初期費用 0円</p>
-                      <p className="text-blue-700 text-sm text-center mt-1">成功時のみお支払い</p>
-                    </div>
+                </div>
+                <div className="mt-auto pt-6 border-t border-gray-100 w-full">
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-3">
+                    <p className="text-blue-900 font-bold text-center text-lg">初期費用 0円</p>
+                    <p className="text-blue-700 text-sm text-center mt-1">成功時のみお支払い</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* 母国語対応 */}
-            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300">
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
               <div className="w-full h-48 mb-4">
                 <Image
                   src="/母国語対応で安心サポート.png"
@@ -176,19 +176,19 @@ export default async function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="px-8 pb-8">
-                <div className="flex flex-col items-center">
+              <div className="px-8 pb-8 flex flex-col flex-grow">
+                <div className="flex flex-col items-center flex-grow">
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">母国語対応で安心サポート</h3>
-                  <p className="text-gray-600 text-center leading-relaxed">
+                  <p className="text-gray-600 text-center leading-relaxed mb-6">
                     多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。
                   </p>
-                  <div className="mt-6 pt-6 border-t border-gray-100 w-full">
-                    <div className="flex justify-center space-x-2 flex-wrap">
-                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">英語</span>
-                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">ベトナム語</span>
-                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">ネパール語</span>
-                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">タガログ語</span>
-                    </div>
+                </div>
+                <div className="mt-auto pt-6 border-t border-gray-100 w-full">
+                  <div className="flex justify-center space-x-2 flex-wrap">
+                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">英語</span>
+                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">ベトナム語</span>
+                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">ネパール語</span>
+                    <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium mb-2">タガログ語</span>
                   </div>
                 </div>
               </div>
