@@ -2,11 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTestimonialBySlug, getTestimonials } from "../../../../lib/sanity";
-import { PortableText } from '@portabletext/react';
-import { portableTextComponents } from '@/components/PortableTextComponents';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
+import TableOfContents from '@/components/TableOfContents';
+import PortableTextWithToc from '@/components/PortableTextWithToc';
+import { generateTocFromContent } from '@/utils/generateToc';
 
 // Next.jsのキャッシュを無効化
 export const revalidate = 0;
@@ -110,14 +111,28 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
             </div>
           </header>
 
+          {/* Table of Contents */}
+          {testimonial.showToc && testimonial.content && testimonial.content.length > 0 && (() => {
+            const tocItems = generateTocFromContent(testimonial.content);
+            if (tocItems.length > 0) {
+              return (
+                <TableOfContents 
+                  items={tocItems} 
+                  title={testimonial.tocTitle || '目次'}
+                />
+              );
+            }
+            return null;
+          })()}
+
           {/* Testimonial Content */}
           <div className="prose prose-lg max-w-none mt-8">
             {/* 本文（Portable Text） */}
             {testimonial.content && testimonial.content.length > 0 && (
               <div className="mt-8">
-                <PortableText
-                  value={testimonial.content}
-                  components={portableTextComponents}
+                <PortableTextWithToc
+                  content={testimonial.content}
+                  headingIndexRef={{ current: 0 }}
                 />
               </div>
             )}
