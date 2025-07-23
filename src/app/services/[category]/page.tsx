@@ -158,16 +158,6 @@ export default async function CategoryPage({ params }: Props) {
         </section>
       )}
 
-      {/* 実績紹介バナー */}
-      <div className="text-center py-8 bg-gray-100 rounded-xl">
-        <a
-          href={`/cases?category=${data.slug}`}
-          className="text-blue-700 hover:underline font-medium"
-        >
-          {data.title}に関する実績を見る ＞
-        </a>
-      </div>
-
       {/* CTA */}
       <CtaBanner categoryTitle={data.title} />
       </div>
