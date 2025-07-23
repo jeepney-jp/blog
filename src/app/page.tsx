@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import CTASection from '@/components/CTASection';
 import { getFeaturedTestimonials, getNews } from '../../lib/sanity';
+import { FaCrown, FaCheck, FaGlobe } from 'react-icons/fa';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
 export const revalidate = 60;
@@ -847,7 +848,77 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* New CTA Section with Background */}
+      <section 
+        className="relative py-24 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/call-center-bg.jpg')",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+        
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Title Section */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              初回無料相談、まずはお気軽に相談ください
+            </h2>
+            <p className="text-lg text-gray-200">
+              テストテストテスト文章を入力してください
+            </p>
+          </div>
+
+          {/* 3 Points Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {/* Point 1 */}
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 mb-4">
+                <FaCrown className="text-3xl text-yellow-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">申請実績1,000+</h3>
+              <p className="text-gray-200">豊富な実績と経験でサポート</p>
+            </div>
+
+            {/* Point 2 */}
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 mb-4">
+                <FaCheck className="text-3xl text-green-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">完全成功報酬型</h3>
+              <p className="text-gray-200">成功時のみお支払い</p>
+            </div>
+
+            {/* Point 3 */}
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 mb-4">
+                <FaGlobe className="text-3xl text-blue-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">多言語対応</h3>
+              <p className="text-gray-200">母国語でのサポート可能</p>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex justify-center space-x-4">
+            <Link
+              href="/contact"
+              className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              お問い合わせ
+            </Link>
+            <Link
+              href="/services"
+              className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+            >
+              サービス詳細
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Original CTA Section */}
       <CTASection />
 
       {/* Footer */}
