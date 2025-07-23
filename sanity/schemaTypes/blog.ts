@@ -33,33 +33,74 @@ export default defineType({
       name: 'content',
       title: '本文',
       type: 'array',
+      description: 'ブログのようなリッチな本文を記載できます',
       of: [
         {
           type: 'block',
           styles: [
-            {title: '標準', value: 'normal'},
+            {title: '通常', value: 'normal'},
             {title: '見出し1', value: 'h1'},
             {title: '見出し2', value: 'h2'},
             {title: '見出し3', value: 'h3'},
             {title: '見出し4', value: 'h4'},
-            {title: '引用', value: 'blockquote'},
+            {title: '見出し5', value: 'h5'},
+            {title: '見出し6', value: 'h6'},
+          ],
+          lists: [
+            {title: '箇条書き', value: 'bullet'},
+            {title: '番号付きリスト', value: 'number'},
           ],
           marks: {
             decorators: [
               {title: '太字', value: 'strong'},
               {title: '斜体', value: 'em'},
               {title: '下線', value: 'underline'},
+              {title: 'コード', value: 'code'},
             ],
             annotations: [
               {
-                title: 'リンク',
                 name: 'link',
                 type: 'object',
+                title: 'リンク',
                 fields: [
                   {
-                    title: 'URL',
                     name: 'href',
                     type: 'url',
+                    title: 'URL',
+                  },
+                ],
+              },
+              {
+                name: 'color',
+                type: 'object',
+                title: '文字色',
+                fields: [
+                  {
+                    name: 'hex',
+                    type: 'string',
+                    title: '色',
+                    description: '例: #ff0000',
+                    validation: (rule) => rule.regex(/^#[0-9a-fA-F]{6}$/),
+                  },
+                ],
+              },
+              {
+                name: 'highlight',
+                type: 'object',
+                title: '背景色',
+                fields: [
+                  {
+                    name: 'color',
+                    type: 'string',
+                    title: '色',
+                    options: {
+                      list: [
+                        {title: '黄色', value: 'yellow'},
+                        {title: 'ピンク', value: 'pink'},
+                        {title: '水色', value: 'lightblue'},
+                        {title: '薄緑', value: 'lightgreen'},
+                      ],
+                    },
                   },
                 ],
               },
@@ -68,13 +109,78 @@ export default defineType({
         },
         {
           type: 'image',
-          options: {hotspot: true},
           fields: [
             {
               name: 'alt',
               type: 'string',
-              title: 'Alt text',
-              description: '画像の説明（SEO用）',
+              title: '代替テキスト',
+              description: 'アクセシビリティのための画像説明',
+              validation: (rule) => rule.required(),
+            },
+            {
+              name: 'caption',
+              type: 'string',
+              title: 'キャプション',
+              description: '画像の下に表示される説明文',
+            },
+          ],
+        },
+        {
+          name: 'youtube',
+          type: 'object',
+          title: 'YouTube動画',
+          fields: [
+            {
+              name: 'url',
+              type: 'url',
+              title: 'YouTube URL',
+              validation: (rule) => rule.required(),
+            },
+          ],
+        },
+        {
+          name: 'code',
+          type: 'object',
+          title: 'コードブロック',
+          fields: [
+            {
+              name: 'language',
+              type: 'string',
+              title: '言語',
+              options: {
+                list: [
+                  {title: 'JavaScript', value: 'javascript'},
+                  {title: 'TypeScript', value: 'typescript'},
+                  {title: 'HTML', value: 'html'},
+                  {title: 'CSS', value: 'css'},
+                  {title: 'Python', value: 'python'},
+                  {title: 'その他', value: 'text'},
+                ],
+              },
+            },
+            {
+              name: 'code',
+              type: 'text',
+              title: 'コード',
+              rows: 10,
+            },
+          ],
+        },
+        {
+          name: 'blockquote',
+          type: 'object',
+          title: '引用',
+          fields: [
+            {
+              name: 'text',
+              type: 'text',
+              title: '引用文',
+              rows: 3,
+            },
+            {
+              name: 'cite',
+              type: 'string',
+              title: '引用元',
             },
           ],
         },
@@ -155,6 +261,21 @@ export default defineType({
           description: '画像の説明（SEO用）',
         },
       ],
+    }),
+    defineField({
+      name: 'showToc',
+      title: '目次を表示',
+      type: 'boolean',
+      description: '本文にH2/H3見出しがある場合、自動的に目次を生成して表示します',
+      initialValue: true,
+    }),
+    defineField({
+      name: 'tocTitle',
+      title: '目次タイトル',
+      type: 'string',
+      description: '目次のタイトル（デフォルト: 目次）',
+      initialValue: '目次',
+      hidden: ({document}) => !document?.showToc,
     }),
   ],
   preview: {

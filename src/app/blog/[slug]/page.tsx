@@ -3,35 +3,11 @@ import { notFound } from "next/navigation";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
-// import { getBlogBySlug, getBlogs } from "../../../../lib/sanity";
+import TableOfContents from '@/components/TableOfContents';
+import PortableTextWithToc from '@/components/PortableTextWithToc';
+import { generateTocFromContent } from '@/utils/generateToc';
+import { getBlogBySlug, getBlogs } from "../../../../lib/sanity";
 
-// ブログ記事の型定義
-interface Blog {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  excerpt: string;
-  content?: {
-    _type: string;
-    children: {
-      _type: string;
-      text: string;
-    }[];
-  }[];
-  category: string;
-  tags?: string[];
-  featured?: boolean;
-  readingTime?: number;
-  publishedAt: string;
-  updatedAt?: string;
-  metaDescription?: string;
-  featuredImage?: {
-    asset: {
-      url: string;
-    };
-    alt?: string;
-  };
-}
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -40,7 +16,10 @@ interface PageProps {
 export default async function BlogDetailPage({ params }: PageProps) {
   const { slug } = await params;
   
-  // 一時的にテストデータを使用
+  // Sanityからブログ記事を取得
+  const blog = await getBlogBySlug(slug);
+  
+  /* 削除: テストデータ
   const blog: Blog | null = slug === "kensetsugyo-kyoka-shutoku-hoho" ? {
     _id: "test1",
     title: "建設業許可の取得方法と必要書類を徹底解説",
@@ -105,7 +84,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
     featured: false,
     readingTime: 7,
     publishedAt: "2025-07-05"
-  } : null;
+  } : null; */
 
   if (!blog) {
     notFound();
@@ -143,8 +122,10 @@ export default async function BlogDetailPage({ params }: PageProps) {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <article className="bg-white rounded-lg shadow-sm p-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="lg:grid lg:grid-cols-4 lg:gap-8">
+          {/* Article Content */}
+          <article className="lg:col-span-3 bg-white rounded-lg shadow-sm p-8">
           {/* Article Header */}
           <header className="mb-8">
             <div className="flex items-center space-x-4 mb-6">
@@ -172,7 +153,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
             {blog.tags && blog.tags.length > 0 && (
               <div className="flex flex-wrap gap-2">
-                {blog.tags.map((tag, index) => (
+                {blog.tags.map((tag: string, index: number) => (
                   <span key={index} className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-700">
                     #{tag}
                   </span>
@@ -181,17 +162,30 @@ export default async function BlogDetailPage({ params }: PageProps) {
             )}
           </header>
 
+          {/* Table of Contents for Mobile */}
+          {blog.showToc !== false && blog.content && blog.content.length > 0 && (() => {
+            const tocItems = generateTocFromContent(blog.content);
+            if (tocItems.length > 0) {
+              return (
+                <div className="lg:hidden mb-8">
+                  <TableOfContents 
+                    items={tocItems} 
+                    title={blog.tocTitle || '目次'}
+                  />
+                </div>
+              );
+            }
+            return null;
+          })()}
+
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
-            {blog.content && blog.content.map((block, index) => (
-              <div key={index} className="mb-6">
-                {block.children?.map((child, childIndex: number) => (
-                  <div key={childIndex} className="text-gray-700 leading-relaxed whitespace-pre-line">
-                    {child.text}
-                  </div>
-                ))}
-              </div>
-            ))}
+            {blog.content && blog.content.length > 0 && (
+              <PortableTextWithToc
+                content={blog.content}
+                headingIndexRef={{ current: 0 }}
+              />
+            )}
           </div>
 
           {/* Article Footer */}
@@ -211,7 +205,26 @@ export default async function BlogDetailPage({ params }: PageProps) {
               ← お役立ち情報一覧に戻る
             </Link>
           </div>
-        </article>
+          </article>
+
+          {/* Sidebar with Table of Contents */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24">
+              {blog.showToc !== false && blog.content && blog.content.length > 0 && (() => {
+                const tocItems = generateTocFromContent(blog.content);
+                if (tocItems.length > 0) {
+                  return (
+                    <TableOfContents 
+                      items={tocItems} 
+                      title={blog.tocTitle || '目次'}
+                    />
+                  );
+                }
+                return null;
+              })()}
+            </div>
+          </aside>
+        </div>
       </main>
 
       {/* CTA Section */}
@@ -221,4 +234,13 @@ export default async function BlogDetailPage({ params }: PageProps) {
       <Footer />
     </div>
   );
+}
+
+// 静的パスの生成
+export async function generateStaticParams() {
+  const blogs = await getBlogs();
+  
+  return blogs.map((blog: { slug: { current: string } }) => ({
+    slug: blog.slug.current,
+  }));
 }
