@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
 import { getFeaturedTestimonials, getNews } from '../../lib/sanity';
+import FeatureImage from '@/components/FeatureImage';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
 export const revalidate = 60;
@@ -109,13 +110,10 @@ export default async function Home() {
             <div className="bg-white rounded-lg border border-gray-200 p-8 hover:border-gray-300 hover:shadow-md transition-all duration-300">
               <div className="flex flex-col items-center">
                 <div className="w-32 h-32 mb-6 relative overflow-hidden rounded-lg">
-                  <img 
+                  <FeatureImage 
                     src="/feature-documents.jpg" 
                     alt="書類申請のイメージ" 
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjRTVFN0VCIi8+CjxwYXRoIGQ9Ik00OCA0MEg4MFY4OEg0OFY0MFoiIGZpbGw9IiM5Q0E0QUYiLz4KPHBhdGggZD0iTTU2IDUySDcyVjU2SDU2VjUyWiIgZmlsbD0iI0U1RTdFQiIvPgo8cGF0aCBkPSJNNTYgNjRINzJWNjhINTZWNjRaIiBmaWxsPSIjRTVFN0VCIi8+CjxwYXRoIGQ9Ik01NiA3Nkg3MlY4MEg1NlY3NloiIGZpbGw9IiNFNUU3RUIiLz4KPC9zdmc+';
-                    }}
+                    fallbackSvg="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjRTVFN0VCIi8+CjxwYXRoIGQ9Ik00OCA0MEg4MFY4OEg0OFY0MFoiIGZpbGw9IiM5Q0E0QUYiLz4KPHBhdGggZD0iTTU2IDUySDcyVjU2SDU2VjUyWiIgZmlsbD0iI0U1RTdFQiIvPgo8cGF0aCBkPSJNNTYgNjRINzJWNjhINTZWNjRaIiBmaWxsPSIjRTVFN0VCIi8+CjxwYXRoIGQ9Ik01NiA3Nkg3MlY4MEg1NlY3NloiIGZpbGw9IiNFNUU3RUIiLz4KPC9zdmc+"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">申請実績1,000件超の信頼</h3>
@@ -141,13 +139,10 @@ export default async function Home() {
             <div className="bg-white rounded-lg border border-gray-200 p-8 hover:border-gray-300 hover:shadow-md transition-all duration-300">
               <div className="flex flex-col items-center">
                 <div className="w-32 h-32 mb-6 relative overflow-hidden rounded-lg">
-                  <img 
+                  <FeatureImage 
                     src="/feature-tax-form.jpg" 
                     alt="税務申告のイメージ" 
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjRTVFN0VCIi8+CjxyZWN0IHg9IjMyIiB5PSI0MCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjQ4IiByeD0iNCIgZmlsbD0iIzlDQTRBRiIvPgo8cGF0aCBkPSJNNDggNTZINjRWNjBINDhWNTZaIiBmaWxsPSIjRTVFN0VCIi8+CjxwYXRoIGQ9Ik00OCA2OEg2NFY3Mkg0OFY2OFoiIGZpbGw9IiNFNUU3RUIiLz4KPHBhdGggZD0iTTcyIDU2SDgwVjYwSDcyVjU2WiIgZmlsbD0iI0U1RTdFQiIvPgo8cGF0aCBkPSJNNzIgNjhIODBWNzJINzJWNjhaIiBmaWxsPSIjRTVFN0VCIi8+Cjwvc3ZnPg==';
-                    }}
+                    fallbackSvg="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjRTVFN0VCIi8+CjxyZWN0IHg9IjMyIiB5PSI0MCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjQ4IiByeD0iNCIgZmlsbD0iIzlDQTRBRiIvPgo8cGF0aCBkPSJNNDggNTZINjRWNjBINDhWNTZaIiBmaWxsPSIjRTVFN0VCIi8+CjxwYXRoIGQ9Ik00OCA2OEg2NFY3Mkg0OFY2OFoiIGZpbGw9IiNFNUU3RUIiLz4KPHBhdGggZD0iTTcyIDU2SDgwVjYwSDcyVjU2WiIgZmlsbD0iI0U1RTdFQiIvPgo8cGF0aCBkPSJNNzIgNjhIODBWNzJINzJWNjhaIiBmaWxsPSIjRTVFN0VCIi8+Cjwvc3ZnPg=="
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">完全成果報酬制で明朗な料金体系</h3>
@@ -167,13 +162,10 @@ export default async function Home() {
             <div className="bg-white rounded-lg border border-gray-200 p-8 hover:border-gray-300 hover:shadow-md transition-all duration-300">
               <div className="flex flex-col items-center">
                 <div className="w-32 h-32 mb-6 relative overflow-hidden rounded-lg">
-                  <img 
+                  <FeatureImage 
                     src="/feature-consultation.jpg" 
                     alt="相談対応のイメージ" 
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjRTVFN0VCIi8+CjxjaXJjbGUgY3g9IjQ4IiBjeT0iNTYiIHI9IjE2IiBmaWxsPSIjOUNBNEFGIi8+CjxjaXJjbGUgY3g9IjgwIiBjeT0iNTYiIHI9IjE2IiBmaWxsPSIjOUNBNEFGIi8+CjxwYXRoIGQ9Ik00OCA3Mkg4MFY4OEg0OFY3MloiIGZpbGw9IiM5Q0E0QUYiLz4KPC9zdmc+';
-                    }}
+                    fallbackSvg="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjRTVFN0VCIi8+CjxjaXJjbGUgY3g9IjQ4IiBjeT0iNTYiIHI9IjE2IiBmaWxsPSIjOUNBNEFGIi8+CjxjaXJjbGUgY3g9IjgwIiBjeT0iNTYiIHI9IjE2IiBmaWxsPSIjOUNBNEFGIi8+CjxwYXRoIGQ9Ik00OCA3Mkg4MFY4OEg0OFY3MloiIGZpbGw9IiM5Q0E0QUYiLz4KPC9zdmc+"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">母国語対応で安心サポート</h3>
