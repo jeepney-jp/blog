@@ -224,7 +224,7 @@ export default async function Home() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">主要サービス</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">サービス</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest">OUR SERVICES</p>
           </div>
@@ -436,7 +436,7 @@ export default async function Home() {
               href="/services" 
               className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
             >
-              すべてのサービスを見る
+              サービス詳細を見る
             </Link>
           </div>
         </div>
