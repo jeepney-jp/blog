@@ -74,11 +74,9 @@ export interface ServiceDetail {
   priceMax?: number;
   priceNote?: string;
   orderRank?: number;
-  problemStatement?: PortableTextBlock[];
-  serviceMerits?: PortableTextBlock[];
-  serviceFlow?: PortableTextBlock[];
-  priceTable?: PortableTextBlock[];
-  requiredDocuments?: PortableTextBlock[];
+  content?: PortableTextBlock[];
+  showToc?: boolean;
+  tocTitle?: string;
   faq?: FaqItem[];
   tag?: string[];
   metaTitle?: string;

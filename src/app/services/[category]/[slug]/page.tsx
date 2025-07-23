@@ -9,13 +9,15 @@ import {
   relatedServicesQuery 
 } from '@/lib/queries';
 import { ServiceDetail } from '@/lib/types';
-import { PortableText } from '@portabletext/react';
 import Header from '@/components/Header';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import RelatedServices from '@/components/RelatedServices';
 import CtaBanner from '@/components/CtaBanner';
 import Script from 'next/script';
+import { generateTocFromContent } from '@/utils/generateToc';
+import TableOfContents from '@/components/TableOfContents';
+import PortableTextWithToc from '@/components/PortableTextWithToc';
 
 type Props = {
   params: Promise<{ category: string; slug: string }>;
@@ -250,66 +252,57 @@ export default async function ServiceDetailPage({ params }: Props) {
           )}
         </section>
 
-        {/* お悩み提起 */}
-        {data.problemStatement && (
-          <section aria-label="お悩み提起" className="bg-gray-100 rounded-xl p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              こんなお悩みありませんか？
-            </h2>
-            <div className="prose prose-lg max-w-none">
-              <PortableText value={data.problemStatement} />
-            </div>
-          </section>
-        )}
+        {/* 本文と目次 */}
+        {data.content && data.content.length > 0 && (
+          <div className="lg:flex lg:gap-8">
+            {/* 本文 */}
+            <article className="flex-1">
+              {data.showToc && data.content && (() => {
+                const toc = generateTocFromContent(data.content);
+                const headingIndexRef = { current: 0 };
+                return (
+                  <>
+                    {/* モバイル用目次 */}
+                    {toc.length > 0 && (
+                      <div className="lg:hidden mb-8">
+                        <TableOfContents 
+                          items={toc} 
+                          title={data.tocTitle || '目次'}
+                        />
+                      </div>
+                    )}
+                    <div className="prose prose-lg max-w-none">
+                      <PortableTextWithToc 
+                        content={data.content} 
+                        headingIndexRef={headingIndexRef} 
+                      />
+                    </div>
+                  </>
+                );
+              })()}
+              {!data.showToc && (
+                <div className="prose prose-lg max-w-none">
+                  <PortableTextWithToc 
+                    content={data.content} 
+                    headingIndexRef={{ current: 0 }} 
+                  />
+                </div>
+              )}
+            </article>
 
-        {/* サービスの特徴・依頼メリット */}
-        {data.serviceMerits && (
-          <section aria-label="サービスの特徴">
-            <h2 className="text-2xl font-bold text-[#004080] mb-6">
-              当事務所に依頼するメリット
-            </h2>
-            <div className="prose prose-lg max-w-none">
-              <PortableText value={data.serviceMerits} />
-            </div>
-          </section>
-        )}
-
-        {/* 手続きの流れ */}
-        {data.serviceFlow && (
-          <section aria-label="手続きの流れ" className="bg-white rounded-xl shadow-sm p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              手続きの流れ
-            </h2>
-            <div className="prose prose-lg max-w-none">
-              <PortableText value={data.serviceFlow} />
-            </div>
-          </section>
-        )}
-
-        {/* 料金表 */}
-        {data.priceTable && (
-          <section aria-label="料金表">
-            <h2 className="text-2xl font-bold text-[#004080] mb-6">
-              料金表
-            </h2>
-            <div className="bg-white rounded-xl shadow-sm p-8">
-              <div className="prose prose-lg max-w-none">
-                <PortableText value={data.priceTable} />
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* 必要書類 */}
-        {data.requiredDocuments && (
-          <section aria-label="必要書類" className="bg-gray-100 rounded-xl p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              必要書類
-            </h2>
-            <div className="prose prose-lg max-w-none">
-              <PortableText value={data.requiredDocuments} />
-            </div>
-          </section>
+            {/* デスクトップ用サイドバー目次 */}
+            {data.showToc && data.content && (() => {
+              const toc = generateToc(data.content);
+              return toc.length > 0 ? (
+                <aside className="hidden lg:block lg:w-80 lg:sticky lg:top-24 lg:h-fit">
+                  <TableOfContents 
+                    items={toc} 
+                    title={data.tocTitle || '目次'}
+                  />
+                </aside>
+              ) : null;
+            })()}
+          </div>
         )}
 
         {/* よくある質問 */}

@@ -101,11 +101,9 @@ export const serviceDetailQuery = `
     priceMax,
     priceNote,
     orderRank,
-    problemStatement,
-    serviceMerits,
-    serviceFlow,
-    priceTable,
-    requiredDocuments,
+    content,
+    showToc,
+    tocTitle,
     faq[] {
       question,
       answer

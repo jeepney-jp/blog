@@ -76,34 +76,176 @@ export default {
       description: '実費や特記事項など'
     },
     {
-      name: 'problemStatement',
+      name: 'content',
       type: 'array',
-      title: 'お悩み提起',
-      of: [{ type: 'block' }],
+      title: '本文',
+      description: 'ブログのようなリッチな本文を記載できます',
+      of: [
+        {
+          type: 'block',
+          styles: [
+            {title: '通常', value: 'normal'},
+            {title: '見出し1', value: 'h1'},
+            {title: '見出し2', value: 'h2'},
+            {title: '見出し3', value: 'h3'},
+            {title: '見出し4', value: 'h4'},
+            {title: '見出し5', value: 'h5'},
+            {title: '見出し6', value: 'h6'},
+          ],
+          lists: [
+            {title: '箇条書き', value: 'bullet'},
+            {title: '番号付きリスト', value: 'number'},
+          ],
+          marks: {
+            decorators: [
+              {title: '太字', value: 'strong'},
+              {title: '斜体', value: 'em'},
+              {title: '下線', value: 'underline'},
+              {title: 'コード', value: 'code'},
+            ],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'リンク',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'URL',
+                  },
+                ],
+              },
+              {
+                name: 'color',
+                type: 'object',
+                title: '文字色',
+                fields: [
+                  {
+                    name: 'hex',
+                    type: 'string',
+                    title: '色',
+                    description: '例: #ff0000',
+                    validation: (rule: Rule) => rule.regex(/^#[0-9a-fA-F]{6}$/),
+                  },
+                ],
+              },
+              {
+                name: 'highlight',
+                type: 'object',
+                title: '背景色',
+                fields: [
+                  {
+                    name: 'color',
+                    type: 'string',
+                    title: '色',
+                    options: {
+                      list: [
+                        {title: '黄色', value: 'yellow'},
+                        {title: 'ピンク', value: 'pink'},
+                        {title: '水色', value: 'lightblue'},
+                        {title: '薄緑', value: 'lightgreen'},
+                      ],
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        {
+          type: 'image',
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: '代替テキスト',
+              description: 'アクセシビリティのための画像説明',
+              validation: (rule: Rule) => rule.required(),
+            },
+            {
+              name: 'caption',
+              type: 'string',
+              title: 'キャプション',
+              description: '画像の下に表示される説明文',
+            },
+          ],
+        },
+        {
+          name: 'youtube',
+          type: 'object',
+          title: 'YouTube動画',
+          fields: [
+            {
+              name: 'url',
+              type: 'url',
+              title: 'YouTube URL',
+              validation: (rule: Rule) => rule.required(),
+            },
+          ],
+        },
+        {
+          name: 'code',
+          type: 'object',
+          title: 'コードブロック',
+          fields: [
+            {
+              name: 'language',
+              type: 'string',
+              title: '言語',
+              options: {
+                list: [
+                  {title: 'JavaScript', value: 'javascript'},
+                  {title: 'TypeScript', value: 'typescript'},
+                  {title: 'HTML', value: 'html'},
+                  {title: 'CSS', value: 'css'},
+                  {title: 'Python', value: 'python'},
+                  {title: 'その他', value: 'text'},
+                ],
+              },
+            },
+            {
+              name: 'code',
+              type: 'text',
+              title: 'コード',
+              rows: 10,
+            },
+          ],
+        },
+        {
+          name: 'blockquote',
+          type: 'object',
+          title: '引用',
+          fields: [
+            {
+              name: 'text',
+              type: 'text',
+              title: '引用文',
+              rows: 3,
+            },
+            {
+              name: 'cite',
+              type: 'string',
+              title: '引用元',
+            },
+          ],
+        },
+      ],
     },
     {
-      name: 'serviceMerits',
-      type: 'array',
-      title: '依頼するメリット',
-      of: [{ type: 'block' }],
+      name: 'showToc',
+      type: 'boolean',
+      title: '目次を表示',
+      description: '本文にH2/H3見出しがある場合、自動的に目次を生成して表示します',
+      initialValue: true,
     },
     {
-      name: 'serviceFlow',
-      type: 'array',
-      title: '手続きの流れ',
-      of: [{ type: 'block' }],
-    },
-    {
-      name: 'priceTable',
-      type: 'array',
-      title: '料金表',
-      of: [{ type: 'block' }],
-    },
-    {
-      name: 'requiredDocuments',
-      type: 'array',
-      title: '必要書類一覧',
-      of: [{ type: 'block' }],
+      name: 'tocTitle',
+      type: 'string',
+      title: '目次タイトル',
+      description: '目次のタイトル（デフォルト: 目次）',
+      initialValue: '目次',
+      hidden: ({document}: any) => !document?.showToc,
     },
     {
       name: 'faq',
