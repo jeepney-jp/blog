@@ -230,9 +230,6 @@ export default async function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">主要サービス</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest mb-6">OUR SERVICES</p>
-            <p className="text-lg text-gray-600">
-              豊富な経験と専門知識で、お客様のニーズにお応えします
-            </p>
             <div className="mt-8 bg-blue-50 rounded-lg p-4 inline-block">
               <p className="text-gray-700 flex items-center">
                 <svg className="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -465,10 +462,7 @@ export default async function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">最新のお知らせ</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
-            <p className="text-sm text-gray-600 tracking-widest mb-6">NEWS & UPDATES</p>
-            <p className="text-lg text-gray-600">
-              事務所からの重要なお知らせをご確認ください
-            </p>
+            <p className="text-sm text-gray-600 tracking-widest">NEWS & UPDATES</p>
           </div>
           {latestNews.length > 0 ? (
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
@@ -521,10 +515,7 @@ export default async function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">お客様の声</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
-            <p className="text-sm text-gray-600 tracking-widest mb-6">CUSTOMER TESTIMONIALS</p>
-            <p className="text-lg text-gray-600">
-              ご利用いただいたお客様からの貴重なご意見をご紹介します
-            </p>
+            <p className="text-sm text-gray-600 tracking-widest">CUSTOMER TESTIMONIALS</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredTestimonials.length > 0 ? (
@@ -695,10 +686,7 @@ export default async function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">お役立ち情報</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
-            <p className="text-sm text-gray-600 tracking-widest mb-6">BLOG</p>
-            <p className="text-lg text-gray-600">
-              行政書士業務に関する有用な情報をお届けします
-            </p>
+            <p className="text-sm text-gray-600 tracking-widest">BLOG</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <article className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
