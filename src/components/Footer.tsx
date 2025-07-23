@@ -66,7 +66,7 @@ export default async function Footer() {
           {/* 第2列: サービス */}
           <div>
             <h3 className="text-lg font-semibold mb-4">サービス</h3>
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
               {serviceCategories.length > 0 ? (
                 serviceCategories.map((category) => (
                   <div key={category._id}>
@@ -77,7 +77,7 @@ export default async function Footer() {
                       {category.title}
                     </Link>
                     {category.subcategories && category.subcategories.length > 0 && (
-                      <ul className="ml-4 space-y-1">
+                      <ul className="ml-4 space-y-1 mb-3">
                         {category.subcategories.map((sub) => (
                           <li key={sub._id}>
                             <Link
@@ -93,14 +93,14 @@ export default async function Footer() {
                   </div>
                 ))
               ) : (
-                <div className="space-y-2">
-                  <Link href="/services" className="text-gray-400 hover:text-white transition-colors block">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+                  <Link href="/services" className="text-gray-400 hover:text-white text-sm transition-colors block">
                     外国人関連業務
                   </Link>
-                  <Link href="/services" className="text-gray-400 hover:text-white transition-colors block">
+                  <Link href="/services" className="text-gray-400 hover:text-white text-sm transition-colors block">
                     建設・宅建業関連
                   </Link>
-                  <Link href="/services" className="text-gray-400 hover:text-white transition-colors block">
+                  <Link href="/services" className="text-gray-400 hover:text-white text-sm transition-colors block">
                     法人設立業務
                   </Link>
                 </div>
