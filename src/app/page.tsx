@@ -143,7 +143,11 @@ export default async function Home() {
       {/* Features Section */}
       <section className="bg-gray-50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">当事務所の特徴</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">当事務所の特徴</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 tracking-widest">OUR STRENGTHS</p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 申請実績 */}
             <div className="bg-white rounded-lg border border-gray-200 p-8 hover:border-gray-300 hover:shadow-md transition-all duration-300">
@@ -224,6 +228,8 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">主要サービス</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 tracking-widest mb-6">OUR SERVICES</p>
             <p className="text-lg text-gray-600">
               豊富な経験と専門知識で、お客様のニーズにお応えします
             </p>
@@ -458,6 +464,8 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">最新のお知らせ</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 tracking-widest mb-6">NEWS & UPDATES</p>
             <p className="text-lg text-gray-600">
               事務所からの重要なお知らせをご確認ください
             </p>
@@ -512,6 +520,8 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">お客様の声</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 tracking-widest mb-6">CUSTOMER TESTIMONIALS</p>
             <p className="text-lg text-gray-600">
               ご利用いただいたお客様からの貴重なご意見をご紹介します
             </p>
@@ -684,6 +694,8 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">お役立ち情報</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 tracking-widest mb-6">BLOG</p>
             <p className="text-lg text-gray-600">
               行政書士業務に関する有用な情報をお届けします
             </p>
