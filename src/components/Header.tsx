@@ -23,14 +23,17 @@ export default function Header() {
               </Link>
             </div>
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/about" className="text-gray-600 hover:text-gray-900">
-                事務所概要
+              <Link href="/#features" className="text-gray-600 hover:text-gray-900">
+                特徴
               </Link>
               <Link href="/services" className="text-gray-600 hover:text-gray-900">
                 サービス
               </Link>
               <Link href="/testimonials" className="text-gray-600 hover:text-gray-900">
                 お客様の声
+              </Link>
+              <Link href="/about" className="text-gray-600 hover:text-gray-900">
+                事務所概要
               </Link>
               <Link href="/news" className="text-gray-600 hover:text-gray-900">
                 お知らせ
