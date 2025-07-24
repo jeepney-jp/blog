@@ -86,7 +86,7 @@ export default function UnifiedFooter() {
               ) : serviceCategories.length > 0 ? (
                 // Sanityデータがある場合
                 serviceCategories.map((category) => (
-                  <div key={category._id}>
+                  <div key={category._id} className="mb-3">
                     <Link 
                       href={`/services/${category.slug}`}
                       className="text-gray-300 hover:text-white font-medium transition-colors block mb-2"
@@ -94,7 +94,7 @@ export default function UnifiedFooter() {
                       {category.title}
                     </Link>
                     {category.subcategories && category.subcategories.length > 0 && (
-                      <ul className="ml-4 space-y-1 mb-3">
+                      <ul className="ml-4 space-y-1">
                         {category.subcategories.map((sub) => (
                           <li key={sub._id}>
                             <Link
