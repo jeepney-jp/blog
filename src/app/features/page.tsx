@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
+import NewCTASection from '@/components/NewCTASection';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -344,6 +345,7 @@ export default function FeaturesPage() {
         </div>
       </section>
 
+      <NewCTASection />
       <UnifiedFooter />
     </div>
   );
