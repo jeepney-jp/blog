@@ -851,7 +851,7 @@ export default async function Home() {
       <section 
         className="relative pt-32 pb-16 bg-cover bg-gray-100"
         style={{
-          backgroundImage: "url('/CTA背景2.png')",
+          backgroundImage: "url('/CTA背景3.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat',
