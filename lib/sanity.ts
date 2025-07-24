@@ -111,7 +111,12 @@ export async function getBlogs() {
       readingTime,
       publishedAt,
       updatedAt,
-      featuredImage
+      "featuredImage": {
+        "asset": {
+          "url": featuredImage.asset->url
+        },
+        "alt": featuredImage.alt
+      }
     }
   `)
 }
@@ -132,7 +137,12 @@ export async function getBlogBySlug(slug: string) {
       publishedAt,
       updatedAt,
       metaDescription,
-      featuredImage,
+      "featuredImage": {
+        "asset": {
+          "url": featuredImage.asset->url
+        },
+        "alt": featuredImage.alt
+      },
       showToc,
       tocTitle
     }
@@ -151,7 +161,12 @@ export async function getFeaturedBlogs(limit: number = 3) {
       tags,
       readingTime,
       publishedAt,
-      featuredImage
+      "featuredImage": {
+        "asset": {
+          "url": featuredImage.asset->url
+        },
+        "alt": featuredImage.alt
+      }
     }
   `)
 }
@@ -168,7 +183,12 @@ export async function getBlogsByCategory(category: string) {
       tags,
       readingTime,
       publishedAt,
-      featuredImage
+      "featuredImage": {
+        "asset": {
+          "url": featuredImage.asset->url
+        },
+        "alt": featuredImage.alt
+      }
     }
   `, { category })
 }
