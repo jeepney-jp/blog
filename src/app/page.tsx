@@ -763,7 +763,7 @@ export default async function Home() {
                             src={blog.featuredImage.asset.url}
                             alt={blog.featuredImage.alt || blog.title}
                             fill
-                            className="object-cover hover:scale-105 transition-transform duration-300"
+                            className="object-cover object-center hover:scale-105 transition-transform duration-300"
                           />
                         </div>
                       </Link>
