@@ -158,9 +158,10 @@ export default async function CategoryPage({ params }: Props) {
         </section>
       )}
 
+      </div>
+
       {/* CTA */}
       <NewCTASection serviceName={data.title} />
-      </div>
 
       <UnifiedFooter />
     </div>

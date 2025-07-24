@@ -350,10 +350,10 @@ export default async function ServiceDetailPage({ params }: Props) {
             </div>
           </section>
         )}
-
-        {/* CTA */}
-        <NewCTASection serviceName={data.title} />
       </main>
+
+      {/* CTA */}
+      <NewCTASection serviceName={data.title} />
 
       <UnifiedFooter />
     </div>
