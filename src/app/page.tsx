@@ -517,7 +517,7 @@ export default async function Home() {
                 clientLocation?: string;
                 publishedAt: string;
                 clientImage?: string;
-              }, index) => (
+              }, index: number) => (
                 <ScrollAnimationWrapper key={testimonial._id} delay={index * 100}>
                   <div className="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col h-full">
                   {/* 写真部分 */}
