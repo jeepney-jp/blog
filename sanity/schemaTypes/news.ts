@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import { richContentArray } from './shared/richContent'
 
 export default defineType({
   name: 'news',
@@ -35,13 +36,9 @@ export default defineType({
     }),
     defineField({
       name: 'content',
-      title: '内容',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-        },
-      ],
+      title: '本文',
+      description: 'ブログのようなリッチな本文を記載できます',
+      ...richContentArray,
     }),
     defineField({
       name: 'category',
