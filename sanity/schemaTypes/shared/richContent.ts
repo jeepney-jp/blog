@@ -1,3 +1,4 @@
+import { Rule } from 'sanity'
 import { tableBlock } from '../customBlocks/tableBlock'
 
 export const richContentArray = {
@@ -48,7 +49,7 @@ export const richContentArray = {
                 type: 'string',
                 title: '色',
                 description: '例: #ff0000',
-                validation: (rule) => rule.regex(/^#[0-9a-fA-F]{6}$/),
+                validation: (rule: Rule) => rule.regex(/^#[0-9a-fA-F]{6}$/),
               },
             ],
           },
