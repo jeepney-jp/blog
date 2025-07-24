@@ -5,7 +5,7 @@ import { allServiceCategoriesQuery } from '@/lib/queries';
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
-import { getFeaturedTestimonials, getNews } from '../../lib/sanity';
+import { getFeaturedTestimonials, getNews, getBlogs } from '../../lib/sanity';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
 export const revalidate = 60;
@@ -70,6 +70,10 @@ export default async function Home() {
   const newsItems = await getNews();
   // 最新5件のみ取得
   const latestNews = newsItems.slice(0, 5);
+  
+  // お役立ち情報を取得（注目記事のみ）
+  const blogs = await getBlogs();
+  const featuredBlogs = blogs.filter(blog => blog.featured).slice(0, 3);
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -710,6 +714,87 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Blog Section */}
+      {featuredBlogs.length > 0 && (
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">お役立ち情報</h2>
+              <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+              <p className="text-sm text-gray-600 tracking-widest">BLOG</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {featuredBlogs.map((blog) => {
+                const categoryLabels: { [key: string]: string } = {
+                  license: "許認可・申請",
+                  inheritance: "相続・遺言",
+                  business: "会社設立・経営",
+                  legal: "契約・法務",
+                  tax: "税務・手続き",
+                  other: "その他"
+                };
+                
+                return (
+                  <article key={blog._id} className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                        {categoryLabels[blog.category] || blog.category}
+                      </span>
+                      {blog.featured && (
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                          注目記事
+                        </span>
+                      )}
+                      {blog.readingTime && (
+                        <span className="text-sm text-gray-500">約{blog.readingTime}分</span>
+                      )}
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                      <Link 
+                        href={`/blog/${blog.slug.current}`}
+                        className="hover:text-blue-600 transition-colors"
+                      >
+                        {blog.title}
+                      </Link>
+                    </h3>
+                    <p className="text-gray-600 mb-4 line-clamp-3">
+                      {blog.excerpt}
+                    </p>
+                    {blog.tags && blog.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {blog.tags.slice(0, 2).map((tag, index) => (
+                          <span key={index} className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-700">
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <div className="flex items-center justify-between">
+                      <time className="text-sm text-gray-500">
+                        {new Date(blog.publishedAt).toLocaleDateString('ja-JP')}
+                      </time>
+                      <Link
+                        href={`/blog/${blog.slug.current}`}
+                        className="text-blue-600 hover:text-blue-800 font-medium"
+                      >
+                        続きを読む →
+                      </Link>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+            <div className="text-center mt-8">
+              <Link
+                href="/blog"
+                className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+              >
+                すべてのお役立ち情報を見る
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA Section */}
       <NewCTASection />
