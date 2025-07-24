@@ -7,7 +7,7 @@ import { ServiceCategory } from '@/lib/types';
 import Header from '@/components/Header';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import CtaBanner from '@/components/CtaBanner';
+import NewCTASection from '@/components/NewCTASection';
 import ServiceTable from '@/components/ServiceTable';
 import Script from 'next/script';
 import UnifiedFooter from '@/components/UnifiedFooter';
@@ -158,9 +158,10 @@ export default async function CategoryPage({ params }: Props) {
         </section>
       )}
 
-      {/* CTA */}
-      <CtaBanner categoryTitle={data.title} />
       </div>
+
+      {/* CTA */}
+      <NewCTASection serviceName={data.title} />
 
       <UnifiedFooter />
     </div>

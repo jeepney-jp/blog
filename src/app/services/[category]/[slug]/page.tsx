@@ -13,7 +13,7 @@ import Header from '@/components/Header';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import RelatedServices from '@/components/RelatedServices';
-import CtaBanner from '@/components/CtaBanner';
+import NewCTASection from '@/components/NewCTASection';
 import Script from 'next/script';
 import { generateTocFromContent } from '@/utils/generateToc';
 import TableOfContents from '@/components/TableOfContents';
@@ -350,10 +350,10 @@ export default async function ServiceDetailPage({ params }: Props) {
             </div>
           </section>
         )}
-
-        {/* CTA */}
-        <CtaBanner serviceTitle={data.title} />
       </main>
+
+      {/* CTA */}
+      <NewCTASection serviceName={data.title} />
 
       <UnifiedFooter />
     </div>
