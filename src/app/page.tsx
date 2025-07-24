@@ -263,7 +263,7 @@ export default async function Home() {
           {/* Sanityからのデータがある場合は動的に表示 */}
           {serviceCategories.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {serviceCategories.map((category, index) => (
+              {serviceCategories.map((category) => (
                 <ScrollAnimationWrapper key={category._id} delay={0}>
                   <Link
                     href={`/services/${category.slug}`}
@@ -517,7 +517,7 @@ export default async function Home() {
                 clientLocation?: string;
                 publishedAt: string;
                 clientImage?: string;
-              }, index: number) => (
+              }) => (
                 <ScrollAnimationWrapper key={testimonial._id} delay={0}>
                   <div className="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col h-full">
                   {/* 写真部分 */}
