@@ -758,12 +758,13 @@ export default async function Home() {
                   <article key={blog._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                     {blog.featuredImage && (
                       <Link href={`/blog/${blog.slug.current}`} className="block">
-                        <div className="relative h-48 overflow-hidden bg-gray-100">
+                        <div className="relative aspect-[1200/630] overflow-hidden bg-gray-100">
                           <Image
                             src={blog.featuredImage.asset.url}
                             alt={blog.featuredImage.alt || blog.title}
                             fill
-                            className="object-cover object-center hover:scale-105 transition-transform duration-300"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover hover:scale-105 transition-transform duration-300"
                           />
                         </div>
                       </Link>
