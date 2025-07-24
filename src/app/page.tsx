@@ -38,6 +38,20 @@ interface NewsItem {
   category: string;
 }
 
+interface BlogItem {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  excerpt: string;
+  category: string;
+  tags?: string[];
+  featured?: boolean;
+  readingTime?: number;
+  publishedAt: string;
+}
+
 // カテゴリマッピング
 const categoryMap: { [key: string]: { name: string; color: string } } = {
   business_notice: { name: '営業案内', color: 'bg-green-100 text-green-800' },
@@ -72,8 +86,8 @@ export default async function Home() {
   const latestNews = newsItems.slice(0, 5);
   
   // お役立ち情報を取得（注目記事のみ）
-  const blogs = await getBlogs();
-  const featuredBlogs = blogs.filter(blog => blog.featured).slice(0, 3);
+  const blogs: BlogItem[] = await getBlogs();
+  const featuredBlogs = blogs.filter((blog: BlogItem) => blog.featured).slice(0, 3);
   
   return (
     <div className="min-h-screen bg-gray-50">
