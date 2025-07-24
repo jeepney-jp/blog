@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import NewCTASection from "@/components/NewCTASection";
-// import { getBlogs } from "../../../lib/sanity";
+import { getBlogs } from "../../../lib/sanity";
 
 // ブログ記事の型定義
 interface Blog {
@@ -26,42 +26,8 @@ interface Blog {
 }
 
 export default async function BlogPage() {
-  // 一時的にテストデータを使用
-  const blogs: Blog[] = [
-    {
-      _id: "test1",
-      title: "建設業許可の取得方法と必要書類を徹底解説",
-      slug: { current: "kensetsugyo-kyoka-shutoku-hoho" },
-      excerpt: "建設業を営むために必要な許可の種類、取得要件、必要書類について分かりやすく解説します。一般建設業と特定建設業の違いも詳しく説明します。",
-      category: "license",
-      tags: ["建設業許可", "許認可申請", "一般建設業", "特定建設業"],
-      featured: true,
-      readingTime: 8,
-      publishedAt: "2025-07-07"
-    },
-    {
-      _id: "test2",
-      title: "相続放棄の手続きと注意点｜3ヶ月の期限に要注意",
-      slug: { current: "sozoku-hoki-tetsuzuki" },
-      excerpt: "相続放棄の手続き方法、必要書類、注意すべきポイントについて詳しく解説します。3ヶ月の期限や注意すべき行為についても説明します。",
-      category: "inheritance",
-      tags: ["相続放棄", "相続手続き", "家庭裁判所", "3ヶ月期限"],
-      featured: true,
-      readingTime: 6,
-      publishedAt: "2025-07-06"
-    },
-    {
-      _id: "test3",
-      title: "合同会社設立のメリット・デメリットと設立手続きの流れ",
-      slug: { current: "godo-kaisha-setsuritsu" },
-      excerpt: "合同会社の特徴、株式会社との違い、設立手続きの流れについて分かりやすく解説します。設立費用を抑えたい方におすすめの会社形態です。",
-      category: "business",
-      tags: ["合同会社", "会社設立", "LLC", "設立費用"],
-      featured: false,
-      readingTime: 7,
-      publishedAt: "2025-07-05"
-    }
-  ];
+  // Sanityからブログ記事を取得
+  const blogs: Blog[] = await getBlogs();
 
   const categoryLabels: { [key: string]: string } = {
     license: "許認可・申請",
