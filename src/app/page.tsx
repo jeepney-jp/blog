@@ -6,7 +6,6 @@ import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import CTASection from '@/components/CTASection';
 import { getFeaturedTestimonials, getNews } from '../../lib/sanity';
-import { FaCrown, FaCheck, FaGlobe } from 'react-icons/fa';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
 export const revalidate = 60;
