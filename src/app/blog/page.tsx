@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import UnifiedFooter from "@/components/UnifiedFooter";
@@ -95,6 +96,19 @@ export default async function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {blogs.filter(blog => blog.featured).map((blog) => (
               <article key={blog._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                {blog.featuredImage && (
+                  <Link href={`/blog/${blog.slug.current}`} className="block">
+                    <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
+                      <Image
+                        src={blog.featuredImage.asset.url}
+                        alt={blog.featuredImage.alt || blog.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </Link>
+                )}
                 <div className="p-6">
                   <div className="flex items-center space-x-4 mb-4">
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
@@ -156,6 +170,19 @@ export default async function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.map((blog) => (
               <article key={blog._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                {blog.featuredImage && (
+                  <Link href={`/blog/${blog.slug.current}`} className="block">
+                    <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
+                      <Image
+                        src={blog.featuredImage.asset.url}
+                        alt={blog.featuredImage.alt || blog.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </Link>
+                )}
                 <div className="p-6">
                   <div className="flex items-center space-x-4 mb-4">
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
