@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
-import CTASection from '@/components/CTASection';
+import NewCTASection from '@/components/NewCTASection';
 // import { getNewsBySlug, getNews } from "../../../../lib/sanity";
 
 // ニュースの型定義
@@ -137,7 +137,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
       </main>
 
       {/* CTA Section */}
-      <CTASection />
+      <NewCTASection />
 
       {/* Footer */}
       <UnifiedFooter />

@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import { useState, useEffect } from "react";
 import { PortableText } from '@portabletext/react';
+import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
 
 interface Staff {
@@ -338,24 +338,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            お困りごとはございませんか？
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            初回相談は無料です。お気軽にお問い合わせください。
-          </p>
-          <Link
-            href="/contact"
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-          >
-            お問い合わせ
-          </Link>
-        </div>
-      </section>
-
+      <NewCTASection />
       <UnifiedFooter />
     </div>
   );
