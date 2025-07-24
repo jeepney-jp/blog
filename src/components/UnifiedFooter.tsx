@@ -75,7 +75,7 @@ export default function UnifiedFooter() {
           {/* 第2列: サービス */}
           <div className="md:col-span-2">
             <h3 className="text-lg font-semibold mb-4">サービス</h3>
-            <div className="space-y-2">
+            <div className="md:columns-2 md:gap-x-6 space-y-2">
               {loading ? (
                 // ローディング中の表示
                 <div className="animate-pulse">
@@ -86,7 +86,7 @@ export default function UnifiedFooter() {
               ) : serviceCategories.length > 0 ? (
                 // Sanityデータがある場合
                 serviceCategories.map((category) => (
-                  <div key={category._id} className="mb-2">
+                  <div key={category._id} className="mb-2 break-inside-avoid">
                     <Link 
                       href={`/services/${category.slug}`}
                       className="text-gray-300 hover:text-white font-medium transition-colors block"
