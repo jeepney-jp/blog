@@ -851,7 +851,7 @@ export default async function Home() {
       <section 
         className="relative py-16 bg-cover bg-center bg-gray-100"
         style={{
-          backgroundImage: "url('/CTA背景.png')",
+          backgroundImage: "url('/CTA背景2.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
