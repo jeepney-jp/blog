@@ -861,7 +861,7 @@ export default async function Home() {
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* White blur container */}
-          <div className="bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-xl">
+          <div className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-xl">
           {/* Title Section */}
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -876,27 +876,18 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
             {/* Point 1 */}
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-100 mb-3">
-                <FaCrown className="text-2xl text-yellow-600" />
-              </div>
               <h3 className="text-lg font-bold text-gray-900 mb-1">申請実績1,000+</h3>
               <p className="text-gray-600 text-sm">豊富な実績と経験でサポート</p>
             </div>
 
             {/* Point 2 */}
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-3">
-                <FaCheck className="text-2xl text-green-600" />
-              </div>
               <h3 className="text-lg font-bold text-gray-900 mb-1">完全成功報酬型</h3>
               <p className="text-gray-600 text-sm">成功時のみお支払い</p>
             </div>
 
             {/* Point 3 */}
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-3">
-                <FaGlobe className="text-2xl text-blue-600" />
-              </div>
               <h3 className="text-lg font-bold text-gray-900 mb-1">多言語対応</h3>
               <p className="text-gray-600 text-sm">母国語でのサポート可能</p>
             </div>
