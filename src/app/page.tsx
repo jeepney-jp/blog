@@ -50,6 +50,12 @@ interface BlogItem {
   featured?: boolean;
   readingTime?: number;
   publishedAt: string;
+  featuredImage?: {
+    asset: {
+      url: string;
+    };
+    alt?: string;
+  };
 }
 
 // カテゴリマッピング
@@ -749,50 +755,64 @@ export default async function Home() {
                 };
                 
                 return (
-                  <article key={blog._id} className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <div className="flex items-center space-x-4 mb-4">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                        {categoryLabels[blog.category] || blog.category}
-                      </span>
-                      {blog.featured && (
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                          注目記事
-                        </span>
-                      )}
-                      {blog.readingTime && (
-                        <span className="text-sm text-gray-500">約{blog.readingTime}分</span>
-                      )}
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                      <Link 
-                        href={`/blog/${blog.slug.current}`}
-                        className="hover:text-blue-600 transition-colors"
-                      >
-                        {blog.title}
+                  <article key={blog._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    {blog.featuredImage && (
+                      <Link href={`/blog/${blog.slug.current}`} className="block">
+                        <div className="relative h-48 overflow-hidden bg-gray-100">
+                          <Image
+                            src={blog.featuredImage.asset.url}
+                            alt={blog.featuredImage.alt || blog.title}
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
                       </Link>
-                    </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">
-                      {blog.excerpt}
-                    </p>
-                    {blog.tags && blog.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {blog.tags.slice(0, 2).map((tag, index) => (
-                          <span key={index} className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-700">
-                            #{tag}
-                          </span>
-                        ))}
-                      </div>
                     )}
-                    <div className="flex items-center justify-between">
-                      <time className="text-sm text-gray-500">
-                        {new Date(blog.publishedAt).toLocaleDateString('ja-JP')}
-                      </time>
-                      <Link
-                        href={`/blog/${blog.slug.current}`}
-                        className="text-blue-600 hover:text-blue-800 font-medium"
-                      >
-                        続きを読む →
-                      </Link>
+                    <div className="p-6">
+                      <div className="flex items-center space-x-4 mb-4">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                          {categoryLabels[blog.category] || blog.category}
+                        </span>
+                        {blog.featured && (
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                            注目記事
+                          </span>
+                        )}
+                        {blog.readingTime && (
+                          <span className="text-sm text-gray-500">約{blog.readingTime}分</span>
+                        )}
+                      </div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                        <Link 
+                          href={`/blog/${blog.slug.current}`}
+                          className="hover:text-blue-600 transition-colors"
+                        >
+                          {blog.title}
+                        </Link>
+                      </h3>
+                      <p className="text-gray-600 mb-4 line-clamp-3">
+                        {blog.excerpt}
+                      </p>
+                      {blog.tags && blog.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {blog.tags.slice(0, 2).map((tag, index) => (
+                            <span key={index} className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-700">
+                              #{tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <div className="flex items-center justify-between">
+                        <time className="text-sm text-gray-500">
+                          {new Date(blog.publishedAt).toLocaleDateString('ja-JP')}
+                        </time>
+                        <Link
+                          href={`/blog/${blog.slug.current}`}
+                          className="text-blue-600 hover:text-blue-800 font-medium"
+                        >
+                          続きを読む →
+                        </Link>
+                      </div>
                     </div>
                   </article>
                 );
