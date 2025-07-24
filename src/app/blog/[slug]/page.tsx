@@ -89,7 +89,8 @@ export default async function BlogDetailPage({ params }: PageProps) {
                   alt={blog.featuredImage.alt || blog.title}
                   width={1200}
                   height={630}
-                  className="w-full h-auto rounded-lg object-contain"
+                  className="w-full h-auto rounded-lg object-cover object-top"
+                  style={{ aspectRatio: '1200/630' }}
                 />
               </div>
             )}
