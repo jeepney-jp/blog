@@ -849,11 +849,11 @@ export default async function Home() {
 
       {/* New CTA Section with Background */}
       <section 
-        className="relative py-16 bg-cover bg-center bg-gray-100"
+        className="relative pt-32 pb-16 bg-cover bg-gray-100"
         style={{
           backgroundImage: "url('/CTA背景2.png')",
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat',
         }}
       >
