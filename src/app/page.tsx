@@ -852,7 +852,7 @@ export default async function Home() {
       <section 
         className="relative py-24 bg-cover bg-center bg-gray-100"
         style={{
-          backgroundImage: "url('/call-center-operators.jpg')",
+          backgroundImage: "url('/CTA背景.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
