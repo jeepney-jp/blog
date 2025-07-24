@@ -858,17 +858,16 @@ export default async function Home() {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Blur Overlay */}
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-        
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* White blur container */}
+          <div className="bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-xl">
           {/* Title Section */}
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               初回無料相談、まずはお気軽に相談ください
             </h2>
-            <p className="text-lg text-gray-200">
+            <p className="text-lg text-gray-600">
               テストテストテスト文章を入力してください
             </p>
           </div>
@@ -877,29 +876,29 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
             {/* Point 1 */}
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm mb-3">
-                <FaCrown className="text-2xl text-yellow-400" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-100 mb-3">
+                <FaCrown className="text-2xl text-yellow-600" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-1">申請実績1,000+</h3>
-              <p className="text-gray-300 text-sm">豊富な実績と経験でサポート</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-1">申請実績1,000+</h3>
+              <p className="text-gray-600 text-sm">豊富な実績と経験でサポート</p>
             </div>
 
             {/* Point 2 */}
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm mb-3">
-                <FaCheck className="text-2xl text-green-400" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-3">
+                <FaCheck className="text-2xl text-green-600" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-1">完全成功報酬型</h3>
-              <p className="text-gray-300 text-sm">成功時のみお支払い</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-1">完全成功報酬型</h3>
+              <p className="text-gray-600 text-sm">成功時のみお支払い</p>
             </div>
 
             {/* Point 3 */}
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm mb-3">
-                <FaGlobe className="text-2xl text-blue-400" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-3">
+                <FaGlobe className="text-2xl text-blue-600" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-1">多言語対応</h3>
-              <p className="text-gray-300 text-sm">母国語でのサポート可能</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-1">多言語対応</h3>
+              <p className="text-gray-600 text-sm">母国語でのサポート可能</p>
             </div>
           </div>
 
@@ -917,6 +916,7 @@ export default async function Home() {
             >
               サービス詳細
             </Link>
+          </div>
           </div>
         </div>
       </section>
