@@ -7,6 +7,7 @@ import { allServiceCategoriesQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
 import CategoryCard from '@/components/CategoryCard';
 import DebugCategoryCard from '@/components/DebugCategoryCard';
+import NewCTASection from '@/components/NewCTASection';
 import UnifiedFooter from '@/components/UnifiedFooter';
 
 // ISRの設定：1日ごとに再生成
@@ -320,24 +321,7 @@ export default async function Services() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            まずは無料相談から
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            どのようなことでも、お気軽にご相談ください。
-          </p>
-          <Link
-            href="/contact"
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-          >
-            無料相談のお申込み
-          </Link>
-        </div>
-      </section>
-
+      <NewCTASection />
       <UnifiedFooter />
     </div>
   );

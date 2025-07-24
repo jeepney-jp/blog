@@ -2,7 +2,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import { getNews } from "../../../lib/sanity";
-import CtaBanner from "@/components/CtaBanner";
+import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
 
 // ニュースの型定義
@@ -84,10 +84,7 @@ export default async function NewsPage() {
         </div>
       </main>
 
-      {/* CTA Banner */}
-      <CtaBanner />
-
-      {/* Footer */}
+      <NewCTASection />
       <UnifiedFooter />
     </div>
   );

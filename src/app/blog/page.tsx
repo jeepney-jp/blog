@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import UnifiedFooter from "@/components/UnifiedFooter";
+import NewCTASection from "@/components/NewCTASection";
 // import { getBlogs } from "../../../lib/sanity";
 
 // ブログ記事の型定義
@@ -246,25 +247,9 @@ export default async function BlogPage() {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-blue-50 rounded-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              お困りの手続きはございませんか？
-            </h2>
-            <p className="text-gray-600 mb-6">
-              記事でご不明な点や具体的なご相談がございましたら、お気軽にお問い合わせください。
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
-            >
-              無料相談のお申し込み
-            </Link>
-          </div>
-        </div>
       </main>
 
+      <NewCTASection />
       <UnifiedFooter />
     </div>
   );

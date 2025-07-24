@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getTestimonialBySlug, getTestimonials } from "../../../../lib/sanity";
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
-import CTASection from '@/components/CTASection';
+import NewCTASection from '@/components/NewCTASection';
 import TableOfContents from '@/components/TableOfContents';
 import PortableTextWithToc from '@/components/PortableTextWithToc';
 import { generateTocFromContent } from '@/utils/generateToc';
@@ -179,7 +179,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
       </main>
 
       {/* CTA Section */}
-      <CTASection />
+      <NewCTASection />
 
       {/* Footer */}
       <UnifiedFooter />
