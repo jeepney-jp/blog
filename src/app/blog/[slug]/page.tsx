@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
@@ -79,6 +80,19 @@ export default async function BlogDetailPage({ params }: PageProps) {
                 </span>
               )}
             </div>
+
+            {/* Featured Image */}
+            {blog.featuredImage && blog.featuredImage.asset && (
+              <div className="relative w-full aspect-[3/2] mb-6 overflow-hidden rounded-lg bg-gray-100">
+                <Image
+                  src={blog.featuredImage.asset.url}
+                  alt={blog.featuredImage.alt || blog.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                  className="object-cover"
+                />
+              </div>
+            )}
 
             <h1 className="text-3xl font-bold text-gray-900 mb-4">{blog.title}</h1>
             
