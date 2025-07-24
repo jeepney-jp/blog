@@ -75,7 +75,7 @@ export default function UnifiedFooter() {
           {/* 第2列: サービス */}
           <div className="md:col-span-2">
             <h3 className="text-lg font-semibold mb-4">サービス</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+            <div className="space-y-2">
               {loading ? (
                 // ローディング中の表示
                 <div className="animate-pulse">
