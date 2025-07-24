@@ -83,14 +83,13 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
             {/* Featured Image */}
             {blog.featuredImage && blog.featuredImage.asset && (
-              <div className="mb-6">
+              <div className="relative w-full aspect-[3/2] mb-6 overflow-hidden rounded-lg bg-gray-100">
                 <Image
                   src={blog.featuredImage.asset.url}
                   alt={blog.featuredImage.alt || blog.title}
-                  width={1200}
-                  height={630}
-                  className="w-full h-auto rounded-lg object-cover object-top"
-                  style={{ aspectRatio: '1200/630' }}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+                  className="object-cover"
                 />
               </div>
             )}
