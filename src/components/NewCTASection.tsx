@@ -1,6 +1,10 @@
 import Link from 'next/link';
 
-export default function NewCTASection() {
+interface NewCTASectionProps {
+  serviceName?: string;
+}
+
+export default function NewCTASection({ serviceName }: NewCTASectionProps) {
   return (
     <section 
       className="relative pt-40 pb-24 bg-cover bg-gray-100"
@@ -18,7 +22,10 @@ export default function NewCTASection() {
           {/* Title Section */}
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-relaxed">
-              初回無料相談、まずはお気軽に相談ください
+              {serviceName 
+                ? `${serviceName}について無料で相談する`
+                : '初回無料相談、まずはお気軽に相談ください'
+              }
             </h2>
             <p className="text-base text-gray-600">
               テストテストテスト文章を入力してください
