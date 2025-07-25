@@ -10,16 +10,12 @@ export default function Header() {
             <div className="flex items-center">
               <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
                 <Image
-                  src="/fortia-logo.png"
+                  src="/Company Logo .png"
                   alt="フォルティア行政書士事務所"
-                  width={56}
-                  height={56}
-                  className="mr-3"
+                  width={200}
+                  height={60}
+                  className="object-contain"
                 />
-                <h1 className="text-xl font-bold">
-                  <span className="text-gray-600">フォルティア</span>
-                  <span className="text-gray-600 ml-1">行政書士事務所</span>
-                </h1>
               </Link>
             </div>
             <nav className="hidden md:flex items-center space-x-8">
