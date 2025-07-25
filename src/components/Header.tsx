@@ -10,7 +10,7 @@ export default function Header() {
             <div className="flex items-center">
               <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
                 <Image
-                  src="/Company Logo .png"
+                  src="/company-logo.png"
                   alt="フォルティア行政書士事務所"
                   width={200}
                   height={60}
