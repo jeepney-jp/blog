@@ -39,3 +39,26 @@ body {
 .animate-slide-in-right {
   animation: slide-in-right 0.3s ease-out;
 }
+
+@keyframes fade-up {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animation.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
