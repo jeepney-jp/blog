@@ -112,6 +112,19 @@ export default async function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-left max-w-4xl">
+            <div className="flex items-center mb-8">
+              <Image
+                src="/fortia-logo.png"
+                alt="フォルティア行政書士事務所"
+                width={64}
+                height={64}
+                className="mr-4"
+              />
+              <h2 className="text-2xl md:text-3xl font-bold">
+                <span className="text-blue-500">フォルティア</span>
+                <span className="text-blue-500 ml-1">行政書士事務所</span>
+              </h2>
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-relaxed tracking-wide">
               <span className="text-blue-500 block mb-1">人と社会をつなげる、</span>
               <span className="text-blue-500 block">リーガルサービス</span>
