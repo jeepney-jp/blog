@@ -103,7 +103,7 @@ export default async function Home() {
 
       {/* Hero Section */}
       <section 
-        className="relative text-white min-h-screen flex items-center py-12"
+        className="relative text-white min-h-[80vh] sm:min-h-[90vh] lg:min-h-screen flex items-center py-8 sm:py-12"
         style={{
           backgroundImage: "url('/hero-background.png')",
           backgroundSize: 'cover',
@@ -112,24 +112,24 @@ export default async function Home() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="text-left max-w-4xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-relaxed tracking-wide">
+          <div className="text-center sm:text-left max-w-4xl mx-auto sm:mx-0">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-relaxed tracking-wide">
               <span className="text-blue-500 block mb-1">人と社会をつなげる、</span>
               <span className="text-blue-500 block">リーガルサービス</span>
             </h1>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link 
                 href="/contact" 
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 sm:transform sm:hover:scale-105 transition-all duration-200 shadow-lg w-full sm:w-auto"
               >
                 無料相談はこちらから
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="ml-2 w-4 sm:w-5 h-4 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
               <Link 
                 href="/services" 
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-600 bg-white rounded-lg hover:bg-blue-50 transition-colors border-2 border-white"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-blue-600 bg-white rounded-lg hover:bg-blue-50 transition-colors border-2 border-white w-full sm:w-auto"
               >
                 サービス内容を見る
               </Link>
@@ -141,7 +141,7 @@ export default async function Home() {
       {/* Features Section */}
       <section id="features" className="bg-gray-50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">当事務所の特徴</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest">OUR STRENGTHS</p>
@@ -161,8 +161,8 @@ export default async function Home() {
               </div>
               <div className="px-8 pb-8 flex flex-col flex-grow">
                 <div className="flex flex-col items-center flex-grow">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">申請実績1,000件超の信頼</h3>
-                  <p className="text-gray-600 text-center leading-relaxed mb-6">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">申請実績1,000件超の信頼</h3>
+                  <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed mb-4 sm:mb-6">
                     創業以来、1,000件を超える申請を支援し、許可率99％を誇る確かな実績があります。
                   </p>
                 </div>
@@ -198,8 +198,8 @@ export default async function Home() {
               </div>
               <div className="px-8 pb-8 flex flex-col flex-grow">
                 <div className="flex flex-col items-center flex-grow">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">完全成果報酬制で明朗な料金体系</h3>
-                  <p className="text-gray-600 text-center leading-relaxed mb-6">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">完全成果報酬制で明朗な料金体系</h3>
+                  <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed mb-4 sm:mb-6">
                     初期費用は不要で、許可取得後のみ報酬が発生する明瞭な料金体系です。
                   </p>
                 </div>
@@ -229,8 +229,8 @@ export default async function Home() {
               </div>
               <div className="px-8 pb-8 flex flex-col flex-grow">
                 <div className="flex flex-col items-center flex-grow">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">母国語対応で安心サポート</h3>
-                  <p className="text-gray-600 text-center leading-relaxed mb-6">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">母国語対応で安心サポート</h3>
+                  <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed mb-4 sm:mb-6">
                     多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。
                   </p>
                 </div>
@@ -254,7 +254,7 @@ export default async function Home() {
       {/* Services Section */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">サービス</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest">OUR SERVICES</p>
@@ -499,7 +499,7 @@ export default async function Home() {
       {/* Testimonials Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">お客様の声</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest">CUSTOMER TESTIMONIALS</p>
@@ -678,7 +678,7 @@ export default async function Home() {
       {/* About Us Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">事務所案内</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest">ABOUT US</p>
@@ -686,14 +686,14 @@ export default async function Home() {
           <ScrollAnimationWrapper delay={0}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">挑戦する経営者の伴走者</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">挑戦する経営者の伴走者</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                   行政書士法人フォルティアは、圧倒的なサービス品質で、挑戦する企業から選ばれる行政書士事務所です。
                 </p>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                   2014年に「行政書士法人フォルティア」設立。2022現在、全国4拠点・スタッフ総勢17人。
                 </p>
-                <p className="text-gray-600 mb-8 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                   「新規ビジネス立ち上げ支援」から「融資や補助金での資金調達」「法人設立」「許認可申請」まで、企業の経営をトータルでサポートしています。
                 </p>
                 <Link
@@ -724,7 +724,7 @@ export default async function Home() {
       {/* News Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">最新のお知らせ</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest">NEWS & UPDATES</p>
@@ -782,7 +782,7 @@ export default async function Home() {
       {featuredBlogs.length > 0 && (
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">お役立ち情報</h2>
               <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
               <p className="text-sm text-gray-600 tracking-widest">BLOG</p>
