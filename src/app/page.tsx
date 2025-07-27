@@ -262,12 +262,12 @@ export default async function Home() {
           
           {/* Sanityからのデータがある場合は動的に表示 */}
           {serviceCategories.length > 0 ? (
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
               {serviceCategories.map((category) => (
                 <ScrollAnimationWrapper key={category._id} delay={0}>
                   <Link
                     href={`/services/${category.slug}`}
-                    className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center block h-full"
+                    className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center sm:flex-col sm:text-center h-full"
                   >
                   <div className="mb-2 sm:mb-4 hidden sm:block">
                     {category.iconUrl ? (
@@ -285,18 +285,18 @@ export default async function Home() {
                       </svg>
                     )}
                   </div>
-                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">{category.title}</h3>
+                  <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">{category.title}</h3>
                   </Link>
                 </ScrollAnimationWrapper>
               ))}
             </div>
           ) : (
             /* Sanityが設定されていない場合は既存のハードコーディングされたサービスを表示 */
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
             
             {/* 外国人関連業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center sm:flex-col sm:text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-foreigner.png"
@@ -308,13 +308,13 @@ export default async function Home() {
                   priority
                 />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">外国人関連業務</h3>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">外国人関連業務</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 建設・宅建業関連 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center sm:flex-col sm:text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-construction.png"
@@ -325,13 +325,13 @@ export default async function Home() {
                   unoptimized
                 />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">建設・宅建業関連</h3>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">建設・宅建業関連</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 自動車関連業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center sm:flex-col sm:text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-vehicle.png"
@@ -342,13 +342,13 @@ export default async function Home() {
                   unoptimized
                 />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">自動車関連業務</h3>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">自動車関連業務</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 飲食・風俗営業 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center sm:flex-col sm:text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-restaurant.png"
@@ -359,13 +359,13 @@ export default async function Home() {
                   unoptimized
                 />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">飲食・風俗営業</h3>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">飲食・風俗営業</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 廃棄物処理業許可 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center sm:flex-col sm:text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-waste.png"
@@ -376,13 +376,13 @@ export default async function Home() {
                   unoptimized
                 />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">廃棄物処理業許可</h3>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">廃棄物処理業許可</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 旅行・旅館業 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center sm:flex-col sm:text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-travel.png"
@@ -393,13 +393,13 @@ export default async function Home() {
                   unoptimized
                 />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">旅行・旅館業</h3>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">旅行・旅館業</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 法人設立業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center sm:flex-col sm:text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-corporation.png"
@@ -410,13 +410,13 @@ export default async function Home() {
                   unoptimized
                 />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">法人設立業務</h3>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">法人設立業務</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 営業許可 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center sm:flex-col sm:text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-license.png"
@@ -427,13 +427,13 @@ export default async function Home() {
                   unoptimized
                 />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">営業許可</h3>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">営業許可</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 土地関連業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center sm:flex-col sm:text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-land.png"
@@ -444,13 +444,13 @@ export default async function Home() {
                   unoptimized
                 />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">土地関連業務</h3>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">土地関連業務</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 権利義務・事実証明 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center sm:flex-col sm:text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-document.png"
@@ -461,13 +461,13 @@ export default async function Home() {
                   unoptimized
                 />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">権利義務・事実証明</h3>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">権利義務・事実証明</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* その他の業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center sm:flex-col sm:text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-other.png"
@@ -478,7 +478,7 @@ export default async function Home() {
                   unoptimized
                 />
               </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">その他の業務</h3>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">その他の業務</h3>
               </div>
             </ScrollAnimationWrapper>
           </div>
