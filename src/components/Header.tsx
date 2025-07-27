@@ -1,4 +1,5 @@
 import Link from "next/link";
+import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   return (
@@ -8,12 +9,15 @@ export default function Header() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <Link href="/" className="hover:opacity-80 transition-opacity">
-                <h1 className="text-xl font-bold">
+                <h1 className="text-lg sm:text-xl font-bold">
                   <span className="text-gray-600">フォルティア</span>
-                  <span className="text-gray-600 ml-1">行政書士事務所</span>
+                  <span className="text-gray-600 ml-1 hidden sm:inline">行政書士事務所</span>
+                  <span className="text-gray-600 ml-1 sm:hidden">行政書士</span>
                 </h1>
               </Link>
             </div>
+            
+            {/* デスクトップメニュー */}
             <nav className="hidden md:flex items-center space-x-8">
               <Link href="/features" className="text-gray-600 hover:text-gray-900">
                 特徴
@@ -37,11 +41,14 @@ export default function Header() {
                 お問い合わせ
               </Link>
             </nav>
+            
+            {/* モバイルメニュー */}
+            <MobileMenu />
           </div>
         </div>
       </header>
       {/* Spacer for fixed header */}
-      <div className="h-[88px]"></div>
+      <div className="h-[72px] sm:h-[88px]"></div>
     </>
   );
 }
