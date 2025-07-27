@@ -683,39 +683,41 @@ export default async function Home() {
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest">ABOUT US</p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">挑戦する経営者の伴走者</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                行政書士法人フォルティアは、圧倒的なサービス品質で、挑戦する企業から選ばれる行政書士事務所です。
-              </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                2014年に「行政書士法人フォルティア」設立。2022現在、全国4拠点・スタッフ総勢17人。
-              </p>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                「新規ビジネス立ち上げ支援」から「融資や補助金での資金調達」「法人設立」「許認可申請」まで、企業の経営をトータルでサポートしています。
-              </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center bg-gray-900 text-white px-8 py-3 font-medium hover:bg-gray-800 transition-colors"
-              >
-                詳細はこちら
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
+          <ScrollAnimationWrapper delay={0}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">挑戦する経営者の伴走者</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  行政書士法人フォルティアは、圧倒的なサービス品質で、挑戦する企業から選ばれる行政書士事務所です。
+                </p>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  2014年に「行政書士法人フォルティア」設立。2022現在、全国4拠点・スタッフ総勢17人。
+                </p>
+                <p className="text-gray-600 mb-8 leading-relaxed">
+                  「新規ビジネス立ち上げ支援」から「融資や補助金での資金調達」「法人設立」「許認可申請」まで、企業の経営をトータルでサポートしています。
+                </p>
+                <Link
+                  href="/about"
+                  className="inline-flex items-center bg-gray-900 text-white px-8 py-3 font-medium hover:bg-gray-800 transition-colors"
+                >
+                  詳細はこちら
+                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+              <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px]">
+                <Image 
+                  src="/office-consultation.jpg" 
+                  alt="事務所での相談風景" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="rounded-lg shadow-lg object-cover"
+                  priority
+                />
+              </div>
             </div>
-            <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px]">
-              <Image 
-                src="/office-consultation.jpg" 
-                alt="事務所での相談風景" 
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="rounded-lg shadow-lg object-cover"
-                priority
-              />
-            </div>
-          </div>
+          </ScrollAnimationWrapper>
         </div>
       </section>
 
@@ -728,38 +730,42 @@ export default async function Home() {
             <p className="text-sm text-gray-600 tracking-widest">NEWS & UPDATES</p>
           </div>
           {latestNews.length > 0 ? (
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <ul className="divide-y divide-gray-200">
-                {latestNews.map((news: NewsItem) => (
-                  <li key={news._id}>
-                    <Link 
-                      href={`/news/${news.slug.current}`}
-                      className="block px-6 py-4 hover:bg-gray-50 transition-colors"
-                    >
-                      <div className="flex items-center gap-4">
-                        <time className="text-sm text-gray-500 whitespace-nowrap">
-                          {new Date(news.publishedAt).toLocaleDateString('ja-JP')}
-                        </time>
-                        {news.category && categoryMap[news.category] && (
-                          <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium whitespace-nowrap ${
-                            categoryMap[news.category].color
-                          }`}>
-                            {categoryMap[news.category].name}
-                          </span>
-                        )}
-                        <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
-                          {news.title}
-                        </h3>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ScrollAnimationWrapper delay={0}>
+              <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                <ul className="divide-y divide-gray-200">
+                  {latestNews.map((news: NewsItem) => (
+                    <li key={news._id}>
+                      <Link 
+                        href={`/news/${news.slug.current}`}
+                        className="block px-6 py-4 hover:bg-gray-50 transition-colors"
+                      >
+                        <div className="flex items-center gap-4">
+                          <time className="text-sm text-gray-500 whitespace-nowrap">
+                            {new Date(news.publishedAt).toLocaleDateString('ja-JP')}
+                          </time>
+                          {news.category && categoryMap[news.category] && (
+                            <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium whitespace-nowrap ${
+                              categoryMap[news.category].color
+                            }`}>
+                              {categoryMap[news.category].name}
+                            </span>
+                          )}
+                          <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
+                            {news.title}
+                          </h3>
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollAnimationWrapper>
           ) : (
-            <div className="bg-white rounded-lg shadow-sm p-12 text-center">
-              <p className="text-gray-500 text-lg">お知らせはまだありません。</p>
-            </div>
+            <ScrollAnimationWrapper delay={0}>
+              <div className="bg-white rounded-lg shadow-sm p-12 text-center">
+                <p className="text-gray-500 text-lg">お知らせはまだありません。</p>
+              </div>
+            </ScrollAnimationWrapper>
           )}
           <div className="text-center mt-8">
             <Link
@@ -793,7 +799,8 @@ export default async function Home() {
                 };
                 
                 return (
-                  <article key={blog._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                  <ScrollAnimationWrapper key={blog._id} delay={0}>
+                    <article className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow h-full">
                     {blog.featuredImage && (
                       <Link href={`/blog/${blog.slug.current}`} className="block">
                         <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
@@ -853,7 +860,8 @@ export default async function Home() {
                         </Link>
                       </div>
                     </div>
-                  </article>
+                    </article>
+                  </ScrollAnimationWrapper>
                 );
               })}
             </div>
