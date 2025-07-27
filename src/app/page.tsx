@@ -488,7 +488,7 @@ export default async function Home() {
           <div className="text-center mt-12">
             <Link 
               href="/services" 
-              className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
             >
               サービス詳細を見る
             </Link>
@@ -667,7 +667,7 @@ export default async function Home() {
           <div className="text-center mt-8">
             <Link
               href="/testimonials"
-              className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
             >
               すべてのお客様の声を見る
             </Link>
@@ -698,7 +698,7 @@ export default async function Home() {
                 </p>
                 <Link
                   href="/about"
-                  className="inline-flex items-center bg-gray-900 text-white px-8 py-3 font-medium hover:bg-gray-800 transition-colors"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-gray-900 text-white px-6 sm:px-8 py-3 font-medium hover:bg-gray-800 transition-colors rounded-lg"
                 >
                   詳細はこちら
                   <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -770,7 +770,7 @@ export default async function Home() {
           <div className="text-center mt-8">
             <Link
               href="/news"
-              className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
             >
               すべてのお知らせを見る
             </Link>
@@ -868,7 +868,7 @@ export default async function Home() {
             <div className="text-center mt-8">
               <Link
                 href="/blog"
-                className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+                className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
               >
                 すべてのお役立ち情報を見る
               </Link>
