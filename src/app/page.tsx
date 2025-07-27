@@ -262,223 +262,223 @@ export default async function Home() {
           
           {/* Sanityからのデータがある場合は動的に表示 */}
           {serviceCategories.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
               {serviceCategories.map((category) => (
                 <ScrollAnimationWrapper key={category._id} delay={0}>
                   <Link
                     href={`/services/${category.slug}`}
-                    className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center block h-full"
+                    className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center block h-full"
                   >
-                  <div className="mb-4">
+                  <div className="mb-2 sm:mb-4 hidden sm:block">
                     {category.iconUrl ? (
                       <Image
                         src={category.iconUrl}
                         alt={category.title}
                         width={108}
                         height={108}
-                        className="object-contain mx-auto"
+                        className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
                         unoptimized
                       />
                     ) : (
-                      <svg className="w-[108px] h-[108px] text-gray-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] text-gray-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
                     )}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{category.title}</h3>
+                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">{category.title}</h3>
                   </Link>
                 </ScrollAnimationWrapper>
               ))}
             </div>
           ) : (
             /* Sanityが設定されていない場合は既存のハードコーディングされたサービスを表示 */
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
             
             {/* 外国人関連業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
-              <div className="mb-4">
+              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-foreigner.png"
                   alt="外国人関連業務"
                   width={108}
                   height={108}
-                  className="object-contain mx-auto"
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
                   unoptimized
                   priority
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">外国人関連業務</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">外国人関連業務</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 建設・宅建業関連 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
-              <div className="mb-4">
+              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-construction.png"
                   alt="建設・宅建業関連"
                   width={108}
                   height={108}
-                  className="object-contain mx-auto"
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
                   unoptimized
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">建設・宅建業関連</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">建設・宅建業関連</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 自動車関連業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
-              <div className="mb-4">
+              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-vehicle.png"
                   alt="自動車関連業務"
                   width={108}
                   height={108}
-                  className="object-contain mx-auto"
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
                   unoptimized
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">自動車関連業務</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">自動車関連業務</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 飲食・風俗営業 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
-              <div className="mb-4">
+              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-restaurant.png"
                   alt="飲食・風俗営業"
                   width={108}
                   height={108}
-                  className="object-contain mx-auto"
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
                   unoptimized
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">飲食・風俗営業</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">飲食・風俗営業</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 廃棄物処理業許可 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
-              <div className="mb-4">
+              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-waste.png"
                   alt="廃棄物処理業許可"
                   width={108}
                   height={108}
-                  className="object-contain mx-auto"
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
                   unoptimized
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">廃棄物処理業許可</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">廃棄物処理業許可</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 旅行・旅館業 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
-              <div className="mb-4">
+              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-travel.png"
                   alt="旅行・旅館業"
                   width={108}
                   height={108}
-                  className="object-contain mx-auto"
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
                   unoptimized
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">旅行・旅館業</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">旅行・旅館業</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 法人設立業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
-              <div className="mb-4">
+              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-corporation.png"
                   alt="法人設立業務"
                   width={108}
                   height={108}
-                  className="object-contain mx-auto"
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
                   unoptimized
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">法人設立業務</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">法人設立業務</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 営業許可 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
-              <div className="mb-4">
+              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-license.png"
                   alt="営業許可"
                   width={108}
                   height={108}
-                  className="object-contain mx-auto"
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
                   unoptimized
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">営業許可</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">営業許可</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 土地関連業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
-              <div className="mb-4">
+              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-land.png"
                   alt="土地関連業務"
                   width={108}
                   height={108}
-                  className="object-contain mx-auto"
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
                   unoptimized
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">土地関連業務</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">土地関連業務</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* 権利義務・事実証明 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
-              <div className="mb-4">
+              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-document.png"
                   alt="権利義務・事実証明"
                   width={108}
                   height={108}
-                  className="object-contain mx-auto"
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
                   unoptimized
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">権利義務・事実証明</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">権利義務・事実証明</h3>
               </div>
             </ScrollAnimationWrapper>
 
             {/* その他の業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
-              <div className="mb-4">
+              <div className="bg-white p-3 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-other.png"
                   alt="その他の業務"
                   width={108}
                   height={108}
-                  className="object-contain mx-auto"
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
                   unoptimized
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">その他の業務</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">その他の業務</h3>
               </div>
             </ScrollAnimationWrapper>
           </div>
