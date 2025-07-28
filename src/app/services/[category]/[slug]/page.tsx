@@ -224,7 +224,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
         {/* ページタイトル */}
         <section aria-label="ページタイトル">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#004080] mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#004080] mb-6 sm:mb-8">
             {data.title}
           </h1>
         </section>
@@ -285,7 +285,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         {/* よくある質問 */}
         {data.faq && data.faq.length > 0 && (
           <section aria-label="よくある質問">
-            <h2 className="text-2xl font-bold text-[#004080] mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#004080] mb-4 sm:mb-6">
               よくある質問
             </h2>
             <FaqAccordion faqs={data.faq} />
@@ -295,12 +295,12 @@ export default async function ServiceDetailPage({ params }: Props) {
         {/* 関連サービス */}
         {data.related && data.related.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold my-6">関連サービス</h2>
+            <h2 className="text-lg sm:text-xl font-bold my-4 sm:my-6">関連サービス</h2>
             <ul className="grid gap-4 md:grid-cols-2">
               {data.related.map((item) => (
                 <li key={item.slug}>
                   <Link href={`/services/${item.parentCategory.slug}/${item.slug}`} className="block p-4 border rounded-lg hover:bg-gray-50">
-                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                    <h3 className="text-base sm:text-lg font-semibold">{item.title}</h3>
                     <p className="text-sm text-gray-600 mt-2">{item.overview}</p>
                   </Link>
                 </li>
@@ -331,7 +331,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                   href={`/services/${service.categorySlug}/${service.slug}`}
                   className="group bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                 >
-                  <h3 className="font-semibold text-lg text-gray-900 mb-3 group-hover:text-[#004080] transition-colors">
+                  <h3 className="font-semibold text-base sm:text-lg text-gray-900 mb-2 sm:mb-3 group-hover:text-[#004080] transition-colors">
                     {service.title}
                   </h3>
                   {service.overview && (

@@ -11,19 +11,19 @@ interface PortableTextWithTocProps {
 export default function PortableTextWithToc({ content, headingIndexRef }: PortableTextWithTocProps) {
   const components: PortableTextComponents = {
     block: {
-      h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>,
+      h1: ({ children }) => <h1 className="text-2xl sm:text-3xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">{children}</h1>,
       h2: ({ children }) => {
         const id = `heading-${headingIndexRef.current++}`;
-        return <h2 id={id} className="text-2xl font-bold mt-8 mb-4 scroll-mt-24">{children}</h2>;
+        return <h2 id={id} className="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4 scroll-mt-24">{children}</h2>;
       },
       h3: ({ children }) => {
         const id = `heading-${headingIndexRef.current++}`;
-        return <h3 id={id} className="text-xl font-bold mt-6 mb-3 scroll-mt-24">{children}</h3>;
+        return <h3 id={id} className="text-lg sm:text-xl font-bold mt-4 sm:mt-6 mb-2 sm:mb-3 scroll-mt-24">{children}</h3>;
       },
-      h4: ({ children }) => <h4 className="text-lg font-bold mt-6 mb-3">{children}</h4>,
-      h5: ({ children }) => <h5 className="text-base font-bold mt-4 mb-2">{children}</h5>,
-      h6: ({ children }) => <h6 className="text-sm font-bold mt-4 mb-2">{children}</h6>,
-      normal: ({ children }) => <p className="mb-4 leading-relaxed">{children}</p>,
+      h4: ({ children }) => <h4 className="text-base sm:text-lg font-bold mt-4 sm:mt-6 mb-2 sm:mb-3">{children}</h4>,
+      h5: ({ children }) => <h5 className="text-sm sm:text-base font-bold mt-3 sm:mt-4 mb-2">{children}</h5>,
+      h6: ({ children }) => <h6 className="text-sm font-bold mt-3 sm:mt-4 mb-2">{children}</h6>,
+      normal: ({ children }) => <p className="text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">{children}</p>,
       blockquote: ({ children }) => (
         <blockquote className="border-l-4 border-gray-300 pl-4 my-4 italic">{children}</blockquote>
       ),
