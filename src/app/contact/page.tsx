@@ -105,14 +105,14 @@ export default function Contact() {
       />
 
       {/* Contact Content */}
-      <section className="py-16">
+      <section className="py-8 sm:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">お問い合わせフォーム</h2>
-              <div className="bg-white p-8 rounded-lg shadow-sm">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">お問い合わせフォーム</h2>
+              <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
                 {submitStatus.type && (
                   <div
                     className={`mb-6 p-4 rounded-lg ${
@@ -136,7 +136,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base"
                     />
                   </div>
                   
@@ -151,7 +151,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base"
                     />
                   </div>
                   
@@ -165,7 +165,7 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base"
                     />
                   </div>
                   
@@ -178,7 +178,7 @@ export default function Contact() {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base"
                     >
                       <option value="">選択してください</option>
                       <option value="permit">許認可申請</option>
@@ -200,7 +200,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base"
                       placeholder="ご相談内容を詳しくお聞かせください"
                     ></textarea>
                   </div>
@@ -223,7 +223,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-blue-600 text-white py-3 sm:py-4 px-4 rounded-md hover:bg-blue-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed text-base sm:text-lg"
                   >
                     {isSubmitting ? '送信中...' : '送信する'}
                   </button>
@@ -233,14 +233,14 @@ export default function Contact() {
             
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">お問い合わせ先</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">お問い合わせ先</h2>
               
               <div className="space-y-8">
-                <div className="bg-white p-8 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">電話でのお問い合わせ</h3>
+                <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">電話でのお問い合わせ</h3>
                   <div className="space-y-2">
-                    <p className="text-2xl font-bold text-blue-600">03-1234-5678</p>
-                    <p className="text-gray-600">
+                    <p className="text-xl sm:text-2xl font-bold text-blue-600">03-1234-5678</p>
+                    <p className="text-sm sm:text-base text-gray-600">
                       平日: 9:00 - 18:00<br />
                       土曜: 9:00 - 17:00<br />
                       日祝: 休業
@@ -248,24 +248,24 @@ export default function Contact() {
                   </div>
                 </div>
                 
-                <div className="bg-white p-8 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">FAXでのお問い合わせ</h3>
+                <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">FAXでのお問い合わせ</h3>
                   <div className="space-y-2">
                     <p className="text-xl font-bold text-gray-900">03-1234-5679</p>
-                    <p className="text-gray-600">24時間受付</p>
+                    <p className="text-sm sm:text-base text-gray-600">24時間受付</p>
                   </div>
                 </div>
                 
-                <div className="bg-white p-8 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">メールでのお問い合わせ</h3>
+                <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">メールでのお問い合わせ</h3>
                   <div className="space-y-2">
                     <p className="text-lg font-medium text-gray-900">info@tanaka-gyosei.com</p>
-                    <p className="text-gray-600">24時間受付（返信は営業時間内）</p>
+                    <p className="text-sm sm:text-base text-gray-600">24時間受付（返信は営業時間内）</p>
                   </div>
                 </div>
                 
-                <div className="bg-white p-8 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">事務所住所</h3>
+                <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">事務所住所</h3>
                   <div className="space-y-2">
                     <p className="text-gray-700">
                       〒100-0001<br />
