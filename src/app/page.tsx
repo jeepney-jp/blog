@@ -691,7 +691,17 @@ export default async function Home() {
           </div>
           <ScrollAnimationWrapper delay={0}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
+              <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px] order-1 lg:order-1">
+                <Image 
+                  src="/office-consultation.jpg" 
+                  alt="事務所での相談風景" 
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                  className="rounded-lg shadow-lg object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="order-2 lg:order-2">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">挑戦する経営者の伴走者</h3>
                 <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                   行政書士法人フォルティアは、圧倒的なサービス品質で、挑戦する企業から選ばれる行政書士事務所です。
@@ -711,16 +721,6 @@ export default async function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
-              </div>
-              <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px]">
-                <Image 
-                  src="/office-consultation.jpg" 
-                  alt="事務所での相談風景" 
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
-                  className="rounded-lg shadow-lg object-cover"
-                  loading="lazy"
-                />
               </div>
             </div>
           </ScrollAnimationWrapper>
