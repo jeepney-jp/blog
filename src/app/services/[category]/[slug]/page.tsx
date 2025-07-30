@@ -23,6 +23,7 @@ import PortableTextWithToc from '@/components/PortableTextWithToc';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import NewsSection from '@/components/NewsSection';
+import SimpleCTA from '@/components/SimpleCTA';
 
 type Props = {
   params: Promise<{ category: string; slug: string }>;
@@ -296,6 +297,13 @@ export default async function ServiceDetailPage({ params }: Props) {
           </div>
         )}
 
+        {/* CTA 1: サービス基本情報後 */}
+        <SimpleCTA 
+          serviceName={data.title} 
+          variant="primary"
+          className="my-12 py-8 bg-gray-50 rounded-lg"
+        />
+
         {/* よくある質問 */}
         {data.faq && data.faq.length > 0 && (
           <section aria-label="よくある質問">
@@ -311,6 +319,15 @@ export default async function ServiceDetailPage({ params }: Props) {
           testimonials={testimonials} 
           serviceName={data.title}
         />
+
+        {/* CTA 2: お客様の声後 */}
+        {testimonials.length > 0 && (
+          <SimpleCTA 
+            serviceName={data.title} 
+            variant="secondary"
+            className="my-12"
+          />
+        )}
 
         {/* お役立ち記事 */}
         <NewsSection
