@@ -22,6 +22,7 @@ import TableOfContents from '@/components/TableOfContents';
 import PortableTextWithToc from '@/components/PortableTextWithToc';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import NewsSection from '@/components/NewsSection';
 
 type Props = {
   params: Promise<{ category: string; slug: string }>;
@@ -133,6 +134,11 @@ export default async function ServiceDetailPage({ params }: Props) {
   // お客様の声を取得（サービス名で完全一致）
   const testimonials = await sanityClient.fetch(testimonialsByServiceQuery, {
     serviceName: data.title,
+  });
+
+  // お役立ち記事を取得（カテゴリ名で完全一致）
+  const newsArticles = await sanityClient.fetch(newsByCategoryQuery, {
+    categoryName: data.title,
   });
 
   // FAQ構造化データの生成
@@ -303,6 +309,12 @@ export default async function ServiceDetailPage({ params }: Props) {
         {/* お客様の声 */}
         <TestimonialsSection 
           testimonials={testimonials} 
+          serviceName={data.title}
+        />
+
+        {/* お役立ち記事 */}
+        <NewsSection
+          articles={newsArticles}
           serviceName={data.title}
         />
 
