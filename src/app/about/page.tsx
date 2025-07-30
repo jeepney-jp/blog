@@ -314,8 +314,132 @@ export default function About() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Office History Timeline Section */}
       <section className="py-16 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              事務所の沿革
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              地域の皆様と共に歩んできた、私たちの歴史をご紹介します
+            </p>
+          </div>
+
+          <div className="relative max-w-4xl mx-auto">
+            {/* 縦のライン - 左寄りに配置 */}
+            <div className="absolute left-32 md:left-48 h-full w-0.5 bg-gray-300"></div>
+            
+            <div className="space-y-8">
+              {/* 2024年 */}
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2024年 1月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">事務所移転・規模拡大</p>
+                  <p className="text-gray-600">
+                    より多くのお客様にサービスを提供できる体制へ
+                  </p>
+                </div>
+              </div>
+
+              {/* 2023年 */}
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2023年 6月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">オンライン相談サービス開始</p>
+                  <p className="text-gray-600">
+                    全国のお客様へのサポート体制を構築
+                  </p>
+                </div>
+              </div>
+
+              {/* 2022年 */}
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2022年 9月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">スタッフ増員</p>
+                  <p className="text-gray-600">
+                    専門分野を拡充し、より幅広いニーズに対応
+                  </p>
+                </div>
+              </div>
+
+              {/* 2021年 */}
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2021年 12月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">法人サポート部門設立</p>
+                  <p className="text-gray-600">
+                    企業向けサービスを本格的に開始
+                  </p>
+                </div>
+              </div>
+
+              {/* 2020年 */}
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2020年 4月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">フォルティア行政書士事務所 設立</p>
+                  <p className="text-gray-600">
+                    地域に根ざした行政書士事務所として開業
+                  </p>
+                </div>
+              </div>
+
+              {/* 2019年 */}
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2019年 10月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">行政書士登録</p>
+                  <p className="text-gray-600">
+                    独立に向けて準備を開始
+                  </p>
+                </div>
+              </div>
+
+              {/* 2014年 */}
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2014年 4月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">大手法律事務所に入所</p>
+                  <p className="text-gray-600">
+                    行政書士としての実務経験を積む
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* モバイル表示の場合の注記 */}
+          <p className="text-center text-sm text-gray-500 mt-12 md:hidden">
+            ※ タップして詳細をご覧ください
+          </p>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">アクセス</h2>
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
