@@ -30,47 +30,50 @@ export default function NewsSection({ articles, serviceName }: NewsSectionProps)
       </h2>
       <p className="text-gray-600 mb-6">知っておくと役立つ情報をまとめました</p>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {articles.slice(0, 6).map((article) => (
-          <Link
-            key={article._id}
-            href={`/blog/${article.slug}`}
-            className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
-          >
-            {article.thumbnailUrl ? (
-              <div className="aspect-w-16 aspect-h-9 relative h-48 bg-gray-100">
-                <Image
-                  src={article.thumbnailUrl}
-                  alt={article.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ) : (
-              <div className="h-48 bg-gradient-to-br from-[#004080] to-[#003366] flex items-center justify-center">
-                <svg className="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                </svg>
-              </div>
+          <article key={article._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow h-full">
+            {article.thumbnailUrl && (
+              <Link href={`/blog/${article.slug}`} className="block">
+                <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
+                  <Image
+                    src={article.thumbnailUrl}
+                    alt={article.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </Link>
             )}
             <div className="p-6">
-              <div className="text-sm text-gray-500 mb-2">
-                {new Date(article.publishedAt).toLocaleDateString('ja-JP')}
+              <div className="flex items-center space-x-4 mb-4">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                  {article.category}
+                </span>
+                {article.publishedAt && (
+                  <time className="text-xs text-gray-500">
+                    {new Date(article.publishedAt).toLocaleDateString('ja-JP')}
+                  </time>
+                )}
               </div>
-              <h3 className="font-semibold text-gray-900 group-hover:text-[#004080] transition-colors mb-3 line-clamp-2">
-                {article.title}
-              </h3>
-              <p className="text-gray-600 text-sm line-clamp-3 mb-4">
-                {article.excerpt}
-              </p>
-              <span className="inline-flex items-center text-[#004080] group-hover:text-[#003366] font-medium text-sm">
+              <Link href={`/blog/${article.slug}`} className="block group">
+                <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
+                  {article.title}
+                </h3>
+              </Link>
+              <p className="text-gray-600 line-clamp-3 mb-4">{article.excerpt}</p>
+              <Link 
+                href={`/blog/${article.slug}`}
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+              >
                 続きを読む
-                <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </span>
+              </Link>
             </div>
-          </Link>
+          </article>
         ))}
       </div>
 
