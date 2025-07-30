@@ -327,99 +327,106 @@ export default function About() {
           </div>
 
           <div className="relative max-w-4xl mx-auto">
-            {/* 縦のライン */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-300"></div>
+            {/* 縦のライン - 左寄りに配置 */}
+            <div className="absolute left-32 md:left-48 h-full w-0.5 bg-gray-300"></div>
             
-            <div className="space-y-12">
+            <div className="space-y-8">
               {/* 2024年 */}
-              <div className="relative flex items-center">
-                <div className="w-1/2 text-right pr-8">
-                  <h3 className="text-xl font-bold text-gray-900">2024年 1月</h3>
-                  <p className="text-gray-600 mt-2">
-                    事務所移転・規模拡大<br />
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2024年 1月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">事務所移転・規模拡大</p>
+                  <p className="text-gray-600">
                     より多くのお客様にサービスを提供できる体制へ
                   </p>
                 </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow"></div>
-                <div className="w-1/2 pl-8"></div>
               </div>
 
               {/* 2023年 */}
-              <div className="relative flex items-center">
-                <div className="w-1/2 text-right pr-8 md:text-left md:pl-8 md:pr-0"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow"></div>
-                <div className="w-1/2 pl-8">
-                  <h3 className="text-xl font-bold text-gray-900">2023年 6月</h3>
-                  <p className="text-gray-600 mt-2">
-                    オンライン相談サービス開始<br />
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2023年 6月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">オンライン相談サービス開始</p>
+                  <p className="text-gray-600">
                     全国のお客様へのサポート体制を構築
                   </p>
                 </div>
               </div>
 
               {/* 2022年 */}
-              <div className="relative flex items-center">
-                <div className="w-1/2 text-right pr-8">
-                  <h3 className="text-xl font-bold text-gray-900">2022年 9月</h3>
-                  <p className="text-gray-600 mt-2">
-                    スタッフ増員<br />
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2022年 9月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">スタッフ増員</p>
+                  <p className="text-gray-600">
                     専門分野を拡充し、より幅広いニーズに対応
                   </p>
                 </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow"></div>
-                <div className="w-1/2 pl-8"></div>
               </div>
 
               {/* 2021年 */}
-              <div className="relative flex items-center">
-                <div className="w-1/2 text-right pr-8 md:text-left md:pl-8 md:pr-0"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow"></div>
-                <div className="w-1/2 pl-8">
-                  <h3 className="text-xl font-bold text-gray-900">2021年 12月</h3>
-                  <p className="text-gray-600 mt-2">
-                    法人サポート部門設立<br />
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2021年 12月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">法人サポート部門設立</p>
+                  <p className="text-gray-600">
                     企業向けサービスを本格的に開始
                   </p>
                 </div>
               </div>
 
               {/* 2020年 */}
-              <div className="relative flex items-center">
-                <div className="w-1/2 text-right pr-8">
-                  <h3 className="text-xl font-bold text-gray-900">2020年 4月</h3>
-                  <p className="text-gray-600 mt-2">
-                    フォルティア行政書士事務所 設立<br />
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2020年 4月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">フォルティア行政書士事務所 設立</p>
+                  <p className="text-gray-600">
                     地域に根ざした行政書士事務所として開業
                   </p>
                 </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow"></div>
-                <div className="w-1/2 pl-8"></div>
               </div>
 
               {/* 2019年 */}
-              <div className="relative flex items-center">
-                <div className="w-1/2 text-right pr-8 md:text-left md:pl-8 md:pr-0"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow"></div>
-                <div className="w-1/2 pl-8">
-                  <h3 className="text-xl font-bold text-gray-900">2019年 10月</h3>
-                  <p className="text-gray-600 mt-2">
-                    行政書士登録<br />
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2019年 10月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">行政書士登録</p>
+                  <p className="text-gray-600">
                     独立に向けて準備を開始
                   </p>
                 </div>
               </div>
 
               {/* 2014年 */}
-              <div className="relative flex items-center">
-                <div className="w-1/2 text-right pr-8">
-                  <h3 className="text-xl font-bold text-gray-900">2014年 4月</h3>
-                  <p className="text-gray-600 mt-2">
-                    大手法律事務所に入所<br />
+              <div className="relative flex items-start">
+                <div className="w-32 md:w-48 text-right pr-8 pt-1">
+                  <h3 className="text-lg font-bold text-gray-900">2014年 4月</h3>
+                </div>
+                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-8">
+                  <p className="text-gray-700 font-semibold mb-1">大手法律事務所に入所</p>
+                  <p className="text-gray-600">
                     行政書士としての実務経験を積む
                   </p>
                 </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow"></div>
-                <div className="w-1/2 pl-8"></div>
               </div>
             </div>
           </div>
