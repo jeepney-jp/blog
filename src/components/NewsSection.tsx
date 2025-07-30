@@ -34,7 +34,7 @@ export default function NewsSection({ articles, serviceName }: NewsSectionProps)
         {articles.slice(0, 6).map((article) => (
           <Link
             key={article._id}
-            href={`/news/${article.slug}`}
+            href={`/blog/${article.slug}`}
             className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 overflow-hidden"
           >
             {article.thumbnailUrl ? (
@@ -77,7 +77,7 @@ export default function NewsSection({ articles, serviceName }: NewsSectionProps)
       {articles.length > 6 && (
         <div className="text-center mt-8">
           <Link
-            href={`/news?category=${encodeURIComponent(serviceName)}`}
+            href="/blog"
             className="inline-flex items-center text-[#004080] hover:text-[#003366] font-medium"
           >
             すべての{serviceName}関連記事を見る

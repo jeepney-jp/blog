@@ -252,13 +252,13 @@ export const testimonialsByServiceQuery = `
 
 // 15. カテゴリ名に基づくお役立ち記事を取得
 export const newsByCategoryQuery = `
-  *[_type == "news" && category == $categoryName] | order(publishedAt desc) {
+  *[_type == "blog" && category == $categoryName] | order(publishedAt desc) {
     _id,
     title,
     "slug": slug.current,
     excerpt,
     category,
     publishedAt,
-    "thumbnailUrl": thumbnail.asset->url
+    "thumbnailUrl": featuredImage.asset->url
   }
 `;
