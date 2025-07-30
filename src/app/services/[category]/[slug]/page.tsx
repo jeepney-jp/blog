@@ -6,7 +6,9 @@ import {
   serviceDetailQuery, 
   allServiceDetailSlugsQuery,
   relatedServicesByTagQuery,
-  relatedServicesQuery 
+  relatedServicesQuery,
+  testimonialsByServiceQuery,
+  newsByCategoryQuery
 } from '@/lib/queries';
 import { ServiceDetail } from '@/lib/types';
 import Header from '@/components/Header';
@@ -19,6 +21,7 @@ import { generateTocFromContent } from '@/utils/generateToc';
 import TableOfContents from '@/components/TableOfContents';
 import PortableTextWithToc from '@/components/PortableTextWithToc';
 import UnifiedFooter from '@/components/UnifiedFooter';
+import TestimonialsSection from '@/components/TestimonialsSection';
 
 type Props = {
   params: Promise<{ category: string; slug: string }>;
@@ -126,6 +129,11 @@ export default async function ServiceDetailPage({ params }: Props) {
         parentCategoryId: data.parentCategoryRef,
       })
     : [];
+
+  // お客様の声を取得（サービス名で完全一致）
+  const testimonials = await sanityClient.fetch(testimonialsByServiceQuery, {
+    serviceName: data.title,
+  });
 
   // FAQ構造化データの生成
   const faqStructuredData = data.faq && data.faq.length > 0 ? {
@@ -291,6 +299,12 @@ export default async function ServiceDetailPage({ params }: Props) {
             <FaqAccordion faqs={data.faq} />
           </section>
         )}
+
+        {/* お客様の声 */}
+        <TestimonialsSection 
+          testimonials={testimonials} 
+          serviceName={data.title}
+        />
 
         {/* 関連サービス */}
         {data.related && data.related.length > 0 && (
