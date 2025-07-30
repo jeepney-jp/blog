@@ -236,3 +236,29 @@ export const serviceCategoriesWithSubcategoriesQuery = `
     }
   }
 `;
+
+// 14. サービス名に基づくお客様の声を取得
+export const testimonialsByServiceQuery = `
+  *[_type == "testimonials" && serviceDetail == $serviceName] | order(publishedAt desc) {
+    _id,
+    clientName,
+    "slug": slug.current,
+    comment,
+    serviceDetail,
+    publishedAt,
+    "clientImageUrl": clientImage.asset->url
+  }
+`;
+
+// 15. カテゴリ名に基づくお役立ち記事を取得
+export const newsByCategoryQuery = `
+  *[_type == "news" && category == $categoryName] | order(publishedAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    excerpt,
+    category,
+    publishedAt,
+    "thumbnailUrl": thumbnail.asset->url
+  }
+`;
