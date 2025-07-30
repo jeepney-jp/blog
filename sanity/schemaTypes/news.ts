@@ -44,16 +44,7 @@ export default defineType({
       name: 'category',
       title: 'カテゴリ',
       type: 'string',
-      options: {
-        list: [
-          {title: '営業案内', value: 'business_notice'},
-          {title: '新サービス', value: 'new_services'},
-          {title: '制度改正', value: 'legal_update'},
-          {title: '料金改定', value: 'price_update'},
-          {title: 'メディア', value: 'media_appearance'},
-          {title: '実績紹介', value: 'case_study'},
-        ],
-      },
+      description: 'サービス詳細ページのタイトルと完全一致させることで紐付けができます（例：就労ビザ申請）',
       validation: (rule) => rule.required(),
     }),
   ],

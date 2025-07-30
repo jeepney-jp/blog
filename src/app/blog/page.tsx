@@ -39,15 +39,6 @@ export default async function BlogPage() {
     other: "その他"
   };
 
-  const categories = [
-    { value: "all", label: "すべて" },
-    { value: "license", label: "許認可・申請" },
-    { value: "inheritance", label: "相続・遺言" },
-    { value: "business", label: "会社設立・経営" },
-    { value: "legal", label: "契約・法務" },
-    { value: "tax", label: "税務・手続き" },
-  ];
-
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -72,23 +63,6 @@ export default async function BlogPage() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Filter Section */}
-        <div className="mb-8">
-          <div className="flex flex-wrap gap-4 justify-center">
-            {categories.map((category) => (
-              <button
-                key={category.value}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  category.value === "all"
-                    ? "bg-blue-600 text-white"
-                    : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
-                }`}
-              >
-                {category.label}
-              </button>
-            ))}
-          </div>
-        </div>
 
         {/* Featured Articles */}
         <div className="mb-12">
