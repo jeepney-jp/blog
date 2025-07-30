@@ -84,7 +84,18 @@ export default function TestimonialsSection({ testimonials, serviceName }: Testi
 
       {/* モバイル: 横スクロール */}
       <div className="md:hidden">
-        <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory">
+        <div className="relative">
+          {/* スクロールヒント */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-l from-gray-50 to-transparent pl-8 pr-2">
+            <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-md animate-pulse">
+              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+          
+          {/* カードコンテナ */}
+          <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory scrollbar-hide">
           {testimonials.map((testimonial) => (
             <div key={testimonial._id} className="flex-none w-80 snap-start bg-white rounded-lg shadow-sm overflow-hidden">
               {/* 写真部分 */}
@@ -131,17 +142,20 @@ export default function TestimonialsSection({ testimonials, serviceName }: Testi
               </div>
             </div>
           ))}
-        </div>
-        {testimonials.length > 1 && (
-          <div className="flex justify-center mt-4 gap-1">
-            {testimonials.map((_, index) => (
-              <div
-                key={index}
-                className="w-2 h-2 rounded-full bg-gray-300"
-              />
-            ))}
           </div>
-        )}
+
+          {/* ドットインジケーター */}
+          {testimonials.length > 1 && (
+            <div className="flex justify-center mt-4 gap-1">
+              {testimonials.map((_, index) => (
+                <div
+                  key={index}
+                  className="w-1.5 h-1.5 rounded-full bg-gray-300"
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {testimonials.length > 3 && (

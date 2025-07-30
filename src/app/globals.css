@@ -62,3 +62,12 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* 横スクロールバーを非表示にする */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
