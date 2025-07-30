@@ -41,16 +41,7 @@ export default defineType({
       name: 'category',
       title: 'カテゴリ',
       type: 'string',
-      options: {
-        list: [
-          {title: '許認可・申請', value: 'license'},
-          {title: '相続・遺言', value: 'inheritance'},
-          {title: '会社設立・経営', value: 'business'},
-          {title: '契約・法務', value: 'legal'},
-          {title: '税務・手続き', value: 'tax'},
-          {title: 'その他', value: 'other'},
-        ],
-      },
+      description: 'サービス詳細ページのタイトルと完全一致させることで紐付けができます（例：就労ビザ申請）',
       validation: (rule) => rule.required(),
     }),
     defineField({
