@@ -163,16 +163,16 @@ export default async function Home() {
               </div>
               <div className="px-8 pb-8 flex flex-col flex-grow">
                 <div className="flex flex-col items-center flex-grow">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">申請実績1,000件超の信頼</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">申請実績10,000件超の信頼</h3>
                   <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed mb-4 sm:mb-6">
-                    創業以来、1,000件を超える申請を支援し、許可率99％を誇る確かな実績があります。
+                    創業以来、10,000件を超える申請を支援し、許可率99％を誇る確かな実績があります。
                   </p>
                 </div>
                 <div className="mt-auto">
                   <div className="pt-6 border-t border-gray-100 w-full h-24 flex items-center">
                     <div className="flex justify-around w-full">
                       <div className="text-center">
-                        <p className="text-2xl font-bold text-blue-600">1,000+</p>
+                        <p className="text-2xl font-bold text-blue-600">10,000+</p>
                         <p className="text-sm text-gray-500 mt-1">申請実績</p>
                       </div>
                       <div className="text-center">
@@ -225,7 +225,7 @@ export default async function Home() {
               <div className="w-full h-32 sm:h-40 lg:h-48 mb-4">
                 <Image
                   src="/母国語対応で安心サポート.png"
-                  alt="母国語対応のイメージ"
+                  alt="多言語対応のイメージ"
                   width={400}
                   height={192}
                   className="w-full h-full object-cover"
@@ -235,7 +235,7 @@ export default async function Home() {
               </div>
               <div className="px-8 pb-8 flex flex-col flex-grow">
                 <div className="flex flex-col items-center flex-grow">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">母国語対応で安心サポート</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">多言語対応で安心サポート</h3>
                   <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed mb-4 sm:mb-6">
                     多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。
                   </p>
