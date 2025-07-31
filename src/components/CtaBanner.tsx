@@ -39,7 +39,7 @@ export default function CtaBanner({
           {finalText}
         </h2>
         <p className="text-white mb-8 text-lg">
-          お気軽にお問い合わせください。初回相談は無料です。
+          業界最安水準の料金で、多言語対応可能。10,000件超の実績でサポートします。
         </p>
         <Link
           href={finalHref}
