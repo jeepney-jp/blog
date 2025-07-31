@@ -62,6 +62,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
         {/* 中項目プレビュー */}
         {category.previewServices && category.previewServices.length > 0 && (
           <div className="mb-4">
+            <p className="text-xs text-gray-500 font-medium mb-2">サービス例</p>
             <ul className="space-y-1">
               {category.previewServices.map((service) => (
                 <li key={service._id} className="text-sm text-gray-700 flex items-start">
