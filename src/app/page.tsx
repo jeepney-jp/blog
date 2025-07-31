@@ -139,7 +139,7 @@ export default async function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="bg-gray-50 py-24">
+      <section id="features" className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">当事務所の特徴</h2>
@@ -149,7 +149,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 申請実績 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
+              <div className="bg-white rounded-lg border border-gray-300 overflow-hidden hover:border-gray-400 hover:shadow-md transition-all duration-300 flex flex-col h-full">
               <div className="w-full h-32 sm:h-40 lg:h-48 mb-4">
                 <Image
                   src="/申請実績1,000件超の信頼.png"
@@ -188,7 +188,7 @@ export default async function Home() {
 
             {/* 成果報酬制 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
+              <div className="bg-white rounded-lg border border-gray-300 overflow-hidden hover:border-gray-400 hover:shadow-md transition-all duration-300 flex flex-col h-full">
               <div className="w-full h-32 sm:h-40 lg:h-48 mb-4">
                 <Image
                   src="/完全成果報酬制で明朗な料金体系.png"
@@ -221,7 +221,7 @@ export default async function Home() {
 
             {/* 母国語対応 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
+              <div className="bg-white rounded-lg border border-gray-300 overflow-hidden hover:border-gray-400 hover:shadow-md transition-all duration-300 flex flex-col h-full">
               <div className="w-full h-32 sm:h-40 lg:h-48 mb-4">
                 <Image
                   src="/母国語対応で安心サポート.png"
