@@ -46,12 +46,15 @@ export default {
     {
       name: 'overview',
       type: 'text',
-      title: 'サービス概要（1〜2文）',
+      title: 'サービス概要（廃止予定）',
+      hidden: true,
+      description: '※このフィールドは廃止予定です。「サービス概要」フィールドを使用してください。',
     },
     {
       name: 'target',
-      type: 'string',
-      title: '対象となる方',
+      type: 'text',
+      title: 'サービス概要',
+      description: 'このサービスの概要や対象となる方について記載してください',
     },
     {
       name: 'price',
@@ -146,7 +149,7 @@ export default {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'overview',
+      subtitle: 'target',
       category: 'parentCategory.title'
     },
     prepare(selection: any) {
