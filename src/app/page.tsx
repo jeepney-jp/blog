@@ -258,7 +258,7 @@ export default async function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24">
+      <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">サービス</h2>
