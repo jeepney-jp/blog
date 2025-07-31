@@ -24,11 +24,11 @@ export default function NewCTASection({ serviceName }: NewCTASectionProps) {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 leading-relaxed">
               {serviceName 
                 ? `${serviceName}について無料で相談する`
-                : '初回無料相談、まずはお気軽に相談ください'
+                : '初回無料相談、まずはお気軽にお問い合わせください'
               }
             </h2>
             <p className="text-sm sm:text-base text-gray-600">
-              テストテストテスト文章を入力してください
+              創業以来培った豊富な経験と実績で、お客様の申請を確実にサポートします
             </p>
           </div>
 
@@ -39,8 +39,8 @@ export default function NewCTASection({ serviceName }: NewCTASectionProps) {
               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-px bg-gradient-to-r from-transparent to-gray-400"></div>
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-px bg-gradient-to-l from-transparent to-gray-400"></div>
               <div className="relative">
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">申請実績1,000+</h3>
-                <p className="text-gray-600 text-xs sm:text-sm">豊富な実績と経験でサポート</p>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">申請実績10,000+</h3>
+                <p className="text-gray-600 text-xs sm:text-sm">許可率99%の確かな実績</p>
               </div>
             </div>
 
@@ -49,8 +49,8 @@ export default function NewCTASection({ serviceName }: NewCTASectionProps) {
               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-px bg-gradient-to-r from-transparent to-gray-400"></div>
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-px bg-gradient-to-l from-transparent to-gray-400"></div>
               <div className="relative">
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">完全成功報酬型</h3>
-                <p className="text-gray-600 text-xs sm:text-sm">成功時のみお支払い</p>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">業界最安水準</h3>
+                <p className="text-gray-600 text-xs sm:text-sm">平均相場より最大30%安い</p>
               </div>
             </div>
 
@@ -60,7 +60,7 @@ export default function NewCTASection({ serviceName }: NewCTASectionProps) {
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-px bg-gradient-to-l from-transparent to-gray-400"></div>
               <div className="relative">
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">多言語対応</h3>
-                <p className="text-gray-600 text-xs sm:text-sm">母国語でのサポート可能</p>
+                <p className="text-gray-600 text-xs sm:text-sm">9カ国語以上で安心サポート</p>
               </div>
             </div>
           </div>
