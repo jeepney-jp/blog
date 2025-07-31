@@ -16,11 +16,11 @@ export default function ServiceTable({ services, categorySlug }: ServiceTablePro
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-2/5">
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
                 サービス名
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/4">
-                対象者
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-2/5">
+                サービス概要
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/5">
                 料金目安
@@ -35,10 +35,9 @@ export default function ServiceTable({ services, categorySlug }: ServiceTablePro
               <tr key={service._id} className="hover:bg-gray-50">
                 <td className="px-6 py-4">
                   <div className="text-sm font-medium text-gray-900">{service.title}</div>
-                  <div className="text-sm text-gray-500 mt-1">{service.overview}</div>
                 </td>
                 <td className="px-6 py-4 text-sm text-gray-500">
-                  <div className="max-w-xs">
+                  <div className="max-w-md">
                     {service.target}
                   </div>
                 </td>
@@ -71,14 +70,11 @@ export default function ServiceTable({ services, categorySlug }: ServiceTablePro
           <div key={service._id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
             <div className="mb-3">
               <h3 className="text-base font-semibold text-gray-900">{service.title}</h3>
-              {service.overview && (
-                <p className="text-sm text-gray-600 mt-1">{service.overview}</p>
-              )}
             </div>
             
             <div className="space-y-2 mb-4">
               <div className="flex flex-col">
-                <span className="text-xs font-medium text-gray-500 mb-1">対象者</span>
+                <span className="text-xs font-medium text-gray-500 mb-1">サービス概要</span>
                 <span className="text-sm text-gray-700">{service.target || '詳細をご確認ください'}</span>
               </div>
               
