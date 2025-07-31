@@ -202,16 +202,16 @@ export default async function Home() {
               </div>
               <div className="px-8 pb-8 flex flex-col flex-grow">
                 <div className="flex flex-col items-center flex-grow">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">完全成果報酬制で明朗な料金体系</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">業界最安水準の料金設定</h3>
                   <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed mb-4 sm:mb-6">
-                    初期費用は不要で、許可取得後のみ報酬が発生する明瞭な料金体系です。
+                    高品質なサービスを低価格でご提供、無駄を省いた効率的な業務で、業界最安水準の料金を実現しています。
                   </p>
                 </div>
                 <div className="mt-auto">
                   <div className="pt-6 border-t border-gray-100 w-full h-24 flex items-center">
                     <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-3 w-full">
-                      <p className="text-blue-900 font-bold text-center text-lg">初期費用 0円</p>
-                      <p className="text-blue-700 text-sm text-center mt-1">成功時のみお支払い</p>
+                      <p className="text-blue-900 font-bold text-center text-lg">平均相場より最大30%安い</p>
+                      <p className="text-blue-700 text-sm text-center mt-1">他社との見積もり比較で実感</p>
                     </div>
                   </div>
                 </div>
