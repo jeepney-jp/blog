@@ -165,7 +165,7 @@ export default async function Home() {
                 <div className="flex flex-col items-center flex-grow">
                   <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">申請実績10,000件超の信頼</h3>
                   <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed mb-4 sm:mb-6">
-                    創業以来、10,000件を超える申請を支援し、許可率99％を誇る確かな実績があります。
+                    2008年の創業以来、10,000件を超える申請を支援し、許可率99％を誇る確かな実績と信頼があります。
                   </p>
                 </div>
                 <div className="mt-auto">
