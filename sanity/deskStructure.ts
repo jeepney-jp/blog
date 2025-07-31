@@ -11,6 +11,7 @@ export const deskStructure = (S: StructureBuilder) =>
         .child(
           S.list()
             .title('サービス詳細')
+            .id('serviceDetailList')
             .items([
               // 全体表示
               S.listItem()
