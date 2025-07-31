@@ -163,16 +163,16 @@ export default async function Home() {
               </div>
               <div className="px-8 pb-8 flex flex-col flex-grow">
                 <div className="flex flex-col items-center flex-grow">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">申請実績1,000件超の信頼</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">申請実績10,000件超の信頼</h3>
                   <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed mb-4 sm:mb-6">
-                    創業以来、1,000件を超える申請を支援し、許可率99％を誇る確かな実績があります。
+                    創業以来、10,000件を超える申請を支援し、許可率99％を誇る確かな実績があります。
                   </p>
                 </div>
                 <div className="mt-auto">
                   <div className="pt-6 border-t border-gray-100 w-full h-24 flex items-center">
                     <div className="flex justify-around w-full">
                       <div className="text-center">
-                        <p className="text-2xl font-bold text-blue-600">1,000+</p>
+                        <p className="text-2xl font-bold text-blue-600">10,000+</p>
                         <p className="text-sm text-gray-500 mt-1">申請実績</p>
                       </div>
                       <div className="text-center">
@@ -202,16 +202,16 @@ export default async function Home() {
               </div>
               <div className="px-8 pb-8 flex flex-col flex-grow">
                 <div className="flex flex-col items-center flex-grow">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">完全成果報酬制で明朗な料金体系</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">業界最安水準の料金設定</h3>
                   <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed mb-4 sm:mb-6">
-                    初期費用は不要で、許可取得後のみ報酬が発生する明瞭な料金体系です。
+                    高品質なサービスを低価格でご提供、無駄を省いた効率的な業務で、業界最安水準の料金を実現しています。
                   </p>
                 </div>
                 <div className="mt-auto">
                   <div className="pt-6 border-t border-gray-100 w-full h-24 flex items-center">
                     <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-3 w-full">
-                      <p className="text-blue-900 font-bold text-center text-lg">初期費用 0円</p>
-                      <p className="text-blue-700 text-sm text-center mt-1">成功時のみお支払い</p>
+                      <p className="text-blue-900 font-bold text-center text-lg">平均相場より最大30%安い</p>
+                      <p className="text-blue-700 text-sm text-center mt-1">他社との見積もり比較で実感</p>
                     </div>
                   </div>
                 </div>
@@ -225,7 +225,7 @@ export default async function Home() {
               <div className="w-full h-32 sm:h-40 lg:h-48 mb-4">
                 <Image
                   src="/母国語対応で安心サポート.png"
-                  alt="母国語対応のイメージ"
+                  alt="多言語対応のイメージ"
                   width={400}
                   height={192}
                   className="w-full h-full object-cover"
@@ -235,7 +235,7 @@ export default async function Home() {
               </div>
               <div className="px-8 pb-8 flex flex-col flex-grow">
                 <div className="flex flex-col items-center flex-grow">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">母国語対応で安心サポート</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">多言語対応で安心サポート</h3>
                   <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed mb-4 sm:mb-6">
                     多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。
                   </p>
@@ -244,9 +244,14 @@ export default async function Home() {
                   <div className="pt-6 border-t border-gray-100 w-full h-24 flex items-center">
                     <div className="flex justify-center gap-2 flex-wrap w-full">
                       <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">英語</span>
+                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">中国語</span>
                       <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">ベトナム語</span>
-                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">ネパール語</span>
                       <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">タガログ語</span>
+                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">ネパール語</span>
+                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">シンハラ語</span>
+                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">韓国語</span>
+                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">イタリア語</span>
+                      <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">スペイン語</span>
                     </div>
                   </div>
                 </div>
