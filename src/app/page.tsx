@@ -139,7 +139,7 @@ export default async function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="bg-white py-24">
+      <section id="features" className="bg-gray-50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">当事務所の特徴</h2>
@@ -149,7 +149,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 申請実績 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white rounded-lg border border-gray-300 overflow-hidden hover:border-gray-400 hover:shadow-md transition-all duration-300 flex flex-col h-full">
+              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
               <div className="w-full h-32 sm:h-40 lg:h-48 mb-4">
                 <Image
                   src="/申請実績1,000件超の信頼.png"
@@ -188,7 +188,7 @@ export default async function Home() {
 
             {/* 成果報酬制 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white rounded-lg border border-gray-300 overflow-hidden hover:border-gray-400 hover:shadow-md transition-all duration-300 flex flex-col h-full">
+              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
               <div className="w-full h-32 sm:h-40 lg:h-48 mb-4">
                 <Image
                   src="/完全成果報酬制で明朗な料金体系.png"
@@ -221,7 +221,7 @@ export default async function Home() {
 
             {/* 母国語対応 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white rounded-lg border border-gray-300 overflow-hidden hover:border-gray-400 hover:shadow-md transition-all duration-300 flex flex-col h-full">
+              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
               <div className="w-full h-32 sm:h-40 lg:h-48 mb-4">
                 <Image
                   src="/母国語対応で安心サポート.png"
@@ -263,7 +263,7 @@ export default async function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="bg-white py-24">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">サービス</h2>
@@ -278,7 +278,7 @@ export default async function Home() {
                 <ScrollAnimationWrapper key={category._id} delay={0}>
                   <Link
                     href={`/services/${category.slug}`}
-                    className="bg-white p-4 sm:p-6 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:border-gray-400 md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center h-full"
+                    className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center h-full"
                   >
                   <div className="mb-2 sm:mb-4 hidden sm:block">
                     {category.iconUrl ? (
@@ -307,7 +307,7 @@ export default async function Home() {
             
             {/* 外国人関連業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:border-gray-400 md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-foreigner.png"
@@ -325,7 +325,7 @@ export default async function Home() {
 
             {/* 建設・宅建業関連 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:border-gray-400 md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-construction.png"
@@ -342,7 +342,7 @@ export default async function Home() {
 
             {/* 自動車関連業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:border-gray-400 md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-vehicle.png"
@@ -359,7 +359,7 @@ export default async function Home() {
 
             {/* 飲食・風俗営業 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:border-gray-400 md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-restaurant.png"
@@ -376,7 +376,7 @@ export default async function Home() {
 
             {/* 廃棄物処理業許可 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:border-gray-400 md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-waste.png"
@@ -393,7 +393,7 @@ export default async function Home() {
 
             {/* 旅行・旅館業 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:border-gray-400 md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-travel.png"
@@ -410,7 +410,7 @@ export default async function Home() {
 
             {/* 法人設立業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:border-gray-400 md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-corporation.png"
@@ -427,7 +427,7 @@ export default async function Home() {
 
             {/* 営業許可 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:border-gray-400 md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-license.png"
@@ -444,7 +444,7 @@ export default async function Home() {
 
             {/* 土地関連業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:border-gray-400 md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-land.png"
@@ -461,7 +461,7 @@ export default async function Home() {
 
             {/* 権利義務・事実証明 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:border-gray-400 md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-document.png"
@@ -478,7 +478,7 @@ export default async function Home() {
 
             {/* その他の業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:border-gray-400 md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-other.png"
