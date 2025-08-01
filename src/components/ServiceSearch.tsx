@@ -39,7 +39,7 @@ export default function ServiceSearch({ services }: ServiceSearchProps) {
       return false;
     });
 
-    setFilteredServices(results.slice(0, 5)); // 最大5件表示
+    setFilteredServices(results); // 全件表示
     setIsOpen(results.length > 0);
   }, [searchTerm, services]);
 
@@ -74,7 +74,12 @@ export default function ServiceSearch({ services }: ServiceSearchProps) {
 
         {/* 検索結果ドロップダウン */}
         {isOpen && (
-          <div className="absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg">
+          <div className="absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg max-h-96 overflow-y-auto">
+            {filteredServices.length > 0 && (
+              <div className="px-4 py-2 text-sm text-gray-500 border-b border-gray-100">
+                {filteredServices.length}件のサービスが見つかりました
+              </div>
+            )}
             <ul className="py-2">
               {filteredServices.map((service) => (
                 <li key={service._id}>
