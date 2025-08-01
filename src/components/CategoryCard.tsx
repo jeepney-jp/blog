@@ -28,7 +28,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link
       href={`/services/${category.slug}`}
-      className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+      className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
     >
       {/* カテゴリー画像 */}
       <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
@@ -53,33 +53,37 @@ export default function CategoryCard({ category }: CategoryCardProps) {
       </div>
 
       {/* カテゴリー情報 */}
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{category.title}</h3>
-        {category.catchphrase && (
-          <p className="text-gray-600 text-sm mb-4">{category.catchphrase}</p>
-        )}
+      <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+        <div className="flex-grow">
+          <h3 className="text-xl font-bold text-gray-900 mb-2">{category.title}</h3>
+          {category.catchphrase && (
+            <p className="text-gray-600 text-sm mb-4">{category.catchphrase}</p>
+          )}
+        </div>
 
         {/* 中項目プレビュー */}
-        {category.previewServices && category.previewServices.length > 0 && (
-          <div className="mb-4">
-            <p className="text-xs text-gray-500 font-medium mb-2">サービス例</p>
-            <ul className="space-y-1">
-              {category.previewServices.map((service) => (
-                <li key={service._id} className="text-sm text-gray-700 flex items-start">
-                  <span className="text-[#004080] mr-2">・</span>
-                  <span>{service.title}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <div className="mt-auto">
+          {category.previewServices && category.previewServices.length > 0 && (
+            <div className="mb-4">
+              <p className="text-xs text-gray-500 font-medium mb-2">サービス例</p>
+              <ul className="space-y-1">
+                {category.previewServices.map((service) => (
+                  <li key={service._id} className="text-sm text-gray-700 flex items-start">
+                    <span className="text-[#004080] mr-2">・</span>
+                    <span>{service.title}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-        {/* 詳しく見るボタン */}
-        <div className="flex items-center justify-end text-[#004080] hover:text-[#003366] font-medium">
-          <span>詳しく見る</span>
-          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+          {/* 詳しく見るボタン */}
+          <div className="flex items-center justify-end text-[#004080] hover:text-[#003366] font-medium">
+            <span>詳しく見る</span>
+            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
         </div>
       </div>
     </Link>
