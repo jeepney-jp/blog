@@ -56,7 +56,7 @@ export default function ServiceSearch({ services }: ServiceSearchProps) {
   }, []);
 
   return (
-    <div className="w-full max-w-2xl mx-auto" ref={searchRef}>
+    <div className="w-full max-w-md mx-auto" ref={searchRef}>
       <div className="relative">
         {/* 検索入力 */}
         <div className="relative">
