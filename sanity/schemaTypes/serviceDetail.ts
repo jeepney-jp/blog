@@ -42,6 +42,9 @@ export default {
       to: [{ type: 'serviceCategory' }],
       title: '親カテゴリ',
       validation: (Rule: Rule) => Rule.required(),
+      options: {
+        disableNew: true,  // 新規作成ボタンを無効化し、誤操作を防ぐ
+      },
     },
     {
       name: 'overview',
