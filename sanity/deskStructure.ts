@@ -72,6 +72,19 @@ export const deskStructure = (S: StructureBuilder) =>
             .defaultOrdering([{field: 'orderRank', direction: 'asc'}])
         ),
       
+      // 医療・介護関連業務
+      S.listItem()
+        .title('医療・介護関連業務')
+        .id('medicalServices')
+        .child(
+          S.documentList()
+            .title('医療・介護関連業務')
+            .id('medicalServicesList')
+            .schemaType('serviceDetail')
+            .filter('_type == "serviceDetail" && references(*[_type == "serviceCategory" && title == "医療・介護関連業務"]._id)')
+            .defaultOrdering([{field: 'orderRank', direction: 'asc'}])
+        ),
+      
       // 廃棄物処理業許可関連業務
       S.listItem()
         .title('廃棄物処理業許可関連業務')
