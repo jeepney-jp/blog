@@ -70,6 +70,7 @@ export default async function Services() {
           
           {/* サービス検索 */}
           <div className="mb-12">
+            <h2 className="text-2xl font-semibold text-gray-900 text-center mb-8">サービス名から探す</h2>
             <ServiceSearch services={servicesForSearch} />
           </div>
           {/* カテゴリー一覧 */}
