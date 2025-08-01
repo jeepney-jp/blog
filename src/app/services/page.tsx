@@ -84,7 +84,9 @@ export default async function Services() {
               <DebugCategoryCard categories={categories} />
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {categories.map((category) => (
-                  <CategoryCard key={category._id} category={category} />
+                  <div key={category._id} className="h-full">
+                    <CategoryCard category={category} />
+                  </div>
                 ))}
               </div>
             </>
