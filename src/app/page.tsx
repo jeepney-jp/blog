@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from 'next/image';
 import { sanityClient } from '@/lib/sanity.client';
-import { allServiceCategoriesQuery } from '@/lib/queries';
+import { allServiceCategoriesQuery, allServicesForSearchQuery } from '@/lib/queries';
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import ScrollAnimationWrapper from '@/components/ScrollAnimationWrapper';
+import ServiceSearch from '@/components/ServiceSearch';
 import { getFeaturedTestimonials, getNews, getBlogs } from '../../lib/sanity';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
@@ -85,8 +86,25 @@ async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
   }
 }
 
+// Sanityから検索用のサービス一覧を取得
+async function getServicesForSearch() {
+  // 環境変数が設定されていない場合は空配列を返す
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
+    return [];
+  }
+  
+  try {
+    const data = await sanityClient.fetch(allServicesForSearchQuery);
+    return data;
+  } catch (error) {
+    console.error('Failed to fetch services for search:', error);
+    return [];
+  }
+}
+
 export default async function Home() {
   const serviceCategories = await getServiceCategories();
+  const servicesForSearch = await getServicesForSearch();
   const featuredTestimonials = await getFeaturedTestimonials(3);
   const newsItems = await getNews();
   // 最新5件のみ取得
@@ -269,6 +287,17 @@ export default async function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">サービス</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest">OUR SERVICES</p>
+          </div>
+          
+          {/* サービス検索 */}
+          <div className="mb-12">
+            <h3 className="text-xl font-semibold text-gray-900 text-center mb-6">サービス名から探す</h3>
+            <ServiceSearch services={servicesForSearch} />
+          </div>
+          
+          {/* カテゴリー一覧 */}
+          <div className="mt-16">
+            <h3 className="text-xl font-semibold text-gray-900 text-center mb-6">カテゴリーから探す</h3>
           </div>
           
           {/* Sanityからのデータがある場合は動的に表示 */}

@@ -262,3 +262,14 @@ export const newsByCategoryQuery = `
     "thumbnailUrl": featuredImage.asset->url
   }
 `;
+
+// 16. サービス検索用のクエリ（タイトルとタグ情報を含む）
+export const allServicesForSearchQuery = `
+  *[_type == "serviceDetail"] | order(orderRank asc, _createdAt asc) {
+    _id,
+    title,
+    "slug": slug.current,
+    "categorySlug": parentCategory->slug.current,
+    "tags": tag
+  }
+`;
