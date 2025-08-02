@@ -77,7 +77,7 @@ export default function NewCTASection({ serviceName }: NewCTASectionProps) {
               href="/services"
               className="bg-white text-blue-600 border border-blue-600 px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg text-center w-full sm:w-auto"
             >
-              サービス詳細
+              もっと詳しく見る
             </Link>
           </div>
         </div>
