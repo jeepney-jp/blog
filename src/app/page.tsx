@@ -531,7 +531,7 @@ export default async function Home() {
               href="/services" 
               className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
             >
-              サービス詳細を見る
+              もっと詳しく見る
             </Link>
           </div>
         </div>
