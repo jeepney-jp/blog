@@ -75,7 +75,8 @@ export default async function Services() {
           </div>
           {/* カテゴリー一覧 */}
           <div className="mt-8">
-            <h2 className="text-2xl font-semibold text-gray-900 text-center mb-8">カテゴリーから探す</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 text-center mb-4">カテゴリーから探す</h2>
+            <p className="text-base text-gray-600 text-center mb-8">業種や目的からお探しください</p>
           </div>
           
           {/* Sanityからのデータがある場合は動的に表示 */}

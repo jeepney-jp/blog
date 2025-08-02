@@ -297,7 +297,8 @@ export default async function Home() {
           
           {/* カテゴリー一覧 */}
           <div className="mt-16">
-            <h3 className="text-xl font-semibold text-gray-900 text-center mb-6">カテゴリーから探す</h3>
+            <h3 className="text-xl font-semibold text-gray-900 text-center mb-2">カテゴリーから探す</h3>
+            <p className="text-base text-gray-600 text-center mb-6">業種や目的からお探しください</p>
           </div>
           
           {/* Sanityからのデータがある場合は動的に表示 */}
@@ -530,7 +531,7 @@ export default async function Home() {
               href="/services" 
               className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
             >
-              サービス詳細を見る
+              もっと詳しく見る
             </Link>
           </div>
         </div>
