@@ -297,7 +297,8 @@ export default async function Home() {
           
           {/* カテゴリー一覧 */}
           <div className="mt-16">
-            <h3 className="text-xl font-semibold text-gray-900 text-center mb-6">カテゴリーから探す</h3>
+            <h3 className="text-xl font-semibold text-gray-900 text-center mb-2">カテゴリーから探す</h3>
+            <p className="text-base text-gray-600 text-center mb-6">業種や目的からお探しください</p>
           </div>
           
           {/* Sanityからのデータがある場合は動的に表示 */}
