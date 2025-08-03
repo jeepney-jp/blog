@@ -5,13 +5,35 @@ import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import PageHeader from '@/components/PageHeader';
 import Link from 'next/link';
+import { FaqAccordion } from '@/components/FaqAccordion';
+import { FaqItem } from '@/lib/types';
 
 export const metadata: Metadata = {
   title: '当事務所の特徴 | フォルティア行政書士事務所',
   description: 'フォルティア行政書士事務所の特徴をご紹介します。豊富な実績と専門知識で、お客様のニーズにお応えします。',
 };
 
-export default function FeaturesPage() {
+async function getFeaturesFAQ(): Promise<FaqItem[]> {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/features-faq`, {
+      next: { revalidate: 60 } // 1分間キャッシュ
+    });
+    
+    if (!response.ok) {
+      console.error('Failed to fetch FAQs');
+      return [];
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching FAQs:', error);
+    return [];
+  }
+}
+
+export default async function FeaturesPage() {
+  const faqs = await getFeaturesFAQ();
+  
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -258,19 +280,13 @@ export default function FeaturesPage() {
             </h3>
           </div>
 
-          <div className="space-y-8">
-            {[1, 2, 3, 4, 5].map(num => (
-              <div key={num} className="border-b pb-6">
-                <h4 className="text-lg font-semibold mb-3">
-                  Q{num}. ○○○○は○○○○ですか？
-                </h4>
-                <p className="text-gray-600 leading-relaxed">
-                  そんなことはありません。私たちでは○○を用意して、○○しているから、○○のようなお答さまにも安心してお使い<br />
-                  いただけます。そんなことはありません。私たちでは○○を用意して、○○しているから、○○のようなお答さまにも
-                </p>
-              </div>
-            ))}
-          </div>
+          {faqs.length > 0 ? (
+            <FaqAccordion faqs={faqs} />
+          ) : (
+            <div className="text-center py-8 text-gray-500">
+              現在、よくある質問を準備中です。
+            </div>
+          )}
         </div>
       </section>
 
