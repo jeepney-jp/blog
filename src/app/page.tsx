@@ -123,7 +123,7 @@ export default async function Home() {
       <section 
         className="relative text-white min-h-[80vh] sm:min-h-[90vh] lg:min-h-screen flex items-center py-8 sm:py-12"
         style={{
-          backgroundImage: "url('/hero-background.png')",
+          backgroundImage: "url('/hero-background2.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
