@@ -218,6 +218,33 @@ export default function FeaturesPage() {
         </div>
       </section>
 
+      {/* Trust Reasons Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              信頼の理由
+            </h2>
+            <h3 className="text-2xl font-semibold text-gray-800">
+              導入企業数・業界シェア共に実績が豊富です
+            </h3>
+          </div>
+
+          {/* Company Logos Grid */}
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <p className="text-center text-gray-700 mb-8">
+              導入企業は業界を問わず0000社以上
+            </p>
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+              {[...Array(24)].map((_, i) => (
+                <div key={i} className="bg-gray-200 p-4 rounded flex items-center justify-center">
+                  <span className="text-sm text-gray-500">導入企業ロゴ</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section className="py-16 bg-white">
