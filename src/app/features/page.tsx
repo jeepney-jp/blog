@@ -181,14 +181,69 @@ export default async function FeaturesPage() {
           </div>
 
           {/* Success Points */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center">
-              <h2 className="text-2xl font-bold mb-4">
-                そのお悩み、解決の鍵は当事務所の「4つの強み」にあります
+          <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 p-12 rounded-2xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">
+                そのお悩み、解決の鍵は当事務所の<span className="text-[#004080]">「4つの強み」</span>にあります
               </h2>
-              <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
+              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
                 それぞれの強みが、お客様の課題をどう解決できるのか、このすぐ下で詳しくご説明します。
               </p>
+            </div>
+            
+            {/* 4 Points Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Point 1 */}
+              <div className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-16 h-16 bg-[#004080] rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    1
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">申請実績10,000件超の信頼</h3>
+                    <p className="text-gray-600 text-sm">豊富な経験とノウハウで、複雑なケースにも対応</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Point 2 */}
+              <div className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-16 h-16 bg-[#004080] rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    2
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">業界最安水準の料金設定</h3>
+                    <p className="text-gray-600 text-sm">明確な料金体系で、追加費用の心配なし</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Point 3 */}
+              <div className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-16 h-16 bg-[#004080] rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    3
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">多言語対応で安心サポート</h3>
+                    <p className="text-gray-600 text-sm">9言語対応で言語の壁を完全に解消</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Point 4 */}
+              <div className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-16 h-16 bg-[#004080] rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    4
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">スピード対応とオンライン完結</h3>
+                    <p className="text-gray-600 text-sm">お急ぎの案件も迅速に対応、来所不要</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -214,11 +269,24 @@ export default async function FeaturesPage() {
                   <div className="flex items-start mb-4">
                     <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 1</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">
+                  <h3 className="text-2xl font-bold mb-6">
                     申請実績10,000件超の信頼
                   </h3>
+                  
+                  {/* 実績数字の強調 */}
+                  <div className="grid grid-cols-2 gap-6 mb-6">
+                    <div className="bg-blue-50 p-4 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-[#004080]">10,000+</p>
+                      <p className="text-sm text-gray-600">申請実績件数</p>
+                    </div>
+                    <div className="bg-green-50 p-4 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-green-600">99%</p>
+                      <p className="text-sm text-gray-600">許可率</p>
+                    </div>
+                  </div>
+                  
                   <p className="text-gray-600 leading-relaxed">
-                    2008年の創業以来、10,000件を超える申請を支援し、許可率99％を誇る確かな実績と信頼があります。<br />
+                    2008年の創業以来、10,000件を超える申請を支援し、許可率99％を誇る確かな実績と信頼があります。
                     豊富な経験とノウハウにより、お客様の状況に応じた最適な申請戦略をご提案します。
                   </p>
                 </div>
@@ -241,12 +309,27 @@ export default async function FeaturesPage() {
                   <div className="flex items-start mb-4">
                     <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 2</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">
+                  <h3 className="text-2xl font-bold mb-6">
                     業界最安水準の料金設定
                   </h3>
+                  
+                  {/* 料金メリットの強調 */}
+                  <div className="bg-orange-50 p-6 rounded-lg mb-6">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-lg font-semibold text-gray-900">平均相場より</p>
+                        <p className="text-4xl font-bold text-orange-600">30%安い</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-sm text-gray-600 mb-1">🔒 明朗会計</p>
+                        <p className="text-sm text-gray-600">👍 追加費用なし</p>
+                      </div>
+                    </div>
+                  </div>
+                  
                   <p className="text-gray-600 leading-relaxed">
-                    高品質なサービスを低価格でご提供、無駄を省いた効率的な業務で、業界最安水準の料金を実現しています。<br />
-                    料金体系は明確で、追加費用の心配もありません。平均相場より最大30%安い料金でサービスを提供します。
+                    高品質なサービスを低価格でご提供、無駄を省いた効率的な業務で、業界最安水準の料金を実現しています。
+                    料金体系は明確で、追加費用の心配もありません。
                   </p>
                 </div>
               </div>
@@ -268,12 +351,43 @@ export default async function FeaturesPage() {
                   <div className="flex items-start mb-4">
                     <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 3</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">
+                  <h3 className="text-2xl font-bold mb-6">
                     多言語対応で安心サポート
                   </h3>
+                  
+                  {/* 対応言語の表示 */}
+                  <div className="bg-purple-50 p-4 rounded-lg mb-6">
+                    <p className="text-sm font-semibold text-gray-700 mb-3">対応可能言語（9言語）</p>
+                    <div className="grid grid-cols-3 gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg">🇬🇧</span>
+                        <span className="text-sm">英語</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg">🇨🇳</span>
+                        <span className="text-sm">中国語</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg">🇻🇳</span>
+                        <span className="text-sm">ベトナム語</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg">🇵🇭</span>
+                        <span className="text-sm">タガログ語</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg">🇰🇷</span>
+                        <span className="text-sm">韓国語</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg">🇵🇹</span>
+                        <span className="text-sm">ポルトガル語</span>
+                      </div>
+                    </div>
+                  </div>
+                  
                   <p className="text-gray-600 leading-relaxed">
-                    多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。<br />
-                    英語、中国語、ベトナム語、タガログ語など、9言語での対応が可能です。
+                    多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。
                   </p>
                 </div>
               </div>
@@ -291,11 +405,28 @@ export default async function FeaturesPage() {
                   <div className="flex items-start mb-4">
                     <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 4</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">
+                  <h3 className="text-2xl font-bold mb-6">
                     スピード対応とオンライン完結の利便性
                   </h3>
+                  
+                  {/* スピードと利便性の強調 */}
+                  <div className="bg-indigo-50 p-4 rounded-lg mb-6">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="text-center">
+                        <div className="text-3xl mb-2">⚡</div>
+                        <p className="text-sm font-semibold text-gray-700">最短即日対応</p>
+                        <p className="text-xs text-gray-600">お急ぎの案件も安心</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-3xl mb-2">💻</div>
+                        <p className="text-sm font-semibold text-gray-700">オンライン完結</p>
+                        <p className="text-xs text-gray-600">来所不要で手続き可能</p>
+                      </div>
+                    </div>
+                  </div>
+                  
                   <p className="text-gray-600 leading-relaxed">
-                    お急ぎの申請にも迅速に対応します。初回のご相談から申請手続きまでオンラインで完結できるため、<br />
+                    お急ぎの申請にも迅速に対応します。初回のご相談から申請手続きまでオンラインで完結できるため、
                     事務所へお越しいただかなくても、全国どこからでもご依頼いただけます。
                   </p>
                 </div>
