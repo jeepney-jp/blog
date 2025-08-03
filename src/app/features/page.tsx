@@ -134,18 +134,18 @@ export default async function FeaturesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             {/* Point 1 - 申請実績 */}
-            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 p-8">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-[35%]">
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300">
+              <div className="flex flex-col md:flex-row items-center">
+                <div className="w-full md:w-[35%] h-[200px] md:h-full">
                   <Image
                     src="/申請実績1,000件超の信頼.png"
                     alt="申請実績のイメージ"
                     width={400}
                     height={300}
-                    className="w-full h-auto rounded-lg object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="w-full md:w-[65%]">
+                <div className="w-full md:w-[65%] p-8">
                   <div className="flex items-start mb-4">
                     <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 1</span>
                   </div>
@@ -161,18 +161,18 @@ export default async function FeaturesPage() {
             </div>
 
             {/* Point 2 - 料金設定 */}
-            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 p-8">
-              <div className="flex flex-col md:flex-row-reverse items-center gap-8">
-                <div className="w-full md:w-[35%]">
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300">
+              <div className="flex flex-col md:flex-row-reverse items-center">
+                <div className="w-full md:w-[35%] h-[200px] md:h-full">
                   <Image
                     src="/完全成果報酬制で明朗な料金体系.png"
                     alt="料金体系のイメージ"
                     width={400}
                     height={300}
-                    className="w-full h-auto rounded-lg object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="w-full md:w-[65%]">
+                <div className="w-full md:w-[65%] p-8">
                   <div className="flex items-start mb-4">
                     <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 2</span>
                   </div>
@@ -188,18 +188,18 @@ export default async function FeaturesPage() {
             </div>
 
             {/* Point 3 - 多言語対応 */}
-            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 p-8">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-[35%]">
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300">
+              <div className="flex flex-col md:flex-row items-center">
+                <div className="w-full md:w-[35%] h-[200px] md:h-full">
                   <Image
                     src="/母国語対応で安心サポート.png"
                     alt="多言語対応のイメージ"
                     width={400}
                     height={300}
-                    className="w-full h-auto rounded-lg object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="w-full md:w-[65%]">
+                <div className="w-full md:w-[65%] p-8">
                   <div className="flex items-start mb-4">
                     <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 3</span>
                   </div>
@@ -215,14 +215,14 @@ export default async function FeaturesPage() {
             </div>
 
             {/* Point 4 - スピード対応 */}
-            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 p-8">
-              <div className="flex flex-col md:flex-row-reverse items-center gap-8">
-                <div className="w-full md:w-[35%]">
-                  <div className="bg-gray-200 rounded-lg p-12 flex items-center justify-center h-[300px]">
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300">
+              <div className="flex flex-col md:flex-row-reverse items-center">
+                <div className="w-full md:w-[35%] h-[200px] md:h-[300px]">
+                  <div className="bg-gray-200 flex items-center justify-center h-full">
                     <span className="text-gray-500 text-lg">イメージ</span>
                   </div>
                 </div>
-                <div className="w-full md:w-[65%]">
+                <div className="w-full md:w-[65%] p-8">
                   <div className="flex items-start mb-4">
                     <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 4</span>
                   </div>
