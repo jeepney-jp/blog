@@ -7,6 +7,7 @@ import PageHeader from '@/components/PageHeader';
 import Link from 'next/link';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { FaqItem } from '@/lib/types';
+import { sanityClient } from '@/lib/sanity.client';
 
 export const metadata: Metadata = {
   title: '当事務所の特徴 | フォルティア行政書士事務所',
@@ -15,16 +16,15 @@ export const metadata: Metadata = {
 
 async function getFeaturesFAQ(): Promise<FaqItem[]> {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/features-faq`, {
-      next: { revalidate: 60 } // 1分間キャッシュ
-    });
+    const query = `*[_type == "featuresFaq" && isPublished == true] | order(order asc) {
+      _id,
+      question,
+      answer,
+      order
+    }`;
     
-    if (!response.ok) {
-      console.error('Failed to fetch FAQs');
-      return [];
-    }
-    
-    return await response.json();
+    const faqs = await sanityClient.fetch(query);
+    return faqs || [];
   } catch (error) {
     console.error('Error fetching FAQs:', error);
     return [];
