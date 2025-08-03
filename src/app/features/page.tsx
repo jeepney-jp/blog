@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
+import PageHeader from '@/components/PageHeader';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -14,23 +15,23 @@ export default function FeaturesPage() {
     <div className="min-h-screen bg-gray-50">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            特徴
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            ページ内の内容を簡単に解説する短いコピーページ内の内容を簡単に解説。
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block mt-8 bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors"
-          >
-            お役立ち資料ダウンロード
-          </Link>
+      <PageHeader 
+        title="当事務所の特徴"
+        description="フォルティア行政書士事務所の強みと独自のサービスをご紹介します"
+      />
+      
+      {/* Breadcrumb */}
+      <nav className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center space-x-2 text-sm text-gray-500">
+            <Link href="/" className="hover:text-gray-700">
+              ホーム
+            </Link>
+            <span>／</span>
+            <span className="text-gray-900">特徴</span>
+          </div>
         </div>
-      </section>
+      </nav>
 
       {/* Company Name Change Section */}
       <section className="py-16 bg-white">
