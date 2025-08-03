@@ -131,98 +131,106 @@ export default function FeaturesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             {/* Point 1 - 申請実績 */}
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="w-full md:w-[35%]">
-                <Image
-                  src="/申請実績1,000件超の信頼.png"
-                  alt="申請実績のイメージ"
-                  width={400}
-                  height={300}
-                  className="w-full h-auto rounded-lg shadow-md object-cover"
-                />
-              </div>
-              <div className="w-full md:w-[65%]">
-                <div className="flex items-start mb-4">
-                  <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 1</span>
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 p-8">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="w-full md:w-[35%]">
+                  <Image
+                    src="/申請実績1,000件超の信頼.png"
+                    alt="申請実績のイメージ"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto rounded-lg object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">
-                  申請実績10,000件超の信頼
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  2008年の創業以来、10,000件を超える申請を支援し、許可率99％を誇る確かな実績と信頼があります。<br />
-                  豊富な経験とノウハウにより、お客様の状況に応じた最適な申請戦略をご提案します。
-                </p>
+                <div className="w-full md:w-[65%]">
+                  <div className="flex items-start mb-4">
+                    <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 1</span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">
+                    申請実績10,000件超の信頼
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    2008年の創業以来、10,000件を超える申請を支援し、許可率99％を誇る確かな実績と信頼があります。<br />
+                    豊富な経験とノウハウにより、お客様の状況に応じた最適な申請戦略をご提案します。
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Point 2 - 料金設定 */}
-            <div className="flex flex-col md:flex-row-reverse items-center gap-8">
-              <div className="w-full md:w-[35%]">
-                <Image
-                  src="/完全成果報酬制で明朗な料金体系.png"
-                  alt="料金体系のイメージ"
-                  width={400}
-                  height={300}
-                  className="w-full h-auto rounded-lg shadow-md object-cover"
-                />
-              </div>
-              <div className="w-full md:w-[65%]">
-                <div className="flex items-start mb-4">
-                  <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 2</span>
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 p-8">
+              <div className="flex flex-col md:flex-row-reverse items-center gap-8">
+                <div className="w-full md:w-[35%]">
+                  <Image
+                    src="/完全成果報酬制で明朗な料金体系.png"
+                    alt="料金体系のイメージ"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto rounded-lg object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">
-                  業界最安水準の料金設定
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  高品質なサービスを低価格でご提供、無駄を省いた効率的な業務で、業界最安水準の料金を実現しています。<br />
-                  料金体系は明確で、追加費用の心配もありません。平均相場より最大30%安い料金でサービスを提供します。
-                </p>
+                <div className="w-full md:w-[65%]">
+                  <div className="flex items-start mb-4">
+                    <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 2</span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">
+                    業界最安水準の料金設定
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    高品質なサービスを低価格でご提供、無駄を省いた効率的な業務で、業界最安水準の料金を実現しています。<br />
+                    料金体系は明確で、追加費用の心配もありません。平均相場より最大30%安い料金でサービスを提供します。
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Point 3 - 多言語対応 */}
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="w-full md:w-[35%]">
-                <Image
-                  src="/母国語対応で安心サポート.png"
-                  alt="多言語対応のイメージ"
-                  width={400}
-                  height={300}
-                  className="w-full h-auto rounded-lg shadow-md object-cover"
-                />
-              </div>
-              <div className="w-full md:w-[65%]">
-                <div className="flex items-start mb-4">
-                  <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 3</span>
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 p-8">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="w-full md:w-[35%]">
+                  <Image
+                    src="/母国語対応で安心サポート.png"
+                    alt="多言語対応のイメージ"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto rounded-lg object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">
-                  多言語対応で安心サポート
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。<br />
-                  英語、中国語、ベトナム語、タガログ語など、9言語での対応が可能です。
-                </p>
+                <div className="w-full md:w-[65%]">
+                  <div className="flex items-start mb-4">
+                    <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 3</span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">
+                    多言語対応で安心サポート
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。<br />
+                    英語、中国語、ベトナム語、タガログ語など、9言語での対応が可能です。
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Point 4 - スピード対応 */}
-            <div className="flex flex-col md:flex-row-reverse items-center gap-8">
-              <div className="w-full md:w-[35%]">
-                <div className="bg-gray-200 rounded-lg shadow-md p-12 flex items-center justify-center h-[300px]">
-                  <span className="text-gray-500 text-lg">イメージ</span>
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 p-8">
+              <div className="flex flex-col md:flex-row-reverse items-center gap-8">
+                <div className="w-full md:w-[35%]">
+                  <div className="bg-gray-200 rounded-lg p-12 flex items-center justify-center h-[300px]">
+                    <span className="text-gray-500 text-lg">イメージ</span>
+                  </div>
                 </div>
-              </div>
-              <div className="w-full md:w-[65%]">
-                <div className="flex items-start mb-4">
-                  <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 4</span>
+                <div className="w-full md:w-[65%]">
+                  <div className="flex items-start mb-4">
+                    <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 4</span>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">
+                    スピード対応とオンライン完結の利便性
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    お急ぎの申請にも迅速に対応します。初回のご相談から申請手続きまでオンラインで完結できるため、<br />
+                    事務所へお越しいただかなくても、全国どこからでもご依頼いただけます。
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">
-                  スピード対応とオンライン完結の利便性
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  お急ぎの申請にも迅速に対応します。初回のご相談から申請手続きまでオンラインで完結できるため、<br />
-                  事務所へお越しいただかなくても、全国どこからでもご依頼いただけます。
-                </p>
               </div>
             </div>
           </div>
