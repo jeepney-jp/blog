@@ -56,19 +56,77 @@ export default async function FeaturesPage() {
         </div>
       </nav>
 
-      {/* Company Name Change Section */}
+      {/* Hero Section */}
+      <section className="relative py-24 bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23004080' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            {/* Main Catchcopy */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              申請の不安、<br className="sm:hidden" />
+              <span className="text-[#004080]">すべて私たちが解決します。</span>
+            </h1>
+            
+            {/* Sub Catchcopy */}
+            <p className="text-xl md:text-2xl text-gray-600 mb-12">
+              煩雑な手続きから解放され、ビジネスや生活に集中できる環境を
+            </p>
+            
+            {/* 3 Key Points */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-[#004080] rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <p className="font-bold text-lg">圧倒的実績</p>
+                  <p className="text-sm text-gray-600">10,000件超の申請実績</p>
+                </div>
+              </div>
+              
+              <div className="hidden md:block w-px h-12 bg-gray-300"></div>
+              
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-[#004080] rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <p className="font-bold text-lg">業界最安水準</p>
+                  <p className="text-sm text-gray-600">明朗会計で安心料金</p>
+                </div>
+              </div>
+              
+              <div className="hidden md:block w-px h-12 bg-gray-300"></div>
+              
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-[#004080] rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <p className="font-bold text-lg">多言語対応</p>
+                  <p className="text-sm text-gray-600">9言語で完全サポート</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Concerns Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              煩雑な申請手続きから解放され、<br />
-              ビジネスや生活に集中できる環境を。
-            </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              圧倒的な実績と業界最安水準の料金、多言語での安心サポート、<br />
-              そしてオンライン申請も活用した迅速な手続きで、あなたの目的達成を全力で支援します。
-            </p>
-          </div>
 
           {/* 2-column issues */}
           <div className="mt-12">
