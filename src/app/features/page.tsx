@@ -21,7 +21,7 @@ export default function FeaturesPage() {
       />
       
       {/* Breadcrumb */}
-      <nav className="bg-white border-b">
+      <nav className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center space-x-2 text-sm text-gray-500">
             <Link href="/" className="hover:text-gray-700">
@@ -50,43 +50,42 @@ export default function FeaturesPage() {
           {/* 2-column issues */}
           <div className="mt-12">
             <h3 className="text-xl font-semibold text-center mb-8">
-              よくあるお悩み<br />
               こんなことでお悩みではありませんか？
             </h3>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">1.</span>
+                  <span className="text-gray-400 mr-2">・</span>
                   <p className="text-gray-700">初めての申請で不安。実績が豊富な事務所に任せたい。</p>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">2.</span>
+                  <span className="text-gray-400 mr-2">・</span>
                   <p className="text-gray-700">自分のケースは少し複雑…。本当に許可が取れるのか心配。</p>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">3.</span>
+                  <span className="text-gray-400 mr-2">・</span>
                   <p className="text-gray-700">費用をできるだけ抑えたいが、安かろう悪かろうでは困る。</p>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">4.</span>
+                  <span className="text-gray-400 mr-2">・</span>
                   <p className="text-gray-700">料金体系が不透明で、最終的にいくら請求されるのか不安。</p>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">5.</span>
+                  <span className="text-gray-400 mr-2">・</span>
                   <p className="text-gray-700">日本語での複雑な手続きの説明を、正確に理解できるか不安。</p>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">6.</span>
+                  <span className="text-gray-400 mr-2">・</span>
                   <p className="text-gray-700">雇用する外国人スタッフとのやり取りをスムーズに進めたいが、言語の壁を感じる。</p>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">7.</span>
+                  <span className="text-gray-400 mr-2">・</span>
                   <p className="text-gray-700">申請の期限が迫っていて、とにかく手続きを急いでいる。</p>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">8.</span>
+                  <span className="text-gray-400 mr-2">・</span>
                   <p className="text-gray-700">平日は仕事で忙しく、事務所に何度も足を運ぶ時間がない。</p>
                 </div>
               </div>
