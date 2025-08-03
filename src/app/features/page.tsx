@@ -57,7 +57,7 @@ export default async function FeaturesPage() {
       </nav>
 
       {/* Company Name Change Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">
@@ -75,42 +75,49 @@ export default async function FeaturesPage() {
             <h3 className="text-xl font-semibold text-center mb-8">
               こんなことでお悩みではありませんか？
             </h3>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">・</span>
-                  <p className="text-gray-700">初めての申請で不安。実績が豊富な事務所に任せたい。</p>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">・</span>
-                  <p className="text-gray-700">自分のケースは少し複雑…。本当に許可が取れるのか心配。</p>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">・</span>
-                  <p className="text-gray-700">費用をできるだけ抑えたいが、安かろう悪かろうでは困る。</p>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">・</span>
-                  <p className="text-gray-700">料金体系が不透明で、最終的にいくら請求されるのか不安。</p>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {/* 申請経験・実績に関する悩み */}
+              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
+                <h4 className="text-lg font-semibold mb-3 text-gray-900">初めての申請で不安</h4>
+                <p className="text-gray-600">実績が豊富な事務所に任せたいけど、どこを選べばいいか分からない…</p>
               </div>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">・</span>
-                  <p className="text-gray-700">日本語での複雑な手続きの説明を、正確に理解できるか不安。</p>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">・</span>
-                  <p className="text-gray-700">雇用する外国人スタッフとのやり取りをスムーズに進めたいが、言語の壁を感じる。</p>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">・</span>
-                  <p className="text-gray-700">申請の期限が迫っていて、とにかく手続きを急いでいる。</p>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-gray-400 mr-2">・</span>
-                  <p className="text-gray-700">平日は仕事で忙しく、事務所に何度も足を運ぶ時間がない。</p>
-                </div>
+              
+              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
+                <h4 className="text-lg font-semibold mb-3 text-gray-900">複雑なケースへの対応</h4>
+                <p className="text-gray-600">自分のケースは少し複雑。本当に許可が取れるのか心配で夜も眠れない…</p>
+              </div>
+              
+              {/* 費用に関する悩み */}
+              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
+                <h4 className="text-lg font-semibold mb-3 text-gray-900">費用と品質のバランス</h4>
+                <p className="text-gray-600">費用をできるだけ抑えたいが、安かろう悪かろうでは困る…</p>
+              </div>
+              
+              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
+                <h4 className="text-lg font-semibold mb-3 text-gray-900">料金体系の不透明さ</h4>
+                <p className="text-gray-600">最終的にいくら請求されるのか分からず、予算が立てられない…</p>
+              </div>
+              
+              {/* 言語に関する悩み */}
+              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
+                <h4 className="text-lg font-semibold mb-3 text-gray-900">日本語の壁</h4>
+                <p className="text-gray-600">複雑な手続きの説明を、正確に理解できるか不安…</p>
+              </div>
+              
+              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
+                <h4 className="text-lg font-semibold mb-3 text-gray-900">多言語コミュニケーション</h4>
+                <p className="text-gray-600">外国人スタッフとのやり取りをスムーズに進めたいが、言語の壁を感じる…</p>
+              </div>
+              
+              {/* 時間に関する悩み */}
+              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
+                <h4 className="text-lg font-semibold mb-3 text-gray-900">迫る申請期限</h4>
+                <p className="text-gray-600">申請の期限が迫っていて、とにかく手続きを急いでいる…</p>
+              </div>
+              
+              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
+                <h4 className="text-lg font-semibold mb-3 text-gray-900">時間の制約</h4>
+                <p className="text-gray-600">平日は仕事で忙しく、事務所に何度も足を運ぶ時間がない…</p>
               </div>
             </div>
           </div>
