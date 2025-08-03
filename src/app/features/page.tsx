@@ -95,30 +95,51 @@ export default function FeaturesPage() {
 
           {/* Success Points */}
           <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <h3 className="text-center text-lg font-semibold mb-8">
-              ○○○○成功のための4つのポイント
-            </h3>
             <div className="text-center">
-              <h2 className="text-2xl font-bold mb-8">
-                ○○○○の改善は○○○○を○○○○する<br />
-                ○○○○の検討が不可欠です
+              <h2 className="text-2xl font-bold mb-4">
+                そのお悩み、解決の鍵は当事務所の「4つの強み」にあります
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                <div className="bg-gray-900 text-white p-4 rounded">
-                  <div className="w-6 h-6 mx-auto mb-2 text-center">✓</div>
-                  <p className="text-sm">○○○○には○○○○対策、○○○○を○○○○することで○○○○にします。</p>
+              <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
+                お客様が抱える不安を解消し、目的達成を成功に導くために。<br />
+                当事務所が最も大切にしている4つの強みの概要をご覧ください。<br />
+                それぞれの強みが、お客様の課題をどう解決できるのか、このすぐ下で詳しくご説明します。
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
+                <div className="bg-gray-900 text-white p-6 rounded">
+                  <div className="flex items-start">
+                    <span className="text-xl mr-3">✓</span>
+                    <div>
+                      <p className="font-bold mb-1">圧倒的な実績と信頼性</p>
+                      <p className="text-sm text-gray-300">→ 経験豊富な事務所に任せたい、という不安に応えます。</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-gray-900 text-white p-4 rounded">
-                  <div className="w-6 h-6 mx-auto mb-2 text-center">✓</div>
-                  <p className="text-sm">○○○○には○○○○対策、○○○○を○○○○することで○○○○にします。</p>
+                <div className="bg-gray-900 text-white p-6 rounded">
+                  <div className="flex items-start">
+                    <span className="text-xl mr-3">✓</span>
+                    <div>
+                      <p className="font-bold mb-1">高品質と納得感を両立する料金設定</p>
+                      <p className="text-sm text-gray-300">→ 費用対効果が分からず、依頼をためらっている不安に応えます。</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-gray-900 text-white p-4 rounded">
-                  <div className="w-6 h-6 mx-auto mb-2 text-center">✓</div>
-                  <p className="text-sm">○○○○には○○○○対策、○○○○を○○○○することで○○○○にします。</p>
+                <div className="bg-gray-900 text-white p-6 rounded">
+                  <div className="flex items-start">
+                    <span className="text-xl mr-3">✓</span>
+                    <div>
+                      <p className="font-bold mb-1">言葉の壁を取り払う、多言語でのフルサポート</p>
+                      <p className="text-sm text-gray-300">→ コミュニケーションが取れるか、という不安に応えます。</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-gray-900 text-white p-4 rounded">
-                  <div className="w-6 h-6 mx-auto mb-2 text-center">✓</div>
-                  <p className="text-sm">○○○○には○○○○対策、○○○○を○○○○することで○○○○にします。</p>
+                <div className="bg-gray-900 text-white p-6 rounded">
+                  <div className="flex items-start">
+                    <span className="text-xl mr-3">✓</span>
+                    <div>
+                      <p className="font-bold mb-1">時間と場所の制約から解放する、スピードと利便性</p>
+                      <p className="text-sm text-gray-300">→ 多忙で時間が作れない、という不安に応えます。</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
