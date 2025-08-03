@@ -51,7 +51,6 @@ export default defineType({
       return {
         title: `${order}. ${title}`,
         subtitle: subtitle ? subtitle.substring(0, 100) + '...' : '',
-        media: isPublished ? '✅' : '🚫',
       }
     },
   },
