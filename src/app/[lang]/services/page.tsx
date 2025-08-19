@@ -9,6 +9,7 @@ import DebugCategoryCard from '@/components/DebugCategoryCard';
 import NewCTASection from '@/components/NewCTASection';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import ServiceSearch from '@/components/ServiceSearch';
+import { Locale } from '@/lib/i18n/types';
 
 // ISRの設定：1日ごとに再生成
 export const revalidate = 86400;
@@ -45,12 +46,17 @@ async function getServicesForSearch() {
   }
 }
 
-export default async function Services() {
+interface PageProps {
+  params: Promise<{ lang: Locale }>;
+}
+
+export default async function Services({ params }: PageProps) {
+  const { lang } = await params;
   const categories = await getServiceCategories();
   const servicesForSearch = await getServicesForSearch();
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header lang={lang} />
 
       <PageHeader 
         title="サービス総合案内"
@@ -212,7 +218,7 @@ export default async function Services() {
       </section>
 
 
-      <NewCTASection />
+      <NewCTASection lang={lang} />
       <UnifiedFooter />
     </div>
   );

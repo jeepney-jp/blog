@@ -12,6 +12,7 @@ import {
 } from '@/lib/queries';
 import { ServiceDetail } from '@/lib/types';
 import Header from '@/components/Header';
+import { Locale } from '@/lib/i18n/types';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import RelatedServices from '@/components/RelatedServices';
@@ -26,7 +27,7 @@ import NewsSection from '@/components/NewsSection';
 import SimpleCTA from '@/components/SimpleCTA';
 
 type Props = {
-  params: Promise<{ category: string; slug: string }>;
+  params: Promise<{ category: string; slug: string; lang: Locale }>;
 };
 
 // ISR設定
@@ -100,13 +101,13 @@ async function getRelatedServices(currentServiceId: string, tags: string[]): Pro
 }
 
 export default async function ServiceDetailPage({ params }: Props) {
-  const { category, slug } = await params;
+  const { category, slug, lang } = await params;
   
   // Sanityが設定されていない場合のフォールバック
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
+        <Header lang={lang} />
         <div className="max-w-6xl mx-auto px-4 py-12">
           <p className="text-gray-600">Sanityの設定が必要です。環境変数を設定してください。</p>
         </div>
@@ -212,7 +213,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header lang={lang} />
 
       {/* 構造化データ */}
       <Script
@@ -396,7 +397,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       </main>
 
       {/* CTA */}
-      <NewCTASection serviceName={data.title} />
+      <NewCTASection serviceName={data.title} lang={lang} />
 
       <UnifiedFooter />
     </div>

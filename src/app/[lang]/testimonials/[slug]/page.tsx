@@ -180,7 +180,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
       </main>
 
       {/* CTA Section */}
-      <NewCTASection />
+      <NewCTASection lang={lang} />
 
       {/* Footer */}
       <UnifiedFooter />

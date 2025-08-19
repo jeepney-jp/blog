@@ -466,7 +466,7 @@ export default function About() {
         </div>
       </section>
 
-      <NewCTASection />
+      <NewCTASection lang={lang} />
       <UnifiedFooter />
     </div>
   );

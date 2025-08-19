@@ -222,7 +222,7 @@ export default async function BlogPage({ params }: PageProps) {
 
       </main>
 
-      <NewCTASection />
+      <NewCTASection lang={lang} />
       <UnifiedFooter />
     </div>
   );

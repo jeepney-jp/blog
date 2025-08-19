@@ -140,7 +140,7 @@ export default async function TestimonialsPage({ params }: PageProps) {
 
       </main>
 
-      <NewCTASection />
+      <NewCTASection lang={lang} />
       <UnifiedFooter />
     </div>
   );

@@ -492,7 +492,7 @@ export default async function FeaturesPage({ params }: PageProps) {
         </div>
       </section>
 
-      <NewCTASection />
+      <NewCTASection lang={lang} />
       <UnifiedFooter />
     </div>
   );

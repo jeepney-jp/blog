@@ -11,9 +11,10 @@ import NewCTASection from '@/components/NewCTASection';
 import ServiceTable from '@/components/ServiceTable';
 import Script from 'next/script';
 import UnifiedFooter from '@/components/UnifiedFooter';
+import { Locale } from '@/lib/i18n/types';
 
 type Props = {
-  params: Promise<{ category: string }>;
+  params: Promise<{ category: string; lang: Locale }>;
 };
 
 export async function generateStaticParams() {
@@ -58,13 +59,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function CategoryPage({ params }: Props) {
-  const { category } = await params;
+  const { category, lang } = await params;
   
   // Sanityが設定されていない場合のフォールバック
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
+        <Header lang={lang} />
         <div className="max-w-6xl mx-auto px-4 py-12">
           <p className="text-gray-600">Sanityの設定が必要です。環境変数を設定してください。</p>
         </div>
@@ -115,7 +116,7 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header lang={lang} />
       
       {/* 構造化データ */}
       <Script
@@ -161,7 +162,7 @@ export default async function CategoryPage({ params }: Props) {
       </div>
 
       {/* CTA */}
-      <NewCTASection serviceName={data.title} />
+      <NewCTASection serviceName={data.title} lang={lang} />
 
       <UnifiedFooter />
     </div>
