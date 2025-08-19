@@ -36,8 +36,6 @@ export default function CategoryCard({ category }: CategoryCardProps) {
           <Image
             src={imageSrc}
             alt={category.title}
-            width={400}
-            height={300}
             className="object-cover"
             fill
             priority={false}

@@ -133,9 +133,9 @@ export default async function CategoryPage({ params }: Props) {
       {/* パンくず */}
       <Breadcrumbs
         segments={[
-          { name: 'ホーム', href: '/' },
-          { name: 'サービス案内', href: '/services' },
-          { name: data.title, href: `/services/${category}` },
+          { name: 'ホーム', href: `/${lang}` },
+          { name: 'サービス案内', href: `/${lang}/services` },
+          { name: data.title, href: `/${lang}/services/${category}` },
         ]}
       />
 

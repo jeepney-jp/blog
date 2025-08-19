@@ -231,10 +231,10 @@ export default async function ServiceDetailPage({ params }: Props) {
         {/* パンくず */}
         <Breadcrumbs
           segments={[
-            { name: 'ホーム', href: '/' },
-            { name: 'サービス案内', href: '/services' },
-            { name: data.parentCategory?.title || category, href: `/services/${category}` },
-            { name: data.title, href: `/services/${category}/${slug}` },
+            { name: 'ホーム', href: `/${lang}` },
+            { name: 'サービス案内', href: `/${lang}/services` },
+            { name: data.parentCategory?.title || category, href: `/${lang}/services/${category}` },
+            { name: data.title, href: `/${lang}/services/${category}/${slug}` },
           ]}
         />
 
@@ -343,7 +343,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             <ul className="grid gap-4 md:grid-cols-2">
               {data.related.map((item) => (
                 <li key={item.slug}>
-                  <Link href={`/services/${item.parentCategory.slug}/${item.slug}`} className="block p-4 border rounded-lg hover:bg-gray-50">
+                  <Link href={`/${lang}/services/${item.parentCategory.slug}/${item.slug}`} className="block p-4 border rounded-lg hover:bg-gray-50">
                     <h3 className="text-base sm:text-lg font-semibold">{item.title}</h3>
                     <p className="text-sm text-gray-600 mt-2">{item.overview}</p>
                   </Link>
@@ -358,6 +358,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <RelatedServices
             services={relatedServicesByCategory}
             currentCategorySlug={category}
+            lang={lang}
           />
         )}
         
@@ -372,7 +373,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               {relatedServices.map((service) => (
                 <Link
                   key={service._id}
-                  href={`/services/${service.categorySlug}/${service.slug}`}
+                  href={`/${lang}/services/${service.categorySlug}/${service.slug}`}
                   className="group bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <h3 className="font-semibold text-base sm:text-lg text-gray-900 mb-2 sm:mb-3 group-hover:text-[#004080] transition-colors">

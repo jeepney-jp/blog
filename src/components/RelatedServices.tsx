@@ -1,6 +1,7 @@
 // components/RelatedServices.tsx
 
 import Link from 'next/link';
+import { Locale } from '@/lib/i18n/types';
 
 type RelatedService = {
   _id: string;
@@ -15,9 +16,10 @@ type RelatedService = {
 type Props = {
   services: RelatedService[];
   currentCategorySlug: string;
+  lang: Locale;
 };
 
-export default function RelatedServices({ services, currentCategorySlug }: Props) {
+export default function RelatedServices({ services, currentCategorySlug, lang }: Props) {
   if (!services || services.length === 0) return null;
 
   return (
@@ -27,7 +29,7 @@ export default function RelatedServices({ services, currentCategorySlug }: Props
         {services.map((service) => (
           <Link
             key={service._id}
-            href={`/services/${currentCategorySlug}/${service.slug}`}
+            href={`/${lang}/services/${currentCategorySlug}/${service.slug}`}
             className="block border border-gray-200 p-4 rounded-lg hover:shadow-md transition"
           >
             <h3 className="text-lg font-semibold">{service.title}</h3>
