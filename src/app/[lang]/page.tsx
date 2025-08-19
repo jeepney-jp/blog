@@ -478,7 +478,7 @@ export default async function Home({ params }: PageProps) {
       <NewCTASection lang={lang} />
 
       {/* Footer */}
-      <UnifiedFooter lang={lang} />
+      <UnifiedFooter />
     </div>
   );
 }
