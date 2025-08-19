@@ -1,6 +1,10 @@
 import { redirect } from 'next/navigation'
-import { defaultLocale } from '@/lib/i18n/constants'
+import { headers } from 'next/headers'
 
 export default function RootPage() {
-  redirect(`/${defaultLocale}`)
+  const headersList = headers()
+  const acceptLanguage = headersList.get('accept-language') || ''
+  const detectedLocale = acceptLanguage.toLowerCase().startsWith('en') ? 'en' : 'ja'
+  
+  redirect(`/${detectedLocale}`)
 }

@@ -41,7 +41,7 @@ export default function MobileMenu({ lang }: MobileMenuProps) {
   };
 
   const t = content[lang];
-  const basePath = lang === 'ja' ? '' : `/${lang}`;
+  const basePath = `/${lang}`;
 
   const menuItems = [
     { href: `${basePath}/`, label: t.top },

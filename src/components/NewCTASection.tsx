@@ -39,7 +39,7 @@ const content = {
 
 export default function NewCTASection({ serviceName, lang }: NewCTASectionProps) {
   const t = content[lang];
-  const basePath = lang === 'ja' ? '' : `/${lang}`;
+  const basePath = `/${lang}`;
 
   return (
     <section 

@@ -36,7 +36,7 @@ export default function Header({ lang }: HeaderProps) {
   };
 
   const t = content[lang];
-  const basePath = lang === 'ja' ? '' : `/${lang}`;
+  const basePath = `/${lang}`;
 
   return (
     <>

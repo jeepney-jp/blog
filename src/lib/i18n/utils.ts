@@ -35,9 +35,6 @@ export function getPathWithoutLocale(pathname: string): string {
 export function getLocalizedPath(pathname: string, locale: Locale): string {
   const pathWithoutLocale = getPathWithoutLocale(pathname)
   
-  if (locale === defaultLocale) {
-    return pathWithoutLocale
-  }
-  
+  // すべてのロケールで /{locale} パスを使用
   return `/${locale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`
 }
