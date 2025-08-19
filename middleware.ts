@@ -38,7 +38,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // 除外するパス以外のすべてにマッチ
-    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.).*)',
+    // 静的ファイルとAPIルートを除外
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\..*|studio|sanity).*)',
   ],
 }

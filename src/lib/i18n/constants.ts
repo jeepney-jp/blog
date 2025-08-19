@@ -9,6 +9,6 @@ export const localeNames: Record<Locale, string> = {
 }
 
 export const localePrefixes = {
-  ja: '',
+  ja: '/ja',
   en: '/en'
 } as const
