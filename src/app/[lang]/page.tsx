@@ -7,7 +7,7 @@ import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import ScrollAnimationWrapper from '@/components/ScrollAnimationWrapper';
 import ServiceSearch from '@/components/ServiceSearch';
-import { getFeaturedTestimonials, getNews, getBlogs } from '../../../lib/sanity';
+import { getFeaturedTestimonials, getNews, getBlogs } from '@/lib/sanity';
 import { Locale } from '@/lib/i18n/types';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）

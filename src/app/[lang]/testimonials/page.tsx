@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
-import { getTestimonials } from "../../../lib/sanity";
+import { getTestimonials } from "@/lib/sanity";
 import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
 

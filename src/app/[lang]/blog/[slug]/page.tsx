@@ -7,7 +7,7 @@ import NewCTASection from '@/components/NewCTASection';
 import TableOfContents from '@/components/TableOfContents';
 import PortableTextWithToc from '@/components/PortableTextWithToc';
 import { generateTocFromContent } from '@/utils/generateToc';
-import { getBlogBySlug, getBlogs } from "../../../../lib/sanity";
+import { getBlogBySlug, getBlogs } from "@/lib/sanity";
 
 
 interface PageProps {

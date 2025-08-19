@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
-import { getNews } from "../../../lib/sanity";
+import { getNews } from "@/lib/sanity";
 import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
 

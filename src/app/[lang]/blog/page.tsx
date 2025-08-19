@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import NewCTASection from "@/components/NewCTASection";
-import { getBlogs } from "../../../lib/sanity";
+import { getBlogs } from "@/lib/sanity";
 
 // ブログ記事の型定義
 interface Blog {

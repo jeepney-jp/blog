@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getTestimonialBySlug, getTestimonials } from "../../../../lib/sanity";
+import { getTestimonialBySlug, getTestimonials } from "@/lib/sanity";
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';

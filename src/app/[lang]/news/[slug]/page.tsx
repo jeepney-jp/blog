@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
-// import { getNewsBySlug, getNews } from "../../../../lib/sanity";
+// import { getNewsBySlug, getNews } from "@/lib/sanity";
 
 // ニュースの型定義
 interface News {
