@@ -4,7 +4,10 @@ import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import ScrollAnimationWrapper from '@/components/ScrollAnimationWrapper';
-import { getNews } from '@/lib/sanity';
+import ServiceSearch from '@/components/ServiceSearch';
+import { getFeaturedTestimonials, getNews } from '@/lib/sanity';
+import { sanityClient } from '@/lib/sanity.client';
+import { allServiceCategoriesQuery, allServicesForSearchQuery } from '@/lib/queries';
 import { Locale } from '@/lib/i18n/types';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
@@ -15,6 +18,21 @@ interface PageProps {
 }
 
 // 型定義
+interface ServiceCategoryItem {
+  _id: string;
+  title: string;
+  slug: string;
+  iconUrl?: string;
+  imageUrl?: string;
+  icon?: {
+    _id: string;
+    url: string;
+  };
+  image?: {
+    _id: string;
+    url: string;
+  };
+}
 
 interface NewsItem {
   _id: string;
@@ -199,12 +217,50 @@ const languages = {
 
 
 
+// データ取得関数
+async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
+    return [];
+  }
+  try {
+    const categories = await sanityClient.fetch(allServiceCategoriesQuery);
+    return categories || [];
+  } catch (error) {
+    console.error('Error fetching service categories:', error);
+    return [];
+  }
+}
+
+async function getServicesForSearch() {
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
+    return [];
+  }
+  try {
+    const services = await sanityClient.fetch(allServicesForSearchQuery);
+    return services || [];
+  } catch (error) {
+    console.error('Error fetching services for search:', error);
+    return [];
+  }
+}
+
+export async function generateStaticParams() {
+  return [
+    { lang: 'ja' },
+    { lang: 'en' }
+  ];
+}
+
 export default async function Home({ params }: PageProps) {
   const { lang } = await params;
   const t = content[lang];
   const basePath = `/${lang}`;
   
   const newsItems = await getNews();
+  const serviceCategories = await getServiceCategories();
+  const servicesForSearch = await getServicesForSearch();
+  const featuredTestimonials = await getFeaturedTestimonials();
+  
   // 最新5件のみ取得
   const latestNews = newsItems.slice(0, 5);
   
@@ -368,8 +424,459 @@ export default async function Home({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Services Section - 省略（長いため） */}
-      {/* Testimonials Section - 省略（長いため） */}
+      {/* Services Section */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.services.title}</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 tracking-widest">{t.services.subtitle}</p>
+          </div>
+          
+          {/* サービス検索 */}
+          <div className="mb-12">
+            <h3 className="text-xl font-semibold text-gray-900 text-center mb-6">{t.services.searchByName}</h3>
+            <ServiceSearch services={servicesForSearch} />
+          </div>
+          
+          {/* カテゴリー一覧 */}
+          <div className="mt-16">
+            <h3 className="text-xl font-semibold text-gray-900 text-center mb-2">{t.services.searchByCategory}</h3>
+            <p className="text-base text-gray-600 text-center mb-6">{t.services.searchDescription}</p>
+          </div>
+          
+          {/* Sanityからのデータがある場合は動的に表示 */}
+          {serviceCategories.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+              {serviceCategories.map((category) => (
+                <ScrollAnimationWrapper key={category._id} delay={0}>
+                  <Link
+                    href={`${basePath}/services/${category.slug}`}
+                    className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center h-full"
+                  >
+                  <div className="mb-2 sm:mb-4 hidden sm:block">
+                    {category.iconUrl ? (
+                      <Image
+                        src={category.iconUrl}
+                        alt={category.title}
+                        width={108}
+                        height={108}
+                        className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                        unoptimized
+                      />
+                    ) : (
+                      <svg className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] text-gray-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    )}
+                  </div>
+                  <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">{category.title}</h3>
+                  </Link>
+                </ScrollAnimationWrapper>
+              ))}
+            </div>
+          ) : (
+            /* Sanityが設定されていない場合は既存のハードコーディングされたサービスを表示 */
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            
+            {/* 外国人関連業務 */}
+            <ScrollAnimationWrapper delay={0}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
+                <Image
+                  src="/service-foreigner.png"
+                  alt={lang === 'ja' ? "外国人関連業務" : "Foreign-related Services"}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                  priority
+                />
+              </div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '外国人関連業務' : 'Foreign-related Services'}
+              </h3>
+              </div>
+            </ScrollAnimationWrapper>
+
+            {/* 建設・宅建業関連 */}
+            <ScrollAnimationWrapper delay={0}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
+                <Image
+                  src="/service-construction.png"
+                  alt={lang === 'ja' ? "建設・宅建業関連" : "Construction & Real Estate"}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
+              </h3>
+              </div>
+            </ScrollAnimationWrapper>
+
+            {/* 自動車関連業務 */}
+            <ScrollAnimationWrapper delay={0}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
+                <Image
+                  src="/service-vehicle.png"
+                  alt={lang === 'ja' ? "自動車関連業務" : "Automotive Services"}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '自動車関連業務' : 'Automotive Services'}
+              </h3>
+              </div>
+            </ScrollAnimationWrapper>
+
+            {/* 飲食・風俗営業 */}
+            <ScrollAnimationWrapper delay={0}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
+                <Image
+                  src="/service-restaurant.png"
+                  alt={lang === 'ja' ? "飲食・風俗営業" : "Restaurant & Entertainment"}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '飲食・風俗営業' : 'Restaurant & Entertainment'}
+              </h3>
+              </div>
+            </ScrollAnimationWrapper>
+
+            {/* 廃棄物処理業許可 */}
+            <ScrollAnimationWrapper delay={0}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
+                <Image
+                  src="/service-waste.png"
+                  alt={lang === 'ja' ? "廃棄物処理業許可" : "Waste Management Permits"}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '廃棄物処理業許可' : 'Waste Management Permits'}
+              </h3>
+              </div>
+            </ScrollAnimationWrapper>
+
+            {/* 旅行・旅館業 */}
+            <ScrollAnimationWrapper delay={0}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
+                <Image
+                  src="/service-travel.png"
+                  alt={lang === 'ja' ? "旅行・旅館業" : "Travel & Hotel Business"}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '旅行・旅館業' : 'Travel & Hotel Business'}
+              </h3>
+              </div>
+            </ScrollAnimationWrapper>
+
+            {/* 相続・遺言 */}
+            <ScrollAnimationWrapper delay={0}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
+                <Image
+                  src="/service-inheritance.png"
+                  alt={lang === 'ja' ? "相続・遺言" : "Inheritance & Wills"}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '相続・遺言' : 'Inheritance & Wills'}
+              </h3>
+              </div>
+            </ScrollAnimationWrapper>
+
+            {/* 会社設立・法人業務 */}
+            <ScrollAnimationWrapper delay={0}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="mb-2 sm:mb-4 hidden sm:block">
+                <Image
+                  src="/service-corporate.png"
+                  alt={lang === 'ja' ? "会社設立・法人業務" : "Corporate Formation"}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '会社設立・法人業務' : 'Corporate Formation'}
+              </h3>
+              </div>
+            </ScrollAnimationWrapper>
+
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.testimonials.title}</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 tracking-widest">{t.testimonials.subtitle}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {featuredTestimonials.length > 0 ? (
+              featuredTestimonials.map((testimonial: {
+                _id: string;
+                clientName: string;
+                slug: { current: string };
+                comment: string;
+                serviceType?: string;
+                serviceDetail?: string;
+                clientIndustry?: string;
+                clientLocation?: string;
+                publishedAt: string;
+                clientImage?: string;
+              }) => (
+                <ScrollAnimationWrapper key={testimonial._id} delay={0}>
+                  <div className="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col h-full">
+                  {/* 写真部分 */}
+                  <Link href={`${basePath}/testimonials/${testimonial.slug.current}`}>
+                    <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden group cursor-pointer">
+                      {testimonial.clientImage ? (
+                        <Image
+                          src={testimonial.clientImage}
+                          alt={testimonial.clientName}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <div className="w-20 h-20 bg-gray-300 rounded-full" />
+                        </div>
+                      )}
+                    </div>
+                  </Link>
+                  
+                  {/* コンテンツ部分 */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="mb-4">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                        {testimonial.serviceDetail || (lang === 'ja' ? 'サービス未設定' : 'Service Not Set')}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{testimonial.clientName}</h3>
+                    <p className="text-gray-700 leading-relaxed mb-4 line-clamp-3 flex-grow">
+                      {testimonial.comment}
+                    </p>
+                    <div className="mt-auto">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="text-sm text-gray-500">
+                          {testimonial.clientIndustry && (
+                            <span>{testimonial.clientIndustry}</span>
+                          )}
+                          {testimonial.clientLocation && (
+                            <span className="ml-1">({testimonial.clientLocation})</span>
+                          )}
+                        </div>
+                        <time className="text-sm text-gray-500">
+                          {new Date(testimonial.publishedAt).toLocaleDateString(lang === 'ja' ? 'ja-JP' : 'en-US')}
+                        </time>
+                      </div>
+                      <div className="pt-4 border-t">
+                        <Link
+                          href={`${basePath}/testimonials/${testimonial.slug.current}`}
+                          className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center group"
+                        >
+                          {t.testimonials.viewDetails}
+                          <svg className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </ScrollAnimationWrapper>
+              ))
+            ) : (
+              // フォールバック
+              <>
+                <ScrollAnimationWrapper delay={0}>
+                  <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                  {/* 写真部分 */}
+                  <div className="aspect-[4/3] bg-gray-100 relative">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="w-20 h-20 bg-gray-300 rounded-full" />
+                    </div>
+                  </div>
+                  
+                  {/* コンテンツ部分 */}
+                  <div className="p-6">
+                    <div className="mb-4">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                        {lang === 'ja' ? '許認可申請' : 'Permit Applications'}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {lang === 'ja' ? 'A社 代表取締役様' : 'Company A CEO'}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      {lang === 'ja' 
+                        ? '"迅速で丁寧な対応により、スムーズに許可を取得できました。"' 
+                        : '"Quick and courteous service helped us obtain permits smoothly."'
+                      }
+                    </p>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-sm text-gray-500">
+                        <span>{lang === 'ja' ? '飲食業' : 'Restaurant Business'}</span>
+                        <span className="ml-1">({lang === 'ja' ? '東京都' : 'Tokyo'})</span>
+                      </div>
+                      <time className="text-sm text-gray-500">2024/01/15</time>
+                    </div>
+                    <div className="pt-4 border-t">
+                      <Link
+                        href={`${basePath}/testimonials`}
+                        className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center group"
+                      >
+                        {t.testimonials.viewDetails}
+                        <svg className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                  </div>
+                </ScrollAnimationWrapper>
+
+                <ScrollAnimationWrapper delay={0}>
+                  <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                  {/* 写真部分 */}
+                  <div className="aspect-[4/3] bg-gray-100 relative">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="w-20 h-20 bg-gray-300 rounded-full" />
+                    </div>
+                  </div>
+                  
+                  {/* コンテンツ部分 */}
+                  <div className="p-6">
+                    <div className="mb-4">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        {lang === 'ja' ? '会社設立' : 'Company Formation'}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {lang === 'ja' ? 'B社 代表取締役様' : 'Company B CEO'}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      {lang === 'ja' 
+                        ? '"多言語対応で、外国人スタッフも安心して相談できました。"' 
+                        : '"Multilingual support made our foreign staff feel comfortable consulting."'
+                      }
+                    </p>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-sm text-gray-500">
+                        <span>{lang === 'ja' ? 'IT企業' : 'IT Company'}</span>
+                        <span className="ml-1">({lang === 'ja' ? '大阪府' : 'Osaka'})</span>
+                      </div>
+                      <time className="text-sm text-gray-500">2024/02/20</time>
+                    </div>
+                    <div className="pt-4 border-t">
+                      <Link
+                        href={`${basePath}/testimonials`}
+                        className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center group"
+                      >
+                        {t.testimonials.viewDetails}
+                        <svg className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                  </div>
+                </ScrollAnimationWrapper>
+
+                <ScrollAnimationWrapper delay={0}>
+                  <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                  {/* 写真部分 */}
+                  <div className="aspect-[4/3] bg-gray-100 relative">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="w-20 h-20 bg-gray-300 rounded-full" />
+                    </div>
+                  </div>
+                  
+                  {/* コンテンツ部分 */}
+                  <div className="p-6">
+                    <div className="mb-4">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                        {lang === 'ja' ? '相続手続き' : 'Inheritance Procedures'}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {lang === 'ja' ? 'C社 代表取締役様' : 'Company C CEO'}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      {lang === 'ja' 
+                        ? '"明確な料金体系で、安心して依頼することができました。"' 
+                        : '"Clear pricing structure gave us confidence in making the request."'
+                      }
+                    </p>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-sm text-gray-500">
+                        <span>{lang === 'ja' ? '建設業' : 'Construction'}</span>
+                        <span className="ml-1">({lang === 'ja' ? '千葉県' : 'Chiba'})</span>
+                      </div>
+                      <time className="text-sm text-gray-500">2024/03/10</time>
+                    </div>
+                    <div className="pt-4 border-t">
+                      <Link
+                        href={`${basePath}/testimonials`}
+                        className="text-blue-600 hover:text-blue-800 text-sm font-medium inline-flex items-center group"
+                      >
+                        {t.testimonials.viewDetails}
+                        <svg className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                  </div>
+                </ScrollAnimationWrapper>
+              </>
+            )}
+          </div>
+          <div className="text-center mt-12">
+            <Link
+              href={`${basePath}/testimonials`}
+              className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+            >
+              {t.testimonials.viewAll}
+            </Link>
+          </div>
+        </div>
+      </section>
       
       {/* About Us Section */}
       <section className="py-24 bg-gray-50">
