@@ -2,18 +2,55 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { Locale } from '@/lib/i18n/types';
 
-export default function MobileMenu() {
+interface MobileMenuProps {
+  lang: Locale;
+}
+
+export default function MobileMenu({ lang }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const content = {
+    ja: {
+      menu: "メニュー",
+      top: "トップ",
+      features: "当事務所の特徴",
+      services: "サービス",
+      about: "事務所案内",
+      testimonials: "お客様の声",
+      news: "お知らせ",
+      blog: "お役立ち情報",
+      contact: "お問い合わせ",
+      openMenu: "メニューを開く",
+      closeMenu: "メニューを閉じる",
+    },
+    en: {
+      menu: "Menu",
+      top: "Home",
+      features: "Our Features",
+      services: "Services",
+      about: "About Us",
+      testimonials: "Testimonials",
+      news: "News",
+      blog: "Resources",
+      contact: "Contact",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+    },
+  };
+
+  const t = content[lang];
+  const basePath = lang === 'ja' ? '' : `/${lang}`;
+
   const menuItems = [
-    { href: '/', label: 'トップ' },
-    { href: '/#features', label: '当事務所の特徴' },
-    { href: '/services', label: 'サービス' },
-    { href: '/about', label: '事務所案内' },
-    { href: '/testimonials', label: 'お客様の声' },
-    { href: '/news', label: 'お知らせ' },
-    { href: '/blog', label: 'お役立ち情報' },
+    { href: `${basePath}/`, label: t.top },
+    { href: `${basePath}/#features`, label: t.features },
+    { href: `${basePath}/services`, label: t.services },
+    { href: `${basePath}/about`, label: t.about },
+    { href: `${basePath}/testimonials`, label: t.testimonials },
+    { href: `${basePath}/news`, label: t.news },
+    { href: `${basePath}/blog`, label: t.blog },
   ];
 
   const closeMenu = () => setIsOpen(false);
@@ -24,7 +61,7 @@ export default function MobileMenu() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="md:hidden relative z-50 p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-        aria-label="メニューを開く"
+        aria-label={t.openMenu}
       >
         <svg
           className={`h-6 w-6 transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`}
@@ -56,11 +93,11 @@ export default function MobileMenu() {
       >
         <div className="p-6">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-xl font-bold text-gray-900">メニュー</h2>
+            <h2 className="text-xl font-bold text-gray-900">{t.menu}</h2>
             <button
               onClick={closeMenu}
               className="p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-              aria-label="メニューを閉じる"
+              aria-label={t.closeMenu}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -86,11 +123,11 @@ export default function MobileMenu() {
             {/* お問い合わせボタン */}
             <div className="mt-8">
               <Link
-                href="/contact"
+                href={`${basePath}/contact`}
                 onClick={closeMenu}
                 className="block w-full text-center bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors font-semibold"
               >
-                お問い合わせ
+                {t.contact}
               </Link>
             </div>
           </nav>
