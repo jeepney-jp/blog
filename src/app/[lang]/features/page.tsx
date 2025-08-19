@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { FaqItem } from '@/lib/types';
 import { sanityClient } from '@/lib/sanity.client';
+import { Locale } from '@/lib/i18n/types';
 
 export const metadata: Metadata = {
   title: '当事務所の特徴 | フォルティア行政書士事務所',
@@ -31,12 +32,17 @@ async function getFeaturesFAQ(): Promise<FaqItem[]> {
   }
 }
 
-export default async function FeaturesPage() {
+interface PageProps {
+  params: Promise<{ lang: Locale }>;
+}
+
+export default async function FeaturesPage({ params }: PageProps) {
+  const { lang } = await params;
   const faqs = await getFeaturesFAQ();
   
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header lang={lang} />
       
       <PageHeader 
         title="当事務所の特徴"

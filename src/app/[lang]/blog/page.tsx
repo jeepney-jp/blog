@@ -5,6 +5,7 @@ import PageHeader from "@/components/PageHeader";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import NewCTASection from "@/components/NewCTASection";
 import { getBlogs } from "@/lib/sanity";
+import { Locale } from "@/lib/i18n/types";
 
 // ブログ記事の型定義
 interface Blog {
@@ -26,7 +27,12 @@ interface Blog {
   };
 }
 
-export default async function BlogPage() {
+interface PageProps {
+  params: Promise<{ lang: Locale }>;
+}
+
+export default async function BlogPage({ params }: PageProps) {
+  const { lang } = await params;
   // Sanityからブログ記事を取得
   const blogs: Blog[] = await getBlogs();
 
@@ -41,7 +47,7 @@ export default async function BlogPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header lang={lang} />
 
       <PageHeader 
         title="お役立ち情報"
