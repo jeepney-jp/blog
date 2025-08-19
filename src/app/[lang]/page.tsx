@@ -1,13 +1,10 @@
 import Link from "next/link";
 import Image from 'next/image';
-import { sanityClient } from '@/lib/sanity.client';
-import { allServiceCategoriesQuery, allServicesForSearchQuery } from '@/lib/queries';
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import ScrollAnimationWrapper from '@/components/ScrollAnimationWrapper';
-import ServiceSearch from '@/components/ServiceSearch';
-import { getFeaturedTestimonials, getNews, getBlogs } from '@/lib/sanity';
+import { getNews } from '@/lib/sanity';
 import { Locale } from '@/lib/i18n/types';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
@@ -18,21 +15,6 @@ interface PageProps {
 }
 
 // 型定義
-interface ServiceCategoryItem {
-  _id: string;
-  title: string;
-  slug: string;
-  iconUrl?: string;
-  imageUrl?: string;
-  icon?: {
-    _id: string;
-    url: string;
-  };
-  image?: {
-    _id: string;
-    url: string;
-  };
-}
 
 interface NewsItem {
   _id: string;
@@ -45,25 +27,6 @@ interface NewsItem {
   category: string;
 }
 
-interface BlogItem {
-  _id: string;
-  title: string;
-  slug: {
-    current: string;
-  };
-  excerpt: string;
-  category: string;
-  tags?: string[];
-  featured?: boolean;
-  readingTime?: number;
-  publishedAt: string;
-  featuredImage?: {
-    asset: {
-      url: string;
-    };
-    alt?: string;
-  };
-}
 
 // 多言語コンテンツ
 const content = {
@@ -227,25 +190,6 @@ const categoryMap: { [key: string]: { ja: { name: string; color: string }, en: {
   },
 };
 
-// カテゴリラベル
-const categoryLabels = {
-  ja: {
-    license: "許認可・申請",
-    inheritance: "相続・遺言",
-    business: "会社設立・経営",
-    legal: "契約・法務",
-    tax: "税務・手続き",
-    other: "その他"
-  },
-  en: {
-    license: "Permits & Applications",
-    inheritance: "Inheritance & Wills",
-    business: "Company Establishment",
-    legal: "Contracts & Legal",
-    tax: "Tax & Procedures",
-    other: "Other"
-  }
-};
 
 // 言語リスト
 const languages = {
@@ -253,53 +197,16 @@ const languages = {
   en: ["English", "Chinese", "Vietnamese", "Tagalog", "Nepali", "Sinhala", "Korean", "Italian", "Spanish"]
 };
 
-// Sanityからサービスカテゴリを取得
-async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
-  // 環境変数が設定されていない場合は空配列を返す
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
-    return [];
-  }
-  
-  try {
-    const data = await sanityClient.fetch(allServiceCategoriesQuery);
-    return data;
-  } catch (error) {
-    console.error('Failed to fetch service categories:', error);
-    return [];
-  }
-}
 
-// Sanityから検索用のサービス一覧を取得
-async function getServicesForSearch() {
-  // 環境変数が設定されていない場合は空配列を返す
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
-    return [];
-  }
-  
-  try {
-    const data = await sanityClient.fetch(allServicesForSearchQuery);
-    return data;
-  } catch (error) {
-    console.error('Failed to fetch services for search:', error);
-    return [];
-  }
-}
 
 export default async function Home({ params }: PageProps) {
   const { lang } = await params;
   const t = content[lang];
   const basePath = lang === 'ja' ? '' : `/${lang}`;
   
-  const serviceCategories = await getServiceCategories();
-  const servicesForSearch = await getServicesForSearch();
-  const featuredTestimonials = await getFeaturedTestimonials(3);
   const newsItems = await getNews();
   // 最新5件のみ取得
   const latestNews = newsItems.slice(0, 5);
-  
-  // お役立ち情報を取得（注目記事のみ）
-  const blogs: BlogItem[] = await getBlogs();
-  const featuredBlogs = blogs.filter((blog: BlogItem) => blog.featured).slice(0, 3);
   
   return (
     <div className="min-h-screen bg-gray-50">
