@@ -202,7 +202,7 @@ const languages = {
 export default async function Home({ params }: PageProps) {
   const { lang } = await params;
   const t = content[lang];
-  const basePath = lang === 'ja' ? '' : `/${lang}`;
+  const basePath = `/${lang}`;
   
   const newsItems = await getNews();
   // 最新5件のみ取得
@@ -368,8 +368,147 @@ export default async function Home({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Services Section - 省略（長いため） */}
-      {/* Testimonials Section - 省略（長いため） */}
+      {/* Services Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.services.title}</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 tracking-widest">{t.services.subtitle}</p>
+          </div>
+          <ScrollAnimationWrapper delay={0}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* サービスカテゴリのプレビュー */}
+              <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-all duration-300">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{lang === 'ja' ? '許認可申請' : 'Permit Applications'}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '各種許認可の申請をサポート' : 'Support for various permit applications'}</p>
+                </div>
+              </div>
+              
+              <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-all duration-300">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{lang === 'ja' ? '会社設立' : 'Company Formation'}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '法人設立をトータルサポート' : 'Total support for corporate establishment'}</p>
+                </div>
+              </div>
+              
+              <div className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-all duration-300">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{lang === 'ja' ? '相続・遺言' : 'Inheritance & Wills'}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '相続手続きと遺言書作成' : 'Inheritance procedures and will preparation'}</p>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimationWrapper>
+          <div className="text-center mt-12">
+            <Link
+              href={`${basePath}/services`}
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              {t.services.viewMore}
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.testimonials.title}</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 tracking-widest">{t.testimonials.subtitle}</p>
+          </div>
+          <ScrollAnimationWrapper delay={0}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* お客様の声のプレビュー */}
+              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold">{lang === 'ja' ? 'A社 代表取締役様' : 'Company A CEO'}</h4>
+                    <p className="text-sm text-gray-500">{lang === 'ja' ? '飲食業' : 'Restaurant Business'}</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  {lang === 'ja' 
+                    ? '"迅速で丁寧な対応により、スムーズに許可を取得できました。"' 
+                    : '"Quick and courteous service helped us obtain permits smoothly."'
+                  }
+                </p>
+                <Link href={`${basePath}/testimonials`} className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                  {t.testimonials.viewDetails} →
+                </Link>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold">{lang === 'ja' ? 'B社 代表取締役様' : 'Company B CEO'}</h4>
+                    <p className="text-sm text-gray-500">{lang === 'ja' ? '建設業' : 'Construction'}</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  {lang === 'ja' 
+                    ? '"多言語対応で、外国人スタッフも安心して相談できました。"' 
+                    : '"Multilingual support made our foreign staff feel comfortable consulting."'
+                  }
+                </p>
+                <Link href={`${basePath}/testimonials`} className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                  {t.testimonials.viewDetails} →
+                </Link>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold">{lang === 'ja' ? 'C社 代表取締役様' : 'Company C CEO'}</h4>
+                    <p className="text-sm text-gray-500">{lang === 'ja' ? 'IT企業' : 'IT Company'}</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  {lang === 'ja' 
+                    ? '"明確な料金体系で、安心して依頼することができました。"' 
+                    : '"Clear pricing structure gave us confidence in making the request."'
+                  }
+                </p>
+                <Link href={`${basePath}/testimonials`} className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                  {t.testimonials.viewDetails} →
+                </Link>
+              </div>
+            </div>
+          </ScrollAnimationWrapper>
+          <div className="text-center mt-12">
+            <Link
+              href={`${basePath}/testimonials`}
+              className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+            >
+              {t.testimonials.viewAll}
+            </Link>
+          </div>
+        </div>
+      </section>
       
       {/* About Us Section */}
       <section className="py-24 bg-gray-50">
