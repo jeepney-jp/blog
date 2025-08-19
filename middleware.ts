@@ -27,12 +27,7 @@ export function middleware(request: NextRequest) {
     const acceptLanguage = request.headers.get('accept-language') || ''
     const detectedLocale = acceptLanguage.toLowerCase().startsWith('en') ? 'en' : defaultLocale
 
-    // デフォルトロケール(ja)の場合はリダイレクトしない
-    if (detectedLocale === defaultLocale) {
-      return NextResponse.next()
-    }
-
-    // 英語の場合は /en にリダイレクト
+    // 適切なロケールパスにリダイレクト
     return NextResponse.redirect(
       new URL(`/${detectedLocale}${pathname}`, request.url)
     )
