@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { defaultLocale, locales } from '@/lib/i18n/constants'
-import { isValidLocale } from '@/lib/i18n/utils'
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
@@ -21,8 +20,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // ロケールが含まれていない場合（ただし、ルートページは除く）
-  if (pathnameIsMissingLocale && pathname !== '/') {
+  // ロケールが含まれていない場合
+  if (pathnameIsMissingLocale) {
     // ブラウザの言語設定から優先言語を取得
     const acceptLanguage = request.headers.get('accept-language') || ''
     const detectedLocale = acceptLanguage.toLowerCase().startsWith('en') ? 'en' : defaultLocale
