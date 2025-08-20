@@ -22,7 +22,6 @@ import { generateTocFromContent } from '@/utils/generateToc';
 import TableOfContents from '@/components/TableOfContents';
 import PortableTextWithToc from '@/components/PortableTextWithToc';
 import UnifiedFooter from '@/components/UnifiedFooter';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import NewsSection from '@/components/NewsSection';
 import SimpleCTA from '@/components/SimpleCTA';
 
@@ -315,17 +314,6 @@ export default async function ServiceDetailPage({ params }: Props) {
           </section>
         )}
 
-        {/* お客様の声 */}
-        <TestimonialsSection 
-          testimonials={testimonials} 
-          serviceName={data.title}
-        />
-
-        {/* CTA 2: お客様の声後 */}
-        {testimonials.length > 0 && (
-          <SimpleCTA 
-            serviceName={data.title} 
-            variant="secondary"
             className="my-12"
           />
         )}
