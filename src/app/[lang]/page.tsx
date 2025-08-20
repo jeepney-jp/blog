@@ -232,9 +232,6 @@ export default async function Home({ params }: PageProps) {
   const newsItems = await getNews();
   const serviceCategories = await getServiceCategories();
   const servicesForSearch = await getServicesForSearch();
-  const featuredTestimonials = await getFeaturedTestimonials();
-  const featuredBlogs = await getFeaturedBlogs();
-  
   // 最新5件のみ取得
   const latestNews = newsItems.slice(0, 5);
   
