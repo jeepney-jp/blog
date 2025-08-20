@@ -4,10 +4,7 @@ import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import ScrollAnimationWrapper from '@/components/ScrollAnimationWrapper';
-import ServiceSearch from '@/components/ServiceSearch';
 import { getNews } from '@/lib/sanity';
-import { sanityClient } from '@/lib/sanity.client';
-import { allServiceCategoriesQuery } from '@/lib/queries';
 import { Locale } from '@/lib/i18n/types';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
@@ -17,22 +14,6 @@ interface PageProps {
   params: Promise<{ lang: Locale }>;
 }
 
-// 型定義
-interface ServiceCategoryItem {
-  _id: string;
-  title: string;
-  slug: string;
-  iconUrl?: string;
-  imageUrl?: string;
-  icon?: {
-    _id: string;
-    url: string;
-  };
-  image?: {
-    _id: string;
-    url: string;
-  };
-}
 
 interface NewsItem {
   _id: string;
@@ -175,20 +156,6 @@ const languages = {
   en: ["English", "Chinese", "Vietnamese", "Tagalog", "Nepali", "Sinhala", "Korean", "Italian", "Spanish"]
 };
 
-// サービスカテゴリ取得関数
-async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
-    // Sanityが設定されていない場合はダミーデータを返す
-    return [];
-  }
-  try {
-    const categories = await sanityClient.fetch(allServiceCategoriesQuery);
-    return categories || [];
-  } catch (error) {
-    console.error('Error fetching service categories:', error);
-    return [];
-  }
-}
 
 // Static params generation
 export async function generateStaticParams() {
@@ -204,20 +171,10 @@ export default async function Home({ params }: PageProps) {
   const basePath = `/${lang}`;
   
   // データ取得
-  let serviceCategories: ServiceCategoryItem[] = [];
-  let services: ServiceCategoryItem[] = [];
   let newsItems: NewsItem[] = [];
   
   try {
-    // 並列でデータを取得
-    const [serviceCategoriesData, newsData] = await Promise.all([
-      getServiceCategories().catch(() => []),
-      getNews().catch(() => [])
-    ]);
-    
-    serviceCategories = serviceCategoriesData;
-    services = serviceCategoriesData; // サービス検索用にも同じデータを使用
-    newsItems = newsData;
+    newsItems = await getNews().catch(() => []);
   } catch (error) {
     console.error('Error fetching data:', error);
   }
@@ -368,15 +325,16 @@ export default async function Home({ params }: PageProps) {
             <p className="text-sm text-gray-600 tracking-widest">{t.services.subtitle}</p>
           </div>
           
-          {/* サービス検索コンポーネント */}
-          <ServiceSearch 
-            services={services}
-            serviceCategories={serviceCategories}
-            lang={lang}
-            searchByNameLabel={t.services.searchByName}
-            searchByCategoryLabel={t.services.searchByCategory}
-            viewAllLabel={t.services.viewAll}
-          />
+          {/* サービス検索機能は一時的に無効化 */}
+          <div className="text-center">
+            <p className="text-gray-600 mb-8">サービス検索機能は準備中です。</p>
+            <Link
+              href={`${basePath}/services`}
+              className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              {t.services.viewAll || 'すべてのサービスを見る'}
+            </Link>
+          </div>
         </div>
       </section>
 
