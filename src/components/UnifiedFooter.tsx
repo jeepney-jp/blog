@@ -136,18 +136,8 @@ export default function UnifiedFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/testimonials" className="text-gray-400 hover:text-white transition-colors">
-                  お客様の声
-                </Link>
-              </li>
-              <li>
                 <Link href="/news" className="text-gray-400 hover:text-white transition-colors">
                   お知らせ
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-gray-400 hover:text-white transition-colors">
-                  お役立ち情報
                 </Link>
               </li>
               <li>

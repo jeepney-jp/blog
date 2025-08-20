@@ -6,9 +6,7 @@ import {
   serviceDetailQuery, 
   allServiceDetailSlugsQuery,
   relatedServicesByTagQuery,
-  relatedServicesQuery,
-  testimonialsByServiceQuery,
-  newsByCategoryQuery
+  relatedServicesQuery
 } from '@/lib/queries';
 import { ServiceDetail } from '@/lib/types';
 import Header from '@/components/Header';
@@ -22,8 +20,6 @@ import { generateTocFromContent } from '@/utils/generateToc';
 import TableOfContents from '@/components/TableOfContents';
 import PortableTextWithToc from '@/components/PortableTextWithToc';
 import UnifiedFooter from '@/components/UnifiedFooter';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import NewsSection from '@/components/NewsSection';
 import SimpleCTA from '@/components/SimpleCTA';
 
 type Props = {
@@ -133,15 +129,8 @@ export default async function ServiceDetailPage({ params }: Props) {
       })
     : [];
 
-  // お客様の声を取得（サービス名で完全一致）
-  const testimonials = await sanityClient.fetch(testimonialsByServiceQuery, {
-    serviceName: data.title,
-  });
 
-  // お役立ち記事を取得（カテゴリ名で完全一致）
-  const newsArticles = await sanityClient.fetch(newsByCategoryQuery, {
-    categoryName: data.title,
-  });
+  // お役立ち記事機能は削除済み
 
   // FAQ構造化データの生成
   const faqStructuredData = data.faq && data.faq.length > 0 ? {
@@ -315,26 +304,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           </section>
         )}
 
-        {/* お客様の声 */}
-        <TestimonialsSection 
-          testimonials={testimonials} 
-          serviceName={data.title}
-        />
 
-        {/* CTA 2: お客様の声後 */}
-        {testimonials.length > 0 && (
-          <SimpleCTA 
-            serviceName={data.title} 
-            variant="secondary"
-            className="my-12"
-          />
-        )}
-
-        {/* お役立ち記事 */}
-        <NewsSection
-          articles={newsArticles}
-          serviceName={data.title}
-        />
 
         {/* 関連サービス */}
         {data.related && data.related.length > 0 && (
