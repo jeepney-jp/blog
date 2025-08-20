@@ -358,6 +358,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <RelatedServices
             services={relatedServicesByCategory}
             currentCategorySlug={category}
+            lang={lang}
           />
         )}
         
