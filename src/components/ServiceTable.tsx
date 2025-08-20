@@ -1,13 +1,10 @@
 import { ServiceDetailLite } from '@/lib/types';
-import { Locale } from '@/lib/i18n/types';
 
 interface ServiceTableProps {
   services: ServiceDetailLite[];
-  categorySlug: string;
-  lang: Locale;
 }
 
-export default function ServiceTable({ services, categorySlug, lang }: ServiceTableProps) {
+export default function ServiceTable({ services }: ServiceTableProps) {
   return (
     <section>
       <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">サービス一覧</h2>
