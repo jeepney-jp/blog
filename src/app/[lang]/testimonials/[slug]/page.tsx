@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getTestimonialBySlug, getTestimonials } from "../../../../lib/sanity";
+import { getTestimonialBySlug, getTestimonials } from "@/lib/sanity";
 import Header from '@/components/Header';
+import { Locale } from '@/lib/i18n/types';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import TableOfContents from '@/components/TableOfContents';
@@ -13,11 +14,11 @@ import { generateTocFromContent } from '@/utils/generateToc';
 export const revalidate = 0;
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; lang: Locale }>;
 }
 
 export default async function TestimonialDetailPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug, lang } = await params;
   
   // Sanityからお客様の声データを取得
   const testimonial = await getTestimonialBySlug(slug);
@@ -29,7 +30,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <Header />
+      <Header lang={lang} />
 
       {/* Breadcrumb */}
       <nav className="bg-white border-b">
@@ -179,7 +180,7 @@ export default async function TestimonialDetailPage({ params }: PageProps) {
       </main>
 
       {/* CTA Section */}
-      <NewCTASection />
+      <NewCTASection lang={lang} />
 
       {/* Footer */}
       <UnifiedFooter />

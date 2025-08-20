@@ -2,20 +2,26 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
-import { getTestimonials } from "../../../lib/sanity";
+import { getTestimonials } from "@/lib/sanity";
 import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
+import { Locale } from "@/lib/i18n/types";
 
 // Next.jsのキャッシュを無効化
 export const revalidate = 0;
 
-export default async function TestimonialsPage() {
+interface PageProps {
+  params: Promise<{ lang: Locale }>;
+}
+
+export default async function TestimonialsPage({ params }: PageProps) {
+  const { lang } = await params;
   // Sanityからお客様の声データを取得
   const testimonials = await getTestimonials();
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header lang={lang} />
 
       <PageHeader 
         title="お客様の声"
@@ -134,7 +140,7 @@ export default async function TestimonialsPage() {
 
       </main>
 
-      <NewCTASection />
+      <NewCTASection lang={lang} />
       <UnifiedFooter />
     </div>
   );

@@ -4,9 +4,11 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import { useState, useEffect } from "react";
+import { useParams } from "next/navigation";
 import { PortableText } from '@portabletext/react';
 import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
+import { Locale } from "@/lib/i18n/types";
 
 interface Staff {
   _id: string;
@@ -33,6 +35,8 @@ interface Staff {
 }
 
 export default function About() {
+  const params = useParams();
+  const lang = params.lang as Locale;
   const [expandedMember, setExpandedMember] = useState<string | null>(null);
   const [staff, setStaff] = useState<Staff[]>([]);
   const [loading, setLoading] = useState(true);
@@ -98,7 +102,7 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header lang={lang} />
 
       <PageHeader 
         title="事務所概要"
@@ -462,7 +466,7 @@ export default function About() {
         </div>
       </section>
 
-      <NewCTASection />
+      <NewCTASection lang={lang} />
       <UnifiedFooter />
     </div>
   );

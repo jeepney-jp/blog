@@ -4,18 +4,19 @@ import { notFound } from "next/navigation";
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
+import { Locale } from '@/lib/i18n/types';
 import TableOfContents from '@/components/TableOfContents';
 import PortableTextWithToc from '@/components/PortableTextWithToc';
 import { generateTocFromContent } from '@/utils/generateToc';
-import { getBlogBySlug, getBlogs } from "../../../../lib/sanity";
+import { getBlogBySlug, getBlogs } from "@/lib/sanity";
 
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; lang: Locale }>;
 }
 
 export default async function BlogDetailPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug, lang } = await params;
   
   // Sanityからブログ記事を取得
   const blog = await getBlogBySlug(slug);
@@ -36,7 +37,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <Header />
+      <Header lang={lang} />
 
       {/* Breadcrumb */}
       <nav className="bg-white border-b">
@@ -175,7 +176,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
       </main>
 
       {/* CTA Section */}
-      <NewCTASection />
+      <NewCTASection lang={lang} />
 
       {/* Footer */}
       <UnifiedFooter />

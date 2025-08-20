@@ -4,7 +4,8 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import NewCTASection from "@/components/NewCTASection";
-import { getBlogs } from "../../../lib/sanity";
+import { getBlogs } from "@/lib/sanity";
+import { Locale } from "@/lib/i18n/types";
 
 // ブログ記事の型定義
 interface Blog {
@@ -26,7 +27,12 @@ interface Blog {
   };
 }
 
-export default async function BlogPage() {
+interface PageProps {
+  params: Promise<{ lang: Locale }>;
+}
+
+export default async function BlogPage({ params }: PageProps) {
+  const { lang } = await params;
   // Sanityからブログ記事を取得
   const blogs: Blog[] = await getBlogs();
 
@@ -41,7 +47,7 @@ export default async function BlogPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header lang={lang} />
 
       <PageHeader 
         title="お役立ち情報"
@@ -52,7 +58,7 @@ export default async function BlogPage() {
       <nav className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center space-x-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-gray-700">
+            <Link href={`/${lang}`} className="hover:text-gray-700">
               ホーム
             </Link>
             <span>／</span>
@@ -71,7 +77,7 @@ export default async function BlogPage() {
             {blogs.filter(blog => blog.featured).map((blog) => (
               <article key={blog._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                 {blog.featuredImage && (
-                  <Link href={`/blog/${blog.slug.current}`} className="block">
+                  <Link href={`/${lang}/blog/${blog.slug.current}`} className="block">
                     <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
                       <Image
                         src={blog.featuredImage.asset.url}
@@ -100,7 +106,7 @@ export default async function BlogPage() {
                   
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     <Link 
-                      href={`/blog/${blog.slug.current}`}
+                      href={`/${lang}/blog/${blog.slug.current}`}
                       className="hover:text-blue-600 transition-colors"
                     >
                       {blog.title}
@@ -126,7 +132,7 @@ export default async function BlogPage() {
                       {new Date(blog.publishedAt).toLocaleDateString('ja-JP')}
                     </time>
                     <Link
-                      href={`/blog/${blog.slug.current}`}
+                      href={`/${lang}/blog/${blog.slug.current}`}
                       className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                     >
                       続きを読む →
@@ -145,7 +151,7 @@ export default async function BlogPage() {
             {blogs.map((blog) => (
               <article key={blog._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                 {blog.featuredImage && (
-                  <Link href={`/blog/${blog.slug.current}`} className="block">
+                  <Link href={`/${lang}/blog/${blog.slug.current}`} className="block">
                     <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
                       <Image
                         src={blog.featuredImage.asset.url}
@@ -176,7 +182,7 @@ export default async function BlogPage() {
                   
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
                     <Link 
-                      href={`/blog/${blog.slug.current}`}
+                      href={`/${lang}/blog/${blog.slug.current}`}
                       className="hover:text-blue-600 transition-colors"
                     >
                       {blog.title}
@@ -202,7 +208,7 @@ export default async function BlogPage() {
                       {new Date(blog.publishedAt).toLocaleDateString('ja-JP')}
                     </time>
                     <Link
-                      href={`/blog/${blog.slug.current}`}
+                      href={`/${lang}/blog/${blog.slug.current}`}
                       className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                     >
                       続きを読む →
@@ -216,7 +222,7 @@ export default async function BlogPage() {
 
       </main>
 
-      <NewCTASection />
+      <NewCTASection lang={lang} />
       <UnifiedFooter />
     </div>
   );

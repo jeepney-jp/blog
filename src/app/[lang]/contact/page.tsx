@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useParams } from "next/navigation";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import ToastNotification from "@/components/ToastNotification";
 import UnifiedFooter from "@/components/UnifiedFooter";
+import { Locale } from "@/lib/i18n/types";
 
 type FormData = {
   name: string;
@@ -16,6 +18,8 @@ type FormData = {
 };
 
 export default function Contact() {
+  const params = useParams();
+  const lang = params.lang as Locale;
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -97,7 +101,7 @@ export default function Contact() {
   };
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header lang={lang} />
 
       <PageHeader
         title="お問い合わせ"

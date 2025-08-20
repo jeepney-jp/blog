@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
-import { getNews } from "../../../lib/sanity";
+import { getNews } from "@/lib/sanity";
 import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
+import { Locale } from "@/lib/i18n/types";
 
 // ニュースの型定義
 interface News {
@@ -26,13 +27,18 @@ const categoryMap: { [key: string]: { name: string; color: string } } = {
   case_study: { name: '実績紹介', color: 'bg-indigo-100 text-indigo-800' },
 };
 
-export default async function NewsPage() {
+interface PageProps {
+  params: Promise<{ lang: Locale }>;
+}
+
+export default async function NewsPage({ params }: PageProps) {
+  const { lang } = await params;
   // Sanityからニュースデータを取得
   const news: News[] = await getNews();
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header lang={lang} />
 
       <PageHeader 
         title="お知らせ"
@@ -84,7 +90,7 @@ export default async function NewsPage() {
         </div>
       </main>
 
-      <NewCTASection />
+      <NewCTASection lang={lang} />
       <UnifiedFooter />
     </div>
   );

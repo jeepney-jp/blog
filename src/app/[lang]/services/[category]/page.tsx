@@ -1,6 +1,7 @@
 // ファイル名: app/(public)/services/[category]/page.tsx
 
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { sanityClient } from '@/lib/sanity.client';
 import { categoryPageQuery, categorySlugsQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
@@ -11,9 +12,10 @@ import NewCTASection from '@/components/NewCTASection';
 import ServiceTable from '@/components/ServiceTable';
 import Script from 'next/script';
 import UnifiedFooter from '@/components/UnifiedFooter';
+import { Locale } from '@/lib/i18n/types';
 
 type Props = {
-  params: Promise<{ category: string }>;
+  params: Promise<{ category: string; lang: Locale }>;
 };
 
 export async function generateStaticParams() {
@@ -58,13 +60,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function CategoryPage({ params }: Props) {
-  const { category } = await params;
+  const { category, lang } = await params;
   
   // Sanityが設定されていない場合のフォールバック
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
+        <Header lang={lang} />
         <div className="max-w-6xl mx-auto px-4 py-12">
           <p className="text-gray-600">Sanityの設定が必要です。環境変数を設定してください。</p>
         </div>
@@ -76,7 +78,9 @@ export default async function CategoryPage({ params }: Props) {
     slug: category,
   });
 
-  if (!data) return <div>ページが見つかりません</div>;
+  if (!data) {
+    notFound();
+  }
 
   // FAQ構造化データの生成
   const faqStructuredData = data.faq && data.faq.length > 0 ? {
@@ -115,7 +119,7 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header lang={lang} />
       
       {/* 構造化データ */}
       <Script
@@ -132,9 +136,9 @@ export default async function CategoryPage({ params }: Props) {
       {/* パンくず */}
       <Breadcrumbs
         segments={[
-          { name: 'ホーム', href: '/' },
-          { name: 'サービス案内', href: '/services' },
-          { name: data.title, href: `/services/${category}` },
+          { name: 'ホーム', href: `/${lang}` },
+          { name: 'サービス案内', href: `/${lang}/services` },
+          { name: data.title, href: `/${lang}/services/${category}` },
         ]}
       />
 
@@ -147,7 +151,7 @@ export default async function CategoryPage({ params }: Props) {
 
       {/* 中項目テーブル */}
       {data.services && data.services.length > 0 && (
-        <ServiceTable services={data.services} categorySlug={data.slug} />
+        <ServiceTable services={data.services} categorySlug={data.slug} lang={lang} />
       )}
 
       {/* FAQ アコーディオン */}
@@ -161,7 +165,7 @@ export default async function CategoryPage({ params }: Props) {
       </div>
 
       {/* CTA */}
-      <NewCTASection serviceName={data.title} />
+      <NewCTASection serviceName={data.title} lang={lang} />
 
       <UnifiedFooter />
     </div>

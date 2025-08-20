@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
-// import { getNewsBySlug, getNews } from "../../../../lib/sanity";
+import { Locale } from '@/lib/i18n/types';
+// import { getNewsBySlug, getNews } from "@/lib/sanity";
 
 // ニュースの型定義
 interface News {
@@ -34,11 +35,11 @@ const categoryMap: { [key: string]: { name: string; color: string } } = {
 };
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; lang: Locale }>;
 }
 
 export default async function NewsDetailPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug, lang } = await params;
   
   // 一時的にテストデータを使用
   const news: News | null = slug === "jimusho-kaisetsu-oshirase" ? {
@@ -69,7 +70,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <Header />
+      <Header lang={lang} />
 
       {/* Breadcrumb */}
       <nav className="bg-white border-b">
@@ -137,7 +138,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
       </main>
 
       {/* CTA Section */}
-      <NewCTASection />
+      <NewCTASection lang={lang} />
 
       {/* Footer */}
       <UnifiedFooter />
