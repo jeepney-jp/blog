@@ -31,6 +31,16 @@ interface ServiceCategoryItem {
   };
 }
 
+interface NewsItem {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  publishedAt: string;
+  excerpt?: string;
+  category: string;
+}
 
 const content = {
   ja: {
@@ -454,7 +464,7 @@ export default async function Home({ params }: PageProps) {
             <ScrollAnimationWrapper delay={0}>
               <div className="max-w-4xl mx-auto">
                 <ul className="space-y-4">
-                  {latestNews.map((news) => (
+                  {latestNews.map((news: NewsItem) => (
                     <li key={news._id} className="border-b border-gray-200 pb-4 last:border-b-0">
                       <Link
                         href={`${basePath}/news/${news.slug.current}`}
