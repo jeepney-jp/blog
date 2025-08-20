@@ -8,7 +8,7 @@ import { Locale } from '@/lib/i18n/types';
 export const revalidate = 60;
 
 interface PageProps {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 }
 
 // 型定義
@@ -128,7 +128,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Home({ params }: PageProps) {
-  const { lang } = params;
+  const { lang } = await params;
   const t = content[lang];
   const basePath = `/${lang}`;
   
