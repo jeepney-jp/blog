@@ -12,39 +12,11 @@ interface ServiceItem {
   tags?: string[];
 }
 
-interface ServiceCategoryItem {
-  _id: string;
-  title: string;
-  slug: string;
-  iconUrl?: string;
-  imageUrl?: string;
-  icon?: {
-    _id: string;
-    url: string;
-  };
-  image?: {
-    _id: string;
-    url: string;
-  };
-}
-
 interface ServiceSearchProps {
   services: ServiceItem[];
-  serviceCategories: ServiceCategoryItem[];
-  lang: string;
-  searchByNameLabel: string;
-  searchByCategoryLabel: string;
-  viewAllLabel: string;
 }
 
-export default function ServiceSearch({ 
-  services, 
-  serviceCategories, 
-  lang, 
-  searchByNameLabel, 
-  searchByCategoryLabel, 
-  viewAllLabel 
-}: ServiceSearchProps) {
+export default function ServiceSearch({ services }: ServiceSearchProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredServices, setFilteredServices] = useState<ServiceItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
