@@ -405,6 +405,206 @@ export default async function Home({ params }: PageProps) {
               </div>
               </div>
             </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.2}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-automotive.png"
+                  alt={lang === 'ja' ? '自動車関連業務' : 'Automotive Services'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '自動車関連業務' : 'Automotive Services'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.3}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-restaurant.png"
+                  alt={lang === 'ja' ? '飲食・風俗営業関連業務' : 'Restaurant & Entertainment Business'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '飲食・風俗営業関連業務' : 'Restaurant & Entertainment Business'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.4}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-waste.png"
+                  alt={lang === 'ja' ? '廃棄物処理業許可関連業務' : 'Waste Management Permits'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '廃棄物処理業許可関連業務' : 'Waste Management Permits'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.5}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-travel.png"
+                  alt={lang === 'ja' ? '旅行・旅館業関連業務' : 'Travel & Hotel Business'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '旅行・旅館業関連業務' : 'Travel & Hotel Business'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.6}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-corporate.png"
+                  alt={lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.7}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-license.png"
+                  alt={lang === 'ja' ? '営業許可' : 'Business Licenses'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '営業許可' : 'Business Licenses'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.8}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-land.png"
+                  alt={lang === 'ja' ? '土地関連業務' : 'Land-related Services'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '土地関連業務' : 'Land-related Services'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.9}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-rights.png"
+                  alt={lang === 'ja' ? '権利義務・事実証明業務' : 'Rights & Legal Documentation'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '権利義務・事実証明業務' : 'Rights & Legal Documentation'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={1.0}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-medical.png"
+                  alt={lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={1.1}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-other.png"
+                  alt={lang === 'ja' ? 'その他の業務' : 'Other Services'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? 'その他の業務' : 'Other Services'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
           </div>
         </div>
       </section>
