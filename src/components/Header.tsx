@@ -15,10 +15,8 @@ export default function Header({ lang }: HeaderProps) {
       companyNameShort: "行政書士",
       features: "特徴",
       services: "サービス",
-      testimonials: "お客様の声",
       about: "事務所概要",
       news: "お知らせ",
-      blog: "お役立ち情報",
       contact: "お問い合わせ",
     },
     en: {
@@ -27,10 +25,8 @@ export default function Header({ lang }: HeaderProps) {
       companyNameShort: "Admin Office",
       features: "Features",
       services: "Services",
-      testimonials: "Testimonials",
       about: "About Us",
       news: "News",
-      blog: "Resources",
       contact: "Contact",
     },
   };
@@ -61,17 +57,11 @@ export default function Header({ lang }: HeaderProps) {
               <Link href={`${basePath}/services`} className="text-gray-600 hover:text-gray-900">
                 {t.services}
               </Link>
-              <Link href={`${basePath}/testimonials`} className="text-gray-600 hover:text-gray-900">
-                {t.testimonials}
-              </Link>
               <Link href={`${basePath}/about`} className="text-gray-600 hover:text-gray-900">
                 {t.about}
               </Link>
               <Link href={`${basePath}/news`} className="text-gray-600 hover:text-gray-900">
                 {t.news}
-              </Link>
-              <Link href={`${basePath}/blog`} className="text-gray-600 hover:text-gray-900">
-                {t.blog}
               </Link>
               <LanguageSwitcher currentLang={lang} />
               <Link href={`${basePath}/contact`} className="bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-colors">

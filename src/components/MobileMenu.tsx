@@ -18,9 +18,7 @@ export default function MobileMenu({ lang }: MobileMenuProps) {
       features: "当事務所の特徴",
       services: "サービス",
       about: "事務所案内",
-      testimonials: "お客様の声",
       news: "お知らせ",
-      blog: "お役立ち情報",
       contact: "お問い合わせ",
       openMenu: "メニューを開く",
       closeMenu: "メニューを閉じる",
@@ -31,9 +29,7 @@ export default function MobileMenu({ lang }: MobileMenuProps) {
       features: "Our Features",
       services: "Services",
       about: "About Us",
-      testimonials: "Testimonials",
       news: "News",
-      blog: "Resources",
       contact: "Contact",
       openMenu: "Open menu",
       closeMenu: "Close menu",
@@ -48,9 +44,7 @@ export default function MobileMenu({ lang }: MobileMenuProps) {
     { href: `${basePath}/#features`, label: t.features },
     { href: `${basePath}/services`, label: t.services },
     { href: `${basePath}/about`, label: t.about },
-    { href: `${basePath}/testimonials`, label: t.testimonials },
     { href: `${basePath}/news`, label: t.news },
-    { href: `${basePath}/blog`, label: t.blog },
   ];
 
   const closeMenu = () => setIsOpen(false);

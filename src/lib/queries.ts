@@ -178,51 +178,6 @@ export const sitemapQuery = `
   }
 `;
 
-// 10. お客様の声一覧を取得（サービス詳細の関連情報付き）
-export const testimonialsListQuery = `
-  *[_type == "testimonials"] | order(publishedAt desc) {
-    _id,
-    clientName,
-    "slug": slug.current,
-    comment,
-    serviceDetail,
-    clientIndustry,
-    clientLocation,
-    featured,
-    publishedAt,
-    "clientImageUrl": clientImage.asset->url
-  }
-`;
-
-// 11. 特定のお客様の声を取得
-export const testimonialDetailQuery = `
-  *[_type == "testimonials" && slug.current == $slug][0] {
-    _id,
-    clientName,
-    "slug": slug.current,
-    comment,
-    content,
-    serviceDetail,
-    clientIndustry,
-    clientLocation,
-    featured,
-    publishedAt,
-    "clientImageUrl": clientImage.asset->url
-  }
-`;
-
-// 12. トップページ用のお客様の声を取得（featured = true）
-export const featuredTestimonialsQuery = `
-  *[_type == "testimonials" && featured == true] | order(publishedAt desc)[0...3] {
-    _id,
-    clientName,
-    "slug": slug.current,
-    comment,
-    serviceDetail,
-    "clientImageUrl": clientImage.asset->url
-  }
-`;
-
 // 13. フッター用のサービスカテゴリーとサブカテゴリーを取得
 export const serviceCategoriesWithSubcategoriesQuery = `
   *[_type == "serviceCategory"] | order(orderRank asc, _createdAt asc) {
@@ -237,39 +192,3 @@ export const serviceCategoriesWithSubcategoriesQuery = `
   }
 `;
 
-// 14. サービス名に基づくお客様の声を取得
-export const testimonialsByServiceQuery = `
-  *[_type == "testimonials" && serviceDetail == $serviceName] | order(publishedAt desc) {
-    _id,
-    clientName,
-    "slug": slug.current,
-    comment,
-    serviceDetail,
-    publishedAt,
-    "clientImageUrl": clientImage.asset->url
-  }
-`;
-
-// 15. カテゴリ名に基づくお役立ち記事を取得
-export const newsByCategoryQuery = `
-  *[_type == "blog" && category == $categoryName] | order(publishedAt desc) {
-    _id,
-    title,
-    "slug": slug.current,
-    excerpt,
-    category,
-    publishedAt,
-    "thumbnailUrl": featuredImage.asset->url
-  }
-`;
-
-// 16. サービス検索用のクエリ（タイトルとタグ情報を含む）
-export const allServicesForSearchQuery = `
-  *[_type == "serviceDetail"] | order(orderRank asc, _createdAt asc) {
-    _id,
-    title,
-    "slug": slug.current,
-    "categorySlug": parentCategory->slug.current,
-    "tags": tag
-  }
-`;
