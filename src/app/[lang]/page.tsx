@@ -447,7 +447,7 @@ export default async function Home({ params }: PageProps) {
               ))}
             </div>
           ) : (
-            /* Sanityが設定されていない場合は既存のハードコーディングされたサービスを表示 */
+            {/* Sanityが設定されていない場合は既存のハードコーディングされたサービスを表示 */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
             
             {/* 外国人関連業務 */}
@@ -602,6 +602,11 @@ export default async function Home({ params }: PageProps) {
               </h3>
               </div>
             </ScrollAnimationWrapper>
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* About Us Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
