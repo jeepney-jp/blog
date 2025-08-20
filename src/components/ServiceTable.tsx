@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { ServiceDetailLite } from '@/lib/types';
 import { Locale } from '@/lib/i18n/types';
 
@@ -21,14 +20,11 @@ export default function ServiceTable({ services, categorySlug, lang }: ServiceTa
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
                 サービス名
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-2/5">
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/2">
                 サービス概要
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/5">
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/6">
                 料金目安
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/10">
-                詳細
               </th>
             </tr>
           </thead>
@@ -51,14 +47,6 @@ export default function ServiceTable({ services, categorySlug, lang }: ServiceTa
                       ? `¥${service.priceMin.toLocaleString()}〜`
                       : service.priceNote ?? '個別見積り'}
                   </div>
-                </td>
-                <td className="px-6 py-4 text-sm font-medium">
-                  <Link
-                    href={`/${lang}/services/${categorySlug.trim()}/${service.slug.trim()}`}
-                    className="text-blue-600 hover:text-blue-900 whitespace-nowrap"
-                  >
-                    詳細を見る →
-                  </Link>
                 </td>
               </tr>
             ))}
@@ -91,13 +79,6 @@ export default function ServiceTable({ services, categorySlug, lang }: ServiceTa
                 </span>
               </div>
             </div>
-            
-            <Link
-              href={`/${lang}/services/${categorySlug.trim()}/${service.slug.trim()}`}
-              className="block w-full text-center bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors text-sm font-medium"
-            >
-              詳細を見る
-            </Link>
           </div>
         ))}
       </div>
