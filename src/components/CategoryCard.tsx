@@ -2,12 +2,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ServiceCategory } from '@/lib/types';
 import { getOptimizedImageProps } from '@/lib/sanityImage';
+import { Locale } from '@/lib/i18n/types';
 
 interface CategoryCardProps {
   category: ServiceCategory;
+  lang: Locale;
 }
 
-export default function CategoryCard({ category }: CategoryCardProps) {
+export default function CategoryCard({ category, lang }: CategoryCardProps) {
   // iconUrlを直接使用するか、imageがある場合はそちらを優先
   let imageSrc: string | null = null;
   
@@ -27,7 +29,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
 
   return (
     <Link
-      href={`/services/${category.slug}`}
+      href={`/${lang}/services/${category.slug}`}
       className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
     >
       {/* カテゴリー画像 */}

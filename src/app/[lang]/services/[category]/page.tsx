@@ -1,6 +1,7 @@
 // ファイル名: app/(public)/services/[category]/page.tsx
 
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { sanityClient } from '@/lib/sanity.client';
 import { categoryPageQuery, categorySlugsQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
@@ -77,7 +78,9 @@ export default async function CategoryPage({ params }: Props) {
     slug: category,
   });
 
-  if (!data) return <div>ページが見つかりません</div>;
+  if (!data) {
+    notFound();
+  }
 
   // FAQ構造化データの生成
   const faqStructuredData = data.faq && data.faq.length > 0 ? {

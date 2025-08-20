@@ -94,7 +94,7 @@ export default async function Services({ params }: PageProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {categories.map((category) => (
                   <div key={category._id} className="h-full">
-                    <CategoryCard category={category} />
+                    <CategoryCard category={category} lang={lang} />
                   </div>
                 ))}
               </div>
