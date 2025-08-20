@@ -6,8 +6,7 @@ import {
   serviceDetailQuery, 
   allServiceDetailSlugsQuery,
   relatedServicesByTagQuery,
-  relatedServicesQuery,
-  newsByCategoryQuery
+  relatedServicesQuery
 } from '@/lib/queries';
 import { ServiceDetail } from '@/lib/types';
 import Header from '@/components/Header';
@@ -21,7 +20,6 @@ import { generateTocFromContent } from '@/utils/generateToc';
 import TableOfContents from '@/components/TableOfContents';
 import PortableTextWithToc from '@/components/PortableTextWithToc';
 import UnifiedFooter from '@/components/UnifiedFooter';
-import NewsSection from '@/components/NewsSection';
 import SimpleCTA from '@/components/SimpleCTA';
 
 type Props = {
@@ -132,10 +130,7 @@ export default async function ServiceDetailPage({ params }: Props) {
     : [];
 
 
-  // お役立ち記事を取得（カテゴリ名で完全一致）
-  const newsArticles = await sanityClient.fetch(newsByCategoryQuery, {
-    categoryName: data.title,
-  });
+  // お役立ち記事機能は削除済み
 
   // FAQ構造化データの生成
   const faqStructuredData = data.faq && data.faq.length > 0 ? {
@@ -310,11 +305,6 @@ export default async function ServiceDetailPage({ params }: Props) {
         )}
 
 
-        {/* お役立ち記事 */}
-        <NewsSection
-          articles={newsArticles}
-          serviceName={data.title}
-        />
 
         {/* 関連サービス */}
         {data.related && data.related.length > 0 && (

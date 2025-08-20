@@ -2,13 +2,12 @@ import Header from "@/components/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHeader from "@/components/PageHeader";
 import { sanityClient } from '@/lib/sanity.client';
-import { allServiceCategoriesQuery, allServicesForSearchQuery } from '@/lib/queries';
+import { allServiceCategoriesQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
 import CategoryCard from '@/components/CategoryCard';
 import DebugCategoryCard from '@/components/DebugCategoryCard';
 import NewCTASection from '@/components/NewCTASection';
 import UnifiedFooter from '@/components/UnifiedFooter';
-import ServiceSearch from '@/components/ServiceSearch';
 import { Locale } from '@/lib/i18n/types';
 import Link from 'next/link';
 
@@ -31,21 +30,6 @@ async function getServiceCategories(): Promise<ServiceCategory[]> {
   }
 }
 
-// Sanityから検索用のサービス一覧を取得
-async function getServicesForSearch() {
-  // 環境変数が設定されていない場合は空配列を返す
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
-    return [];
-  }
-  
-  try {
-    const data = await sanityClient.fetch(allServicesForSearchQuery);
-    return data;
-  } catch (error) {
-    console.error('Failed to fetch services for search:', error);
-    return [];
-  }
-}
 
 interface PageProps {
   params: Promise<{ lang: Locale }>;
@@ -54,7 +38,6 @@ interface PageProps {
 export default async function Services({ params }: PageProps) {
   const { lang } = await params;
   const categories = await getServiceCategories();
-  const servicesForSearch = await getServicesForSearch();
   const basePath = `/${lang}`;
   return (
     <div className="min-h-screen bg-gray-50">
@@ -76,11 +59,6 @@ export default async function Services({ params }: PageProps) {
             ]}
           />
           
-          {/* サービス検索 */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-gray-900 text-center mb-8">サービス名から探す</h2>
-            <ServiceSearch services={servicesForSearch} />
-          </div>
           {/* カテゴリー一覧 */}
           <div className="mt-8">
             <h2 className="text-2xl font-semibold text-gray-900 text-center mb-4">カテゴリーから探す</h2>
