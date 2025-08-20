@@ -325,15 +325,246 @@ export default async function Home({ params }: PageProps) {
             <p className="text-sm text-gray-600 tracking-widest">{t.services.subtitle}</p>
           </div>
           
-          {/* サービス検索機能は一時的に無効化 */}
-          <div className="text-center">
-            <p className="text-gray-600 mb-8">サービス検索機能は準備中です。</p>
-            <Link
-              href={`${basePath}/services`}
-              className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              {t.services.viewAll || 'すべてのサービスを見る'}
-            </Link>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            <ScrollAnimationWrapper delay={0}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-foreigner.svg"
+                  alt={lang === 'ja' ? '外国人関連業務' : 'Foreign Resident Services'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '外国人関連業務' : 'Foreign Resident Services'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.1}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-construction.svg"
+                  alt={lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.2}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-automotive.svg"
+                  alt={lang === 'ja' ? '自動車関連業務' : 'Automotive Services'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '自動車関連業務' : 'Automotive Services'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.3}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-restaurant.svg"
+                  alt={lang === 'ja' ? '飲食・風俗営業関連業務' : 'Restaurant & Entertainment Business'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '飲食・風俗営業関連業務' : 'Restaurant & Entertainment Business'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.4}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-waste.svg"
+                  alt={lang === 'ja' ? '廃棄物処理業許可関連業務' : 'Waste Management Permits'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '廃棄物処理業許可関連業務' : 'Waste Management Permits'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.5}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-travel.svg"
+                  alt={lang === 'ja' ? '旅行・旅館業関連業務' : 'Travel & Hotel Business'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '旅行・旅館業関連業務' : 'Travel & Hotel Business'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.6}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-corporate.svg"
+                  alt={lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.7}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-license.svg"
+                  alt={lang === 'ja' ? '営業許可' : 'Business Licenses'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '営業許可' : 'Business Licenses'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.8}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-land.svg"
+                  alt={lang === 'ja' ? '土地関連業務' : 'Land-related Services'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '土地関連業務' : 'Land-related Services'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={0.9}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-rights.svg"
+                  alt={lang === 'ja' ? '権利義務・事実証明業務' : 'Rights & Legal Documentation'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '権利義務・事実証明業務' : 'Rights & Legal Documentation'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={1.0}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-medical.svg"
+                  alt={lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper delay={1.1}>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                <Image
+                  src="/service-other.svg"
+                  alt={lang === 'ja' ? 'その他の業務' : 'Other Services'}
+                  width={108}
+                  height={108}
+                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                  unoptimized
+                />
+              </div>
+              <div>
+              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                {lang === 'ja' ? 'その他の業務' : 'Other Services'}
+              </h3>
+              </div>
+              </div>
+            </ScrollAnimationWrapper>
           </div>
         </div>
       </section>
