@@ -7,7 +7,6 @@ import {
   allServiceDetailSlugsQuery,
   relatedServicesByTagQuery,
   relatedServicesQuery,
-  testimonialsByServiceQuery,
   newsByCategoryQuery
 } from '@/lib/queries';
 import { ServiceDetail } from '@/lib/types';
@@ -132,10 +131,6 @@ export default async function ServiceDetailPage({ params }: Props) {
       })
     : [];
 
-  // お客様の声を取得（サービス名で完全一致）
-  const testimonials = await sanityClient.fetch(testimonialsByServiceQuery, {
-    serviceName: data.title,
-  });
 
   // お役立ち記事を取得（カテゴリ名で完全一致）
   const newsArticles = await sanityClient.fetch(newsByCategoryQuery, {
