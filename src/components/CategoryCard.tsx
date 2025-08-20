@@ -29,7 +29,7 @@ export default function CategoryCard({ category, lang }: CategoryCardProps) {
 
   return (
     <Link
-      href={`/${lang}/services/${category.slug}`}
+      href={`/${lang}/services/${category.slug.trim()}`}
       className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
     >
       {/* カテゴリー画像 */}

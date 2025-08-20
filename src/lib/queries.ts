@@ -58,7 +58,7 @@ export const allServiceCategoriesQuery = `
 
 // 4. 特定カテゴリーの詳細と関連サービスを取得（階層2ページ用）
 export const categoryPageQuery = `
-  *[_type == "serviceCategory" && slug.current == $slug][0] {
+  *[_type == "serviceCategory" && (slug.current == $slug || slug.current == $slug + " ")][0] {
     _id,
     title,
     "slug": slug.current,
