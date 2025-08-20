@@ -330,7 +330,7 @@ export default async function Home({ params }: PageProps) {
               <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
-                  src="/service-foreigner.svg"
+                  src="/service-icons/foreign-resident.png"
                   alt={lang === 'ja' ? '外国人関連業務' : 'Foreign Resident Services'}
                   width={108}
                   height={108}
@@ -350,7 +350,7 @@ export default async function Home({ params }: PageProps) {
               <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
-                  src="/service-construction.svg"
+                  src="/service-icons/construction-realestate.png"
                   alt={lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
                   width={108}
                   height={108}
@@ -370,7 +370,7 @@ export default async function Home({ params }: PageProps) {
               <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
-                  src="/service-automotive.svg"
+                  src="/service-icons/automotive.png"
                   alt={lang === 'ja' ? '自動車関連業務' : 'Automotive Services'}
                   width={108}
                   height={108}
@@ -390,7 +390,7 @@ export default async function Home({ params }: PageProps) {
               <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
-                  src="/service-restaurant.svg"
+                  src="/service-icons/restaurant-entertainment.png"
                   alt={lang === 'ja' ? '飲食・風俗営業関連業務' : 'Restaurant & Entertainment Business'}
                   width={108}
                   height={108}
@@ -410,7 +410,7 @@ export default async function Home({ params }: PageProps) {
               <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
-                  src="/service-waste.svg"
+                  src="/service-icons/waste-management.png"
                   alt={lang === 'ja' ? '廃棄物処理業許可関連業務' : 'Waste Management Permits'}
                   width={108}
                   height={108}
@@ -430,7 +430,7 @@ export default async function Home({ params }: PageProps) {
               <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
-                  src="/service-travel.svg"
+                  src="/service-icons/travel-hotel.png"
                   alt={lang === 'ja' ? '旅行・旅館業関連業務' : 'Travel & Hotel Business'}
                   width={108}
                   height={108}
@@ -450,7 +450,7 @@ export default async function Home({ params }: PageProps) {
               <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
-                  src="/service-corporate.svg"
+                  src="/service-icons/corporate-establishment.png"
                   alt={lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'}
                   width={108}
                   height={108}
@@ -470,7 +470,7 @@ export default async function Home({ params }: PageProps) {
               <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
-                  src="/service-license.svg"
+                  src="/service-icons/business-license.png"
                   alt={lang === 'ja' ? '営業許可' : 'Business Licenses'}
                   width={108}
                   height={108}
@@ -490,7 +490,7 @@ export default async function Home({ params }: PageProps) {
               <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
-                  src="/service-land.svg"
+                  src="/service-icons/land-services.png"
                   alt={lang === 'ja' ? '土地関連業務' : 'Land-related Services'}
                   width={108}
                   height={108}
@@ -510,7 +510,7 @@ export default async function Home({ params }: PageProps) {
               <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
-                  src="/service-rights.svg"
+                  src="/service-icons/rights-documentation.png"
                   alt={lang === 'ja' ? '権利義務・事実証明業務' : 'Rights & Legal Documentation'}
                   width={108}
                   height={108}
@@ -530,7 +530,7 @@ export default async function Home({ params }: PageProps) {
               <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
-                  src="/service-medical.svg"
+                  src="/service-icons/medical-care.png"
                   alt={lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'}
                   width={108}
                   height={108}
@@ -550,7 +550,7 @@ export default async function Home({ params }: PageProps) {
               <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
-                  src="/service-other.svg"
+                  src="/service-icons/other-services.png"
                   alt={lang === 'ja' ? 'その他の業務' : 'Other Services'}
                   width={108}
                   height={108}
