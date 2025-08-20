@@ -1,40 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { sanityClient } from '@/lib/sanity.client';
-import { serviceCategoriesWithSubcategoriesQuery } from '@/lib/queries';
-
-// サービスカテゴリーの型定義
-interface ServiceCategory {
-  _id: string;
-  title: string;
-  slug: string;
-  subcategories?: {
-    _id: string;
-    title: string;
-    slug: string;
-  }[];
-}
+import { servicesContent } from '@/data/services-content';
 
 export default function UnifiedFooter() {
-  const [serviceCategories, setServiceCategories] = useState<ServiceCategory[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const data = await sanityClient.fetch(serviceCategoriesWithSubcategoriesQuery);
-        setServiceCategories(data || []);
-      } catch (error) {
-        console.error('Failed to fetch service categories for footer:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCategories();
-  }, []);
+  // ハードコーディングされたサービスカテゴリを使用
+  const serviceCategories = servicesContent.ja.categories;
 
   return (
     <footer className="bg-gray-800 text-white py-12">
@@ -76,53 +47,16 @@ export default function UnifiedFooter() {
           <div className="md:col-span-2">
             <h3 className="text-lg font-semibold mb-4">サービス</h3>
             <div className="md:columns-2 md:gap-x-6 space-y-2">
-              {loading ? (
-                // ローディング中の表示
-                <div className="animate-pulse">
-                  <div className="h-4 bg-gray-700 rounded w-3/4 mb-2"></div>
-                  <div className="h-4 bg-gray-700 rounded w-3/4 mb-2"></div>
-                  <div className="h-4 bg-gray-700 rounded w-3/4"></div>
+              {serviceCategories.map((category) => (
+                <div key={category.id} className="mb-2 break-inside-avoid">
+                  <Link 
+                    href={`/services/${category.slug}`}
+                    className="text-gray-300 hover:text-white font-medium transition-colors block"
+                  >
+                    {category.title}
+                  </Link>
                 </div>
-              ) : serviceCategories.length > 0 ? (
-                // Sanityデータがある場合
-                serviceCategories.map((category) => (
-                  <div key={category._id} className="mb-2 break-inside-avoid">
-                    <Link 
-                      href={`/services/${category.slug}`}
-                      className="text-gray-300 hover:text-white font-medium transition-colors block"
-                    >
-                      {category.title}
-                    </Link>
-                    {category.subcategories && category.subcategories.length > 0 && (
-                      <ul className="ml-4 space-y-1 mt-1">
-                        {category.subcategories.map((sub) => (
-                          <li key={sub._id}>
-                            <Link
-                              href={`/services/${category.slug}/${sub.slug}`}
-                              className="text-gray-400 hover:text-gray-300 text-sm transition-colors block"
-                            >
-                              {sub.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ))
-              ) : (
-                // フォールバック（Sanityデータがない場合）
-                <>
-                  <Link href="/services" className="text-gray-400 hover:text-white text-sm transition-colors block">
-                    外国人関連業務
-                  </Link>
-                  <Link href="/services" className="text-gray-400 hover:text-white text-sm transition-colors block">
-                    建設・宅建業関連
-                  </Link>
-                  <Link href="/services" className="text-gray-400 hover:text-white text-sm transition-colors block">
-                    法人設立業務
-                  </Link>
-                </>
-              )}
+              ))}
             </div>
           </div>
 
