@@ -314,9 +314,6 @@ export default async function ServiceDetailPage({ params }: Props) {
           </section>
         )}
 
-            className="my-12"
-          />
-        )}
 
         {/* お役立ち記事 */}
         <NewsSection
