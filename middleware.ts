@@ -20,8 +20,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // ロケールが含まれていない場合
-  if (pathnameIsMissingLocale) {
+  // ロケールが含まれていない場合（ただし、ルートページは除く）
+  if (pathnameIsMissingLocale && pathname !== '/') {
     // ブラウザの言語設定から優先言語を取得
     const acceptLanguage = request.headers.get('accept-language') || ''
     const detectedLocale = acceptLanguage.toLowerCase().startsWith('en') ? 'en' : defaultLocale
