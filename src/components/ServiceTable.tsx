@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import { ServiceDetailLite } from '@/lib/types';
+import { Locale } from '@/lib/i18n/types';
 
 interface ServiceTableProps {
   services: ServiceDetailLite[];
   categorySlug: string;
+  lang: Locale;
 }
 
-export default function ServiceTable({ services, categorySlug }: ServiceTableProps) {
+export default function ServiceTable({ services, categorySlug, lang }: ServiceTableProps) {
   return (
     <section>
       <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">サービス一覧</h2>
@@ -52,7 +54,7 @@ export default function ServiceTable({ services, categorySlug }: ServiceTablePro
                 </td>
                 <td className="px-6 py-4 text-sm font-medium">
                   <Link
-                    href={`/services/${categorySlug}/${service.slug}`}
+                    href={`/${lang}/services/${categorySlug.trim()}/${service.slug.trim()}`}
                     className="text-blue-600 hover:text-blue-900 whitespace-nowrap"
                   >
                     詳細を見る →
@@ -91,7 +93,7 @@ export default function ServiceTable({ services, categorySlug }: ServiceTablePro
             </div>
             
             <Link
-              href={`/services/${categorySlug}/${service.slug}`}
+              href={`/${lang}/services/${categorySlug.trim()}/${service.slug.trim()}`}
               className="block w-full text-center bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors text-sm font-medium"
             >
               詳細を見る

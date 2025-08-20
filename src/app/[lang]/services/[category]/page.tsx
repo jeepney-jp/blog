@@ -151,7 +151,7 @@ export default async function CategoryPage({ params }: Props) {
 
       {/* 中項目テーブル */}
       {data.services && data.services.length > 0 && (
-        <ServiceTable services={data.services} categorySlug={data.slug} />
+        <ServiceTable services={data.services} categorySlug={data.slug} lang={lang} />
       )}
 
       {/* FAQ アコーディオン */}
