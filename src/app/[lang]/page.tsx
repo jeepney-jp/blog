@@ -7,7 +7,7 @@ import ScrollAnimationWrapper from '@/components/ScrollAnimationWrapper';
 import ServiceSearch from '@/components/ServiceSearch';
 import { getNews } from '@/lib/sanity';
 import { sanityClient } from '@/lib/sanity.client';
-import { allServiceCategoriesQuery, allServicesForSearchQuery } from '@/lib/queries';
+import { allServiceCategoriesQuery } from '@/lib/queries';
 import { Locale } from '@/lib/i18n/types';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
@@ -205,19 +205,18 @@ export default async function Home({ params }: PageProps) {
   
   // データ取得
   let serviceCategories: ServiceCategoryItem[] = [];
-  let services: any[] = [];
+  let services: ServiceCategoryItem[] = [];
   let newsItems: NewsItem[] = [];
   
   try {
     // 並列でデータを取得
-    const [serviceCategoriesData, servicesData, newsData] = await Promise.all([
+    const [serviceCategoriesData, newsData] = await Promise.all([
       getServiceCategories().catch(() => []),
-      sanityClient.fetch(allServicesForSearchQuery).catch(() => []),
       getNews().catch(() => [])
     ]);
     
     serviceCategories = serviceCategoriesData;
-    services = servicesData;
+    services = serviceCategoriesData; // サービス検索用にも同じデータを使用
     newsItems = newsData;
   } catch (error) {
     console.error('Error fetching data:', error);
