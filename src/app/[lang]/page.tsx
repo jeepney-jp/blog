@@ -4,17 +4,20 @@ import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import ScrollAnimationWrapper from '@/components/ScrollAnimationWrapper';
+import ServiceSearch from '@/components/ServiceSearch';
 import { getNews } from '@/lib/sanity';
 import { sanityClient } from '@/lib/sanity.client';
-import { allServiceCategoriesQuery } from '@/lib/queries';
+import { allServiceCategoriesQuery, allServicesForSearchQuery } from '@/lib/queries';
 import { Locale } from '@/lib/i18n/types';
 
+// ISR設定：60秒ごとに再生成（開発中は短めに設定）
 export const revalidate = 60;
 
 interface PageProps {
   params: Promise<{ lang: Locale }>;
 }
 
+// 型定義
 interface ServiceCategoryItem {
   _id: string;
   title: string;
@@ -42,125 +45,107 @@ interface NewsItem {
   category: string;
 }
 
+
+
+// 多言語コンテンツ
 const content = {
   ja: {
     hero: {
-      title1: "初回無料相談、まずはお気軽に",
-      title2: "お問い合わせください",
-      subtitle: "豊富な申請実績と高い許可率により、お客様の申請をサポートします。",
-      stats: {
-        applications: "申請実績10,000+",
-        success: "今までのお客様",  
-        satisfaction: "全対応"
-      },
-      cta: "無料相談をチェックする",
-      phone: "047-544-4499",
-      phoneLabel: "お問い合わせはこちら",
-      services: "サービス一覧"
+      title1: "人と社会をつなげる、",
+      title2: "リーガルサービス",
+      freeConsultation: "無料相談はこちらから",
+      viewServices: "サービス内容を見る",
     },
     features: {
       title: "当事務所の特徴",
-      subtitle: "OUR FEATURES",
+      subtitle: "OUR STRENGTHS",
       achievement: {
-        title: "申請実績1,000件超の信頼",
-        description: "豊富な経験と実績に基づき、お客様一人ひとりに最適なサポートを提供いたします。",
-        applications: "申請件数",
-        approvalRate: "許可率"
+        title: "申請実績10,000件超の信頼",
+        description: "2008年の創業以来、10,000件を超える申請を支援し、許可率99％を誇る確かな実績と信頼があります。",
+        applications: "申請実績",
+        approvalRate: "許可率",
       },
       pricing: {
-        title: "完全成果報酬制で明朗な料金体系",
-        description: "許可が下りなかった場合は報酬をいただきません。明確で安心の料金設定です。",
-        savings: "最大50%節約",
-        comparison: "他社比較"
+        title: "業界最安水準の料金設定",
+        description: "高品質なサービスを低価格でご提供、無駄を省いた効率的な業務で、業界最安水準の料金を実現しています。",
+        savings: "平均相場より最大30%安い",
+        comparison: "他社との見積もり比較で実感",
       },
       multilingual: {
-        title: "母国語対応で安心サポート",
-        description: "多言語に対応しており、お客様の母国語での相談が可能です。"
-      }
+        title: "多言語対応で安心サポート",
+        description: "多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。",
+      },
     },
     services: {
       title: "サービス",
-      subtitle: "SERVICES",
-      searchByName: "サービス名で検索",
-      searchByCategory: "カテゴリーから選ぶ",
-      searchDescription: "ご希望のサービスをお選びください"
+      subtitle: "OUR SERVICES",
+      searchByName: "サービス名から探す",
+      searchByCategory: "カテゴリから探す",
+      viewAll: "すべて見る",
     },
     about: {
       title: "事務所案内",
       subtitle: "ABOUT US",
-      heading: "お客様の夢を実現するパートナーとして",
-      description1: "私たちは、外国人の皆様が日本で安心して生活し、夢を実現できるよう、専門知識と豊富な経験を活かしたサポートを提供しています。",
-      description2: "一人ひとりのお客様と向き合い、最適な解決策をご提案いたします。",
-      description3: "お困りのことがございましたら、お気軽にご相談ください。",
-      learnMore: "詳しく見る"
+      description: "お客様の人生に寄り添いながら、一人ひとりのニーズに合わせたオーダーメイドのサービスをご提供します。在留資格から許認可まで、幅広い分野で皆様をサポートいたします。",
+      learnMore: "詳しく見る",
     },
     news: {
-      title: "お知らせ",
+      title: "最新のお知らせ",
       subtitle: "NEWS & UPDATES",
-      viewAll: "お知らせ一覧",
-      noNews: "現在お知らせはございません。"
-    }
+      viewAll: "すべてのお知らせを見る",
+      noNews: "現在お知らせはございません。",
+    },
   },
   en: {
     hero: {
-      title1: "Free Initial Consultation - Feel Free to",
-      title2: "Contact Us",
-      subtitle: "With extensive application experience and high approval rates, we support your applications.",
-      stats: {
-        applications: "Applications 10,000+",
-        success: "Our Customers",  
-        satisfaction: "Full Support"
-      },
-      cta: "Check Free Consultation",
-      phone: "047-544-4499",
-      phoneLabel: "Contact Us Here",
-      services: "Our Services"
+      title1: "Legal Services Connecting",
+      title2: "People and Society",
+      freeConsultation: "Free Consultation",
+      viewServices: "View Our Services",
     },
     features: {
-      title: "Our Features",
-      subtitle: "OUR FEATURES",
+      title: "Our Strengths",
+      subtitle: "OUR STRENGTHS",
       achievement: {
-        title: "Over 1,000 Applications - Trusted Track Record",
-        description: "Based on extensive experience and proven results, we provide optimal support tailored to each client.",
+        title: "Trusted with 10,000+ Applications",
+        description: "Since our founding in 2008, we have supported over 10,000 applications with a 99% approval rate, demonstrating our proven track record and reliability.",
         applications: "Applications",
-        approvalRate: "Approval Rate"
+        approvalRate: "Approval Rate",
       },
       pricing: {
-        title: "Success-Based Fee Structure",
-        description: "We don't charge fees if your application is not approved. Clear and reliable pricing structure.",
-        savings: "Save up to 50%",
-        comparison: "vs competitors"
+        title: "Industry-Leading Affordable Rates",
+        description: "We provide high-quality services at low prices. Through efficient operations that eliminate waste, we achieve industry-leading affordable rates.",
+        savings: "Up to 30% less than average market rates",
+        comparison: "Compare quotes with competitors to see the difference",
       },
       multilingual: {
-        title: "Native Language Support",
-        description: "We offer multilingual support, allowing consultation in your native language."
-      }
+        title: "Multilingual Support for Peace of Mind",
+        description: "Our multilingual staff provide support in your native language. Even if you're not confident in Japanese, you can consult with us with peace of mind.",
+      },
     },
     services: {
       title: "Services",
-      subtitle: "SERVICES",
+      subtitle: "OUR SERVICES",
       searchByName: "Search by Service Name",
-      searchByCategory: "Choose by Category",
-      searchDescription: "Please select your desired service"
+      searchByCategory: "Search by Category",
+      viewAll: "View All",
     },
     about: {
       title: "About Us",
       subtitle: "ABOUT US",
-      heading: "Your Partner in Realizing Dreams",
-      description1: "We provide support leveraging specialized knowledge and extensive experience to help foreign residents live with peace of mind and realize their dreams in Japan.",
-      description2: "We work closely with each client to propose optimal solutions.",
-      description3: "If you have any concerns, please feel free to consult with us.",
-      learnMore: "Learn More"
+      description: "We provide customized services tailored to each individual's needs while staying close to our clients' lives. We support you in a wide range of fields, from residence status to permits and licenses.",
+      learnMore: "Learn More",
     },
     news: {
       title: "Latest News",
       subtitle: "NEWS & UPDATES",
       viewAll: "View All News",
-      noNews: "No news available yet."
-    }
-  }
+      noNews: "No news available at the moment.",
+    },
+  },
 };
 
+// カテゴリーマッピング（ニュース用）
 const categoryMap: { [key: string]: { ja: { name: string; color: string }, en: { name: string; color: string } } } = {
   business_notice: { 
     ja: { name: '営業案内', color: 'bg-green-100 text-green-800' },
@@ -184,13 +169,16 @@ const categoryMap: { [key: string]: { ja: { name: string; color: string }, en: {
   },
 };
 
+// 多言語対応配列
 const languages = {
   ja: ["英語", "中国語", "ベトナム語", "タガログ語", "ネパール語", "シンハラ語", "韓国語", "イタリア語", "スペイン語"],
   en: ["English", "Chinese", "Vietnamese", "Tagalog", "Nepali", "Sinhala", "Korean", "Italian", "Spanish"]
 };
 
+// サービスカテゴリ取得関数
 async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
+    // Sanityが設定されていない場合はダミーデータを返す
     return [];
   }
   try {
@@ -202,6 +190,7 @@ async function getServiceCategories(): Promise<ServiceCategoryItem[]> {
   }
 }
 
+// Static params generation
 export async function generateStaticParams() {
   return [
     { lang: 'ja' },
@@ -214,94 +203,87 @@ export default async function Home({ params }: PageProps) {
   const t = content[lang];
   const basePath = `/${lang}`;
   
-  const newsItems = await getNews();
-  await getServiceCategories(); // For future Sanity integration
-  const latestNews = newsItems.slice(0, 5);
+  // データ取得
+  let serviceCategories: ServiceCategoryItem[] = [];
+  let services: any[] = [];
+  let newsItems: NewsItem[] = [];
   
+  try {
+    // 並列でデータを取得
+    const [serviceCategoriesData, servicesData, newsData] = await Promise.all([
+      getServiceCategories().catch(() => []),
+      sanityClient.fetch(allServicesForSearchQuery).catch(() => []),
+      getNews().catch(() => [])
+    ]);
+    
+    serviceCategories = serviceCategoriesData;
+    services = servicesData;
+    newsItems = newsData;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+
+  const latestNews = newsItems.slice(0, 5);
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header lang={lang} />
 
-      <section 
-        className="relative text-white min-h-[80vh] sm:min-h-[90vh] lg:min-h-screen flex items-center py-8 sm:py-12"
-        style={{
-          backgroundImage: "url('/hero-background2.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      {/* ヒーローセクション */}
+      <section className="relative text-white min-h-screen flex items-center bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/hero-background2.png')"}}>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white bg-opacity-90 rounded-lg p-8 sm:p-12 max-w-4xl mx-auto">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              <span className="block">{t.hero.title1}</span>
-              <span className="block">{t.hero.title2}</span>
-            </h1>
-            <p className="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed">{t.hero.subtitle}</p>
-            
-            <div className="grid grid-cols-3 gap-4 mb-6">
-              <div className="text-center">
-                <p className="font-bold text-blue-600">{t.hero.stats.applications}</p>
-                <p className="text-sm text-gray-600">{lang === 'ja' ? '申請実績' : 'Applications'}</p>
-              </div>
-              <div className="text-center">
-                <p className="font-bold text-blue-600">{t.hero.stats.success}</p>
-                <p className="text-sm text-gray-600">{lang === 'ja' ? '今までのお客様' : 'Our Customers'}</p>
-              </div>
-              <div className="text-center">
-                <p className="font-bold text-blue-600">{t.hero.stats.satisfaction}</p>
-                <p className="text-sm text-gray-600">{lang === 'ja' ? '全対応' : 'Full Support'}</p>
-              </div>
-            </div>
-
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8">
+            <span className="text-blue-400 block mb-2">{t.hero.title1}</span>
+            <span className="text-blue-400 block">{t.hero.title2}</span>
+          </h1>
+          <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
               href={`${basePath}/contact`}
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg mb-4"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
             >
-              {t.hero.cta}
+              {t.hero.freeConsultation}
               <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>
-
-            <div className="mt-4">
-              <p className="text-sm text-gray-600 mb-2">{t.hero.phoneLabel}</p>
-              <a href={`tel:${t.hero.phone}`} className="text-2xl font-bold text-blue-600 hover:text-blue-700">
-                {t.hero.phone}
-              </a>
-            </div>
+            <Link 
+              href={`${basePath}/services`}
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-600 bg-white rounded-lg hover:bg-blue-50 transition-colors border-2 border-white"
+            >
+              {t.hero.viewServices}
+            </Link>
           </div>
         </div>
       </section>
 
+      {/* 当事務所の特徴セクション */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.features.title}</h2>
-            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest">{t.features.subtitle}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* 申請実績 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
-              <div className="w-full h-32 sm:h-40 lg:h-48 mb-4">
-                <Image
-                  src="/申請実績1,000件超の信頼.png"
-                  alt={t.features.achievement.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover"
-                  unoptimized
-                />
-              </div>
-              <div className="p-4 sm:p-6 flex-1">
-                <div className="mb-4">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">{t.features.achievement.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <div className="w-full h-48">
+                  <Image
+                    src="/申請実績1,000件超の信頼.png"
+                    alt={t.features.achievement.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover"
+                    unoptimized
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.achievement.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
                     {t.features.achievement.description}
                   </p>
-                </div>
-                <div className="mt-auto">
                   <div className="bg-blue-50 rounded-lg p-4">
                     <div className="flex justify-around text-center">
                       <div>
@@ -316,347 +298,95 @@ export default async function Home({ params }: PageProps) {
                   </div>
                 </div>
               </div>
-              </div>
             </ScrollAnimationWrapper>
 
+            {/* 料金設定 */}
             <ScrollAnimationWrapper delay={0.2}>
-              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
-              <div className="w-full h-32 sm:h-40 lg:h-48 mb-4">
-                <Image
-                  src="/完全成果報酬制で明朗な料金体系.png"
-                  alt={t.features.pricing.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover"
-                  unoptimized
-                />
-              </div>
-              <div className="p-4 sm:p-6 flex-1">
-                <div className="mb-4">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">{t.features.pricing.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <div className="w-full h-48">
+                  <Image
+                    src="/完全成果報酬制で明朗な料金体系.png"
+                    alt={t.features.pricing.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover"
+                    unoptimized
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.pricing.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
                     {t.features.pricing.description}
                   </p>
-                </div>
-                <div className="mt-auto">
                   <div className="bg-blue-50 rounded-lg p-4 text-center">
-                    <div className="text-center">
-                      <p className="text-blue-900 font-bold text-center text-lg">{t.features.pricing.savings}</p>
-                      <p className="text-blue-700 text-sm text-center mt-1">{t.features.pricing.comparison}</p>
-                    </div>
+                    <p className="text-blue-900 font-bold text-lg">{t.features.pricing.savings}</p>
+                    <p className="text-blue-700 text-sm mt-1">{t.features.pricing.comparison}</p>
                   </div>
                 </div>
               </div>
-              </div>
             </ScrollAnimationWrapper>
 
+            {/* 多言語対応 */}
             <ScrollAnimationWrapper delay={0.4}>
-              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300 flex flex-col h-full">
-              <div className="w-full h-32 sm:h-40 lg:h-48 mb-4">
-                <Image
-                  src="/母国語対応で安心サポート.png"
-                  alt={t.features.multilingual.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover"
-                  unoptimized
-                />
-              </div>
-              <div className="p-4 sm:p-6 flex-1">
-                <div className="mb-4">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">{t.features.multilingual.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <div className="w-full h-48">
+                  <Image
+                    src="/母国語対応で安心サポート.png"
+                    alt={t.features.multilingual.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover"
+                    unoptimized
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.multilingual.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
                     {t.features.multilingual.description}
                   </p>
-                </div>
-                <div className="mt-auto">
                   <div className="bg-blue-50 rounded-lg p-4">
                     <div className="flex flex-wrap gap-2 justify-center">
                       {languages[lang].map((language, index) => (
-                        <span key={index} className="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm font-medium">{language}</span>
+                        <span key={index} className="px-3 py-1 bg-white text-blue-700 rounded-full text-sm font-medium border border-blue-200">
+                          {language}
+                        </span>
                       ))}
                     </div>
                   </div>
                 </div>
               </div>
-              </div>
             </ScrollAnimationWrapper>
           </div>
         </div>
       </section>
 
+      {/* サービスセクション */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.services.title}</h2>
-            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest">{t.services.subtitle}</p>
           </div>
-          <div className="mb-8 sm:mb-12">
-            <div className="max-w-2xl mx-auto mb-8">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder={t.services.searchByName}
-                  className="w-full px-4 py-3 pl-12 text-gray-900 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <svg className="absolute left-3 top-3.5 h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 text-center mb-2">{t.services.searchByCategory}</h3>
-            <p className="text-base text-gray-600 text-center mb-6">{t.services.searchDescription}</p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-            <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-foreigner.svg"
-                  alt={lang === 'ja' ? '外国人関連業務' : 'Foreign Resident Services'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div>
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '外国人関連業務' : 'Foreign Resident Services'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.1}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-construction.svg"
-                  alt={lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                />
-              </div>
-              <div>
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.2}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-automotive.svg"
-                  alt={lang === 'ja' ? '自動車関連業務' : 'Automotive Services'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div>
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '自動車関連業務' : 'Automotive Services'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.3}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-restaurant.svg"
-                  alt={lang === 'ja' ? '飲食・風俗営業関連業務' : 'Restaurant & Entertainment Business'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div>
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '飲食・風俗営業関連業務' : 'Restaurant & Entertainment Business'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.4}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-waste.svg"
-                  alt={lang === 'ja' ? '廃棄物処理業許可関連業務' : 'Waste Management Permits'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div>
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '廃棄物処理業許可関連業務' : 'Waste Management Permits'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.5}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-travel.svg"
-                  alt={lang === 'ja' ? '旅行・旅館業関連業務' : 'Travel & Hotel Business'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div>
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '旅行・旅館業関連業務' : 'Travel & Hotel Business'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.6}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-corporate.svg"
-                  alt={lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div>
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.7}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-license.svg"
-                  alt={lang === 'ja' ? '営業許可' : 'Business Licenses'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div>
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '営業許可' : 'Business Licenses'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.8}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-land.svg"
-                  alt={lang === 'ja' ? '土地関連業務' : 'Land-related Services'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div>
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '土地関連業務' : 'Land-related Services'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.9}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-rights.svg"
-                  alt={lang === 'ja' ? '権利義務・事実証明業務' : 'Rights & Legal Documentation'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div>
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '権利義務・事実証明業務' : 'Rights & Legal Documentation'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={1.0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-medical.svg"
-                  alt={lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div>
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={1.1}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-other.svg"
-                  alt={lang === 'ja' ? 'その他の業務' : 'Other Services'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div>
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? 'その他の業務' : 'Other Services'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-          </div>
+          
+          {/* サービス検索コンポーネント */}
+          <ServiceSearch 
+            services={services}
+            serviceCategories={serviceCategories}
+            lang={lang}
+            searchByNameLabel={t.services.searchByName}
+            searchByCategoryLabel={t.services.searchByCategory}
+            viewAllLabel={t.services.viewAll}
+          />
         </div>
       </section>
 
-      <section className="py-24 bg-gray-50">
+      {/* 事務所案内セクション */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.about.title}</h2>
-            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest">{t.about.subtitle}</p>
           </div>
           <ScrollAnimationWrapper delay={0}>
@@ -671,15 +401,8 @@ export default async function Home({ params }: PageProps) {
                 />
               </div>
               <div className="order-2 lg:order-2">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{t.about.heading}</h3>
-                <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-                  {t.about.description1}
-                </p>
-                <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-                  {t.about.description2}
-                </p>
-                <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                  {t.about.description3}
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  {t.about.description}
                 </p>
                 <Link
                   href={`${basePath}/about`}
@@ -696,11 +419,12 @@ export default async function Home({ params }: PageProps) {
         </div>
       </section>
 
+      {/* お知らせセクション */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.news.title}</h2>
-            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
             <p className="text-sm text-gray-600 tracking-widest">{t.news.subtitle}</p>
           </div>
           {latestNews.length > 0 ? (
@@ -711,7 +435,7 @@ export default async function Home({ params }: PageProps) {
                     <li key={news._id} className="border-b border-gray-200 pb-4 last:border-b-0">
                       <Link
                         href={`${basePath}/news/${news.slug.current}`}
-                        className="block hover:bg-gray-50 p-4 rounded-lg transition-colors"
+                        className="block hover:bg-white p-4 rounded-lg transition-colors"
                       >
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
@@ -741,10 +465,10 @@ export default async function Home({ params }: PageProps) {
               </div>
             </ScrollAnimationWrapper>
           )}
-          <div className="text-center mt-8">
+          <div className="text-center mt-12">
             <Link
               href={`${basePath}/news`}
-              className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
             >
               {t.news.viewAll}
             </Link>
