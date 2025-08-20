@@ -5,7 +5,7 @@ import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import ScrollAnimationWrapper from '@/components/ScrollAnimationWrapper';
 import ServiceSearch from '@/components/ServiceSearch';
-import { getFeaturedTestimonials, getNews } from '@/lib/sanity';
+import { getFeaturedTestimonials, getNews, getFeaturedBlogs } from '@/lib/sanity';
 import { sanityClient } from '@/lib/sanity.client';
 import { allServiceCategoriesQuery, allServicesForSearchQuery } from '@/lib/queries';
 import { Locale } from '@/lib/i18n/types';
@@ -43,6 +43,25 @@ interface NewsItem {
   publishedAt: string;
   excerpt?: string;
   category: string;
+}
+
+interface BlogItem {
+  _id: string;
+  title: string;
+  slug: {
+    current: string;
+  };
+  excerpt: string;
+  category: string;
+  tags?: string[];
+  readingTime?: number;
+  publishedAt: string;
+  featuredImage?: {
+    asset: {
+      url: string;
+    };
+    alt?: string;
+  };
 }
 
 
@@ -260,6 +279,7 @@ export default async function Home({ params }: PageProps) {
   const serviceCategories = await getServiceCategories();
   const servicesForSearch = await getServicesForSearch();
   const featuredTestimonials = await getFeaturedTestimonials();
+  const featuredBlogs = await getFeaturedBlogs();
   
   // 最新5件のみ取得
   const latestNews = newsItems.slice(0, 5);
@@ -921,6 +941,104 @@ export default async function Home({ params }: PageProps) {
               </div>
             </div>
           </ScrollAnimationWrapper>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.blog.title}</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-4"></div>
+            <p className="text-sm text-gray-600 tracking-widest">{t.blog.subtitle}</p>
+          </div>
+          {featuredBlogs.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {featuredBlogs.map((blog: BlogItem) => (
+                <ScrollAnimationWrapper key={blog._id} delay={0}>
+                  <article className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow h-full flex flex-col">
+                    {blog.featuredImage && (
+                      <Link href={`${basePath}/blog/${blog.slug.current}`} className="block">
+                        <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
+                          <Image
+                            src={blog.featuredImage.asset.url}
+                            alt={blog.featuredImage.alt || blog.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      </Link>
+                    )}
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="flex items-center space-x-4 mb-4">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                          {blog.category}
+                        </span>
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                          {t.blog.featured}
+                        </span>
+                        {blog.readingTime && (
+                          <span className="text-sm text-gray-500">
+                            {t.blog.readTime.replace('{time}', blog.readingTime.toString())}
+                          </span>
+                        )}
+                      </div>
+                      
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                        <Link 
+                          href={`${basePath}/blog/${blog.slug.current}`}
+                          className="hover:text-blue-600 transition-colors"
+                        >
+                          {blog.title}
+                        </Link>
+                      </h3>
+                      
+                      <p className="text-gray-600 leading-relaxed mb-4 line-clamp-3 flex-grow">
+                        {blog.excerpt}
+                      </p>
+
+                      {blog.tags && blog.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {blog.tags.slice(0, 3).map((tag, index) => (
+                            <span key={index} className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-700">
+                              #{tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      <div className="flex items-center justify-between mt-auto">
+                        <time className="text-sm text-gray-500">
+                          {new Date(blog.publishedAt).toLocaleDateString(lang === 'ja' ? 'ja-JP' : 'en-US')}
+                        </time>
+                        <Link
+                          href={`${basePath}/blog/${blog.slug.current}`}
+                          className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                        >
+                          {t.blog.continueReading}
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                </ScrollAnimationWrapper>
+              ))}
+            </div>
+          ) : (
+            <ScrollAnimationWrapper delay={0}>
+              <div className="bg-white rounded-lg shadow-sm p-12 text-center">
+                <p className="text-gray-500 text-lg">準備中です。</p>
+              </div>
+            </ScrollAnimationWrapper>
+          )}
+          <div className="text-center mt-8">
+            <Link
+              href={`${basePath}/blog`}
+              className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+            >
+              {t.blog.viewAll}
+            </Link>
+          </div>
         </div>
       </section>
 
