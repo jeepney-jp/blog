@@ -17,12 +17,6 @@ export function getLocaleFromPath(pathname: string): Locale {
 }
 
 export function getPathWithoutLocale(pathname: string): string {
-  const locale = getLocaleFromPath(pathname)
-  
-  if (locale === defaultLocale) {
-    return pathname
-  }
-  
   const segments = pathname.split('/')
   if (isValidLocale(segments[1])) {
     segments.splice(1, 1)

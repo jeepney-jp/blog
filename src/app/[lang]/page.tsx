@@ -481,8 +481,7 @@ export default async function Home({ params }: PageProps) {
             
             {/* 外国人関連業務 */}
             <ScrollAnimationWrapper delay={0}>
-              <Link href={`${basePath}/services/foreign`} className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
-              <div>
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
               <div className="mb-2 sm:mb-4 hidden sm:block">
                 <Image
                   src="/service-foreigner.png"
@@ -498,7 +497,6 @@ export default async function Home({ params }: PageProps) {
                 {lang === 'ja' ? '外国人関連業務' : 'Foreign-related Services'}
               </h3>
               </div>
-              </Link>
             </ScrollAnimationWrapper>
 
             {/* 建設・宅建業関連 */}
