@@ -11,6 +11,7 @@ import { servicesContent } from '@/data/services-content';
 // ISRの設定：1日ごとに再生成
 export const revalidate = 86400;
 
+// サービスカテゴリは完全にハードコード化 - Sanity依存なし
 
 
 interface PageProps {
@@ -46,7 +47,7 @@ export default async function Services({ params }: PageProps) {
             <p className="text-base text-gray-600 text-center mb-8">{servicesContent[lang].searchDescription}</p>
           </div>
           
-          {/* 全12カテゴリーのハードコード版サービスカード */}
+          {/* 全12カテゴリーのハードコード版サービスカード - Sanity依存なし */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* 外国人関連業務：ハードコード版 */}
             <div className="h-full">
@@ -471,8 +472,6 @@ export default async function Services({ params }: PageProps) {
             </div>
 
           </div>
-          
-
         </div>
       </section>
 

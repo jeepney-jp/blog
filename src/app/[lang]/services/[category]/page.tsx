@@ -17,14 +17,14 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  // ハードコーディングされたカテゴリーからスタティックパラムを生成
+  // ハードコーディングされたカテゴリーからスタティックパラムを生成 - Sanity依存なし
   return servicesContent.ja.categories.map(cat => ({ category: cat.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, lang } = await params;
   
-  // ハードコーディングデータをチェック
+  // ハードコーディングデータのみを使用 - Sanity依存なし
   const hardcodedData = categoryPagesContent[lang]?.[category];
   if (hardcodedData) {
     return {
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  // 未定義のカテゴリーの場合のデフォルト
+  // ハードコーディングデータがない場合のフォールバック
   return {
     title: `${category} | サービスカテゴリ`,
   };
@@ -220,6 +220,6 @@ export default async function CategoryPage({ params }: Props) {
     );
   }
 
-  // 未定義のカテゴリーの場合は404
+  // ハードコーディングデータがない場合は404
   notFound();
 }
