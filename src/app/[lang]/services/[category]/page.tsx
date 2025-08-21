@@ -92,10 +92,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CategoryPage({ params }: Props) {
   const { category, lang } = await params;
   
-  // ハードコーディングデータをまずチェック
-  const hardcodedData = categoryPagesContent[lang]?.[category];
-  
-  if (hardcodedData) {
+  // テスト：外国人関連業務のみハードコード、他はSanityフォールバック
+  if (category === 'foreign') {
+    // 外国人関連業務：完全ハードコード表示
+    const hardcodedData = categoryPagesContent[lang]?.[category];
+    
+    if (!hardcodedData) {
+      notFound();
+    }
     // ハードコーディングデータを使用
     const serviceStructuredData = {
       '@context': 'https://schema.org',
@@ -260,7 +264,7 @@ export default async function CategoryPage({ params }: Props) {
     );
   }
 
-  // Sanityフォールバック
+  // 他のカテゴリー：Sanityフォールバック（比較用）
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
     notFound();
   }
