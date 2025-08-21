@@ -55,7 +55,7 @@ export default async function Services({ params }: PageProps) {
                 className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
               >
                 {/* カテゴリー画像 */}
-                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                <div className="relative h-56 rounded-t-xl overflow-hidden bg-gray-100">
                   {/* TODO: 実際のSanity画像URLを確認して同じ画像を使用する */}
                   <Image
                     src="/service-category-cards/foreign-resident.jpg"
@@ -68,7 +68,7 @@ export default async function Services({ params }: PageProps) {
                 </div>
 
                 {/* カテゴリー情報 */}
-                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
                       {lang === 'ja' ? '外国人関連業務' : 'Foreign Resident Services'}
@@ -121,7 +121,7 @@ export default async function Services({ params }: PageProps) {
                 className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
               >
                 {/* カテゴリー画像 */}
-                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                <div className="relative h-56 rounded-t-xl overflow-hidden bg-gray-100">
                   {/* TODO: 実際のSanity画像URLを確認して同じ画像を使用する */}
                   <Image
                     src="/service-category-cards/construction-realestate.png"
@@ -134,7 +134,7 @@ export default async function Services({ params }: PageProps) {
                 </div>
 
                 {/* カテゴリー情報 */}
-                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
                       {lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
@@ -183,10 +183,10 @@ export default async function Services({ params }: PageProps) {
             {/* 自動車関連業務：ハードコード版 */}
             <div className="h-full">
               <Link href={`${basePath}/services/automotive`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                <div className="relative h-56 rounded-t-xl overflow-hidden bg-gray-100">
                   <Image src="/service-category-cards/automotive.png" alt={lang === 'ja' ? '自動車関連業務' : 'Automotive Services'} className="object-cover" fill priority={false} unoptimized />
                 </div>
-                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{lang === 'ja' ? '自動車関連業務' : 'Automotive Services'}</h3>
                     <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '自動車の購入や移転に伴う各種手続きを迅速かつ確実にサポートいたします。' : 'We provide quick and reliable support for various procedures related to vehicle purchases and transfers.'}</p>
@@ -212,10 +212,10 @@ export default async function Services({ params }: PageProps) {
             {/* 飲食・風俗営業：ハードコード版 */}
             <div className="h-full">
               <Link href={`${basePath}/services/food-entertainment`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                <div className="relative h-56 rounded-t-xl overflow-hidden bg-gray-100">
                   <Image src="/service-category-cards/food-entertainment.png" alt={lang === 'ja' ? '飲食・風俗営業' : 'Food & Entertainment'} className="object-cover" fill priority={false} unoptimized />
                 </div>
-                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{lang === 'ja' ? '飲食・風俗営業' : 'Food & Entertainment'}</h3>
                     <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '飲食店や娯楽施設の開業に必要な許可申請を専門的にサポートいたします。' : 'We provide specialized support for permit applications required for opening restaurants and entertainment facilities.'}</p>
@@ -241,10 +241,10 @@ export default async function Services({ params }: PageProps) {
             {/* 廃棄物処理業許可：ハードコード版 */}
             <div className="h-full">
               <Link href={`${basePath}/services/waste-management`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                <div className="relative h-56 rounded-t-xl overflow-hidden bg-gray-100">
                   <Image src="/service-category-cards/waste-management.png" alt={lang === 'ja' ? '廃棄物処理業許可' : 'Waste Management'} className="object-cover" fill priority={false} unoptimized />
                 </div>
-                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{lang === 'ja' ? '廃棄物処理業許可' : 'Waste Management'}</h3>
                     <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '産業廃棄物の適正処理に必要な許可申請を確実にサポートいたします。' : 'We provide reliable support for permit applications required for proper industrial waste management.'}</p>
@@ -270,10 +270,10 @@ export default async function Services({ params }: PageProps) {
             {/* 旅行・旅館業：ハードコード版 */}
             <div className="h-full">
               <Link href={`${basePath}/services/travel-hospitality`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                <div className="relative h-56 rounded-t-xl overflow-hidden bg-gray-100">
                   <Image src="/service-category-cards/travel-hospitality.png" alt={lang === 'ja' ? '旅行・旅館業' : 'Travel & Hospitality'} className="object-cover" fill priority={false} unoptimized />
                 </div>
-                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{lang === 'ja' ? '旅行・旅館業' : 'Travel & Hospitality'}</h3>
                     <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '旅行業や宿泊業の開業に必要な登録・許可申請をサポートいたします。' : 'We support registration and permit applications required for starting travel and accommodation businesses.'}</p>
@@ -299,10 +299,10 @@ export default async function Services({ params }: PageProps) {
             {/* 法人設立業務：ハードコード版 */}
             <div className="h-full">
               <Link href={`${basePath}/services/corporate`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                <div className="relative h-56 rounded-t-xl overflow-hidden bg-gray-100">
                   <Image src="/service-category-cards/corporate.jpg" alt={lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'} className="object-cover" fill priority={false} unoptimized />
                 </div>
-                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'}</h3>
                     <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '起業をお考えの方に、法人設立の手続きを総合的にサポートいたします。' : 'We provide comprehensive support for corporate establishment procedures for those considering starting a business.'}</p>
@@ -328,10 +328,10 @@ export default async function Services({ params }: PageProps) {
             {/* 営業許可：ハードコード版 */}
             <div className="h-full">
               <Link href={`${basePath}/services/business-license`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                <div className="relative h-56 rounded-t-xl overflow-hidden bg-gray-100">
                   <Image src="/service-category-cards/business-license.png" alt={lang === 'ja' ? '営業許可' : 'Business Licenses'} className="object-cover" fill priority={false} unoptimized />
                 </div>
-                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{lang === 'ja' ? '営業許可' : 'Business Licenses'}</h3>
                     <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '様々な業種の営業許可申請を専門知識でサポートいたします。' : 'We support various business license applications with specialized knowledge across different industries.'}</p>
@@ -357,10 +357,10 @@ export default async function Services({ params }: PageProps) {
             {/* 土地関連業務：ハードコード版 */}
             <div className="h-full">
               <Link href={`${basePath}/services/land`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                <div className="relative h-56 rounded-t-xl overflow-hidden bg-gray-100">
                   <Image src="/service-category-cards/land.png" alt={lang === 'ja' ? '土地関連業務' : 'Land-related Services'} className="object-cover" fill priority={false} unoptimized />
                 </div>
-                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{lang === 'ja' ? '土地関連業務' : 'Land-related Services'}</h3>
                     <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '土地の有効活用や開発に関する許可申請をサポートいたします。' : 'We support permit applications for effective land use and development projects.'}</p>
@@ -386,10 +386,10 @@ export default async function Services({ params }: PageProps) {
             {/* 権利義務・事実証明：ハードコード版 */}
             <div className="h-full">
               <Link href={`${basePath}/services/legal-documentation`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                <div className="relative h-56 rounded-t-xl overflow-hidden bg-gray-100">
                   <Image src="/service-category-cards/legal-documentation.png" alt={lang === 'ja' ? '権利義務・事実証明' : 'Legal Documentation'} className="object-cover" fill priority={false} unoptimized />
                 </div>
-                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{lang === 'ja' ? '権利義務・事実証明' : 'Legal Documentation'}</h3>
                     <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '契約書作成や法的文書の作成を専門的にサポートいたします。' : 'We provide specialized support for contract drafting and legal document preparation.'}</p>
@@ -415,10 +415,10 @@ export default async function Services({ params }: PageProps) {
             {/* 医療・介護関連業務：ハードコード版 */}
             <div className="h-full">
               <Link href={`${basePath}/services/medical-care`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                <div className="relative h-56 rounded-t-xl overflow-hidden bg-gray-100">
                   <Image src="/service-category-cards/medical-care.png" alt={lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'} className="object-cover" fill priority={false} unoptimized />
                 </div>
-                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'}</h3>
                     <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '医療・介護事業の開設や運営に必要な許可申請をサポートいたします。' : 'We support permit applications required for establishing and operating medical and care services.'}</p>
@@ -444,10 +444,10 @@ export default async function Services({ params }: PageProps) {
             {/* その他の業務：ハードコード版 */}
             <div className="h-full">
               <Link href={`${basePath}/services/other`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                <div className="relative h-56 rounded-t-xl overflow-hidden bg-gray-100">
                   <Image src="/service-category-cards/other.jpg" alt={lang === 'ja' ? 'その他の業務' : 'Other Services'} className="object-cover" fill priority={false} unoptimized />
                 </div>
-                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                <div className="p-6 flex flex-col h-[calc(100%-14rem)]">
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{lang === 'ja' ? 'その他の業務' : 'Other Services'}</h3>
                     <p className="text-gray-600 text-sm mb-4">{lang === 'ja' ? '上記以外の各種許認可や手続きについてもお気軽にご相談ください。' : 'Please feel free to consult us about various permits and procedures not listed above.'}</p>
