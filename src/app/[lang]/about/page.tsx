@@ -3,43 +3,18 @@
 import Image from "next/image";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "next/navigation";
-import { PortableText } from '@portabletext/react';
 import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import { Locale } from "@/lib/i18n/types";
+import { staffContent } from "@/data/staff-content";
 
-interface Staff {
-  _id: string;
-  name: string;
-  nameRomaji: string;
-  position?: string;
-  photo: {
-    asset: {
-      url: string;
-    };
-    alt?: string;
-  };
-  introduction: Array<{
-    _type: string;
-    children?: Array<{
-      _type: string;
-      text?: string;
-      marks?: string[];
-    }>;
-    style?: string;
-    listItem?: string;
-  }>;
-  order: number;
-}
 
 export default function About() {
   const params = useParams();
   const lang = params.lang as Locale;
   const [expandedMember, setExpandedMember] = useState<string | null>(null);
-  const [staff, setStaff] = useState<Staff[]>([]);
-  const [loading, setLoading] = useState(true);
 
   // 多言語コンテンツ
   const content = {
@@ -172,79 +147,8 @@ export default function About() {
   };
 
   const t = content[lang];
-
-  useEffect(() => {
-    fetchStaff();
-  }, []);
-
-  const fetchStaff = async () => {
-    try {
-      const response = await fetch('/api/staff');
-      const data = await response.json();
-      setStaff(data);
-    } catch (error) {
-      console.error('Error fetching staff:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const hardcodedMembers = [
-    {
-      id: 1,
-      name: "山田 花子｜Hanako Yamada",
-      photo: "/スタッフサンプル1.png",
-      introduction: {
-        ja: "行政書士として10年の経験があります。主に建設業許可や産業廃棄物処理業許可を担当しています。お客様の事業がスムーズに進むよう、全力でサポートいたします。",
-        en: "I have 10 years of experience as an administrative scrivener. I mainly handle construction industry permits and industrial waste disposal permits. I will do my best to support your business operations smoothly."
-      }
-    },
-    {
-      id: 2,
-      name: "佐藤 一郎｜Ichiro Sato",
-      photo: "/スタッフサンプル1.png",
-      introduction: {
-        ja: "相続・遺言の専門家として、多くのご家族の大切な手続きをお手伝いしてきました。分かりやすい説明と親身な対応を心がけています。",
-        en: "As a specialist in inheritance and wills, I have helped many families with important procedures. I strive for clear explanations and caring support."
-      }
-    },
-    {
-      id: 3,
-      name: "高橋 美咲｜Misaki Takahashi",
-      photo: "/スタッフサンプル1.png",
-      introduction: {
-        ja: "外国人の在留資格申請を主に担当しています。国際結婚や就労ビザなど、複雑な手続きも丁寧にサポートいたします。",
-        en: "I mainly handle residence status applications for foreigners. I provide careful support for complex procedures such as international marriage and work visas."
-      }
-    },
-    {
-      id: 4,
-      name: "渡辺 健太｜Kenta Watanabe",
-      photo: "/スタッフサンプル2.png",
-      introduction: {
-        ja: "会社設立・法人設立のサポートを専門としています。起業家の皆様の夢の実現に向けて、設立から運営まで幅広くお手伝いします。",
-        en: "I specialize in supporting company and corporate establishment. I provide comprehensive assistance from establishment to operation to help entrepreneurs realize their dreams."
-      }
-    },
-    {
-      id: 5,
-      name: "木村 さくら｜Sakura Kimura",
-      photo: "/スタッフサンプル2.png",
-      introduction: {
-        ja: "契約書作成や各種法務書類の作成を担当しています。正確で分かりやすい書類作成を心がけ、お客様の権利を守ります。",
-        en: "I handle contract drafting and various legal document preparation. I strive to create accurate and clear documents to protect our clients' rights."
-      }
-    },
-    {
-      id: 6,
-      name: "中村 大輔｜Daisuke Nakamura",
-      photo: "/スタッフサンプル2.png",
-      introduction: {
-        ja: "自動車関連業務を中心に、運送業許可や車庫証明など幅広く対応しています。迅速な手続きでお客様のビジネスをサポートします。",
-        en: "I mainly handle automotive-related services, including transportation business permits and garage certificates. I support your business with prompt procedures."
-      }
-    }
-  ];
+  const staffData = staffContent[lang];
+  const staff = staffData.staff;
 
   const toggleMember = (id: string) => {
     setExpandedMember(expandedMember === id ? null : id);
@@ -348,14 +252,9 @@ export default function About() {
       {/* Members Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{t.teamMembers}</h2>
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{staffData.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-            {loading ? (
-              <div className="col-span-full text-center py-8">
-                <p className="text-gray-500">読み込み中...</p>
-              </div>
-            ) : staff.length > 0 ? (
-              staff.map((member) => (
+            {staff.map((member) => (
               <div key={member._id} className="group">
                 <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
                   {/* メンバー写真 - 正方形 */}
@@ -405,65 +304,14 @@ export default function About() {
                     expandedMember === member._id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}>
                     <div className="pt-4 border-t border-gray-200">
-                      <div className="text-gray-600 text-sm leading-relaxed prose prose-sm max-w-none">
-                        <PortableText value={member.introduction} />
-                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {member.introduction}
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-              ))
-            ) : (
-              /* フォールバック: Sanityにデータがない場合はハードコードされたデータを表示 */
-              hardcodedMembers.map((member) => (
-                <div key={member.id} className="group">
-                  <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                    {/* メンバー写真 - 正方形 */}
-                    <div className="mb-4 relative">
-                      <div className="w-full aspect-square bg-gray-200 rounded-lg overflow-hidden relative">
-                        <Image 
-                          src={member.photo} 
-                          alt={member.name}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover object-[center_30%]"
-                        />
-                      </div>
-                      
-                      {/* プラスボタン - 写真の右下に配置 */}
-                      <button
-                        onClick={() => toggleMember(member.id.toString())}
-                        className="absolute bottom-2 right-2 w-8 h-8 bg-gray-700 text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all shadow-lg"
-                        aria-label={`${member.name}の詳細を${expandedMember === member.id.toString() ? '閉じる' : '開く'}`}
-                      >
-                        <svg 
-                          className={`w-4 h-4 transition-transform duration-300 ${expandedMember === member.id.toString() ? 'rotate-45' : ''}`} 
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                        </svg>
-                      </button>
-                    </div>
-                    
-                    {/* 名前 */}
-                    <h3 className="text-xl font-semibold text-gray-900 text-center mb-3">{member.name}</h3>
-                    
-                    {/* 自己紹介（展開時） */}
-                    <div className={`overflow-hidden transition-all duration-500 ${
-                      expandedMember === member.id.toString() ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}>
-                      <div className="pt-4 border-t border-gray-200">
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          {member.introduction[lang]}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))
-            )}
+            ))}
           </div>
         </div>
       </section>
