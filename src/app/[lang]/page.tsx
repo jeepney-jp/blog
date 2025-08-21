@@ -261,9 +261,13 @@ export default async function Home({ params }: PageProps) {
                   />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.achievement.title}</h3>
-                  <div className="flex-1">
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                  {/* タイトルエリア - 固定高 */}
+                  <div className="h-8 mb-4">
+                    <h3 className="text-xl font-semibold text-gray-900">{t.features.achievement.title}</h3>
+                  </div>
+                  {/* 説明文エリア - 固定高 */}
+                  <div className="h-24 mb-6">
+                    <p className="text-gray-600 leading-relaxed">
                       {t.features.achievement.description}
                     </p>
                   </div>
@@ -300,9 +304,13 @@ export default async function Home({ params }: PageProps) {
                   />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.pricing.title}</h3>
-                  <div className="flex-1">
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                  {/* タイトルエリア - 固定高 */}
+                  <div className="h-8 mb-4">
+                    <h3 className="text-xl font-semibold text-gray-900">{t.features.pricing.title}</h3>
+                  </div>
+                  {/* 説明文エリア - 固定高 */}
+                  <div className="h-24 mb-6">
+                    <p className="text-gray-600 leading-relaxed">
                       {t.features.pricing.description}
                     </p>
                   </div>
@@ -333,9 +341,13 @@ export default async function Home({ params }: PageProps) {
                   />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.multilingual.title}</h3>
-                  <div className="flex-1">
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                  {/* タイトルエリア - 固定高 */}
+                  <div className="h-8 mb-4">
+                    <h3 className="text-xl font-semibold text-gray-900">{t.features.multilingual.title}</h3>
+                  </div>
+                  {/* 説明文エリア - 固定高 */}
+                  <div className="h-24 mb-6">
+                    <p className="text-gray-600 leading-relaxed">
                       {t.features.multilingual.description}
                     </p>
                   </div>

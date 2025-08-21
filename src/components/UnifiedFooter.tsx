@@ -29,7 +29,7 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
     },
     en: {
       companyName: "Fortia",
-      companyNameFull: "Administrative Law Office",
+      companyNameFull: "Administrative Scrivener Office",
       businessHours: "Business Hours",
       weekdays: "Weekdays: 9:00 - 18:00",
       saturday: "Saturday: 9:00 - 17:00",
@@ -42,7 +42,7 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
       aboutUs: "About Us",
       news: "News",
       contact: "Contact",
-      copyright: "© 2024 Fortia Administrative Law Office. All rights reserved."
+      copyright: "© 2024 Fortia Administrative Scrivener Office. All rights reserved."
     }
   };
 
@@ -62,9 +62,10 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
             </Link>
             <div className="mb-4">
               <p className="text-gray-400">
-                〒100-0001<br />
-                {lang === 'ja' ? '東京都千代田区千代田1-1-1' : '1-1-1 Chiyoda, Chiyoda-ku, Tokyo'}<br />
-                TEL: 03-1234-5678
+                〒297-0026<br />
+                {lang === 'ja' ? '千葉県茂原市八千代2丁目6番地の13' : '2-6-13 Yachiyo, Mobara-shi, Chiba 297-0026'}<br />
+                TEL: 0475-22-8741<br />
+                FAX: 0475-22-8742
               </p>
             </div>
             <div className="mb-4">
