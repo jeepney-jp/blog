@@ -10,6 +10,248 @@ import { FaqItem } from '@/lib/types';
 import { sanityClient } from '@/lib/sanity.client';
 import { Locale } from '@/lib/i18n/types';
 
+// 多言語コンテンツ
+const content = {
+  ja: {
+    pageTitle: "当事務所の特徴",
+    pageDescription: "フォルティア行政書士事務所の強みと独自のサービスをご紹介します",
+    breadcrumbHome: "ホーム",
+    breadcrumbFeatures: "特徴",
+    heroTitle1: "申請の不安、",
+    heroTitle2: "すべて私たちが解決します。",
+    heroSubtitle: "煩雑な手続きから解放され、ビジネスや生活に集中できる環境を",
+    keyPoint1: {
+      title: "圧倒的実績",
+      subtitle: "10,000件超の申請実績"
+    },
+    keyPoint2: {
+      title: "業界最安水準",
+      subtitle: "明朗会計で安心料金"
+    },
+    keyPoint3: {
+      title: "多言語対応",
+      subtitle: "9言語で完全サポート"
+    },
+    concernsTitle: "こんなことでお悩みではありませんか？",
+    concerns: [
+      {
+        title: "初めての申請で不安",
+        description: "実績が豊富な事務所に任せたいけど、どこを選べばいいか分からない…"
+      },
+      {
+        title: "複雑なケースへの対応",
+        description: "自分のケースは少し複雑。本当に許可が取れるのか心配で夜も眠れない…"
+      },
+      {
+        title: "費用と品質のバランス",
+        description: "費用をできるだけ抑えたいが、安かろう悪かろうでは困る…"
+      },
+      {
+        title: "料金体系の不透明さ",
+        description: "最終的にいくら請求されるのか分からず、予算が立てられない…"
+      },
+      {
+        title: "日本語の壁",
+        description: "複雑な手続きの説明を、正確に理解できるか不安…"
+      },
+      {
+        title: "多言語コミュニケーション",
+        description: "外国人スタッフとのやり取りをスムーズに進めたいが、言語の壁を感じる…"
+      },
+      {
+        title: "迫る申請期限",
+        description: "申請の期限が迫っていて、とにかく手続きを急いでいる…"
+      },
+      {
+        title: "時間の制約",
+        description: "平日は仕事で忙しく、事務所に何度も足を運ぶ時間がない…"
+      }
+    ],
+    solutionTitle: "そのお悩み、解決の鍵は当事務所の",
+    solutionHighlight: "「4つの強み」",
+    solutionTitle2: "にあります",
+    solutionDescription: "それぞれの強みが、お客様の課題をどう解決できるのか、このすぐ下で詳しくご説明します。",
+    strengthsGrid: [
+      {
+        title: "申請実績10,000件超の信頼",
+        description: "豊富な経験とノウハウで、複雑なケースにも対応"
+      },
+      {
+        title: "業界最安水準の料金設定",
+        description: "明確な料金体系で、追加費用の心配なし"
+      },
+      {
+        title: "多言語対応で安心サポート",
+        description: "9言語対応で言語の壁を完全に解消"
+      },
+      {
+        title: "スピード対応とオンライン完結",
+        description: "お急ぎの案件も迅速に対応、来所不要"
+      }
+    ],
+    detailedStrengths: {
+      point1: {
+        label: "ポイント 1",
+        title: "申請実績10,000件超の信頼",
+        statsTitle1: "申請実績件数",
+        statsTitle2: "許可率",
+        description: "2008年の創業以来、10,000件を超える申請を支援し、許可率99％を誇る確かな実績と信頼があります。豊富な経験とノウハウにより、お客様の状況に応じた最適な申請戦略をご提案します。"
+      },
+      point2: {
+        label: "ポイント 2",
+        title: "業界最安水準の料金設定",
+        savingsText: "平均相場より",
+        savingsAmount: "30%安い",
+        guarantee1: "🔒 明朗会計",
+        guarantee2: "👍 追加費用なし",
+        description: "高品質なサービスを低価格でご提供、無駄を省いた効率的な業務で、業界最安水準の料金を実現しています。料金体系は明確で、追加費用の心配もありません。"
+      },
+      point3: {
+        label: "ポイント 3",
+        title: "多言語対応で安心サポート",
+        languagesTitle: "対応可能言語（9言語）",
+        languages: ["英語", "中国語", "ベトナム語", "タガログ語", "韓国語", "ポルトガル語"],
+        description: "多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。"
+      },
+      point4: {
+        label: "ポイント 4",
+        title: "スピード対応とオンライン完結の利便性",
+        feature1: "最短即日対応",
+        feature1Sub: "お急ぎの案件も安心",
+        feature2: "オンライン完結",
+        feature2Sub: "来所不要で手続き可能",
+        description: "お急ぎの申請にも迅速に対応します。初回のご相談から申請手続きまでオンラインで完結できるため、事務所へお越しいただかなくても、全国どこからでもご依頼いただけます。"
+      }
+    },
+    trustTitle: "信頼の理由",
+    trustSubtitle: "導入企業数・業界シェア共に実績が豊富です",
+    trustCompanies: "導入企業は業界を問わず0000社以上",
+    trustLogo: "導入企業ロゴ",
+    faqTitle: "よくあるご質問",
+    faqSubtitle: "よくご質問いただく内容をご紹介します",
+    faqEmpty: "現在、よくある質問を準備中です。"
+  },
+  en: {
+    pageTitle: "Our Features",
+    pageDescription: "Introducing the strengths and unique services of Fortia Administrative Law Office",
+    breadcrumbHome: "Home",
+    breadcrumbFeatures: "Features",
+    heroTitle1: "All your application concerns,",
+    heroTitle2: "we solve them all.",
+    heroSubtitle: "Free yourself from complex procedures and focus on your business and life",
+    keyPoint1: {
+      title: "Outstanding Track Record",
+      subtitle: "Over 10,000 application cases"
+    },
+    keyPoint2: {
+      title: "Industry-Low Pricing",
+      subtitle: "Transparent and reliable fees"
+    },
+    keyPoint3: {
+      title: "Multilingual Support",
+      subtitle: "Complete support in 9 languages"
+    },
+    concernsTitle: "Are you facing any of these concerns?",
+    concerns: [
+      {
+        title: "Anxiety about first application",
+        description: "I want to entrust it to an office with abundant experience, but I don't know which one to choose..."
+      },
+      {
+        title: "Handling complex cases",
+        description: "My case is a bit complex. I'm worried whether I can really get permission and can't sleep at night..."
+      },
+      {
+        title: "Balance between cost and quality",
+        description: "I want to keep costs down as much as possible, but cheap doesn't necessarily mean good..."
+      },
+      {
+        title: "Unclear fee structure",
+        description: "I don't know how much I'll be charged in the end, so I can't make a budget..."
+      },
+      {
+        title: "Language barrier",
+        description: "I'm worried whether I can accurately understand complex procedure explanations..."
+      },
+      {
+        title: "Multilingual communication",
+        description: "I want to proceed smoothly with foreign staff, but feel a language barrier..."
+      },
+      {
+        title: "Approaching deadline",
+        description: "The application deadline is approaching and I'm in a hurry to complete the procedures..."
+      },
+      {
+        title: "Time constraints",
+        description: "I'm busy with work on weekdays and don't have time to visit the office multiple times..."
+      }
+    ],
+    solutionTitle: "The key to solving your concerns lies in our office's",
+    solutionHighlight: "\"4 Key Strengths\"",
+    solutionTitle2: "",
+    solutionDescription: "We will explain in detail below how each strength can solve your challenges.",
+    strengthsGrid: [
+      {
+        title: "Trust with over 10,000 application cases",
+        description: "Handle complex cases with abundant experience and know-how"
+      },
+      {
+        title: "Industry-low pricing structure",
+        description: "Clear fee structure with no worry about additional costs"
+      },
+      {
+        title: "Reliable multilingual support",
+        description: "9-language support completely eliminates language barriers"
+      },
+      {
+        title: "Fast response and online completion",
+        description: "Quick response to urgent cases, no office visit required"
+      }
+    ],
+    detailedStrengths: {
+      point1: {
+        label: "Point 1",
+        title: "Trust with over 10,000 application cases",
+        statsTitle1: "Application Cases",
+        statsTitle2: "Approval Rate",
+        description: "Since our establishment in 2008, we have supported over 10,000 applications with a proven track record and trust boasting a 99% approval rate. With our abundant experience and know-how, we propose optimal application strategies according to each customer's situation."
+      },
+      point2: {
+        label: "Point 2",
+        title: "Industry-low pricing structure",
+        savingsText: "Compared to average market rate",
+        savingsAmount: "30% cheaper",
+        guarantee1: "🔒 Transparent pricing",
+        guarantee2: "👍 No additional fees",
+        description: "We provide high-quality services at low prices, achieving industry-low pricing through efficient operations that eliminate waste. Our fee structure is clear with no worry about additional costs."
+      },
+      point3: {
+        label: "Point 3",
+        title: "Reliable multilingual support",
+        languagesTitle: "Supported Languages (9 languages)",
+        languages: ["English", "Chinese", "Vietnamese", "Tagalog", "Korean", "Portuguese"],
+        description: "Multilingual staff provide support in your native language. Even those who are concerned about Japanese can consult with confidence."
+      },
+      point4: {
+        label: "Point 4",
+        title: "Fast response and online completion convenience",
+        feature1: "Same-day response",
+        feature1Sub: "Urgent cases handled safely",
+        feature2: "Online completion",
+        feature2Sub: "No office visit required",
+        description: "We respond quickly to urgent applications. From initial consultation to application procedures can be completed online, allowing you to request our services from anywhere in Japan without visiting our office."
+      }
+    },
+    trustTitle: "Reasons for Trust",
+    trustSubtitle: "Rich track record in both number of client companies and industry share",
+    trustCompanies: "Over 0000 client companies across all industries",
+    trustLogo: "Client Company Logo",
+    faqTitle: "Frequently Asked Questions",
+    faqSubtitle: "Introducing commonly asked questions",
+    faqEmpty: "We are currently preparing frequently asked questions."
+  }
+};
+
 export const metadata: Metadata = {
   title: '当事務所の特徴 | フォルティア行政書士事務所',
   description: 'フォルティア行政書士事務所の特徴をご紹介します。豊富な実績と専門知識で、お客様のニーズにお応えします。',
@@ -38,6 +280,7 @@ interface PageProps {
 
 export default async function FeaturesPage({ params }: PageProps) {
   const { lang } = await params;
+  const t = content[lang];
   const faqs = await getFeaturesFAQ();
   
   return (
@@ -45,19 +288,19 @@ export default async function FeaturesPage({ params }: PageProps) {
       <Header lang={lang} />
       
       <PageHeader 
-        title="当事務所の特徴"
-        description="フォルティア行政書士事務所の強みと独自のサービスをご紹介します"
+        title={t.pageTitle}
+        description={t.pageDescription}
       />
       
       {/* Breadcrumb */}
       <nav className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center space-x-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-gray-700">
-              ホーム
+            <Link href={`/${lang}`} className="hover:text-gray-700">
+              {t.breadcrumbHome}
             </Link>
             <span>／</span>
-            <span className="text-gray-900">特徴</span>
+            <span className="text-gray-900">{t.breadcrumbFeatures}</span>
           </div>
         </div>
       </nav>
@@ -75,13 +318,13 @@ export default async function FeaturesPage({ params }: PageProps) {
           <div className="text-center">
             {/* Main Catchcopy */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              申請の不安、<br className="sm:hidden" />
-              <span className="text-[#004080]">すべて私たちが解決します。</span>
+              {t.heroTitle1}<br className="sm:hidden" />
+              <span className="text-[#004080]">{t.heroTitle2}</span>
             </h1>
             
             {/* Sub Catchcopy */}
             <p className="text-xl md:text-2xl text-gray-600 mb-12">
-              煩雑な手続きから解放され、ビジネスや生活に集中できる環境を
+              {t.heroSubtitle}
             </p>
             
             {/* 3 Key Points */}
@@ -93,8 +336,8 @@ export default async function FeaturesPage({ params }: PageProps) {
                   </svg>
                 </div>
                 <div className="text-left">
-                  <p className="font-bold text-lg">圧倒的実績</p>
-                  <p className="text-sm text-gray-600">10,000件超の申請実績</p>
+                  <p className="font-bold text-lg">{t.keyPoint1.title}</p>
+                  <p className="text-sm text-gray-600">{t.keyPoint1.subtitle}</p>
                 </div>
               </div>
               
@@ -107,8 +350,8 @@ export default async function FeaturesPage({ params }: PageProps) {
                   </svg>
                 </div>
                 <div className="text-left">
-                  <p className="font-bold text-lg">業界最安水準</p>
-                  <p className="text-sm text-gray-600">明朗会計で安心料金</p>
+                  <p className="font-bold text-lg">{t.keyPoint2.title}</p>
+                  <p className="text-sm text-gray-600">{t.keyPoint2.subtitle}</p>
                 </div>
               </div>
               
@@ -121,8 +364,8 @@ export default async function FeaturesPage({ params }: PageProps) {
                   </svg>
                 </div>
                 <div className="text-left">
-                  <p className="font-bold text-lg">多言語対応</p>
-                  <p className="text-sm text-gray-600">9言語で完全サポート</p>
+                  <p className="font-bold text-lg">{t.keyPoint3.title}</p>
+                  <p className="text-sm text-gray-600">{t.keyPoint3.subtitle}</p>
                 </div>
               </div>
             </div>
@@ -137,52 +380,15 @@ export default async function FeaturesPage({ params }: PageProps) {
           {/* 2-column issues */}
           <div className="mt-12">
             <h3 className="text-xl font-semibold text-center mb-8">
-              こんなことでお悩みではありませんか？
+              {t.concernsTitle}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              {/* 申請経験・実績に関する悩み */}
-              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
-                <h4 className="text-lg font-semibold mb-3 text-gray-900">初めての申請で不安</h4>
-                <p className="text-gray-600">実績が豊富な事務所に任せたいけど、どこを選べばいいか分からない…</p>
-              </div>
-              
-              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
-                <h4 className="text-lg font-semibold mb-3 text-gray-900">複雑なケースへの対応</h4>
-                <p className="text-gray-600">自分のケースは少し複雑。本当に許可が取れるのか心配で夜も眠れない…</p>
-              </div>
-              
-              {/* 費用に関する悩み */}
-              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
-                <h4 className="text-lg font-semibold mb-3 text-gray-900">費用と品質のバランス</h4>
-                <p className="text-gray-600">費用をできるだけ抑えたいが、安かろう悪かろうでは困る…</p>
-              </div>
-              
-              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
-                <h4 className="text-lg font-semibold mb-3 text-gray-900">料金体系の不透明さ</h4>
-                <p className="text-gray-600">最終的にいくら請求されるのか分からず、予算が立てられない…</p>
-              </div>
-              
-              {/* 言語に関する悩み */}
-              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
-                <h4 className="text-lg font-semibold mb-3 text-gray-900">日本語の壁</h4>
-                <p className="text-gray-600">複雑な手続きの説明を、正確に理解できるか不安…</p>
-              </div>
-              
-              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
-                <h4 className="text-lg font-semibold mb-3 text-gray-900">多言語コミュニケーション</h4>
-                <p className="text-gray-600">外国人スタッフとのやり取りをスムーズに進めたいが、言語の壁を感じる…</p>
-              </div>
-              
-              {/* 時間に関する悩み */}
-              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
-                <h4 className="text-lg font-semibold mb-3 text-gray-900">迫る申請期限</h4>
-                <p className="text-gray-600">申請の期限が迫っていて、とにかく手続きを急いでいる…</p>
-              </div>
-              
-              <div className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
-                <h4 className="text-lg font-semibold mb-3 text-gray-900">時間の制約</h4>
-                <p className="text-gray-600">平日は仕事で忙しく、事務所に何度も足を運ぶ時間がない…</p>
-              </div>
+              {t.concerns.map((concern, index) => (
+                <div key={index} className="bg-white shadow-lg p-6 rounded-xl hover:shadow-2xl transition-all duration-300">
+                  <h4 className="text-lg font-semibold mb-3 text-gray-900">{concern.title}</h4>
+                  <p className="text-gray-600">{concern.description}</p>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -190,66 +396,28 @@ export default async function FeaturesPage({ params }: PageProps) {
           <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 p-12 rounded-2xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">
-                そのお悩み、解決の鍵は当事務所の<span className="text-[#004080]">「4つの強み」</span>にあります
+                {t.solutionTitle}<span className="text-[#004080]">{t.solutionHighlight}</span>{t.solutionTitle2}
               </h2>
               <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                それぞれの強みが、お客様の課題をどう解決できるのか、このすぐ下で詳しくご説明します。
+                {t.solutionDescription}
               </p>
             </div>
             
             {/* 4 Points Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* Point 1 */}
-              <div className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-16 h-16 bg-[#004080] rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">申請実績10,000件超の信頼</h3>
-                    <p className="text-gray-600 text-sm">豊富な経験とノウハウで、複雑なケースにも対応</p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Point 2 */}
-              <div className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-16 h-16 bg-[#004080] rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">業界最安水準の料金設定</h3>
-                    <p className="text-gray-600 text-sm">明確な料金体系で、追加費用の心配なし</p>
+              {t.strengthsGrid.map((strength, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-16 h-16 bg-[#004080] rounded-full flex items-center justify-center text-white font-bold text-xl">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2">{strength.title}</h3>
+                      <p className="text-gray-600 text-sm">{strength.description}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-              {/* Point 3 */}
-              <div className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-16 h-16 bg-[#004080] rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">多言語対応で安心サポート</h3>
-                    <p className="text-gray-600 text-sm">9言語対応で言語の壁を完全に解消</p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Point 4 */}
-              <div className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-16 h-16 bg-[#004080] rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">スピード対応とオンライン完結</h3>
-                    <p className="text-gray-600 text-sm">お急ぎの案件も迅速に対応、来所不要</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -273,27 +441,26 @@ export default async function FeaturesPage({ params }: PageProps) {
                 </div>
                 <div className="w-full md:w-[65%] p-8">
                   <div className="flex items-start mb-4">
-                    <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 1</span>
+                    <span className="text-sm font-semibold text-gray-500 mr-4">{t.detailedStrengths.point1.label}</span>
                   </div>
                   <h3 className="text-2xl font-bold mb-6">
-                    申請実績10,000件超の信頼
+                    {t.detailedStrengths.point1.title}
                   </h3>
                   
                   {/* 実績数字の強調 */}
                   <div className="grid grid-cols-2 gap-6 mb-6">
                     <div className="bg-blue-50 p-4 rounded-lg text-center">
                       <p className="text-3xl font-bold text-[#004080]">10,000+</p>
-                      <p className="text-sm text-gray-600">申請実績件数</p>
+                      <p className="text-sm text-gray-600">{t.detailedStrengths.point1.statsTitle1}</p>
                     </div>
                     <div className="bg-green-50 p-4 rounded-lg text-center">
                       <p className="text-3xl font-bold text-green-600">99%</p>
-                      <p className="text-sm text-gray-600">許可率</p>
+                      <p className="text-sm text-gray-600">{t.detailedStrengths.point1.statsTitle2}</p>
                     </div>
                   </div>
                   
                   <p className="text-gray-600 leading-relaxed">
-                    2008年の創業以来、10,000件を超える申請を支援し、許可率99％を誇る確かな実績と信頼があります。
-                    豊富な経験とノウハウにより、お客様の状況に応じた最適な申請戦略をご提案します。
+                    {t.detailedStrengths.point1.description}
                   </p>
                 </div>
               </div>
@@ -313,29 +480,28 @@ export default async function FeaturesPage({ params }: PageProps) {
                 </div>
                 <div className="w-full md:w-[65%] p-8">
                   <div className="flex items-start mb-4">
-                    <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 2</span>
+                    <span className="text-sm font-semibold text-gray-500 mr-4">{t.detailedStrengths.point2.label}</span>
                   </div>
                   <h3 className="text-2xl font-bold mb-6">
-                    業界最安水準の料金設定
+                    {t.detailedStrengths.point2.title}
                   </h3>
                   
                   {/* 料金メリットの強調 */}
                   <div className="bg-orange-50 p-6 rounded-lg mb-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-lg font-semibold text-gray-900">平均相場より</p>
-                        <p className="text-4xl font-bold text-orange-600">30%安い</p>
+                        <p className="text-lg font-semibold text-gray-900">{t.detailedStrengths.point2.savingsText}</p>
+                        <p className="text-4xl font-bold text-orange-600">{t.detailedStrengths.point2.savingsAmount}</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm text-gray-600 mb-1">🔒 明朗会計</p>
-                        <p className="text-sm text-gray-600">👍 追加費用なし</p>
+                        <p className="text-sm text-gray-600 mb-1">{t.detailedStrengths.point2.guarantee1}</p>
+                        <p className="text-sm text-gray-600">{t.detailedStrengths.point2.guarantee2}</p>
                       </div>
                     </div>
                   </div>
                   
                   <p className="text-gray-600 leading-relaxed">
-                    高品質なサービスを低価格でご提供、無駄を省いた効率的な業務で、業界最安水準の料金を実現しています。
-                    料金体系は明確で、追加費用の心配もありません。
+                    {t.detailedStrengths.point2.description}
                   </p>
                 </div>
               </div>
@@ -355,45 +521,34 @@ export default async function FeaturesPage({ params }: PageProps) {
                 </div>
                 <div className="w-full md:w-[65%] p-8">
                   <div className="flex items-start mb-4">
-                    <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 3</span>
+                    <span className="text-sm font-semibold text-gray-500 mr-4">{t.detailedStrengths.point3.label}</span>
                   </div>
                   <h3 className="text-2xl font-bold mb-6">
-                    多言語対応で安心サポート
+                    {t.detailedStrengths.point3.title}
                   </h3>
                   
                   {/* 対応言語の表示 */}
                   <div className="bg-purple-50 p-4 rounded-lg mb-6">
-                    <p className="text-sm font-semibold text-gray-700 mb-3">対応可能言語（9言語）</p>
+                    <p className="text-sm font-semibold text-gray-700 mb-3">{t.detailedStrengths.point3.languagesTitle}</p>
                     <div className="grid grid-cols-3 gap-2">
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg">🇬🇧</span>
-                        <span className="text-sm">英語</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg">🇨🇳</span>
-                        <span className="text-sm">中国語</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg">🇻🇳</span>
-                        <span className="text-sm">ベトナム語</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg">🇵🇭</span>
-                        <span className="text-sm">タガログ語</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg">🇰🇷</span>
-                        <span className="text-sm">韓国語</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg">🇵🇹</span>
-                        <span className="text-sm">ポルトガル語</span>
-                      </div>
+                      {[
+                        { flag: "🇬🇧", lang: t.detailedStrengths.point3.languages[0] },
+                        { flag: "🇨🇳", lang: t.detailedStrengths.point3.languages[1] },
+                        { flag: "🇻🇳", lang: t.detailedStrengths.point3.languages[2] },
+                        { flag: "🇵🇭", lang: t.detailedStrengths.point3.languages[3] },
+                        { flag: "🇰🇷", lang: t.detailedStrengths.point3.languages[4] },
+                        { flag: "🇵🇹", lang: t.detailedStrengths.point3.languages[5] }
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-center gap-2">
+                          <span className="text-lg">{item.flag}</span>
+                          <span className="text-sm">{item.lang}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                   
                   <p className="text-gray-600 leading-relaxed">
-                    多言語対応スタッフが母国語でサポート。日本語に不安のある方でも安心してご相談いただけます。
+                    {t.detailedStrengths.point3.description}
                   </p>
                 </div>
               </div>
@@ -409,10 +564,10 @@ export default async function FeaturesPage({ params }: PageProps) {
                 </div>
                 <div className="w-full md:w-[65%] p-8">
                   <div className="flex items-start mb-4">
-                    <span className="text-sm font-semibold text-gray-500 mr-4">ポイント 4</span>
+                    <span className="text-sm font-semibold text-gray-500 mr-4">{t.detailedStrengths.point4.label}</span>
                   </div>
                   <h3 className="text-2xl font-bold mb-6">
-                    スピード対応とオンライン完結の利便性
+                    {t.detailedStrengths.point4.title}
                   </h3>
                   
                   {/* スピードと利便性の強調 */}
@@ -420,20 +575,19 @@ export default async function FeaturesPage({ params }: PageProps) {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="text-center">
                         <div className="text-3xl mb-2">⚡</div>
-                        <p className="text-sm font-semibold text-gray-700">最短即日対応</p>
-                        <p className="text-xs text-gray-600">お急ぎの案件も安心</p>
+                        <p className="text-sm font-semibold text-gray-700">{t.detailedStrengths.point4.feature1}</p>
+                        <p className="text-xs text-gray-600">{t.detailedStrengths.point4.feature1Sub}</p>
                       </div>
                       <div className="text-center">
                         <div className="text-3xl mb-2">💻</div>
-                        <p className="text-sm font-semibold text-gray-700">オンライン完結</p>
-                        <p className="text-xs text-gray-600">来所不要で手続き可能</p>
+                        <p className="text-sm font-semibold text-gray-700">{t.detailedStrengths.point4.feature2}</p>
+                        <p className="text-xs text-gray-600">{t.detailedStrengths.point4.feature2Sub}</p>
                       </div>
                     </div>
                   </div>
                   
                   <p className="text-gray-600 leading-relaxed">
-                    お急ぎの申請にも迅速に対応します。初回のご相談から申請手続きまでオンラインで完結できるため、
-                    事務所へお越しいただかなくても、全国どこからでもご依頼いただけます。
+                    {t.detailedStrengths.point4.description}
                   </p>
                 </div>
               </div>
@@ -447,22 +601,22 @@ export default async function FeaturesPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              信頼の理由
+              {t.trustTitle}
             </h2>
             <h3 className="text-2xl font-semibold text-gray-800">
-              導入企業数・業界シェア共に実績が豊富です
+              {t.trustSubtitle}
             </h3>
           </div>
 
           {/* Company Logos Grid */}
           <div className="bg-gray-50 p-8 rounded-lg">
             <p className="text-center text-gray-700 mb-8">
-              導入企業は業界を問わず0000社以上
+              {t.trustCompanies}
             </p>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
               {[...Array(24)].map((_, i) => (
                 <div key={i} className="bg-gray-200 p-4 rounded flex items-center justify-center">
-                  <span className="text-sm text-gray-500">導入企業ロゴ</span>
+                  <span className="text-sm text-gray-500">{t.trustLogo}</span>
                 </div>
               ))}
             </div>
@@ -475,10 +629,10 @@ export default async function FeaturesPage({ params }: PageProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-              よくあるご質問
+              {t.faqTitle}
             </h2>
             <h3 className="text-xl font-medium text-gray-800">
-              よくご質問いただく内容をご紹介します
+              {t.faqSubtitle}
             </h3>
           </div>
 
@@ -486,7 +640,7 @@ export default async function FeaturesPage({ params }: PageProps) {
             <FaqAccordion faqs={faqs} />
           ) : (
             <div className="text-center py-8 text-gray-500">
-              現在、よくある質問を準備中です。
+              {t.faqEmpty}
             </div>
           )}
         </div>

@@ -70,31 +70,38 @@ export default function About() {
       timeline: {
         "2024-01": {
           title: "事務所移転・規模拡大",
-          description: "より多くのお客様にサービスを提供できる体制へ"
+          description: "より多くのお客様にサービスを提供できる体制へ",
+          dateLabel: "2024年 1月"
         },
         "2023-06": {
           title: "オンライン相談サービス開始",
-          description: "全国のお客様へのサポート体制を構築"
+          description: "全国のお客様へのサポート体制を構築",
+          dateLabel: "2023年 6月"
         },
         "2022-09": {
           title: "スタッフ増員",
-          description: "専門分野を拡充し、より幅広いニーズに対応"
+          description: "専門分野を拡充し、より幅広いニーズに対応",
+          dateLabel: "2022年 9月"
         },
         "2021-12": {
           title: "法人サポート部門設立",
-          description: "企業向けサービスを本格的に開始"
+          description: "企業向けサービスを本格的に開始",
+          dateLabel: "2021年 12月"
         },
         "2020-04": {
           title: "フォルティア行政書士事務所 設立",
-          description: "地域に根ざした行政書士事務所として開業"
+          description: "地域に根ざした行政書士事務所として開業",
+          dateLabel: "2020年 4月"
         },
         "2019-10": {
           title: "行政書士登録",
-          description: "独立に向けて準備を開始"
+          description: "独立に向けて準備を開始",
+          dateLabel: "2019年 10月"
         },
         "2014-04": {
           title: "大手法律事務所に入所",
-          description: "行政書士としての実務経験を積む"
+          description: "行政書士としての実務経験を積む",
+          dateLabel: "2014年 4月"
         }
       },
       mobileNote: "※ タップして詳細をご覧ください"
@@ -126,31 +133,38 @@ export default function About() {
       timeline: {
         "2024-01": {
           title: "Office relocation and expansion",
-          description: "Establishing a system to serve more customers"
+          description: "Establishing a system to serve more customers",
+          dateLabel: "January 2024"
         },
         "2023-06": {
           title: "Online consultation service launched",
-          description: "Built support system for customers nationwide"
+          description: "Built support system for customers nationwide",
+          dateLabel: "June 2023"
         },
         "2022-09": {
           title: "Staff expansion",
-          description: "Expanded specialized fields to meet wider needs"
+          description: "Expanded specialized fields to meet wider needs",
+          dateLabel: "September 2022"
         },
         "2021-12": {
           title: "Corporate support division established",
-          description: "Started full-scale corporate services"
+          description: "Started full-scale corporate services",
+          dateLabel: "December 2021"
         },
         "2020-04": {
           title: "Fortia Administrative Law Office established",
-          description: "Opened as a community-based administrative law office"
+          description: "Opened as a community-based administrative law office",
+          dateLabel: "April 2020"
         },
         "2019-10": {
           title: "Administrative scrivener registration",
-          description: "Started preparation for independence"
+          description: "Started preparation for independence",
+          dateLabel: "October 2019"
         },
         "2014-04": {
           title: "Joined major law firm",
-          description: "Gained practical experience as an administrative scrivener"
+          description: "Gained practical experience as an administrative scrivener",
+          dateLabel: "April 2014"
         }
       },
       mobileNote: "※ Tap for details"
@@ -474,7 +488,7 @@ export default function About() {
               {/* 2024年 */}
               <div className="relative flex items-start">
                 <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">2024年 1月</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2024-01"].dateLabel}</h3>
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
@@ -488,7 +502,7 @@ export default function About() {
               {/* 2023年 */}
               <div className="relative flex items-start">
                 <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">2023年 6月</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2023-06"].dateLabel}</h3>
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
@@ -502,7 +516,7 @@ export default function About() {
               {/* 2022年 */}
               <div className="relative flex items-start">
                 <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">2022年 9月</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2022-09"].dateLabel}</h3>
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
@@ -516,7 +530,7 @@ export default function About() {
               {/* 2021年 */}
               <div className="relative flex items-start">
                 <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">2021年 12月</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2021-12"].dateLabel}</h3>
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
@@ -530,7 +544,7 @@ export default function About() {
               {/* 2020年 */}
               <div className="relative flex items-start">
                 <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">2020年 4月</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2020-04"].dateLabel}</h3>
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
@@ -544,7 +558,7 @@ export default function About() {
               {/* 2019年 */}
               <div className="relative flex items-start">
                 <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">2019年 10月</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2019-10"].dateLabel}</h3>
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
@@ -558,7 +572,7 @@ export default function About() {
               {/* 2014年 */}
               <div className="relative flex items-start">
                 <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">2014年 4月</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2014-04"].dateLabel}</h3>
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
