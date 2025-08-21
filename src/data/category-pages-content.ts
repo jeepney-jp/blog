@@ -51,52 +51,84 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "在留資格・ビザ申請の専門家が安心サポート。特定技能、技術・人文知識・国際業務、経営・管理など幅広く対応。",
       services: [
         {
+          id: "business-manager",
+          title: "経営・管理ビザ",
+          target: "企業等の経営者や管理者が取得する在留資格です。"
+        },
+        {
+          id: "designated-activities",
+          title: "特定活動ビザ",
+          target: "外交官等の家事使用人、ワーキング・ホリデー、介護福祉士の候補者等、幅広い該当者がいます。就労が一切できない場合もあれば、幅広い選択肢の中で就労が可能な場合もあります。（「特定活動46号／本邦大学卒業者」は様々な分野で就労可能。取得条件：日本の大学を卒業し、日本語能力試験N1を取得）。"
+        },
+        {
+          id: "intra-company-transfer",
+          title: "企業内転勤ビザ",
+          target: "日本に本社や支社、支店がある外国法人からの転勤者が取得する在留資格です。"
+        },
+        {
+          id: "student",
+          title: "留学ビザ",
+          target: "大学，専門学校，日本語学校等の学生（いわゆる留学生）が取得します。"
+        },
+        {
+          id: "dependent",
+          title: "家族滞在ビザ",
+          target: "在留外国人の配偶者・子供が該当します。"
+        },
+        {
+          id: "long-term-resident",
+          title: "定住者ビザ",
+          target: "日系３世、中国残留邦人、第三国定住難民等が該当します。"
+        },
+        {
           id: "specified-skilled-worker",
           title: "特定技能ビザ",
-          target: "特定の分野で働く外国人の方",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "人手不足が深刻な特定産業分野において、一定の専門性・技能を有する外国人を受け入れる制度"
+          target: "特定の分野の中で、指定の試験合格者が取得できる在留資格です。分野は、介護、ビルクリーニング、農業、漁業、飲食料品製造業、外食業、素形材産業、産業機械製造業、電気・電子情報関連産業、建設業、造船舶用工業、自動車整備業、航空業、宿泊業の14職種です。各分野に該当している場合でも、それぞれ明確に定められた規定の業務を行わない場合は不許可となりますので、ご注意ください。特定技能制度は、労働力不足解消のための制度です。"
+        },
+        {
+          id: "highly-skilled-professional",
+          title: "高度人材ビザ",
+          target: "ポイント制による高度人材。事業の経営者、研究者、技術者、3つの活動類型があります。高度専門職1号として3年以上活動を行っていた外国人は高度専門職2号が取得でき、優遇措置が受けられるようになります。"
+        },
+        {
+          id: "permanent-resident",
+          title: "永住ビザ",
+          target: "永住許可を受けた外国人が取得できる在留資格です。取得できる条件は以下の通りです。・素行が善良（法律を守り、社会的に非難されることがない生活を送っている）・生活する上で十分な資産または技能（配偶者の資産や技能も含みます）・日本国の利益に合すると認められること。原則として、10年以上日本に在留していることが必要です。税金や保険料の未納がある場合、不許可の可能性が高くなります。"
         },
         {
           id: "engineer-humanities",
           title: "技術・人文知識・国際業務ビザ",
-          target: "技術職・事務職・通訳翻訳などで働く外国人の方",
-          priceMin: 120000,
-          priceMax: 250000,
-          overview: "日本の企業で専門的な業務に従事する外国人向けの就労ビザ"
+          target: "工学、自然科学、法律学，経済学、社会学その他の人文科学の分野の技術や知識を要する業務（技術・人文知識）、外国の文化に基盤を有する思考や感受性を必要とする業務（国際業務）に従事する外国人のための在留資格です。機械工学等の技術者、エンジニア、マーケティング業務従事者、デザイナー、通訳、民間企業の語学教師等が該当します。幅広く該当しますが、「技術・人文知識」「国際業務」に該当しない業務や、学歴・経歴・資格等から相応の能力がないと判断された場合には、在留資格が取得できません。"
         },
         {
-          id: "business-manager",
-          title: "経営・管理ビザ",
-          target: "日本で起業・経営を行う外国人の方",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "日本において事業の経営を行い又は事業の管理に従事する外国人向けのビザ"
+          id: "skilled-labor",
+          title: "技能ビザ",
+          target: "産業上の特殊な分野に属する熟練した技能を要する外国人が該当します。料理の調理師，スポーツ指導者、航空機の操縦者、貴金属等の加工職人等が対象となっており、「技術・人文知識・国際業務」との区別にご注意ください。"
         },
         {
-          id: "spouse-visa",
-          title: "日本人の配偶者等ビザ",
-          target: "日本人と結婚された外国人の方",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "日本人の配偶者・子・特別養子として日本に在住する外国人向けのビザ"
+          id: "entertainer",
+          title: "興行ビザ",
+          target: "俳優、歌手、ダンサー、プロスポーツ選手等、興行のために来日する外国人のための在留資格です。"
         },
         {
-          id: "permanent-resident",
-          title: "永住許可申請",
-          target: "日本に永住を希望する外国人の方",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "日本に永続的に在留することを希望する外国人向けの許可申請"
+          id: "artist",
+          title: "芸術ビザ",
+          target: "音楽、美術、文学等の芸術分野で収入を得る活動を行うための在留資格。「興行」に該当する場合を除きます。"
         },
         {
-          id: "naturalization",
-          title: "帰化許可申請",
-          target: "日本国籍の取得を希望する外国人の方",
-          priceMin: 200000,
-          priceMax: 500000,
-          overview: "外国人が日本国籍を取得するための許可申請手続き"
+          id: "spouse-of-japanese",
+          title: "日本人の配偶者等",
+          target: "日本人の配偶者、実子、特別養子が該当します。"
+        },
+        {
+          id: "spouse-of-permanent-resident",
+          title: "永住者の配偶者等",
+          target: "永住者・特別永住者の配偶者、日本で出生し引き続き在留している実子が該当します。"
+        },
+        {
+          id: "long-term-resident-final",
+          title: "定住者",
+          target: "日系３世、中国残留邦人、第三国定住難民等が該当します。"
         }
       ],
       faq: [
@@ -781,52 +813,84 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "Expert support for visa and residence status applications. Comprehensive assistance for Specified Skilled Worker, Engineer, Business Manager visas and more.",
       services: [
         {
-          id: "specified-skilled-worker",
-          title: "Specified Skilled Worker Visa",
-          target: "Foreign workers in specific industries",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "A system to accept foreign workers with certain expertise and skills in specific industrial fields facing serious labor shortages"
-        },
-        {
-          id: "engineer-humanities",
-          title: "Engineer/Humanities/International Services Visa",
-          target: "Foreign workers in technical, clerical, or interpretation/translation roles",
-          priceMin: 120000,
-          priceMax: 250000,
-          overview: "Work visa for foreigners engaged in specialized work at Japanese companies"
-        },
-        {
           id: "business-manager",
           title: "Business Manager Visa",
-          target: "Foreign entrepreneurs and business managers in Japan",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "Visa for foreigners who manage businesses or engage in business management in Japan"
+          target: "Residence status for corporate executives and managers."
         },
         {
-          id: "spouse-visa",
-          title: "Spouse of Japanese National Visa",
-          target: "Foreign nationals married to Japanese citizens",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "Visa for foreigners residing in Japan as spouses, children, or special adoptees of Japanese nationals"
+          id: "designated-activities",
+          title: "Designated Activities Visa",
+          target: "Wide range of applicable persons including domestic workers for diplomats, working holiday participants, and nursing care worker candidates. Some cases allow no employment at all, while others permit employment across various options. ('Designated Activities No. 46/University Graduates' allows work in various fields. Requirements: graduation from a Japanese university and JLPT N1 certification)."
+        },
+        {
+          id: "intra-company-transfer",
+          title: "Intra-company Transfer Visa",
+          target: "Residence status for transferees from foreign corporations with headquarters, branches, or offices in Japan."
+        },
+        {
+          id: "student",
+          title: "Student Visa",
+          target: "For students at universities, vocational schools, Japanese language schools, etc. (international students)."
+        },
+        {
+          id: "dependent",
+          title: "Dependent Visa",
+          target: "For spouses and children of foreign residents."
+        },
+        {
+          id: "long-term-resident",
+          title: "Long-term Resident Visa",
+          target: "For third-generation Japanese descendants, Chinese orphans left in China, third-country resettlement refugees, etc."
+        },
+        {
+          id: "specified-skilled-worker",
+          title: "Specified Skilled Worker Visa",
+          target: "Residence status for designated test passers in specific fields. Fields include care work, building cleaning, agriculture, fishery, food and beverage manufacturing, food service, materials and processing industries, industrial machinery manufacturing, electrical and electronics information-related industries, construction, shipbuilding and ship machinery, automobile maintenance, aviation, and accommodation - totaling 14 occupations. Even if applicable to each field, denial may result if specific regulated duties are not performed. The Specified Skilled Worker system is designed to address labor shortages."
+        },
+        {
+          id: "highly-skilled-professional",
+          title: "Highly Skilled Professional Visa",
+          target: "Point-based highly skilled professionals. Three activity categories: business management, research, and technology. Foreign nationals who have been active as Highly Skilled Professional No. 1 for three years or more can obtain Highly Skilled Professional No. 2 and receive preferential treatment."
         },
         {
           id: "permanent-resident",
-          title: "Permanent Residence Application",
-          target: "Foreign nationals seeking permanent residence in Japan",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "Permission application for foreigners wishing to reside permanently in Japan"
+          title: "Permanent Residence Visa",
+          target: "Residence status for foreign nationals who have received permanent residence permission. Conditions include: good conduct (law-abiding lifestyle without social criticism), sufficient assets or skills for living (including spouse's assets and skills), and recognition as beneficial to Japan's interests. Generally requires 10+ years of residence in Japan. Unpaid taxes or insurance premiums increase denial likelihood."
         },
         {
-          id: "naturalization",
-          title: "Naturalization Application",
-          target: "Foreign nationals seeking Japanese citizenship",
-          priceMin: 200000,
-          priceMax: 500000,
-          overview: "Permission application process for foreigners to acquire Japanese nationality"
+          id: "engineer-humanities",
+          title: "Engineer/Specialist in Humanities/International Services Visa",
+          target: "Residence status for foreign nationals engaged in work requiring technical knowledge in engineering, natural sciences, law, economics, sociology, and other humanities fields (Engineer/Specialist in Humanities), or work requiring thinking and sensitivity based on foreign culture (International Services). Includes mechanical engineers, marketers, designers, interpreters, private language teachers, etc. While broadly applicable, residence status cannot be obtained for work not falling under 'Engineer/Specialist in Humanities' or 'International Services' or when deemed lacking appropriate ability based on education, experience, qualifications, etc."
+        },
+        {
+          id: "skilled-labor",
+          title: "Skilled Labor Visa",
+          target: "For foreign nationals requiring skilled labor in specialized industrial fields. Targets chefs, sports instructors, aircraft pilots, precious metal craftsmen, etc. Please note the distinction from 'Engineer/Specialist in Humanities/International Services'."
+        },
+        {
+          id: "entertainer",
+          title: "Entertainer Visa",
+          target: "Residence status for foreign nationals coming to Japan for entertainment purposes, including actors, singers, dancers, professional athletes, etc."
+        },
+        {
+          id: "artist",
+          title: "Artist Visa",
+          target: "Residence status for activities generating income in artistic fields such as music, fine arts, literature, etc. Excludes cases falling under 'Entertainer'."
+        },
+        {
+          id: "spouse-of-japanese",
+          title: "Spouse of Japanese National",
+          target: "For spouses, biological children, and special adoptees of Japanese nationals."
+        },
+        {
+          id: "spouse-of-permanent-resident",
+          title: "Spouse of Permanent Resident",
+          target: "For spouses of permanent residents/special permanent residents and biological children born and continuously residing in Japan."
+        },
+        {
+          id: "long-term-resident-final",
+          title: "Long-term Resident",
+          target: "For third-generation Japanese descendants, Chinese orphans left in China, third-country resettlement refugees, etc."
         }
       ],
       faq: [
