@@ -34,8 +34,13 @@ export default function About() {
       weekdays: "平日: 9:00 - 18:00",
       saturday: "土曜: 9:00 - 17:00",
       holiday: "日祝: 休業",
-      qualification: "行政書士（登録番号：15123456）",
-      association: "東京都行政書士会所属",
+      qualification: "行政書士（登録番号：第08100026号）",
+      association: "千葉県行政書士会所属",
+      businessContent: "ビザ申請、各種許認可申請、契約書作成、外国人材生活支援等",
+      certification: "法務省認定　登録支援機関認定：１９登－０００９１７",
+      relatedCompanies: "関連会社",
+      employees: "従業員数",
+      representative: "代表者名",
       ceoMessage1: "平成15年に行政書士登録を行い、これまで20年にわたり、多くのお客様の許認可申請、相続手続き、会社設立などをサポートしてまいりました。",
       ceoMessage2: "当事務所では、お客様一人ひとりの状況に合わせた最適な解決策を提案し、迅速かつ丁寧な対応を心がけております。",
       ceoMessage3: "お困りごとがございましたら、お気軽にご相談ください。",
@@ -63,10 +68,10 @@ export default function About() {
           description: "企業向けサービスを本格的に開始",
           dateLabel: "2021年 12月"
         },
-        "2020-04": {
+        "2008-01": {
           title: "フォルティア行政書士事務所 設立",
           description: "地域に根ざした行政書士事務所として開業",
-          dateLabel: "2020年 4月"
+          dateLabel: "2008年 1月"
         },
         "2019-10": {
           title: "行政書士登録",
@@ -97,8 +102,13 @@ export default function About() {
       weekdays: "Weekdays: 9:00 - 18:00",
       saturday: "Saturday: 9:00 - 17:00",
       holiday: "Sunday & Holidays: Closed",
-      qualification: "Administrative Scrivener (Registration No.: 15123456)",
-      association: "Member of Tokyo Administrative Scriveners Association",
+      qualification: "Administrative Scrivener (Registration No.: 08100026)",
+      association: "Member of Chiba Prefectural Administrative Scriveners Association",
+      businessContent: "Visa applications, various licensing applications, contract drafting, foreign worker life support, etc.",
+      certification: "Ministry of Justice Certified Registered Support Organization: 19-000917",
+      relatedCompanies: "Related Companies",
+      employees: "Number of Employees",
+      representative: "Representative Name",
       ceoMessage1: "I registered as an administrative scrivener in 2003 and have been supporting many clients with licensing applications, inheritance procedures, and company establishment for 20 years.",
       ceoMessage2: "At our office, we propose optimal solutions tailored to each client's situation and strive for prompt and courteous service.",
       ceoMessage3: "Please feel free to contact us if you have any concerns.",
@@ -126,10 +136,10 @@ export default function About() {
           description: "Started full-scale corporate services",
           dateLabel: "December 2021"
         },
-        "2020-04": {
+        "2008-01": {
           title: "Fortia Administrative Law Office established",
           description: "Opened as a community-based administrative law office",
-          dateLabel: "April 2020"
+          dateLabel: "January 2008"
         },
         "2019-10": {
           title: "Administrative scrivener registration",
@@ -205,7 +215,7 @@ export default function About() {
                   <div>
                     <h3 className="text-lg font-semibold mb-2">{t.establishedDate}</h3>
                     <p className="text-gray-700">
-                      2014年
+                      2008年
                     </p>
                   </div>
                   
@@ -213,16 +223,16 @@ export default function About() {
                     <h3 className="text-lg font-semibold mb-2">{t.address}</h3>
                     <p className="text-gray-700">
                       〒297-0026<br />
-                      千葉県茂原市茂原579
+                      千葉県茂原市八千代2丁目6番地の13
                     </p>
                   </div>
                   
                   <div>
                     <h3 className="text-lg font-semibold mb-2">{t.contact}</h3>
                     <p className="text-gray-700">
-                      TEL: 03-1234-5678<br />
-                      FAX: 03-1234-5679<br />
-                      Email: info@tanaka-gyosei.com
+                      TEL: 0475-22-8741<br />
+                      FAX: 0475-22-8742<br />
+                      Email: info@fortia-office.com
                     </p>
                   </div>
                   
@@ -236,10 +246,48 @@ export default function About() {
                   </div>
                   
                   <div>
+                    <h3 className="text-lg font-semibold mb-2">{t.representative}</h3>
+                    <p className="text-gray-700">
+                      鈴木 康嗣
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">{t.employees}</h3>
+                    <p className="text-gray-700">
+                      10名
+                    </p>
+                  </div>
+                  
+                  <div>
                     <h3 className="text-lg font-semibold mb-2">{t.qualifications}</h3>
                     <p className="text-gray-700">
                       {t.qualification}<br />
                       {t.association}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">業務内容</h3>
+                    <p className="text-gray-700">
+                      {t.businessContent}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">認定</h3>
+                    <p className="text-gray-700">
+                      {t.certification}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">{t.relatedCompanies}</h3>
+                    <p className="text-gray-700">
+                      株式会社World Wide Works<br />
+                      （労働者派遣事業許可番号：派１２－３０１６５５）<br />
+                      （有料職業紹介事業許可番号：１２－ユ－３０１０９９）<br /><br />
+                      有限会社鈴木弥七商店（不動産業他）
                     </p>
                   </div>
                 </div>
@@ -389,16 +437,16 @@ export default function About() {
                 </div>
               </div>
 
-              {/* 2020年 */}
+              {/* 2008年 */}
               <div className="relative flex items-start">
                 <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2020-04"].dateLabel}</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2008-01"].dateLabel}</h3>
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2020-04"].title}</p>
+                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2008-01"].title}</p>
                   <p className="text-gray-600">
-                    {t.timeline["2020-04"].description}
+                    {t.timeline["2008-01"].description}
                   </p>
                 </div>
               </div>
@@ -458,7 +506,7 @@ export default function About() {
           </div>
           <div className="mt-6 text-center">
             <p className="text-gray-700 text-lg">
-              〒297-0026 千葉県茂原市茂原579
+              〒297-0026 千葉県茂原市八千代2丁目6番地の13
             </p>
           </div>
         </div>
