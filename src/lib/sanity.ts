@@ -36,24 +36,3 @@ export async function getNewsBySlug(slug: string) {
     }
   `, { slug })
 }
-
-// スタッフ取得用のクエリ
-export async function getStaff() {
-  return await client.fetch(`
-    *[_type == "staff" && isActive == true] | order(order asc) {
-      _id,
-      name,
-      nameRomaji,
-      position,
-      photo {
-        asset-> {
-          url
-        },
-        alt
-      },
-      introduction,
-      order
-    }
-  `)
-}
-

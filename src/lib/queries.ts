@@ -13,21 +13,3 @@ export const newsQuery = `
   }
 `;
 
-// スタッフ情報取得用のクエリ
-export const staffQuery = `
-  *[_type == "staff" && isActive == true] | order(order asc) {
-    _id,
-    name,
-    nameRomaji,
-    position,
-    photo {
-      asset-> {
-        url
-      },
-      alt
-    },
-    introduction,
-    order
-  }
-`;
-

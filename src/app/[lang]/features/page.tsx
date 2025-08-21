@@ -6,9 +6,8 @@ import NewCTASection from '@/components/NewCTASection';
 import PageHeader from '@/components/PageHeader';
 import Link from 'next/link';
 import { FaqAccordion } from '@/components/FaqAccordion';
-import { FaqItem } from '@/lib/types';
-import { sanityClient } from '@/lib/sanity.client';
 import { Locale } from '@/lib/i18n/types';
+import { featuresFaqContent } from '@/data/features-faq-content';
 
 // 多言語コンテンツ
 const content = {
@@ -257,22 +256,6 @@ export const metadata: Metadata = {
   description: 'フォルティア行政書士事務所の特徴をご紹介します。豊富な実績と専門知識で、お客様のニーズにお応えします。',
 };
 
-async function getFeaturesFAQ(): Promise<FaqItem[]> {
-  try {
-    const query = `*[_type == "featuresFaq" && isPublished == true] | order(order asc) {
-      _id,
-      question,
-      answer,
-      order
-    }`;
-    
-    const faqs = await sanityClient.fetch(query);
-    return faqs || [];
-  } catch (error) {
-    console.error('Error fetching FAQs:', error);
-    return [];
-  }
-}
 
 interface PageProps {
   params: Promise<{ lang: Locale }>;
@@ -281,7 +264,8 @@ interface PageProps {
 export default async function FeaturesPage({ params }: PageProps) {
   const { lang } = await params;
   const t = content[lang];
-  const faqs = await getFeaturesFAQ();
+  const faqData = featuresFaqContent[lang];
+  const faqs = faqData.faqs;
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -629,10 +613,10 @@ export default async function FeaturesPage({ params }: PageProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-              {t.faqTitle}
+              {faqData.title}
             </h2>
             <h3 className="text-xl font-medium text-gray-800">
-              {t.faqSubtitle}
+              {faqData.subtitle}
             </h3>
           </div>
 
