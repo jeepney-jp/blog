@@ -48,31 +48,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  try {
-    // Sanityクエリは削除されたため、フォールバック処理のみ
-    const data = null;
-    
-    if (!data) {
-      return {
-        title: `${category} | サービスカテゴリ`,
-      };
-    }
-
-    return {
-      title: data.metaTitle || `${data.title} | フォルティア行政書士事務所`,
-      description: data.metaDescription || data.catchphrase,
-      openGraph: {
-        title: data.metaTitle || data.title,
-        description: data.metaDescription || data.catchphrase,
-        images: data.ogImageUrl ? [data.ogImageUrl] : [],
-      },
-    };
-  } catch (error) {
-    console.error('Failed to fetch category data:', error);
-    return {
-      title: `${category} | サービスカテゴリ`,
-    };
-  }
+  // Sanityは使用せず、フォールバックのみ
+  return {
+    title: `${category} | サービスカテゴリ`,
+  };
 }
 
 export default async function CategoryPage({ params }: Props) {
