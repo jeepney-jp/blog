@@ -7,7 +7,7 @@ interface UnifiedFooterProps {
 }
 
 export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
-  const serviceCategories = servicesContent.ja.categories;
+  const serviceCategories = servicesContent[lang].categories;
   
   const content = {
     ja: {
