@@ -225,28 +225,58 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "車庫証明、自動車登録の手続きを迅速サポート。忙しい方に代わって確実な手続きを代行いたします。",
       services: [
         {
+          id: "auto-dismantling-permit",
+          title: "自動車解体業許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "auto-driving-agency",
+          title: "自動車運転代行業認定",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "freight-transport-registration",
+          title: "利用運送事業登録",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "rental-car-permit",
+          title: "有償貸渡許可（レンタカー）",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "passenger-transport-permit",
+          title: "旅客自動車運送事業許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "freight-transport-permit",
+          title: "貨物自動車運送事業許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
           id: "garage-certificate",
-          title: "車庫証明申請",
-          target: "新車・中古車を購入される方",
-          priceMin: 15000,
-          priceMax: 25000,
-          overview: "自動車の保管場所証明書の取得申請"
+          title: "自動車保管場所証明書（車庫証明）",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "vehicle-registration",
-          title: "自動車登録",
-          target: "自動車の名義変更が必要な方",
-          priceMin: 20000,
-          priceMax: 40000,
-          overview: "移転登録、変更登録等の各種自動車登録手続き"
+          id: "mini-vehicle-notification1",
+          title: "軽自動車届出",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "number-change",
-          title: "ナンバープレート変更",
-          target: "引越し等でナンバー変更が必要な方",
-          priceMin: 10000,
-          priceMax: 20000,
-          overview: "住所変更に伴うナンバープレートの変更手続き"
+          id: "mini-vehicle-notification2",
+          title: "軽自動車届出",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -278,36 +308,34 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "飲食店営業許可、風俗営業許可の取得から更新まで専門家がサポート。確実な手続きで営業開始をバックアップ。",
       services: [
         {
-          id: "restaurant-permit",
-          title: "飲食店営業許可申請",
-          target: "飲食店を開業される方",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "飲食店を営業するために必要な許可の取得申請"
+          id: "adult-entertainment-notification",
+          title: "性風俗特殊営業営業開始届出",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "liquor-license",
-          title: "酒類販売業免許申請",
-          target: "酒類の販売を行う事業者の方",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "酒類の販売を行うために必要な免許の取得申請"
+          id: "late-night-alcohol-notification",
+          title: "深夜酒類提供飲食店営業開始届出",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "entertainment-permit",
-          title: "風俗営業許可申請",
-          target: "風俗営業を行う事業者の方",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "パチンコ店、麻雀店、キャバレー等の風俗営業許可申請"
+          title: "風俗営業許可",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "food-delivery",
-          title: "食品営業届出",
-          target: "食品の製造・販売を行う事業者の方",
-          priceMin: 50000,
-          priceMax: 100000,
-          overview: "食品衛生法に基づく営業届出手続き"
+          id: "food-manufacturing-permit",
+          title: "食品製造業許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "restaurant-permit",
+          title: "飲食店営業許可",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -339,36 +367,34 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "産業廃棄物収集運搬業許可、一般廃棄物処理業許可の取得から更新まで専門家がサポート。",
       services: [
         {
-          id: "industrial-waste-permit",
-          title: "産業廃棄物収集運搬業許可申請",
-          target: "産業廃棄物の収集運搬を行う事業者の方",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "産業廃棄物の収集又は運搬を業として行うために必要な許可申請"
-        },
-        {
           id: "general-waste-permit",
-          title: "一般廃棄物処理業許可申請",
-          target: "一般廃棄物の処理を行う事業者の方",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "一般廃棄物の収集運搬又は処分を業として行うために必要な許可申請"
+          title: "一般廃棄物処理業許可",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "waste-renewal",
-          title: "廃棄物処理業許可更新",
-          target: "既に許可を取得している事業者の方",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "5年ごとに必要な廃棄物処理業許可の更新手続き"
+          id: "general-waste-facility-permit",
+          title: "一般廃棄物処理施設設置許可",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "waste-change",
-          title: "変更許可・変更届出",
-          target: "許可内容に変更が生じた事業者の方",
-          priceMin: 30000,
-          priceMax: 100000,
-          overview: "事業範囲の変更、施設の変更等に伴う許可申請・届出"
+          id: "industrial-waste-permit",
+          title: "産業廃棄物処理業許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "industrial-waste-transport-permit",
+          title: "産業廃棄物収集運搬業許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "industrial-waste-facility-permit",
+          title: "産業廃棄物処理施設設置許可",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -401,27 +427,21 @@ export const categoryPagesContent: CategoryPagesContent = {
       services: [
         {
           id: "travel-agency",
-          title: "旅行業登録申請",
-          target: "旅行業を営む事業者の方",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "旅行業を営むために必要な登録申請手続き"
+          title: "旅行業登録",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "minpaku-permit",
+          title: "民泊許可",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "hotel-permit",
-          title: "旅館業許可申請",
-          target: "旅館・ホテルを営む事業者の方",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "旅館業法に基づく営業許可の取得申請"
-        },
-        {
-          id: "minpaku-notification",
-          title: "住宅宿泊事業届出",
-          target: "民泊を営む事業者の方",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "住宅宿泊事業法に基づく民泊の届出手続き"
+          title: "旅館営業許可",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "travel-renewal",
@@ -461,36 +481,58 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "株式会社、合同会社の設立から設立後の手続きまで専門家がワンストップでサポート。",
       services: [
         {
-          id: "corporation-establishment",
-          title: "株式会社設立",
-          target: "株式会社の設立を検討されている方",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "定款作成から登記申請まで株式会社設立の全手続き"
+          id: "social-welfare-corporation",
+          title: "社会福祉法人設立認可",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "llc-establishment",
-          title: "合同会社設立",
-          target: "合同会社の設立を検討されている方",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "定款作成から登記申請まで合同会社設立の全手続き"
+          id: "medical-corporation",
+          title: "医療法人設立",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "nonprofit-establishment",
-          title: "一般社団法人・NPO法人設立",
-          target: "非営利法人の設立を検討されている方",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "一般社団法人、NPO法人等の非営利法人設立手続き"
+          id: "community-association",
+          title: "自治会、町内会等の法人化",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "corporate-change",
-          title: "法人変更手続き",
-          target: "法人の登記事項に変更が生じた方",
-          priceMin: 30000,
-          priceMax: 100000,
-          overview: "商号変更、本店移転、役員変更等の各種変更手続き"
+          id: "regional-organization",
+          title: "地縁団体認可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "school-corporation",
+          title: "学校法人設立認可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "religious-corporation",
+          title: "宗教法人設立（規則認証）",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "npo-corporation",
+          title: "NPO法人設立認証",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "general-foundation",
+          title: "社団・財団法人設立",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "company-establishment",
+          title: "会社設立",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -522,28 +564,40 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "各種営業許可の取得から更新まで専門家がサポート。幅広い業種の許可申請に対応。",
       services: [
         {
-          id: "various-permits",
-          title: "各種営業許可申請",
-          target: "営業許可が必要な事業を開始される方",
-          priceMin: 80000,
-          priceMax: 200000,
-          overview: "業種に応じた各種営業許可の取得申請"
+          id: "warehouse-registration",
+          title: "倉庫業登録",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "permit-renewal",
-          title: "営業許可更新",
-          target: "既に許可を取得している事業者の方",
-          priceMin: 50000,
-          priceMax: 100000,
-          overview: "有効期限の到来に伴う営業許可の更新手続き"
+          id: "financial-instruments-registration",
+          title: "金融商品取引業登録",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "permit-change",
-          title: "営業許可変更届",
-          target: "許可内容に変更が生じた事業者の方",
-          priceMin: 20000,
-          priceMax: 60000,
-          overview: "営業所の移転、営業内容の変更等の届出手続き"
+          id: "telecommunications-notification",
+          title: "電気通信事業者届出",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "money-lending-registration",
+          title: "貸金業登録",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "used-goods-permit",
+          title: "古物商許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "liquor-sales-license",
+          title: "酒類販売業免許",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -575,28 +629,22 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "農地転用、開発許可、土地利用に関する各種手続きを専門家がサポート。",
       services: [
         {
-          id: "farmland-conversion",
-          title: "農地転用許可申請",
-          target: "農地を宅地等に転用される方",
-          priceMin: 100000,
-          priceMax: 300000,
-          overview: "農地法に基づく農地転用許可の申請手続き"
+          id: "factory-establishment-permit",
+          title: "工場設置認可",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "development-permit",
-          title: "開発許可申請",
-          target: "開発行為を行う事業者の方",
-          priceMin: 200000,
-          priceMax: 500000,
-          overview: "都市計画法に基づく開発許可の申請手続き"
+          title: "開発行為許可",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "land-boundary",
-          title: "土地境界確定",
-          target: "土地の境界を明確にしたい方",
-          priceMin: 150000,
-          priceMax: 400000,
-          overview: "隣接地との境界確定に関する手続き"
+          id: "farmland-permit",
+          title: "農地許可",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "land-use-change",
@@ -636,34 +684,28 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "契約書作成、内容証明郵便、各種証明書類の作成を専門家がサポート。",
       services: [
         {
-          id: "contract-drafting",
-          title: "契約書作成",
-          target: "契約書の作成が必要な方",
-          priceMin: 50000,
-          priceMax: 200000,
-          overview: "売買契約、賃貸借契約、業務委託契約等の各種契約書作成"
+          id: "voluntary-guardianship-contract",
+          title: "任意成年後見契約",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "certified-mail",
-          title: "内容証明郵便作成",
-          target: "債権回収や契約解除等をお考えの方",
-          priceMin: 30000,
-          priceMax: 80000,
-          overview: "法的効力のある内容証明郵便の作成・発送手続き"
+          title: "内容証明郵便",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "document-verification",
-          title: "各種証明書類作成",
-          target: "公的書類の作成が必要な方",
-          priceMin: 20000,
-          priceMax: 100000,
-          overview: "遺産分割協議書、念書、覚書等の各種書類作成"
+          id: "various-contracts",
+          title: "各種契約書",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "consultation",
-          title: "法的相談・書類チェック",
-          target: "契約内容や書類の確認をしたい方",
-          priceMin: 10000,
+          id: "will-inheritance",
+          title: "遺言・相続",
+          target: "テスト",
+          priceMin: 0
           priceMax: 30000,
           overview: "契約書の内容チェックや法的アドバイス"
         }
@@ -758,28 +800,28 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "上記以外の各種許認可申請、官公署への手続き代行を専門家がサポート。",
       services: [
         {
-          id: "various-procedures",
-          title: "各種行政手続き代行",
-          target: "官公署への手続きが必要な方",
-          priceMin: 30000,
-          priceMax: 150000,
-          overview: "官公署への各種申請・届出・報告等の手続き代行"
+          id: "financing",
+          title: "融資",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "document-collection",
-          title: "各種証明書取得代行",
-          target: "証明書の取得が必要な方",
-          priceMin: 10000,
-          priceMax: 50000,
-          overview: "住民票、戸籍謄本、登記事項証明書等の取得代行"
+          id: "public-subsidies",
+          title: "公的補助金・助成金",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "consultation-other",
-          title: "行政手続き相談",
-          target: "手続きについて相談したい方",
-          priceMin: 5000,
-          priceMax: 15000,
-          overview: "各種行政手続きに関する相談・アドバイス"
+          id: "translation",
+          title: "翻訳",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "apostille-application",
+          title: "アポスティーユ申請",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
