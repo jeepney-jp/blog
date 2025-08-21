@@ -51,52 +51,84 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "在留資格・ビザ申請の専門家が安心サポート。特定技能、技術・人文知識・国際業務、経営・管理など幅広く対応。",
       services: [
         {
+          id: "business-manager",
+          title: "経営・管理ビザ",
+          target: "企業等の経営者や管理者が取得する在留資格です。"
+        },
+        {
+          id: "designated-activities",
+          title: "特定活動ビザ",
+          target: "外交官等の家事使用人、ワーキング・ホリデー、介護福祉士の候補者等、幅広い該当者がいます。就労が一切できない場合もあれば、幅広い選択肢の中で就労が可能な場合もあります。（「特定活動46号／本邦大学卒業者」は様々な分野で就労可能。取得条件：日本の大学を卒業し、日本語能力試験N1を取得）。"
+        },
+        {
+          id: "intra-company-transfer",
+          title: "企業内転勤ビザ",
+          target: "日本に本社や支社、支店がある外国法人からの転勤者が取得する在留資格です。"
+        },
+        {
+          id: "student",
+          title: "留学ビザ",
+          target: "大学，専門学校，日本語学校等の学生（いわゆる留学生）が取得します。"
+        },
+        {
+          id: "dependent",
+          title: "家族滞在ビザ",
+          target: "在留外国人の配偶者・子供が該当します。"
+        },
+        {
+          id: "long-term-resident",
+          title: "定住者ビザ",
+          target: "日系３世、中国残留邦人、第三国定住難民等が該当します。"
+        },
+        {
           id: "specified-skilled-worker",
           title: "特定技能ビザ",
-          target: "特定の分野で働く外国人の方",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "人手不足が深刻な特定産業分野において、一定の専門性・技能を有する外国人を受け入れる制度"
+          target: "特定の分野の中で、指定の試験合格者が取得できる在留資格です。分野は、介護、ビルクリーニング、農業、漁業、飲食料品製造業、外食業、素形材産業、産業機械製造業、電気・電子情報関連産業、建設業、造船舶用工業、自動車整備業、航空業、宿泊業の14職種です。各分野に該当している場合でも、それぞれ明確に定められた規定の業務を行わない場合は不許可となりますので、ご注意ください。特定技能制度は、労働力不足解消のための制度です。"
+        },
+        {
+          id: "highly-skilled-professional",
+          title: "高度人材ビザ",
+          target: "ポイント制による高度人材。事業の経営者、研究者、技術者、3つの活動類型があります。高度専門職1号として3年以上活動を行っていた外国人は高度専門職2号が取得でき、優遇措置が受けられるようになります。"
+        },
+        {
+          id: "permanent-resident",
+          title: "永住ビザ",
+          target: "永住許可を受けた外国人が取得できる在留資格です。取得できる条件は以下の通りです。・素行が善良（法律を守り、社会的に非難されることがない生活を送っている）・生活する上で十分な資産または技能（配偶者の資産や技能も含みます）・日本国の利益に合すると認められること。原則として、10年以上日本に在留していることが必要です。税金や保険料の未納がある場合、不許可の可能性が高くなります。"
         },
         {
           id: "engineer-humanities",
           title: "技術・人文知識・国際業務ビザ",
-          target: "技術職・事務職・通訳翻訳などで働く外国人の方",
-          priceMin: 120000,
-          priceMax: 250000,
-          overview: "日本の企業で専門的な業務に従事する外国人向けの就労ビザ"
+          target: "工学、自然科学、法律学，経済学、社会学その他の人文科学の分野の技術や知識を要する業務（技術・人文知識）、外国の文化に基盤を有する思考や感受性を必要とする業務（国際業務）に従事する外国人のための在留資格です。機械工学等の技術者、エンジニア、マーケティング業務従事者、デザイナー、通訳、民間企業の語学教師等が該当します。幅広く該当しますが、「技術・人文知識」「国際業務」に該当しない業務や、学歴・経歴・資格等から相応の能力がないと判断された場合には、在留資格が取得できません。"
         },
         {
-          id: "business-manager",
-          title: "経営・管理ビザ",
-          target: "日本で起業・経営を行う外国人の方",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "日本において事業の経営を行い又は事業の管理に従事する外国人向けのビザ"
+          id: "skilled-labor",
+          title: "技能ビザ",
+          target: "産業上の特殊な分野に属する熟練した技能を要する外国人が該当します。料理の調理師，スポーツ指導者、航空機の操縦者、貴金属等の加工職人等が対象となっており、「技術・人文知識・国際業務」との区別にご注意ください。"
         },
         {
-          id: "spouse-visa",
-          title: "日本人の配偶者等ビザ",
-          target: "日本人と結婚された外国人の方",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "日本人の配偶者・子・特別養子として日本に在住する外国人向けのビザ"
+          id: "entertainer",
+          title: "興行ビザ",
+          target: "俳優、歌手、ダンサー、プロスポーツ選手等、興行のために来日する外国人のための在留資格です。"
         },
         {
-          id: "permanent-resident",
-          title: "永住許可申請",
-          target: "日本に永住を希望する外国人の方",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "日本に永続的に在留することを希望する外国人向けの許可申請"
+          id: "artist",
+          title: "芸術ビザ",
+          target: "音楽、美術、文学等の芸術分野で収入を得る活動を行うための在留資格。「興行」に該当する場合を除きます。"
         },
         {
-          id: "naturalization",
-          title: "帰化許可申請",
-          target: "日本国籍の取得を希望する外国人の方",
-          priceMin: 200000,
-          priceMax: 500000,
-          overview: "外国人が日本国籍を取得するための許可申請手続き"
+          id: "spouse-of-japanese",
+          title: "日本人の配偶者等",
+          target: "日本人の配偶者、実子、特別養子が該当します。"
+        },
+        {
+          id: "spouse-of-permanent-resident",
+          title: "永住者の配偶者等",
+          target: "永住者・特別永住者の配偶者、日本で出生し引き続き在留している実子が該当します。"
+        },
+        {
+          id: "long-term-resident-final",
+          title: "定住者",
+          target: "日系３世、中国残留邦人、第三国定住難民等が該当します。"
         }
       ],
       faq: [
@@ -133,35 +165,27 @@ export const categoryPagesContent: CategoryPagesContent = {
       services: [
         {
           id: "construction-permit",
-          title: "建設業許可申請",
-          target: "建設業を営む事業者の方",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "建設工事を請け負うために必要な許可の取得申請"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "construction-renewal",
-          title: "建設業許可更新",
-          target: "既に建設業許可を取得している事業者の方",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "5年ごとに必要な建設業許可の更新手続き"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "real-estate-license",
-          title: "宅建業免許申請",
-          target: "不動産業を営む事業者の方",
-          priceMin: 200000,
-          priceMax: 350000,
-          overview: "宅地建物取引業を営むために必要な免許の取得申請"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "construction-change",
-          title: "建設業許可変更届",
-          target: "許可内容に変更が生じた事業者の方",
-          priceMin: 30000,
-          priceMax: 80000,
-          overview: "商号変更、役員変更等に伴う変更届出手続き"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -193,28 +217,58 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "車庫証明、自動車登録の手続きを迅速サポート。忙しい方に代わって確実な手続きを代行いたします。",
       services: [
         {
+          id: "auto-dismantling-permit",
+          title: "自動車解体業許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "auto-driving-agency",
+          title: "自動車運転代行業認定",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "freight-transport-registration",
+          title: "利用運送事業登録",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "rental-car-permit",
+          title: "有償貸渡許可（レンタカー）",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "passenger-transport-permit",
+          title: "旅客自動車運送事業許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "freight-transport-permit",
+          title: "貨物自動車運送事業許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
           id: "garage-certificate",
-          title: "車庫証明申請",
-          target: "新車・中古車を購入される方",
-          priceMin: 15000,
-          priceMax: 25000,
-          overview: "自動車の保管場所証明書の取得申請"
+          title: "自動車保管場所証明書（車庫証明）",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "vehicle-registration",
-          title: "自動車登録",
-          target: "自動車の名義変更が必要な方",
-          priceMin: 20000,
-          priceMax: 40000,
-          overview: "移転登録、変更登録等の各種自動車登録手続き"
+          id: "mini-vehicle-notification1",
+          title: "軽自動車届出",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "number-change",
-          title: "ナンバープレート変更",
-          target: "引越し等でナンバー変更が必要な方",
-          priceMin: 10000,
-          priceMax: 20000,
-          overview: "住所変更に伴うナンバープレートの変更手続き"
+          id: "mini-vehicle-notification2",
+          title: "軽自動車届出",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -246,36 +300,34 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "飲食店営業許可、風俗営業許可の取得から更新まで専門家がサポート。確実な手続きで営業開始をバックアップ。",
       services: [
         {
-          id: "restaurant-permit",
-          title: "飲食店営業許可申請",
-          target: "飲食店を開業される方",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "飲食店を営業するために必要な許可の取得申請"
+          id: "adult-entertainment-notification",
+          title: "性風俗特殊営業営業開始届出",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "liquor-license",
-          title: "酒類販売業免許申請",
-          target: "酒類の販売を行う事業者の方",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "酒類の販売を行うために必要な免許の取得申請"
+          id: "late-night-alcohol-notification",
+          title: "深夜酒類提供飲食店営業開始届出",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "entertainment-permit",
-          title: "風俗営業許可申請",
-          target: "風俗営業を行う事業者の方",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "パチンコ店、麻雀店、キャバレー等の風俗営業許可申請"
+          title: "風俗営業許可",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "food-delivery",
-          title: "食品営業届出",
-          target: "食品の製造・販売を行う事業者の方",
-          priceMin: 50000,
-          priceMax: 100000,
-          overview: "食品衛生法に基づく営業届出手続き"
+          id: "food-manufacturing-permit",
+          title: "食品製造業許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "restaurant-permit",
+          title: "飲食店営業許可",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -307,36 +359,34 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "産業廃棄物収集運搬業許可、一般廃棄物処理業許可の取得から更新まで専門家がサポート。",
       services: [
         {
-          id: "industrial-waste-permit",
-          title: "産業廃棄物収集運搬業許可申請",
-          target: "産業廃棄物の収集運搬を行う事業者の方",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "産業廃棄物の収集又は運搬を業として行うために必要な許可申請"
-        },
-        {
           id: "general-waste-permit",
-          title: "一般廃棄物処理業許可申請",
-          target: "一般廃棄物の処理を行う事業者の方",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "一般廃棄物の収集運搬又は処分を業として行うために必要な許可申請"
+          title: "一般廃棄物処理業許可",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "waste-renewal",
-          title: "廃棄物処理業許可更新",
-          target: "既に許可を取得している事業者の方",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "5年ごとに必要な廃棄物処理業許可の更新手続き"
+          id: "general-waste-facility-permit",
+          title: "一般廃棄物処理施設設置許可",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "waste-change",
-          title: "変更許可・変更届出",
-          target: "許可内容に変更が生じた事業者の方",
-          priceMin: 30000,
-          priceMax: 100000,
-          overview: "事業範囲の変更、施設の変更等に伴う許可申請・届出"
+          id: "industrial-waste-permit",
+          title: "産業廃棄物処理業許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "industrial-waste-transport-permit",
+          title: "産業廃棄物収集運搬業許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "industrial-waste-facility-permit",
+          title: "産業廃棄物処理施設設置許可",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -369,35 +419,21 @@ export const categoryPagesContent: CategoryPagesContent = {
       services: [
         {
           id: "travel-agency",
-          title: "旅行業登録申請",
-          target: "旅行業を営む事業者の方",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "旅行業を営むために必要な登録申請手続き"
+          title: "旅行業登録",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "minpaku-permit",
+          title: "民泊許可",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "hotel-permit",
-          title: "旅館業許可申請",
-          target: "旅館・ホテルを営む事業者の方",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "旅館業法に基づく営業許可の取得申請"
-        },
-        {
-          id: "minpaku-notification",
-          title: "住宅宿泊事業届出",
-          target: "民泊を営む事業者の方",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "住宅宿泊事業法に基づく民泊の届出手続き"
-        },
-        {
-          id: "travel-renewal",
-          title: "旅行業登録更新",
-          target: "既に旅行業登録をしている事業者の方",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "5年ごとに必要な旅行業登録の更新手続き"
+          title: "旅館営業許可",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -429,36 +465,58 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "株式会社、合同会社の設立から設立後の手続きまで専門家がワンストップでサポート。",
       services: [
         {
-          id: "corporation-establishment",
-          title: "株式会社設立",
-          target: "株式会社の設立を検討されている方",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "定款作成から登記申請まで株式会社設立の全手続き"
+          id: "social-welfare-corporation",
+          title: "社会福祉法人設立認可",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "llc-establishment",
-          title: "合同会社設立",
-          target: "合同会社の設立を検討されている方",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "定款作成から登記申請まで合同会社設立の全手続き"
+          id: "medical-corporation",
+          title: "医療法人設立",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "nonprofit-establishment",
-          title: "一般社団法人・NPO法人設立",
-          target: "非営利法人の設立を検討されている方",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "一般社団法人、NPO法人等の非営利法人設立手続き"
+          id: "community-association",
+          title: "自治会、町内会等の法人化",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "corporate-change",
-          title: "法人変更手続き",
-          target: "法人の登記事項に変更が生じた方",
-          priceMin: 30000,
-          priceMax: 100000,
-          overview: "商号変更、本店移転、役員変更等の各種変更手続き"
+          id: "regional-organization",
+          title: "地縁団体認可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "school-corporation",
+          title: "学校法人設立認可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "religious-corporation",
+          title: "宗教法人設立（規則認証）",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "npo-corporation",
+          title: "NPO法人設立認証",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "general-foundation",
+          title: "社団・財団法人設立",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "company-establishment",
+          title: "会社設立",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -490,28 +548,40 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "各種営業許可の取得から更新まで専門家がサポート。幅広い業種の許可申請に対応。",
       services: [
         {
-          id: "various-permits",
-          title: "各種営業許可申請",
-          target: "営業許可が必要な事業を開始される方",
-          priceMin: 80000,
-          priceMax: 200000,
-          overview: "業種に応じた各種営業許可の取得申請"
+          id: "warehouse-registration",
+          title: "倉庫業登録",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "permit-renewal",
-          title: "営業許可更新",
-          target: "既に許可を取得している事業者の方",
-          priceMin: 50000,
-          priceMax: 100000,
-          overview: "有効期限の到来に伴う営業許可の更新手続き"
+          id: "financial-instruments-registration",
+          title: "金融商品取引業登録",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "permit-change",
-          title: "営業許可変更届",
-          target: "許可内容に変更が生じた事業者の方",
-          priceMin: 20000,
-          priceMax: 60000,
-          overview: "営業所の移転、営業内容の変更等の届出手続き"
+          id: "telecommunications-notification",
+          title: "電気通信事業者届出",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "money-lending-registration",
+          title: "貸金業登録",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "used-goods-permit",
+          title: "古物商許可",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "liquor-sales-license",
+          title: "酒類販売業免許",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -543,36 +613,22 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "農地転用、開発許可、土地利用に関する各種手続きを専門家がサポート。",
       services: [
         {
-          id: "farmland-conversion",
-          title: "農地転用許可申請",
-          target: "農地を宅地等に転用される方",
-          priceMin: 100000,
-          priceMax: 300000,
-          overview: "農地法に基づく農地転用許可の申請手続き"
+          id: "factory-establishment-permit",
+          title: "工場設置認可",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "development-permit",
-          title: "開発許可申請",
-          target: "開発行為を行う事業者の方",
-          priceMin: 200000,
-          priceMax: 500000,
-          overview: "都市計画法に基づく開発許可の申請手続き"
+          title: "開発行為許可",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "land-boundary",
-          title: "土地境界確定",
-          target: "土地の境界を明確にしたい方",
-          priceMin: 150000,
-          priceMax: 400000,
-          overview: "隣接地との境界確定に関する手続き"
-        },
-        {
-          id: "land-use-change",
-          title: "地目変更登記",
-          target: "土地の地目を変更される方",
-          priceMin: 50000,
-          priceMax: 100000,
-          overview: "農地から宅地等への地目変更登記手続き"
+          id: "farmland-permit",
+          title: "農地許可",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -604,36 +660,28 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "契約書作成、内容証明郵便、各種証明書類の作成を専門家がサポート。",
       services: [
         {
-          id: "contract-drafting",
-          title: "契約書作成",
-          target: "契約書の作成が必要な方",
-          priceMin: 50000,
-          priceMax: 200000,
-          overview: "売買契約、賃貸借契約、業務委託契約等の各種契約書作成"
+          id: "voluntary-guardianship-contract",
+          title: "任意成年後見契約",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "certified-mail",
-          title: "内容証明郵便作成",
-          target: "債権回収や契約解除等をお考えの方",
-          priceMin: 30000,
-          priceMax: 80000,
-          overview: "法的効力のある内容証明郵便の作成・発送手続き"
+          title: "内容証明郵便",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "document-verification",
-          title: "各種証明書類作成",
-          target: "公的書類の作成が必要な方",
-          priceMin: 20000,
-          priceMax: 100000,
-          overview: "遺産分割協議書、念書、覚書等の各種書類作成"
+          id: "various-contracts",
+          title: "各種契約書",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "consultation",
-          title: "法的相談・書類チェック",
-          target: "契約内容や書類の確認をしたい方",
-          priceMin: 10000,
-          priceMax: 30000,
-          overview: "契約書の内容チェックや法的アドバイス"
+          id: "will-inheritance",
+          title: "遺言・相続",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -666,35 +714,27 @@ export const categoryPagesContent: CategoryPagesContent = {
       services: [
         {
           id: "medical-corporation",
-          title: "医療法人設立",
-          target: "医療法人の設立を検討されている方",
-          priceMin: 300000,
-          priceMax: 600000,
-          overview: "医療法に基づく医療法人の設立認可申請"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "care-service-designation",
-          title: "介護事業所指定申請",
-          target: "介護事業を開始される方",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "介護保険法に基づく各種介護サービス事業所の指定申請"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "pharmacy-license",
-          title: "薬局開設許可申請",
-          target: "薬局を開設される方",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "薬機法に基づく薬局開設許可の申請手続き"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "medical-device",
-          title: "医療機器販売業許可",
-          target: "医療機器の販売を行う事業者の方",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "医療機器の販売業許可・届出手続き"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -726,28 +766,28 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "上記以外の各種許認可申請、官公署への手続き代行を専門家がサポート。",
       services: [
         {
-          id: "various-procedures",
-          title: "各種行政手続き代行",
-          target: "官公署への手続きが必要な方",
-          priceMin: 30000,
-          priceMax: 150000,
-          overview: "官公署への各種申請・届出・報告等の手続き代行"
+          id: "financing",
+          title: "融資",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "document-collection",
-          title: "各種証明書取得代行",
-          target: "証明書の取得が必要な方",
-          priceMin: 10000,
-          priceMax: 50000,
-          overview: "住民票、戸籍謄本、登記事項証明書等の取得代行"
+          id: "public-subsidies",
+          title: "公的補助金・助成金",
+          target: "テスト",
+          priceMin: 0
         },
         {
-          id: "consultation-other",
-          title: "行政手続き相談",
-          target: "手続きについて相談したい方",
-          priceMin: 5000,
-          priceMax: 15000,
-          overview: "各種行政手続きに関する相談・アドバイス"
+          id: "translation",
+          title: "翻訳",
+          target: "テスト",
+          priceMin: 0
+        },
+        {
+          id: "apostille-application",
+          title: "アポスティーユ申請",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -781,52 +821,84 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "Expert support for visa and residence status applications. Comprehensive assistance for Specified Skilled Worker, Engineer, Business Manager visas and more.",
       services: [
         {
-          id: "specified-skilled-worker",
-          title: "Specified Skilled Worker Visa",
-          target: "Foreign workers in specific industries",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "A system to accept foreign workers with certain expertise and skills in specific industrial fields facing serious labor shortages"
-        },
-        {
-          id: "engineer-humanities",
-          title: "Engineer/Humanities/International Services Visa",
-          target: "Foreign workers in technical, clerical, or interpretation/translation roles",
-          priceMin: 120000,
-          priceMax: 250000,
-          overview: "Work visa for foreigners engaged in specialized work at Japanese companies"
-        },
-        {
           id: "business-manager",
           title: "Business Manager Visa",
-          target: "Foreign entrepreneurs and business managers in Japan",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "Visa for foreigners who manage businesses or engage in business management in Japan"
+          target: "Residence status for corporate executives and managers."
         },
         {
-          id: "spouse-visa",
-          title: "Spouse of Japanese National Visa",
-          target: "Foreign nationals married to Japanese citizens",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "Visa for foreigners residing in Japan as spouses, children, or special adoptees of Japanese nationals"
+          id: "designated-activities",
+          title: "Designated Activities Visa",
+          target: "Wide range of applicable persons including domestic workers for diplomats, working holiday participants, and nursing care worker candidates. Some cases allow no employment at all, while others permit employment across various options. ('Designated Activities No. 46/University Graduates' allows work in various fields. Requirements: graduation from a Japanese university and JLPT N1 certification)."
+        },
+        {
+          id: "intra-company-transfer",
+          title: "Intra-company Transfer Visa",
+          target: "Residence status for transferees from foreign corporations with headquarters, branches, or offices in Japan."
+        },
+        {
+          id: "student",
+          title: "Student Visa",
+          target: "For students at universities, vocational schools, Japanese language schools, etc. (international students)."
+        },
+        {
+          id: "dependent",
+          title: "Dependent Visa",
+          target: "For spouses and children of foreign residents."
+        },
+        {
+          id: "long-term-resident",
+          title: "Long-term Resident Visa",
+          target: "For third-generation Japanese descendants, Chinese orphans left in China, third-country resettlement refugees, etc."
+        },
+        {
+          id: "specified-skilled-worker",
+          title: "Specified Skilled Worker Visa",
+          target: "Residence status for designated test passers in specific fields. Fields include care work, building cleaning, agriculture, fishery, food and beverage manufacturing, food service, materials and processing industries, industrial machinery manufacturing, electrical and electronics information-related industries, construction, shipbuilding and ship machinery, automobile maintenance, aviation, and accommodation - totaling 14 occupations. Even if applicable to each field, denial may result if specific regulated duties are not performed. The Specified Skilled Worker system is designed to address labor shortages."
+        },
+        {
+          id: "highly-skilled-professional",
+          title: "Highly Skilled Professional Visa",
+          target: "Point-based highly skilled professionals. Three activity categories: business management, research, and technology. Foreign nationals who have been active as Highly Skilled Professional No. 1 for three years or more can obtain Highly Skilled Professional No. 2 and receive preferential treatment."
         },
         {
           id: "permanent-resident",
-          title: "Permanent Residence Application",
-          target: "Foreign nationals seeking permanent residence in Japan",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "Permission application for foreigners wishing to reside permanently in Japan"
+          title: "Permanent Residence Visa",
+          target: "Residence status for foreign nationals who have received permanent residence permission. Conditions include: good conduct (law-abiding lifestyle without social criticism), sufficient assets or skills for living (including spouse's assets and skills), and recognition as beneficial to Japan's interests. Generally requires 10+ years of residence in Japan. Unpaid taxes or insurance premiums increase denial likelihood."
         },
         {
-          id: "naturalization",
-          title: "Naturalization Application",
-          target: "Foreign nationals seeking Japanese citizenship",
-          priceMin: 200000,
-          priceMax: 500000,
-          overview: "Permission application process for foreigners to acquire Japanese nationality"
+          id: "engineer-humanities",
+          title: "Engineer/Specialist in Humanities/International Services Visa",
+          target: "Residence status for foreign nationals engaged in work requiring technical knowledge in engineering, natural sciences, law, economics, sociology, and other humanities fields (Engineer/Specialist in Humanities), or work requiring thinking and sensitivity based on foreign culture (International Services). Includes mechanical engineers, marketers, designers, interpreters, private language teachers, etc. While broadly applicable, residence status cannot be obtained for work not falling under 'Engineer/Specialist in Humanities' or 'International Services' or when deemed lacking appropriate ability based on education, experience, qualifications, etc."
+        },
+        {
+          id: "skilled-labor",
+          title: "Skilled Labor Visa",
+          target: "For foreign nationals requiring skilled labor in specialized industrial fields. Targets chefs, sports instructors, aircraft pilots, precious metal craftsmen, etc. Please note the distinction from 'Engineer/Specialist in Humanities/International Services'."
+        },
+        {
+          id: "entertainer",
+          title: "Entertainer Visa",
+          target: "Residence status for foreign nationals coming to Japan for entertainment purposes, including actors, singers, dancers, professional athletes, etc."
+        },
+        {
+          id: "artist",
+          title: "Artist Visa",
+          target: "Residence status for activities generating income in artistic fields such as music, fine arts, literature, etc. Excludes cases falling under 'Entertainer'."
+        },
+        {
+          id: "spouse-of-japanese",
+          title: "Spouse of Japanese National",
+          target: "For spouses, biological children, and special adoptees of Japanese nationals."
+        },
+        {
+          id: "spouse-of-permanent-resident",
+          title: "Spouse of Permanent Resident",
+          target: "For spouses of permanent residents/special permanent residents and biological children born and continuously residing in Japan."
+        },
+        {
+          id: "long-term-resident-final",
+          title: "Long-term Resident",
+          target: "For third-generation Japanese descendants, Chinese orphans left in China, third-country resettlement refugees, etc."
         }
       ],
       faq: [
@@ -865,33 +937,24 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "construction-permit",
           title: "Construction Business Permit Application",
           target: "Business operators in the construction industry",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "Application for permits required to contract construction work"
-        },
+          priceMin: 0        },
         {
           id: "construction-renewal",
           title: "Construction Business Permit Renewal",
           target: "Business operators who already have construction permits",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "Renewal procedures for construction business permits required every 5 years"
+          priceMin: 0,
         },
         {
           id: "real-estate-license",
           title: "Real Estate License Application",
           target: "Business operators in the real estate industry",
-          priceMin: 200000,
-          priceMax: 350000,
-          overview: "Application for licenses required to operate real estate transaction business"
+          priceMin: 0,
         },
         {
           id: "construction-change",
           title: "Construction Permit Change Notification",
           target: "Business operators with changes to permit details",
-          priceMin: 30000,
-          priceMax: 80000,
-          overview: "Change notification procedures for company name changes, officer changes, etc."
+          priceMin: 0,
         }
       ],
       faq: [
@@ -926,25 +989,19 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "garage-certificate",
           title: "Garage Certificate Application",
           target: "Those purchasing new or used vehicles",
-          priceMin: 15000,
-          priceMax: 25000,
-          overview: "Application for vehicle storage location certificate"
+          priceMin: 0,
         },
         {
           id: "vehicle-registration",
           title: "Vehicle Registration",
           target: "Those requiring vehicle name change",
-          priceMin: 20000,
-          priceMax: 40000,
-          overview: "Various vehicle registration procedures including transfer and change registration"
+          priceMin: 0,
         },
         {
           id: "number-change",
           title: "License Plate Change",
           target: "Those requiring number plate change due to relocation",
-          priceMin: 10000,
-          priceMax: 20000,
-          overview: "License plate change procedures due to address changes"
+          priceMin: 0,
         }
       ],
       faq: [
@@ -979,33 +1036,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "restaurant-permit",
           title: "Restaurant Business Permit Application",
           target: "Those opening restaurants",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "Application for permits required to operate restaurants"
+          priceMin: 0,
         },
         {
           id: "liquor-license",
           title: "Liquor Sales License Application",
           target: "Business operators selling alcoholic beverages",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "Application for licenses required to sell alcoholic beverages"
+          priceMin: 0,
         },
         {
           id: "entertainment-permit",
           title: "Entertainment Business Permit Application",
           target: "Business operators in entertainment industry",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "Entertainment business permits for pachinko parlors, mahjong parlors, cabarets, etc."
+          priceMin: 0,
         },
         {
           id: "food-delivery",
           title: "Food Business Notification",
           target: "Business operators manufacturing/selling food products",
-          priceMin: 50000,
-          priceMax: 100000,
-          overview: "Business notification procedures under Food Sanitation Act"
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1040,33 +1089,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "industrial-waste-permit",
           title: "Industrial Waste Collection/Transport Permit",
           target: "Business operators collecting/transporting industrial waste",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "Permit application for businesses engaged in industrial waste collection or transport"
+          priceMin: 0,
         },
         {
           id: "general-waste-permit",
           title: "General Waste Disposal Permit",
           target: "Business operators handling general waste disposal",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "Permit application for businesses engaged in general waste collection, transport, or disposal"
+          priceMin: 0,
         },
         {
           id: "waste-renewal",
           title: "Waste Management Permit Renewal",
           target: "Business operators with existing permits",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "Renewal procedures for waste management permits required every 5 years"
+          priceMin: 0,
         },
         {
           id: "waste-change",
           title: "Change Permit/Change Notification",
           target: "Business operators with changes to permit details",
-          priceMin: 30000,
-          priceMax: 100000,
-          overview: "Permit applications and notifications for business scope changes, facility changes, etc."
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1101,33 +1142,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "travel-agency",
           title: "Travel Agency Registration",
           target: "Business operators in travel industry",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "Registration procedures required to operate travel agencies"
+          priceMin: 0,
         },
         {
           id: "hotel-permit",
           title: "Hotel Business Permit Application",
           target: "Business operators running hotels/inns",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "Business permit application under Hotel Business Act"
+          priceMin: 0,
         },
         {
           id: "minpaku-notification",
           title: "Vacation Rental Business Notification",
           target: "Business operators running vacation rentals",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "Vacation rental notification procedures under Residential Accommodation Business Act"
+          priceMin: 0,
         },
         {
           id: "travel-renewal",
           title: "Travel Agency Registration Renewal",
           target: "Business operators with existing travel agency registration",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "Renewal procedures for travel agency registration required every 5 years"
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1162,33 +1195,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "corporation-establishment",
           title: "Company Incorporation",
           target: "Those considering company incorporation",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "Complete company incorporation procedures from articles of incorporation to registration"
+          priceMin: 0,
         },
         {
           id: "llc-establishment",
           title: "LLC Establishment",
           target: "Those considering LLC establishment",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "Complete LLC establishment procedures from articles of incorporation to registration"
+          priceMin: 0,
         },
         {
           id: "nonprofit-establishment",
           title: "General Incorporated Association/NPO Establishment",
           target: "Those considering nonprofit corporation establishment",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "Establishment procedures for general incorporated associations, NPOs, and other nonprofit corporations"
+          priceMin: 0,
         },
         {
           id: "corporate-change",
           title: "Corporate Change Procedures",
           target: "Those with changes to corporate registration matters",
-          priceMin: 30000,
-          priceMax: 100000,
-          overview: "Various change procedures including company name changes, head office relocations, officer changes, etc."
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1223,25 +1248,19 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "various-permits",
           title: "Various Business Permit Applications",
           target: "Those starting businesses requiring permits",
-          priceMin: 80000,
-          priceMax: 200000,
-          overview: "Permit applications for various business types as required by industry"
+          priceMin: 0,
         },
         {
           id: "permit-renewal",
           title: "Business Permit Renewal",
           target: "Business operators with existing permits",
-          priceMin: 50000,
-          priceMax: 100000,
-          overview: "Business permit renewal procedures upon expiration"
+          priceMin: 0,
         },
         {
           id: "permit-change",
           title: "Business Permit Change Notification",
           target: "Business operators with changes to permit details",
-          priceMin: 20000,
-          priceMax: 60000,
-          overview: "Notification procedures for office relocations, business content changes, etc."
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1276,33 +1295,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "farmland-conversion",
           title: "Farmland Conversion Permit",
           target: "Those converting farmland to residential land, etc.",
-          priceMin: 100000,
-          priceMax: 300000,
-          overview: "Farmland conversion permit application procedures under Agricultural Land Act"
+          priceMin: 0,
         },
         {
           id: "development-permit",
           title: "Development Permit Application",
           target: "Business operators undertaking development projects",
-          priceMin: 200000,
-          priceMax: 500000,
-          overview: "Development permit application procedures under City Planning Act"
+          priceMin: 0,
         },
         {
           id: "land-boundary",
           title: "Land Boundary Confirmation",
           target: "Those needing to clarify land boundaries",
-          priceMin: 150000,
-          priceMax: 400000,
-          overview: "Procedures for boundary confirmation with adjacent properties"
+          priceMin: 0,
         },
         {
           id: "land-use-change",
           title: "Land Category Change Registration",
           target: "Those changing land categories",
-          priceMin: 50000,
-          priceMax: 100000,
-          overview: "Land category change registration procedures from farmland to residential land, etc."
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1337,33 +1348,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "contract-drafting",
           title: "Contract Drafting",
           target: "Those needing contract preparation",
-          priceMin: 50000,
-          priceMax: 200000,
-          overview: "Drafting various contracts including sales, lease, and service agreements"
+          priceMin: 0,
         },
         {
           id: "certified-mail",
           title: "Certified Mail Preparation",
           target: "Those considering debt collection or contract termination",
-          priceMin: 30000,
-          priceMax: 80000,
-          overview: "Preparation and sending of legally effective certified mail"
+          priceMin: 0,
         },
         {
           id: "document-verification",
           title: "Various Legal Document Preparation",
           target: "Those needing public document preparation",
-          priceMin: 20000,
-          priceMax: 100000,
-          overview: "Preparation of various documents including inheritance division agreements, memorandums, etc."
+          priceMin: 0,
         },
         {
           id: "consultation",
           title: "Legal Consultation & Document Review",
           target: "Those wanting contract content or document verification",
-          priceMin: 10000,
-          priceMax: 30000,
-          overview: "Contract content review and legal advice"
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1398,33 +1401,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "medical-corporation",
           title: "Medical Corporation Establishment",
           target: "Those considering medical corporation establishment",
-          priceMin: 300000,
-          priceMax: 600000,
-          overview: "Medical corporation establishment authorization application under Medical Care Act"
+          priceMin: 0,
         },
         {
           id: "care-service-designation",
           title: "Care Facility Designation Application",
           target: "Those starting care businesses",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "Designation applications for various care service facilities under Long-Term Care Insurance Act"
+          priceMin: 0,
         },
         {
           id: "pharmacy-license",
           title: "Pharmacy License Application",
           target: "Those establishing pharmacies",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "Pharmacy establishment license application procedures under Pharmaceutical and Medical Device Act"
+          priceMin: 0,
         },
         {
           id: "medical-device",
           title: "Medical Device Sales Business Permit",
           target: "Business operators selling medical devices",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "Medical device sales business permit and notification procedures"
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1459,25 +1454,19 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "various-procedures",
           title: "Various Administrative Procedure Agency",
           target: "Those needing government office procedures",
-          priceMin: 30000,
-          priceMax: 150000,
-          overview: "Agency services for various applications, notifications, and reports to government offices"
+          priceMin: 0,
         },
         {
           id: "document-collection",
           title: "Various Certificate Collection Agency",
           target: "Those needing certificate collection",
-          priceMin: 10000,
-          priceMax: 50000,
-          overview: "Collection agency for residence certificates, family register copies, registration certificates, etc."
+          priceMin: 0,
         },
         {
           id: "consultation-other",
           title: "Administrative Procedure Consultation",
           target: "Those wanting procedure consultation",
-          priceMin: 5000,
-          priceMax: 15000,
-          overview: "Consultation and advice on various administrative procedures"
+          priceMin: 0,
         }
       ],
       faq: [

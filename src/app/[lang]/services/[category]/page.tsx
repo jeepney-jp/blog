@@ -46,10 +46,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CategoryPage({ params }: Props) {
   const { category, lang } = await params;
   
-  // ハードコーディングデータをまずチェック
-  const hardcodedData = categoryPagesContent[lang]?.[category];
+  // すべてのカテゴリーをハードコード化、Sanityフォールバックを削除
+  const hardcodedCategories = ['foreign', 'construction', 'automotive', 'food-entertainment', 'waste-management', 'travel-hospitality', 'corporate', 'business-license', 'land', 'legal-documentation', 'medical-care', 'other'];
   
-  if (hardcodedData) {
+  if (hardcodedCategories.includes(category)) {
+    // 全カテゴリー：完全ハードコード表示
+    const hardcodedData = categoryPagesContent[lang]?.[category];
+    
+    if (!hardcodedData) {
+      notFound();
+    }
     // ハードコーディングデータを使用
     const serviceStructuredData = {
       '@context': 'https://schema.org',
