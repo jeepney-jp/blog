@@ -5,6 +5,7 @@ export const deskStructure = (S: StructureBuilder) =>
     .title('コンテンツ')
     .id('root')
     .items([
-      // すべてのドキュメントタイプを表示（サービス関連は削除済み）
-      ...S.documentTypeListItems(),
+      // 明示的に表示するドキュメントタイプのみ
+      S.documentTypeListItem('news'),
+      S.documentTypeListItem('contact'),
     ])
