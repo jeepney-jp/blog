@@ -6,9 +6,30 @@ import NewCTASection from '@/components/NewCTASection';
 import ScrollAnimationWrapper from '@/components/ScrollAnimationWrapper';
 import { getNews } from '@/lib/sanity';
 import { Locale } from '@/lib/i18n/types';
+import { servicesContent } from '@/data/services-content';
 
 // ISR設定：60秒ごとに再生成（開発中は短めに設定）
 export const revalidate = 60;
+
+// カテゴリIDからアイコンファイル名へのマッピング
+function getIconFileName(categoryId: string): string {
+  const iconMap: { [key: string]: string } = {
+    'foreign': 'foreign-resident',
+    'construction': 'construction-realestate',
+    'automotive': 'automotive',
+    'food-entertainment': 'restaurant-entertainment',
+    'waste-management': 'waste-management',
+    'travel-hospitality': 'travel-hotel',
+    'corporate': 'corporate-establishment',
+    'business-license': 'business-license',
+    'land': 'land-services',
+    'legal-documentation': 'rights-documentation',
+    'medical-care': 'medical-care',
+    'other': 'other-services'
+  };
+  
+  return iconMap[categoryId] || 'other-services';
+}
 
 interface PageProps {
   params: Promise<{ lang: Locale }>;
@@ -180,6 +201,9 @@ export default async function Home({ params }: PageProps) {
   }
 
   const latestNews = newsItems.slice(0, 5);
+  
+  // サービスカテゴリを取得
+  const serviceCategories = servicesContent[lang].categories;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -327,245 +351,29 @@ export default async function Home({ params }: PageProps) {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-            <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-icons/foreign-resident.png"
-                  alt={lang === 'ja' ? '外国人関連業務' : 'Foreign Resident Services'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div className="flex-1 flex items-center">
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '外国人関連業務' : 'Foreign Resident Services'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.1}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-icons/construction-realestate.png"
-                  alt={lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div className="flex-1 flex items-center">
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.2}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-icons/automotive.png"
-                  alt={lang === 'ja' ? '自動車関連業務' : 'Automotive Services'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div className="flex-1 flex items-center">
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '自動車関連業務' : 'Automotive Services'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.3}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-icons/restaurant-entertainment.png"
-                  alt={lang === 'ja' ? '飲食・風俗営業関連業務' : 'Restaurant & Entertainment Business'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div className="flex-1 flex items-center">
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '飲食・風俗営業関連業務' : 'Restaurant & Entertainment Business'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.4}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-icons/waste-management.png"
-                  alt={lang === 'ja' ? '廃棄物処理業許可関連業務' : 'Waste Management Permits'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div className="flex-1 flex items-center">
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '廃棄物処理業許可関連業務' : 'Waste Management Permits'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.5}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-icons/travel-hotel.png"
-                  alt={lang === 'ja' ? '旅行・旅館業関連業務' : 'Travel & Hotel Business'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div className="flex-1 flex items-center">
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '旅行・旅館業関連業務' : 'Travel & Hotel Business'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.6}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-icons/corporate-establishment.png"
-                  alt={lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div className="flex-1 flex items-center">
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.7}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-icons/business-license.png"
-                  alt={lang === 'ja' ? '営業許可' : 'Business Licenses'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div className="flex-1 flex items-center">
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '営業許可' : 'Business Licenses'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.8}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-icons/land-services.png"
-                  alt={lang === 'ja' ? '土地関連業務' : 'Land-related Services'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div className="flex-1 flex items-center">
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '土地関連業務' : 'Land-related Services'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={0.9}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-icons/rights-documentation.png"
-                  alt={lang === 'ja' ? '権利義務・事実証明業務' : 'Rights & Legal Documentation'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div className="flex-1 flex items-center">
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '権利義務・事実証明業務' : 'Rights & Legal Documentation'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={1.0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-icons/medical-care.png"
-                  alt={lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div className="flex-1 flex items-center">
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper delay={1.1}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
-              <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
-                <Image
-                  src="/service-icons/other-services.png"
-                  alt={lang === 'ja' ? 'その他の業務' : 'Other Services'}
-                  width={108}
-                  height={108}
-                  className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
-                  unoptimized
-                />
-              </div>
-              <div className="flex-1 flex items-center">
-              <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
-                {lang === 'ja' ? 'その他の業務' : 'Other Services'}
-              </h3>
-              </div>
-              </div>
-            </ScrollAnimationWrapper>
+            {serviceCategories.map((category, index) => (
+              <ScrollAnimationWrapper key={category.id} delay={index * 0.1}>
+                <Link href={`${basePath}/services/${category.slug}`}>
+                  <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center cursor-pointer">
+                    <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
+                      <Image
+                        src={`/service-icons/${getIconFileName(category.id)}.png`}
+                        alt={category.title}
+                        width={108}
+                        height={108}
+                        className="object-contain mx-auto w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px]"
+                        unoptimized
+                      />
+                    </div>
+                    <div className="flex-1 flex items-center">
+                      <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
+                        {category.title}
+                      </h3>
+                    </div>
+                  </div>
+                </Link>
+              </ScrollAnimationWrapper>
+            ))}
           </div>
         </div>
       </section>
