@@ -29,7 +29,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
         aria-label="言語を選択"
       >
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 0 1 1.964 1.69l.393 2.36a2 2 0 0 0 1.962 1.95h.838c.632 0 1.253-.17 1.8-.476a2 2 0 0 0 1.035-1.35l.5-3a2 2 0 0 1 1.962-1.677h.838A2 2 0 0 0 17 8.99V7a2 2 0 0 0-2-2h-3.5a2 2 0 0 0-1.732 1H8a2 2 0 0 0-2 2v.09a2 2 0 0 1-.764 1.578L3.055 11z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
         </svg>
         <span className="text-sm font-medium">LANGUAGE</span>
         <svg className={`w-4 h-4 transform transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
