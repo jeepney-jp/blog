@@ -265,14 +265,17 @@ export default async function Home({ params }: PageProps) {
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">
                     {t.features.achievement.description}
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4 mt-auto flex items-center">
+                  {/* 薄い区切り線 */}
+                  <div className="w-full h-px bg-gray-200 mb-6"></div>
+                  {/* 統計値表示エリア */}
+                  <div className="mt-auto">
                     <div className="flex justify-around text-center w-full">
                       <div>
-                        <p className="text-2xl font-bold text-blue-600">10,000+</p>
+                        <p className="text-3xl font-bold text-blue-600">10,000+</p>
                         <p className="text-sm text-gray-500 mt-1">{t.features.achievement.applications}</p>
                       </div>
                       <div>
-                        <p className="text-2xl font-bold text-blue-600">99%</p>
+                        <p className="text-3xl font-bold text-blue-600">99%</p>
                         <p className="text-sm text-gray-500 mt-1">{t.features.achievement.approvalRate}</p>
                       </div>
                     </div>
@@ -299,9 +302,14 @@ export default async function Home({ params }: PageProps) {
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">
                     {t.features.pricing.description}
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4 text-center mt-auto flex flex-col justify-center">
-                    <p className="text-blue-900 font-bold text-lg">{t.features.pricing.savings}</p>
-                    <p className="text-blue-700 text-sm mt-1">{t.features.pricing.comparison}</p>
+                  {/* 薄い区切り線 */}
+                  <div className="w-full h-px bg-gray-200 mb-6"></div>
+                  {/* ハイライトボックス */}
+                  <div className="mt-auto">
+                    <div className="bg-blue-50 rounded-lg p-4 text-center">
+                      <p className="text-blue-900 font-bold text-lg">{t.features.pricing.savings}</p>
+                      <p className="text-blue-700 text-sm mt-1">{t.features.pricing.comparison}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -325,10 +333,13 @@ export default async function Home({ params }: PageProps) {
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">
                     {t.features.multilingual.description}
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4 mt-auto flex items-center">
-                    <div className="flex flex-wrap gap-2 justify-center w-full">
+                  {/* 薄い区切り線 */}
+                  <div className="w-full h-px bg-gray-200 mb-6"></div>
+                  {/* 言語タグエリア */}
+                  <div className="mt-auto">
+                    <div className="grid grid-cols-3 gap-2">
                       {languages[lang].map((language, index) => (
-                        <span key={index} className="px-3 py-1 bg-white text-blue-700 rounded-full text-sm font-medium border border-blue-200">
+                        <span key={index} className="px-2 py-1 bg-blue-600 text-white rounded text-sm font-medium text-center">
                           {language}
                         </span>
                       ))}
