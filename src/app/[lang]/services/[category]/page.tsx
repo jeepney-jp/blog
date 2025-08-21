@@ -2,13 +2,10 @@
 
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { sanityClient } from '@/lib/sanity.client';
-import { ServiceCategory } from '@/lib/types';
 import Header from '@/components/Header';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import NewCTASection from '@/components/NewCTASection';
-import ServiceTable from '@/components/ServiceTable';
 import Script from 'next/script';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import { Locale } from '@/lib/i18n/types';
@@ -53,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   try {
     // Sanityクエリは削除されたため、フォールバック処理のみ
-    const data: ServiceCategory | null = null;
+    const data = null;
     
     if (!data) {
       return {
