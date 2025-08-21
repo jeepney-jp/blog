@@ -18,14 +18,10 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { _type } = body;
     
-    // ドキュメントタイプに応じて再検証
-    if (_type === 'serviceCategory' || _type === 'serviceDetail') {
-      // すべてのページを再検証
+    // ドキュメントタイプに応じて再検証（サービス関連は削除済み）
+    if (_type === 'news' || _type === 'staff') {
+      // 関連ページを再検証
       revalidatePath('/', 'layout');
-      revalidatePath('/services', 'layout');
-      
-      // タグベースの再検証も追加
-      revalidateTag('services');
       
       return NextResponse.json({ 
         revalidated: true, 
