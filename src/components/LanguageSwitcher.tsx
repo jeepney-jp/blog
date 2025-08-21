@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { Locale } from '@/lib/i18n/types'
 import { getLocalizedPath, getPathWithoutLocale } from '@/lib/i18n/utils'
@@ -11,6 +11,7 @@ interface LanguageSwitcherProps {
 
 export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const pathname = usePathname()
   const router = useRouter()
 
@@ -21,11 +22,25 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
     setIsOpen(false)
   }
 
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+      timeoutRef.current = null
+    }
+    setIsOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false)
+    }, 200) // 200ms遅延
+  }
+
   return (
     <div 
       className="relative"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <button
         className="flex items-center gap-2 px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors"
@@ -41,7 +56,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
       </button>
       
       {isOpen && (
-        <div className="absolute right-0 mt-1 w-32 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+        <div className="absolute right-0 top-full w-32 bg-white border border-gray-200 rounded-md shadow-lg z-50">
           <div className="py-1">
             <button
               onMouseDown={() => handleLanguageChange('en')}
