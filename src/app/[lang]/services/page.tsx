@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHeader from "@/components/PageHeader";
-import CategoryCard from '@/components/CategoryCard';
 import NewCTASection from '@/components/NewCTASection';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import { Locale } from '@/lib/i18n/types';
