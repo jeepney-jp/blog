@@ -66,19 +66,88 @@ export default async function Services({ params }: PageProps) {
             <p className="text-base text-gray-600 text-center mb-8">{servicesContent[lang].searchDescription}</p>
           </div>
           
-          {/* Sanityからのデータがある場合は動的に表示 */}
-          {categories.length > 0 ? (
-            <>
-              <DebugCategoryCard categories={categories} />
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {categories.map((category) => (
-                  <div key={category._id} className="h-full">
-                    <CategoryCard category={category} lang={lang} />
+          {/* テスト：外国人関連業務のみハードコード、他はSanity */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* 外国人関連業務：ハードコード版 */}
+            <div className="h-full">
+              <Link
+                href={`${basePath}/services/foreign`}
+                className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
+              >
+                {/* カテゴリー画像 */}
+                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                  <div className="flex items-center justify-center h-full">
+                    <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002-2z" />
+                    </svg>
                   </div>
-                ))}
+                </div>
+
+                {/* カテゴリー情報 */}
+                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      {lang === 'ja' ? '外国人関連業務' : 'Foreign Resident Services'}
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-4">
+                      {lang === 'ja' 
+                        ? '外国人を受け入れる企業や日本で暮らす方のために、在留や身分に関わる手続きを幅広くサポートします。' 
+                        : 'We provide comprehensive support for residence and status procedures for companies accepting foreign workers and individuals living in Japan.'}
+                    </p>
+                  </div>
+
+                  {/* 中項目プレビュー */}
+                  <div className="mt-auto">
+                    <div className="mb-4">
+                      <p className="text-xs text-gray-500 font-medium mb-2">
+                        {lang === 'ja' ? 'サービス例' : 'Service Examples'}
+                      </p>
+                      <ul className="space-y-1">
+                        <li className="text-sm text-gray-700 flex items-start">
+                          <span className="text-[#004080] mr-2">・</span>
+                          <span>{lang === 'ja' ? '特定技能ビザ' : 'Specified Skills Visa'}</span>
+                        </li>
+                        <li className="text-sm text-gray-700 flex items-start">
+                          <span className="text-[#004080] mr-2">・</span>
+                          <span>{lang === 'ja' ? '高度人材ビザ' : 'Highly Skilled Professional Visa'}</span>
+                        </li>
+                        <li className="text-sm text-gray-700 flex items-start">
+                          <span className="text-[#004080] mr-2">・</span>
+                          <span>{lang === 'ja' ? '技術・人文知識・国際業務ビザ' : 'Engineer/Specialist in Humanities/International Services Visa'}</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* 詳しく見るボタン */}
+                    <div className="flex items-center justify-end text-[#004080] hover:text-[#003366] font-medium">
+                      <span>{lang === 'ja' ? '詳しく見る' : 'Learn More'}</span>
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            
+            {/* 他のカテゴリー：Sanity版 */}
+            {categories.filter(cat => cat.slug !== 'foreign').map((category) => (
+              <div key={category._id} className="h-full">
+                <CategoryCard category={category} lang={lang} />
               </div>
-            </>
-          ) : (
+            ))}
+          </div>
+          
+          {/* デバッグ情報 */}
+          {categories.length > 0 && (
+            <div className="mt-8 p-4 bg-gray-100 rounded-lg">
+              <h3 className="text-sm font-medium text-gray-700 mb-2">Debug: Available Sanity Categories</h3>
+              <DebugCategoryCard categories={categories} />
+            </div>
+          )}
+
+          {/* 元のフォールバック（現在は使用されない） */}
+          {false && (
             /* 多言語対応のハードコーディングされたサービスを表示 */
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {servicesContent[lang].categories.map((category) => (
