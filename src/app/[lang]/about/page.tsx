@@ -40,7 +40,7 @@ export default function About() {
       certification: "法務省認定　登録支援機関認定：１９登－０００９１７",
       relatedCompanies: "関連会社",
       employees: "従業員数",
-      representative: "代表者名",
+      representativeName: "代表者名",
       ceoMessage1: "平成15年に行政書士登録を行い、これまで20年にわたり、多くのお客様の許認可申請、相続手続き、会社設立などをサポートしてまいりました。",
       ceoMessage2: "当事務所では、お客様一人ひとりの状況に合わせた最適な解決策を提案し、迅速かつ丁寧な対応を心がけております。",
       ceoMessage3: "お困りごとがございましたら、お気軽にご相談ください。",
@@ -108,7 +108,7 @@ export default function About() {
       certification: "Ministry of Justice Certified Registered Support Organization: 19-000917",
       relatedCompanies: "Related Companies",
       employees: "Number of Employees",
-      representative: "Representative Name",
+      representativeName: "Representative Name",
       ceoMessage1: "I registered as an administrative scrivener in 2003 and have been supporting many clients with licensing applications, inheritance procedures, and company establishment for 20 years.",
       ceoMessage2: "At our office, we propose optimal solutions tailored to each client's situation and strive for prompt and courteous service.",
       ceoMessage3: "Please feel free to contact us if you have any concerns.",
@@ -246,7 +246,7 @@ export default function About() {
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">{t.representative}</h3>
+                    <h3 className="text-lg font-semibold mb-2">{t.representativeName}</h3>
                     <p className="text-gray-700">
                       鈴木 康嗣
                     </p>
