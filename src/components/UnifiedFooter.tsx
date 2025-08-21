@@ -1,40 +1,9 @@
-"use client";
-
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { sanityClient } from '@/lib/sanity.client';
-import { serviceCategoriesWithSubcategoriesQuery } from '@/lib/queries';
-
-// サービスカテゴリーの型定義
-interface ServiceCategory {
-  _id: string;
-  title: string;
-  slug: string;
-  subcategories?: {
-    _id: string;
-    title: string;
-    slug: string;
-  }[];
-}
+import { servicesContent } from '@/data/services-content';
 
 export default function UnifiedFooter() {
-  const [serviceCategories, setServiceCategories] = useState<ServiceCategory[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const data = await sanityClient.fetch(serviceCategoriesWithSubcategoriesQuery);
-        setServiceCategories(data || []);
-      } catch (error) {
-        console.error('Failed to fetch service categories for footer:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCategories();
-  }, []);
+  // ハードコードされたサービスカテゴリを使用
+  const serviceCategories = servicesContent.ja.categories;
 
   return (
     <footer className="bg-gray-800 text-white py-12">

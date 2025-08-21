@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHeader from "@/components/PageHeader";
 import { sanityClient } from '@/lib/sanity.client';
-import { allServiceCategoriesQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
 import CategoryCard from '@/components/CategoryCard';
 import DebugCategoryCard from '@/components/DebugCategoryCard';

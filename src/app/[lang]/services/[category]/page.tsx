@@ -3,7 +3,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { sanityClient } from '@/lib/sanity.client';
-import { categoryPageQuery, categorySlugsQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
 import Header from '@/components/Header';
 import { FaqAccordion } from '@/components/FaqAccordion';
@@ -24,16 +23,7 @@ export async function generateStaticParams() {
   // ハードコーディングされたカテゴリーからスタティックパラムを生成
   const categories = servicesContent.ja.categories.map(cat => ({ category: cat.slug }));
   
-  // Sanityが設定されている場合はそちらも追加
-  if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID && process.env.NEXT_PUBLIC_SANITY_PROJECT_ID !== 'dummy-project-id') {
-    try {
-      const slugs = await sanityClient.fetch(categorySlugsQuery);
-      const sanityCategories = slugs.map((slug: { slug: string }) => ({ category: slug.slug }));
-      return [...categories, ...sanityCategories];
-    } catch (error) {
-      console.error('Failed to fetch Sanity categories:', error);
-    }
-  }
+  // Sanityは使用せず、ハードコードされたカテゴリのみを使用
   
   return categories;
 }
@@ -62,9 +52,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   try {
-    const data: ServiceCategory = await sanityClient.fetch(categoryPageQuery, {
-      slug: category,
-    });
+    // Sanityクエリは削除されたため、フォールバック処理のみ
+    const data: ServiceCategory | null = null;
     
     if (!data) {
       return {
@@ -260,110 +249,6 @@ export default async function CategoryPage({ params }: Props) {
     );
   }
 
-  // Sanityフォールバック
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === 'dummy-project-id') {
-    notFound();
-  }
-  
-  let data: ServiceCategory;
-  try {
-    data = await sanityClient.fetch(categoryPageQuery, {
-      slug: category,
-    });
-  } catch (error) {
-    console.error('Failed to fetch category data:', error);
-    notFound();
-  }
-
-  if (!data) {
-    notFound();
-  }
-
-  // Sanityデータ用の構造化データ生成
-  const faqStructuredData = data.faq && data.faq.length > 0 ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: data.faq.map(item => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  } : null;
-
-  const serviceStructuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: data.title,
-    description: data.catchphrase || data.metaDescription || '',
-    provider: {
-      '@type': 'LegalService',
-      name: 'フォルティア行政書士事務所',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '茂原579',
-        addressLocality: '茂原市',
-        addressRegion: '千葉県',
-        postalCode: '297-0026',
-        addressCountry: 'JP'
-      }
-    },
-    areaServed: ['東京都', '千葉県', '埼玉県', '神奈川県']
-  };
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Header lang={lang} />
-      
-      {/* 構造化データ */}
-      <Script
-        id="structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ 
-          __html: JSON.stringify([
-            ...(faqStructuredData ? [faqStructuredData] : []),
-            serviceStructuredData
-          ])
-        }}
-      />
-      <div className="max-w-6xl mx-auto px-4 py-12 space-y-16">
-      {/* パンくず */}
-      <Breadcrumbs
-        segments={[
-          { name: lang === 'ja' ? 'ホーム' : 'Home', href: `/${lang}` },
-          { name: lang === 'ja' ? 'サービス案内' : 'Services', href: `/${lang}/services` },
-          { name: data.title, href: `/${lang}/services/${category}` },
-        ]}
-      />
-
-      {/* Hero セクション */}
-      <section>
-        <h1 className="text-3xl font-bold mb-4">
-          【専門家がサポート】{data.title}のご案内
-        </h1>
-      </section>
-
-      {/* 中項目テーブル */}
-      {data.services && data.services.length > 0 && (
-        <ServiceTable services={data.services} />
-      )}
-
-      {/* FAQ アコーディオン */}
-      {data.faq && data.faq.length > 0 && (
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">{lang === 'ja' ? 'よくあるご質問' : 'Frequently Asked Questions'}</h2>
-          <FaqAccordion faqs={data.faq} />
-        </section>
-      )}
-
-      </div>
-
-      {/* CTA */}
-      <NewCTASection serviceName={data.title} lang={lang} />
-
-      <UnifiedFooter />
-    </div>
-  );
+  // Sanityフォールバック: すべてハードコード化されているため不要
+  notFound();
 }
