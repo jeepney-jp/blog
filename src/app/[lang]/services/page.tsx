@@ -4,7 +4,6 @@ import PageHeader from "@/components/PageHeader";
 import { sanityClient } from '@/lib/sanity.client';
 import { allServiceCategoriesQuery } from '@/lib/queries';
 import { ServiceCategory } from '@/lib/types';
-import CategoryCard from '@/components/CategoryCard';
 import DebugCategoryCard from '@/components/DebugCategoryCard';
 import NewCTASection from '@/components/NewCTASection';
 import UnifiedFooter from '@/components/UnifiedFooter';
