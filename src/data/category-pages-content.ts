@@ -165,35 +165,27 @@ export const categoryPagesContent: CategoryPagesContent = {
       services: [
         {
           id: "construction-permit",
-          title: "建設業許可申請",
-          target: "建設業を営む事業者の方",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "建設工事を請け負うために必要な許可の取得申請"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "construction-renewal",
-          title: "建設業許可更新",
-          target: "既に建設業許可を取得している事業者の方",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "5年ごとに必要な建設業許可の更新手続き"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "real-estate-license",
-          title: "宅建業免許申請",
-          target: "不動産業を営む事業者の方",
-          priceMin: 200000,
-          priceMax: 350000,
-          overview: "宅地建物取引業を営むために必要な免許の取得申請"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "construction-change",
-          title: "建設業許可変更届",
-          target: "許可内容に変更が生じた事業者の方",
-          priceMin: 30000,
-          priceMax: 80000,
-          overview: "商号変更、役員変更等に伴う変更届出手続き"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -442,14 +434,6 @@ export const categoryPagesContent: CategoryPagesContent = {
           title: "旅館営業許可",
           target: "テスト",
           priceMin: 0
-        },
-        {
-          id: "travel-renewal",
-          title: "旅行業登録更新",
-          target: "既に旅行業登録をしている事業者の方",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "5年ごとに必要な旅行業登録の更新手続き"
         }
       ],
       faq: [
@@ -645,14 +629,6 @@ export const categoryPagesContent: CategoryPagesContent = {
           title: "農地許可",
           target: "テスト",
           priceMin: 0
-        },
-        {
-          id: "land-use-change",
-          title: "地目変更登記",
-          target: "土地の地目を変更される方",
-          priceMin: 50000,
-          priceMax: 100000,
-          overview: "農地から宅地等への地目変更登記手続き"
         }
       ],
       faq: [
@@ -738,35 +714,27 @@ export const categoryPagesContent: CategoryPagesContent = {
       services: [
         {
           id: "medical-corporation",
-          title: "医療法人設立",
-          target: "医療法人の設立を検討されている方",
-          priceMin: 300000,
-          priceMax: 600000,
-          overview: "医療法に基づく医療法人の設立認可申請"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "care-service-designation",
-          title: "介護事業所指定申請",
-          target: "介護事業を開始される方",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "介護保険法に基づく各種介護サービス事業所の指定申請"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "pharmacy-license",
-          title: "薬局開設許可申請",
-          target: "薬局を開設される方",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "薬機法に基づく薬局開設許可の申請手続き"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         },
         {
           id: "medical-device",
-          title: "医療機器販売業許可",
-          target: "医療機器の販売を行う事業者の方",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "医療機器の販売業許可・届出手続き"
+          title: "テスト",
+          target: "テスト",
+          priceMin: 0
         }
       ],
       faq: [
@@ -969,33 +937,24 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "construction-permit",
           title: "Construction Business Permit Application",
           target: "Business operators in the construction industry",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "Application for permits required to contract construction work"
-        },
+          priceMin: 0        },
         {
           id: "construction-renewal",
           title: "Construction Business Permit Renewal",
           target: "Business operators who already have construction permits",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "Renewal procedures for construction business permits required every 5 years"
+          priceMin: 0,
         },
         {
           id: "real-estate-license",
           title: "Real Estate License Application",
           target: "Business operators in the real estate industry",
-          priceMin: 200000,
-          priceMax: 350000,
-          overview: "Application for licenses required to operate real estate transaction business"
+          priceMin: 0,
         },
         {
           id: "construction-change",
           title: "Construction Permit Change Notification",
           target: "Business operators with changes to permit details",
-          priceMin: 30000,
-          priceMax: 80000,
-          overview: "Change notification procedures for company name changes, officer changes, etc."
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1030,25 +989,19 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "garage-certificate",
           title: "Garage Certificate Application",
           target: "Those purchasing new or used vehicles",
-          priceMin: 15000,
-          priceMax: 25000,
-          overview: "Application for vehicle storage location certificate"
+          priceMin: 0,
         },
         {
           id: "vehicle-registration",
           title: "Vehicle Registration",
           target: "Those requiring vehicle name change",
-          priceMin: 20000,
-          priceMax: 40000,
-          overview: "Various vehicle registration procedures including transfer and change registration"
+          priceMin: 0,
         },
         {
           id: "number-change",
           title: "License Plate Change",
           target: "Those requiring number plate change due to relocation",
-          priceMin: 10000,
-          priceMax: 20000,
-          overview: "License plate change procedures due to address changes"
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1083,33 +1036,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "restaurant-permit",
           title: "Restaurant Business Permit Application",
           target: "Those opening restaurants",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "Application for permits required to operate restaurants"
+          priceMin: 0,
         },
         {
           id: "liquor-license",
           title: "Liquor Sales License Application",
           target: "Business operators selling alcoholic beverages",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "Application for licenses required to sell alcoholic beverages"
+          priceMin: 0,
         },
         {
           id: "entertainment-permit",
           title: "Entertainment Business Permit Application",
           target: "Business operators in entertainment industry",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "Entertainment business permits for pachinko parlors, mahjong parlors, cabarets, etc."
+          priceMin: 0,
         },
         {
           id: "food-delivery",
           title: "Food Business Notification",
           target: "Business operators manufacturing/selling food products",
-          priceMin: 50000,
-          priceMax: 100000,
-          overview: "Business notification procedures under Food Sanitation Act"
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1144,33 +1089,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "industrial-waste-permit",
           title: "Industrial Waste Collection/Transport Permit",
           target: "Business operators collecting/transporting industrial waste",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "Permit application for businesses engaged in industrial waste collection or transport"
+          priceMin: 0,
         },
         {
           id: "general-waste-permit",
           title: "General Waste Disposal Permit",
           target: "Business operators handling general waste disposal",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "Permit application for businesses engaged in general waste collection, transport, or disposal"
+          priceMin: 0,
         },
         {
           id: "waste-renewal",
           title: "Waste Management Permit Renewal",
           target: "Business operators with existing permits",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "Renewal procedures for waste management permits required every 5 years"
+          priceMin: 0,
         },
         {
           id: "waste-change",
           title: "Change Permit/Change Notification",
           target: "Business operators with changes to permit details",
-          priceMin: 30000,
-          priceMax: 100000,
-          overview: "Permit applications and notifications for business scope changes, facility changes, etc."
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1205,33 +1142,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "travel-agency",
           title: "Travel Agency Registration",
           target: "Business operators in travel industry",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "Registration procedures required to operate travel agencies"
+          priceMin: 0,
         },
         {
           id: "hotel-permit",
           title: "Hotel Business Permit Application",
           target: "Business operators running hotels/inns",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "Business permit application under Hotel Business Act"
+          priceMin: 0,
         },
         {
           id: "minpaku-notification",
           title: "Vacation Rental Business Notification",
           target: "Business operators running vacation rentals",
-          priceMin: 80000,
-          priceMax: 150000,
-          overview: "Vacation rental notification procedures under Residential Accommodation Business Act"
+          priceMin: 0,
         },
         {
           id: "travel-renewal",
           title: "Travel Agency Registration Renewal",
           target: "Business operators with existing travel agency registration",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "Renewal procedures for travel agency registration required every 5 years"
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1266,33 +1195,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "corporation-establishment",
           title: "Company Incorporation",
           target: "Those considering company incorporation",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "Complete company incorporation procedures from articles of incorporation to registration"
+          priceMin: 0,
         },
         {
           id: "llc-establishment",
           title: "LLC Establishment",
           target: "Those considering LLC establishment",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "Complete LLC establishment procedures from articles of incorporation to registration"
+          priceMin: 0,
         },
         {
           id: "nonprofit-establishment",
           title: "General Incorporated Association/NPO Establishment",
           target: "Those considering nonprofit corporation establishment",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "Establishment procedures for general incorporated associations, NPOs, and other nonprofit corporations"
+          priceMin: 0,
         },
         {
           id: "corporate-change",
           title: "Corporate Change Procedures",
           target: "Those with changes to corporate registration matters",
-          priceMin: 30000,
-          priceMax: 100000,
-          overview: "Various change procedures including company name changes, head office relocations, officer changes, etc."
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1327,25 +1248,19 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "various-permits",
           title: "Various Business Permit Applications",
           target: "Those starting businesses requiring permits",
-          priceMin: 80000,
-          priceMax: 200000,
-          overview: "Permit applications for various business types as required by industry"
+          priceMin: 0,
         },
         {
           id: "permit-renewal",
           title: "Business Permit Renewal",
           target: "Business operators with existing permits",
-          priceMin: 50000,
-          priceMax: 100000,
-          overview: "Business permit renewal procedures upon expiration"
+          priceMin: 0,
         },
         {
           id: "permit-change",
           title: "Business Permit Change Notification",
           target: "Business operators with changes to permit details",
-          priceMin: 20000,
-          priceMax: 60000,
-          overview: "Notification procedures for office relocations, business content changes, etc."
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1380,33 +1295,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "farmland-conversion",
           title: "Farmland Conversion Permit",
           target: "Those converting farmland to residential land, etc.",
-          priceMin: 100000,
-          priceMax: 300000,
-          overview: "Farmland conversion permit application procedures under Agricultural Land Act"
+          priceMin: 0,
         },
         {
           id: "development-permit",
           title: "Development Permit Application",
           target: "Business operators undertaking development projects",
-          priceMin: 200000,
-          priceMax: 500000,
-          overview: "Development permit application procedures under City Planning Act"
+          priceMin: 0,
         },
         {
           id: "land-boundary",
           title: "Land Boundary Confirmation",
           target: "Those needing to clarify land boundaries",
-          priceMin: 150000,
-          priceMax: 400000,
-          overview: "Procedures for boundary confirmation with adjacent properties"
+          priceMin: 0,
         },
         {
           id: "land-use-change",
           title: "Land Category Change Registration",
           target: "Those changing land categories",
-          priceMin: 50000,
-          priceMax: 100000,
-          overview: "Land category change registration procedures from farmland to residential land, etc."
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1441,33 +1348,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "contract-drafting",
           title: "Contract Drafting",
           target: "Those needing contract preparation",
-          priceMin: 50000,
-          priceMax: 200000,
-          overview: "Drafting various contracts including sales, lease, and service agreements"
+          priceMin: 0,
         },
         {
           id: "certified-mail",
           title: "Certified Mail Preparation",
           target: "Those considering debt collection or contract termination",
-          priceMin: 30000,
-          priceMax: 80000,
-          overview: "Preparation and sending of legally effective certified mail"
+          priceMin: 0,
         },
         {
           id: "document-verification",
           title: "Various Legal Document Preparation",
           target: "Those needing public document preparation",
-          priceMin: 20000,
-          priceMax: 100000,
-          overview: "Preparation of various documents including inheritance division agreements, memorandums, etc."
+          priceMin: 0,
         },
         {
           id: "consultation",
           title: "Legal Consultation & Document Review",
           target: "Those wanting contract content or document verification",
-          priceMin: 10000,
-          priceMax: 30000,
-          overview: "Contract content review and legal advice"
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1502,33 +1401,25 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "medical-corporation",
           title: "Medical Corporation Establishment",
           target: "Those considering medical corporation establishment",
-          priceMin: 300000,
-          priceMax: 600000,
-          overview: "Medical corporation establishment authorization application under Medical Care Act"
+          priceMin: 0,
         },
         {
           id: "care-service-designation",
           title: "Care Facility Designation Application",
           target: "Those starting care businesses",
-          priceMin: 150000,
-          priceMax: 300000,
-          overview: "Designation applications for various care service facilities under Long-Term Care Insurance Act"
+          priceMin: 0,
         },
         {
           id: "pharmacy-license",
           title: "Pharmacy License Application",
           target: "Those establishing pharmacies",
-          priceMin: 200000,
-          priceMax: 400000,
-          overview: "Pharmacy establishment license application procedures under Pharmaceutical and Medical Device Act"
+          priceMin: 0,
         },
         {
           id: "medical-device",
           title: "Medical Device Sales Business Permit",
           target: "Business operators selling medical devices",
-          priceMin: 100000,
-          priceMax: 200000,
-          overview: "Medical device sales business permit and notification procedures"
+          priceMin: 0,
         }
       ],
       faq: [
@@ -1563,25 +1454,19 @@ export const categoryPagesContent: CategoryPagesContent = {
           id: "various-procedures",
           title: "Various Administrative Procedure Agency",
           target: "Those needing government office procedures",
-          priceMin: 30000,
-          priceMax: 150000,
-          overview: "Agency services for various applications, notifications, and reports to government offices"
+          priceMin: 0,
         },
         {
           id: "document-collection",
           title: "Various Certificate Collection Agency",
           target: "Those needing certificate collection",
-          priceMin: 10000,
-          priceMax: 50000,
-          overview: "Collection agency for residence certificates, family register copies, registration certificates, etc."
+          priceMin: 0,
         },
         {
           id: "consultation-other",
           title: "Administrative Procedure Consultation",
           target: "Those wanting procedure consultation",
-          priceMin: 5000,
-          priceMax: 15000,
-          overview: "Consultation and advice on various administrative procedures"
+          priceMin: 0,
         }
       ],
       faq: [
