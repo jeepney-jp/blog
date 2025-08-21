@@ -91,7 +91,7 @@ export default async function NewsPage({ params }: PageProps) {
       </main>
 
       <NewCTASection lang={lang} />
-      <UnifiedFooter />
+      <UnifiedFooter lang={lang} />
     </div>
   );
 }

@@ -190,8 +190,8 @@ export default async function Home({ params }: PageProps) {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
           <div className="text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8">
-              <span className="text-white block mb-2 drop-shadow-lg">{t.hero.title1}</span>
-              <span className="text-white block drop-shadow-lg">{t.hero.title2}</span>
+              <span className="text-blue-600 block mb-2 drop-shadow-lg">{t.hero.title1}</span>
+              <span className="text-blue-600 block drop-shadow-lg">{t.hero.title2}</span>
             </h1>
             <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 items-start">
               <Link 
@@ -205,7 +205,7 @@ export default async function Home({ params }: PageProps) {
               </Link>
               <Link 
                 href={`${basePath}/services`}
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-transparent rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-200 border-2 border-white shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-600 bg-transparent rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-200 border-2 border-blue-600 shadow-lg"
               >
                 {t.hero.viewServices}
               </Link>
@@ -241,7 +241,7 @@ export default async function Home({ params }: PageProps) {
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">
                     {t.features.achievement.description}
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4 mt-auto min-h-[88px] flex items-center">
+                  <div className="bg-blue-50 rounded-lg p-4 mt-auto flex items-center">
                     <div className="flex justify-around text-center w-full">
                       <div>
                         <p className="text-2xl font-bold text-blue-600">10,000+</p>
@@ -275,7 +275,7 @@ export default async function Home({ params }: PageProps) {
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">
                     {t.features.pricing.description}
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4 text-center mt-auto min-h-[88px] flex flex-col justify-center">
+                  <div className="bg-blue-50 rounded-lg p-4 text-center mt-auto flex flex-col justify-center">
                     <p className="text-blue-900 font-bold text-lg">{t.features.pricing.savings}</p>
                     <p className="text-blue-700 text-sm mt-1">{t.features.pricing.comparison}</p>
                   </div>
@@ -301,7 +301,7 @@ export default async function Home({ params }: PageProps) {
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">
                     {t.features.multilingual.description}
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4 mt-auto min-h-[88px] flex items-center">
+                  <div className="bg-blue-50 rounded-lg p-4 mt-auto flex items-center">
                     <div className="flex flex-wrap gap-2 justify-center w-full">
                       {languages[lang].map((language, index) => (
                         <span key={index} className="px-3 py-1 bg-white text-blue-700 rounded-full text-sm font-medium border border-blue-200">
