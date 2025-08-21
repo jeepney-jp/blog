@@ -41,6 +41,124 @@ export default function About() {
   const [staff, setStaff] = useState<Staff[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // 多言語コンテンツ
+  const content = {
+    ja: {
+      pageTitle: "事務所概要",
+      pageDescription: "フォルティア行政書士事務所について",
+      ceoGreeting: "代表者挨拶",
+      officeInfo: "事務所情報",
+      representative: "行政書士・代表",
+      establishedDate: "設立日",
+      address: "所在地",
+      contact: "連絡先",
+      businessHours: "営業時間",
+      qualifications: "資格・登録",
+      teamMembers: "スタッフ紹介",
+      memberNote: "※スタッフ紹介は一部サンプルデータを含みます",
+      weekdays: "平日: 9:00 - 18:00",
+      saturday: "土曜: 9:00 - 17:00",
+      holiday: "日祝: 休業",
+      qualification: "行政書士（登録番号：15123456）",
+      association: "東京都行政書士会所属",
+      ceoMessage1: "平成15年に行政書士登録を行い、これまで20年にわたり、多くのお客様の許認可申請、相続手続き、会社設立などをサポートしてまいりました。",
+      ceoMessage2: "当事務所では、お客様一人ひとりの状況に合わせた最適な解決策を提案し、迅速かつ丁寧な対応を心がけております。",
+      ceoMessage3: "お困りごとがございましたら、お気軽にご相談ください。",
+      accessInfo: "アクセス情報",
+      officeHistory: "事務所の沿革",
+      historyDescription: "地域の皆様と共に歩んできた、私たちの歴史をご紹介します",
+      timeline: {
+        "2024-01": {
+          title: "事務所移転・規模拡大",
+          description: "より多くのお客様にサービスを提供できる体制へ"
+        },
+        "2023-06": {
+          title: "オンライン相談サービス開始",
+          description: "全国のお客様へのサポート体制を構築"
+        },
+        "2022-09": {
+          title: "スタッフ増員",
+          description: "専門分野を拡充し、より幅広いニーズに対応"
+        },
+        "2021-12": {
+          title: "法人サポート部門設立",
+          description: "企業向けサービスを本格的に開始"
+        },
+        "2020-04": {
+          title: "フォルティア行政書士事務所 設立",
+          description: "地域に根ざした行政書士事務所として開業"
+        },
+        "2019-10": {
+          title: "行政書士登録",
+          description: "独立に向けて準備を開始"
+        },
+        "2014-04": {
+          title: "大手法律事務所に入所",
+          description: "行政書士としての実務経験を積む"
+        }
+      },
+      mobileNote: "※ タップして詳細をご覧ください"
+    },
+    en: {
+      pageTitle: "About Us",
+      pageDescription: "About Fortia Administrative Law Office",
+      ceoGreeting: "CEO's Message",
+      officeInfo: "Office Information",
+      representative: "Administrative Scrivener・CEO",
+      establishedDate: "Established",
+      address: "Address",
+      contact: "Contact",
+      businessHours: "Business Hours",
+      qualifications: "Qualifications & Registration",
+      teamMembers: "Our Team",
+      memberNote: "※Staff introduction includes some sample data",
+      weekdays: "Weekdays: 9:00 - 18:00",
+      saturday: "Saturday: 9:00 - 17:00",
+      holiday: "Sunday & Holidays: Closed",
+      qualification: "Administrative Scrivener (Registration No.: 15123456)",
+      association: "Member of Tokyo Administrative Scriveners Association",
+      ceoMessage1: "I registered as an administrative scrivener in 2003 and have been supporting many clients with licensing applications, inheritance procedures, and company establishment for 20 years.",
+      ceoMessage2: "At our office, we propose optimal solutions tailored to each client's situation and strive for prompt and courteous service.",
+      ceoMessage3: "Please feel free to contact us if you have any concerns.",
+      accessInfo: "Access Information",
+      officeHistory: "Office History",
+      historyDescription: "Introducing our history of walking together with the local community",
+      timeline: {
+        "2024-01": {
+          title: "Office relocation and expansion",
+          description: "Establishing a system to serve more customers"
+        },
+        "2023-06": {
+          title: "Online consultation service launched",
+          description: "Built support system for customers nationwide"
+        },
+        "2022-09": {
+          title: "Staff expansion",
+          description: "Expanded specialized fields to meet wider needs"
+        },
+        "2021-12": {
+          title: "Corporate support division established",
+          description: "Started full-scale corporate services"
+        },
+        "2020-04": {
+          title: "Fortia Administrative Law Office established",
+          description: "Opened as a community-based administrative law office"
+        },
+        "2019-10": {
+          title: "Administrative scrivener registration",
+          description: "Started preparation for independence"
+        },
+        "2014-04": {
+          title: "Joined major law firm",
+          description: "Gained practical experience as an administrative scrivener"
+        }
+      },
+      mobileNote: "※ Tap for details"
+    }
+  };
+
+  const t = content[lang];
+
   useEffect(() => {
     fetchStaff();
   }, []);
@@ -62,37 +180,55 @@ export default function About() {
       id: 1,
       name: "山田 花子｜Hanako Yamada",
       photo: "/スタッフサンプル1.png",
-      introduction: "行政書士として10年の経験があります。主に建設業許可や産業廃棄物処理業許可を担当しています。お客様の事業がスムーズに進むよう、全力でサポートいたします。"
+      introduction: {
+        ja: "行政書士として10年の経験があります。主に建設業許可や産業廃棄物処理業許可を担当しています。お客様の事業がスムーズに進むよう、全力でサポートいたします。",
+        en: "I have 10 years of experience as an administrative scrivener. I mainly handle construction industry permits and industrial waste disposal permits. I will do my best to support your business operations smoothly."
+      }
     },
     {
       id: 2,
       name: "佐藤 一郎｜Ichiro Sato",
       photo: "/スタッフサンプル1.png",
-      introduction: "相続・遺言の専門家として、多くのご家族の大切な手続きをお手伝いしてきました。分かりやすい説明と親身な対応を心がけています。"
+      introduction: {
+        ja: "相続・遺言の専門家として、多くのご家族の大切な手続きをお手伝いしてきました。分かりやすい説明と親身な対応を心がけています。",
+        en: "As a specialist in inheritance and wills, I have helped many families with important procedures. I strive for clear explanations and caring support."
+      }
     },
     {
       id: 3,
       name: "高橋 美咲｜Misaki Takahashi",
       photo: "/スタッフサンプル1.png",
-      introduction: "外国人の在留資格申請を主に担当しています。国際結婚や就労ビザなど、複雑な手続きも丁寧にサポートいたします。"
+      introduction: {
+        ja: "外国人の在留資格申請を主に担当しています。国際結婚や就労ビザなど、複雑な手続きも丁寧にサポートいたします。",
+        en: "I mainly handle residence status applications for foreigners. I provide careful support for complex procedures such as international marriage and work visas."
+      }
     },
     {
       id: 4,
       name: "渡辺 健太｜Kenta Watanabe",
       photo: "/スタッフサンプル2.png",
-      introduction: "会社設立・法人設立のサポートを専門としています。起業家の皆様の夢の実現に向けて、設立から運営まで幅広くお手伝いします。"
+      introduction: {
+        ja: "会社設立・法人設立のサポートを専門としています。起業家の皆様の夢の実現に向けて、設立から運営まで幅広くお手伝いします。",
+        en: "I specialize in supporting company and corporate establishment. I provide comprehensive assistance from establishment to operation to help entrepreneurs realize their dreams."
+      }
     },
     {
       id: 5,
       name: "木村 さくら｜Sakura Kimura",
       photo: "/スタッフサンプル2.png",
-      introduction: "契約書作成や各種法務書類の作成を担当しています。正確で分かりやすい書類作成を心がけ、お客様の権利を守ります。"
+      introduction: {
+        ja: "契約書作成や各種法務書類の作成を担当しています。正確で分かりやすい書類作成を心がけ、お客様の権利を守ります。",
+        en: "I handle contract drafting and various legal document preparation. I strive to create accurate and clear documents to protect our clients' rights."
+      }
     },
     {
       id: 6,
       name: "中村 大輔｜Daisuke Nakamura",
       photo: "/スタッフサンプル2.png",
-      introduction: "自動車関連業務を中心に、運送業許可や車庫証明など幅広く対応しています。迅速な手続きでお客様のビジネスをサポートします。"
+      introduction: {
+        ja: "自動車関連業務を中心に、運送業許可や車庫証明など幅広く対応しています。迅速な手続きでお客様のビジネスをサポートします。",
+        en: "I mainly handle automotive-related services, including transportation business permits and garage certificates. I support your business with prompt procedures."
+      }
     }
   ];
 
@@ -105,8 +241,8 @@ export default function About() {
       <Header lang={lang} />
 
       <PageHeader 
-        title="事務所概要"
-        description="フォルティア行政書士事務所について"
+        title={t.pageTitle}
+        description={t.pageDescription}
       />
 
       {/* About Content */}
@@ -114,7 +250,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="flex flex-col h-full">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">代表者挨拶</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.ceoGreeting}</h2>
               <div className="bg-white p-8 rounded-lg shadow-sm flex-1 flex flex-col">
                 {/* 代表者写真 */}
                 <div className="mb-8">
@@ -130,33 +266,33 @@ export default function About() {
                 </div>
                 <div className="mb-6 text-center">
                   <h3 className="text-xl font-semibold mb-2">鈴木 康嗣｜Yasutsugu Suzuki</h3>
-                  <p className="text-gray-600">行政書士・代表</p>
+                  <p className="text-gray-600">{t.representative}</p>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  平成15年に行政書士登録を行い、これまで20年にわたり、多くのお客様の許認可申請、相続手続き、会社設立などをサポートしてまいりました。
+                  {t.ceoMessage1}
                 </p>
                 <p className="text-gray-700 mb-4">
-                  当事務所では、お客様一人ひとりの状況に合わせた最適な解決策を提案し、迅速かつ丁寧な対応を心がけております。
+                  {t.ceoMessage2}
                 </p>
                 <p className="text-gray-700">
-                  お困りごとがございましたら、お気軽にご相談ください。
+                  {t.ceoMessage3}
                 </p>
               </div>
             </div>
             
             <div className="flex flex-col h-full">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">事務所情報</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.officeInfo}</h2>
               <div className="bg-white p-8 rounded-lg shadow-sm flex-1">
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">設立日</h3>
+                    <h3 className="text-lg font-semibold mb-2">{t.establishedDate}</h3>
                     <p className="text-gray-700">
                       2014年
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">所在地</h3>
+                    <h3 className="text-lg font-semibold mb-2">{t.address}</h3>
                     <p className="text-gray-700">
                       〒297-0026<br />
                       千葉県茂原市茂原579
@@ -164,7 +300,7 @@ export default function About() {
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">連絡先</h3>
+                    <h3 className="text-lg font-semibold mb-2">{t.contact}</h3>
                     <p className="text-gray-700">
                       TEL: 03-1234-5678<br />
                       FAX: 03-1234-5679<br />
@@ -173,19 +309,19 @@ export default function About() {
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">営業時間</h3>
+                    <h3 className="text-lg font-semibold mb-2">{t.businessHours}</h3>
                     <p className="text-gray-700">
-                      平日: 9:00 - 18:00<br />
-                      土曜: 9:00 - 17:00<br />
-                      日祝: 休業
+                      {t.weekdays}<br />
+                      {t.saturday}<br />
+                      {t.holiday}
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">資格・登録</h3>
+                    <h3 className="text-lg font-semibold mb-2">{t.qualifications}</h3>
                     <p className="text-gray-700">
-                      行政書士（登録番号：15123456）<br />
-                      東京都行政書士会所属
+                      {t.qualification}<br />
+                      {t.association}
                     </p>
                   </div>
                 </div>
@@ -198,7 +334,7 @@ export default function About() {
       {/* Members Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">メンバー紹介</h2>
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{t.teamMembers}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {loading ? (
               <div className="col-span-full text-center py-8">
@@ -306,7 +442,7 @@ export default function About() {
                     }`}>
                       <div className="pt-4 border-t border-gray-200">
                         <p className="text-gray-600 text-sm leading-relaxed">
-                          {member.introduction}
+                          {member.introduction[lang]}
                         </p>
                       </div>
                     </div>
@@ -323,10 +459,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              事務所の沿革
+              {t.officeHistory}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              地域の皆様と共に歩んできた、私たちの歴史をご紹介します
+              {t.historyDescription}
             </p>
           </div>
 
@@ -342,9 +478,9 @@ export default function About() {
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">事務所移転・規模拡大</p>
+                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2024-01"].title}</p>
                   <p className="text-gray-600">
-                    より多くのお客様にサービスを提供できる体制へ
+                    {t.timeline["2024-01"].description}
                   </p>
                 </div>
               </div>
@@ -356,9 +492,9 @@ export default function About() {
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">オンライン相談サービス開始</p>
+                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2023-06"].title}</p>
                   <p className="text-gray-600">
-                    全国のお客様へのサポート体制を構築
+                    {t.timeline["2023-06"].description}
                   </p>
                 </div>
               </div>
@@ -370,9 +506,9 @@ export default function About() {
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">スタッフ増員</p>
+                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2022-09"].title}</p>
                   <p className="text-gray-600">
-                    専門分野を拡充し、より幅広いニーズに対応
+                    {t.timeline["2022-09"].description}
                   </p>
                 </div>
               </div>
@@ -384,9 +520,9 @@ export default function About() {
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">法人サポート部門設立</p>
+                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2021-12"].title}</p>
                   <p className="text-gray-600">
-                    企業向けサービスを本格的に開始
+                    {t.timeline["2021-12"].description}
                   </p>
                 </div>
               </div>
@@ -398,9 +534,9 @@ export default function About() {
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">フォルティア行政書士事務所 設立</p>
+                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2020-04"].title}</p>
                   <p className="text-gray-600">
-                    地域に根ざした行政書士事務所として開業
+                    {t.timeline["2020-04"].description}
                   </p>
                 </div>
               </div>
@@ -412,9 +548,9 @@ export default function About() {
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">行政書士登録</p>
+                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2019-10"].title}</p>
                   <p className="text-gray-600">
-                    独立に向けて準備を開始
+                    {t.timeline["2019-10"].description}
                   </p>
                 </div>
               </div>
@@ -426,9 +562,9 @@ export default function About() {
                 </div>
                 <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
                 <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">大手法律事務所に入所</p>
+                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2014-04"].title}</p>
                   <p className="text-gray-600">
-                    行政書士としての実務経験を積む
+                    {t.timeline["2014-04"].description}
                   </p>
                 </div>
               </div>
@@ -437,7 +573,7 @@ export default function About() {
 
           {/* モバイル表示の場合の注記 */}
           <p className="text-center text-sm text-gray-500 mt-12 md:hidden">
-            ※ タップして詳細をご覧ください
+            {t.mobileNote}
           </p>
         </div>
       </section>
@@ -445,7 +581,7 @@ export default function About() {
       {/* Map Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">アクセス</h2>
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">{t.accessInfo}</h2>
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6502.435134159015!2d140.2966433!3d35.4246401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022b90562f4a5a3%3A0xc335baa974e81428!2z44CSMjk3LTAwMjYg5Y2D6JGJ55yM6IyC5Y6f5biC6IyC5Y6f77yV77yX77yZ!5e0!3m2!1sja!2sjp!4v1752280876305!5m2!1sja!2sjp"
@@ -467,7 +603,7 @@ export default function About() {
       </section>
 
       <NewCTASection lang={lang} />
-      <UnifiedFooter />
+      <UnifiedFooter lang={lang} />
     </div>
   );
 }

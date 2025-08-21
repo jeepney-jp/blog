@@ -17,14 +17,47 @@ interface News {
   featured?: boolean;
 }
 
+// 多言語コンテンツ
+const content = {
+  ja: {
+    pageTitle: "お知らせ",
+    pageDescription: "フォルティア行政書士事務所からの最新情報をお届けします",
+    noNews: "お知らせはまだありません。",
+    categories: {
+      business_notice: "営業案内",
+      new_services: "新サービス",
+      legal_update: "制度改正",
+      price_update: "料金改定",
+      media_appearance: "メディア",
+      case_study: "実績紹介"
+    }
+  },
+  en: {
+    pageTitle: "News",
+    pageDescription: "Latest information from Fortia Administrative Law Office",
+    noNews: "No news available yet.",
+    categories: {
+      business_notice: "Business Notice",
+      new_services: "New Services",
+      legal_update: "Legal Updates",
+      price_update: "Price Updates",
+      media_appearance: "Media",
+      case_study: "Case Studies"
+    }
+  }
+};
+
 // カテゴリマッピング
-const categoryMap: { [key: string]: { name: string; color: string } } = {
-  business_notice: { name: '営業案内', color: 'bg-green-100 text-green-800' },
-  new_services: { name: '新サービス', color: 'bg-blue-100 text-blue-800' },
-  legal_update: { name: '制度改正', color: 'bg-purple-100 text-purple-800' },
-  price_update: { name: '料金改定', color: 'bg-yellow-100 text-yellow-800' },
-  media_appearance: { name: 'メディア', color: 'bg-pink-100 text-pink-800' },
-  case_study: { name: '実績紹介', color: 'bg-indigo-100 text-indigo-800' },
+const getCategoryMap = (lang: Locale) => {
+  const t = content[lang];
+  return {
+    business_notice: { name: t.categories.business_notice, color: 'bg-green-100 text-green-800' },
+    new_services: { name: t.categories.new_services, color: 'bg-blue-100 text-blue-800' },
+    legal_update: { name: t.categories.legal_update, color: 'bg-purple-100 text-purple-800' },
+    price_update: { name: t.categories.price_update, color: 'bg-yellow-100 text-yellow-800' },
+    media_appearance: { name: t.categories.media_appearance, color: 'bg-pink-100 text-pink-800' },
+    case_study: { name: t.categories.case_study, color: 'bg-indigo-100 text-indigo-800' },
+  };
 };
 
 interface PageProps {
@@ -33,6 +66,8 @@ interface PageProps {
 
 export default async function NewsPage({ params }: PageProps) {
   const { lang } = await params;
+  const t = content[lang];
+  const categoryMap = getCategoryMap(lang);
   // Sanityからニュースデータを取得
   const news: News[] = await getNews();
 
@@ -41,8 +76,8 @@ export default async function NewsPage({ params }: PageProps) {
       <Header lang={lang} />
 
       <PageHeader 
-        title="お知らせ"
-        description="フォルティア行政書士事務所からの最新情報をお届けします"
+        title={t.pageTitle}
+        description={t.pageDescription}
       />
 
       {/* Main Content */}
@@ -84,14 +119,14 @@ export default async function NewsPage({ params }: PageProps) {
             </ul>
           ) : (
             <div className="bg-white rounded-lg shadow-sm p-12 text-center">
-              <p className="text-gray-500 text-lg">お知らせはまだありません。</p>
+              <p className="text-gray-500 text-lg">{t.noNews}</p>
             </div>
           )}
         </div>
       </main>
 
       <NewCTASection lang={lang} />
-      <UnifiedFooter />
+      <UnifiedFooter lang={lang} />
     </div>
   );
 }
