@@ -6,6 +6,9 @@ import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import { Locale } from "@/lib/i18n/types";
 
+// カテゴリの型定義
+type CategoryKey = 'business_notice' | 'new_services' | 'legal_update' | 'price_update' | 'media_appearance' | 'case_study';
+
 // ニュースの型定義
 interface News {
   _id: string;
@@ -13,7 +16,7 @@ interface News {
   slug: { current: string };
   publishedAt: string;
   excerpt?: string;
-  category?: string;
+  category?: CategoryKey;
   featured?: boolean;
 }
 
@@ -48,7 +51,7 @@ const content = {
 };
 
 // カテゴリマッピング
-const getCategoryMap = (lang: Locale) => {
+const getCategoryMap = (lang: Locale): Record<CategoryKey, { name: string; color: string }> => {
   const t = content[lang];
   return {
     business_notice: { name: t.categories.business_notice, color: 'bg-green-100 text-green-800' },
@@ -100,11 +103,11 @@ export default async function NewsPage({ params }: PageProps) {
                       </time>
                       
                       {/* カテゴリラベル */}
-                      {item.category && categoryMap[item.category] && (
+                      {item.category && item.category in categoryMap && (
                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium whitespace-nowrap ${
-                          categoryMap[item.category].color
+                          categoryMap[item.category as CategoryKey].color
                         }`}>
-                          {categoryMap[item.category].name}
+                          {categoryMap[item.category as CategoryKey].name}
                         </span>
                       )}
                       
