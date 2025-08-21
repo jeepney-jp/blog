@@ -135,8 +135,74 @@ export default async function Services({ params }: PageProps) {
               </Link>
             </div>
             
+            {/* 建設・宅地建物取引関連業務：ハードコード版 */}
+            <div className="h-full">
+              <Link
+                href={`${basePath}/services/construction`}
+                className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
+              >
+                {/* カテゴリー画像 */}
+                <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
+                  {/* TODO: 実際のSanity画像URLを確認して同じ画像を使用する */}
+                  <Image
+                    src="/service-icons/construction-realestate.png"
+                    alt={lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
+                    className="object-cover"
+                    fill
+                    priority={false}
+                    unoptimized
+                  />
+                </div>
+
+                {/* カテゴリー情報 */}
+                <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      {lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-4">
+                      {lang === 'ja' 
+                        ? '建設業や不動産業を営む事業者様のために、許可申請から更新手続きまで幅広くサポートいたします。' 
+                        : 'We provide comprehensive support for construction and real estate businesses, from permit applications to renewal procedures.'}
+                    </p>
+                  </div>
+
+                  {/* 中項目プレビュー */}
+                  <div className="mt-auto">
+                    <div className="mb-4">
+                      <p className="text-xs text-gray-500 font-medium mb-2">
+                        {lang === 'ja' ? 'サービス例' : 'Service Examples'}
+                      </p>
+                      <ul className="space-y-1">
+                        <li className="text-sm text-gray-700 flex items-start">
+                          <span className="text-[#004080] mr-2">・</span>
+                          <span>{lang === 'ja' ? '建設業許可申請' : 'Construction Business License Application'}</span>
+                        </li>
+                        <li className="text-sm text-gray-700 flex items-start">
+                          <span className="text-[#004080] mr-2">・</span>
+                          <span>{lang === 'ja' ? '宅地建物取引業免許申請' : 'Real Estate License Application'}</span>
+                        </li>
+                        <li className="text-sm text-gray-700 flex items-start">
+                          <span className="text-[#004080] mr-2">・</span>
+                          <span>{lang === 'ja' ? '経営事項審査申請' : 'Management Evaluation Application'}</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* 詳しく見るボタン */}
+                    <div className="flex items-center justify-end text-[#004080] hover:text-[#003366] font-medium">
+                      <span>{lang === 'ja' ? '詳しく見る' : 'Learn More'}</span>
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
             {/* 他のカテゴリー：Sanity版 */}
-            {categories.filter(cat => cat.slug !== 'foreign').map((category) => (
+            {categories.filter(cat => cat.slug !== 'foreign' && cat.slug !== 'construction').map((category) => (
               <div key={category._id} className="h-full">
                 <CategoryCard category={category} lang={lang} />
               </div>
