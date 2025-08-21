@@ -262,12 +262,12 @@ export default async function Home({ params }: PageProps) {
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.achievement.title}</h3>
-                  <div className="flex-1 flex flex-col justify-between" style={{minHeight: '120px'}}>
+                  <div className="flex-1 flex flex-col justify-between" style={{minHeight: '140px'}}>
                     <p className="text-gray-600 leading-relaxed">
                       {t.features.achievement.description}
                     </p>
                     {/* 薄い区切り線 */}
-                    <div className="w-full h-px bg-gray-200 my-6"></div>
+                    <div className="w-full h-px bg-gray-200 my-4"></div>
                   </div>
                   {/* 統計値表示エリア */}
                   <div className="h-20 flex items-center">
@@ -301,12 +301,12 @@ export default async function Home({ params }: PageProps) {
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.pricing.title}</h3>
-                  <div className="flex-1 flex flex-col justify-between" style={{minHeight: '120px'}}>
+                  <div className="flex-1 flex flex-col justify-between" style={{minHeight: '140px'}}>
                     <p className="text-gray-600 leading-relaxed">
                       {t.features.pricing.description}
                     </p>
                     {/* 薄い区切り線 */}
-                    <div className="w-full h-px bg-gray-200 my-6"></div>
+                    <div className="w-full h-px bg-gray-200 my-4"></div>
                   </div>
                   {/* ハイライトボックス */}
                   <div className="h-20 flex items-center">
@@ -334,12 +334,12 @@ export default async function Home({ params }: PageProps) {
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.multilingual.title}</h3>
-                  <div className="flex-1 flex flex-col justify-between" style={{minHeight: '120px'}}>
+                  <div className="flex-1 flex flex-col justify-between" style={{minHeight: '140px'}}>
                     <p className="text-gray-600 leading-relaxed">
                       {t.features.multilingual.description}
                     </p>
                     {/* 薄い区切り線 */}
-                    <div className="w-full h-px bg-gray-200 my-6"></div>
+                    <div className="w-full h-px bg-gray-200 my-4"></div>
                   </div>
                   {/* 言語タグエリア */}
                   <div className="h-20 flex items-center">
