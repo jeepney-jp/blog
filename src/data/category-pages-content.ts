@@ -706,8 +706,6 @@ export const categoryPagesContent: CategoryPagesContent = {
           title: "遺言・相続",
           target: "テスト",
           priceMin: 0
-          priceMax: 30000,
-          overview: "契約書の内容チェックや法的アドバイス"
         }
       ],
       faq: [
