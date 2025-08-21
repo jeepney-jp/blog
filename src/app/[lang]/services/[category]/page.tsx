@@ -6,7 +6,6 @@ import Header from '@/components/Header';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import NewCTASection from '@/components/NewCTASection';
-import ServiceTable from '@/components/ServiceTable';
 import Script from 'next/script';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import { Locale } from '@/lib/i18n/types';

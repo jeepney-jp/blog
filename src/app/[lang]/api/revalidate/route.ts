@@ -1,4 +1,4 @@
-import { revalidatePath, revalidateTag } from 'next/cache';
+import { revalidatePath } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 
 // シークレットトークンの設定（環境変数から取得）
