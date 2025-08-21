@@ -6,9 +6,16 @@ export default defineType({
   title: 'お知らせ',
   type: 'document',
   fields: [
+    // 日本語フィールド
     defineField({
       name: 'title',
-      title: 'タイトル',
+      title: 'タイトル（日本語）',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'titleEn',
+      title: 'タイトル（英語）',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
@@ -30,14 +37,26 @@ export default defineType({
     }),
     defineField({
       name: 'excerpt',
-      title: '概要',
+      title: '概要（日本語）',
+      type: 'text',
+      rows: 3,
+    }),
+    defineField({
+      name: 'excerptEn',
+      title: '概要（英語）',
       type: 'text',
       rows: 3,
     }),
     defineField({
       name: 'content',
-      title: '本文',
+      title: '本文（日本語）',
       description: 'ブログのようなリッチな本文を記載できます',
+      ...richContentArray,
+    }),
+    defineField({
+      name: 'contentEn',
+      title: '本文（英語）',
+      description: 'Rich content for English version',
       ...richContentArray,
     }),
     defineField({
@@ -51,13 +70,14 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
+      titleEn: 'titleEn',
       subtitle: 'publishedAt',
       media: 'mainImage',
     },
     prepare(selection) {
-      const {title, subtitle} = selection
+      const {title, titleEn, subtitle} = selection
       return {
-        title,
+        title: `${title} / ${titleEn || 'No English title'}`,
         subtitle: subtitle ? new Date(subtitle).toLocaleDateString('ja-JP') : '日付未設定',
       }
     },
