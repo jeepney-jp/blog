@@ -58,7 +58,7 @@ export default async function Services({ params }: PageProps) {
                 <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
                   {/* TODO: 実際のSanity画像URLを確認して同じ画像を使用する */}
                   <Image
-                    src="/service-icons/foreign-resident.png"
+                    src="/service-category-cards/foreign-resident.jpg"
                     alt={lang === 'ja' ? '外国人関連業務' : 'Foreign Resident Services'}
                     className="object-cover"
                     fill
@@ -124,7 +124,7 @@ export default async function Services({ params }: PageProps) {
                 <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
                   {/* TODO: 実際のSanity画像URLを確認して同じ画像を使用する */}
                   <Image
-                    src="/service-icons/construction-realestate.png"
+                    src="/service-category-cards/construction-realestate.png"
                     alt={lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
                     className="object-cover"
                     fill
@@ -184,7 +184,7 @@ export default async function Services({ params }: PageProps) {
             <div className="h-full">
               <Link href={`${basePath}/services/automotive`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
                 <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
-                  <Image src="/service-icons/automotive.png" alt={lang === 'ja' ? '自動車関連業務' : 'Automotive Services'} className="object-cover" fill priority={false} unoptimized />
+                  <Image src="/service-category-cards/automotive.png" alt={lang === 'ja' ? '自動車関連業務' : 'Automotive Services'} className="object-cover" fill priority={false} unoptimized />
                 </div>
                 <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
                   <div className="flex-grow">
@@ -213,7 +213,7 @@ export default async function Services({ params }: PageProps) {
             <div className="h-full">
               <Link href={`${basePath}/services/food-entertainment`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
                 <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
-                  <Image src="/service-icons/food-entertainment.png" alt={lang === 'ja' ? '飲食・風俗営業' : 'Food & Entertainment'} className="object-cover" fill priority={false} unoptimized />
+                  <Image src="/service-category-cards/food-entertainment.png" alt={lang === 'ja' ? '飲食・風俗営業' : 'Food & Entertainment'} className="object-cover" fill priority={false} unoptimized />
                 </div>
                 <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
                   <div className="flex-grow">
@@ -242,7 +242,7 @@ export default async function Services({ params }: PageProps) {
             <div className="h-full">
               <Link href={`${basePath}/services/waste-management`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
                 <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
-                  <Image src="/service-icons/waste-management.png" alt={lang === 'ja' ? '廃棄物処理業許可' : 'Waste Management'} className="object-cover" fill priority={false} unoptimized />
+                  <Image src="/service-category-cards/waste-management.png" alt={lang === 'ja' ? '廃棄物処理業許可' : 'Waste Management'} className="object-cover" fill priority={false} unoptimized />
                 </div>
                 <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
                   <div className="flex-grow">
@@ -271,7 +271,7 @@ export default async function Services({ params }: PageProps) {
             <div className="h-full">
               <Link href={`${basePath}/services/travel-hospitality`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
                 <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
-                  <Image src="/service-icons/travel-hospitality.png" alt={lang === 'ja' ? '旅行・旅館業' : 'Travel & Hospitality'} className="object-cover" fill priority={false} unoptimized />
+                  <Image src="/service-category-cards/travel-hospitality.png" alt={lang === 'ja' ? '旅行・旅館業' : 'Travel & Hospitality'} className="object-cover" fill priority={false} unoptimized />
                 </div>
                 <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
                   <div className="flex-grow">
@@ -300,7 +300,7 @@ export default async function Services({ params }: PageProps) {
             <div className="h-full">
               <Link href={`${basePath}/services/corporate`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
                 <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
-                  <Image src="/service-icons/corporate.png" alt={lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'} className="object-cover" fill priority={false} unoptimized />
+                  <Image src="/service-category-cards/corporate.jpg" alt={lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'} className="object-cover" fill priority={false} unoptimized />
                 </div>
                 <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
                   <div className="flex-grow">
@@ -329,7 +329,7 @@ export default async function Services({ params }: PageProps) {
             <div className="h-full">
               <Link href={`${basePath}/services/business-license`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
                 <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
-                  <Image src="/service-icons/business-license.png" alt={lang === 'ja' ? '営業許可' : 'Business Licenses'} className="object-cover" fill priority={false} unoptimized />
+                  <Image src="/service-category-cards/business-license.png" alt={lang === 'ja' ? '営業許可' : 'Business Licenses'} className="object-cover" fill priority={false} unoptimized />
                 </div>
                 <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
                   <div className="flex-grow">
@@ -358,7 +358,7 @@ export default async function Services({ params }: PageProps) {
             <div className="h-full">
               <Link href={`${basePath}/services/land`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
                 <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
-                  <Image src="/service-icons/land.png" alt={lang === 'ja' ? '土地関連業務' : 'Land-related Services'} className="object-cover" fill priority={false} unoptimized />
+                  <Image src="/service-category-cards/land.png" alt={lang === 'ja' ? '土地関連業務' : 'Land-related Services'} className="object-cover" fill priority={false} unoptimized />
                 </div>
                 <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
                   <div className="flex-grow">
@@ -387,7 +387,7 @@ export default async function Services({ params }: PageProps) {
             <div className="h-full">
               <Link href={`${basePath}/services/legal-documentation`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
                 <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
-                  <Image src="/service-icons/legal-documentation.png" alt={lang === 'ja' ? '権利義務・事実証明' : 'Legal Documentation'} className="object-cover" fill priority={false} unoptimized />
+                  <Image src="/service-category-cards/legal-documentation.png" alt={lang === 'ja' ? '権利義務・事実証明' : 'Legal Documentation'} className="object-cover" fill priority={false} unoptimized />
                 </div>
                 <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
                   <div className="flex-grow">
@@ -416,7 +416,7 @@ export default async function Services({ params }: PageProps) {
             <div className="h-full">
               <Link href={`${basePath}/services/medical-care`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
                 <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
-                  <Image src="/service-icons/medical-care.png" alt={lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'} className="object-cover" fill priority={false} unoptimized />
+                  <Image src="/service-category-cards/medical-care.png" alt={lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'} className="object-cover" fill priority={false} unoptimized />
                 </div>
                 <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
                   <div className="flex-grow">
@@ -445,7 +445,7 @@ export default async function Services({ params }: PageProps) {
             <div className="h-full">
               <Link href={`${basePath}/services/other`} className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
                 <div className="relative h-48 rounded-t-xl overflow-hidden bg-gray-100">
-                  <Image src="/service-icons/other.png" alt={lang === 'ja' ? 'その他の業務' : 'Other Services'} className="object-cover" fill priority={false} unoptimized />
+                  <Image src="/service-category-cards/other.jpg" alt={lang === 'ja' ? 'その他の業務' : 'Other Services'} className="object-cover" fill priority={false} unoptimized />
                 </div>
                 <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
                   <div className="flex-grow">
