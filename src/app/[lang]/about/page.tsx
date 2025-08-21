@@ -494,7 +494,7 @@ export default function About() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">{t.accessInfo}</h2>
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6502.435134159015!2d140.2966433!3d35.4246401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022b90562f4a5a3%3A0xc335baa974e81428!2z44CSMjk3LTAwMjYg5Y2D6JGJ55yM6IyC5Y6f5biC6IyC5Y6f77yV77yX77yZ!5e0!3m2!1sja!2sjp!4v1752280876305!5m2!1sja!2sjp"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dOdyR7rFhf3h3Y&q=〒297-0026+千葉県茂原市八千代2丁目6番地の13&zoom=16&language=ja"
               width="100%"
               height="450"
               style={{ border: 0 }}
