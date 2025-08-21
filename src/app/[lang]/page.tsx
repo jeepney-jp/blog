@@ -241,7 +241,7 @@ export default async function Home({ params }: PageProps) {
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">
                     {t.features.achievement.description}
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4 mt-auto h-[88px] flex items-center">
+                  <div className="bg-blue-50 rounded-lg p-4 mt-auto flex items-center">
                     <div className="flex justify-around text-center w-full">
                       <div>
                         <p className="text-2xl font-bold text-blue-600">10,000+</p>
@@ -275,7 +275,7 @@ export default async function Home({ params }: PageProps) {
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">
                     {t.features.pricing.description}
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4 text-center mt-auto h-[88px] flex flex-col justify-center">
+                  <div className="bg-blue-50 rounded-lg p-4 text-center mt-auto flex flex-col justify-center">
                     <p className="text-blue-900 font-bold text-lg">{t.features.pricing.savings}</p>
                     <p className="text-blue-700 text-sm mt-1">{t.features.pricing.comparison}</p>
                   </div>
@@ -301,7 +301,7 @@ export default async function Home({ params }: PageProps) {
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">
                     {t.features.multilingual.description}
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4 mt-auto h-[88px] flex items-center">
+                  <div className="bg-blue-50 rounded-lg p-4 mt-auto flex items-center">
                     <div className="flex flex-wrap gap-2 justify-center w-full">
                       {languages[lang].map((language, index) => (
                         <span key={index} className="px-3 py-1 bg-white text-blue-700 rounded-full text-sm font-medium border border-blue-200">

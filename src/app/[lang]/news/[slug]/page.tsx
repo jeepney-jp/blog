@@ -141,7 +141,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
       <NewCTASection lang={lang} />
 
       {/* Footer */}
-      <UnifiedFooter />
+      <UnifiedFooter lang={lang} />
     </div>
   );
 }

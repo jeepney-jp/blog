@@ -477,7 +477,7 @@ export default async function Services({ params }: PageProps) {
 
 
       <NewCTASection lang={lang} />
-      <UnifiedFooter />
+      <UnifiedFooter lang={lang} />
     </div>
   );
 }

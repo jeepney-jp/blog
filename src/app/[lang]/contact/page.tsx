@@ -325,7 +325,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <UnifiedFooter />
+      <UnifiedFooter lang={lang} />
 
       {/* トースト通知 */}
       <ToastNotification 

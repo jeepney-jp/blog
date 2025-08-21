@@ -215,7 +215,7 @@ export default async function CategoryPage({ params }: Props) {
         {/* CTA */}
         <NewCTASection serviceName={hardcodedData.title} lang={lang} />
 
-        <UnifiedFooter />
+        <UnifiedFooter lang={lang} />
       </div>
     );
   }
