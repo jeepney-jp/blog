@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { Locale } from '@/lib/i18n/types'
-import { localeNames } from '@/lib/i18n/constants'
 import { getLocalizedPath, getPathWithoutLocale } from '@/lib/i18n/utils'
 
 interface LanguageSwitcherProps {
