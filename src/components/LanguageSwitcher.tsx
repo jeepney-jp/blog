@@ -41,20 +41,20 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
         <div className="absolute right-0 mt-1 w-32 bg-white border border-gray-200 rounded-md shadow-lg z-50">
           <div className="py-1">
             <button
-              onClick={() => handleLanguageChange('ja')}
-              className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
-                currentLang === 'ja' ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'
-              }`}
-            >
-              日本語
-            </button>
-            <button
               onClick={() => handleLanguageChange('en')}
               className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
                 currentLang === 'en' ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'
               }`}
             >
               English
+            </button>
+            <button
+              onClick={() => handleLanguageChange('ja')}
+              className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
+                currentLang === 'ja' ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'
+              }`}
+            >
+              日本語
             </button>
           </div>
         </div>

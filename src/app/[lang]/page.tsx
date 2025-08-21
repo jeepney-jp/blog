@@ -187,12 +187,11 @@ export default async function Home({ params }: PageProps) {
 
       {/* ヒーローセクション */}
       <section className="relative text-white min-h-screen flex items-center bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/hero-background2.png')"}}>
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
           <div className="text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8">
-              <span className="text-white block mb-2">{t.hero.title1}</span>
-              <span className="text-white block">{t.hero.title2}</span>
+              <span className="text-white block mb-2 drop-shadow-lg">{t.hero.title1}</span>
+              <span className="text-white block drop-shadow-lg">{t.hero.title2}</span>
             </h1>
             <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 items-start">
               <Link 
@@ -206,7 +205,7 @@ export default async function Home({ params }: PageProps) {
               </Link>
               <Link 
                 href={`${basePath}/services`}
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-transparent rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-200 border-2 border-white"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-transparent rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-200 border-2 border-white shadow-lg"
               >
                 {t.hero.viewServices}
               </Link>
@@ -329,7 +328,7 @@ export default async function Home({ params }: PageProps) {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
                   src="/service-icons/foreign-resident.png"
@@ -340,7 +339,7 @@ export default async function Home({ params }: PageProps) {
                   unoptimized
                 />
               </div>
-              <div>
+              <div className="flex-1 flex items-center">
               <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
                 {lang === 'ja' ? '外国人関連業務' : 'Foreign Resident Services'}
               </h3>
@@ -349,7 +348,7 @@ export default async function Home({ params }: PageProps) {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={0.1}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
                   src="/service-icons/construction-realestate.png"
@@ -360,7 +359,7 @@ export default async function Home({ params }: PageProps) {
                   unoptimized
                 />
               </div>
-              <div>
+              <div className="flex-1 flex items-center">
               <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
                 {lang === 'ja' ? '建設・宅建業関連' : 'Construction & Real Estate'}
               </h3>
@@ -369,7 +368,7 @@ export default async function Home({ params }: PageProps) {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={0.2}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
                   src="/service-icons/automotive.png"
@@ -380,7 +379,7 @@ export default async function Home({ params }: PageProps) {
                   unoptimized
                 />
               </div>
-              <div>
+              <div className="flex-1 flex items-center">
               <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
                 {lang === 'ja' ? '自動車関連業務' : 'Automotive Services'}
               </h3>
@@ -389,7 +388,7 @@ export default async function Home({ params }: PageProps) {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={0.3}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
                   src="/service-icons/restaurant-entertainment.png"
@@ -400,7 +399,7 @@ export default async function Home({ params }: PageProps) {
                   unoptimized
                 />
               </div>
-              <div>
+              <div className="flex-1 flex items-center">
               <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
                 {lang === 'ja' ? '飲食・風俗営業関連業務' : 'Restaurant & Entertainment Business'}
               </h3>
@@ -409,7 +408,7 @@ export default async function Home({ params }: PageProps) {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={0.4}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
                   src="/service-icons/waste-management.png"
@@ -420,7 +419,7 @@ export default async function Home({ params }: PageProps) {
                   unoptimized
                 />
               </div>
-              <div>
+              <div className="flex-1 flex items-center">
               <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
                 {lang === 'ja' ? '廃棄物処理業許可関連業務' : 'Waste Management Permits'}
               </h3>
@@ -429,7 +428,7 @@ export default async function Home({ params }: PageProps) {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={0.5}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
                   src="/service-icons/travel-hotel.png"
@@ -440,7 +439,7 @@ export default async function Home({ params }: PageProps) {
                   unoptimized
                 />
               </div>
-              <div>
+              <div className="flex-1 flex items-center">
               <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
                 {lang === 'ja' ? '旅行・旅館業関連業務' : 'Travel & Hotel Business'}
               </h3>
@@ -449,7 +448,7 @@ export default async function Home({ params }: PageProps) {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={0.6}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
                   src="/service-icons/corporate-establishment.png"
@@ -460,7 +459,7 @@ export default async function Home({ params }: PageProps) {
                   unoptimized
                 />
               </div>
-              <div>
+              <div className="flex-1 flex items-center">
               <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
                 {lang === 'ja' ? '法人設立業務' : 'Corporate Establishment'}
               </h3>
@@ -469,7 +468,7 @@ export default async function Home({ params }: PageProps) {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={0.7}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
                   src="/service-icons/business-license.png"
@@ -480,7 +479,7 @@ export default async function Home({ params }: PageProps) {
                   unoptimized
                 />
               </div>
-              <div>
+              <div className="flex-1 flex items-center">
               <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
                 {lang === 'ja' ? '営業許可' : 'Business Licenses'}
               </h3>
@@ -489,7 +488,7 @@ export default async function Home({ params }: PageProps) {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={0.8}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
                   src="/service-icons/land-services.png"
@@ -500,7 +499,7 @@ export default async function Home({ params }: PageProps) {
                   unoptimized
                 />
               </div>
-              <div>
+              <div className="flex-1 flex items-center">
               <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
                 {lang === 'ja' ? '土地関連業務' : 'Land-related Services'}
               </h3>
@@ -509,7 +508,7 @@ export default async function Home({ params }: PageProps) {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={0.9}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
                   src="/service-icons/rights-documentation.png"
@@ -520,7 +519,7 @@ export default async function Home({ params }: PageProps) {
                   unoptimized
                 />
               </div>
-              <div>
+              <div className="flex-1 flex items-center">
               <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
                 {lang === 'ja' ? '権利義務・事実証明業務' : 'Rights & Legal Documentation'}
               </h3>
@@ -529,7 +528,7 @@ export default async function Home({ params }: PageProps) {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={1.0}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
                   src="/service-icons/medical-care.png"
@@ -540,7 +539,7 @@ export default async function Home({ params }: PageProps) {
                   unoptimized
                 />
               </div>
-              <div>
+              <div className="flex-1 flex items-center">
               <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
                 {lang === 'ja' ? '医療・介護関連業務' : 'Medical & Care Services'}
               </h3>
@@ -549,7 +548,7 @@ export default async function Home({ params }: PageProps) {
             </ScrollAnimationWrapper>
 
             <ScrollAnimationWrapper delay={1.1}>
-              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 flex items-center justify-center sm:flex-col text-center">
+              <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md md:hover:scale-105 hover:bg-blue-100/70 transition-all duration-300 h-full flex flex-col items-center justify-center text-center">
               <div className="w-16 sm:w-20 md:w-[108px] h-16 sm:h-20 md:h-[108px] mb-2 sm:mb-4">
                 <Image
                   src="/service-icons/other-services.png"
@@ -560,7 +559,7 @@ export default async function Home({ params }: PageProps) {
                   unoptimized
                 />
               </div>
-              <div>
+              <div className="flex-1 flex items-center">
               <h3 className="text-base sm:text-base md:text-lg font-semibold text-gray-900">
                 {lang === 'ja' ? 'その他の業務' : 'Other Services'}
               </h3>
