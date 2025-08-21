@@ -1,11 +1,17 @@
 import { Locale } from '@/lib/i18n/types';
-import { FaqItem } from '@/lib/types';
+
+interface FeaturesFaqItem {
+  _id: string;
+  question: string;
+  answer: string;
+  order: number;
+}
 
 type FeaturesFaqContent = {
   [K in Locale]: {
     title: string;
     subtitle: string;
-    faqs: FaqItem[];
+    faqs: FeaturesFaqItem[];
   };
 };
 

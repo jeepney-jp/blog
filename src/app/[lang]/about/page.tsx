@@ -254,8 +254,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{staffData.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-            {
-              staff.map((member) => (
+            {staff.map((member) => (
               <div key={member._id} className="group">
                 <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
                   {/* メンバー写真 - 正方形 */}
@@ -312,7 +311,7 @@ export default function About() {
                   </div>
                 </div>
               </div>
-              ))
+            ))}
           </div>
         </div>
       </section>
