@@ -261,9 +261,12 @@ export default async function Home({ params }: PageProps) {
                   />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.achievement.title}</h3>
+                  {/* タイトルエリア - 固定高 */}
+                  <div className="h-8 mb-4">
+                    <h3 className="text-xl font-semibold text-gray-900">{t.features.achievement.title}</h3>
+                  </div>
                   {/* 説明文エリア - 固定高 */}
-                  <div style={{height: '120px'}} className="mb-4">
+                  <div className="h-24 mb-6">
                     <p className="text-gray-600 leading-relaxed">
                       {t.features.achievement.description}
                     </p>
@@ -271,7 +274,7 @@ export default async function Home({ params }: PageProps) {
                   {/* 薄い区切り線 */}
                   <div className="w-full h-px bg-gray-200 mb-6"></div>
                   {/* 統計値表示エリア */}
-                  <div className="h-20 flex items-center mt-auto">
+                  <div className="h-20 flex items-center">
                     <div className="flex justify-around text-center w-full">
                       <div>
                         <p className="text-3xl font-bold text-blue-600">10,000+</p>
@@ -301,9 +304,12 @@ export default async function Home({ params }: PageProps) {
                   />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.pricing.title}</h3>
+                  {/* タイトルエリア - 固定高 */}
+                  <div className="h-8 mb-4">
+                    <h3 className="text-xl font-semibold text-gray-900">{t.features.pricing.title}</h3>
+                  </div>
                   {/* 説明文エリア - 固定高 */}
-                  <div style={{height: '120px'}} className="mb-4">
+                  <div className="h-24 mb-6">
                     <p className="text-gray-600 leading-relaxed">
                       {t.features.pricing.description}
                     </p>
@@ -311,7 +317,7 @@ export default async function Home({ params }: PageProps) {
                   {/* 薄い区切り線 */}
                   <div className="w-full h-px bg-gray-200 mb-6"></div>
                   {/* ハイライトボックス */}
-                  <div className="h-20 flex items-center mt-auto">
+                  <div className="h-20 flex items-center">
                     <div className="bg-blue-50 rounded-lg p-4 text-center w-full">
                       <p className="text-blue-900 font-bold text-lg">{t.features.pricing.savings}</p>
                       <p className="text-blue-700 text-sm mt-1">{t.features.pricing.comparison}</p>
@@ -335,9 +341,12 @@ export default async function Home({ params }: PageProps) {
                   />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.multilingual.title}</h3>
+                  {/* タイトルエリア - 固定高 */}
+                  <div className="h-8 mb-4">
+                    <h3 className="text-xl font-semibold text-gray-900">{t.features.multilingual.title}</h3>
+                  </div>
                   {/* 説明文エリア - 固定高 */}
-                  <div style={{height: '120px'}} className="mb-4">
+                  <div className="h-24 mb-6">
                     <p className="text-gray-600 leading-relaxed">
                       {t.features.multilingual.description}
                     </p>
@@ -345,7 +354,7 @@ export default async function Home({ params }: PageProps) {
                   {/* 薄い区切り線 */}
                   <div className="w-full h-px bg-gray-200 mb-6"></div>
                   {/* 言語タグエリア */}
-                  <div className="h-20 flex items-center mt-auto">
+                  <div className="h-20 flex items-center">
                     <div className="grid grid-cols-3 gap-2 w-full">
                       {languages[lang].map((language, index) => (
                         <span key={index} className="px-2 py-1 bg-blue-50 text-blue-900 rounded text-sm font-medium text-center border border-blue-100">
