@@ -186,29 +186,30 @@ export default async function Home({ params }: PageProps) {
       <Header lang={lang} />
 
       {/* ヒーローセクション */}
-      <section className="relative text-white min-h-screen flex items-center bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/hero-background2.png')"}}>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8">
-            <span className="text-blue-400 block mb-2">{t.hero.title1}</span>
-            <span className="text-blue-400 block">{t.hero.title2}</span>
-          </h1>
-          <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link 
-              href={`${basePath}/contact`}
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
-            >
-              {t.hero.freeConsultation}
-              <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-            <Link 
-              href={`${basePath}/services`}
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-600 bg-white rounded-lg hover:bg-blue-50 transition-colors border-2 border-white"
-            >
-              {t.hero.viewServices}
-            </Link>
+      <section className="relative text-gray-900 min-h-screen flex items-center bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8">
+              <span className="text-blue-600 block mb-2">{t.hero.title1}</span>
+              <span className="text-blue-600 block">{t.hero.title2}</span>
+            </h1>
+            <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 items-start">
+              <Link 
+                href={`${basePath}/contact`}
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+              >
+                {t.hero.freeConsultation}
+                <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+              <Link 
+                href={`${basePath}/services`}
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors border-2 border-gray-300"
+              >
+                {t.hero.viewServices}
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -224,7 +225,7 @@ export default async function Home({ params }: PageProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 申請実績 */}
             <ScrollAnimationWrapper delay={0}>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 h-full flex flex-col">
                 <div className="w-full h-48">
                   <Image
                     src="/申請実績1,000件超の信頼.png"
@@ -235,12 +236,12 @@ export default async function Home({ params }: PageProps) {
                     unoptimized
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.achievement.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 mb-6 leading-relaxed flex-1">
                     {t.features.achievement.description}
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4">
+                  <div className="bg-blue-50 rounded-lg p-4 mt-auto">
                     <div className="flex justify-around text-center">
                       <div>
                         <p className="text-2xl font-bold text-blue-600">10,000+</p>
@@ -258,7 +259,7 @@ export default async function Home({ params }: PageProps) {
 
             {/* 料金設定 */}
             <ScrollAnimationWrapper delay={0.2}>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 h-full flex flex-col">
                 <div className="w-full h-48">
                   <Image
                     src="/完全成果報酬制で明朗な料金体系.png"
@@ -269,12 +270,12 @@ export default async function Home({ params }: PageProps) {
                     unoptimized
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.pricing.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 mb-6 leading-relaxed flex-1">
                     {t.features.pricing.description}
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4 text-center">
+                  <div className="bg-blue-50 rounded-lg p-4 text-center mt-auto">
                     <p className="text-blue-900 font-bold text-lg">{t.features.pricing.savings}</p>
                     <p className="text-blue-700 text-sm mt-1">{t.features.pricing.comparison}</p>
                   </div>
@@ -284,7 +285,7 @@ export default async function Home({ params }: PageProps) {
 
             {/* 多言語対応 */}
             <ScrollAnimationWrapper delay={0.4}>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 h-full flex flex-col">
                 <div className="w-full h-48">
                   <Image
                     src="/母国語対応で安心サポート.png"
@@ -295,12 +296,12 @@ export default async function Home({ params }: PageProps) {
                     unoptimized
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{t.features.multilingual.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 mb-6 leading-relaxed flex-1">
                     {t.features.multilingual.description}
                   </p>
-                  <div className="bg-blue-50 rounded-lg p-4">
+                  <div className="bg-blue-50 rounded-lg p-4 mt-auto">
                     <div className="flex flex-wrap gap-2 justify-center">
                       {languages[lang].map((language, index) => (
                         <span key={index} className="px-3 py-1 bg-white text-blue-700 rounded-full text-sm font-medium border border-blue-200">
@@ -617,28 +618,28 @@ export default async function Home({ params }: PageProps) {
           </div>
           {latestNews.length > 0 ? (
             <ScrollAnimationWrapper delay={0}>
-              <div className="max-w-4xl mx-auto">
-                <ul className="space-y-4">
+              <div className="max-w-6xl mx-auto">
+                <ul className="space-y-3">
                   {latestNews.map((news: NewsItem) => (
-                    <li key={news._id} className="border-b border-gray-200 pb-4 last:border-b-0">
+                    <li key={news._id} className="border-b border-gray-200 pb-3 last:border-b-0">
                       <Link
                         href={`${basePath}/news/${news.slug.current}`}
-                        className="block hover:bg-white p-4 rounded-lg transition-colors"
+                        className="block hover:bg-gray-50 p-3 rounded-lg transition-colors"
                       >
-                        <div className="flex items-start justify-between">
-                          <div className="flex-1">
-                            <time className="text-sm text-gray-500 block mb-2">
-                              {new Date(news.publishedAt).toLocaleDateString(lang === 'ja' ? 'ja-JP' : 'en-US')}
-                            </time>
+                        <div className="flex items-center gap-4 md:gap-6">
+                          <time className="text-sm text-gray-500 whitespace-nowrap flex-shrink-0 w-24">
+                            {new Date(news.publishedAt).toLocaleDateString(lang === 'ja' ? 'ja-JP' : 'en-US')}
+                          </time>
+                          <div className="flex-shrink-0">
                             {news.category && categoryMap[news.category] && (
-                              <span className={`inline-block px-2 py-1 rounded text-xs font-medium mb-2 ${categoryMap[news.category][lang].color}`}>
+                              <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${categoryMap[news.category][lang].color}`}>
                                 {categoryMap[news.category][lang].name}
                               </span>
                             )}
-                            <h3 className="text-lg font-medium text-gray-900 hover:text-blue-600 transition-colors line-clamp-2">
-                              {news.title}
-                            </h3>
                           </div>
+                          <h3 className="text-base font-medium text-gray-900 hover:text-blue-600 transition-colors flex-1 line-clamp-1">
+                            {news.title}
+                          </h3>
                         </div>
                       </Link>
                     </li>
