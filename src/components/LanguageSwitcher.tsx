@@ -22,9 +22,12 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
   }
 
   return (
-    <div className="relative">
+    <div 
+      className="relative"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
       <button
-        onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors"
         aria-label="言語を選択"
       >
@@ -41,7 +44,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
         <div className="absolute right-0 mt-1 w-32 bg-white border border-gray-200 rounded-md shadow-lg z-50">
           <div className="py-1">
             <button
-              onClick={() => handleLanguageChange('en')}
+              onMouseDown={() => handleLanguageChange('en')}
               className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
                 currentLang === 'en' ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'
               }`}
@@ -49,7 +52,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
               English
             </button>
             <button
-              onClick={() => handleLanguageChange('ja')}
+              onMouseDown={() => handleLanguageChange('ja')}
               className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
                 currentLang === 'ja' ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'
               }`}
