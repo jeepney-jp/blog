@@ -13,9 +13,11 @@ export async function getNews() {
     *[_type == "news"] | order(publishedAt desc) {
       _id,
       title,
+      titleEn,
       slug,
       publishedAt,
       excerpt,
+      excerptEn,
       category
     }
   `)
@@ -27,10 +29,13 @@ export async function getNewsBySlug(slug: string) {
     *[_type == "news" && slug.current == $slug][0] {
       _id,
       title,
+      titleEn,
       slug,
       publishedAt,
       excerpt,
+      excerptEn,
       content,
+      contentEn,
       category,
       featured
     }

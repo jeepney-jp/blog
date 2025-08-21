@@ -10,10 +10,19 @@ import { Locale } from '@/lib/i18n/types';
 interface News {
   _id: string;
   title: string;
+  titleEn?: string;
   slug: { current: string };
   publishedAt: string;
   excerpt?: string;
+  excerptEn?: string;
   content?: {
+    _type: string;
+    children: {
+      _type: string;
+      text: string;
+    }[];
+  }[];
+  contentEn?: {
     _type: string;
     children: {
       _type: string;
@@ -24,14 +33,47 @@ interface News {
   featured?: boolean;
 }
 
+// 多言語コンテンツ
+const content = {
+  ja: {
+    home: "ホーム",
+    news: "お知らせ",
+    backToNews: "お知らせ一覧に戻る",
+    categories: {
+      business_notice: "営業案内",
+      new_services: "新サービス",
+      legal_update: "制度改正",
+      price_update: "料金改定",
+      media_appearance: "メディア",
+      case_study: "実績紹介"
+    }
+  },
+  en: {
+    home: "Home",
+    news: "News",
+    backToNews: "Back to News",
+    categories: {
+      business_notice: "Business Notice",
+      new_services: "New Services",
+      legal_update: "Legal Updates",
+      price_update: "Price Updates",
+      media_appearance: "Media",
+      case_study: "Case Studies"
+    }
+  }
+};
+
 // カテゴリマッピング
-const categoryMap: { [key: string]: { name: string; color: string } } = {
-  business_notice: { name: '営業案内', color: 'bg-green-100 text-green-800' },
-  new_services: { name: '新サービス', color: 'bg-blue-100 text-blue-800' },
-  legal_update: { name: '制度改正', color: 'bg-purple-100 text-purple-800' },
-  price_update: { name: '料金改定', color: 'bg-yellow-100 text-yellow-800' },
-  media_appearance: { name: 'メディア', color: 'bg-pink-100 text-pink-800' },
-  case_study: { name: '実績紹介', color: 'bg-indigo-100 text-indigo-800' },
+const getCategoryMap = (lang: Locale): { [key: string]: { name: string; color: string } } => {
+  const t = content[lang];
+  return {
+    business_notice: { name: t.categories.business_notice, color: 'bg-green-100 text-green-800' },
+    new_services: { name: t.categories.new_services, color: 'bg-blue-100 text-blue-800' },
+    legal_update: { name: t.categories.legal_update, color: 'bg-purple-100 text-purple-800' },
+    price_update: { name: t.categories.price_update, color: 'bg-yellow-100 text-yellow-800' },
+    media_appearance: { name: t.categories.media_appearance, color: 'bg-pink-100 text-pink-800' },
+    case_study: { name: t.categories.case_study, color: 'bg-indigo-100 text-indigo-800' },
+  };
 };
 
 interface PageProps {
@@ -40,14 +82,18 @@ interface PageProps {
 
 export default async function NewsDetailPage({ params }: PageProps) {
   const { slug, lang } = await params;
+  const t = content[lang];
+  const categoryMap = getCategoryMap(lang);
   
   // 一時的にテストデータを使用
   const news: News | null = slug === "jimusho-kaisetsu-oshirase" ? {
     _id: "test1",
     title: "事務所開設のお知らせ",
+    titleEn: "Office Opening Announcement",
     slug: { current: "jimusho-kaisetsu-oshirase" },
     publishedAt: "2025-07-07",
     excerpt: "フォルティア行政書士事務所事務所を開設いたしました",
+    excerptEn: "We are pleased to announce the opening of Fortia Administrative Scrivener Office.",
     content: [
       {
         _type: "block",
@@ -59,7 +105,18 @@ export default async function NewsDetailPage({ params }: PageProps) {
         ]
       }
     ],
-    category: "press_release",
+    contentEn: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "We are pleased to announce the opening of Fortia Administrative Scrivener Office.\n\nOur office handles a wide range of administrative scrivener services including licensing applications, inheritance procedures, and company establishment. We provide careful and personalized services tailored to each client's needs.\n\nInitial consultations are free of charge, so please feel free to contact us."
+          }
+        ]
+      }
+    ],
+    category: "business_notice",
     featured: true
   } : null;
 
@@ -76,15 +133,15 @@ export default async function NewsDetailPage({ params }: PageProps) {
       <nav className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center space-x-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-gray-700">
-              ホーム
+            <Link href={`/${lang}`} className="hover:text-gray-700">
+              {t.home}
             </Link>
             <span>／</span>
-            <Link href="/news" className="hover:text-gray-700">
-              お知らせ
+            <Link href={`/${lang}/news`} className="hover:text-gray-700">
+              {t.news}
             </Link>
             <span>／</span>
-            <span className="text-gray-900">{news.title}</span>
+            <span className="text-gray-900">{lang === 'ja' ? news.title : (news.titleEn || news.title)}</span>
           </div>
         </div>
       </nav>
@@ -96,7 +153,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
           <header className="mb-8">
             <div className="flex items-center space-x-4 mb-4">
               <time className="text-sm text-gray-500">
-                {new Date(news.publishedAt).toLocaleDateString('ja-JP')}
+                {new Date(news.publishedAt).toLocaleDateString(lang === 'ja' ? 'ja-JP' : 'en-US')}
               </time>
               {news.category && categoryMap[news.category] && (
                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
@@ -106,15 +163,19 @@ export default async function NewsDetailPage({ params }: PageProps) {
                 </span>
               )}
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">{news.title}</h1>
-            {news.excerpt && (
-              <p className="text-lg text-gray-600 leading-relaxed">{news.excerpt}</p>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">
+              {lang === 'ja' ? news.title : (news.titleEn || news.title)}
+            </h1>
+            {(lang === 'ja' ? news.excerpt : news.excerptEn) && (
+              <p className="text-lg text-gray-600 leading-relaxed">
+                {lang === 'ja' ? news.excerpt : (news.excerptEn || news.excerpt)}
+              </p>
             )}
           </header>
 
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
-            {news.content && news.content.map((block, index) => (
+            {(lang === 'ja' ? news.content : news.contentEn) && (lang === 'ja' ? news.content : news.contentEn)!.map((block, index) => (
               <div key={index} className="mb-6">
                 {block.children?.map((child, childIndex: number) => (
                   <p key={childIndex} className="text-gray-700 leading-relaxed whitespace-pre-line">
@@ -128,10 +189,10 @@ export default async function NewsDetailPage({ params }: PageProps) {
           {/* Navigation */}
           <div className="mt-12 pt-8 border-t border-gray-200">
             <Link
-              href="/news"
+              href={`/${lang}/news`}
               className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
             >
-              ← お知らせ一覧に戻る
+              ← {t.backToNews}
             </Link>
           </div>
         </div>

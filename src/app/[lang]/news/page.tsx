@@ -13,9 +13,11 @@ type CategoryKey = 'business_notice' | 'new_services' | 'legal_update' | 'price_
 interface News {
   _id: string;
   title: string;
+  titleEn?: string;
   slug: { current: string };
   publishedAt: string;
   excerpt?: string;
+  excerptEn?: string;
   category?: CategoryKey;
   featured?: boolean;
 }
@@ -93,13 +95,13 @@ export default async function NewsPage({ params }: PageProps) {
               {news.map((item) => (
                 <li key={item._id}>
                   <Link 
-                    href={`/news/${item.slug.current}`}
+                    href={`/${lang}/news/${item.slug.current}`}
                     className="block px-6 py-4 hover:bg-gray-50 transition-colors"
                   >
                     <div className="flex items-center gap-4">
                       {/* 日付 */}
                       <time className="text-sm text-gray-500 whitespace-nowrap">
-                        {new Date(item.publishedAt).toLocaleDateString('ja-JP')}
+                        {new Date(item.publishedAt).toLocaleDateString(lang === 'ja' ? 'ja-JP' : 'en-US')}
                       </time>
                       
                       {/* カテゴリラベル */}
@@ -113,7 +115,7 @@ export default async function NewsPage({ params }: PageProps) {
                       
                       {/* タイトル */}
                       <h3 className="flex-1 text-gray-900 hover:text-blue-600 transition-colors">
-                        {item.title}
+                        {lang === 'ja' ? item.title : (item.titleEn || item.title)}
                       </h3>
                     </div>
                   </Link>
