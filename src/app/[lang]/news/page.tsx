@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHeader from "@/components/PageHeader";
 import { getNews } from "@/lib/sanity";
 import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import { Locale } from "@/lib/i18n/types";
+import { breadcrumbContent } from "@/data/breadcrumb-content";
 
 // カテゴリの型定義
 type CategoryKey = 'business_notice' | 'new_services' | 'legal_update' | 'price_update' | 'media_appearance' | 'case_study';
@@ -126,6 +128,14 @@ export default async function NewsPage({ params }: PageProps) {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* パンくずリスト */}
+        <Breadcrumbs
+          segments={[
+            { name: breadcrumbContent[lang].home, href: `/${lang}` },
+            { name: breadcrumbContent[lang].news, href: `/${lang}/news` }
+          ]}
+        />
+        
 
         {/* News List */}
         <div className="bg-white rounded-lg shadow-sm overflow-hidden">
