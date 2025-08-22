@@ -1704,7 +1704,70 @@ export const categoryPagesContent: CategoryPagesContent = {
       tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" },
       faqTitle: "常见问题"
     },
-    corporate: { title: "法人设立业务", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
+    corporate: {
+      title: "法人设立业务",
+      catchphrase: "股份有限公司・合同公司设立的专业支持",
+      heroTitle: "【专家支持】法人设立业务指南",
+      metaTitle: "法人设立业务 | Fortia行政书士事务所",
+      metaDescription: "从股份有限公司、合同公司的设立到设立后的手续，专家提供一站式服务。",
+      services: [
+        {
+          id: "corporation-establishment",
+          title: "股份有限公司设立",
+          target: "股份有限公司的新设立手续。从公司章程制作到登记申请，支持一系列手续。",
+          priceMin: 150000,
+          priceMax: 250000
+        },
+        {
+          id: "llc-establishment",
+          title: "合同公司设立",
+          target: "合同公司的新设立手续。设立费用低廉，可进行灵活的经营。",
+          priceMin: 100000,
+          priceMax: 180000
+        },
+        {
+          id: "npo-certification",
+          title: "NPO法人设立认证",
+          target: "特定非营利活动法人的设立认证申请。支持进行公益活动的团体的法人化。",
+          priceMin: 120000,
+          priceMax: 200000
+        },
+        {
+          id: "general-incorporated-association",
+          title: "一般社团法人设立",
+          target: "一般社团法人的设立登记申请。适合公益目的事业和互助团体的法人化。",
+          priceMin: 100000,
+          priceMax: 150000
+        },
+        {
+          id: "corporate-change",
+          title: "各种变更登记",
+          target: "管理人员变更、总部迁址、资本金变更等法人登记事项的变更手续。",
+          priceMin: 30000,
+          priceMax: 80000
+        },
+        {
+          id: "corporate-dissolution",
+          title: "法人解散・清算",
+          target: "法人的解散登记及清算手续。支持事业终止时的适当手续。",
+          priceMin: 80000,
+          priceMax: 150000
+        }
+      ],
+      faq: [
+        {
+          question: "股份有限公司和合同公司的区别是什么？",
+          answer: "股份有限公司具有更高的社会信誉度，合同公司的设立费用较低、手续简单。根据业务内容和将来展望选择。"
+        },
+        {
+          question: "设立需要多长时间？",
+          answer: "从文件准备到登记完成通常需芁2〜4周。根据公司章程认证和登记申请的时间安排会有所不同。"
+        }
+      ],
+      breadcrumbs: { home: "首页", services: "服务" },
+      tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" },
+      faqTitle: "常见问题"
+    },
     "food-entertainment": { title: "餐饮・娱乐业务", catchphrase: "餐厅营业许可・娱乐业许可的专业支持", heroTitle: "【专家支持】餐饮・娱乐业务指南", metaTitle: "餐饮・娱乐业务 | Fortia行政书士事务所", metaDescription: "餐厅许可、娱乐业许可的取得到更新，专家全程支持。可靠的手续确保营业开始。", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
     "waste-management": { title: "废物处理业许可业务", catchphrase: "产业废物收集运输业许可的专业支持", heroTitle: "【专家支持】废物处理业许可业务指南", metaTitle: "废物处理业许可业务 | Fortia行政书士事务所", metaDescription: "产业废物收集运输业许可、一般废物处理业许可的取得到更新，专家全程支持。", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
     "travel-hospitality": { title: "旅行・旅馆业务", catchphrase: "旅行业登记・旅馆业许可的专业支持", heroTitle: "【专家支持】旅行・旅馆业务指南", metaTitle: "旅行・旅馆业务 | Fortia行政书士事务所", metaDescription: "旅行业登记、旅馆业许可、民宿申报等旅行・住宿业相关的许可认证手续专家支持。", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
@@ -1935,7 +1998,70 @@ export const categoryPagesContent: CategoryPagesContent = {
       tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" },
       faqTitle: "常見問題"
     },
-    corporate: { title: "法人設立業務", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
+    corporate: {
+      title: "法人設立業務",
+      catchphrase: "股份有限公司・合同公司設立的專業支援",
+      heroTitle: "【專家支援】法人設立業務指南",
+      metaTitle: "法人設立業務 | Fortia行政書士事務所",
+      metaDescription: "從股份有限公司、合同公司的設立到設立後的手續，專家提供一站式服務。",
+      services: [
+        {
+          id: "corporation-establishment",
+          title: "股份有限公司設立",
+          target: "股份有限公司的新設立手續。從公司章程製作到登記申請，支援一系列手續。",
+          priceMin: 150000,
+          priceMax: 250000
+        },
+        {
+          id: "llc-establishment",
+          title: "合同公司設立",
+          target: "合同公司的新設立手續。設立費用低廉，可進行靈活的經營。",
+          priceMin: 100000,
+          priceMax: 180000
+        },
+        {
+          id: "npo-certification",
+          title: "NPO法人設立認證",
+          target: "特定非營利活動法人的設立認證申請。支援進行公益活動的團體的法人化。",
+          priceMin: 120000,
+          priceMax: 200000
+        },
+        {
+          id: "general-incorporated-association",
+          title: "一般社團法人設立",
+          target: "一般社團法人的設立登記申請。適合公益目的事業和互助團體的法人化。",
+          priceMin: 100000,
+          priceMax: 150000
+        },
+        {
+          id: "corporate-change",
+          title: "各種變更登記",
+          target: "管理人員變更、總部遷址、資本金變更等法人登記事項的變更手續。",
+          priceMin: 30000,
+          priceMax: 80000
+        },
+        {
+          id: "corporate-dissolution",
+          title: "法人解散・清算",
+          target: "法人的解散登記及清算手續。支援事業結束時的適当手續。",
+          priceMin: 80000,
+          priceMax: 150000
+        }
+      ],
+      faq: [
+        {
+          question: "股份有限公司和合同公司的區別是什麼？",
+          answer: "股份有限公司具有更高的社會信譽度，合同公司的設立費用較低、手續簡單。根據業務內容和未來展望選擇。"
+        },
+        {
+          question: "設立需要多長時間？",
+          answer: "從文件準備到登記完成通常需芁2〜4週。根據公司章程認證和登記申請的時間安排會有所不同。"
+        }
+      ],
+      breadcrumbs: { home: "首頁", services: "服務" },
+      tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" },
+      faqTitle: "常見問題"
+    },
     "food-entertainment": { title: "餐飲・娛樂業務", catchphrase: "餐廳營業許可・娛樂業許可的專業支援", heroTitle: "【專家支援】餐飲・娛樂業務指南", metaTitle: "餐飲・娛樂業務 | Fortia行政書士事務所", metaDescription: "餐廳許可、娛樂業許可的取得到更新，專家全程支援。可靠的手續確保營業開始。", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
     "waste-management": { title: "廢物處理業許可業務", catchphrase: "產業廢物收集運輸業許可的專業支援", heroTitle: "【專家支援】廢物處理業許可業務指南", metaTitle: "廢物處理業許可業務 | Fortia行政書士事務所", metaDescription: "產業廢物收集運輸業許可、一般廢物處理業許可的取得到更新，專家全程支援。", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
     "travel-hospitality": { title: "旅行・旅館業務", catchphrase: "旅行業登記・旅館業許可的專業支援", heroTitle: "【專家支援】旅行・旅館業務指南", metaTitle: "旅行・旅館業務 | Fortia行政書士事務所", metaDescription: "旅行業登記、旅館業許可、民宿申報等旅行・住宿業相關的許可認證手續專家支援。", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
@@ -2166,7 +2292,70 @@ export const categoryPagesContent: CategoryPagesContent = {
       tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" },
       faqTitle: "Câu hỏi thường gặp"
     },
-    corporate: { title: "Dịch vụ thành lập pháp nhân", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
+    corporate: {
+      title: "Dịch vụ thành lập pháp nhân",
+      catchphrase: "Hỗ trợ chuyên nghiệp cho việc thành lập công ty cổ phần・LLC",
+      heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ thành lập pháp nhân",
+      metaTitle: "Dịch vụ thành lập pháp nhân | Văn phòng Hành chính Fortia",
+      metaDescription: "Từ việc thành lập công ty cổ phần, LLC đến các thủ tục sau thành lập, chuyên gia cung cấp dịch vụ một cửa.",
+      services: [
+        {
+          id: "corporation-establishment",
+          title: "Thành lập công ty cổ phần",
+          target: "Thủ tục thành lập mới công ty cổ phần. Hỗ trợ một loạt thủ tục từ làm điều lệ công ty đến đăng ký.",
+          priceMin: 150000,
+          priceMax: 250000
+        },
+        {
+          id: "llc-establishment",
+          title: "Thành lập công ty hợp danh",
+          target: "Thủ tục thành lập mới công ty hợp danh. Phí thành lập thấp, có thể điều hành linh hoạt.",
+          priceMin: 100000,
+          priceMax: 180000
+        },
+        {
+          id: "npo-certification",
+          title: "Chứng nhận thành lập NPO",
+          target: "Đơn xin chứng nhận thành lập pháp nhân hoạt động phi lợi nhuận đặc định. Hỗ trợ pháp nhân hóa các tổ chức thực hiện hoạt động công ích.",
+          priceMin: 120000,
+          priceMax: 200000
+        },
+        {
+          id: "general-incorporated-association",
+          title: "Thành lập hiệp hội chính thức",
+          target: "Đơn xin đăng ký thành lập hiệp hội chính thức. Thích hợp cho pháp nhân hóa các hoạt động công ích và tổ chức tương trợ.",
+          priceMin: 100000,
+          priceMax: 150000
+        },
+        {
+          id: "corporate-change",
+          title: "Đăng ký thay đổi khác nhau",
+          target: "Thủ tục thay đổi các mục đăng ký pháp nhân như thay đổi quản lý viên, di chuyển trụ sở chính, thay đổi vốn điều lệ.",
+          priceMin: 30000,
+          priceMax: 80000
+        },
+        {
+          id: "corporate-dissolution",
+          title: "Giải tán pháp nhân・thanh lý",
+          target: "Đăng ký giải tán pháp nhân và thủ tục thanh lý. Hỗ trợ thủ tục thích hợp khi kết thúc kinh doanh.",
+          priceMin: 80000,
+          priceMax: 150000
+        }
+      ],
+      faq: [
+        {
+          question: "Sự khác biệt giữa công ty cổ phần và công ty hợp danh là gì?",
+          answer: "Công ty cổ phần có độ tin cậy xã hội cao hơn, công ty hợp danh có phí thành lập thấp hơn và thủ tục đơn giản hơn. Chọn lựa dựa trên nội dung kinh doanh và triển vọng tương lai."
+        },
+        {
+          question: "Thành lập mất bao lâu?",
+          answer: "Từ chuẩn bị tài liệu đến hoàn thành đăng ký thường mất 2〜4 tuần. Thời gian sẽ thay đổi tùy thuộc vào lịch trình xác thực điều lệ công ty và đơn đăng ký."
+        }
+      ],
+      breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" },
+      tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" },
+      faqTitle: "Câu hỏi thường gặp"
+    },
     "food-entertainment": { title: "Dịch vụ ăn uống・giải trí", catchphrase: "Hỗ trợ chuyên nghiệp cho giấy phép kinh doanh nhà hàng・giải trí", heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ ăn uống・giải trí", metaTitle: "Dịch vụ ăn uống・giải trí | Văn phòng Hành chính Fortia", metaDescription: "Hỗ trợ chuyên nghiệp từ việc lấy đến gia hạn giấy phép nhà hàng, giấy phép kinh doanh giải trí. Thủ tục đáng tin cậy đảm bảo bắt đầu kinh doanh.", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
     "waste-management": { title: "Dịch vụ giấy phép xử lý chất thải", catchphrase: "Hỗ trợ chuyên nghiệp cho giấy phép thu gom vận chuyển chất thải công nghiệp", heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ giấy phép xử lý chất thải", metaTitle: "Dịch vụ giấy phép xử lý chất thải | Văn phòng Hành chính Fortia", metaDescription: "Hỗ trợ chuyên nghiệp từ việc lấy đến gia hạn giấy phép thu gom vận chuyển chất thải công nghiệp, giấy phép xử lý chất thải sinh hoạt.", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
     "travel-hospitality": { title: "Dịch vụ du lịch・khách sạn", catchphrase: "Hỗ trợ chuyên nghiệp cho đăng ký kinh doanh du lịch・giấy phép kinh doanh khách sạn", heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ du lịch・khách sạn", metaTitle: "Dịch vụ du lịch・khách sạn | Văn phòng Hành chính Fortia", metaDescription: "Hỗ trợ chuyên nghiệp cho đăng ký kinh doanh du lịch, giấy phép kinh doanh khách sạn, khai báo nhà nghỉ dưỡng và các thủ tục cấp phép liên quan đến du lịch・lưu trú.", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
