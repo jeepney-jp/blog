@@ -165,27 +165,31 @@ export const categoryPagesContent: CategoryPagesContent = {
       services: [
         {
           id: "construction-permit",
-          title: "テスト",
-          target: "テスト",
-          priceMin: 0
+          title: "建設業許可申請",
+          target: "建設工事業を営む場合に必要な許可申請。一般建設業許可・特定建設業許可に対応。",
+          priceMin: 150000,
+          priceMax: 300000
         },
         {
           id: "construction-renewal",
-          title: "テスト",
-          target: "テスト",
-          priceMin: 0
+          title: "建設業許可更新",
+          target: "5年ごとに必要な建設業許可の更新手続き。期限管理から申請まで完全サポート。",
+          priceMin: 80000,
+          priceMax: 120000
         },
         {
           id: "real-estate-license",
-          title: "テスト",
-          target: "テスト",
-          priceMin: 0
+          title: "宅地建物取引業免許申請",
+          target: "不動産売買・仲介業を営む際に必要な宅建業免許の新規取得申請。",
+          priceMin: 120000,
+          priceMax: 180000
         },
         {
           id: "construction-change",
-          title: "テスト",
-          target: "テスト",
-          priceMin: 0
+          title: "各種変更届出",
+          target: "営業所移転、役員変更、商号変更等の各種変更届出手続き。",
+          priceMin: 30000,
+          priceMax: 80000
         }
       ],
       faq: [
