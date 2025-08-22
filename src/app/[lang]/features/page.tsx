@@ -1,13 +1,14 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Header from '@/components/Header';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import PageHeader from '@/components/PageHeader';
-import Link from 'next/link';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { Locale } from '@/lib/i18n/types';
 import { featuresFaqContent } from '@/data/features-faq-content';
+import { breadcrumbContent } from '@/data/breadcrumb-content';
 
 // 多言語コンテンツ
 const content = {
@@ -502,13 +503,12 @@ export default async function FeaturesPage({ params }: PageProps) {
       {/* Breadcrumb */}
       <nav className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center space-x-2 text-sm text-gray-500">
-            <Link href={`/${lang}`} className="hover:text-gray-700">
-              {t.breadcrumbHome}
-            </Link>
-            <span>／</span>
-            <span className="text-gray-900">{t.breadcrumbFeatures}</span>
-          </div>
+          <Breadcrumbs
+            segments={[
+              { name: breadcrumbContent[lang].home, href: `/${lang}` },
+              { name: breadcrumbContent[lang].features, href: `/${lang}/features` }
+            ]}
+          />
         </div>
       </nav>
 

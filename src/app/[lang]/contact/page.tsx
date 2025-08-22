@@ -3,10 +3,12 @@
 import { useState } from "react";
 import { useParams } from "next/navigation";
 import Header from "@/components/Header";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHeader from "@/components/PageHeader";
 import ToastNotification from "@/components/ToastNotification";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import { Locale } from "@/lib/i18n/types";
+import { breadcrumbContent } from "@/data/breadcrumb-content";
 
 // 多言語コンテンツ
 const content = {
@@ -377,6 +379,14 @@ export default function Contact() {
       {/* Contact Content */}
       <section className="py-8 sm:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* パンくずリスト */}
+          <Breadcrumbs
+            segments={[
+              { name: breadcrumbContent[lang].home, href: `/${lang}` },
+              { name: breadcrumbContent[lang].contact, href: `/${lang}/contact` }
+            ]}
+          />
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Contact Form */}

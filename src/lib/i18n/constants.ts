@@ -1,6 +1,6 @@
 import { Locale } from './types'
 
-export const locales: readonly Locale[] = ['ja', 'en', 'zh-CN', 'zh-TW', 'vi'] as const
+export const locales: readonly Locale[] = ['en', 'zh-CN', 'zh-TW', 'vi', 'ja'] as const
 export const defaultLocale: Locale = 'ja'
 
 export const localeNames: Record<Locale, string> = {

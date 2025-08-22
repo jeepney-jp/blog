@@ -3,12 +3,14 @@
 import Image from "next/image";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { useState } from "react";
 import { useParams } from "next/navigation";
 import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import { Locale } from "@/lib/i18n/types";
 import { staffContent } from "@/data/staff-content";
+import { breadcrumbContent } from "@/data/breadcrumb-content";
 
 
 export default function About() {
@@ -380,7 +382,14 @@ export default function About() {
       {/* About Content */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* パンくずリスト */}
+          <Breadcrumbs
+            segments={[
+              { name: breadcrumbContent[lang].home, href: `/${lang}` },
+              { name: breadcrumbContent[lang].about, href: `/${lang}/about` }
+            ]}
+          />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
             <div className="flex flex-col h-full">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.ceoGreeting}</h2>
               <div className="bg-white p-8 rounded-lg shadow-sm flex-1 flex flex-col">
