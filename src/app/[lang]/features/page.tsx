@@ -384,8 +384,76 @@ const content = {
       {
         title: "Rào cản ngôn ngữ",
         description: "Tiếng Nhật không tự tin. Liệu có thể tư vấn bằng tiếng mẹ đẻ không..."
+      },
+      {
+        title: "Giao tiếp đa ngôn ngữ",
+        description: "Muốn tiến hành trao đổi với nhân viên nước ngoài một cách suôn sẻ nhưng cảm thấy rào cản ngôn ngữ..."
+      },
+      {
+        title: "Hạn chót đơn xin đang đến gần",
+        description: "Hạn chót đơn xin đang đến gần, dù sao cũng đang vội vã về thủ tục..."
+      },
+      {
+        title: "Hạn chế về thời gian",
+        description: "Ngày thường bận rộn với công việc, không có thời gian để đến văn phòng nhiều lần..."
       }
     ],
+    solutionTitle: "Lo lắng đó, chìa khóa giải quyết nằm ở",
+    solutionHighlight: "「4 điểm mạnh」",
+    solutionTitle2: "của văn phòng chúng tôi",
+    solutionDescription: "Mỗi điểm mạnh có thể giải quyết vấn đề của khách hàng như thế nào, chúng tôi sẽ giải thích chi tiết ngay bên dưới.",
+    strengthsGrid: [
+      {
+        title: "Niềm tin với hơn 10,000 thành tích xử lý",
+        description: "Với kinh nghiệm và bí quyết phong phú, đối ứng cả các trường hợp phức tạp"
+      },
+      {
+        title: "Mức giá thấp nhất ngành",
+        description: "Hệ thống phí minh bạch, không lo lắng về chi phí bổ sung"
+      },
+      {
+        title: "Hỗ trợ an tâm với đa ngôn ngữ",
+        description: "Hỗ trợ 9 thứ tiếng, loại bỏ hoàn toàn rào cản ngôn ngữ"
+      },
+      {
+        title: "Đối ứng nhanh chóng và hoàn thành trực tuyến",
+        description: "Đối ứng nhanh chóng cả các vụ việc khẩn cấp, không cần đến văn phòng"
+      }
+    ],
+    detailedStrengths: {
+      point1: {
+        label: "Điểm 1",
+        title: "Niềm tin với hơn 10,000 thành tích xử lý",
+        statsTitle1: "Số thành tích xử lý",
+        statsTitle2: "Tỷ lệ phê duyệt",
+        description: "Từ khi thành lập năm 2008, chúng tôi đã hỗ trợ hơn 10,000 đơn xin với tỷ lệ phê duyệt 99%, có thành tích và uy tín vững chắc. Với kinh nghiệm và bí quyết phong phú, chúng tôi đề xuất chiến lược đơn xin tối ưu phù hợp với tình hình của khách hàng."
+      },
+      point2: {
+        label: "Điểm 2", 
+        title: "Mức giá thấp nhất ngành",
+        savingsText: "So với giá thị trường",
+        savingsAmount: "Rẻ hơn 30%",
+        guarantee1: "Không có phí ẩn",
+        guarantee2: "Kế toán minh bạch",
+        description: "Thông qua hoạt động hiệu quả loại bỏ lãng phí, chúng tôi đạt được mức giá thấp nhất ngành. Hệ thống phí minh bạch không có phí ẩn, bạn có thể yên tâm về ngân sách."
+      },
+      point3: {
+        label: "Điểm 3",
+        title: "Hỗ trợ an tâm với đa ngôn ngữ", 
+        languagesTitle: "Các ngôn ngữ hỗ trợ",
+        languages: ["Tiếng Anh", "Tiếng Trung", "Tiếng Việt", "Tiếng Tagalog", "Tiếng Nepal", "Tiếng Sinhala", "Tiếng Hàn", "Tiếng Ý", "Tiếng Tây Ban Nha"],
+        description: "Nhân viên hỗ trợ đa ngôn ngữ sẽ hỗ trợ bằng tiếng mẹ đẻ. Ngay cả những người lo lắng về tiếng Nhật cũng có thể tư vấn một cách yên tâm."
+      },
+      point4: {
+        label: "Điểm 4",
+        title: "Đối ứng nhanh chóng và hoàn thành trực tuyến",
+        feature1: "Phản hồi trong ngày",
+        feature1Sub: "Xử lý an toàn các vụ việc khẩn cấp",
+        feature2: "Hoàn thành trực tuyến",
+        feature2Sub: "Không cần đến văn phòng",
+        description: "Đối với các đơn xin khẩn cấp, chúng tôi đối ứng nhanh chóng. Có thể hoàn thành trực tuyến mà không cần đến văn phòng, tiết kiệm thời gian và công sức."
+      }
+    },
     achievement: {
       title: "Niềm tin với hơn 10,000 hồ sơ xử lý",
       description: "Từ khi thành lập năm 2008, chúng tôi đã hỗ trợ hơn 10,000 đơn xin với tỷ lệ phê duyệt 99%, thể hiện thành tích và uy tín vững chắc.",

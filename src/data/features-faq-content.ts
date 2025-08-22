@@ -171,5 +171,59 @@ export const featuresFaqContent: FeaturesFaqContent = {
         order: 3
       }
     ]
+  },
+  vi: {
+    title: "Câu hỏi thường gặp",
+    subtitle: "Giới thiệu những nội dung thường được hỏi",
+    faqs: [
+      {
+        _id: "1",
+        question: "Tư vấn lần đầu có miễn phí không?",
+        answer: "Có, chúng tôi cung cấp tư vấn miễn phí lần đầu. Chúng tôi sẽ lắng nghe tình hình của khách hàng và đề xuất phương pháp hỗ trợ tối ưu. Xin vui lòng liên hệ thoải mái.",
+        order: 1
+      },
+      {
+        _id: "2",
+        question: "Có thể tư vấn trực tuyến không?",
+        answer: "Có, chúng tôi hỗ trợ tư vấn trực tuyến sử dụng hệ thống hội nghị video như Zoom. Bạn có thể tư vấn từ bất kỳ đâu trong cả nước mà không cần đến văn phòng.",
+        order: 2
+      },
+      {
+        _id: "3",
+        question: "Phí được quyết định như thế nào?",
+        answer: "Phí khác nhau tùy thuộc vào nội dung yêu cầu của khách hàng và độ phức tạp của đơn xin. Sau khi hiểu chi tiết trong buổi tư vấn đầu tiên, chúng tôi sẽ cung cấp báo giá rõ ràng. Nếu phát sinh chi phí bổ sung, chúng tôi nhất định sẽ giải thích trước.",
+        order: 3
+      },
+      {
+        _id: "4",
+        question: "Hỗ trợ những ngôn ngữ nào?",
+        answer: "Chúng tôi có thể hỗ trợ bằng 9 thứ tiếng bao gồm tiếng Nhật, tiếng Anh, tiếng Trung, tiếng Việt, tiếng Tagalog, tiếng Hàn, tiếng Bồ Đào Nha. Nếu muốn hỗ trợ bằng tiếng mẹ đẻ, xin vui lòng cho biết.",
+        order: 4
+      },
+      {
+        _id: "5",
+        question: "Thời gian xử lý đơn xin mất bao lâu?",
+        answer: "Tùy thuộc vào loại và nội dung đơn xin nhưng thường mất khoảng 1-3 tháng từ chuẩn bị tài liệu đến hoàn thành đơn xin. Đối với các vụ việc khẩn cấp, chúng tôi sẽ phản hồi nhanh nhất có thể. Lịch trình chi tiết sẽ được giải thích trong buổi tư vấn đầu tiên.",
+        order: 5
+      },
+      {
+        _id: "6",
+        question: "Có thể đối ứng vào cuối tuần và ngày lễ không?",
+        answer: "Thứ bảy chúng tôi chỉ mở cửa buổi sáng. Chủ nhật và ngày lễ là ngày nghỉ định kỳ, nhưng có thể đối ứng nếu đặt lịch trước. Những người khó đến văn phòng vào ngày thường vì công việc, xin vui lòng tư vấn.",
+        order: 6
+      },
+      {
+        _id: "7",
+        question: "Khu vực đối ứng đến đâu?",
+        answer: "Chúng tôi chủ yếu đối ứng Tokyo, Chiba, Saitama, Kanagawa nhưng cũng nhận yêu cầu từ toàn quốc thông qua tư vấn trực tuyến. Những người ở xa xin vui lòng tư vấn thoải mái.",
+        order: 7
+      },
+      {
+        _id: "8",
+        question: "Có những phương thức thanh toán nào?",
+        answer: "Chúng tôi chấp nhận chuyển khoản ngân hàng, thẻ tín dụng và thanh toán bằng tiền mặt. Cũng nhận tư vấn về thanh toán trả góp, xin vui lòng nói ra thoải mái.",
+        order: 8
+      }
+    ]
   }
 };
