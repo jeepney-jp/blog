@@ -3,7 +3,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
-import { FaqAccordion } from '@/components/FaqAccordion';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import NewCTASection from '@/components/NewCTASection';
 import Script from 'next/script';
@@ -77,18 +76,6 @@ export default async function CategoryPage({ params }: Props) {
       areaServed: ['東京都', '千葉県', '埼玉県', '神奈川県']
     };
 
-    const faqStructuredData = hardcodedData.faq.length > 0 ? {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: hardcodedData.faq.map(item => ({
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: item.answer,
-        },
-      })),
-    } : null;
 
     return (
       <div className="min-h-screen bg-gray-50">
@@ -99,10 +86,7 @@ export default async function CategoryPage({ params }: Props) {
           id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ 
-            __html: JSON.stringify([
-              ...(faqStructuredData ? [faqStructuredData] : []),
-              serviceStructuredData
-            ])
+            __html: JSON.stringify(serviceStructuredData)
           }}
         />
         <div className="max-w-6xl mx-auto px-4 py-12 space-y-16">
@@ -203,13 +187,6 @@ export default async function CategoryPage({ params }: Props) {
             </section>
           )}
 
-          {/* FAQ アコーディオン */}
-          {hardcodedData.faq.length > 0 && (
-            <section>
-              <h2 className="text-2xl font-semibold mb-4">{hardcodedData.faqTitle}</h2>
-              <FaqAccordion faqs={hardcodedData.faq} />
-            </section>
-          )}
         </div>
 
         {/* CTA */}
