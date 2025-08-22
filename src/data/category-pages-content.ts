@@ -659,22 +659,46 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "農地転用、開発許可、土地利用に関する各種手続きを専門家がサポート。",
       services: [
         {
-          id: "factory-establishment-permit",
-          title: "工場設置認可",
-          target: "テスト",
-          priceMin: 0
+          id: "farmland-permit",
+          title: "農地転用許可申請",
+          target: "農地を住宅用地や事業用地等に転用する際に必要な許可申請。市街化調整区域では都道府県知事の許可が必要です。",
+          priceMin: 100000,
+          priceMax: 250000
         },
         {
           id: "development-permit",
-          title: "開発行為許可",
-          target: "テスト",
-          priceMin: 0
+          title: "開発行為許可申請",
+          target: "建築物の建築等を目的とした土地の区画形質の変更を行う際の許可申請。一定規模以上の開発行為に必要です。",
+          priceMin: 200000,
+          priceMax: 500000
         },
         {
-          id: "farmland-permit",
-          title: "農地許可",
-          target: "テスト",
-          priceMin: 0
+          id: "factory-establishment-permit",
+          title: "工場設置認可申請",
+          target: "工場立地法に基づく工場設置時の認可申請。環境への配慮と地域調和を図る重要な手続きです。",
+          priceMin: 150000,
+          priceMax: 300000
+        },
+        {
+          id: "land-use-permit",
+          title: "土地利用規制法許可申請",
+          target: "都市計画法、森林法、自然公園法等の土地利用規制に関する各種許可申請。法令に応じた適切な手続きをサポート。",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "subdivision-permit",
+          title: "土地区画整理事業認可",
+          target: "土地区画整理事業を行う際の認可申請。公共施設の整備改善と宅地の利用増進を図る事業の許可取得。",
+          priceMin: 300000,
+          priceMax: 600000
+        },
+        {
+          id: "mining-permit",
+          title: "採石業・砂利採取業許可申請",
+          target: "採石業・砂利採取業を営む際に必要な許可申請。採取計画の作成から許可取得まで総合的にサポート。",
+          priceMin: 120000,
+          priceMax: 250000
         }
       ],
       faq: [
