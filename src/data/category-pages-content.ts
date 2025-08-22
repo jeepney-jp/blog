@@ -730,28 +730,46 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "契約書作成、内容証明郵便、各種証明書類の作成を専門家がサポート。",
       services: [
         {
-          id: "voluntary-guardianship-contract",
-          title: "任意成年後見契約",
-          target: "テスト",
-          priceMin: 0
-        },
-        {
           id: "certified-mail",
-          title: "内容証明郵便",
-          target: "テスト",
-          priceMin: 0
+          title: "内容証明郵便作成",
+          target: "債権回収、契約解除通知、損害賠償請求等の内容証明郵便の作成・発送手続き。確実な意思表示と証拠保全をサポート。",
+          priceMin: 30000,
+          priceMax: 80000
         },
         {
           id: "various-contracts",
-          title: "各種契約書",
-          target: "テスト",
-          priceMin: 0
+          title: "各種契約書作成",
+          target: "売買契約、賃貸借契約、業務委託契約等の各種契約書の作成。トラブル防止のための適切な条項設定をサポート。",
+          priceMin: 50000,
+          priceMax: 150000
         },
         {
           id: "will-inheritance",
-          title: "遺言・相続",
-          target: "テスト",
-          priceMin: 0
+          title: "遺言書作成・相続手続き",
+          target: "遺言書の作成から相続手続き、遺産分割協議書の作成まで。相続トラブル防止と円滑な手続きをサポート。",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "voluntary-guardianship-contract",
+          title: "任意後見契約書作成",
+          target: "将来の判断能力低下に備える任意後見契約書の作成。公正証書での作成が必要な重要な契約です。",
+          priceMin: 100000,
+          priceMax: 180000
+        },
+        {
+          id: "notarization-documents",
+          title: "公証人役場手続き代行",
+          target: "公正証書の作成、定款認証、確定日付等の公証人役場での各種手続きを代行いたします。",
+          priceMin: 40000,
+          priceMax: 100000
+        },
+        {
+          id: "agreement-mediation",
+          title: "示談書・合意書作成",
+          target: "交通事故、損害賠償、民事紛争等の示談書・合意書の作成。当事者間の合意内容を適切に文書化。",
+          priceMin: 60000,
+          priceMax: 120000
         }
       ],
       faq: [
@@ -784,27 +802,45 @@ export const categoryPagesContent: CategoryPagesContent = {
       services: [
         {
           id: "medical-corporation",
-          title: "テスト",
-          target: "テスト",
-          priceMin: 0
+          title: "医療法人設立申請",
+          target: "クリニックや病院の医療法人化による設立申請。税制優遇や社会的信用向上、事業継承の円滑化が期待できます。",
+          priceMin: 300000,
+          priceMax: 600000
         },
         {
           id: "care-service-designation",
-          title: "テスト",
-          target: "テスト",
-          priceMin: 0
+          title: "介護事業所指定申請",
+          target: "訪問介護、通所介護、グループホーム等の介護事業所指定申請。人員・設備・運営基準の確認から指定取得まで支援。",
+          priceMin: 200000,
+          priceMax: 400000
         },
         {
           id: "pharmacy-license",
-          title: "テスト",
-          target: "テスト",
-          priceMin: 0
+          title: "薬局開設許可申請",
+          target: "調剤薬局の開設許可申請。薬事法に基づく構造設備基準の確認と保健所での許可取得をサポート。",
+          priceMin: 150000,
+          priceMax: 250000
         },
         {
           id: "medical-device",
-          title: "テスト",
-          target: "テスト",
-          priceMin: 0
+          title: "医療機器販売業・貸与業許可申請",
+          target: "医療機器の販売業・貸与業を営む際の許可申請。管理医療機器から高度管理医療機器まで対応。",
+          priceMin: 100000,
+          priceMax: 200000
+        },
+        {
+          id: "clinic-establishment",
+          title: "診療所開設届・病院開設許可",
+          target: "診療所の開設届出や病院の開設許可申請。医療法に基づく適切な手続きで医療機関の開業をサポート。",
+          priceMin: 120000,
+          priceMax: 300000
+        },
+        {
+          id: "welfare-facility-establishment",
+          title: "社会福祉施設設置認可申請",
+          target: "特別養護老人ホーム、障害者施設等の社会福祉施設設置認可申請。建築基準から運営体制まで総合的に支援。",
+          priceMin: 400000,
+          priceMax: 800000
         }
       ],
       faq: [
@@ -833,41 +869,59 @@ export const categoryPagesContent: CategoryPagesContent = {
       catchphrase: "各種許認可・手続き代行の専門サポート",
       heroTitle: "【専門家がサポート】その他の業務のご案内",
       metaTitle: "その他の業務 | フォルティア行政書士事務所",
-      metaDescription: "上記以外の各種許認可申請、官公署への手続き代行を専門家がサポート。",
+      metaDescription: "融資申請・補助金申請・翻訳業務・アポスティーユなど、各種行政手続きを専門家がサポート。",
       services: [
         {
-          id: "financing",
-          title: "融資",
-          target: "テスト",
-          priceMin: 0
+          id: "financing-application",
+          title: "融資申請サポート",
+          target: "日本政策金融公庫や制度融資の申請サポート。事業計画書の作成から面談対策まで、創業・設備投資・運転資金の調達を総合的にサポートします。",
+          priceMin: 100000,
+          priceMax: 200000
         },
         {
           id: "public-subsidies",
-          title: "公的補助金・助成金",
-          target: "テスト",
-          priceMin: 0
+          title: "補助金・助成金申請代行",
+          target: "IT導入補助金、ものづくり補助金、小規模事業者持続化補助金など各種補助金申請。雇用関連助成金の申請サポートも対応します。",
+          priceMin: 80000,
+          priceMax: 300000
         },
         {
-          id: "translation",
-          title: "翻訳",
-          target: "テスト",
-          priceMin: 0
+          id: "document-translation",
+          title: "公文書翻訳・証明書類作成",
+          target: "戸籍謄本、住民票、卒業証明書等の公的文書の翻訳業務。各国領事館・大使館での認証取得もサポートします。",
+          priceMin: 8000,
+          priceMax: 50000
         },
         {
           id: "apostille-application",
-          title: "アポスティーユ申請",
-          target: "テスト",
-          priceMin: 0
+          title: "アポスティーユ・領事認証申請",
+          target: "外務省でのアポスティーユ認証、各国領事館での領事認証申請代行。海外での公文書使用に必要な認証手続きをサポートします。",
+          priceMin: 15000,
+          priceMax: 40000
+        },
+        {
+          id: "government-procedures",
+          title: "官公署手続き代行",
+          target: "各種官公署（市役所、都道府県庁、法務局等）での手続き代行。各種証明書取得、申請書提出等の煩雑な手続きを代行します。",
+          priceMin: 10000,
+          priceMax: 50000
+        },
+        {
+          id: "legal-consultation",
+          title: "法務相談・権利義務に関する相談",
+          target: "法的な問題や権利義務に関する相談対応。契約書のチェック、法的リスクの診断、適切な手続きのアドバイスを提供します。",
+          priceMin: 8000,
+          priceMax: 20000
         }
       ],
       faq: [
         {
           question: "どのような手続きに対応していますか？",
-          answer: "行政書士が扱える業務であれば幅広く対応いたします。具体的な手続きについてはお気軽にご相談ください。"
+          answer: "融資申請、補助金申請、翻訳業務、アポスティーユ認証、官公署での各種手続き代行など、行政書士が扱える業務に幅広く対応いたします。具体的な手続きについてはお気軽にご相談ください。"
         },
         {
-          question: "相談料はかかりますか？",
-          answer: "初回相談は無料です。詳細な検討が必要な場合は別途相談料をいただく場合があります。"
+          question: "補助金の採択率はどのくらいですか？",
+          answer: "補助金の種類や申請年度により異なりますが、適切な申請書作成により採択率向上をサポートいたします。事前の要件確認と丁寧な申請書作成を心がけています。"
         }
       ],
       breadcrumbs: {
@@ -1518,35 +1572,59 @@ export const categoryPagesContent: CategoryPagesContent = {
       catchphrase: "Expert support for various permits and administrative procedures",
       heroTitle: "Other Services - Professional Support",
       metaTitle: "Other Services | Fortia Administrative Law Office",
-      metaDescription: "Expert support for various permit applications and government office procedures beyond the above categories.",
+      metaDescription: "Expert support for financing applications, subsidies, translation services, apostille certification, and various administrative procedures.",
       services: [
         {
-          id: "various-procedures",
-          title: "Various Administrative Procedure Agency",
-          target: "Those needing government office procedures",
-          priceMin: 0,
+          id: "financing-application",
+          title: "Financing Application Support",
+          target: "Support for Japan Finance Corporation and institutional financing applications. Comprehensive support from business plan creation to interview preparation for startup, equipment investment, and working capital financing.",
+          priceMin: 100000,
+          priceMax: 200000
         },
         {
-          id: "document-collection",
-          title: "Various Certificate Collection Agency",
-          target: "Those needing certificate collection",
-          priceMin: 0,
+          id: "public-subsidies",
+          title: "Subsidies and Grants Application",
+          target: "Various subsidy applications including IT adoption subsidies, manufacturing subsidies, small business continuity subsidies. Also supports employment-related grant applications.",
+          priceMin: 80000,
+          priceMax: 300000
         },
         {
-          id: "consultation-other",
-          title: "Administrative Procedure Consultation",
-          target: "Those wanting procedure consultation",
-          priceMin: 0,
+          id: "document-translation",
+          title: "Official Document Translation & Certification",
+          target: "Translation services for official documents such as family registers, residence certificates, graduation certificates. Also supports obtaining certification at various consulates and embassies.",
+          priceMin: 8000,
+          priceMax: 50000
+        },
+        {
+          id: "apostille-application",
+          title: "Apostille & Consular Authentication Application",
+          target: "Apostille authentication at the Ministry of Foreign Affairs and consular authentication applications at various consulates. Supports authentication procedures necessary for using official documents abroad.",
+          priceMin: 15000,
+          priceMax: 40000
+        },
+        {
+          id: "government-procedures",
+          title: "Government Office Procedure Agency",
+          target: "Various government office procedures (city halls, prefectural offices, legal affairs bureaus, etc.). Handles complex procedures such as certificate collection and application submissions.",
+          priceMin: 10000,
+          priceMax: 50000
+        },
+        {
+          id: "legal-consultation",
+          title: "Legal Consultation & Rights Advisory",
+          target: "Consultation on legal issues and rights and obligations. Provides contract review, legal risk assessment, and appropriate procedure advice.",
+          priceMin: 8000,
+          priceMax: 20000
         }
       ],
       faq: [
         {
           question: "What types of procedures do you handle?",
-          answer: "We handle a wide range of procedures that administrative lawyers can handle. Please feel free to consult about specific procedures."
+          answer: "We handle financing applications, subsidy applications, translation services, apostille certification, government office procedure agency, and other wide range of procedures that administrative lawyers can handle. Please feel free to consult about specific procedures."
         },
         {
-          question: "Is there a consultation fee?",
-          answer: "Initial consultation is free. Separate consultation fees may apply for detailed examinations."
+          question: "What is the adoption rate for subsidies?",
+          answer: "Adoption rates vary by subsidy type and application year, but we support improving adoption rates through proper application preparation. We focus on thorough requirement verification and careful application preparation."
         }
       ],
       breadcrumbs: {
@@ -2123,10 +2201,290 @@ export const categoryPagesContent: CategoryPagesContent = {
       tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" },
       faqTitle: "常见问题"
     },
-    land: { title: "土地相关业务", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
-    "legal-documentation": { title: "权利义务・事实证明", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
-    "medical-care": { title: "医疗・护理相关业务", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
-    other: { title: "其他业务", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" }
+    land: {
+      title: "土地相关业务",
+      catchphrase: "农地转用・开发许可的专业支持",
+      heroTitle: "【专家支持】土地相关业务指南",
+      metaTitle: "土地相关业务 | Fortia行政书士事务所",
+      metaDescription: "农地转用、开发许可、土地利用相关的各种手续专家全程支持。",
+      services: [
+        {
+          id: "farmland-permit",
+          title: "农地转用许可申请",
+          target: "将农地转为住宅用地或事业用地等时需要的许可申请。在市街化调整区域需要都道府县知事的许可。",
+          priceMin: 100000,
+          priceMax: 250000
+        },
+        {
+          id: "development-permit",
+          title: "开发行为许可申请",
+          target: "以建筑物建设等为目的进行土地区画形质变更时的许可申请。一定规模以上的开发行为需要。",
+          priceMin: 200000,
+          priceMax: 500000
+        },
+        {
+          id: "factory-establishment-permit",
+          title: "工厂设置认可申请",
+          target: "基于工厂立地法的工厂设置时认可申请。是兼顾环境配虑和地域调和的重要手续。",
+          priceMin: 150000,
+          priceMax: 300000
+        },
+        {
+          id: "land-use-permit",
+          title: "土地利用规制法许可申请",
+          target: "关于城市计划法、森林法、自然公园法等土地利用规制的各种许可申请。根据法令支持适当的手续。",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "subdivision-permit",
+          title: "土地区画整理事业认可",
+          target: "进行土地区画整理事业时的认可申请。获得改善完善公共设施和增进宅地利用的事业许可。",
+          priceMin: 300000,
+          priceMax: 600000
+        },
+        {
+          id: "mining-permit",
+          title: "采石业・砂砾采取业许可申请",
+          target: "经营采石业・砂砾采取业时需要的许可申请。从采取计划制作到许可取得综合支持。",
+          priceMin: 120000,
+          priceMax: 250000
+        }
+      ],
+      faq: [
+        {
+          question: "农地转用需要什么手续？",
+          answer: "根据农地的所在地和面积，需要向农业委员会申报或都道府县知事许可。市街化区域内的农地采用申报制。"
+        },
+        {
+          question: "需要开发许可的开发行为是什么？",
+          answer: "以建筑物建设等为目的的土地区画形质变更，一定规模以上的为对象。根据都市计划区域标准不同。"
+        }
+      ],
+      breadcrumbs: {
+        home: "首页",
+        services: "服务"
+      },
+      tableHeaders: {
+        serviceName: "服务名称",
+        serviceOverview: "服务概要",
+        pricingGuide: "费用指南"
+      },
+      faqTitle: "常见问题"
+    },
+    "legal-documentation": {
+      title: "权利义务・事实证明",
+      catchphrase: "合同书制作・内容证明的专业支持",
+      heroTitle: "【专家支持】权利义务・事实证明指南",
+      metaTitle: "权利义务・事实证明 | Fortia行政书士事务所",
+      metaDescription: "合同书制作、内容证明邮件、各种证明文件的制作专家全程支持。",
+      services: [
+        {
+          id: "certified-mail",
+          title: "内容证明邮件制作",
+          target: "债权回收、合同解除通知、损害赔偿请求等内容证明邮件的制作・发送手续。支持确实的意思表示和证据保全。",
+          priceMin: 30000,
+          priceMax: 80000
+        },
+        {
+          id: "various-contracts",
+          title: "各种合同书制作",
+          target: "买卖合同、租赁合同、业务委托合同等各种合同书的制作。支持设定防止纠纷的适当条款。",
+          priceMin: 50000,
+          priceMax: 150000
+        },
+        {
+          id: "will-inheritance",
+          title: "遗嘱书制作・继承手续",
+          target: "从遗嘱书制作到继承手续、遗产分割协议书制作。支持防止继承纠纷和顺利的手续。",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "voluntary-guardianship-contract",
+          title: "任意后见合同书制作",
+          target: "为将来的判断能力下降做准备的任意后见合同书制作。是需要公正证书制作的重要合同。",
+          priceMin: 100000,
+          priceMax: 180000
+        },
+        {
+          id: "notarization-documents",
+          title: "公证人事务所手续代理",
+          target: "代理公正证书制作、公司章程认证、确定日期等公证人事务所的各种手续。",
+          priceMin: 40000,
+          priceMax: 100000
+        },
+        {
+          id: "agreement-mediation",
+          title: "调解书・合意书制作",
+          target: "交通事故、损害赔偿、民事纠纷等调解书・合意书的制作。适当文件化当事人间的合意内容。",
+          priceMin: 60000,
+          priceMax: 120000
+        }
+      ],
+      faq: [
+        {
+          question: "内容证明邮件的效果是什么？",
+          answer: "能够确实地向对方传达意思表示的内容和日期，可以作为日后的证据活用。对债权回收和合同解除通知有效。"
+        },
+        {
+          question: "合同书制作应注意什么？",
+          answer: "重要的是明确当事人的权利义务，加入防止纠纷的条款。制作满足法律要件的适当内容。"
+        }
+      ],
+      breadcrumbs: {
+        home: "首页",
+        services: "服务"
+      },
+      tableHeaders: {
+        serviceName: "服务名称",
+        serviceOverview: "服务概要",
+        pricingGuide: "费用指南"
+      },
+      faqTitle: "常见问题"
+    },
+    "medical-care": {
+      title: "医疗・护理相关业务",
+      catchphrase: "医疗法人设立・护理事业所指定的专业支持",
+      heroTitle: "【专家支持】医疗・护理相关业务指南",
+      metaTitle: "医疗・护理相关业务 | Fortia行政书士事务所",
+      metaDescription: "医疗法人设立、护理事业所指定、药局开设等医疗・护理相关的许认可手续专家全程支持。",
+      services: [
+        {
+          id: "medical-corporation",
+          title: "医疗法人设立申请",
+          target: "通过诊所或医院的医疗法人化进行设立申请。期待税制优惠和社会信用提升、事业传承的顺利化。",
+          priceMin: 300000,
+          priceMax: 600000
+        },
+        {
+          id: "care-service-designation",
+          title: "护理事业所指定申请",
+          target: "上门护理、通所护理、小组护理之家等护理事业所指定申请。从人员・设备・运营基准确认到指定取得支援。",
+          priceMin: 200000,
+          priceMax: 400000
+        },
+        {
+          id: "pharmacy-license",
+          title: "药局开设许可申请",
+          target: "调剂药局的开设许可申请。基于药事法的结构设备基准确认和保健所许可取得支持。",
+          priceMin: 150000,
+          priceMax: 250000
+        },
+        {
+          id: "medical-device",
+          title: "医疗机器销售业・租赁业许可申请",
+          target: "经营医疗机器销售业・租赁业时的许可申请。从管理医疗机器到高度管理医疗机器对应。",
+          priceMin: 100000,
+          priceMax: 200000
+        },
+        {
+          id: "clinic-establishment",
+          title: "诊疗所开设届・医院开设许可",
+          target: "诊疗所的开设申报和医院的开设许可申请。基于医疗法的适当手续支持医疗机关的开业。",
+          priceMin: 120000,
+          priceMax: 300000
+        },
+        {
+          id: "welfare-facility-establishment",
+          title: "社会福祉设施设置认可申请",
+          target: "特别养护老人之家、残疾者设施等社会福祉设施设置认可申请。从建筑基准到运营体制综合支援。",
+          priceMin: 400000,
+          priceMax: 800000
+        }
+      ],
+      faq: [
+        {
+          question: "医疗法人设立的优点是什么？",
+          answer: "有税制上的优惠、社会信用的提升、事业传承的顺利化、分院展开的可能性等。"
+        },
+        {
+          question: "护理事业所指定的要件是什么？",
+          answer: "需要满足人员基准、设备基准、运营基准。根据服务种别基准有所不同，详细情况请咨询。"
+        }
+      ],
+      breadcrumbs: {
+        home: "首页",
+        services: "服务"
+      },
+      tableHeaders: {
+        serviceName: "服务名称",
+        serviceOverview: "服务概要",
+        pricingGuide: "费用指南"
+      },
+      faqTitle: "常见问题"
+    },
+    other: {
+      title: "其他业务",
+      catchphrase: "各种许认可・手续代办的专业支持",
+      heroTitle: "【专家支持】其他业务指南",
+      metaTitle: "其他业务 | Fortia行政书士事务所",
+      metaDescription: "融资申请・补助金申请・翻译业务・海牙认证等各种行政手续专家全程支持。",
+      services: [
+        {
+          id: "financing-application",
+          title: "融资申请支持",
+          target: "日本政策金融公库和制度融资的申请支持。从事业计划书制作到面谈对策，创业・设备投资・运营资金调达的综合支持。",
+          priceMin: 100000,
+          priceMax: 200000
+        },
+        {
+          id: "public-subsidies",
+          title: "补助金・助成金申请代办",
+          target: "IT导入补助金、制造业补助金、小规模事业者持续化补助金等各种补助金申请。雇用相关助成金的申请支持也对应。",
+          priceMin: 80000,
+          priceMax: 300000
+        },
+        {
+          id: "document-translation",
+          title: "公文书翻译・证明书类制作",
+          target: "户籍簿、住民票、毕业证明书等公的文书的翻译业务。各国领事馆・大使馆的认证取得也支持。",
+          priceMin: 8000,
+          priceMax: 50000
+        },
+        {
+          id: "apostille-application",
+          title: "海牙认证・领事认证申请",
+          target: "外务省的海牙认证、各国领事馆的领事认证申请代办。在海外使用公文书所需的认证手续支持。",
+          priceMin: 15000,
+          priceMax: 40000
+        },
+        {
+          id: "government-procedures",
+          title: "官公署手续代办",
+          target: "各种官公署（市役所、都道府县厅、法务局等）的手续代办。各种证明书取得、申请书提交等复杂手续的代办。",
+          priceMin: 10000,
+          priceMax: 50000
+        },
+        {
+          id: "legal-consultation",
+          title: "法务咨询・权利义务相关咨询",
+          target: "法律问题和权利义务相关的咨询对应。合同书检查、法律风险的诊断、适当手续的建议提供。",
+          priceMin: 8000,
+          priceMax: 20000
+        }
+      ],
+      faq: [
+        {
+          question: "对应什么样的手续？",
+          answer: "融资申请、补助金申请、翻译业务、海牙认证、官公署手续代办等行政书士能处理的业务广泛对应。具体手续请随时咨询。"
+        },
+        {
+          question: "补助金的采择率是多少？",
+          answer: "根据补助金的种类和申请年度有所不同，但通过适当的申请书制作支持采择率提升。致力于事前的要件确认和丁寧的申请书制作。"
+        }
+      ],
+      breadcrumbs: { 
+        home: "首页", 
+        services: "服务" 
+      }, 
+      tableHeaders: { 
+        serviceName: "服务名称", 
+        serviceOverview: "服务概要", 
+        pricingGuide: "费用指南" 
+      }, 
+      faqTitle: "常见问题" 
+    }
   },
   'zh-TW': {
     foreign: {
@@ -2690,10 +3048,290 @@ export const categoryPagesContent: CategoryPagesContent = {
       tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" },
       faqTitle: "常見問題"
     },
-    land: { title: "土地相關業務", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
-    "legal-documentation": { title: "權利義務・事實證明", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
-    "medical-care": { title: "醫療・護理相關業務", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
-    other: { title: "其他業務", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" }
+    land: {
+      title: "土地相關業務",
+      catchphrase: "農地轉用・開發許可的專業支援",
+      heroTitle: "【專家支援】土地相關業務指南",
+      metaTitle: "土地相關業務 | Fortia行政書士事務所",
+      metaDescription: "農地轉用、開發許可、土地利用相關的各種手續專家全程支援。",
+      services: [
+        {
+          id: "farmland-permit",
+          title: "農地轉用許可申請",
+          target: "將農地轉為住宅用地或事業用地等時需要的許可申請。在市街化調整區域需要都道府縣知事的許可。",
+          priceMin: 100000,
+          priceMax: 250000
+        },
+        {
+          id: "development-permit",
+          title: "開發行為許可申請",
+          target: "以建築物建設等為目的進行土地區畫形質變更時的許可申請。一定規模以上的開發行為需要。",
+          priceMin: 200000,
+          priceMax: 500000
+        },
+        {
+          id: "factory-establishment-permit",
+          title: "工廠設置認可申請",
+          target: "基於工廠立地法的工廠設置時認可申請。是兼顧環境配慮和地域調和的重要手續。",
+          priceMin: 150000,
+          priceMax: 300000
+        },
+        {
+          id: "land-use-permit",
+          title: "土地利用規制法許可申請",
+          target: "關於都市計畫法、森林法、自然公園法等土地利用規制的各種許可申請。根據法令支援適當的手續。",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "subdivision-permit",
+          title: "土地區畫整理事業認可",
+          target: "進行土地區畫整理事業時的認可申請。獲得改善完善公共設施和增進宅地利用的事業許可。",
+          priceMin: 300000,
+          priceMax: 600000
+        },
+        {
+          id: "mining-permit",
+          title: "採石業・砂礫採取業許可申請",
+          target: "經營採石業・砂礫採取業時需要的許可申請。從採取計畫製作到許可取得綜合支援。",
+          priceMin: 120000,
+          priceMax: 250000
+        }
+      ],
+      faq: [
+        {
+          question: "農地轉用需要什麼手續？",
+          answer: "根據農地的所在地和面積，需要向農業委員會申報或都道府縣知事許可。市街化區域內的農地採用申報制。"
+        },
+        {
+          question: "需要開發許可的開發行為是什麼？",
+          answer: "以建築物建設等為目的的土地區畫形質變更，一定規模以上的為對象。根據都市計畫區域標準不同。"
+        }
+      ],
+      breadcrumbs: {
+        home: "首頁",
+        services: "服務"
+      },
+      tableHeaders: {
+        serviceName: "服務名稱",
+        serviceOverview: "服務概要",
+        pricingGuide: "費用指南"
+      },
+      faqTitle: "常見問題"
+    },
+    "legal-documentation": {
+      title: "權利義務・事實證明",
+      catchphrase: "合約書製作・內容證明的專業支援",
+      heroTitle: "【專家支援】權利義務・事實證明指南",
+      metaTitle: "權利義務・事實證明 | Fortia行政書士事務所",
+      metaDescription: "合約書製作、內容證明郵件、各種證明文件的製作專家全程支援。",
+      services: [
+        {
+          id: "certified-mail",
+          title: "內容證明郵件製作",
+          target: "債權回收、合約解除通知、損害賠償請求等內容證明郵件的製作・發送手續。支援確實的意思表示和證據保全。",
+          priceMin: 30000,
+          priceMax: 80000
+        },
+        {
+          id: "various-contracts",
+          title: "各種合約書製作",
+          target: "買賣合約、租賃合約、業務委託合約等各種合約書的製作。支援設定防止糾紛的適當條款。",
+          priceMin: 50000,
+          priceMax: 150000
+        },
+        {
+          id: "will-inheritance",
+          title: "遺囑書製作・繼承手續",
+          target: "從遺囑書製作到繼承手續、遺產分割協議書製作。支援防止繼承糾紛和順利的手續。",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "voluntary-guardianship-contract",
+          title: "任意後見合約書製作",
+          target: "為將來的判斷能力下降做準備的任意後見合約書製作。是需要公正證書製作的重要合約。",
+          priceMin: 100000,
+          priceMax: 180000
+        },
+        {
+          id: "notarization-documents",
+          title: "公證人事務所手續代理",
+          target: "代理公正證書製作、公司章程認證、確定日期等公證人事務所的各種手續。",
+          priceMin: 40000,
+          priceMax: 100000
+        },
+        {
+          id: "agreement-mediation",
+          title: "調解書・合意書製作",
+          target: "交通事故、損害賠償、民事糾紛等調解書・合意書的製作。適當文件化當事人間的合意內容。",
+          priceMin: 60000,
+          priceMax: 120000
+        }
+      ],
+      faq: [
+        {
+          question: "內容證明郵件的效果是什麼？",
+          answer: "能夠確實地向對方傳達意思表示的內容和日期，可以作為日後的證據活用。對債權回收和合約解除通知有效。"
+        },
+        {
+          question: "合約書製作應注意什麼？",
+          answer: "重要的是明確當事人的權利義務，加入防止糾紛的條款。製作滿足法律要件的適當內容。"
+        }
+      ],
+      breadcrumbs: {
+        home: "首頁",
+        services: "服務"
+      },
+      tableHeaders: {
+        serviceName: "服務名稱",
+        serviceOverview: "服務概要",
+        pricingGuide: "費用指南"
+      },
+      faqTitle: "常見問題"
+    },
+    "medical-care": {
+      title: "醫療・護理相關業務",
+      catchphrase: "醫療法人設立・護理事業所指定的專業支援",
+      heroTitle: "【專家支援】醫療・護理相關業務指南",
+      metaTitle: "醫療・護理相關業務 | Fortia行政書士事務所",
+      metaDescription: "醫療法人設立、護理事業所指定、藥局開設等醫療・護理相關的許認可手續專家全程支援。",
+      services: [
+        {
+          id: "medical-corporation",
+          title: "醫療法人設立申請",
+          target: "透過診所或醫院的醫療法人化進行設立申請。期待稅制優惠和社會信用提升、事業傳承的順利化。",
+          priceMin: 300000,
+          priceMax: 600000
+        },
+        {
+          id: "care-service-designation",
+          title: "護理事業所指定申請",
+          target: "居家護理、通所護理、小組護理之家等護理事業所指定申請。從人員・設備・運營基準確認到指定取得支援。",
+          priceMin: 200000,
+          priceMax: 400000
+        },
+        {
+          id: "pharmacy-license",
+          title: "藥局開設許可申請",
+          target: "調劑藥局的開設許可申請。基於藥事法的結構設備基準確認和保健所許可取得支援。",
+          priceMin: 150000,
+          priceMax: 250000
+        },
+        {
+          id: "medical-device",
+          title: "醫療器材銷售業・租賃業許可申請",
+          target: "經營醫療器材銷售業・租賃業時的許可申請。從管理醫療器材到高度管理醫療器材對應。",
+          priceMin: 100000,
+          priceMax: 200000
+        },
+        {
+          id: "clinic-establishment",
+          title: "診療所開設屆・醫院開設許可",
+          target: "診療所的開設申報和醫院的開設許可申請。基於醫療法的適當手續支援醫療機關的開業。",
+          priceMin: 120000,
+          priceMax: 300000
+        },
+        {
+          id: "welfare-facility-establishment",
+          title: "社會福祉設施設置認可申請",
+          target: "特別養護老人之家、身心障礙者設施等社會福祉設施設置認可申請。從建築基準到運營體制綜合支援。",
+          priceMin: 400000,
+          priceMax: 800000
+        }
+      ],
+      faq: [
+        {
+          question: "醫療法人設立的優點是什麼？",
+          answer: "有稅制上的優惠、社會信用的提升、事業傳承的順利化、分院展開的可能性等。"
+        },
+        {
+          question: "護理事業所指定的要件是什麼？",
+          answer: "需要滿足人員基準、設備基準、運營基準。根據服務種別基準有所不同，詳細情況請諮詢。"
+        }
+      ],
+      breadcrumbs: {
+        home: "首頁",
+        services: "服務"
+      },
+      tableHeaders: {
+        serviceName: "服務名稱",
+        serviceOverview: "服務概要",
+        pricingGuide: "費用指南"
+      },
+      faqTitle: "常見問題"
+    },
+    other: {
+      title: "其他業務",
+      catchphrase: "各種許認可・手續代辦的專業支援",
+      heroTitle: "【專家支援】其他業務指南",
+      metaTitle: "其他業務 | Fortia行政書士事務所",
+      metaDescription: "融資申請・補助金申請・翻譯業務・海牙認證等各種行政手續專家全程支援。",
+      services: [
+        {
+          id: "financing-application",
+          title: "融資申請支援",
+          target: "日本政策金融公庫和制度融資的申請支援。從事業計畫書製作到面談對策，創業・設備投資・運營資金調達的綜合支援。",
+          priceMin: 100000,
+          priceMax: 200000
+        },
+        {
+          id: "public-subsidies",
+          title: "補助金・助成金申請代辦",
+          target: "IT導入補助金、製造業補助金、小規模事業者持續化補助金等各種補助金申請。僱用相關助成金的申請支援也對應。",
+          priceMin: 80000,
+          priceMax: 300000
+        },
+        {
+          id: "document-translation",
+          title: "公文書翻譯・證明書類製作",
+          target: "戶籍謄本、住民票、畢業證明書等公的文書的翻譯業務。各國領事館・大使館的認證取得也支援。",
+          priceMin: 8000,
+          priceMax: 50000
+        },
+        {
+          id: "apostille-application",
+          title: "海牙認證・領事認證申請",
+          target: "外務省的海牙認證、各國領事館的領事認證申請代辦。在海外使用公文書所需的認證手續支援。",
+          priceMin: 15000,
+          priceMax: 40000
+        },
+        {
+          id: "government-procedures",
+          title: "官公署手續代辦",
+          target: "各種官公署（市役所、都道府縣廳、法務局等）的手續代辦。各種證明書取得、申請書提交等複雜手續的代辦。",
+          priceMin: 10000,
+          priceMax: 50000
+        },
+        {
+          id: "legal-consultation",
+          title: "法務諮詢・權利義務相關諮詢",
+          target: "法律問題和權利義務相關的諮詢對應。契約書檢查、法律風險的診斷、適當手續的建議提供。",
+          priceMin: 8000,
+          priceMax: 20000
+        }
+      ],
+      faq: [
+        {
+          question: "對應什麼樣的手續？",
+          answer: "融資申請、補助金申請、翻譯業務、海牙認證、官公署手續代辦等行政書士能處理的業務廣泛對應。具體手續請隨時諮詢。"
+        },
+        {
+          question: "補助金的採擇率是多少？",
+          answer: "根據補助金的種類和申請年度有所不同，但透過適當的申請書製作支援採擇率提升。致力於事前的要件確認和仔細的申請書製作。"
+        }
+      ],
+      breadcrumbs: { 
+        home: "首頁", 
+        services: "服務" 
+      }, 
+      tableHeaders: { 
+        serviceName: "服務名稱", 
+        serviceOverview: "服務概要", 
+        pricingGuide: "費用指南" 
+      }, 
+      faqTitle: "常見問題" 
+    }
   },
   vi: {
     foreign: { 
@@ -3257,10 +3895,290 @@ export const categoryPagesContent: CategoryPagesContent = {
       tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" },
       faqTitle: "Câu hỏi thường gặp"
     },
-    land: { title: "Dịch vụ liên quan đến đất đai", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
-    "legal-documentation": { title: "Chứng minh quyền nghĩa vụ・sự thật", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
-    "medical-care": { title: "Dịch vụ y tế・chăm sóc", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
-    other: { title: "Dịch vụ khác", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" }
+    land: {
+      title: "Dịch vụ liên quan đến đất đai",
+      catchphrase: "Hỗ trợ chuyên nghiệp cho chuyển đổi đất nông nghiệp・giấy phép phát triển",
+      heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ liên quan đến đất đai",
+      metaTitle: "Dịch vụ đất đai | Văn phòng Hành chính Fortia",
+      metaDescription: "Hỗ trợ chuyên nghiệp cho chuyển đổi đất nông nghiệp, giấy phép phát triển và các thủ tục sử dụng đất đai khác.",
+      services: [
+        {
+          id: "farmland-permit",
+          title: "Đơn xin giấy phép chuyển đổi đất nông nghiệp",
+          target: "Đơn xin giấy phép cần thiết khi chuyển đổi đất nông nghiệp thành đất dân cư hoặc đất kinh doanh. Cần giấy phép của thống đốc tỉnh trong khu vực điều chỉnh đô thị hóa.",
+          priceMin: 100000,
+          priceMax: 250000
+        },
+        {
+          id: "development-permit",
+          title: "Đơn xin giấy phép hành vi phát triển",
+          target: "Đơn xin giấy phép khi thực hiện thay đổi hình thức phân khu đất đai nhằm mục đích xây dựng các công trình. Cần thiết cho hành vi phát triển quy mô trên mức nhất định.",
+          priceMin: 200000,
+          priceMax: 500000
+        },
+        {
+          id: "factory-establishment-permit",
+          title: "Đơn xin phê duyệt thiết lập nhà máy",
+          target: "Đơn xin phê duyệt khi thiết lập nhà máy dựa trên luật địa điểm nhà máy. Là thủ tục quan trọng để cân nhắc môi trường và hài hòa khu vực.",
+          priceMin: 150000,
+          priceMax: 300000
+        },
+        {
+          id: "land-use-permit",
+          title: "Đơn xin giấy phép theo luật quy chế sử dụng đất",
+          target: "Các đơn xin giấy phép khác nhau liên quan đến quy chế sử dụng đất như luật kế hoạch đô thị, luật rừng, luật công viên tự nhiên. Hỗ trợ thủ tục thích hợp theo quy định pháp luật.",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "subdivision-permit",
+          title: "Phê duyệt dự án chỉnh trang phân khu đất đai",
+          target: "Đơn xin phê duyệt khi thực hiện dự án chỉnh trang phân khu đất đai. Lấy giấy phép cho dự án cải thiện hoàn thiện cơ sở hạ tầng công cộng và tăng cường sử dụng đất ở.",
+          priceMin: 300000,
+          priceMax: 600000
+        },
+        {
+          id: "mining-permit",
+          title: "Đơn xin giấy phép nghiệp khai thác đá・khai thác sỏi",
+          target: "Đơn xin giấy phép cần thiết khi kinh doanh nghiệp khai thác đá・khai thác sỏi. Hỗ trợ toàn diện từ lập kế hoạch khai thác đến lấy giấy phép.",
+          priceMin: 120000,
+          priceMax: 250000
+        }
+      ],
+      faq: [
+        {
+          question: "Chuyển đổi đất nông nghiệp cần thủ tục gì?",
+          answer: "Tùy theo vị trí và diện tích đất nông nghiệp, cần khai báo với ban nông nghiệp hoặc xin giấy phép thống đốc tỉnh. Đất nông nghiệp trong khu đô thị hóa áp dụng chế độ khai báo."
+        },
+        {
+          question: "Hành vi phát triển cần giấy phép phát triển là gì?",
+          answer: "Thay đổi hình thức phân khu đất đai nhằm mục đích xây dựng các công trình, quy mô trên mức nhất định là đối tượng. Tiêu chuẩn khác nhau tùy theo khu vực kế hoạch đô thị."
+        }
+      ],
+      breadcrumbs: {
+        home: "Trang chủ",
+        services: "Dịch vụ"
+      },
+      tableHeaders: {
+        serviceName: "Tên dịch vụ",
+        serviceOverview: "Tổng quan dịch vụ",
+        pricingGuide: "Hướng dẫn giá cả"
+      },
+      faqTitle: "Câu hỏi thường gặp"
+    },
+    "legal-documentation": {
+      title: "Chứng minh quyền nghĩa vụ・sự thật",
+      catchphrase: "Hỗ trợ chuyên nghiệp cho soạn thảo hợp đồng・thư chứng thực nội dung",
+      heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn chứng minh quyền nghĩa vụ・sự thật",
+      metaTitle: "Chứng minh quyền nghĩa vụ・sự thật | Văn phòng Hành chính Fortia",
+      metaDescription: "Hỗ trợ chuyên nghiệp cho soạn thảo hợp đồng, thư chứng thực nội dung, soạn thảo các loại tài liệu chứng minh.",
+      services: [
+        {
+          id: "certified-mail",
+          title: "Soạn thảo thư chứng thực nội dung",
+          target: "Soạn thảo・gửi thư chứng thực nội dung cho thu hồi nợ, thông báo hủy hợp đồng, yêu cầu bồi thường thiệt hại. Hỗ trợ thể hiện ý chí chắc chắn và bảo toàn bằng chứng.",
+          priceMin: 30000,
+          priceMax: 80000
+        },
+        {
+          id: "various-contracts",
+          title: "Soạn thảo các loại hợp đồng",
+          target: "Soạn thảo các loại hợp đồng như hợp đồng mua bán, hợp đồng thuê, hợp đồng ủy thác công việc. Hỗ trợ thiết lập các điều khoản thích hợp để phòng ngừa tranh chấp.",
+          priceMin: 50000,
+          priceMax: 150000
+        },
+        {
+          id: "will-inheritance",
+          title: "Soạn thảo di chúc・thủ tục thừa kế",
+          target: "Từ soạn thảo di chúc đến thủ tục thừa kế, soạn thảo thỏa thuận phân chia di sản. Hỗ trợ ngăn ngừa tranh chấp thừa kế và thủ tục suôn sẻ.",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "voluntary-guardianship-contract",
+          title: "Soạn thảo hợp đồng giám hộ tự nguyện",
+          target: "Soạn thảo hợp đồng giám hộ tự nguyện để chuẩn bị cho sự suy giảm khả năng phán đoán trong tương lai. Là hợp đồng quan trọng cần lập công chứng.",
+          priceMin: 100000,
+          priceMax: 180000
+        },
+        {
+          id: "notarization-documents",
+          title: "Đại diện thủ tục văn phòng công chứng",
+          target: "Đại diện các thủ tục khác nhau tại văn phòng công chứng như lập văn bản công chứng, chứng thực điều lệ, xác định ngày tháng.",
+          priceMin: 40000,
+          priceMax: 100000
+        },
+        {
+          id: "agreement-mediation",
+          title: "Soạn thảo thư dàn xếp・thỏa thuận",
+          target: "Soạn thảo thư dàn xếp・thỏa thuận cho tai nạn giao thông, bồi thường thiệt hại, tranh chấp dân sự. Văn bản hóa thích hợp nội dung thỏa thuận giữa các bên.",
+          priceMin: 60000,
+          priceMax: 120000
+        }
+      ],
+      faq: [
+        {
+          question: "Hiệu quả của thư chứng thực nội dung là gì?",
+          answer: "Có thể truyền đạt chắc chắn nội dung và ngày tháng thể hiện ý chí đến đối phương, có thể sử dụng làm bằng chứng sau này. Hiệu quả đối với thu hồi nợ và thông báo hủy hợp đồng."
+        },
+        {
+          question: "Điều cần chú ý khi soạn thảo hợp đồng là gì?",
+          answer: "Quan trọng là làm rõ quyền nghĩa vụ của các bên, đưa vào các điều khoản để phòng ngừa tranh chấp. Làm nội dung thích hợp đáp ứng yêu cầu pháp lý."
+        }
+      ],
+      breadcrumbs: {
+        home: "Trang chủ",
+        services: "Dịch vụ"
+      },
+      tableHeaders: {
+        serviceName: "Tên dịch vụ",
+        serviceOverview: "Tổng quan dịch vụ",
+        pricingGuide: "Hướng dẫn giá cả"
+      },
+      faqTitle: "Câu hỏi thường gặp"
+    },
+    "medical-care": {
+      title: "Dịch vụ y tế・chăm sóc",
+      catchphrase: "Hỗ trợ chuyên nghiệp cho giấy phép kinh doanh dược・thiết lập cơ sở y tế",
+      heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ y tế・chăm sóc",
+      metaTitle: "Dịch vụ y tế・chăm sóc | Văn phòng Hành chính Fortia",
+      metaDescription: "Hỗ trợ chuyên nghiệp cho giấy phép kinh doanh dược, thiết lập cơ sở y tế, giấy phép kinh doanh mỹ phẩm và các thủ tục y tế khác.",
+      services: [
+        {
+          id: "pharmacy-license",
+          title: "Đăng ký giấy phép kinh doanh dược",
+          target: "Các đơn xin giấy phép cần thiết để mở cửa hàng bán thuốc hoặc hiệu thuốc. Hỗ trợ từ đăng ký tiếp quản dược sĩ, đăng ký cửa hàng đến các thủ tục phụ.",
+          priceMin: 80000,
+          priceMax: 150000
+        },
+        {
+          id: "medical-establishment",
+          title: "Đăng ký thiết lập cơ sở y tế",
+          target: "Đơn xin đăng ký khi thiết lập bệnh viện, phòng khám nha khoa, viện dưỡng lão. Hỗ trợ các thủ tục phức tạp từ thiết kế đến đăng ký hoàn thành.",
+          priceMin: 120000,
+          priceMax: 300000
+        },
+        {
+          id: "cosmetics-license",
+          title: "Đăng ký giấy phép sản xuất・nhập khẩu mỹ phẩm",
+          target: "Đăng ký giấy phép cần thiết để kinh doanh mỹ phẩm và quasi-drug. Hỗ trợ từ đăng ký quản lý tổng quát đến đăng ký sản phẩm.",
+          priceMin: 100000,
+          priceMax: 200000
+        },
+        {
+          id: "welfare-service-establishment",
+          title: "Chỉ định cơ sở dịch vụ phúc lợi chăm sóc",
+          target: "Đơn xin chỉ định để mở cơ sở dịch vụ chăm sóc ban ngày, dịch vụ chăm sóc tại nhà. Hỗ trợ từ lập kế hoạch kinh doanh đến lấy chỉ định.",
+          priceMin: 150000,
+          priceMax: 250000
+        },
+        {
+          id: "food-sanitation-permit",
+          title: "Đăng ký giấy phép kinh doanh thực phẩm",
+          target: "Giấy phép cần thiết cho nhà hàng, cửa hàng bán lẻ thực phẩm, cơ sở sản xuất thực phẩm. Hỗ trợ lấy giấy phép phù hợp với hình thức kinh doanh.",
+          priceMin: 50000,
+          priceMax: 120000
+        },
+        {
+          id: "medical-waste-disposal",
+          title: "Đăng ký xử lý chất thải y tế đặc biệt",
+          target: "Đăng ký cần thiết cho việc xử lý chất thải nhiễm trùng phát sinh từ cơ sở y tế. Hỗ trợ thủ tục phù hợp với quy định xử lý chất thải y tế.",
+          priceMin: 80000,
+          priceMax: 180000
+        }
+      ],
+      faq: [
+        {
+          question: "Điều kiện để mở cửa hàng bán thuốc là gì?",
+          answer: "Cần có dược sĩ làm người quản lý bán thuốc và thiết bị cần thiết để bảo quản thuốc. Ngoài ra, cần đăng ký với sở y tế địa phương và đáp ứng các tiêu chuẩn về cơ sở vật chất."
+        },
+        {
+          question: "Thủ tục thiết lập cơ sở y tế phức tạp như thế nào?",
+          answer: "Cần chuẩn bị nhiều tài liệu như bản thiết kế cơ sở, thông tin nhân viên y tế, kế hoạch vận hành, v.v. Do có nhiều tiêu chuẩn cần đáp ứng nên khuyến khích tư vấn chuyên gia từ giai đoạn kế hoạch."
+        }
+      ],
+      breadcrumbs: {
+        home: "Trang chủ",
+        services: "Dịch vụ"
+      },
+      tableHeaders: {
+        serviceName: "Tên dịch vụ",
+        serviceOverview: "Tổng quan dịch vụ",
+        pricingGuide: "Hướng dẫn giá cả"
+      },
+      faqTitle: "Câu hỏi thường gặp"
+    },
+    other: {
+      title: "Dịch vụ khác",
+      catchphrase: "Hỗ trợ chuyên nghiệp cho các loại giấy phép・đại lý thủ tục",
+      heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ khác",
+      metaTitle: "Dịch vụ khác | Văn phòng Hành chính Fortia",
+      metaDescription: "Đơn xin tài trợ・đơn xin trợ cấp・dịch vụ dịch thuật・chứng thực Apostille và các thủ tục hành chính khác được chuyên gia hỗ trợ toàn diện.",
+      services: [
+        {
+          id: "financing-application",
+          title: "Hỗ trợ đơn xin tài trợ",
+          target: "Hỗ trợ đơn xin tài trợ từ Quỹ Tài chính Chính sách Nhật Bản và các tài trợ chế độ. Hỗ trợ toàn diện từ lập kế hoạch kinh doanh đến đối sách phỏng vấn cho khởi nghiệp・đầu tư thiết bị・huy động vốn lưu động.",
+          priceMin: 100000,
+          priceMax: 200000
+        },
+        {
+          id: "public-subsidies",
+          title: "Đại lý đơn xin trợ cấp・hỗ trợ tài chính",
+          target: "Đơn xin các loại trợ cấp như trợ cấp đưa IT vào, trợ cấp sản xuất, trợ cấp duy trì cho doanh nghiệp quy mô nhỏ. Cũng đối ứng hỗ trợ đơn xin hỗ trợ tài chính liên quan đến việc làm.",
+          priceMin: 80000,
+          priceMax: 300000
+        },
+        {
+          id: "document-translation",
+          title: "Dịch thuật công văn・lập giấy chứng nhận",
+          target: "Dịch thuật hộ tịch, giấy chứng nhận cư trú, bằng tốt nghiệp và các văn bản công khác. Cũng hỗ trợ lấy chứng thực tại các lãnh sự quán・đại sứ quán các nước.",
+          priceMin: 8000,
+          priceMax: 50000
+        },
+        {
+          id: "apostille-application",
+          title: "Đơn xin chứng thực Apostille・chứng thực lãnh sự",
+          target: "Chứng thực Apostille tại Bộ Ngoại giao, đại lý đơn xin chứng thực lãnh sự tại các lãnh sự quán. Hỗ trợ các thủ tục chứng thực cần thiết để sử dụng công văn ở nước ngoài.",
+          priceMin: 15000,
+          priceMax: 40000
+        },
+        {
+          id: "government-procedures",
+          title: "Đại lý thủ tục cơ quan công quyền",
+          target: "Đại lý thủ tục tại các cơ quan công quyền (ủy ban nhân dân, phủ tỉnh/thành, cục pháp vụ, v.v.). Đại lý các thủ tục phức tạp như lấy các loại giấy chứng nhận, nộp đơn xin.",
+          priceMin: 10000,
+          priceMax: 50000
+        },
+        {
+          id: "legal-consultation",
+          title: "Tư vấn pháp lý・tư vấn về quyền nghĩa vụ",
+          target: "Đối ứng tư vấn về các vấn đề pháp lý và quyền nghĩa vụ. Cung cấp kiểm tra hợp đồng, chẩn đoán rủi ro pháp lý, tư vấn thủ tục thích hợp.",
+          priceMin: 8000,
+          priceMax: 20000
+        }
+      ],
+      faq: [
+        {
+          question: "Đối ứng những thủ tục như thế nào?",
+          answer: "Đối ứng rộng rãi các nghiệp vụ mà hành chính thư sĩ có thể xử lý như đơn xin tài trợ, đơn xin trợ cấp, dịch vụ dịch thuật, chứng thực Apostille, đại lý thủ tục cơ quan công quyền. Về các thủ tục cụ thể, xin vui lòng tư vấn thoải mái."
+        },
+        {
+          question: "Tỷ lệ được chấp thuận của trợ cấp là bao nhiêu?",
+          answer: "Tùy thuộc vào loại trợ cấp và năm đăng ký mà khác nhau, nhưng chúng tôi hỗ trợ nâng cao tỷ lệ được chấp thuận thông qua việc lập đơn xin thích hợp. Chúng tôi chú trọng xác nhận điều kiện trước và lập đơn xin cẩn thận."
+        }
+      ],
+      breadcrumbs: { 
+        home: "Trang chủ", 
+        services: "Dịch vụ" 
+      }, 
+      tableHeaders: { 
+        serviceName: "Tên dịch vụ", 
+        serviceOverview: "Tổng quan dịch vụ", 
+        pricingGuide: "Hướng dẫn giá cả" 
+      }, 
+      faqTitle: "Câu hỏi thường gặp" 
+    }
   }
 };
 
