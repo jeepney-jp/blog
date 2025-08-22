@@ -109,6 +109,106 @@ const content = {
     successMessage: "Your inquiry has been received.",
     errorMessage: "Failed to send.",
     networkError: "A network error occurred."
+  },
+  'zh-CN': {
+    pageTitle: "联系我们",
+    pageDescription: "请随时联系我们",
+    contactForm: "联系表格",
+    contactInfo: "联系信息",
+    name: "姓名",
+    email: "邮箱地址",
+    phone: "电话号码",
+    service: "咨询内容",
+    message: "留言",
+    privacy: "我同意隐私政策",
+    submit: "发送",
+    submitting: "发送中...",
+    required: "*",
+    selectOption: "请选择",
+    messagePlaceholder: "请详细告诉我们您的咨询内容",
+    phoneContact: "电话咨询",
+    faxContact: "传真咨询",
+    emailContact: "邮件咨询",
+    officeAddress: "事务所地址",
+    businessHours: {
+      weekdays: "工作日: 9:00 - 18:00",
+      saturday: "周六: 9:00 - 17:00",
+      holiday: "周日及节假日: 休业"
+    },
+    available24h: "24小时受理",
+    available24hWithReply: "24小时受理（营业时间内回复）",
+    parkingNote: "※ 无停车场。请使用公共交通工具。",
+    accessTitle: "交通指南",
+    nearestStations: "最近车站",
+    byTrain: {
+      tokyo: "JR各线 步行5分钟",
+      otemachi: "东京地铁各线 步行3分钟",
+      nijubashimae: "东京地铁千代田线 步行2分钟"
+    },
+    byCar: "开车前来",
+    carDirection: "从首都高速都心环状线「神田桥IC」约5分钟",
+    carParkingNote: "※ 无停车场。请使用附近的投币停车场。",
+    serviceOptions: {
+      "": "请选择",
+      permit: "许可认证申请",
+      inheritance: "继承手续",
+      company: "公司设立",
+      contract: "合同制作",
+      other: "其他"
+    },
+    successMessage: "已接收您的咨询。",
+    errorMessage: "发送失败。",
+    networkError: "发生网络错误。"
+  },
+  'zh-TW': {
+    pageTitle: "聯繫我們",
+    pageDescription: "請隨時聯繫我們",
+    contactForm: "聯繫表格",
+    contactInfo: "聯繫資訊",
+    name: "姓名",
+    email: "郵箱地址",
+    phone: "電話號碼",
+    service: "諮詢內容",
+    message: "留言",
+    privacy: "我同意隱私政策",
+    submit: "發送",
+    submitting: "發送中...",
+    required: "*",
+    selectOption: "請選擇",
+    messagePlaceholder: "請詳細告訴我們您的諮詢內容",
+    phoneContact: "電話諮詢",
+    faxContact: "傳真諮詢",
+    emailContact: "郵件諮詢",
+    officeAddress: "事務所地址",
+    businessHours: {
+      weekdays: "工作日: 9:00 - 18:00",
+      saturday: "週六: 9:00 - 17:00",
+      holiday: "週日及節假日: 休業"
+    },
+    available24h: "24小時受理",
+    available24hWithReply: "24小時受理（營業時間內回覆）",
+    parkingNote: "※ 無停車場。請使用公共交通工具。",
+    accessTitle: "交通指南",
+    nearestStations: "最近車站",
+    byTrain: {
+      tokyo: "JR各線 步行5分鐘",
+      otemachi: "東京地鐵各線 步行3分鐘",
+      nijubashimae: "東京地鐵千代田線 步行2分鐘"
+    },
+    byCar: "開車前來",
+    carDirection: "從首都高速都心環狀線「神田橋IC」約5分鐘",
+    carParkingNote: "※ 無停車場。請使用附近的投幣停車場。",
+    serviceOptions: {
+      "": "請選擇",
+      permit: "許可認證申請",
+      inheritance: "繼承手續",
+      company: "公司設立",
+      contract: "合約製作",
+      other: "其他"
+    },
+    successMessage: "已接收您的諮詢。",
+    errorMessage: "發送失敗。",
+    networkError: "發生網路錯誤。"
   }
 };
 
