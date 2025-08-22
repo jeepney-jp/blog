@@ -221,58 +221,46 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "車庫証明、自動車登録の手続きを迅速サポート。忙しい方に代わって確実な手続きを代行いたします。",
       services: [
         {
+          id: "garage-certificate",
+          title: "自動車保管場所証明書（車庫証明）",
+          target: "新車・中古車購入時に必要な車庫証明の取得申請。迅速な手続きで車両登録をサポートします。",
+          priceMin: 15000,
+          priceMax: 25000
+        },
+        {
+          id: "vehicle-registration",
+          title: "自動車登録・名義変更",
+          target: "車両の所有者変更、住所変更等の各種登録手続き。正確な書類作成で確実に手続きを完了させます。",
+          priceMin: 20000,
+          priceMax: 35000
+        },
+        {
+          id: "mini-vehicle-notification",
+          title: "軽自動車届出",
+          target: "軽自動車の登録・名義変更手続き。軽自動車検査協会での各種届出を代行いたします。",
+          priceMin: 15000,
+          priceMax: 25000
+        },
+        {
           id: "auto-dismantling-permit",
           title: "自動車解体業許可",
-          target: "テスト",
-          priceMin: 0
-        },
-        {
-          id: "auto-driving-agency",
-          title: "自動車運転代行業認定",
-          target: "テスト",
-          priceMin: 0
-        },
-        {
-          id: "freight-transport-registration",
-          title: "利用運送事業登録",
-          target: "テスト",
-          priceMin: 0
-        },
-        {
-          id: "rental-car-permit",
-          title: "有償貸渡許可（レンタカー）",
-          target: "テスト",
-          priceMin: 0
-        },
-        {
-          id: "passenger-transport-permit",
-          title: "旅客自動車運送事業許可",
-          target: "テスト",
-          priceMin: 0
+          target: "自動車の解体・破砕を行う業者に必要な許可申請。環境への配慮と適切な処理体制が求められます。",
+          priceMin: 150000,
+          priceMax: 250000
         },
         {
           id: "freight-transport-permit",
           title: "貨物自動車運送事業許可",
-          target: "テスト",
-          priceMin: 0
+          target: "トラック等による貨物運送事業を営む際に必要な許可申請。運行管理体制の整備が求められます。",
+          priceMin: 200000,
+          priceMax: 350000
         },
         {
-          id: "garage-certificate",
-          title: "自動車保管場所証明書（車庫証明）",
-          target: "テスト",
-          priceMin: 0
-        },
-        {
-          id: "mini-vehicle-notification1",
-          title: "軽自動車届出",
-          target: "テスト",
-          priceMin: 0
-        },
-        {
-          id: "mini-vehicle-notification2",
-          title: "軽自動車届出",
-          target: "テスト",
-          priceMin: 0
+          id: "passenger-transport-permit",
+          title: "旅客自動車運送事業許可",
+          target: "タクシーやバス等の旅客運送事業を営む際に必要な許可申請。安全性と事業計画の審査があります。",
+          priceMin: 250000,
+          priceMax: 450000
         }
       ],
       faq: [
@@ -1602,8 +1590,120 @@ export const categoryPagesContent: CategoryPagesContent = {
       tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" },
       faqTitle: "常见问题"
     },
-    construction: { title: "建设・不动产业务", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
-    automotive: { title: "汽车相关业务", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
+    construction: {
+      title: "建设・不动产业务",
+      catchphrase: "建设业许可・不动产业执照的专业支持",
+      heroTitle: "【专家支持】建设・不动产业务指南",
+      metaTitle: "建设・不动产业务 | Fortia行政书士事务所",
+      metaDescription: "建设业许可、不动产业执照的取得到更新，专家全程支持。经验丰富的行政书士提供可靠的手续。",
+      services: [
+        {
+          id: "construction-permit",
+          title: "建设业许可申请",
+          target: "经营建设工程业需要的许可申请。对应一般建设业许可・特定建设业许可。",
+          priceMin: 150000,
+          priceMax: 300000
+        },
+        {
+          id: "construction-renewal",
+          title: "建设业许可更新",
+          target: "每5年需要的建设业许可更新手续。从期限管理到申请完全支持。",
+          priceMin: 80000,
+          priceMax: 120000
+        },
+        {
+          id: "real-estate-license",
+          title: "房地产交易业执照申请",
+          target: "经营不动产买卖・中介业时需要的不动产业执照新规取得申请。",
+          priceMin: 120000,
+          priceMax: 180000
+        },
+        {
+          id: "construction-change",
+          title: "各种变更申报",
+          target: "营业所迁移、管理人员变更、商号变更等各种变更申报手续。",
+          priceMin: 30000,
+          priceMax: 80000
+        }
+      ],
+      faq: [
+        {
+          question: "建设业许可从什么时候开始需要？",
+          answer: "建筑一体化工程1,500万日元以上、其他工程500万日元以上的承包工程时需要。"
+        },
+        {
+          question: "许可的有效期间是多久？",
+          answer: "建设业许可、不动产业执照均为5年。需要在期限前进行更新手续。"
+        }
+      ],
+      breadcrumbs: { home: "首页", services: "服务" },
+      tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" },
+      faqTitle: "常见问题"
+    },
+    automotive: {
+      title: "汽车相关业务",
+      catchphrase: "车库证明・汽车登记的迅速支持",
+      heroTitle: "【专家支持】汽车相关业务指南",
+      metaTitle: "汽车相关业务 | Fortia行政书士事务所",
+      metaDescription: "迅速支持车库证明、汽车登记手续。代替繁忙的您进行可靠的手续办理。",
+      services: [
+        {
+          id: "garage-certificate",
+          title: "汽车保管地证明书（车库证明）",
+          target: "购买新车・二手车时需要的车库证明取得申请。迅速手续支持车辆登记。",
+          priceMin: 15000,
+          priceMax: 25000
+        },
+        {
+          id: "vehicle-registration",
+          title: "汽车登记・名义变更",
+          target: "车辆所有者变更、地址变更等各种登记手续。通过准确的文件制作确实完成手续。",
+          priceMin: 20000,
+          priceMax: 35000
+        },
+        {
+          id: "mini-vehicle-notification",
+          title: "轻型汽车申报",
+          target: "轻型汽车的登记・名义变更手续。代理在轻型汽车检查协会的各种申报。",
+          priceMin: 15000,
+          priceMax: 25000
+        },
+        {
+          id: "auto-dismantling-permit",
+          title: "汽车解体业许可",
+          target: "进行汽车解体・破碎的业者需要的许可申请。要求环境配虑和适当的处理体制。",
+          priceMin: 150000,
+          priceMax: 250000
+        },
+        {
+          id: "freight-transport-permit",
+          title: "货物汽车运输业许可",
+          target: "经营卡车等货物运输业时需要的许可申请。要求整备运行管理体制。",
+          priceMin: 200000,
+          priceMax: 350000
+        },
+        {
+          id: "passenger-transport-permit",
+          title: "旅客汽车运输业许可",
+          target: "经营出租车或巴士等旅客运输业时需要的许可申请。需要安全性和业务计划的审查。",
+          priceMin: 250000,
+          priceMax: 450000
+        }
+      ],
+      faq: [
+        {
+          question: "车库证明取得需要多长时间？",
+          answer: "从申请到颁发通常需芁3〜7天。根据地区略有不同。"
+        },
+        {
+          question: "需要什么文件？",
+          answer: "车库证明需要保管地使用权原疏明书面、位置图・配置图等。详细情况请咨询。"
+        }
+      ],
+      breadcrumbs: { home: "首页", services: "服务" },
+      tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" },
+      faqTitle: "常见问题"
+    },
     corporate: { title: "法人设立业务", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
     "food-entertainment": { title: "餐饮・娱乐业务", catchphrase: "餐厅营业许可・娱乐业许可的专业支持", heroTitle: "【专家支持】餐饮・娱乐业务指南", metaTitle: "餐饮・娱乐业务 | Fortia行政书士事务所", metaDescription: "餐厅许可、娱乐业许可的取得到更新，专家全程支持。可靠的手续确保营业开始。", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
     "waste-management": { title: "废物处理业许可业务", catchphrase: "产业废物收集运输业许可的专业支持", heroTitle: "【专家支持】废物处理业许可业务指南", metaTitle: "废物处理业许可业务 | Fortia行政书士事务所", metaDescription: "产业废物收集运输业许可、一般废物处理业许可的取得到更新，专家全程支持。", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
@@ -1721,8 +1821,120 @@ export const categoryPagesContent: CategoryPagesContent = {
       tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" },
       faqTitle: "常見問題"
     },
-    construction: { title: "建設・不動產業務", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
-    automotive: { title: "汽車相關業務", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
+    construction: {
+      title: "建設・不動產業務",
+      catchphrase: "建設業許可・不動產業執照的專業支援",
+      heroTitle: "【專家支援】建設・不動產業務指南",
+      metaTitle: "建設・不動產業務 | Fortia行政書士事務所",
+      metaDescription: "建設業許可、不動產業執照的取得到更新，專家全程支援。經驗豐富的行政書士提供可靠的手續。",
+      services: [
+        {
+          id: "construction-permit",
+          title: "建設業許可申請",
+          target: "經營建設工程業需要的許可申請。對應一般建設業許可・特定建設業許可。",
+          priceMin: 150000,
+          priceMax: 300000
+        },
+        {
+          id: "construction-renewal",
+          title: "建設業許可更新",
+          target: "每5年需要的建設業許可更新手續。從期限管理到申請完全支援。",
+          priceMin: 80000,
+          priceMax: 120000
+        },
+        {
+          id: "real-estate-license",
+          title: "房地產交易業執照申請",
+          target: "經營不動產買賣・仲介業時需要的不動產業執照新規取得申請。",
+          priceMin: 120000,
+          priceMax: 180000
+        },
+        {
+          id: "construction-change",
+          title: "各種變更申報",
+          target: "營業所遷移、管理人員變更、商號變更等各種變更申報手續。",
+          priceMin: 30000,
+          priceMax: 80000
+        }
+      ],
+      faq: [
+        {
+          question: "建設業許可從什麼時候開始需要？",
+          answer: "建築一體化工程1,500萬日元以上、其他工程500萬日元以上的承包工程時需要。"
+        },
+        {
+          question: "許可的有效期間是多久？",
+          answer: "建設業許可、不動產業執照均為5年。需要在期限前進行更新手續。"
+        }
+      ],
+      breadcrumbs: { home: "首頁", services: "服務" },
+      tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" },
+      faqTitle: "常見問題"
+    },
+    automotive: {
+      title: "汽車相關業務",
+      catchphrase: "車庫證明・汽車登記的迅速支援",
+      heroTitle: "【專家支援】汽車相關業務指南",
+      metaTitle: "汽車相關業務 | Fortia行政書士事務所",
+      metaDescription: "迅速支援車庫證明、汽車登記手續。代替繁忙的您進行可靠的手續辦理。",
+      services: [
+        {
+          id: "garage-certificate",
+          title: "汽車保管地證明書（車庫證明）",
+          target: "購買新車・二手車時需要的車庫證明取得申請。迅速手續支持車輛登記。",
+          priceMin: 15000,
+          priceMax: 25000
+        },
+        {
+          id: "vehicle-registration",
+          title: "汽車登記・名義變更",
+          target: "車輛所有者變更、住址變更等各種登記手續。通過準確的文件製作確實完成手續。",
+          priceMin: 20000,
+          priceMax: 35000
+        },
+        {
+          id: "mini-vehicle-notification",
+          title: "輕型汽車申報",
+          target: "輕型汽車的登記・名義變更手續。代理在輕型汽車檢查協會的各種申報。",
+          priceMin: 15000,
+          priceMax: 25000
+        },
+        {
+          id: "auto-dismantling-permit",
+          title: "汽車解體業許可",
+          target: "進行汽車解體・破碎的業者需要的許可申請。要求環境配慮和適當的處理體制。",
+          priceMin: 150000,
+          priceMax: 250000
+        },
+        {
+          id: "freight-transport-permit",
+          title: "貨物汽車運輸業許可",
+          target: "經營卡車等貨物運輸業時需要的許可申請。要求整備運行管理體制。",
+          priceMin: 200000,
+          priceMax: 350000
+        },
+        {
+          id: "passenger-transport-permit",
+          title: "旅客汽車運輸業許可",
+          target: "經營出租車或巴士等旅客運輸業時需要的許可申請。需要安全性和業務計劃的審查。",
+          priceMin: 250000,
+          priceMax: 450000
+        }
+      ],
+      faq: [
+        {
+          question: "車庫證明取得需要多長時間？",
+          answer: "從申請到發放通常需芁3〜7天。根據地區略有不同。"
+        },
+        {
+          question: "需要什麼文件？",
+          answer: "車庫證明需要保管地使用權原疏明書面、位置圖・配置圖等。詳細情況請詢問。"
+        }
+      ],
+      breadcrumbs: { home: "首頁", services: "服務" },
+      tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" },
+      faqTitle: "常見問題"
+    },
     corporate: { title: "法人設立業務", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
     "food-entertainment": { title: "餐飲・娛樂業務", catchphrase: "餐廳營業許可・娛樂業許可的專業支援", heroTitle: "【專家支援】餐飲・娛樂業務指南", metaTitle: "餐飲・娛樂業務 | Fortia行政書士事務所", metaDescription: "餐廳許可、娛樂業許可的取得到更新，專家全程支援。可靠的手續確保營業開始。", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
     "waste-management": { title: "廢物處理業許可業務", catchphrase: "產業廢物收集運輸業許可的專業支援", heroTitle: "【專家支援】廢物處理業許可業務指南", metaTitle: "廢物處理業許可業務 | Fortia行政書士事務所", metaDescription: "產業廢物收集運輸業許可、一般廢物處理業許可的取得到更新，專家全程支援。", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
@@ -1840,8 +2052,120 @@ export const categoryPagesContent: CategoryPagesContent = {
       tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, 
       faqTitle: "Câu hỏi thường gặp" 
     },
-    construction: { title: "Dịch vụ xây dựng・bất động sản", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
-    automotive: { title: "Dịch vụ liên quan đến ô tô", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
+    construction: {
+      title: "Dịch vụ xây dựng・bất động sản",
+      catchphrase: "Hỗ trợ chuyên nghiệp về giấy phép xây dựng・giấy phép kinh doanh bất động sản",
+      heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ xây dựng・bất động sản",
+      metaTitle: "Dịch vụ xây dựng・bất động sản | Văn phòng Hành chính Fortia",
+      metaDescription: "Hỗ trợ từ việc lấy đến gia hạn giấy phép xây dựng, giấy phép kinh doanh bất động sản. Luật sư hành chính giàu kinh nghiệm cung cấp thủ tục đáng tin cậy.",
+      services: [
+        {
+          id: "construction-permit",
+          title: "Đơn xin giấy phép kinh doanh xây dựng",
+          target: "Đơn xin giấy phép cần thiết khi kinh doanh ngành xây dựng. Đối ứng giấy phép xây dựng chung・giấy phép xây dựng đặc định.",
+          priceMin: 150000,
+          priceMax: 300000
+        },
+        {
+          id: "construction-renewal",
+          title: "Gia hạn giấy phép kinh doanh xây dựng",
+          target: "Thủ tục gia hạn giấy phép xây dựng cần thiết mỗi 5 năm. Hỗ trợ hoàn toàn từ quản lý thời hạn đến đơn xin.",
+          priceMin: 80000,
+          priceMax: 120000
+        },
+        {
+          id: "real-estate-license",
+          title: "Đơn xin giấy phép kinh doanh bất động sản",
+          target: "Đơn xin lấy mới giấy phép kinh doanh bất động sản cần thiết khi kinh doanh mua bán・môi giới bất động sản.",
+          priceMin: 120000,
+          priceMax: 180000
+        },
+        {
+          id: "construction-change",
+          title: "Các loại thông báo thay đổi",
+          target: "Các thủ tục thông báo thay đổi như di chuyển văn phòng kinh doanh, thay đổi cán bộ quản lý, thay đổi tên thương hiệu.",
+          priceMin: 30000,
+          priceMax: 80000
+        }
+      ],
+      faq: [
+        {
+          question: "Giấy phép xây dựng cần từ khi nào?",
+          answer: "Cần khi thực hiện công trình xây dựng tổng hợp từ 15 triệu yên trở lên, các công trình khác từ 5 triệu yên trở lên."
+        },
+        {
+          question: "Thời hạn hiệu lực của giấy phép là bao lâu?",
+          answer: "Cả giấy phép xây dựng và giấy phép kinh doanh bất động sản đều có thời hạn 5 năm. Cần thực hiện thủ tục gia hạn trước khi hết hạn."
+        }
+      ],
+      breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" },
+      tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" },
+      faqTitle: "Câu hỏi thường gặp"
+    },
+    automotive: {
+      title: "Dịch vụ liên quan đến ô tô",
+      catchphrase: "Hỗ trợ nhanh chóng cho chứng nhận nhà để xe・đăng ký ô tô",
+      heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ liên quan đến ô tô",
+      metaTitle: "Dịch vụ liên quan đến ô tô | Văn phòng Hành chính Fortia",
+      metaDescription: "Hỗ trợ nhanh chóng cho chứng nhận nhà để xe, thủ tục đăng ký ô tô. Thực hiện thủ tục đáng tin cậy thay cho những người bận rộn.",
+      services: [
+        {
+          id: "garage-certificate",
+          title: "Chứng nhận nơi để xe ô tô (chứng nhận nhà để xe)",
+          target: "Đơn xin chứng nhận nhà để xe cần thiết khi mua xe mới・xe cũ. Hỗ trợ thủ tục nhanh chóng cho đăng ký xe.",
+          priceMin: 15000,
+          priceMax: 25000
+        },
+        {
+          id: "vehicle-registration",
+          title: "Đăng ký ô tô・thay đổi danh nghĩa",
+          target: "Các thủ tục đăng ký khác nhau như thay đổi chủ sở hữu xe, thay đổi địa chỉ. Hoàn thành chắc chắn thủ tục qua việc làm tài liệu chính xác.",
+          priceMin: 20000,
+          priceMax: 35000
+        },
+        {
+          id: "mini-vehicle-notification",
+          title: "Ký báo xe nhỏ",
+          target: "Thủ tục đăng ký・thay đổi danh nghĩa xe nhỏ. Thực hiện các ký báo khác nhau tại Hiệp hội kiểm tra xe nhỏ.",
+          priceMin: 15000,
+          priceMax: 25000
+        },
+        {
+          id: "auto-dismantling-permit",
+          title: "Giấy phép ngành tách rời ô tô",
+          target: "Đơn xin giấy phép cần thiết cho các doanh nghiệp thực hiện tách rời・phá dỡ ô tô. Yêu cầu cân nhắc môi trường và hệ thống xử lý thích hợp.",
+          priceMin: 150000,
+          priceMax: 250000
+        },
+        {
+          id: "freight-transport-permit",
+          title: "Giấy phép ngành vận tải hàng hóa bằng ô tô",
+          target: "Đơn xin giấy phép cần thiết khi kinh doanh vận tải hàng hóa bằng xe tải. Yêu cầu thiết lập hệ thống quản lý vận hành.",
+          priceMin: 200000,
+          priceMax: 350000
+        },
+        {
+          id: "passenger-transport-permit",
+          title: "Giấy phép ngành vận tải hành khách bằng ô tô",
+          target: "Đơn xin giấy phép cần thiết khi kinh doanh vận tải hành khách như taxi hoặc xe buýt. Có kiểm duyệt an toàn và kế hoạch kinh doanh.",
+          priceMin: 250000,
+          priceMax: 450000
+        }
+      ],
+      faq: [
+        {
+          question: "Lấy chứng nhận nhà để xe mất bao lâu?",
+          answer: "Từ khi nộp đơn đến khi cấp thường mất khoảng 3〜7 ngày. Tùy theo khu vực có thể hơi khác."
+        },
+        {
+          question: "Cần những giấy tờ nào?",
+          answer: "Chứng nhận nhà để xe cần giấy tờ chứng minh quyền sử dụng nơi để xe, sơ đồ vị tríヿsơ đồ bố trí, v.v. Vui lòng liên hệ để biết chi tiết."
+        }
+      ],
+      breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" },
+      tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" },
+      faqTitle: "Câu hỏi thường gặp"
+    },
     corporate: { title: "Dịch vụ thành lập pháp nhân", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
     "food-entertainment": { title: "Dịch vụ ăn uống・giải trí", catchphrase: "Hỗ trợ chuyên nghiệp cho giấy phép kinh doanh nhà hàng・giải trí", heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ ăn uống・giải trí", metaTitle: "Dịch vụ ăn uống・giải trí | Văn phòng Hành chính Fortia", metaDescription: "Hỗ trợ chuyên nghiệp từ việc lấy đến gia hạn giấy phép nhà hàng, giấy phép kinh doanh giải trí. Thủ tục đáng tin cậy đảm bảo bắt đầu kinh doanh.", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
     "waste-management": { title: "Dịch vụ giấy phép xử lý chất thải", catchphrase: "Hỗ trợ chuyên nghiệp cho giấy phép thu gom vận chuyển chất thải công nghiệp", heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ giấy phép xử lý chất thải", metaTitle: "Dịch vụ giấy phép xử lý chất thải | Văn phòng Hành chính Fortia", metaDescription: "Hỗ trợ chuyên nghiệp từ việc lấy đến gia hạn giấy phép thu gom vận chuyển chất thải công nghiệp, giấy phép xử lý chất thải sinh hoạt.", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
