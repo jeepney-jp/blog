@@ -29,6 +29,26 @@ export default function Header({ lang }: HeaderProps) {
       news: "News",
       contact: "Contact",
     },
+    'zh-CN': {
+      companyName: "Fortia",
+      companyNameFull: "行政书士事务所",
+      companyNameShort: "行政书士",
+      features: "特色",
+      services: "服务",
+      about: "事务所概要",
+      news: "新闻",
+      contact: "联系我们",
+    },
+    'zh-TW': {
+      companyName: "Fortia",
+      companyNameFull: "行政書士事務所",
+      companyNameShort: "行政書士",
+      features: "特色",
+      services: "服務",
+      about: "事務所概要",
+      news: "新聞",
+      contact: "聯繫我們",
+    },
   };
 
   const t = content[lang];

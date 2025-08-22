@@ -153,6 +153,142 @@ export default function About() {
         }
       },
       mobileNote: "※ Tap for details"
+    },
+    'zh-CN': {
+      pageTitle: "事务所概要",
+      pageDescription: "关于Fortia行政书士事务所",
+      ceoGreeting: "代表致辞",
+      officeInfo: "事务所信息",
+      representative: "行政书士・代表",
+      establishedDate: "设立日期",
+      address: "所在地",
+      contact: "联系方式",
+      businessHours: "营业时间",
+      qualifications: "资格・登记",
+      teamMembers: "员工介绍",
+      memberNote: "※员工介绍包含部分样例数据",
+      weekdays: "平日: 9:00 - 18:00",
+      saturday: "周六: 9:00 - 17:00",
+      holiday: "周日及节假日: 休业",
+      qualification: "行政书士（登记号码：第08100026号）",
+      association: "千叶县行政书士会所属",
+      businessContent: "签证申请、各种许可认证申请、合同制作、外国人才生活支援等",
+      certification: "法务省认定 登记支援机关认定：１９登－０００９１７",
+      relatedCompanies: "关联公司",
+      employees: "员工人数",
+      representativeName: "代表者姓名",
+      ceoMessage1: "平成15年进行行政书士登记以来，20年间为众多客户的许可认证申请、继承手续、公司设立等提供支援。",
+      ceoMessage2: "本事务所根据每位客户的具体情况提出最佳解决方案，致力于迅速细致的应对。",
+      ceoMessage3: "如有困扰，请随时咨询。",
+      accessInfo: "交通信息",
+      officeHistory: "事务所沿革",
+      historyDescription: "介绍与地区居民共同走过的历史",
+      timeline: {
+        "2024-01": {
+          title: "事务所搬迁・规模扩大",
+          description: "构建为更多客户提供服务的体制",
+          dateLabel: "2024年 1月"
+        },
+        "2023-06": {
+          title: "开始在线咨询服务",
+          description: "构建对全国客户的支援体制",
+          dateLabel: "2023年 6月"
+        },
+        "2022-09": {
+          title: "增加员工",
+          description: "扩充专业领域，应对更广泛的需求",
+          dateLabel: "2022年 9月"
+        },
+        "2021-12": {
+          title: "设立法人支援部门",
+          description: "正式开始企业服务",
+          dateLabel: "2021年 12月"
+        },
+        "2008-01": {
+          title: "Fortia行政书士事务所 设立",
+          description: "作为扎根地区的行政书士事务所开业",
+          dateLabel: "2008年 1月"
+        },
+        "2019-10": {
+          title: "行政书士登记",
+          description: "开始为独立做准备",
+          dateLabel: "2019年 10月"
+        },
+        "2014-04": {
+          title: "进入大型法律事务所",
+          description: "积累行政书士的实务经验",
+          dateLabel: "2014年 4月"
+        }
+      },
+      mobileNote: "※ 点击查看详情"
+    },
+    'zh-TW': {
+      pageTitle: "事務所概要",
+      pageDescription: "關於Fortia行政書士事務所",
+      ceoGreeting: "代表致辭",
+      officeInfo: "事務所資訊",
+      representative: "行政書士・代表",
+      establishedDate: "設立日期",
+      address: "所在地",
+      contact: "聯絡方式",
+      businessHours: "營業時間",
+      qualifications: "資格・登記",
+      teamMembers: "員工介紹",
+      memberNote: "※員工介紹包含部分樣例資料",
+      weekdays: "平日: 9:00 - 18:00",
+      saturday: "週六: 9:00 - 17:00",
+      holiday: "週日及節假日: 休業",
+      qualification: "行政書士（登記號碼：第08100026號）",
+      association: "千葉縣行政書士會所屬",
+      businessContent: "簽證申請、各種許可認證申請、合約製作、外國人才生活支援等",
+      certification: "法務省認定 登記支援機關認定：１９登－０００９１７",
+      relatedCompanies: "關聯公司",
+      employees: "員工人數",
+      representativeName: "代表者姓名",
+      ceoMessage1: "平成15年進行行政書士登記以來，20年間為眾多客戶的許可認證申請、繼承手續、公司設立等提供支援。",
+      ceoMessage2: "本事務所根據每位客戶的具體情況提出最佳解決方案，致力於迅速細緻的應對。",
+      ceoMessage3: "如有困擾，請隨時諮詢。",
+      accessInfo: "交通資訊",
+      officeHistory: "事務所沿革",
+      historyDescription: "介紹與地區居民共同走過的歷史",
+      timeline: {
+        "2024-01": {
+          title: "事務所搬遷・規模擴大",
+          description: "構建為更多客戶提供服務的體制",
+          dateLabel: "2024年 1月"
+        },
+        "2023-06": {
+          title: "開始線上諮詢服務",
+          description: "構建對全國客戶的支援體制",
+          dateLabel: "2023年 6月"
+        },
+        "2022-09": {
+          title: "增加員工",
+          description: "擴充專業領域，應對更廣泛的需求",
+          dateLabel: "2022年 9月"
+        },
+        "2021-12": {
+          title: "設立法人支援部門",
+          description: "正式開始企業服務",
+          dateLabel: "2021年 12月"
+        },
+        "2008-01": {
+          title: "Fortia行政書士事務所 設立",
+          description: "作為紮根地區的行政書士事務所開業",
+          dateLabel: "2008年 1月"
+        },
+        "2019-10": {
+          title: "行政書士登記",
+          description: "開始為獨立做準備",
+          dateLabel: "2019年 10月"
+        },
+        "2014-04": {
+          title: "進入大型法律事務所",
+          description: "積累行政書士的實務經驗",
+          dateLabel: "2014年 4月"
+        }
+      },
+      mobileNote: "※ 點擊查看詳情"
     }
   };
 
