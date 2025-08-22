@@ -242,26 +242,36 @@ const content = {
 };
 
 // カテゴリーマッピング（ニュース用）
-const categoryMap: { [key: string]: { ja: { name: string; color: string }, en: { name: string; color: string } } } = {
+const categoryMap: { [key: string]: { ja: { name: string; color: string }, en: { name: string; color: string }, 'zh-CN': { name: string; color: string }, 'zh-TW': { name: string; color: string } } } = {
   business_notice: { 
     ja: { name: '営業案内', color: 'bg-green-100 text-green-800' },
-    en: { name: 'Business Notice', color: 'bg-green-100 text-green-800' }
+    en: { name: 'Business Notice', color: 'bg-green-100 text-green-800' },
+    'zh-CN': { name: '营业通知', color: 'bg-green-100 text-green-800' },
+    'zh-TW': { name: '營業通知', color: 'bg-green-100 text-green-800' }
   },
   important: { 
     ja: { name: '重要なお知らせ', color: 'bg-red-100 text-red-800' },
-    en: { name: 'Important Notice', color: 'bg-red-100 text-red-800' }
+    en: { name: 'Important Notice', color: 'bg-red-100 text-red-800' },
+    'zh-CN': { name: '重要通知', color: 'bg-red-100 text-red-800' },
+    'zh-TW': { name: '重要通知', color: 'bg-red-100 text-red-800' }
   },
   event: { 
     ja: { name: 'イベント', color: 'bg-blue-100 text-blue-800' },
-    en: { name: 'Events', color: 'bg-blue-100 text-blue-800' }
+    en: { name: 'Events', color: 'bg-blue-100 text-blue-800' },
+    'zh-CN': { name: '活动', color: 'bg-blue-100 text-blue-800' },
+    'zh-TW': { name: '活動', color: 'bg-blue-100 text-blue-800' }
   },
   media: { 
     ja: { name: 'メディア', color: 'bg-pink-100 text-pink-800' },
-    en: { name: 'Media', color: 'bg-pink-100 text-pink-800' }
+    en: { name: 'Media', color: 'bg-pink-100 text-pink-800' },
+    'zh-CN': { name: '媒体', color: 'bg-pink-100 text-pink-800' },
+    'zh-TW': { name: '媒體', color: 'bg-pink-100 text-pink-800' }
   },
   case_study: { 
     ja: { name: '実績紹介', color: 'bg-indigo-100 text-indigo-800' },
-    en: { name: 'Case Studies', color: 'bg-indigo-100 text-indigo-800' }
+    en: { name: 'Case Studies', color: 'bg-indigo-100 text-indigo-800' },
+    'zh-CN': { name: '案例介绍', color: 'bg-indigo-100 text-indigo-800' },
+    'zh-TW': { name: '案例介紹', color: 'bg-indigo-100 text-indigo-800' }
   },
 };
 
