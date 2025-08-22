@@ -1498,8 +1498,102 @@ export const categoryPagesContent: CategoryPagesContent = {
       heroTitle: "【专家支持】外国人相关业务指南",
       metaTitle: "外国人相关业务 | Fortia行政书士事务所",
       metaDescription: "专业支持外国人的在留资格・签证申请",
-      services: [],
-      faq: [],
+      services: [
+        {
+          id: "business-manager",
+          title: "经营・管理签证",
+          target: "企业等的经营者或管理者取得的在留资格。"
+        },
+        {
+          id: "designated-activities",
+          title: "特定活动签证",
+          target: "外交官等的家事使用人、打工度假、护理福祉士候选者等，范围广泛。有些情况完全不能就劳，有些情况可在广泛选择中就劳。（「特定活动46号／本邦大学毕业者」可在各种分野就劳。取得条件：毕业于日本大学，取得日语能力考试N1）。"
+        },
+        {
+          id: "intra-company-transfer",
+          title: "企业内转勤签证",
+          target: "从在日本有总公司或分公司、支店的外国法人转勤者取得的在留资格。"
+        },
+        {
+          id: "student",
+          title: "留学签证",
+          target: "大学、专门学校、日语学校等学生（即留学生）取得。"
+        },
+        {
+          id: "dependent",
+          title: "家族滞在签证",
+          target: "在留外国人的配偶・子女适用。"
+        },
+        {
+          id: "long-term-resident",
+          title: "定住者签证",
+          target: "日系三世、中国残留邦人、第三国定住难民等适用。"
+        },
+        {
+          id: "specified-skilled-worker",
+          title: "特定技能签证",
+          target: "在特定分野中，指定考试合格者可取得的在留资格。分野有护理、大楼清洁、农业、渔业、饮食料品制造业、外食业、素形材产业、产业机械制造业、电气・电子信息相关产业、建设业、造船舶用工业、汽车整备业、航空业、住宿业的14职种。即使符合各分野，如不进行各自明确规定的指定业务也会不许可，请注意。特定技能制度是为解决劳动力不足的制度。"
+        },
+        {
+          id: "highly-skilled-professional",
+          title: "高度人才签证",
+          target: "基于积分制的高度人才。有事业经营者、研究者、技术者3个活动类型。作为高度专门职1号活动3年以上的外国人可取得高度专门职2号，能受到优惠措施。"
+        },
+        {
+          id: "permanent-resident",
+          title: "永住签证",
+          target: "获得永住许可的外国人可取得的在留资格。取得条件如下：・品行善良（遵守法律，过不被社会非难的生活）・生活上有充分资产或技能（含配偶的资产或技能）・被认定符合日本国利益。原则上需在日本在留10年以上。如有税金或保险费欠缴，不许可的可能性很高。"
+        },
+        {
+          id: "engineer-humanities",
+          title: "技术・人文知识・国际业务签证",
+          target: "需要工学、自然科学、法律学、经济学、社会学等人文科学分野技术或知识的业务（技术・人文知识），需要以外国文化为基盤的思考或感受性的业务（国际业务）的外国人的在留资格。机械工学等技术者、工程师、市场营销业务从事者、设计师、口译、民间企业语学教师等适用。适用范围广泛，但不符合「技术・人文知识」「国际业务」的业务，或从学历・经历・资格等判断没有相应能力的情况无法取得在留资格。"
+        },
+        {
+          id: "skilled-labor",
+          title: "技能签证",
+          target: "需要产业上特殊分野的熟练技能的外国人适用。料理调理师、体育指导者、航空机操纵者、贵金属等加工职人等为对象，请注意与「技术・人文知识・国际业务」的区别。"
+        },
+        {
+          id: "entertainer",
+          title: "兴行签证",
+          target: "演员、歌手、舞者、职业体育选手等，为兴行来日的外国人的在留资格。"
+        },
+        {
+          id: "artist",
+          title: "艺术签证",
+          target: "在音乐、美术、文学等艺术分野进行获得收入活动的在留资格。不包括符合「兴行」的情况。"
+        },
+        {
+          id: "spouse-of-japanese",
+          title: "日本人配偶者等",
+          target: "日本人的配偶、实子、特别养子适用。"
+        },
+        {
+          id: "spouse-of-permanent-resident",
+          title: "永住者配偶者等",
+          target: "永住者・特别永住者的配偶、在日本出生并继续在留的实子适用。"
+        },
+        {
+          id: "long-term-resident-final",
+          title: "定住者",
+          target: "日系三世、中国残留邦人、第三国定住难民等适用。"
+        }
+      ],
+      faq: [
+        {
+          question: "签证申请需要多长时间？",
+          answer: "根据申请内容不同，一般为1〜3个月左右。特定技能签证相对较快，永住许可申请倾向于需要较长时间。"
+        },
+        {
+          question: "需要什么必要文件？",
+          answer: "根据申请签证种类不同而异。详细情况请通过免费咨询了解。一般需要护照、在留卡、所得证明书、雇用契约书等。"
+        },
+        {
+          question: "申请不许可的话怎么办？",
+          answer: "分析不许可理由，支持准备再申请。本事务所拥有很高的许可率，请放心委托。"
+        }
+      ],
       breadcrumbs: { home: "首页", services: "服务" },
       tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" },
       faqTitle: "常见问题"
@@ -1520,8 +1614,102 @@ export const categoryPagesContent: CategoryPagesContent = {
       heroTitle: "【專家支援】外國人相關業務指南",
       metaTitle: "外國人相關業務 | Fortia行政書士事務所",
       metaDescription: "專業支援外國人的在留資格・簽證申請",
-      services: [],
-      faq: [],
+      services: [
+        {
+          id: "business-manager",
+          title: "經營・管理簽證",
+          target: "企業等的經營者或管理者取得的在留資格。"
+        },
+        {
+          id: "designated-activities",
+          title: "特定活動簽證",
+          target: "外交官等的家事使用人、打工度假、護理福祉士候選者等，範圍廣泛。有些情況完全不能就勞，有些情況可在廣泛選擇中就勞。（「特定活動46號／本邦大學畢業者」可在各種分野就勞。取得條件：畢業於日本大學，取得日語能力考試N1）。"
+        },
+        {
+          id: "intra-company-transfer",
+          title: "企業內轉勤簽證",
+          target: "從在日本有總公司或分公司、支店的外國法人轉勤者取得的在留資格。"
+        },
+        {
+          id: "student",
+          title: "留學簽證",
+          target: "大學、專門學校、日語學校等學生（即留學生）取得。"
+        },
+        {
+          id: "dependent",
+          title: "家族滯在簽證",
+          target: "在留外國人的配偶・子女適用。"
+        },
+        {
+          id: "long-term-resident",
+          title: "定住者簽證",
+          target: "日系三世、中國殘留邦人、第三國定住難民等適用。"
+        },
+        {
+          id: "specified-skilled-worker",
+          title: "特定技能簽證",
+          target: "在特定分野中，指定考試合格者可取得的在留資格。分野有護理、大樓清潔、農業、漁業、飲食料品製造業、外食業、素形材產業、產業機械製造業、電氣・電子資訊相關產業、建設業、造船舶用工業、汽車整備業、航空業、住宿業的14職種。即使符合各分野，如不進行各自明確規定的指定業務也會不許可，請注意。特定技能制度是為解決勞動力不足的制度。"
+        },
+        {
+          id: "highly-skilled-professional",
+          title: "高度人才簽證",
+          target: "基於積分制的高度人才。有事業經營者、研究者、技術者3個活動類型。作為高度專門職1號活動3年以上的外國人可取得高度專門職2號，能受到優惠措施。"
+        },
+        {
+          id: "permanent-resident",
+          title: "永住簽證",
+          target: "獲得永住許可的外國人可取得的在留資格。取得條件如下：・品行善良（遵守法律，過不被社會非難的生活）・生活上有充分資產或技能（含配偶的資產或技能）・被認定符合日本國利益。原則上需在日本在留10年以上。如有稅金或保險費欠繳，不許可的可能性很高。"
+        },
+        {
+          id: "engineer-humanities",
+          title: "技術・人文知識・國際業務簽證",
+          target: "需要工學、自然科學、法律學、經濟學、社會學等人文科學分野技術或知識的業務（技術・人文知識），需要以外國文化為基盤的思考或感受性的業務（國際業務）的外國人的在留資格。機械工學等技術者、工程師、市場行銷業務從事者、設計師、口譯、民間企業語學教師等適用。適用範圍廣泛，但不符合「技術・人文知識」「國際業務」的業務，或從學歷・經歷・資格等判斷沒有相應能力的情況無法取得在留資格。"
+        },
+        {
+          id: "skilled-labor",
+          title: "技能簽證",
+          target: "需要產業上特殊分野的熟練技能的外國人適用。料理調理師、體育指導者、航空機操縱者、貴金屬等加工職人等為對象，請注意與「技術・人文知識・國際業務」的區別。"
+        },
+        {
+          id: "entertainer",
+          title: "興行簽證",
+          target: "演員、歌手、舞者、職業體育選手等，為興行來日的外國人的在留資格。"
+        },
+        {
+          id: "artist",
+          title: "藝術簽證",
+          target: "在音樂、美術、文學等藝術分野進行獲得收入活動的在留資格。不包括符合「興行」的情況。"
+        },
+        {
+          id: "spouse-of-japanese",
+          title: "日本人配偶者等",
+          target: "日本人的配偶、實子、特別養子適用。"
+        },
+        {
+          id: "spouse-of-permanent-resident",
+          title: "永住者配偶者等",
+          target: "永住者・特別永住者的配偶、在日本出生並繼續在留的實子適用。"
+        },
+        {
+          id: "long-term-resident-final",
+          title: "定住者",
+          target: "日系三世、中國殘留邦人、第三國定住難民等適用。"
+        }
+      ],
+      faq: [
+        {
+          question: "簽證申請需要多長時間？",
+          answer: "根據申請內容不同，一般為1〜3個月左右。特定技能簽證相對較快，永住許可申請傾向於需要較長時間。"
+        },
+        {
+          question: "需要什麼必要文件？",
+          answer: "根據申請簽證種類不同而異。詳細情況請透過免費諮詢了解。一般需要護照、在留卡、所得證明書、雇用契約書等。"
+        },
+        {
+          question: "申請不許可的話怎麼辦？",
+          answer: "分析不許可理由，支援準備再申請。本事務所擁有很高的許可率，請放心委託。"
+        }
+      ],
       breadcrumbs: { home: "首頁", services: "服務" },
       tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" },
       faqTitle: "常見問題"
@@ -1538,12 +1726,106 @@ export const categoryPagesContent: CategoryPagesContent = {
   vi: {
     foreign: { 
       title: "Dịch vụ dành cho người nước ngoài", 
-      catchphrase: "", 
-      heroTitle: "", 
+      catchphrase: "Hỗ trợ chuyên nghiệp về tư cách lưu trú・đơn xin visa", 
+      heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ dành cho người nước ngoài", 
       metaTitle: "Dịch vụ người nước ngoài | Văn phòng Hành chính Fortia", 
       metaDescription: "Hỗ trợ chuyên nghiệp về tư cách lưu trú・đơn xin visa cho người nước ngoài", 
-      services: [], 
-      faq: [], 
+      services: [
+        {
+          id: "business-manager",
+          title: "Visa Kinh doanh・Quản lý",
+          target: "Tư cách lưu trú mà các nhà kinh doanh hoặc quản lý của doanh nghiệp v.v. có được."
+        },
+        {
+          id: "designated-activities",
+          title: "Visa Hoạt động đặc định",
+          target: "Người giúp việc nhà của ngoại giao viên v.v., kỳ nghỉ làm việc, ứng viên điều dưỡng phúc lợi v.v., có phạm vi rộng các đối tượng áp dụng. Có trường hợp hoàn toàn không thể làm việc, cũng có trường hợp có thể làm việc trong nhiều lựa chọn. (「Hoạt động đặc định số 46／Người tốt nghiệp đại học Nhật Bản」có thể làm việc trong nhiều lĩnh vực. Điều kiện lấy: tốt nghiệp đại học Nhật Bản, đậu kỳ thi năng lực tiếng Nhật N1)."
+        },
+        {
+          id: "intra-company-transfer",
+          title: "Visa Chuyển nhượng nội bộ doanh nghiệp",
+          target: "Tư cách lưu trú mà người chuyển từ pháp nhân nước ngoài có trụ sở chính, chi nhánh, văn phòng đại diện tại Nhật Bản có được."
+        },
+        {
+          id: "student",
+          title: "Visa Du học",
+          target: "Sinh viên của đại học, trường chuyên môn, trường tiếng Nhật v.v. (tức du học sinh) có được."
+        },
+        {
+          id: "dependent",
+          title: "Visa Gia đình lưu trú",
+          target: "Vợ/chồng・con cái của người nước ngoài đang lưu trú áp dụng."
+        },
+        {
+          id: "long-term-resident",
+          title: "Visa Định cư",
+          target: "Người Nhật gốc đời thứ 3, người Nhật còn lại ở Trung Quốc, người tị nạn định cư quốc gia thứ ba v.v. áp dụng."
+        },
+        {
+          id: "specified-skilled-worker",
+          title: "Visa Kỹ năng đặc định",
+          target: "Tư cách lưu trú mà người đậu kỳ thi được chỉ định trong lĩnh vực đặc định có thể có được. Lĩnh vực bao gồm chăm sóc, vệ sinh tòa nhà, nông nghiệp, thủy sản, sản xuất thực phẩm đồ uống, ngành ăn uống, ngành vật liệu thô, sản xuất máy móc công nghiệp, ngành điện・điện tử thông tin, xây dựng, đóng tàu, sửa chữa ô tô, hàng không, khách sạn - tổng cộng 14 nghề. Ngay cả khi phù hợp với các lĩnh vực, nếu không thực hiện công việc quy định rõ ràng của từng lĩnh vực thì sẽ bị từ chối, xin lưu ý. Chế độ kỹ năng đặc định là chế độ để giải quyết tình trạng thiếu hụt lao động."
+        },
+        {
+          id: "highly-skilled-professional",
+          title: "Visa Nhân tài cao cấp",
+          target: "Nhân tài cao cấp theo chế độ điểm số. Có 3 loại hoạt động: nhà kinh doanh, nhà nghiên cứu, kỹ thuật viên. Người nước ngoài hoạt động từ 3 năm trở lên với tư cách chuyên gia cao cấp số 1 có thể có được chuyên gia cao cấp số 2 và nhận được các biện pháp ưu đãi."
+        },
+        {
+          id: "permanent-resident",
+          title: "Visa Thường trú",
+          target: "Tư cách lưu trú mà người nước ngoài được cấp phép thường trú có thể có được. Điều kiện để có được như sau: ・Phẩm hạnh tốt (tuân thủ pháp luật, sống cuộc sống không bị xã hội lên án) ・Có tài sản hoặc kỹ năng đủ để sinh sống (bao gồm tài sản và kỹ năng của vợ/chồng) ・Được công nhận phù hợp với lợi ích của Nhật Bản. Về nguyên tắc cần lưu trú tại Nhật Bản từ 10 năm trở lên. Nếu có nợ thuế hoặc phí bảo hiểm, khả năng bị từ chối sẽ cao."
+        },
+        {
+          id: "engineer-humanities",
+          title: "Visa Kỹ thuật・Tri thức nhân văn・Nghiệp vụ quốc tế",
+          target: "Tư cách lưu trú cho người nước ngoài tham gia công việc đòi hỏi kỹ thuật và tri thức trong lĩnh vực kỹ thuật, khoa học tự nhiên, luật học, kinh tế học, xã hội học và các khoa học nhân văn khác (kỹ thuật・tri thức nhân văn), công việc đòi hỏi tư duy và cảm thụ dựa trên nền tảng văn hóa nước ngoài (nghiệp vụ quốc tế). Kỹ thuật viên kỹ thuật cơ khí v.v., kỹ sư, nhân viên tiếp thị, thiết kế viên, phiên dịch, giáo viên ngoại ngữ doanh nghiệp tư nhân v.v. áp dụng. Phạm vi áp dụng rộng, nhưng nếu công việc không thuộc「kỹ thuật・tri thức nhân văn」「nghiệp vụ quốc tế」hoặc được đánh giá là không có năng lực tương xứng từ học vấn・kinh nghiệm・bằng cấp v.v. thì không thể có được tư cách lưu trú."
+        },
+        {
+          id: "skilled-labor",
+          title: "Visa Kỹ năng",
+          target: "Người nước ngoài cần kỹ năng thành thạo thuộc lĩnh vực đặc biệt trong ngành công nghiệp áp dụng. Đầu bếp, huấn luyện viên thể thao, phi công, thợ gia công kim loại quý v.v. là đối tượng, xin lưu ý sự phân biệt với「kỹ thuật・tri thức nhân văn・nghiệp vụ quốc tế」."
+        },
+        {
+          id: "entertainer",
+          title: "Visa Biểu diễn",
+          target: "Tư cách lưu trú cho diễn viên, ca sĩ, vũ công, vận động viên thể thao chuyên nghiệp v.v., người nước ngoài đến Nhật để biểu diễn."
+        },
+        {
+          id: "artist",
+          title: "Visa Nghệ thuật",
+          target: "Tư cách lưu trú để thực hiện hoạt động kiếm thu nhập trong lĩnh vực nghệ thuật như âm nhạc, mỹ thuật, văn học v.v. Trừ trường hợp thuộc「biểu diễn」."
+        },
+        {
+          id: "spouse-of-japanese",
+          title: "Vợ/chồng của người Nhật v.v.",
+          target: "Vợ/chồng, con ruột, con nuôi đặc biệt của người Nhật áp dụng."
+        },
+        {
+          id: "spouse-of-permanent-resident",
+          title: "Vợ/chồng của người thường trú v.v.",
+          target: "Vợ/chồng của người thường trú・thường trú đặc biệt, con ruột sinh tại Nhật và tiếp tục lưu trú áp dụng."
+        },
+        {
+          id: "long-term-resident-final",
+          title: "Định cư",
+          target: "Người Nhật gốc đời thứ 3, người Nhật còn lại ở Trung Quốc, người tị nạn định cư quốc gia thứ ba v.v. áp dụng."
+        }
+      ],
+      faq: [
+        {
+          question: "Đơn xin visa mất bao lâu?",
+          answer: "Tùy theo nội dung đơn xin nhưng thông thường khoảng 1〜3 tháng. Visa kỹ năng đặc định tương đối nhanh, đơn xin phép thường trú có xu hướng mất thời gian."
+        },
+        {
+          question: "Cần những giấy tờ gì?",
+          answer: "Tùy theo loại visa đăng ký mà khác nhau. Chi tiết xin tư vấn qua tư vấn miễn phí. Thông thường cần hộ chiếu, thẻ lưu trú, giấy chứng nhận thu nhập, hợp đồng lao động v.v."
+        },
+        {
+          question: "Nếu đơn xin bị từ chối thì sao?",
+          answer: "Phân tích lý do từ chối, hỗ trợ chuẩn bị đơn xin lại. Văn phòng chúng tôi tự hào về tỷ lệ phê duyệt cao, xin yên tâm giao phó."
+        }
+      ], 
       breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, 
       tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, 
       faqTitle: "Câu hỏi thường gặp" 

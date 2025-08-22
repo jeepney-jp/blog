@@ -310,21 +310,420 @@ export const servicesContent: ServicesContentMultilang = {
     description: "提供满足客户需求的广泛服务",
     searchTitle: "按类别搜索",
     searchDescription: "按行业或目的查找服务",
-    categories: []
+    categories: [
+      {
+        id: "foreign",
+        title: "外国人相关业务",
+        description: "在留资格・签证申请支持",
+        slug: "foreign",
+        icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z",
+        colorClass: {
+          bg: "bg-blue-100",
+          text: "text-blue-600"
+        }
+      },
+      {
+        id: "construction",
+        title: "建设・不动产相关",
+        description: "建设业许可・不动产业许可",
+        slug: "construction",
+        icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+        colorClass: {
+          bg: "bg-green-100",
+          text: "text-green-600"
+        }
+      },
+      {
+        id: "automotive",
+        title: "汽车相关业务",
+        description: "车库证明・汽车登记",
+        slug: "automotive",
+        icon: "M13 10V3L4 14h7v7l9-11h-7z",
+        colorClass: {
+          bg: "bg-red-100",
+          text: "text-red-600"
+        }
+      },
+      {
+        id: "food-entertainment",
+        title: "餐饮・风俗营业",
+        description: "餐饮店营业许可・风俗营业许可",
+        slug: "food-entertainment",
+        icon: "M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7",
+        colorClass: {
+          bg: "bg-orange-100",
+          text: "text-orange-600"
+        }
+      },
+      {
+        id: "waste-management",
+        title: "废弃物处理业许可",
+        description: "产业废弃物收集运输业许可",
+        slug: "waste-management",
+        icon: "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16",
+        colorClass: {
+          bg: "bg-purple-100",
+          text: "text-purple-600"
+        }
+      },
+      {
+        id: "travel-hospitality",
+        title: "旅行・旅馆业",
+        description: "旅行业登记・旅馆业许可",
+        slug: "travel-hospitality",
+        icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+        colorClass: {
+          bg: "bg-teal-100",
+          text: "text-teal-600"
+        }
+      },
+      {
+        id: "corporate",
+        title: "法人设立业务",
+        description: "股份公司・有限责任公司设立",
+        slug: "corporate",
+        icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+        colorClass: {
+          bg: "bg-indigo-100",
+          text: "text-indigo-600"
+        }
+      },
+      {
+        id: "business-license",
+        title: "营业许可",
+        description: "各种营业许可申请",
+        slug: "business-license",
+        icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+        colorClass: {
+          bg: "bg-yellow-100",
+          text: "text-yellow-600"
+        }
+      },
+      {
+        id: "land",
+        title: "土地相关业务",
+        description: "农地转用・开发许可",
+        slug: "land",
+        icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+        colorClass: {
+          bg: "bg-emerald-100",
+          text: "text-emerald-600"
+        }
+      },
+      {
+        id: "legal-documentation",
+        title: "权利义务・事实证明",
+        description: "合同书制作・内容证明",
+        slug: "legal-documentation",
+        icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+        colorClass: {
+          bg: "bg-rose-100",
+          text: "text-rose-600"
+        }
+      },
+      {
+        id: "medical-care",
+        title: "医疗・护理相关业务",
+        description: "医疗法人设立・护理事业所指定",
+        slug: "medical-care",
+        icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+        colorClass: {
+          bg: "bg-pink-100",
+          text: "text-pink-600"
+        }
+      },
+      {
+        id: "other",
+        title: "其他业务",
+        description: "各种许可证・手续代办",
+        slug: "other",
+        icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4",
+        colorClass: {
+          bg: "bg-gray-100",
+          text: "text-gray-600"
+        }
+      }
+    ]
   },
   'zh-TW': {
     title: "服務總覽",
     description: "提供滿足客戶需求的廣泛服務",
     searchTitle: "按類別搜尋",
     searchDescription: "按行業或目的查找服務",
-    categories: []
+    categories: [
+      {
+        id: "foreign",
+        title: "外國人相關業務",
+        description: "在留資格・簽證申請支援",
+        slug: "foreign",
+        icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z",
+        colorClass: {
+          bg: "bg-blue-100",
+          text: "text-blue-600"
+        }
+      },
+      {
+        id: "construction",
+        title: "建設・不動產相關",
+        description: "建設業許可・不動產業許可",
+        slug: "construction",
+        icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+        colorClass: {
+          bg: "bg-green-100",
+          text: "text-green-600"
+        }
+      },
+      {
+        id: "automotive",
+        title: "汽車相關業務",
+        description: "車庫證明・汽車登記",
+        slug: "automotive",
+        icon: "M13 10V3L4 14h7v7l9-11h-7z",
+        colorClass: {
+          bg: "bg-red-100",
+          text: "text-red-600"
+        }
+      },
+      {
+        id: "food-entertainment",
+        title: "餐飲・風俗營業",
+        description: "餐飲店營業許可・風俗營業許可",
+        slug: "food-entertainment",
+        icon: "M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7",
+        colorClass: {
+          bg: "bg-orange-100",
+          text: "text-orange-600"
+        }
+      },
+      {
+        id: "waste-management",
+        title: "廢棄物處理業許可",
+        description: "產業廢棄物收集運輸業許可",
+        slug: "waste-management",
+        icon: "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16",
+        colorClass: {
+          bg: "bg-purple-100",
+          text: "text-purple-600"
+        }
+      },
+      {
+        id: "travel-hospitality",
+        title: "旅行・旅館業",
+        description: "旅行業登記・旅館業許可",
+        slug: "travel-hospitality",
+        icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+        colorClass: {
+          bg: "bg-teal-100",
+          text: "text-teal-600"
+        }
+      },
+      {
+        id: "corporate",
+        title: "法人設立業務",
+        description: "股份公司・有限責任公司設立",
+        slug: "corporate",
+        icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+        colorClass: {
+          bg: "bg-indigo-100",
+          text: "text-indigo-600"
+        }
+      },
+      {
+        id: "business-license",
+        title: "營業許可",
+        description: "各種營業許可申請",
+        slug: "business-license",
+        icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+        colorClass: {
+          bg: "bg-yellow-100",
+          text: "text-yellow-600"
+        }
+      },
+      {
+        id: "land",
+        title: "土地相關業務",
+        description: "農地轉用・開發許可",
+        slug: "land",
+        icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+        colorClass: {
+          bg: "bg-emerald-100",
+          text: "text-emerald-600"
+        }
+      },
+      {
+        id: "legal-documentation",
+        title: "權利義務・事實證明",
+        description: "合約書製作・內容證明",
+        slug: "legal-documentation",
+        icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+        colorClass: {
+          bg: "bg-rose-100",
+          text: "text-rose-600"
+        }
+      },
+      {
+        id: "medical-care",
+        title: "醫療・護理相關業務",
+        description: "醫療法人設立・護理事業所指定",
+        slug: "medical-care",
+        icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+        colorClass: {
+          bg: "bg-pink-100",
+          text: "text-pink-600"
+        }
+      },
+      {
+        id: "other",
+        title: "其他業務",
+        description: "各種許可證・手續代辦",
+        slug: "other",
+        icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4",
+        colorClass: {
+          bg: "bg-gray-100",
+          text: "text-gray-600"
+        }
+      }
+    ]
   },
   vi: {
     title: "Tổng quan dịch vụ",
     description: "Cung cấp dịch vụ đa dạng đáp ứng nhu cầu của khách hàng",
     searchTitle: "Tìm kiếm theo danh mục",
     searchDescription: "Tìm dịch vụ theo ngành nghề hoặc mục đích",
-    categories: []
+    categories: [
+      {
+        id: "foreign",
+        title: "Dịch vụ người nước ngoài",
+        description: "Hỗ trợ xin visa và tư cách lưu trú",
+        slug: "foreign",
+        icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z",
+        colorClass: {
+          bg: "bg-blue-100",
+          text: "text-blue-600"
+        }
+      },
+      {
+        id: "construction",
+        title: "Xây dựng & Bất động sản",
+        description: "Giấy phép xây dựng & Giấy phép bất động sản",
+        slug: "construction",
+        icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+        colorClass: {
+          bg: "bg-green-100",
+          text: "text-green-600"
+        }
+      },
+      {
+        id: "automotive",
+        title: "Dịch vụ ô tô",
+        description: "Giấy chứng nhận ga-ra & Đăng ký ô tô",
+        slug: "automotive",
+        icon: "M13 10V3L4 14h7v7l9-11h-7z",
+        colorClass: {
+          bg: "bg-red-100",
+          text: "text-red-600"
+        }
+      },
+      {
+        id: "food-entertainment",
+        title: "Ẩm thực & Giải trí",
+        description: "Giấy phép kinh doanh nhà hàng & giải trí",
+        slug: "food-entertainment",
+        icon: "M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7",
+        colorClass: {
+          bg: "bg-orange-100",
+          text: "text-orange-600"
+        }
+      },
+      {
+        id: "waste-management",
+        title: "Quản lý chất thải",
+        description: "Giấy phép thu gom chất thải công nghiệp",
+        slug: "waste-management",
+        icon: "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16",
+        colorClass: {
+          bg: "bg-purple-100",
+          text: "text-purple-600"
+        }
+      },
+      {
+        id: "travel-hospitality",
+        title: "Du lịch & Khách sạn",
+        description: "Đăng ký công ty du lịch & Giấy phép khách sạn",
+        slug: "travel-hospitality",
+        icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+        colorClass: {
+          bg: "bg-teal-100",
+          text: "text-teal-600"
+        }
+      },
+      {
+        id: "corporate",
+        title: "Thành lập công ty",
+        description: "Dịch vụ thành lập công ty cổ phần & công ty TNHH",
+        slug: "corporate",
+        icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+        colorClass: {
+          bg: "bg-indigo-100",
+          text: "text-indigo-600"
+        }
+      },
+      {
+        id: "business-license",
+        title: "Giấy phép kinh doanh",
+        description: "Xin cấp các loại giấy phép kinh doanh",
+        slug: "business-license",
+        icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+        colorClass: {
+          bg: "bg-yellow-100",
+          text: "text-yellow-600"
+        }
+      },
+      {
+        id: "land",
+        title: "Dịch vụ đất đai",
+        description: "Chuyển đổi đất nông nghiệp & Giấy phép phát triển",
+        slug: "land",
+        icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+        colorClass: {
+          bg: "bg-emerald-100",
+          text: "text-emerald-600"
+        }
+      },
+      {
+        id: "legal-documentation",
+        title: "Tài liệu pháp lý",
+        description: "Soạn thảo hợp đồng & Thư chứng nhận",
+        slug: "legal-documentation",
+        icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+        colorClass: {
+          bg: "bg-rose-100",
+          text: "text-rose-600"
+        }
+      },
+      {
+        id: "medical-care",
+        title: "Y tế & Chăm sóc",
+        description: "Thành lập pháp nhân y tế & Chỉ định cơ sở chăm sóc",
+        slug: "medical-care",
+        icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+        colorClass: {
+          bg: "bg-pink-100",
+          text: "text-pink-600"
+        }
+      },
+      {
+        id: "other",
+        title: "Dịch vụ khác",
+        description: "Các loại giấy phép khác & Thủ tục hành chính",
+        slug: "other",
+        icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4",
+        colorClass: {
+          bg: "bg-gray-100",
+          text: "text-gray-600"
+        }
+      }
+    ]
   }
 };
 
