@@ -200,5 +200,13 @@ export const staffContent: StaffContent = {
         order: 6
       }
     ]
+  },
+  'zh-CN': {
+    title: "员工介绍",
+    staff: []
+  },
+  'zh-TW': {
+    title: "員工介紹", 
+    staff: []
   }
 };
