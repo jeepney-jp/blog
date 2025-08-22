@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Fira_Code, Noto_Sans_SC, Noto_Sans_TC } from "next/font/google";
+import { Inter, Fira_Code, Noto_Sans_SC, Noto_Sans_TC, Noto_Sans } from "next/font/google";
 import "../globals.css";
 import { Locale } from '@/lib/i18n/types';
 import { locales } from '@/lib/i18n/constants';
@@ -24,6 +24,12 @@ const notoSansTC = Noto_Sans_TC({
   variable: "--font-noto-sans-tc",
   weight: ["400", "500", "700"],
   subsets: ["latin"],
+});
+
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
+  weight: ["400", "500", "700"],
+  subsets: ["latin", "vietnamese"],
 });
 
 type Props = {
@@ -55,13 +61,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
       title: "Fortia行政書士事務所",
       description: "茂原市的行政書士事務所。處理外國人簽證、建築業許可、法人設立等廣泛業務。",
     },
+    vi: {
+      title: "Văn phòng Hành chính Fortia",
+      description: "Văn phòng hành chính tại thành phố Mobara. Xử lý visa người nước ngoài, giấy phép kinh doanh xây dựng, thành lập pháp nhân và nhiều dịch vụ khác.",
+    },
   };
 
   return {
     title: metadata[lang].title,
     description: metadata[lang].description,
     openGraph: {
-      locale: lang === 'ja' ? 'ja_JP' : lang === 'en' ? 'en_US' : lang === 'zh-CN' ? 'zh_CN' : 'zh_TW',
+      locale: lang === 'ja' ? 'ja_JP' : lang === 'en' ? 'en_US' : lang === 'zh-CN' ? 'zh_CN' : lang === 'zh-TW' ? 'zh_TW' : 'vi_VN',
     },
   };
 }
@@ -74,6 +84,8 @@ export default async function RootLayout({ children, params }: Props) {
     ? `${notoSansSC.variable} ${firaCode.variable}`
     : lang === 'zh-TW'
     ? `${notoSansTC.variable} ${firaCode.variable}`
+    : lang === 'vi'
+    ? `${notoSans.variable} ${firaCode.variable}`
     : `${inter.variable} ${firaCode.variable}`;
   
   return (

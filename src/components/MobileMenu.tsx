@@ -56,6 +56,17 @@ export default function MobileMenu({ lang }: MobileMenuProps) {
       openMenu: "打開選單",
       closeMenu: "關閉選單",
     },
+    vi: {
+      menu: "Menu",
+      top: "Trang chủ",
+      features: "Đặc điểm văn phòng",
+      services: "Dịch vụ",
+      about: "Giới thiệu văn phòng",
+      news: "Tin tức",
+      contact: "Liên hệ",
+      openMenu: "Mở menu",
+      closeMenu: "Đóng menu",
+    },
   };
 
   const t = content[lang];

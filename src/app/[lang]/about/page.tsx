@@ -289,6 +289,74 @@ export default function About() {
         }
       },
       mobileNote: "※ 點擊查看詳情"
+    },
+    vi: {
+      pageTitle: "Tổng quan văn phòng",
+      pageDescription: "Về văn phòng Hành chính Fortia",
+      ceoGreeting: "Lời chào từ đại diện",
+      officeInfo: "Thông tin văn phòng",
+      representative: "Hành chính・Đại diện",
+      establishedDate: "Ngày thành lập",
+      address: "Địa chỉ",
+      contact: "Liên hệ",
+      businessHours: "Giờ làm việc",
+      qualifications: "Tư cách・Đăng ký",
+      teamMembers: "Giới thiệu nhân viên",
+      memberNote: "※Giới thiệu nhân viên bao gồm một phần dữ liệu mẫu",
+      weekdays: "Ngày thường: 9:00 - 18:00",
+      saturday: "Thứ 7: 9:00 - 17:00",
+      holiday: "Chủ nhật & Lễ: Nghỉ",
+      qualification: "Hành chính (Số đăng ký: 第08100026号)",
+      association: "Thuộc Hiệp hội Hành chính tỉnh Chiba",
+      businessContent: "Đơn xin visa, đơn xin giấy phép các loại, tạo hợp đồng, hỗ trợ cuộc sống nhân lực nước ngoài, v.v.",
+      certification: "Bộ Tư pháp công nhận　Cơ quan hỗ trợ đăng ký công nhận：１９登－０００９１７",
+      relatedCompanies: "Công ty liên quan",
+      employees: "Số nhân viên",
+      representativeName: "Tên đại diện",
+      ceoMessage1: "Đăng ký hành chính vào năm Heisei 15, đã hỗ trợ nhiều khách hàng trong việc đăng ký giấy phép, thủ tục thừa kế, thành lập công ty trong 20 năm qua.",
+      ceoMessage2: "Văn phòng chúng tôi đề xuất giải pháp tối ưu phù hợp với tình hình của từng khách hàng, luôn hướng tới phản hồi nhanh chóng và tỉ mỉ.",
+      ceoMessage3: "Nếu có khó khăn gì, xin vui lòng tư vấn thoải mái.",
+      accessInfo: "Thông tin tiếp cận",
+      officeHistory: "Lịch sử văn phòng",
+      historyDescription: "Giới thiệu lịch sử của chúng tôi, đã đồng hành cùng mọi người trong khu vực",
+      timeline: {
+        "2024-01": {
+          title: "Chuyển văn phòng・Mở rộng quy mô",
+          description: "Hướng tới thể chế có thể cung cấp dịch vụ cho nhiều khách hàng hơn",
+          dateLabel: "Tháng 1 năm 2024"
+        },
+        "2023-06": {
+          title: "Bắt đầu dịch vụ tư vấn trực tuyến",
+          description: "Xây dựng hệ thống hỗ trợ khách hàng toàn quốc",
+          dateLabel: "Tháng 6 năm 2023"
+        },
+        "2022-09": {
+          title: "Tăng cường nhân viên",
+          description: "Mở rộng lĩnh vực chuyên môn, đáp ứng nhu cầu rộng lớn hơn",
+          dateLabel: "Tháng 9 năm 2022"
+        },
+        "2021-12": {
+          title: "Thành lập bộ phận hỗ trợ pháp nhân",
+          description: "Bắt đầu chính thức dịch vụ dành cho doanh nghiệp",
+          dateLabel: "Tháng 12 năm 2021"
+        },
+        "2008-01": {
+          title: "Thành lập Văn phòng Hành chính Fortia",
+          description: "Khai nghiệp với tư cách văn phòng hành chính gắn bó với địa phương",
+          dateLabel: "Tháng 1 năm 2008"
+        },
+        "2019-10": {
+          title: "Đăng ký hành chính",
+          description: "Bắt đầu chuẩn bị cho việc độc lập",
+          dateLabel: "Tháng 10 năm 2019"
+        },
+        "2014-04": {
+          title: "Gia nhập văn phòng luật lớn",
+          description: "Tích lũy kinh nghiệm thực tế về hành chính",
+          dateLabel: "Tháng 4 năm 2014"
+        }
+      },
+      mobileNote: "※ Nhấn để xem chi tiết"
     }
   };
 

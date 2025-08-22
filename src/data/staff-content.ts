@@ -208,5 +208,9 @@ export const staffContent: StaffContent = {
   'zh-TW': {
     title: "員工介紹", 
     staff: []
+  },
+  vi: {
+    title: "Giới thiệu nhân viên",
+    staff: []
   }
 };

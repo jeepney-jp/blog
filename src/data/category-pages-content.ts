@@ -1534,6 +1534,28 @@ export const categoryPagesContent: CategoryPagesContent = {
     "legal-documentation": { title: "權利義務・事實證明", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
     "medical-care": { title: "醫療・護理相關業務", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
     other: { title: "其他業務", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" }
+  },
+  vi: {
+    foreign: { 
+      title: "Dịch vụ dành cho người nước ngoài", 
+      catchphrase: "", 
+      heroTitle: "", 
+      metaTitle: "Dịch vụ người nước ngoài | Văn phòng Hành chính Fortia", 
+      metaDescription: "Hỗ trợ chuyên nghiệp về tư cách lưu trú・đơn xin visa cho người nước ngoài", 
+      services: [], 
+      faq: [], 
+      breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, 
+      tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, 
+      faqTitle: "Câu hỏi thường gặp" 
+    },
+    construction: { title: "Dịch vụ xây dựng・bất động sản", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
+    automotive: { title: "Dịch vụ liên quan đến ô tô", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
+    corporate: { title: "Dịch vụ thành lập pháp nhân", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
+    "business-license": { title: "Giấy phép kinh doanh", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
+    land: { title: "Dịch vụ liên quan đến đất đai", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
+    "legal-documentation": { title: "Chứng minh quyền nghĩa vụ・sự thật", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
+    "medical-care": { title: "Dịch vụ y tế・chăm sóc", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
+    other: { title: "Dịch vụ khác", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" }
   }
 };
 

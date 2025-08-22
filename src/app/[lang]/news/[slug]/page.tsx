@@ -86,6 +86,19 @@ const content = {
       media_appearance: "媒體",
       case_study: "案例介紹"
     }
+  },
+  vi: {
+    home: "Trang chủ",
+    news: "Tin tức",
+    backToNews: "Quay lại danh sách tin tức",
+    categories: {
+      business_notice: "Thông báo kinh doanh",
+      new_services: "Dịch vụ mới",
+      legal_update: "Cải cách chế độ",
+      price_update: "Điều chỉnh giá",
+      media_appearance: "Truyền thông",
+      case_study: "Giới thiệu thành tích"
+    }
   }
 };
 

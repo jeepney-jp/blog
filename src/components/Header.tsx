@@ -49,6 +49,16 @@ export default function Header({ lang }: HeaderProps) {
       news: "新聞",
       contact: "聯繫我們",
     },
+    vi: {
+      companyName: "Fortia",
+      companyNameFull: "Văn phòng Hành chính",
+      companyNameShort: "Văn phòng",
+      features: "Đặc điểm",
+      services: "Dịch vụ",
+      about: "Tổng quan văn phòng",
+      news: "Tin tức",
+      contact: "Liên hệ",
+    },
   };
 
   const t = content[lang];

@@ -56,7 +56,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
       </button>
       
       {isOpen && (
-        <div className="absolute right-0 top-full w-40 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+        <div className="absolute right-0 top-full w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
           <div className="py-1">
             <button
               onMouseDown={() => handleLanguageChange('ja')}
@@ -89,6 +89,14 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
               }`}
             >
               繁體中文
+            </button>
+            <button
+              onMouseDown={() => handleLanguageChange('vi')}
+              className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
+                currentLang === 'vi' ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'
+              }`}
+            >
+              Tiếng Việt
             </button>
           </div>
         </div>

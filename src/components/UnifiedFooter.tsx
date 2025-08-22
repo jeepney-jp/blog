@@ -77,6 +77,23 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
       news: "新聞",
       contact: "聯繫我們",
       copyright: "© 2024 Fortia行政書士事務所。保留所有權利。"
+    },
+    vi: {
+      companyName: "Fortia",
+      companyNameFull: "Văn phòng Hành chính",
+      businessHours: "Giờ làm việc",
+      weekdays: "Ngày thường: 9:00 - 18:00",
+      saturday: "Thứ 7: 9:00 - 17:00",
+      holiday: "Chủ nhật & Lễ: Nghỉ",
+      serviceAreas: "Khu vực dịch vụ chính",
+      areasText: "Tokyo, Chiba, Saitama, Kanagawa",
+      otherAreas: "※Các khu vực khác có thể tư vấn",
+      services: "Dịch vụ",
+      about: "Khác",
+      aboutUs: "Giới thiệu văn phòng",
+      news: "Tin tức",
+      contact: "Liên hệ",
+      copyright: "© 2024 Văn phòng Hành chính Fortia. Tất cả các quyền được bảo lưu."
     }
   };
 

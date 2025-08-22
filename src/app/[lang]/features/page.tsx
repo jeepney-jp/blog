@@ -346,6 +346,63 @@ const content = {
     faqTitle: "常見問題",
     faqSubtitle: "介紹常見問題",
     faqEmpty: "目前正在準備常見問題。"
+  },
+  vi: {
+    pageTitle: "Đặc điểm văn phòng chúng tôi",
+    pageDescription: "Giới thiệu đặc điểm của Văn phòng Hành chính Fortia",
+    breadcrumbHome: "Trang chủ",
+    breadcrumbFeatures: "Đặc điểm",
+    heroTitle1: "Lo lắng về đơn xin,",
+    heroTitle2: "chúng tôi sẽ giải quyết tất cả.",
+    heroSubtitle: "Được giải phóng khỏi các thủ tục phức tạp, tập trung vào kinh doanh và cuộc sống",
+    keyPoint1: {
+      title: "Thành tích áp đảo",
+      subtitle: "Hơn 10,000 thành tích xử lý đơn"
+    },
+    keyPoint2: {
+      title: "Mức giá thấp nhất ngành",
+      subtitle: "Kế toán minh bạch với giá an tâm"
+    },
+    keyPoint3: {
+      title: "Hỗ trợ đa ngôn ngữ",
+      subtitle: "Hỗ trợ hoàn toàn bằng 9 thứ tiếng"
+    },
+    concernsTitle: "Bạn có đang lo lắng về những điều này không?",
+    concerns: [
+      {
+        title: "Lo lắng về đơn xin đầu tiên",
+        description: "Muốn giao cho văn phòng có thành tích phong phú nhưng không biết chọn nơi nào..."
+      },
+      {
+        title: "Đối ứng với trường hợp phức tạp",
+        description: "Trường hợp của tôi hơi phức tạp. Lo lắng liệu có thể lấy được giấy phép thật sự không đến mức không ngủ được..."
+      },
+      {
+        title: "Chi phí không rõ ràng",
+        description: "Không hiểu được hệ thống phí. Lo lắng có thể bị tính phí bổ sung..."
+      },
+      {
+        title: "Rào cản ngôn ngữ",
+        description: "Tiếng Nhật không tự tin. Liệu có thể tư vấn bằng tiếng mẹ đẻ không..."
+      }
+    ],
+    achievement: {
+      title: "Niềm tin với hơn 10,000 hồ sơ xử lý",
+      description: "Từ khi thành lập năm 2008, chúng tôi đã hỗ trợ hơn 10,000 đơn xin với tỷ lệ phê duyệt 99%, thể hiện thành tích và uy tín vững chắc.",
+      badge1: "Hơn 10,000 hồ sơ",
+      badge2: "Tỷ lệ phê duyệt 99%",
+      point1: { label: "Điểm 1", title: "Đối ứng nhanh chóng và hoàn thành trực tuyến tiện lợi", feature1: "Phản hồi trong ngày", feature1Sub: "Xử lý an toàn các vụ việc khẩn cấp", feature2: "Hoàn thành trực tuyến", feature2Sub: "Không cần đến văn phòng", description: "Phản hồi nhanh đối với đơn xin khẩn cấp" },
+      point2: { label: "Điểm 2", title: "Mức giá thấp nhất ngành", feature1: "Rẻ hơn 30%", feature1Sub: "So với giá thị trường", feature2: "Minh bạch về phí", feature2Sub: "Không có phí ẩn", description: "Thông qua hoạt động hiệu quả, chúng tôi đạt được mức giá thấp nhất ngành" },
+      point3: { label: "Điểm 3", title: "Hỗ trợ an tâm với nhiều ngôn ngữ", feature1: "Hỗ trợ 9 thứ tiếng", feature1Sub: "Bởi nhân viên tiếng mẹ đẻ", feature2: "Hỗ trợ văn hóa", feature2Sub: "Hiểu biết về văn hóa", description: "Nhân viên hỗ trợ đa ngôn ngữ sẽ hỗ trợ bằng tiếng mẹ đẻ" },
+      point4: { label: "Điểm 4", title: "Đối ứng nhanh chóng và hoàn thành trực tuyến tiện lợi", feature1: "Phản hồi trong ngày", feature1Sub: "Xử lý an toàn các vụ việc khẩn cấp", feature2: "Hoàn thành trực tuyến", feature2Sub: "Không cần đến văn phòng", description: "Phản hồi nhanh đối với đơn xin khẩn cấp" }
+    },
+    trustTitle: "Lý do được tin tưởng",
+    trustSubtitle: "Có thành tích phong phú về cả số lượng doanh nghiệp khách hàng và thị phần ngành",
+    trustCompanies: "Hơn 0000 doanh nghiệp khách hàng trong tất cả các ngành",
+    trustLogo: "Logo doanh nghiệp khách hàng",
+    faqTitle: "Câu hỏi thường gặp",
+    faqSubtitle: "Giới thiệu các câu hỏi thường gặp",
+    faqEmpty: "Hiện đang chuẩn bị câu hỏi thường gặp."
   }
 };
 

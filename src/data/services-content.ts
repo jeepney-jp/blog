@@ -318,6 +318,13 @@ export const servicesContent: ServicesContentMultilang = {
     searchTitle: "按類別搜尋",
     searchDescription: "按行業或目的查找服務",
     categories: []
+  },
+  vi: {
+    title: "Tổng quan dịch vụ",
+    description: "Cung cấp dịch vụ đa dạng đáp ứng nhu cầu của khách hàng",
+    searchTitle: "Tìm kiếm theo danh mục",
+    searchDescription: "Tìm dịch vụ theo ngành nghề hoặc mục đích",
+    categories: []
   }
 };
 

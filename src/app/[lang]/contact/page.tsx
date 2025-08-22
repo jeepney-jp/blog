@@ -209,6 +209,67 @@ const content = {
     successMessage: "已接收您的諮詢。",
     errorMessage: "發送失敗。",
     networkError: "發生網路錯誤。"
+  },
+  vi: {
+    pageTitle: "Liên hệ",
+    pageDescription: "Xin vui lòng tư vấn thoải mái",
+    contactForm: "Biểu mẫu liên hệ",
+    contactInfo: "Thông tin liên hệ",
+    name: "Họ tên",
+    email: "Địa chỉ email",
+    phone: "Số điện thoại",
+    service: "Nội dung tư vấn",
+    message: "Tin nhắn",
+    privacy: "Tôi đồng ý với chính sách bảo mật",
+    submit: "Gửi",
+    submitting: "Đang gửi...",
+    required: "*",
+    selectOption: "Vui lòng chọn",
+    messagePlaceholder: "Xin vui lòng cho biết chi tiết nội dung tư vấn",
+    phoneContact: "Liên hệ qua điện thoại",
+    faxContact: "Liên hệ qua FAX",
+    emailContact: "Liên hệ qua email",
+    officeAddress: "Địa chỉ văn phòng",
+    businessHours: {
+      weekdays: "Ngày thường: 9:00 - 18:00",
+      saturday: "Thứ 7: 9:00 - 17:00",
+      holiday: "Chủ nhật & Lễ: Nghỉ"
+    },
+    available24h: "Tiếp nhận 24 giờ",
+    available24hWithReply: "Tiếp nhận 24 giờ (Phản hồi trong giờ làm việc)",
+    parkingNote: "※Không có chỗ đậu xe. Xin vui lòng sử dụng phương tiện giao thông công cộng.",
+    accessTitle: "Thông tin tiếp cận",
+    nearestStations: "Ga gần nhất",
+    byTrain: {
+      tokyo: "Các tuyến JR đi bộ 5 phút",
+      otemachi: "Các tuyến Tokyo Metro đi bộ 3 phút",
+      nijubashimae: "Tokyo Metro Chiyoda Line đi bộ 2 phút"
+    },
+    byCar: "Trường hợp đến bằng ô tô",
+    carDirection: "Từ Đường vành đai trung tâm Thủ đô \"Kandabashi IC\" khoảng 5 phút",
+    carParkingNote: "※Không có chỗ đậu xe. Xin vui lòng sử dụng bãi đậu xe có trả tiền gần đó.",
+    emergencyContact: "Liên hệ khẩn cấp",
+    businessDays: "Ngày làm việc",
+    saturdays: "Thứ bảy",
+    sundays: "Chủ nhật và ngày lễ",
+    closed: "Nghỉ",
+    serviceOptions: {
+      "": "Vui lòng chọn",
+      permit: "Đơn xin giấy phép",
+      inheritance: "Thủ tục thừa kế",
+      company: "Thành lập công ty",
+      contract: "Tạo hợp đồng",
+      other: "Khác"
+    },
+    services: {
+      visa: "Visa・Tư cách lưu trú",
+      construction: "Giấy phép xây dựng",
+      corporate: "Thành lập pháp nhân",
+      other: "Khác"
+    },
+    successMessage: "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi trong vòng 2-3 ngày làm việc.",
+    errorMessage: "Gửi thất bại.",
+    networkError: "Xảy ra lỗi mạng."
   }
 };
 

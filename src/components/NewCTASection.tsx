@@ -63,6 +63,20 @@ const content = {
     phoneLabel: '電話諮詢',
     hours: '工作日 9:00〜18:00',
   },
+  vi: {
+    titleWithService: (serviceName: string) => `Tư vấn miễn phí về ${serviceName}`,
+    titleDefault: 'Tư vấn miễn phí lần đầu, xin vui lòng liên hệ',
+    subtitle: 'Với kinh nghiệm phong phú và thành tích tích lũy từ khi thành lập, chúng tôi hỗ trợ đơn của khách hàng một cách chắc chắn',
+    point1Title: 'Thành tích xử lý 10,000+',
+    point1Desc: 'Tỷ lệ phê duyệt 99%',
+    point2Title: 'Hỗ trợ đa ngôn ngữ',
+    point2Desc: 'Hỗ trợ 9 thứ tiếng',
+    point3Title: 'Phục vụ toàn quốc',
+    point3Desc: 'Phản hồi nhanh từ 4 chi nhánh',
+    ctaButton: 'Đặt lịch tư vấn miễn phí',
+    phoneLabel: 'Tư vấn qua điện thoại',
+    hours: 'Ngày làm việc 9:00〜18:00',
+  },
 };
 
 export default function NewCTASection({ serviceName, lang }: NewCTASectionProps) {
