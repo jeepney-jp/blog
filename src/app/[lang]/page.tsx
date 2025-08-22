@@ -145,6 +145,100 @@ const content = {
       noNews: "No news available at the moment.",
     },
   },
+  'zh-CN': {
+    hero: {
+      title1: "连接人与社会的",
+      title2: "法律服务",
+      freeConsultation: "免费咨询请点击这里",
+      viewServices: "查看服务内容",
+    },
+    features: {
+      title: "本事务所特色",
+      subtitle: "OUR STRENGTHS",
+      achievement: {
+        title: "超过10,000件申请实绩的信赖",
+        description: "自2008年创业以来，支持了10,000件以上的申请，拥有99%批准率的确实实绩和信赖。",
+        applications: "申请实绩",
+        approvalRate: "批准率",
+      },
+      pricing: {
+        title: "业界最低水准的费用设定",
+        description: "以低价格提供高品质服务，通过消除浪费的高效业务，实现业界最低水准的费用。",
+        savings: "比平均行情最多便宜30%",
+        comparison: "与其他公司的报价比较中体验",
+      },
+      multilingual: {
+        title: "多语言对应的安心支持",
+        description: "多语言对应工作人员用母语提供支持。对日语不安的人也可以安心咨询。",
+      },
+    },
+    services: {
+      title: "服务",
+      subtitle: "OUR SERVICES",
+      searchByName: "按服务名称查找",
+      searchByCategory: "按类别查找",
+      viewAll: "查看全部",
+    },
+    about: {
+      title: "事务所介绍",
+      subtitle: "ABOUT US",
+      description: "在贴近客户人生的同时，提供符合每个人需求的定制服务。从在留资格到许可认证，在广泛的领域为大家提供支持。",
+      learnMore: "详细了解",
+    },
+    news: {
+      title: "最新通知",
+      subtitle: "NEWS & UPDATES",
+      viewAll: "查看所有通知",
+      noNews: "目前没有通知。",
+    },
+  },
+  'zh-TW': {
+    hero: {
+      title1: "連接人與社會的",
+      title2: "法律服務",
+      freeConsultation: "免費諮詢請點擊這裡",
+      viewServices: "查看服務內容",
+    },
+    features: {
+      title: "本事務所特色",
+      subtitle: "OUR STRENGTHS",
+      achievement: {
+        title: "超過10,000件申請實績的信賴",
+        description: "自2008年創業以來，支援了10,000件以上的申請，擁有99%批准率的確實實績和信賴。",
+        applications: "申請實績",
+        approvalRate: "批准率",
+      },
+      pricing: {
+        title: "業界最低水準的費用設定",
+        description: "以低價格提供高品質服務，透過消除浪費的高效業務，實現業界最低水準的費用。",
+        savings: "比平均行情最多便宜30%",
+        comparison: "與其他公司的報價比較中體驗",
+      },
+      multilingual: {
+        title: "多語言對應的安心支援",
+        description: "多語言對應工作人員用母語提供支援。對日語不安的人也可以安心諮詢。",
+      },
+    },
+    services: {
+      title: "服務",
+      subtitle: "OUR SERVICES",
+      searchByName: "按服務名稱查找",
+      searchByCategory: "按類別查找",
+      viewAll: "查看全部",
+    },
+    about: {
+      title: "事務所介紹",
+      subtitle: "ABOUT US",
+      description: "在貼近客戶人生的同時，提供符合每個人需求的訂製服務。從在留資格到許可認證，在廣泛的領域為大家提供支援。",
+      learnMore: "詳細了解",
+    },
+    news: {
+      title: "最新通知",
+      subtitle: "NEWS & UPDATES",
+      viewAll: "查看所有通知",
+      noNews: "目前沒有通知。",
+    },
+  },
 };
 
 // カテゴリーマッピング（ニュース用）
@@ -174,7 +268,9 @@ const categoryMap: { [key: string]: { ja: { name: string; color: string }, en: {
 // 多言語対応配列
 const languages = {
   ja: ["英語", "中国語", "ベトナム語", "タガログ語", "ネパール語", "シンハラ語", "韓国語", "イタリア語", "スペイン語"],
-  en: ["English", "Chinese", "Vietnamese", "Tagalog", "Nepali", "Sinhala", "Korean", "Italian", "Spanish"]
+  en: ["English", "Chinese", "Vietnamese", "Tagalog", "Nepali", "Sinhala", "Korean", "Italian", "Spanish"],
+  'zh-CN': ["英语", "中文", "越南语", "他加禄语", "尼泊尔语", "僧伽罗语", "韩语", "意大利语", "西班牙语"],
+  'zh-TW': ["英語", "中文", "越南語", "他加祿語", "尼泊爾語", "僧伽羅語", "韓語", "義大利語", "西班牙語"]
 };
 
 
