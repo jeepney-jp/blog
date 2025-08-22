@@ -1,0 +1,29 @@
+// 簡体字版
+'zh-CN': {
+    pageTitle: '当事務所の特色'
+    pageDescription: 'フォルティア行政書士事務所の強みと独自の服务をご紹介します'
+    breadcrumbHome: '首页'
+    breadcrumbFeatures: '特色'
+    heroTitle1: '申請の不安、'
+    heroTitle2: 'すべて私たちが解決します。'
+    heroSubtitle: '煩雑な手続きから解放され、ビジネスや生活に集中できる環境を'
+    keyPoint1: {
+      title: '圧倒的実績'
+      subtitle: '10,000件超の申請実績'
+    
+},
+
+// 繁体字版
+'zh-TW': {
+    pageTitle: '當事務所の特色'
+    pageDescription: 'フォルティア行政書士事務所の強みと獨自の服務をご紹介します'
+    breadcrumbHome: '首頁'
+    breadcrumbFeatures: '特色'
+    heroTitle1: '申請の不安、'
+    heroTitle2: 'すべて私たちが解決します。'
+    heroSubtitle: '煩雑な手続きから解放され、ビジネスや生活に集中できる環境を'
+    keyPoint1: {
+      title: '圧倒的実績'
+      subtitle: '10,000件超の申請実績'
+    
+}

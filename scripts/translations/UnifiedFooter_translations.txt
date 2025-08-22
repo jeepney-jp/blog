@@ -1,0 +1,39 @@
+// 簡体字版
+'zh-CN': {
+      companyName: 'フォルティア'
+      companyNameFull: '行政書士事務所'
+      businessHours: '营业时间'
+      weekdays: '工作日: 9:00 - 18:00'
+      saturday: '土曜: 9:00 - 17:00'
+      holiday: '日祝: 休業'
+      serviceAreas: '主要業務エリア'
+      areasText: '東京都、千葉県、埼玉県、神奈川県'
+      otherAreas: '※その他地域もご相談ください'
+      services: '服务'
+      about: 'その他'
+      aboutUs: '事務所案内'
+      news: 'お知らせ'
+      contact: '联系我们'
+      copyright: '© 2024 フォルティア行政書士事務所. All rights reserved.'
+    
+},
+
+// 繁体字版
+'zh-TW': {
+      companyName: 'フォルティア'
+      companyNameFull: '行政書士事務所'
+      businessHours: '營業時間'
+      weekdays: '工作日: 9:00 - 18:00'
+      saturday: '土曜: 9:00 - 17:00'
+      holiday: '日祝: 休業'
+      serviceAreas: '主要業務エリア'
+      areasText: '東京都、千葉県、埼玉県、神奈川県'
+      otherAreas: '※その他地域もご相談ください'
+      services: '服務'
+      about: 'その他'
+      aboutUs: '事務所案內'
+      news: 'お知らせ'
+      contact: '聯繫我們'
+      copyright: '© 2024 フォルティア行政書士事務所. All rights reserved.'
+    
+}
