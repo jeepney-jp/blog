@@ -60,6 +60,45 @@ const content = {
       media_appearance: "Media",
       case_study: "Case Studies"
     }
+  },
+  'zh-CN': {
+    home: "首页",
+    news: "新闻",
+    backToNews: "返回新闻列表",
+    categories: {
+      business_notice: "营业通知",
+      new_services: "新服务",
+      legal_update: "制度改革",
+      price_update: "价格调整",
+      media_appearance: "媒体",
+      case_study: "案例介绍"
+    }
+  },
+  'zh-TW': {
+    home: "首頁",
+    news: "新聞",
+    backToNews: "返回新聞列表",
+    categories: {
+      business_notice: "營業通知",
+      new_services: "新服務",
+      legal_update: "制度改革",
+      price_update: "價格調整",
+      media_appearance: "媒體",
+      case_study: "案例介紹"
+    }
+  },
+  vi: {
+    home: "Trang chủ",
+    news: "Tin tức",
+    backToNews: "Quay lại danh sách tin tức",
+    categories: {
+      business_notice: "Thông báo kinh doanh",
+      new_services: "Dịch vụ mới",
+      legal_update: "Cải cách chế độ",
+      price_update: "Điều chỉnh giá",
+      media_appearance: "Truyền thông",
+      case_study: "Giới thiệu thành tích"
+    }
   }
 };
 

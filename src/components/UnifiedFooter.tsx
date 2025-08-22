@@ -43,6 +43,57 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
       news: "News",
       contact: "Contact",
       copyright: "© 2024 Fortia Administrative Scrivener Office. All rights reserved."
+    },
+    'zh-CN': {
+      companyName: "Fortia",
+      companyNameFull: "行政书士事务所",
+      businessHours: "营业时间",
+      weekdays: "工作日: 9:00 - 18:00",
+      saturday: "周六: 9:00 - 17:00",
+      holiday: "周日及节假日: 休业",
+      serviceAreas: "主要业务区域",
+      areasText: "东京都、千叶县、埼玉县、神奈川县",
+      otherAreas: "※其他地区也可咨询",
+      services: "服务",
+      about: "其他",
+      aboutUs: "事务所介绍",
+      news: "新闻",
+      contact: "联系我们",
+      copyright: "© 2024 Fortia行政书士事务所。保留所有权利。"
+    },
+    'zh-TW': {
+      companyName: "Fortia",
+      companyNameFull: "行政書士事務所",
+      businessHours: "營業時間",
+      weekdays: "工作日: 9:00 - 18:00",
+      saturday: "週六: 9:00 - 17:00",
+      holiday: "週日及節假日: 休業",
+      serviceAreas: "主要業務區域",
+      areasText: "東京都、千葉縣、埼玉縣、神奈川縣",
+      otherAreas: "※其他地區也可諮詢",
+      services: "服務",
+      about: "其他",
+      aboutUs: "事務所介紹",
+      news: "新聞",
+      contact: "聯繫我們",
+      copyright: "© 2024 Fortia行政書士事務所。保留所有權利。"
+    },
+    vi: {
+      companyName: "Fortia",
+      companyNameFull: "Văn phòng Hành chính",
+      businessHours: "Giờ làm việc",
+      weekdays: "Ngày thường: 9:00 - 18:00",
+      saturday: "Thứ 7: 9:00 - 17:00",
+      holiday: "Chủ nhật & Lễ: Nghỉ",
+      serviceAreas: "Khu vực dịch vụ chính",
+      areasText: "Tokyo, Chiba, Saitama, Kanagawa",
+      otherAreas: "※Các khu vực khác có thể tư vấn",
+      services: "Dịch vụ",
+      about: "Khác",
+      aboutUs: "Giới thiệu văn phòng",
+      news: "Tin tức",
+      contact: "Liên hệ",
+      copyright: "© 2024 Văn phòng Hành chính Fortia. Tất cả các quyền được bảo lưu."
     }
   };
 

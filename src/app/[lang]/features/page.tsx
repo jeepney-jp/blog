@@ -248,6 +248,229 @@ const content = {
     faqTitle: "Frequently Asked Questions",
     faqSubtitle: "Introducing commonly asked questions",
     faqEmpty: "We are currently preparing frequently asked questions."
+  },
+  'zh-CN': {
+    pageTitle: "本事务所特色",
+    pageDescription: "介绍Fortia行政书士事务所的优势和独特服务",
+    breadcrumbHome: "首页",
+    breadcrumbFeatures: "特色",
+    heroTitle1: "申请的不安，",
+    heroTitle2: "全部由我们解决。",
+    heroSubtitle: "从繁琐的手续中解放出来，专注于业务和生活",
+    keyPoint1: { title: "压倒性实绩", subtitle: "超过10,000件申请实绩" },
+    keyPoint2: { title: "业界最低价格", subtitle: "比一般行情便宜30%" },
+    keyPoint3: { title: "可靠的多语言支持", subtitle: "9种语言完全消除语言障碍" },
+    keyPoint4: { title: "快速响应", subtitle: "在线完成，无需到访事务所" },
+    concernsTitle: "您是否有这些烦恼？",
+    concerns: [
+      { title: "初次申请感到不安", description: "想委托给实绩丰富的事务所，但不知道该选择哪家..." },
+      { title: "复杂案例的应对", description: "我的案例有点复杂。真的能获得许可吗，担心得夜不能寐..." },
+      { title: "费用与品质的平衡", description: "想尽可能控制费用，但便宜没好货也很困扰..." },
+      { title: "费用体系不透明", description: "不知道最终会收费多少，无法制定预算..." }
+    ],
+    solutionTitle: "解决这些烦恼的关键在于本事务所的",
+    solutionHighlight: "「4大优势」",
+    solutionTitle2: "",
+    solutionDescription: "下面将详细说明各项优势如何解决客户的课题。",
+    strengthsGrid: [
+      { title: "超过10,000件申请实绩的信赖", description: "凭借丰富经验和专业知识，应对复杂案例" },
+      { title: "业界最低价格结构", description: "通过高效运营实现低价格，同时提供高品质服务" },
+      { title: "可靠的多语言支持", description: "9种语言支持完全消除语言障碍" },
+      { title: "快速响应和在线完成", description: "对紧急案件快速响应，无需到访事务所" }
+    ],
+    strengths: [
+      { title: "超过10,000件申请实绩的信赖", description: "自2008年设立以来支持了10,000件以上的申请，拥有99%的批准率实绩和信赖" },
+      { title: "业界最低价格结构", description: "通过消除浪费的高效运营实现了业界最低价格，同时提供高品质服务" },
+      { title: "可靠的多语言支持", description: "9种语言支持完全消除语言障碍" },
+      { title: "快速响应和在线完成", description: "对紧急案件快速响应，无需到访事务所" }
+    ],
+    detailedStrengths: {
+      point1: { label: "要点1", title: "超过10,000件申请实绩的信赖", statsTitle1: "申请实绩", statsTitle2: "批准率", description: "自2008年设立以来，支持了10,000件以上的申请，拥有99%批准率的实绩和信赖。" },
+      point2: { label: "要点2", title: "业界最低价格结构", savingsText: "与一般市场价格相比", savingsAmount: "便宜30%", guarantee1: "🔒 透明价格", guarantee2: "👍 无追加费用", description: "以低价格提供高品质服务" },
+      point3: { label: "要点3", title: "可靠的多语言支持", languagesTitle: "支持语言（9种语言）", languages: ["英语", "中文", "越南语", "他加禄语", "韩语", "葡萄牙语"], description: "多语言工作人员用您的母语提供支持" },
+      point4: { label: "要点4", title: "快速响应和在线完成便利性", feature1: "当日响应", feature1Sub: "紧急案件安全处理", feature2: "在线完成", feature2Sub: "无需到访事务所", description: "对紧急申请快速响应" }
+    },
+    trustTitle: "信赖的理由",
+    trustSubtitle: "在客户企业数量和行业份额方面都拥有丰富实绩",
+    trustCompanies: "全行业超过0000家客户企业",
+    trustLogo: "客户企业标志",
+    faqTitle: "常见问题",
+    faqSubtitle: "介绍常见问题",
+    faqEmpty: "目前正在准备常见问题。"
+  },
+  'zh-TW': {
+    pageTitle: "本事務所特色",
+    pageDescription: "介紹Fortia行政書士事務所的優勢和獨特服務",
+    breadcrumbHome: "首頁",
+    breadcrumbFeatures: "特色",
+    heroTitle1: "申請的不安，",
+    heroTitle2: "全部由我們解決。",
+    heroSubtitle: "從繁瑣的手續中解放出來，專注於業務和生活",
+    keyPoint1: { title: "壓倒性實績", subtitle: "超過10,000件申請實績" },
+    keyPoint2: { title: "業界最低價格", subtitle: "比一般行情便宜30%" },
+    keyPoint3: { title: "可靠的多語言支援", subtitle: "9種語言完全消除語言障礙" },
+    keyPoint4: { title: "快速響應", subtitle: "線上完成，無需到訪事務所" },
+    concernsTitle: "您是否有這些煩惱？",
+    concerns: [
+      { title: "初次申請感到不安", description: "想委託給實績豐富的事務所，但不知道該選擇哪家..." },
+      { title: "複雜案例的應對", description: "我的案例有點複雜。真的能獲得許可嗎，擔心得夜不能寐..." },
+      { title: "費用與品質的平衡", description: "想儘可能控制費用，但便宜沒好貨也很困擾..." },
+      { title: "費用體系不透明", description: "不知道最終會收費多少，無法制定預算..." }
+    ],
+    solutionTitle: "解決這些煩惱的關鍵在於本事務所的",
+    solutionHighlight: "「4大優勢」",
+    solutionTitle2: "",
+    solutionDescription: "下面將詳細說明各項優勢如何解決客戶的課題。",
+    strengthsGrid: [
+      { title: "超過10,000件申請實績的信賴", description: "憑藉豐富經驗和專業知識，應對複雜案例" },
+      { title: "業界最低價格結構", description: "透過高效運營實現低價格，同時提供高品質服務" },
+      { title: "可靠的多語言支援", description: "9種語言支援完全消除語言障礙" },
+      { title: "快速響應和線上完成", description: "對緊急案件快速響應，無需到訪事務所" }
+    ],
+    strengths: [
+      { title: "超過10,000件申請實績的信賴", description: "自2008年設立以來支援了10,000件以上的申請，擁有99%的批准率實績和信賴" },
+      { title: "業界最低價格結構", description: "透過消除浪費的高效運營實現了業界最低價格，同時提供高品質服務" },
+      { title: "可靠的多語言支援", description: "9種語言支援完全消除語言障礙" },
+      { title: "快速響應和線上完成", description: "對緊急案件快速響應，無需到訪事務所" }
+    ],
+    detailedStrengths: {
+      point1: { label: "要點1", title: "超過10,000件申請實績的信賴", statsTitle1: "申請實績", statsTitle2: "批准率", description: "自2008年設立以來，支援了10,000件以上的申請，擁有99%批准率的實績和信賴。" },
+      point2: { label: "要點2", title: "業界最低價格結構", savingsText: "與一般市場價格相比", savingsAmount: "便宜30%", guarantee1: "🔒 透明價格", guarantee2: "👍 無追加費用", description: "以低價格提供高品質服務" },
+      point3: { label: "要點3", title: "可靠的多語言支援", languagesTitle: "支援語言（9種語言）", languages: ["英語", "中文", "越南語", "他加祿語", "韓語", "葡萄牙語"], description: "多語言工作人員用您的母語提供支援" },
+      point4: { label: "要點4", title: "快速響應和線上完成便利性", feature1: "當日響應", feature1Sub: "緊急案件安全處理", feature2: "線上完成", feature2Sub: "無需到訪事務所", description: "對緊急申請快速響應" }
+    },
+    trustTitle: "信賴的理由",
+    trustSubtitle: "在客戶企業數量和行業份額方面都擁有豐富實績",
+    trustCompanies: "全行業超過0000家客戶企業",
+    trustLogo: "客戶企業標誌",
+    faqTitle: "常見問題",
+    faqSubtitle: "介紹常見問題",
+    faqEmpty: "目前正在準備常見問題。"
+  },
+  vi: {
+    pageTitle: "Đặc điểm văn phòng chúng tôi",
+    pageDescription: "Giới thiệu đặc điểm của Văn phòng Hành chính Fortia",
+    breadcrumbHome: "Trang chủ",
+    breadcrumbFeatures: "Đặc điểm",
+    heroTitle1: "Lo lắng về đơn xin,",
+    heroTitle2: "chúng tôi sẽ giải quyết tất cả.",
+    heroSubtitle: "Được giải phóng khỏi các thủ tục phức tạp, tập trung vào kinh doanh và cuộc sống",
+    keyPoint1: {
+      title: "Thành tích áp đảo",
+      subtitle: "Hơn 10,000 thành tích xử lý đơn"
+    },
+    keyPoint2: {
+      title: "Mức giá thấp nhất ngành",
+      subtitle: "Kế toán minh bạch với giá an tâm"
+    },
+    keyPoint3: {
+      title: "Hỗ trợ đa ngôn ngữ",
+      subtitle: "Hỗ trợ hoàn toàn bằng 9 thứ tiếng"
+    },
+    concernsTitle: "Bạn có đang lo lắng về những điều này không?",
+    concerns: [
+      {
+        title: "Lo lắng về đơn xin đầu tiên",
+        description: "Muốn giao cho văn phòng có thành tích phong phú nhưng không biết chọn nơi nào..."
+      },
+      {
+        title: "Đối ứng với trường hợp phức tạp",
+        description: "Trường hợp của tôi hơi phức tạp. Lo lắng liệu có thể lấy được giấy phép thật sự không đến mức không ngủ được..."
+      },
+      {
+        title: "Chi phí không rõ ràng",
+        description: "Không hiểu được hệ thống phí. Lo lắng có thể bị tính phí bổ sung..."
+      },
+      {
+        title: "Rào cản ngôn ngữ",
+        description: "Tiếng Nhật không tự tin. Liệu có thể tư vấn bằng tiếng mẹ đẻ không..."
+      },
+      {
+        title: "Giao tiếp đa ngôn ngữ",
+        description: "Muốn tiến hành trao đổi với nhân viên nước ngoài một cách suôn sẻ nhưng cảm thấy rào cản ngôn ngữ..."
+      },
+      {
+        title: "Hạn chót đơn xin đang đến gần",
+        description: "Hạn chót đơn xin đang đến gần, dù sao cũng đang vội vã về thủ tục..."
+      },
+      {
+        title: "Hạn chế về thời gian",
+        description: "Ngày thường bận rộn với công việc, không có thời gian để đến văn phòng nhiều lần..."
+      }
+    ],
+    solutionTitle: "Lo lắng đó, chìa khóa giải quyết nằm ở",
+    solutionHighlight: "「4 điểm mạnh」",
+    solutionTitle2: "của văn phòng chúng tôi",
+    solutionDescription: "Mỗi điểm mạnh có thể giải quyết vấn đề của khách hàng như thế nào, chúng tôi sẽ giải thích chi tiết ngay bên dưới.",
+    strengthsGrid: [
+      {
+        title: "Niềm tin với hơn 10,000 thành tích xử lý",
+        description: "Với kinh nghiệm và bí quyết phong phú, đối ứng cả các trường hợp phức tạp"
+      },
+      {
+        title: "Mức giá thấp nhất ngành",
+        description: "Hệ thống phí minh bạch, không lo lắng về chi phí bổ sung"
+      },
+      {
+        title: "Hỗ trợ an tâm với đa ngôn ngữ",
+        description: "Hỗ trợ 9 thứ tiếng, loại bỏ hoàn toàn rào cản ngôn ngữ"
+      },
+      {
+        title: "Đối ứng nhanh chóng và hoàn thành trực tuyến",
+        description: "Đối ứng nhanh chóng cả các vụ việc khẩn cấp, không cần đến văn phòng"
+      }
+    ],
+    detailedStrengths: {
+      point1: {
+        label: "Điểm 1",
+        title: "Niềm tin với hơn 10,000 thành tích xử lý",
+        statsTitle1: "Số thành tích xử lý",
+        statsTitle2: "Tỷ lệ phê duyệt",
+        description: "Từ khi thành lập năm 2008, chúng tôi đã hỗ trợ hơn 10,000 đơn xin với tỷ lệ phê duyệt 99%, có thành tích và uy tín vững chắc. Với kinh nghiệm và bí quyết phong phú, chúng tôi đề xuất chiến lược đơn xin tối ưu phù hợp với tình hình của khách hàng."
+      },
+      point2: {
+        label: "Điểm 2", 
+        title: "Mức giá thấp nhất ngành",
+        savingsText: "So với giá thị trường",
+        savingsAmount: "Rẻ hơn 30%",
+        guarantee1: "Không có phí ẩn",
+        guarantee2: "Kế toán minh bạch",
+        description: "Thông qua hoạt động hiệu quả loại bỏ lãng phí, chúng tôi đạt được mức giá thấp nhất ngành. Hệ thống phí minh bạch không có phí ẩn, bạn có thể yên tâm về ngân sách."
+      },
+      point3: {
+        label: "Điểm 3",
+        title: "Hỗ trợ an tâm với đa ngôn ngữ", 
+        languagesTitle: "Các ngôn ngữ hỗ trợ",
+        languages: ["Tiếng Anh", "Tiếng Trung", "Tiếng Việt", "Tiếng Tagalog", "Tiếng Nepal", "Tiếng Sinhala", "Tiếng Hàn", "Tiếng Ý", "Tiếng Tây Ban Nha"],
+        description: "Nhân viên hỗ trợ đa ngôn ngữ sẽ hỗ trợ bằng tiếng mẹ đẻ. Ngay cả những người lo lắng về tiếng Nhật cũng có thể tư vấn một cách yên tâm."
+      },
+      point4: {
+        label: "Điểm 4",
+        title: "Đối ứng nhanh chóng và hoàn thành trực tuyến",
+        feature1: "Phản hồi trong ngày",
+        feature1Sub: "Xử lý an toàn các vụ việc khẩn cấp",
+        feature2: "Hoàn thành trực tuyến",
+        feature2Sub: "Không cần đến văn phòng",
+        description: "Đối với các đơn xin khẩn cấp, chúng tôi đối ứng nhanh chóng. Có thể hoàn thành trực tuyến mà không cần đến văn phòng, tiết kiệm thời gian và công sức."
+      }
+    },
+    achievement: {
+      title: "Niềm tin với hơn 10,000 hồ sơ xử lý",
+      description: "Từ khi thành lập năm 2008, chúng tôi đã hỗ trợ hơn 10,000 đơn xin với tỷ lệ phê duyệt 99%, thể hiện thành tích và uy tín vững chắc.",
+      badge1: "Hơn 10,000 hồ sơ",
+      badge2: "Tỷ lệ phê duyệt 99%",
+      point1: { label: "Điểm 1", title: "Đối ứng nhanh chóng và hoàn thành trực tuyến tiện lợi", feature1: "Phản hồi trong ngày", feature1Sub: "Xử lý an toàn các vụ việc khẩn cấp", feature2: "Hoàn thành trực tuyến", feature2Sub: "Không cần đến văn phòng", description: "Phản hồi nhanh đối với đơn xin khẩn cấp" },
+      point2: { label: "Điểm 2", title: "Mức giá thấp nhất ngành", feature1: "Rẻ hơn 30%", feature1Sub: "So với giá thị trường", feature2: "Minh bạch về phí", feature2Sub: "Không có phí ẩn", description: "Thông qua hoạt động hiệu quả, chúng tôi đạt được mức giá thấp nhất ngành" },
+      point3: { label: "Điểm 3", title: "Hỗ trợ an tâm với nhiều ngôn ngữ", feature1: "Hỗ trợ 9 thứ tiếng", feature1Sub: "Bởi nhân viên tiếng mẹ đẻ", feature2: "Hỗ trợ văn hóa", feature2Sub: "Hiểu biết về văn hóa", description: "Nhân viên hỗ trợ đa ngôn ngữ sẽ hỗ trợ bằng tiếng mẹ đẻ" },
+      point4: { label: "Điểm 4", title: "Đối ứng nhanh chóng và hoàn thành trực tuyến tiện lợi", feature1: "Phản hồi trong ngày", feature1Sub: "Xử lý an toàn các vụ việc khẩn cấp", feature2: "Hoàn thành trực tuyến", feature2Sub: "Không cần đến văn phòng", description: "Phản hồi nhanh đối với đơn xin khẩn cấp" }
+    },
+    trustTitle: "Lý do được tin tưởng",
+    trustSubtitle: "Có thành tích phong phú về cả số lượng doanh nghiệp khách hàng và thị phần ngành",
+    trustCompanies: "Hơn 0000 doanh nghiệp khách hàng trong tất cả các ngành",
+    trustLogo: "Logo doanh nghiệp khách hàng",
+    faqTitle: "Câu hỏi thường gặp",
+    faqSubtitle: "Giới thiệu các câu hỏi thường gặp",
+    faqEmpty: "Hiện đang chuẩn bị câu hỏi thường gặp."
   }
 };
 

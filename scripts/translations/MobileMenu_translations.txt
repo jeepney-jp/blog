@@ -1,0 +1,27 @@
+// 簡体字版
+'zh-CN': {
+      menu: '菜单'
+      top: 'トップ'
+      features: '当事務所の特色'
+      services: '服务'
+      about: '事務所案内'
+      news: 'お知らせ'
+      contact: '联系我们'
+      openMenu: '菜单を開く'
+      closeMenu: '菜单を閉じる'
+    
+},
+
+// 繁体字版
+'zh-TW': {
+      menu: '菜單'
+      top: 'トップ'
+      features: '當事務所の特色'
+      services: '服務'
+      about: '事務所案內'
+      news: 'お知らせ'
+      contact: '聯繫我們'
+      openMenu: '菜單を開く'
+      closeMenu: '菜單を閉じる'
+    
+}

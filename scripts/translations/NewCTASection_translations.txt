@@ -1,0 +1,9 @@
+// 簡体字版
+'zh-CN': {
+    titleWithService: (serviceName: string) => `${serviceName
+},
+
+// 繁体字版
+'zh-TW': {
+    titleWithService: (serviceName: string) => `${serviceName
+}

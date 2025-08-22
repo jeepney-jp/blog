@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:translations": "node scripts/generate-translations.js"
   },
   "dependencies": {
     "@portabletext/react": "^3.2.1",
@@ -18,6 +19,7 @@
     "next": "15.3.5",
     "next-sanity": "^9.12.0",
     "nodemailer": "^7.0.5",
+    "opencc-js": "^1.0.5",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "react-icons": "^5.5.0"

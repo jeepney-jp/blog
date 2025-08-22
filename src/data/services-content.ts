@@ -304,6 +304,27 @@ export const servicesContent: ServicesContentMultilang = {
         }
       }
     ]
+  },
+  'zh-CN': {
+    title: "服务总览",
+    description: "提供满足客户需求的广泛服务",
+    searchTitle: "按类别搜索",
+    searchDescription: "按行业或目的查找服务",
+    categories: []
+  },
+  'zh-TW': {
+    title: "服務總覽",
+    description: "提供滿足客戶需求的廣泛服務",
+    searchTitle: "按類別搜尋",
+    searchDescription: "按行業或目的查找服務",
+    categories: []
+  },
+  vi: {
+    title: "Tổng quan dịch vụ",
+    description: "Cung cấp dịch vụ đa dạng đáp ứng nhu cầu của khách hàng",
+    searchTitle: "Tìm kiếm theo danh mục",
+    searchDescription: "Tìm dịch vụ theo ngành nghề hoặc mục đích",
+    categories: []
   }
 };
 

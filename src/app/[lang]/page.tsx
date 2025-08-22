@@ -145,36 +145,195 @@ const content = {
       noNews: "No news available at the moment.",
     },
   },
+  'zh-CN': {
+    hero: {
+      title1: "连接人与社会的",
+      title2: "法律服务",
+      freeConsultation: "免费咨询请点击这里",
+      viewServices: "查看服务内容",
+    },
+    features: {
+      title: "本事务所特色",
+      subtitle: "OUR STRENGTHS",
+      achievement: {
+        title: "超过10,000件申请实绩的信赖",
+        description: "自2008年创业以来，支持了10,000件以上的申请，拥有99%批准率的确实实绩和信赖。",
+        applications: "申请实绩",
+        approvalRate: "批准率",
+      },
+      pricing: {
+        title: "业界最低水准的费用设定",
+        description: "以低价格提供高品质服务，通过消除浪费的高效业务，实现业界最低水准的费用。",
+        savings: "比平均行情最多便宜30%",
+        comparison: "与其他公司的报价比较中体验",
+      },
+      multilingual: {
+        title: "多语言对应的安心支持",
+        description: "多语言对应工作人员用母语提供支持。对日语不安的人也可以安心咨询。",
+      },
+    },
+    services: {
+      title: "服务",
+      subtitle: "OUR SERVICES",
+      searchByName: "按服务名称查找",
+      searchByCategory: "按类别查找",
+      viewAll: "查看全部",
+    },
+    about: {
+      title: "事务所介绍",
+      subtitle: "ABOUT US",
+      description: "在贴近客户人生的同时，提供符合每个人需求的定制服务。从在留资格到许可认证，在广泛的领域为大家提供支持。",
+      learnMore: "详细了解",
+    },
+    news: {
+      title: "最新通知",
+      subtitle: "NEWS & UPDATES",
+      viewAll: "查看所有通知",
+      noNews: "目前没有通知。",
+    },
+  },
+  'zh-TW': {
+    hero: {
+      title1: "連接人與社會的",
+      title2: "法律服務",
+      freeConsultation: "免費諮詢請點擊這裡",
+      viewServices: "查看服務內容",
+    },
+    features: {
+      title: "本事務所特色",
+      subtitle: "OUR STRENGTHS",
+      achievement: {
+        title: "超過10,000件申請實績的信賴",
+        description: "自2008年創業以來，支援了10,000件以上的申請，擁有99%批准率的確實實績和信賴。",
+        applications: "申請實績",
+        approvalRate: "批准率",
+      },
+      pricing: {
+        title: "業界最低水準的費用設定",
+        description: "以低價格提供高品質服務，透過消除浪費的高效業務，實現業界最低水準的費用。",
+        savings: "比平均行情最多便宜30%",
+        comparison: "與其他公司的報價比較中體驗",
+      },
+      multilingual: {
+        title: "多語言對應的安心支援",
+        description: "多語言對應工作人員用母語提供支援。對日語不安的人也可以安心諮詢。",
+      },
+    },
+    services: {
+      title: "服務",
+      subtitle: "OUR SERVICES",
+      searchByName: "按服務名稱查找",
+      searchByCategory: "按類別查找",
+      viewAll: "查看全部",
+    },
+    about: {
+      title: "事務所介紹",
+      subtitle: "ABOUT US",
+      description: "在貼近客戶人生的同時，提供符合每個人需求的訂製服務。從在留資格到許可認證，在廣泛的領域為大家提供支援。",
+      learnMore: "詳細了解",
+    },
+    news: {
+      title: "最新通知",
+      subtitle: "NEWS & UPDATES",
+      viewAll: "查看所有通知",
+      noNews: "目前沒有通知。",
+    },
+  },
+  vi: {
+    hero: {
+      title1: "Dịch vụ pháp lý kết nối",
+      title2: "con người và xã hội",
+      freeConsultation: "Tư vấn miễn phí tại đây",
+      viewServices: "Xem nội dung dịch vụ",
+    },
+    features: {
+      title: "Đặc điểm văn phòng chúng tôi",
+      subtitle: "OUR STRENGTHS",
+      achievement: {
+        title: "Niềm tin với hơn 10,000 hồ sơ xử lý",
+        description: "Từ khi thành lập năm 2008, chúng tôi đã hỗ trợ hơn 10,000 đơn xin với tỷ lệ phê duyệt 99%, thể hiện thành tích và uy tín vững chắc.",
+        applications: "Thành tích xử lý",
+        approvalRate: "Tỷ lệ phê duyệt",
+      },
+      pricing: {
+        title: "Mức giá thấp nhất ngành",
+        description: "Cung cấp dịch vụ chất lượng cao với giá thấp, thông qua hoạt động hiệu quả loại bỏ lãng phí, chúng tôi đạt được mức giá thấp nhất ngành.",
+        savings: "Rẻ hơn giá thị trường tối đa 30%",
+        comparison: "Cảm nhận qua so sánh báo giá với các công ty khác",
+      },
+      multilingual: {
+        title: "Hỗ trợ an tâm với nhiều ngôn ngữ",
+        description: "Nhân viên hỗ trợ đa ngôn ngữ sẽ hỗ trợ bằng tiếng mẹ đẻ. Những người lo lắng về tiếng Nhật cũng có thể tư vấn một cách yên tâm.",
+      },
+    },
+    services: {
+      title: "Dịch vụ",
+      subtitle: "OUR SERVICES",
+      searchByName: "Tìm theo tên dịch vụ",
+      searchByCategory: "Tìm theo danh mục",
+      viewAll: "Xem tất cả",
+    },
+    about: {
+      title: "Giới thiệu văn phòng",
+      subtitle: "ABOUT US",
+      description: "Chúng tôi cung cấp dịch vụ tùy chỉnh phù hợp với nhu cầu của từng cá nhân trong khi gắn bó với cuộc sống của khách hàng. Chúng tôi hỗ trợ bạn trong nhiều lĩnh vực rộng lớn, từ tư cách lưu trú đến giấy phép.",
+      learnMore: "Tìm hiểu chi tiết",
+    },
+    news: {
+      title: "Thông báo mới nhất",
+      subtitle: "NEWS & UPDATES",
+      viewAll: "Xem tất cả thông báo",
+      noNews: "Hiện tại không có thông báo nào.",
+    },
+  },
 };
 
 // カテゴリーマッピング（ニュース用）
-const categoryMap: { [key: string]: { ja: { name: string; color: string }, en: { name: string; color: string } } } = {
+const categoryMap: { [key: string]: { ja: { name: string; color: string }, en: { name: string; color: string }, 'zh-CN': { name: string; color: string }, 'zh-TW': { name: string; color: string }, vi: { name: string; color: string } } } = {
   business_notice: { 
     ja: { name: '営業案内', color: 'bg-green-100 text-green-800' },
-    en: { name: 'Business Notice', color: 'bg-green-100 text-green-800' }
+    en: { name: 'Business Notice', color: 'bg-green-100 text-green-800' },
+    'zh-CN': { name: '营业通知', color: 'bg-green-100 text-green-800' },
+    'zh-TW': { name: '營業通知', color: 'bg-green-100 text-green-800' },
+    vi: { name: 'Thông báo kinh doanh', color: 'bg-green-100 text-green-800' }
   },
   important: { 
     ja: { name: '重要なお知らせ', color: 'bg-red-100 text-red-800' },
-    en: { name: 'Important Notice', color: 'bg-red-100 text-red-800' }
+    en: { name: 'Important Notice', color: 'bg-red-100 text-red-800' },
+    'zh-CN': { name: '重要通知', color: 'bg-red-100 text-red-800' },
+    'zh-TW': { name: '重要通知', color: 'bg-red-100 text-red-800' },
+    vi: { name: 'Thông báo quan trọng', color: 'bg-red-100 text-red-800' }
   },
   event: { 
     ja: { name: 'イベント', color: 'bg-blue-100 text-blue-800' },
-    en: { name: 'Events', color: 'bg-blue-100 text-blue-800' }
+    en: { name: 'Events', color: 'bg-blue-100 text-blue-800' },
+    'zh-CN': { name: '活动', color: 'bg-blue-100 text-blue-800' },
+    'zh-TW': { name: '活動', color: 'bg-blue-100 text-blue-800' },
+    vi: { name: 'Sự kiện', color: 'bg-blue-100 text-blue-800' }
   },
   media: { 
     ja: { name: 'メディア', color: 'bg-pink-100 text-pink-800' },
-    en: { name: 'Media', color: 'bg-pink-100 text-pink-800' }
+    en: { name: 'Media', color: 'bg-pink-100 text-pink-800' },
+    'zh-CN': { name: '媒体', color: 'bg-pink-100 text-pink-800' },
+    'zh-TW': { name: '媒體', color: 'bg-pink-100 text-pink-800' },
+    vi: { name: 'Truyền thông', color: 'bg-pink-100 text-pink-800' }
   },
   case_study: { 
     ja: { name: '実績紹介', color: 'bg-indigo-100 text-indigo-800' },
-    en: { name: 'Case Studies', color: 'bg-indigo-100 text-indigo-800' }
+    en: { name: 'Case Studies', color: 'bg-indigo-100 text-indigo-800' },
+    'zh-CN': { name: '案例介绍', color: 'bg-indigo-100 text-indigo-800' },
+    'zh-TW': { name: '案例介紹', color: 'bg-indigo-100 text-indigo-800' },
+    vi: { name: 'Giới thiệu thành tích', color: 'bg-indigo-100 text-indigo-800' }
   },
 };
 
 // 多言語対応配列
 const languages = {
   ja: ["英語", "中国語", "ベトナム語", "タガログ語", "ネパール語", "シンハラ語", "韓国語", "イタリア語", "スペイン語"],
-  en: ["English", "Chinese", "Vietnamese", "Tagalog", "Nepali", "Sinhala", "Korean", "Italian", "Spanish"]
+  en: ["English", "Chinese", "Vietnamese", "Tagalog", "Nepali", "Sinhala", "Korean", "Italian", "Spanish"],
+  'zh-CN': ["英语", "中文", "越南语", "他加禄语", "尼泊尔语", "僧伽罗语", "韩语", "意大利语", "西班牙语"],
+  'zh-TW': ["英語", "中文", "越南語", "他加祿語", "尼泊爾語", "僧伽羅語", "韓語", "義大利語", "西班牙語"],
+  vi: ["Tiếng Anh", "Tiếng Trung", "Tiếng Việt", "Tiếng Tagalog", "Tiếng Nepal", "Tiếng Sinhala", "Tiếng Hàn", "Tiếng Ý", "Tiếng Tây Ban Nha"]
 };
 
 

@@ -24,7 +24,15 @@ export function middleware(request: NextRequest) {
   if (pathnameIsMissingLocale && pathname !== '/') {
     // ブラウザの言語設定から優先言語を取得
     const acceptLanguage = request.headers.get('accept-language') || ''
-    const detectedLocale = acceptLanguage.toLowerCase().startsWith('en') ? 'en' : defaultLocale
+    let detectedLocale = defaultLocale
+    
+    if (acceptLanguage.toLowerCase().includes('zh-cn') || acceptLanguage.toLowerCase().includes('zh-hans')) {
+      detectedLocale = 'zh-CN'
+    } else if (acceptLanguage.toLowerCase().includes('zh-tw') || acceptLanguage.toLowerCase().includes('zh-hant')) {
+      detectedLocale = 'zh-TW'
+    } else if (acceptLanguage.toLowerCase().startsWith('en')) {
+      detectedLocale = 'en'
+    }
 
     // 適切なロケールパスにリダイレクト
     return NextResponse.redirect(

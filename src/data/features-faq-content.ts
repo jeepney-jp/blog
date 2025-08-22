@@ -123,5 +123,107 @@ export const featuresFaqContent: FeaturesFaqContent = {
         order: 8
       }
     ]
+  },
+  'zh-CN': {
+    title: "常见问题",
+    subtitle: "介绍常见的问题内容",
+    faqs: [
+      {
+        _id: "1",
+        question: "初次咨询是否免费？",
+        answer: "是的，初次咨询免费。我们会了解客户的情况，提出最佳的支持方法。请随时联系我们。",
+        order: 1
+      },
+      {
+        _id: "2",
+        question: "是否可以在线咨询？",
+        answer: "是的，我们支持使用Zoom等视频会议系统进行在线咨询。无论您在全国何处，都可以咨询，无需到访事务所。",
+        order: 2
+      },
+      {
+        _id: "3", 
+        question: "费用如何确定？",
+        answer: "费用根据客户的委托内容和申请的复杂程度而异。在初次咨询时详细了解后，会提供明确的报价。如有追加费用，必定会事先说明。",
+        order: 3
+      }
+    ]
+  },
+  'zh-TW': {
+    title: "常見問題",
+    subtitle: "介紹常見的問題內容",
+    faqs: [
+      {
+        _id: "1",
+        question: "初次諮詢是否免費？",
+        answer: "是的，初次諮詢免費。我們會了解客戶的情況，提出最佳的支援方法。請隨時聯繫我們。",
+        order: 1
+      },
+      {
+        _id: "2",
+        question: "是否可以線上諮詢？",
+        answer: "是的，我們支援使用Zoom等視訊會議系統進行線上諮詢。無論您在全國何處，都可以諮詢，無需到訪事務所。",
+        order: 2
+      },
+      {
+        _id: "3",
+        question: "費用如何確定？",
+        answer: "費用根據客戶的委託內容和申請的複雜程度而異。在初次諮詢時詳細了解後，會提供明確的報價。如有追加費用，必定會事先說明。",
+        order: 3
+      }
+    ]
+  },
+  vi: {
+    title: "Câu hỏi thường gặp",
+    subtitle: "Giới thiệu những nội dung thường được hỏi",
+    faqs: [
+      {
+        _id: "1",
+        question: "Tư vấn lần đầu có miễn phí không?",
+        answer: "Có, chúng tôi cung cấp tư vấn miễn phí lần đầu. Chúng tôi sẽ lắng nghe tình hình của khách hàng và đề xuất phương pháp hỗ trợ tối ưu. Xin vui lòng liên hệ thoải mái.",
+        order: 1
+      },
+      {
+        _id: "2",
+        question: "Có thể tư vấn trực tuyến không?",
+        answer: "Có, chúng tôi hỗ trợ tư vấn trực tuyến sử dụng hệ thống hội nghị video như Zoom. Bạn có thể tư vấn từ bất kỳ đâu trong cả nước mà không cần đến văn phòng.",
+        order: 2
+      },
+      {
+        _id: "3",
+        question: "Phí được quyết định như thế nào?",
+        answer: "Phí khác nhau tùy thuộc vào nội dung yêu cầu của khách hàng và độ phức tạp của đơn xin. Sau khi hiểu chi tiết trong buổi tư vấn đầu tiên, chúng tôi sẽ cung cấp báo giá rõ ràng. Nếu phát sinh chi phí bổ sung, chúng tôi nhất định sẽ giải thích trước.",
+        order: 3
+      },
+      {
+        _id: "4",
+        question: "Hỗ trợ những ngôn ngữ nào?",
+        answer: "Chúng tôi có thể hỗ trợ bằng 9 thứ tiếng bao gồm tiếng Nhật, tiếng Anh, tiếng Trung, tiếng Việt, tiếng Tagalog, tiếng Hàn, tiếng Bồ Đào Nha. Nếu muốn hỗ trợ bằng tiếng mẹ đẻ, xin vui lòng cho biết.",
+        order: 4
+      },
+      {
+        _id: "5",
+        question: "Thời gian xử lý đơn xin mất bao lâu?",
+        answer: "Tùy thuộc vào loại và nội dung đơn xin nhưng thường mất khoảng 1-3 tháng từ chuẩn bị tài liệu đến hoàn thành đơn xin. Đối với các vụ việc khẩn cấp, chúng tôi sẽ phản hồi nhanh nhất có thể. Lịch trình chi tiết sẽ được giải thích trong buổi tư vấn đầu tiên.",
+        order: 5
+      },
+      {
+        _id: "6",
+        question: "Có thể đối ứng vào cuối tuần và ngày lễ không?",
+        answer: "Thứ bảy chúng tôi chỉ mở cửa buổi sáng. Chủ nhật và ngày lễ là ngày nghỉ định kỳ, nhưng có thể đối ứng nếu đặt lịch trước. Những người khó đến văn phòng vào ngày thường vì công việc, xin vui lòng tư vấn.",
+        order: 6
+      },
+      {
+        _id: "7",
+        question: "Khu vực đối ứng đến đâu?",
+        answer: "Chúng tôi chủ yếu đối ứng Tokyo, Chiba, Saitama, Kanagawa nhưng cũng nhận yêu cầu từ toàn quốc thông qua tư vấn trực tuyến. Những người ở xa xin vui lòng tư vấn thoải mái.",
+        order: 7
+      },
+      {
+        _id: "8",
+        question: "Có những phương thức thanh toán nào?",
+        answer: "Chúng tôi chấp nhận chuyển khoản ngân hàng, thẻ tín dụng và thanh toán bằng tiền mặt. Cũng nhận tư vấn về thanh toán trả góp, xin vui lòng nói ra thoải mái.",
+        order: 8
+      }
+    ]
   }
 };

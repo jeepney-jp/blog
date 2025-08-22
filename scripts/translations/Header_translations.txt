@@ -1,0 +1,25 @@
+// 簡体字版
+'zh-CN': {
+      companyName: 'フォルティア'
+      companyNameFull: '行政書士事務所'
+      companyNameShort: '行政書士'
+      features: '特色'
+      services: '服务'
+      about: '事務所概要'
+      news: 'お知らせ'
+      contact: '联系我们'
+    
+},
+
+// 繁体字版
+'zh-TW': {
+      companyName: 'フォルティア'
+      companyNameFull: '行政書士事務所'
+      companyNameShort: '行政書士'
+      features: '特色'
+      services: '服務'
+      about: '事務所概要'
+      news: 'お知らせ'
+      contact: '聯繫我們'
+    
+}
