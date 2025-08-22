@@ -505,58 +505,67 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "株式会社、合同会社の設立から設立後の手続きまで専門家がワンストップでサポート。",
       services: [
         {
-          id: "social-welfare-corporation",
-          title: "社会福祉法人設立認可",
-          target: "テスト",
-          priceMin: 0
+          id: "company-establishment",
+          title: "株式会社・合同会社設立",
+          target: "株式会社・合同会社の新規設立を総合的にサポートいたします。定款作成から公証人役場での認証、法務局での登記申請まで、複雑な手続きを経験豊富な専門家が代行。設立後の税務署への法人設立届出、青色申告承認申請、社会保険の新規適用手続きまでワンストップで対応し、スムーズな事業開始を実現します。",
+          priceMin: 150000,
+          priceMax: 250000
         },
         {
-          id: "medical-corporation",
-          title: "医療法人設立",
-          target: "テスト",
-          priceMin: 0
-        },
-        {
-          id: "community-association",
-          title: "自治会、町内会等の法人化",
-          target: "テスト",
-          priceMin: 0
-        },
-        {
-          id: "regional-organization",
-          title: "地縁団体認可",
-          target: "テスト",
-          priceMin: 0
-        },
-        {
-          id: "school-corporation",
-          title: "学校法人設立認可",
-          target: "テスト",
-          priceMin: 0
-        },
-        {
-          id: "religious-corporation",
-          title: "宗教法人設立（規則認証）",
-          target: "テスト",
-          priceMin: 0
+          id: "general-foundation",
+          title: "一般社団・財団法人設立",
+          target: "一般社団法人・一般財団法人の設立登記申請を専門的にサポート。営利を目的としない公益事業や会員の共益事業を行う法人格の取得を支援します。定款作成、公証人認証から法務局での登記申請まで、各種非営利法人の特性に応じた適切な手続きを行い、理事会・社員総会の運営規程整備もアドバイスいたします。",
+          priceMin: 100000,
+          priceMax: 200000
         },
         {
           id: "npo-corporation",
           title: "NPO法人設立認証",
-          target: "テスト",
-          priceMin: 0
+          target: "NPO法人（特定非営利活動法人）の設立認証申請を包括的にサポート。20分野の特定非営利活動に該当する事業内容の確認、設立総会の開催支援、定款作成から所轄庁への認証申請まで、煩雑な手続きを代行します。認証後の登記申請、税務署への収益事業開始届出等のアフターフォローも万全。社会貢献活動の法人化を確実に実現します。",
+          priceMin: 120000,
+          priceMax: 200000
         },
         {
-          id: "general-foundation",
-          title: "社団・財団法人設立",
-          target: "テスト",
-          priceMin: 0
+          id: "medical-corporation",
+          title: "医療法人設立",
+          target: "医療法人（社団・財団）の設立認可申請において、医療機関の法人化を専門的に支援します。都道府県医療審議会への諮問準備、設立総会の開催、定款・寄附行為の作成、財産目録・事業計画書の策定から都道府県知事への認可申請、設立登記まで一貫してサポート。医療法人化による税制優遇、事業承継の円滑化、分院開設等のメリットを最大限に活かせるよう支援いたします。",
+          priceMin: 400000,
+          priceMax: 800000
         },
         {
-          id: "company-establishment",
-          title: "会社設立",
-          target: "テスト",
-          priceMin: 0
+          id: "social-welfare-corporation",
+          title: "社会福祉法人設立認可",
+          target: "社会福祉法人の設立認可申請において、第一種・第二種社会福祉事業を行う法人設立を専門的にサポート。資産要件（基本財産・運転資金）の確認、理事会・評議員会の構成指導、定款作成から所轄庁（都道府県知事・市長）への認可申請まで、厳格な審査基準をクリアするための綿密な準備を行います。施設整備計画の策定支援も含め、確実な認可取得を実現します。",
+          priceMin: 500000,
+          priceMax: 1000000
+        },
+        {
+          id: "school-corporation",
+          title: "学校法人設立認可",
+          target: "学校法人の設立認可申請を専門的にサポート。幼稚園から大学まで、私立学校を設置運営する学校法人の設立において、寄附行為の作成、校地・校舎等の基準適合性確認、教員組織の整備、財政計画の策定から文部科学大臣または都道府県知事への認可申請まで総合的に支援。私立学校審議会への対応も含め、教育事業の法人化を確実に実現します。",
+          priceMin: 600000,
+          priceMax: 1200000
+        },
+        {
+          id: "religious-corporation",
+          title: "宗教法人設立（規則認証）",
+          target: "宗教法人の設立に必要な規則認証申請を専門的に代行。宗教団体としての3年以上の活動実績確認、規則案の作成、信者総会での決議支援から所轄庁（都道府県知事・文部科学大臣）への認証申請、登記手続きまで一貫してサポート。境内建物・境内地の登記、非課税証明の取得等、宗教法人特有の手続きにも精通した専門家が対応いたします。",
+          priceMin: 300000,
+          priceMax: 500000
+        },
+        {
+          id: "community-association",
+          title: "自治会・町内会等の法人化",
+          target: "自治会・町内会等の地縁による団体の法人化を包括的にサポート。地方自治法に基づく認可地縁団体としての法人格取得により、集会所等の不動産を団体名義で登記可能に。規約作成、構成員名簿の整備、総会での決議から市区町村長への認可申請まで、地域コミュニティの基盤強化を法的側面から支援します。",
+          priceMin: 80000,
+          priceMax: 150000
+        },
+        {
+          id: "regional-organization",
+          title: "地縁団体認可",
+          target: "地縁団体の認可申請において、自治会・町内会等が法人格を取得するための手続きを専門的に支援。現在の構成員が相当数存在すること、規約を定めていること等の要件確認から、市区町村長への認可申請、告示手続きまで代行。これにより団体名義での不動産登記、預金口座開設が可能となり、代表者個人への負担を解消し、円滑な団体運営を実現します。",
+          priceMin: 100000,
+          priceMax: 180000
         }
       ],
       faq: [
@@ -1316,28 +1325,67 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "One-stop expert support from company and LLC establishment to post-establishment procedures.",
       services: [
         {
-          id: "corporation-establishment",
-          title: "Company Incorporation",
-          target: "Those considering company incorporation",
-          priceMin: 0,
+          id: "company-establishment",
+          title: "Stock Company/LLC Establishment",
+          target: "Comprehensive support for new establishment of stock companies and LLCs. We handle complex procedures from drafting articles of incorporation, notarization at public notary offices, to registration applications at legal affairs bureaus with experienced expertise. Our one-stop service extends to post-establishment procedures including corporate establishment notifications to tax offices, blue return approval applications, and new social insurance enrollment procedures, ensuring smooth business commencement.",
+          priceMin: 150000,
+          priceMax: 250000
         },
         {
-          id: "llc-establishment",
-          title: "LLC Establishment",
-          target: "Those considering LLC establishment",
-          priceMin: 0,
+          id: "general-foundation",
+          title: "General Incorporated Association/Foundation",
+          target: "Professional support for establishment registration of general incorporated associations and foundations. We assist in obtaining legal personality for non-profit public interest activities and member mutual benefit operations. From articles drafting and notarization to registration applications at legal affairs bureaus, we handle appropriate procedures based on each non-profit corporation's characteristics and provide guidance on board of directors and general assembly operational regulations.",
+          priceMin: 100000,
+          priceMax: 200000
         },
         {
-          id: "nonprofit-establishment",
-          title: "General Incorporated Association/NPO Establishment",
-          target: "Those considering nonprofit corporation establishment",
-          priceMin: 0,
+          id: "npo-corporation",
+          title: "NPO Corporation Certification",
+          target: "Comprehensive support for NPO (Specified Nonprofit Activity Corporation) establishment certification applications. We verify business content compliance with 20 specified nonprofit activity fields, support founding assembly organization, and handle complex procedures from articles drafting to competent authority certification applications. Complete aftercare including post-certification registration applications and profit-making business commencement notifications to tax offices. We ensure successful incorporation of social contribution organizations.",
+          priceMin: 120000,
+          priceMax: 200000
         },
         {
-          id: "corporate-change",
-          title: "Corporate Change Procedures",
-          target: "Those with changes to corporate registration matters",
-          priceMin: 0,
+          id: "medical-corporation",
+          title: "Medical Corporation Establishment",
+          target: "Professional support for medical corporation (association/foundation) establishment approval applications. We handle preparation for prefectural medical council consultations, founding assembly organization, articles and endowment act drafting, property inventory and business plan formulation through prefectural governor approval applications and establishment registration. We maximize benefits of medical corporation conversion including tax advantages, smooth business succession, and branch clinic opportunities.",
+          priceMin: 400000,
+          priceMax: 800000
+        },
+        {
+          id: "social-welfare-corporation",
+          title: "Social Welfare Corporation Approval",
+          target: "Specialized support for social welfare corporation establishment approval applications conducting Type 1 and Type 2 social welfare services. We verify asset requirements (basic assets and operating funds), guide board of directors and councilor composition, and prepare meticulously from articles drafting to competent authority (prefectural governor/mayor) approval applications to meet strict examination standards. Including facility development plan formulation support, we ensure successful approval acquisition.",
+          priceMin: 500000,
+          priceMax: 1000000
+        },
+        {
+          id: "school-corporation",
+          title: "School Corporation Approval",
+          target: "Professional support for school corporation establishment approval applications. From kindergartens to universities, we comprehensively support private school operating corporation establishment through endowment act drafting, campus and facility standard compliance verification, faculty organization development, financial planning to approval applications to MEXT or prefectural governors. Including private school council correspondence, we ensure successful educational business incorporation.",
+          priceMin: 600000,
+          priceMax: 1200000
+        },
+        {
+          id: "religious-corporation",
+          title: "Religious Corporation Establishment",
+          target: "Professional handling of rule certification applications required for religious corporation establishment. We verify three-year activity records as religious organizations, draft rules, support believer assembly resolutions through certification applications to competent authorities (prefectural governors/MEXT) and registration procedures. Our specialists familiar with religious corporation-specific procedures handle precincts buildings/land registration and tax-exempt certification acquisition.",
+          priceMin: 300000,
+          priceMax: 500000
+        },
+        {
+          id: "community-association",
+          title: "Neighborhood Association Incorporation",
+          target: "Comprehensive support for neighborhood association and community group incorporation based on territorial connections. Through Local Autonomy Act-based approved territorial organization legal personality acquisition, real estate such as community centers can be registered under organization names. From rules drafting, member roster preparation, and assembly resolutions to mayor approval applications, we support community foundation strengthening from legal perspectives.",
+          priceMin: 80000,
+          priceMax: 150000
+        },
+        {
+          id: "regional-organization",
+          title: "Territorial Organization Approval",
+          target: "Professional support for territorial organization approval applications enabling neighborhood associations to acquire legal personality. From verifying requirements including substantial current membership and established rules through mayor approval applications and public notification procedures. This enables real estate registration and bank account opening under organization names, eliminating individual representative burdens and achieving smooth organization operations.",
+          priceMin: 100000,
+          priceMax: 180000
         }
       ],
       faq: [
