@@ -730,28 +730,46 @@ export const categoryPagesContent: CategoryPagesContent = {
       metaDescription: "契約書作成、内容証明郵便、各種証明書類の作成を専門家がサポート。",
       services: [
         {
-          id: "voluntary-guardianship-contract",
-          title: "任意成年後見契約",
-          target: "テスト",
-          priceMin: 0
-        },
-        {
           id: "certified-mail",
-          title: "内容証明郵便",
-          target: "テスト",
-          priceMin: 0
+          title: "内容証明郵便作成",
+          target: "債権回収、契約解除通知、損害賠償請求等の内容証明郵便の作成・発送手続き。確実な意思表示と証拠保全をサポート。",
+          priceMin: 30000,
+          priceMax: 80000
         },
         {
           id: "various-contracts",
-          title: "各種契約書",
-          target: "テスト",
-          priceMin: 0
+          title: "各種契約書作成",
+          target: "売買契約、賃貸借契約、業務委託契約等の各種契約書の作成。トラブル防止のための適切な条項設定をサポート。",
+          priceMin: 50000,
+          priceMax: 150000
         },
         {
           id: "will-inheritance",
-          title: "遺言・相続",
-          target: "テスト",
-          priceMin: 0
+          title: "遺言書作成・相続手続き",
+          target: "遺言書の作成から相続手続き、遺産分割協議書の作成まで。相続トラブル防止と円滑な手続きをサポート。",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "voluntary-guardianship-contract",
+          title: "任意後見契約書作成",
+          target: "将来の判断能力低下に備える任意後見契約書の作成。公正証書での作成が必要な重要な契約です。",
+          priceMin: 100000,
+          priceMax: 180000
+        },
+        {
+          id: "notarization-documents",
+          title: "公証人役場手続き代行",
+          target: "公正証書の作成、定款認証、確定日付等の公証人役場での各種手続きを代行いたします。",
+          priceMin: 40000,
+          priceMax: 100000
+        },
+        {
+          id: "agreement-mediation",
+          title: "示談書・合意書作成",
+          target: "交通事故、損害賠償、民事紛争等の示談書・合意書の作成。当事者間の合意内容を適切に文書化。",
+          priceMin: 60000,
+          priceMax: 120000
         }
       ],
       faq: [
@@ -2123,8 +2141,148 @@ export const categoryPagesContent: CategoryPagesContent = {
       tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" },
       faqTitle: "常见问题"
     },
-    land: { title: "土地相关业务", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
-    "legal-documentation": { title: "权利义务・事实证明", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
+    land: {
+      title: "土地相关业务",
+      catchphrase: "农地转用・开发许可的专业支持",
+      heroTitle: "【专家支持】土地相关业务指南",
+      metaTitle: "土地相关业务 | Fortia行政书士事务所",
+      metaDescription: "农地转用、开发许可、土地利用相关的各种手续专家全程支持。",
+      services: [
+        {
+          id: "farmland-permit",
+          title: "农地转用许可申请",
+          target: "将农地转为住宅用地或事业用地等时需要的许可申请。在市街化调整区域需要都道府县知事的许可。",
+          priceMin: 100000,
+          priceMax: 250000
+        },
+        {
+          id: "development-permit",
+          title: "开发行为许可申请",
+          target: "以建筑物建设等为目的进行土地区画形质变更时的许可申请。一定规模以上的开发行为需要。",
+          priceMin: 200000,
+          priceMax: 500000
+        },
+        {
+          id: "factory-establishment-permit",
+          title: "工厂设置认可申请",
+          target: "基于工厂立地法的工厂设置时认可申请。是兼顾环境配虑和地域调和的重要手续。",
+          priceMin: 150000,
+          priceMax: 300000
+        },
+        {
+          id: "land-use-permit",
+          title: "土地利用规制法许可申请",
+          target: "关于城市计划法、森林法、自然公园法等土地利用规制的各种许可申请。根据法令支持适当的手续。",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "subdivision-permit",
+          title: "土地区画整理事业认可",
+          target: "进行土地区画整理事业时的认可申请。获得改善完善公共设施和增进宅地利用的事业许可。",
+          priceMin: 300000,
+          priceMax: 600000
+        },
+        {
+          id: "mining-permit",
+          title: "采石业・砂砾采取业许可申请",
+          target: "经营采石业・砂砾采取业时需要的许可申请。从采取计划制作到许可取得综合支持。",
+          priceMin: 120000,
+          priceMax: 250000
+        }
+      ],
+      faq: [
+        {
+          question: "农地转用需要什么手续？",
+          answer: "根据农地的所在地和面积，需要向农业委员会申报或都道府县知事许可。市街化区域内的农地采用申报制。"
+        },
+        {
+          question: "需要开发许可的开发行为是什么？",
+          answer: "以建筑物建设等为目的的土地区画形质变更，一定规模以上的为对象。根据都市计划区域标准不同。"
+        }
+      ],
+      breadcrumbs: {
+        home: "首页",
+        services: "服务"
+      },
+      tableHeaders: {
+        serviceName: "服务名称",
+        serviceOverview: "服务概要",
+        pricingGuide: "费用指南"
+      },
+      faqTitle: "常见问题"
+    },
+    "legal-documentation": {
+      title: "权利义务・事实证明",
+      catchphrase: "合同书制作・内容证明的专业支持",
+      heroTitle: "【专家支持】权利义务・事实证明指南",
+      metaTitle: "权利义务・事实证明 | Fortia行政书士事务所",
+      metaDescription: "合同书制作、内容证明邮件、各种证明文件的制作专家全程支持。",
+      services: [
+        {
+          id: "certified-mail",
+          title: "内容证明邮件制作",
+          target: "债权回收、合同解除通知、损害赔偿请求等内容证明邮件的制作・发送手续。支持确实的意思表示和证据保全。",
+          priceMin: 30000,
+          priceMax: 80000
+        },
+        {
+          id: "various-contracts",
+          title: "各种合同书制作",
+          target: "买卖合同、租赁合同、业务委托合同等各种合同书的制作。支持设定防止纠纷的适当条款。",
+          priceMin: 50000,
+          priceMax: 150000
+        },
+        {
+          id: "will-inheritance",
+          title: "遗嘱书制作・继承手续",
+          target: "从遗嘱书制作到继承手续、遗产分割协议书制作。支持防止继承纠纷和顺利的手续。",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "voluntary-guardianship-contract",
+          title: "任意后见合同书制作",
+          target: "为将来的判断能力下降做准备的任意后见合同书制作。是需要公正证书制作的重要合同。",
+          priceMin: 100000,
+          priceMax: 180000
+        },
+        {
+          id: "notarization-documents",
+          title: "公证人事务所手续代理",
+          target: "代理公正证书制作、公司章程认证、确定日期等公证人事务所的各种手续。",
+          priceMin: 40000,
+          priceMax: 100000
+        },
+        {
+          id: "agreement-mediation",
+          title: "调解书・合意书制作",
+          target: "交通事故、损害赔偿、民事纠纷等调解书・合意书的制作。适当文件化当事人间的合意内容。",
+          priceMin: 60000,
+          priceMax: 120000
+        }
+      ],
+      faq: [
+        {
+          question: "内容证明邮件的效果是什么？",
+          answer: "能够确实地向对方传达意思表示的内容和日期，可以作为日后的证据活用。对债权回收和合同解除通知有效。"
+        },
+        {
+          question: "合同书制作应注意什么？",
+          answer: "重要的是明确当事人的权利义务，加入防止纠纷的条款。制作满足法律要件的适当内容。"
+        }
+      ],
+      breadcrumbs: {
+        home: "首页",
+        services: "服务"
+      },
+      tableHeaders: {
+        serviceName: "服务名称",
+        serviceOverview: "服务概要",
+        pricingGuide: "费用指南"
+      },
+      faqTitle: "常见问题"
+    },
     "medical-care": { title: "医疗・护理相关业务", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" },
     other: { title: "其他业务", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首页", services: "服务" }, tableHeaders: { serviceName: "服务名称", serviceOverview: "服务概要", pricingGuide: "费用指南" }, faqTitle: "常见问题" }
   },
@@ -2690,8 +2848,148 @@ export const categoryPagesContent: CategoryPagesContent = {
       tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" },
       faqTitle: "常見問題"
     },
-    land: { title: "土地相關業務", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
-    "legal-documentation": { title: "權利義務・事實證明", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
+    land: {
+      title: "土地相關業務",
+      catchphrase: "農地轉用・開發許可的專業支援",
+      heroTitle: "【專家支援】土地相關業務指南",
+      metaTitle: "土地相關業務 | Fortia行政書士事務所",
+      metaDescription: "農地轉用、開發許可、土地利用相關的各種手續專家全程支援。",
+      services: [
+        {
+          id: "farmland-permit",
+          title: "農地轉用許可申請",
+          target: "將農地轉為住宅用地或事業用地等時需要的許可申請。在市街化調整區域需要都道府縣知事的許可。",
+          priceMin: 100000,
+          priceMax: 250000
+        },
+        {
+          id: "development-permit",
+          title: "開發行為許可申請",
+          target: "以建築物建設等為目的進行土地區畫形質變更時的許可申請。一定規模以上的開發行為需要。",
+          priceMin: 200000,
+          priceMax: 500000
+        },
+        {
+          id: "factory-establishment-permit",
+          title: "工廠設置認可申請",
+          target: "基於工廠立地法的工廠設置時認可申請。是兼顧環境配慮和地域調和的重要手續。",
+          priceMin: 150000,
+          priceMax: 300000
+        },
+        {
+          id: "land-use-permit",
+          title: "土地利用規制法許可申請",
+          target: "關於都市計畫法、森林法、自然公園法等土地利用規制的各種許可申請。根據法令支援適當的手續。",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "subdivision-permit",
+          title: "土地區畫整理事業認可",
+          target: "進行土地區畫整理事業時的認可申請。獲得改善完善公共設施和增進宅地利用的事業許可。",
+          priceMin: 300000,
+          priceMax: 600000
+        },
+        {
+          id: "mining-permit",
+          title: "採石業・砂礫採取業許可申請",
+          target: "經營採石業・砂礫採取業時需要的許可申請。從採取計畫製作到許可取得綜合支援。",
+          priceMin: 120000,
+          priceMax: 250000
+        }
+      ],
+      faq: [
+        {
+          question: "農地轉用需要什麼手續？",
+          answer: "根據農地的所在地和面積，需要向農業委員會申報或都道府縣知事許可。市街化區域內的農地採用申報制。"
+        },
+        {
+          question: "需要開發許可的開發行為是什麼？",
+          answer: "以建築物建設等為目的的土地區畫形質變更，一定規模以上的為對象。根據都市計畫區域標準不同。"
+        }
+      ],
+      breadcrumbs: {
+        home: "首頁",
+        services: "服務"
+      },
+      tableHeaders: {
+        serviceName: "服務名稱",
+        serviceOverview: "服務概要",
+        pricingGuide: "費用指南"
+      },
+      faqTitle: "常見問題"
+    },
+    "legal-documentation": {
+      title: "權利義務・事實證明",
+      catchphrase: "合約書製作・內容證明的專業支援",
+      heroTitle: "【專家支援】權利義務・事實證明指南",
+      metaTitle: "權利義務・事實證明 | Fortia行政書士事務所",
+      metaDescription: "合約書製作、內容證明郵件、各種證明文件的製作專家全程支援。",
+      services: [
+        {
+          id: "certified-mail",
+          title: "內容證明郵件製作",
+          target: "債權回收、合約解除通知、損害賠償請求等內容證明郵件的製作・發送手續。支援確實的意思表示和證據保全。",
+          priceMin: 30000,
+          priceMax: 80000
+        },
+        {
+          id: "various-contracts",
+          title: "各種合約書製作",
+          target: "買賣合約、租賃合約、業務委託合約等各種合約書的製作。支援設定防止糾紛的適當條款。",
+          priceMin: 50000,
+          priceMax: 150000
+        },
+        {
+          id: "will-inheritance",
+          title: "遺囑書製作・繼承手續",
+          target: "從遺囑書製作到繼承手續、遺產分割協議書製作。支援防止繼承糾紛和順利的手續。",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "voluntary-guardianship-contract",
+          title: "任意後見合約書製作",
+          target: "為將來的判斷能力下降做準備的任意後見合約書製作。是需要公正證書製作的重要合約。",
+          priceMin: 100000,
+          priceMax: 180000
+        },
+        {
+          id: "notarization-documents",
+          title: "公證人事務所手續代理",
+          target: "代理公正證書製作、公司章程認證、確定日期等公證人事務所的各種手續。",
+          priceMin: 40000,
+          priceMax: 100000
+        },
+        {
+          id: "agreement-mediation",
+          title: "調解書・合意書製作",
+          target: "交通事故、損害賠償、民事糾紛等調解書・合意書的製作。適當文件化當事人間的合意內容。",
+          priceMin: 60000,
+          priceMax: 120000
+        }
+      ],
+      faq: [
+        {
+          question: "內容證明郵件的效果是什麼？",
+          answer: "能夠確實地向對方傳達意思表示的內容和日期，可以作為日後的證據活用。對債權回收和合約解除通知有效。"
+        },
+        {
+          question: "合約書製作應注意什麼？",
+          answer: "重要的是明確當事人的權利義務，加入防止糾紛的條款。製作滿足法律要件的適當內容。"
+        }
+      ],
+      breadcrumbs: {
+        home: "首頁",
+        services: "服務"
+      },
+      tableHeaders: {
+        serviceName: "服務名稱",
+        serviceOverview: "服務概要",
+        pricingGuide: "費用指南"
+      },
+      faqTitle: "常見問題"
+    },
     "medical-care": { title: "醫療・護理相關業務", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" },
     other: { title: "其他業務", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "首頁", services: "服務" }, tableHeaders: { serviceName: "服務名稱", serviceOverview: "服務概要", pricingGuide: "費用指南" }, faqTitle: "常見問題" }
   },
@@ -3257,8 +3555,148 @@ export const categoryPagesContent: CategoryPagesContent = {
       tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" },
       faqTitle: "Câu hỏi thường gặp"
     },
-    land: { title: "Dịch vụ liên quan đến đất đai", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
-    "legal-documentation": { title: "Chứng minh quyền nghĩa vụ・sự thật", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
+    land: {
+      title: "Dịch vụ liên quan đến đất đai",
+      catchphrase: "Hỗ trợ chuyên nghiệp cho chuyển đổi đất nông nghiệp・giấy phép phát triển",
+      heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn dịch vụ liên quan đến đất đai",
+      metaTitle: "Dịch vụ đất đai | Văn phòng Hành chính Fortia",
+      metaDescription: "Hỗ trợ chuyên nghiệp cho chuyển đổi đất nông nghiệp, giấy phép phát triển và các thủ tục sử dụng đất đai khác.",
+      services: [
+        {
+          id: "farmland-permit",
+          title: "Đơn xin giấy phép chuyển đổi đất nông nghiệp",
+          target: "Đơn xin giấy phép cần thiết khi chuyển đổi đất nông nghiệp thành đất dân cư hoặc đất kinh doanh. Cần giấy phép của thống đốc tỉnh trong khu vực điều chỉnh đô thị hóa.",
+          priceMin: 100000,
+          priceMax: 250000
+        },
+        {
+          id: "development-permit",
+          title: "Đơn xin giấy phép hành vi phát triển",
+          target: "Đơn xin giấy phép khi thực hiện thay đổi hình thức phân khu đất đai nhằm mục đích xây dựng các công trình. Cần thiết cho hành vi phát triển quy mô trên mức nhất định.",
+          priceMin: 200000,
+          priceMax: 500000
+        },
+        {
+          id: "factory-establishment-permit",
+          title: "Đơn xin phê duyệt thiết lập nhà máy",
+          target: "Đơn xin phê duyệt khi thiết lập nhà máy dựa trên luật địa điểm nhà máy. Là thủ tục quan trọng để cân nhắc môi trường và hài hòa khu vực.",
+          priceMin: 150000,
+          priceMax: 300000
+        },
+        {
+          id: "land-use-permit",
+          title: "Đơn xin giấy phép theo luật quy chế sử dụng đất",
+          target: "Các đơn xin giấy phép khác nhau liên quan đến quy chế sử dụng đất như luật kế hoạch đô thị, luật rừng, luật công viên tự nhiên. Hỗ trợ thủ tục thích hợp theo quy định pháp luật.",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "subdivision-permit",
+          title: "Phê duyệt dự án chỉnh trang phân khu đất đai",
+          target: "Đơn xin phê duyệt khi thực hiện dự án chỉnh trang phân khu đất đai. Lấy giấy phép cho dự án cải thiện hoàn thiện cơ sở hạ tầng công cộng và tăng cường sử dụng đất ở.",
+          priceMin: 300000,
+          priceMax: 600000
+        },
+        {
+          id: "mining-permit",
+          title: "Đơn xin giấy phép nghiệp khai thác đá・khai thác sỏi",
+          target: "Đơn xin giấy phép cần thiết khi kinh doanh nghiệp khai thác đá・khai thác sỏi. Hỗ trợ toàn diện từ lập kế hoạch khai thác đến lấy giấy phép.",
+          priceMin: 120000,
+          priceMax: 250000
+        }
+      ],
+      faq: [
+        {
+          question: "Chuyển đổi đất nông nghiệp cần thủ tục gì?",
+          answer: "Tùy theo vị trí và diện tích đất nông nghiệp, cần khai báo với ban nông nghiệp hoặc xin giấy phép thống đốc tỉnh. Đất nông nghiệp trong khu đô thị hóa áp dụng chế độ khai báo."
+        },
+        {
+          question: "Hành vi phát triển cần giấy phép phát triển là gì?",
+          answer: "Thay đổi hình thức phân khu đất đai nhằm mục đích xây dựng các công trình, quy mô trên mức nhất định là đối tượng. Tiêu chuẩn khác nhau tùy theo khu vực kế hoạch đô thị."
+        }
+      ],
+      breadcrumbs: {
+        home: "Trang chủ",
+        services: "Dịch vụ"
+      },
+      tableHeaders: {
+        serviceName: "Tên dịch vụ",
+        serviceOverview: "Tổng quan dịch vụ",
+        pricingGuide: "Hướng dẫn giá cả"
+      },
+      faqTitle: "Câu hỏi thường gặp"
+    },
+    "legal-documentation": {
+      title: "Chứng minh quyền nghĩa vụ・sự thật",
+      catchphrase: "Hỗ trợ chuyên nghiệp cho soạn thảo hợp đồng・thư chứng thực nội dung",
+      heroTitle: "【Hỗ trợ chuyên gia】Hướng dẫn chứng minh quyền nghĩa vụ・sự thật",
+      metaTitle: "Chứng minh quyền nghĩa vụ・sự thật | Văn phòng Hành chính Fortia",
+      metaDescription: "Hỗ trợ chuyên nghiệp cho soạn thảo hợp đồng, thư chứng thực nội dung, soạn thảo các loại tài liệu chứng minh.",
+      services: [
+        {
+          id: "certified-mail",
+          title: "Soạn thảo thư chứng thực nội dung",
+          target: "Soạn thảo・gửi thư chứng thực nội dung cho thu hồi nợ, thông báo hủy hợp đồng, yêu cầu bồi thường thiệt hại. Hỗ trợ thể hiện ý chí chắc chắn và bảo toàn bằng chứng.",
+          priceMin: 30000,
+          priceMax: 80000
+        },
+        {
+          id: "various-contracts",
+          title: "Soạn thảo các loại hợp đồng",
+          target: "Soạn thảo các loại hợp đồng như hợp đồng mua bán, hợp đồng thuê, hợp đồng ủy thác công việc. Hỗ trợ thiết lập các điều khoản thích hợp để phòng ngừa tranh chấp.",
+          priceMin: 50000,
+          priceMax: 150000
+        },
+        {
+          id: "will-inheritance",
+          title: "Soạn thảo di chúc・thủ tục thừa kế",
+          target: "Từ soạn thảo di chúc đến thủ tục thừa kế, soạn thảo thỏa thuận phân chia di sản. Hỗ trợ ngăn ngừa tranh chấp thừa kế và thủ tục suôn sẻ.",
+          priceMin: 80000,
+          priceMax: 200000
+        },
+        {
+          id: "voluntary-guardianship-contract",
+          title: "Soạn thảo hợp đồng giám hộ tự nguyện",
+          target: "Soạn thảo hợp đồng giám hộ tự nguyện để chuẩn bị cho sự suy giảm khả năng phán đoán trong tương lai. Là hợp đồng quan trọng cần lập công chứng.",
+          priceMin: 100000,
+          priceMax: 180000
+        },
+        {
+          id: "notarization-documents",
+          title: "Đại diện thủ tục văn phòng công chứng",
+          target: "Đại diện các thủ tục khác nhau tại văn phòng công chứng như lập văn bản công chứng, chứng thực điều lệ, xác định ngày tháng.",
+          priceMin: 40000,
+          priceMax: 100000
+        },
+        {
+          id: "agreement-mediation",
+          title: "Soạn thảo thư dàn xếp・thỏa thuận",
+          target: "Soạn thảo thư dàn xếp・thỏa thuận cho tai nạn giao thông, bồi thường thiệt hại, tranh chấp dân sự. Văn bản hóa thích hợp nội dung thỏa thuận giữa các bên.",
+          priceMin: 60000,
+          priceMax: 120000
+        }
+      ],
+      faq: [
+        {
+          question: "Hiệu quả của thư chứng thực nội dung là gì?",
+          answer: "Có thể truyền đạt chắc chắn nội dung và ngày tháng thể hiện ý chí đến đối phương, có thể sử dụng làm bằng chứng sau này. Hiệu quả đối với thu hồi nợ và thông báo hủy hợp đồng."
+        },
+        {
+          question: "Điều cần chú ý khi soạn thảo hợp đồng là gì?",
+          answer: "Quan trọng là làm rõ quyền nghĩa vụ của các bên, đưa vào các điều khoản để phòng ngừa tranh chấp. Làm nội dung thích hợp đáp ứng yêu cầu pháp lý."
+        }
+      ],
+      breadcrumbs: {
+        home: "Trang chủ",
+        services: "Dịch vụ"
+      },
+      tableHeaders: {
+        serviceName: "Tên dịch vụ",
+        serviceOverview: "Tổng quan dịch vụ",
+        pricingGuide: "Hướng dẫn giá cả"
+      },
+      faqTitle: "Câu hỏi thường gặp"
+    },
     "medical-care": { title: "Dịch vụ y tế・chăm sóc", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" },
     other: { title: "Dịch vụ khác", catchphrase: "", heroTitle: "", metaTitle: "", metaDescription: "", services: [], faq: [], breadcrumbs: { home: "Trang chủ", services: "Dịch vụ" }, tableHeaders: { serviceName: "Tên dịch vụ", serviceOverview: "Tổng quan dịch vụ", pricingGuide: "Hướng dẫn giá cả" }, faqTitle: "Câu hỏi thường gặp" }
   }
