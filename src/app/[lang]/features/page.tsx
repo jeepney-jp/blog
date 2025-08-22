@@ -261,6 +261,23 @@ const content = {
     keyPoint2: { title: "业界最低价格", subtitle: "比一般行情便宜30%" },
     keyPoint3: { title: "可靠的多语言支持", subtitle: "9种语言完全消除语言障碍" },
     keyPoint4: { title: "快速响应", subtitle: "在线完成，无需到访事务所" },
+    concernsTitle: "您是否有这些烦恼？",
+    concerns: [
+      { title: "初次申请感到不安", description: "想委托给实绩丰富的事务所，但不知道该选择哪家..." },
+      { title: "复杂案例的应对", description: "我的案例有点复杂。真的能获得许可吗，担心得夜不能寐..." },
+      { title: "费用与品质的平衡", description: "想尽可能控制费用，但便宜没好货也很困扰..." },
+      { title: "费用体系不透明", description: "不知道最终会收费多少，无法制定预算..." }
+    ],
+    solutionTitle: "解决这些烦恼的关键在于本事务所的",
+    solutionHighlight: "「4大优势」",
+    solutionTitle2: "",
+    solutionDescription: "下面将详细说明各项优势如何解决客户的课题。",
+    strengthsGrid: [
+      { title: "超过10,000件申请实绩的信赖", description: "凭借丰富经验和专业知识，应对复杂案例" },
+      { title: "业界最低价格结构", description: "通过高效运营实现低价格，同时提供高品质服务" },
+      { title: "可靠的多语言支持", description: "9种语言支持完全消除语言障碍" },
+      { title: "快速响应和在线完成", description: "对紧急案件快速响应，无需到访事务所" }
+    ],
     strengths: [
       { title: "超过10,000件申请实绩的信赖", description: "自2008年设立以来支持了10,000件以上的申请，拥有99%的批准率实绩和信赖" },
       { title: "业界最低价格结构", description: "通过消除浪费的高效运营实现了业界最低价格，同时提供高品质服务" },
@@ -293,6 +310,23 @@ const content = {
     keyPoint2: { title: "業界最低價格", subtitle: "比一般行情便宜30%" },
     keyPoint3: { title: "可靠的多語言支援", subtitle: "9種語言完全消除語言障礙" },
     keyPoint4: { title: "快速響應", subtitle: "線上完成，無需到訪事務所" },
+    concernsTitle: "您是否有這些煩惱？",
+    concerns: [
+      { title: "初次申請感到不安", description: "想委託給實績豐富的事務所，但不知道該選擇哪家..." },
+      { title: "複雜案例的應對", description: "我的案例有點複雜。真的能獲得許可嗎，擔心得夜不能寐..." },
+      { title: "費用與品質的平衡", description: "想儘可能控制費用，但便宜沒好貨也很困擾..." },
+      { title: "費用體系不透明", description: "不知道最終會收費多少，無法制定預算..." }
+    ],
+    solutionTitle: "解決這些煩惱的關鍵在於本事務所的",
+    solutionHighlight: "「4大優勢」",
+    solutionTitle2: "",
+    solutionDescription: "下面將詳細說明各項優勢如何解決客戶的課題。",
+    strengthsGrid: [
+      { title: "超過10,000件申請實績的信賴", description: "憑藉豐富經驗和專業知識，應對複雜案例" },
+      { title: "業界最低價格結構", description: "透過高效運營實現低價格，同時提供高品質服務" },
+      { title: "可靠的多語言支援", description: "9種語言支援完全消除語言障礙" },
+      { title: "快速響應和線上完成", description: "對緊急案件快速響應，無需到訪事務所" }
+    ],
     strengths: [
       { title: "超過10,000件申請實績的信賴", description: "自2008年設立以來支援了10,000件以上的申請，擁有99%的批准率實績和信賴" },
       { title: "業界最低價格結構", description: "透過消除浪費的高效運營實現了業界最低價格，同時提供高品質服務" },
