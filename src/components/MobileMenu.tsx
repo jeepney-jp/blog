@@ -34,6 +34,28 @@ export default function MobileMenu({ lang }: MobileMenuProps) {
       openMenu: "Open menu",
       closeMenu: "Close menu",
     },
+    'zh-CN': {
+      menu: "菜单",
+      top: "首页",
+      features: "本事务所特色",
+      services: "服务",
+      about: "事务所介绍",
+      news: "新闻",
+      contact: "联系我们",
+      openMenu: "打开菜单",
+      closeMenu: "关闭菜单",
+    },
+    'zh-TW': {
+      menu: "選單",
+      top: "首頁",
+      features: "本事務所特色",
+      services: "服務",
+      about: "事務所介紹",
+      news: "新聞",
+      contact: "聯繫我們",
+      openMenu: "打開選單",
+      closeMenu: "關閉選單",
+    },
   };
 
   const t = content[lang];
