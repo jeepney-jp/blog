@@ -71,17 +71,17 @@ export default function Header({ lang }: HeaderProps) {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <Link href={`${basePath}/`} className="hover:opacity-80 transition-opacity">
-                <h1 className="text-lg sm:text-xl font-bold">
+                <h1 className="text-base sm:text-lg lg:text-xl font-bold">
                   <span className="text-gray-600">{t.companyName}</span>
-                  <span className="text-gray-600 ml-1 hidden sm:inline">{t.companyNameFull}</span>
-                  <span className="text-gray-600 ml-1 sm:hidden">{t.companyNameShort}</span>
+                  <span className="text-gray-600 ml-1 hidden sm:inline whitespace-nowrap">{t.companyNameFull}</span>
+                  <span className="text-gray-600 ml-1 sm:hidden whitespace-nowrap">{t.companyNameShort}</span>
                 </h1>
               </Link>
             </div>
             
             {/* デスクトップメニュー */}
             <nav className="hidden md:flex items-center space-x-6">
-              <Link href={`${basePath}/features`} className="text-gray-600 hover:text-gray-900">
+              <Link href={`${basePath}/features`} className="text-gray-600 hover:text-gray-900 whitespace-nowrap">
                 {t.features}
               </Link>
               <Link href={`${basePath}/services`} className="text-gray-600 hover:text-gray-900">
