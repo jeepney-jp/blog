@@ -847,7 +847,7 @@ export const categoryPagesContent: CategoryPagesContent = {
         {
           id: "welfare-facility-establishment",
           title: "社会福祉施設設置認可申請",
-          target: "特別養護老人ホーム、障害者施設等の社会福祉施設設置認可申請です。建築基準から運営体制まで総合的に支援します。"
+          target: "特別養護老人ホーム、障害者施設等の社会福祉施設設置認可申請です。建築基準から運営体制まで総合的に支援します。",
           priceMin: 400000,
           priceMax: 800000
         }
