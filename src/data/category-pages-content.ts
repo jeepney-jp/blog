@@ -329,7 +329,7 @@ export const categoryPagesContent: CategoryPagesContent = {
         {
           id: "adult-entertainment-notification",
           title: "性風俗特殊営業営業開始届出",
-          target: "性風俗関連特殊営業の営業開始届出です。営業の種別に応じた適切な届出手続きをサポートします。"
+          target: "性風俗関連特殊営業の営業開始届出です。営業の種別に応じた適切な届出手続きをサポートします。",
           priceMin: 80000,
           priceMax: 120000
         }
