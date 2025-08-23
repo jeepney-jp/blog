@@ -68,17 +68,17 @@ export const categoryPagesContent: CategoryPagesContent = {
         {
           id: "student",
           title: "留学ビザ",
-          target: "大学，専門学校，日本語学校等の学生（いわゆる留学生）が取得します。"
+          target: "大学，専門学校，日本語学校等の学生（いわゆる留学生）が取得する在留資格です。"
         },
         {
           id: "dependent",
           title: "家族滞在ビザ",
-          target: "在留外国人の配偶者・子供が該当します。"
+          target: "在留外国人の配偶者・子供が該当する在留資格です。"
         },
         {
           id: "long-term-resident",
           title: "定住者ビザ",
-          target: "日系３世、中国残留邦人、第三国定住難民等が該当します。"
+          target: "日系３世、中国残留邦人、第三国定住難民等が該当する在留資格です。"
         },
         {
           id: "specified-skilled-worker",
@@ -88,7 +88,7 @@ export const categoryPagesContent: CategoryPagesContent = {
         {
           id: "highly-skilled-professional",
           title: "高度人材ビザ",
-          target: "ポイント制による高度人材。事業の経営者、研究者、技術者、3つの活動類型があります。高度専門職1号として3年以上活動を行っていた外国人は高度専門職2号が取得でき、優遇措置が受けられるようになります。"
+          target: "ポイント制による高度人材の在留資格です。事業の経営者、研究者、技術者、3つの活動類型があります。高度専門職1号として3年以上活動を行っていた外国人は高度専門職2号が取得でき、優遇措置が受けられるようになります。"
         },
         {
           id: "permanent-resident",
@@ -103,7 +103,7 @@ export const categoryPagesContent: CategoryPagesContent = {
         {
           id: "skilled-labor",
           title: "技能ビザ",
-          target: "産業上の特殊な分野に属する熟練した技能を要する外国人が該当します。料理の調理師，スポーツ指導者、航空機の操縦者、貴金属等の加工職人等が対象となっており、「技術・人文知識・国際業務」との区別にご注意ください。"
+          target: "産業上の特殊な分野に属する熟練した技能を要する外国人が該当する在留資格です。料理の調理師，スポーツ指導者、航空機の操縦者、貴金属等の加工職人等が対象となっております。「技術・人文知識・国際業務」との区別にご注意ください。"
         },
         {
           id: "entertainer",
@@ -113,22 +113,22 @@ export const categoryPagesContent: CategoryPagesContent = {
         {
           id: "artist",
           title: "芸術ビザ",
-          target: "音楽、美術、文学等の芸術分野で収入を得る活動を行うための在留資格。「興行」に該当する場合を除きます。"
+          target: "音楽、美術、文学等の芸術分野で収入を得る活動を行うための在留資格です。「興行」に該当する場合を除きます。"
         },
         {
           id: "spouse-of-japanese",
           title: "日本人の配偶者等",
-          target: "日本人の配偶者、実子、特別養子が該当します。"
+          target: "日本人の配偶者、実子、特別養子が該当する在留資格です。"
         },
         {
           id: "spouse-of-permanent-resident",
           title: "永住者の配偶者等",
-          target: "永住者・特別永住者の配偶者、日本で出生し引き続き在留している実子が該当します。"
+          target: "永住者・特別永住者の配偶者、日本で出生し引き続き在留している実子が該当する在留資格です。"
         },
         {
           id: "long-term-resident-final",
           title: "定住者",
-          target: "日系３世、中国残留邦人、第三国定住難民等が該当します。"
+          target: "日系３世、中国残留邦人、第三国定住難民等が該当する在留資格です。"
         }
       ],
       faq: [
