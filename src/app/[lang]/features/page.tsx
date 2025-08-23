@@ -765,9 +765,13 @@ export default async function FeaturesPage({ params }: PageProps) {
             <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300">
               <div className="flex flex-col md:flex-row-reverse items-center">
                 <div className="w-full md:w-[35%] h-[200px] md:h-[300px]">
-                  <div className="bg-gray-200 flex items-center justify-center h-full">
-                    <span className="text-gray-500 text-lg">イメージ</span>
-                  </div>
+                  <Image
+                    src="/スピード対応とオンライン完結の利便性.png"
+                    alt="スピード対応とオンライン完結のイメージ"
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="w-full md:w-[65%] p-8">
                   <div className="flex items-start mb-4">
