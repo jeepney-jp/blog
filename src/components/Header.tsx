@@ -69,9 +69,9 @@ export default function Header({ lang }: HeaderProps) {
       <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="flex items-center">
-              <Link href={`${basePath}/`} className="hover:opacity-80 transition-opacity">
-                <h1 className="text-base sm:text-lg lg:text-xl font-bold">
+            <div className="flex items-center flex-1 min-w-0">
+              <Link href={`${basePath}/`} className="hover:opacity-80 transition-opacity min-w-0">
+                <h1 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold">
                   <span className="text-gray-600">{t.companyName}</span>
                   <span className="text-gray-600 ml-1 hidden sm:inline whitespace-nowrap">{t.companyNameFull}</span>
                   <span className="text-gray-600 ml-1 sm:hidden whitespace-nowrap">{t.companyNameShort}</span>
@@ -100,7 +100,7 @@ export default function Header({ lang }: HeaderProps) {
             </nav>
             
             {/* モバイルメニュー */}
-            <div className="flex items-center gap-3 md:hidden">
+            <div className="flex items-center gap-1 sm:gap-2 md:hidden flex-shrink-0">
               <LanguageSwitcher currentLang={lang} />
               <MobileMenu lang={lang} />
             </div>
