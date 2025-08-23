@@ -706,20 +706,27 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">{t.accessInfo}</h2>
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dOdyR7rFhf3h3Y&q=〒297-0026+千葉県茂原市八千代2丁目6番地の13&zoom=16&language=ja"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3251.2931610577148!2d140.2955048!3d35.422767199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022b90f6da84b7b%3A0x2f0faea551e8aed!2z44CSMjk3LTAwMjQg5Y2D6JGJ55yM6IyC5Y6f5biC5YWr5Y2D5Luj77yS5LiB55uu77yW4oiS77yR77yT!5e0!3m2!1sja!2sjp!4v1755905617223!5m2!1sja!2sjp&maptype=roadmap&zoom=16" 
+              width="100%" 
+              height="450" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full"
-            ></iframe>
+            />
           </div>
           <div className="mt-6 text-center">
             <p className="text-gray-700 text-lg">
               〒297-0026 千葉県茂原市八千代2丁目6番地の13
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              ※ {lang === 'ja' ? '地図の左下にあるストリートビュー画像をクリックすると360度ビューに切り替わります' : 
+                  lang === 'en' ? 'Click the Street View image at the bottom left of the map to switch to 360° view' :
+                  lang === 'zh-CN' ? '点击地图左下角的街景图像可切换到360度视图' :
+                  lang === 'zh-TW' ? '點擊地圖左下角的街景圖像可切換到360度視圖' :
+                  'Nhấp vào hình ảnh Street View ở góc dưới bên trái của bản đồ để chuyển đổi sang chế độ xem 360°'}
             </p>
           </div>
         </div>
