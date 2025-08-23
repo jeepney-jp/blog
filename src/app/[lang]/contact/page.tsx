@@ -564,35 +564,35 @@ export default function Contact() {
       </section>
 
       {/* Access Map */}
-      <section className="bg-gray-100 py-16">
+      <section className="bg-gray-100 py-8 sm:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{t.accessTitle}</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">{t.nearestStations}</h3>
-              <div className="space-y-4">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-6 sm:mb-8 lg:mb-12">{t.accessTitle}</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+            <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.nearestStations}</h3>
+              <div className="space-y-3 sm:space-y-4">
                 <div>
-                  <h4 className="font-medium text-gray-900">東京駅</h4>
-                  <p className="text-gray-600">{t.byTrain.tokyo}</p>
+                  <h4 className="font-medium text-gray-900 text-sm sm:text-base">東京駅</h4>
+                  <p className="text-gray-600 text-xs sm:text-sm">{t.byTrain.tokyo}</p>
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-900">大手町駅</h4>
-                  <p className="text-gray-600">{t.byTrain.otemachi}</p>
+                  <h4 className="font-medium text-gray-900 text-sm sm:text-base">大手町駅</h4>
+                  <p className="text-gray-600 text-xs sm:text-sm">{t.byTrain.otemachi}</p>
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-900">二重橋前駅</h4>
-                  <p className="text-gray-600">{t.byTrain.nijubashimae}</p>
+                  <h4 className="font-medium text-gray-900 text-sm sm:text-base">二重橋前駅</h4>
+                  <p className="text-gray-600 text-xs sm:text-sm">{t.byTrain.nijubashimae}</p>
                 </div>
               </div>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">{t.byCar}</h3>
+            <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.byCar}</h3>
               <div className="space-y-2">
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-sm sm:text-base">
                   {t.carDirection}
                 </p>
-                <p className="text-sm text-gray-600">
+                <p className="text-xs sm:text-sm text-gray-600">
                   {t.carParkingNote}
                 </p>
               </div>
