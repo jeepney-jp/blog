@@ -100,36 +100,36 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
   const t = content[lang];
 
   return (
-    <footer className="bg-gray-800 text-white py-12">
+    <footer className="bg-gray-800 text-white py-8 sm:py-10 lg:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
           {/* Column 1: Office Information */}
           <div>
             <Link href={`/${lang}`}>
-              <h3 className="text-lg font-semibold mb-4 hover:text-gray-300 transition-colors cursor-pointer">
+              <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 hover:text-gray-300 transition-colors cursor-pointer">
                 <span className="text-white">{t.companyName}</span>
                 <span className="text-white ml-1">{t.companyNameFull}</span>
               </h3>
             </Link>
-            <div className="mb-4">
-              <p className="text-gray-400">
+            <div className="mb-3 sm:mb-4">
+              <p className="text-gray-400 text-sm sm:text-base">
                 〒297-0026<br />
                 {lang === 'ja' ? '千葉県茂原市八千代2丁目6番地の13' : '2-6-13 Yachiyo, Mobara-shi, Chiba 297-0026'}<br />
                 TEL: 0475-22-8741<br />
                 FAX: 0475-22-8742
               </p>
             </div>
-            <div className="mb-4">
-              <h4 className="text-sm font-semibold mb-2">{t.businessHours}</h4>
-              <p className="text-gray-400 text-sm">
+            <div className="mb-3 sm:mb-4">
+              <h4 className="text-xs sm:text-sm font-semibold mb-2">{t.businessHours}</h4>
+              <p className="text-gray-400 text-xs sm:text-sm">
                 {t.weekdays}<br />
                 {t.saturday}<br />
                 {t.holiday}
               </p>
             </div>
             <div>
-              <h4 className="text-sm font-semibold mb-2">{t.serviceAreas}</h4>
-              <p className="text-gray-400 text-sm">
+              <h4 className="text-xs sm:text-sm font-semibold mb-2">{t.serviceAreas}</h4>
+              <p className="text-gray-400 text-xs sm:text-sm">
                 {t.areasText}<br />
                 {t.otherAreas}
               </p>
@@ -138,13 +138,13 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
 
           {/* Column 2: Services */}
           <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold mb-4">{t.services}</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.services}</h3>
             <div className="md:columns-2 md:gap-x-6 space-y-2">
               {serviceCategories.map((category) => (
                 <div key={category.id} className="mb-2 break-inside-avoid">
                   <Link 
                     href={`/${lang}/services/${category.slug}`}
-                    className="text-gray-300 hover:text-white font-medium transition-colors block"
+                    className="text-gray-300 hover:text-white font-medium transition-colors block text-sm sm:text-base"
                   >
                     {category.title}
                   </Link>
@@ -155,28 +155,28 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
 
           {/* Column 3: Other Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t.about}</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.about}</h3>
             <ul className="space-y-2">
               <li>
-                <Link href={`/${lang}/about`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href={`/${lang}/about`} className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">
                   {t.aboutUs}
                 </Link>
               </li>
               <li>
-                <Link href={`/${lang}/news`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href={`/${lang}/news`} className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">
                   {t.news}
                 </Link>
               </li>
               <li>
-                <Link href={`/${lang}/contact`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href={`/${lang}/contact`} className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">
                   {t.contact}
                 </Link>
               </li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>{t.copyright}</p>
+        <div className="border-t border-gray-700 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400">
+          <p className="text-xs sm:text-sm">{t.copyright}</p>
         </div>
       </div>
     </footer>

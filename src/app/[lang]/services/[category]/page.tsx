@@ -89,7 +89,7 @@ export default async function CategoryPage({ params }: Props) {
             __html: JSON.stringify(serviceStructuredData)
           }}
         />
-        <div className="max-w-6xl mx-auto px-4 py-12 space-y-16">
+        <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8 lg:py-12 space-y-8 sm:space-y-12 lg:space-y-16">
           {/* パンくず */}
           <Breadcrumbs
             segments={[
@@ -101,10 +101,10 @@ export default async function CategoryPage({ params }: Props) {
 
           {/* Hero セクション */}
           <section>
-            <h1 className="text-3xl font-bold mb-4">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">
               {hardcodedData.heroTitle}
             </h1>
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 mb-4 sm:mb-6">
               {hardcodedData.catchphrase}
             </p>
           </section>
@@ -157,22 +157,22 @@ export default async function CategoryPage({ params }: Props) {
               </div>
 
               {/* モバイル用カード表示 */}
-              <div className="md:hidden space-y-4">
+              <div className="md:hidden space-y-3 sm:space-y-4">
                 {hardcodedData.services.map((service) => (
-                  <div key={service.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-                    <div className="mb-3">
-                      <h3 className="text-base font-semibold text-gray-900">{service.title}</h3>
+                  <div key={service.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-3 sm:p-4">
+                    <div className="mb-2 sm:mb-3">
+                      <h3 className="text-sm sm:text-base font-semibold text-gray-900">{service.title}</h3>
                     </div>
                     
-                    <div className="space-y-2 mb-4">
+                    <div className="space-y-2 mb-3 sm:mb-4">
                       <div className="flex flex-col">
                         <span className="text-xs font-medium text-gray-500 mb-1">{hardcodedData.tableHeaders.serviceOverview}</span>
-                        <span className="text-sm text-gray-700">{service.target}</span>
+                        <span className="text-xs sm:text-sm text-gray-700 leading-relaxed">{service.target}</span>
                       </div>
                       
                       <div className="flex flex-col">
                         <span className="text-xs font-medium text-gray-500 mb-1">{hardcodedData.tableHeaders.pricingGuide}</span>
-                        <span className="text-sm font-medium text-gray-900">
+                        <span className="text-xs sm:text-sm font-medium text-gray-900">
                           {service.priceMin && service.priceMax
                             ? `¥${service.priceMin.toLocaleString()}〜¥${service.priceMax.toLocaleString()}`
                             : service.priceMin

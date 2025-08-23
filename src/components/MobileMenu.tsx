@@ -74,7 +74,7 @@ export default function MobileMenu({ lang }: MobileMenuProps) {
 
   const menuItems = [
     { href: `${basePath}/`, label: t.top },
-    { href: `${basePath}/#features`, label: t.features },
+    { href: `${basePath}/features`, label: t.features },
     { href: `${basePath}/services`, label: t.services },
     { href: `${basePath}/about`, label: t.about },
     { href: `${basePath}/news`, label: t.news },
