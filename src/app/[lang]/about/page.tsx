@@ -380,7 +380,7 @@ export default function About() {
       />
 
       {/* About Content */}
-      <section className="py-16">
+      <section className="py-8 sm:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* パンくずリスト */}
           <Breadcrumbs
@@ -389,60 +389,60 @@ export default function About() {
               { name: breadcrumbContent[lang].about, href: `/${lang}/about` }
             ]}
           />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mt-6 sm:mt-8">
             <div className="flex flex-col h-full">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.ceoGreeting}</h2>
-              <div className="bg-white p-8 rounded-lg shadow-sm flex-1 flex flex-col">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">{t.ceoGreeting}</h2>
+              <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm flex-1 flex flex-col">
                 {/* 代表者写真 */}
-                <div className="mb-8">
-                  <div className="w-48 h-48 mx-auto bg-gray-200 rounded-lg overflow-hidden relative">
+                <div className="mb-6 sm:mb-8">
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 mx-auto bg-gray-200 rounded-lg overflow-hidden relative">
                     <Image 
                       src="/ceo-photo.jpg" 
                       alt="代表 鈴木康嗣" 
                       fill
-                      sizes="192px"
+                      sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 192px"
                       className="object-cover"
                     />
                   </div>
                 </div>
-                <div className="mb-6 text-center">
-                  <h3 className="text-xl font-semibold mb-2">鈴木 康嗣｜Yasutsugu Suzuki</h3>
-                  <p className="text-gray-600">{t.representative}</p>
+                <div className="mb-4 sm:mb-6 text-center">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">鈴木 康嗣｜Yasutsugu Suzuki</h3>
+                  <p className="text-sm sm:text-base text-gray-600">{t.representative}</p>
                 </div>
-                <p className="text-gray-700 mb-4">
+                <p className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 leading-relaxed">
                   {t.ceoMessage1}
                 </p>
-                <p className="text-gray-700 mb-4">
+                <p className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 leading-relaxed">
                   {t.ceoMessage2}
                 </p>
-                <p className="text-gray-700">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   {t.ceoMessage3}
                 </p>
               </div>
             </div>
             
             <div className="flex flex-col h-full">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.officeInfo}</h2>
-              <div className="bg-white p-8 rounded-lg shadow-sm flex-1">
-                <div className="space-y-6">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">{t.officeInfo}</h2>
+              <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm flex-1">
+                <div className="space-y-4 sm:space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">{t.establishedDate}</h3>
-                    <p className="text-gray-700">
+                    <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{t.establishedDate}</h3>
+                    <p className="text-sm sm:text-base text-gray-700">
                       2008年
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">{t.address}</h3>
-                    <p className="text-gray-700">
+                    <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{t.address}</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       〒297-0026<br />
                       千葉県茂原市八千代2丁目6番地の13
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">{t.contact}</h3>
-                    <p className="text-gray-700">
+                    <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{t.contact}</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       TEL: 0475-22-8741<br />
                       FAX: 0475-22-8742<br />
                       Email: info@fortia-office.com
@@ -450,8 +450,8 @@ export default function About() {
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">{t.businessHours}</h3>
-                    <p className="text-gray-700">
+                    <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{t.businessHours}</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       {t.weekdays}<br />
                       {t.saturday}<br />
                       {t.holiday}
@@ -459,44 +459,44 @@ export default function About() {
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">{t.representativeName}</h3>
-                    <p className="text-gray-700">
+                    <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{t.representativeName}</h3>
+                    <p className="text-sm sm:text-base text-gray-700">
                       鈴木 康嗣
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">{t.employees}</h3>
-                    <p className="text-gray-700">
+                    <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{t.employees}</h3>
+                    <p className="text-sm sm:text-base text-gray-700">
                       10名
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">{t.qualifications}</h3>
-                    <p className="text-gray-700">
+                    <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{t.qualifications}</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       {t.qualification}<br />
                       {t.association}
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">業務内容</h3>
-                    <p className="text-gray-700">
+                    <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">業務内容</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       {t.businessContent}
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">認定</h3>
-                    <p className="text-gray-700">
+                    <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">認定</h3>
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       {t.certification}
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">{t.relatedCompanies}</h3>
-                    <p className="text-gray-700">
+                    <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{t.relatedCompanies}</h3>
+                    <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                       株式会社World Wide Works<br />
                       （労働者派遣事業許可番号：派１２－３０１６５５）<br />
                       （有料職業紹介事業許可番号：１２－ユ－３０１０９９）<br /><br />
@@ -511,21 +511,21 @@ export default function About() {
       </section>
 
       {/* Members Section */}
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{staffData.title}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-6 sm:mb-8 lg:mb-12">{staffData.title}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 gap-y-6 sm:gap-y-8 lg:gap-y-12">
             {staff.map((member) => (
               <div key={member._id} className="group">
-                <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <div className="bg-gray-50 rounded-lg p-4 sm:p-6 hover:shadow-lg transition-shadow">
                   {/* メンバー写真 - 正方形 */}
-                  <div className="mb-4 relative">
+                  <div className="mb-3 sm:mb-4 relative">
                     <div className="w-full aspect-square bg-gray-200 rounded-lg overflow-hidden relative">
                       <Image 
                         src={member.photo.asset.url} 
                         alt={member.photo.alt || member.name}
                         fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover object-[center_30%]"
                       />
                     </div>
@@ -533,11 +533,11 @@ export default function About() {
                     {/* プラスボタン - 写真の右下に配置 */}
                     <button
                       onClick={() => toggleMember(member._id)}
-                      className="absolute bottom-2 right-2 w-8 h-8 bg-gray-700 text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all shadow-lg"
+                      className="absolute bottom-2 right-2 w-7 h-7 sm:w-8 sm:h-8 bg-gray-700 text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all shadow-lg"
                       aria-label={`${member.name}の詳細を${expandedMember === member._id ? '閉じる' : '開く'}`}
                     >
                       <svg 
-                        className={`w-4 h-4 transition-transform duration-300 ${expandedMember === member._id ? 'rotate-45' : ''}`} 
+                        className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 ${expandedMember === member._id ? 'rotate-45' : ''}`} 
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
@@ -548,14 +548,14 @@ export default function About() {
                   </div>
                   
                   {/* 名前 */}
-                  <h3 className="text-xl font-semibold text-gray-900 text-center mb-1">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 text-center mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-sm text-gray-600 text-center mb-3">
+                  <p className="text-xs sm:text-sm text-gray-600 text-center mb-2 sm:mb-3">
                     {member.nameRomaji}
                   </p>
                   {member.position && (
-                    <p className="text-sm text-gray-500 text-center mb-3">
+                    <p className="text-xs sm:text-sm text-gray-500 text-center mb-2 sm:mb-3">
                       {member.position}
                     </p>
                   )}
@@ -564,8 +564,8 @@ export default function About() {
                   <div className={`overflow-hidden transition-all duration-500 ${
                     expandedMember === member._id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}>
-                    <div className="pt-4 border-t border-gray-200">
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                    <div className="pt-3 sm:pt-4 border-t border-gray-200">
+                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                         {member.introduction}
                       </p>
                     </div>
@@ -578,31 +578,31 @@ export default function About() {
       </section>
 
       {/* Office History Timeline Section */}
-      <section className="py-16 bg-gray-100">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-4">
               {t.officeHistory}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
               {t.historyDescription}
             </p>
           </div>
 
           <div className="relative max-w-4xl mx-auto">
             {/* 縦のライン - 左寄りに配置 */}
-            <div className="absolute left-32 md:left-48 h-full w-0.5 bg-gray-300"></div>
+            <div className="absolute left-24 sm:left-32 md:left-48 h-full w-0.5 bg-gray-300"></div>
             
-            <div className="space-y-8">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8">
               {/* 2024年 */}
               <div className="relative flex items-start">
-                <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2024-01"].dateLabel}</h3>
+                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
+                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2024-01"].dateLabel}</h3>
                 </div>
-                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2024-01"].title}</p>
-                  <p className="text-gray-600">
+                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
+                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2024-01"].title}</p>
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
                     {t.timeline["2024-01"].description}
                   </p>
                 </div>
@@ -610,13 +610,13 @@ export default function About() {
 
               {/* 2023年 */}
               <div className="relative flex items-start">
-                <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2023-06"].dateLabel}</h3>
+                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
+                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2023-06"].dateLabel}</h3>
                 </div>
-                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2023-06"].title}</p>
-                  <p className="text-gray-600">
+                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
+                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2023-06"].title}</p>
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
                     {t.timeline["2023-06"].description}
                   </p>
                 </div>
@@ -624,13 +624,13 @@ export default function About() {
 
               {/* 2022年 */}
               <div className="relative flex items-start">
-                <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2022-09"].dateLabel}</h3>
+                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
+                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2022-09"].dateLabel}</h3>
                 </div>
-                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2022-09"].title}</p>
-                  <p className="text-gray-600">
+                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
+                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2022-09"].title}</p>
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
                     {t.timeline["2022-09"].description}
                   </p>
                 </div>
@@ -638,13 +638,13 @@ export default function About() {
 
               {/* 2021年 */}
               <div className="relative flex items-start">
-                <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2021-12"].dateLabel}</h3>
+                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
+                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2021-12"].dateLabel}</h3>
                 </div>
-                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2021-12"].title}</p>
-                  <p className="text-gray-600">
+                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
+                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2021-12"].title}</p>
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
                     {t.timeline["2021-12"].description}
                   </p>
                 </div>
@@ -652,13 +652,13 @@ export default function About() {
 
               {/* 2008年 */}
               <div className="relative flex items-start">
-                <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2008-01"].dateLabel}</h3>
+                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
+                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2008-01"].dateLabel}</h3>
                 </div>
-                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2008-01"].title}</p>
-                  <p className="text-gray-600">
+                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
+                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2008-01"].title}</p>
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
                     {t.timeline["2008-01"].description}
                   </p>
                 </div>
@@ -666,13 +666,13 @@ export default function About() {
 
               {/* 2019年 */}
               <div className="relative flex items-start">
-                <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2019-10"].dateLabel}</h3>
+                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
+                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2019-10"].dateLabel}</h3>
                 </div>
-                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2019-10"].title}</p>
-                  <p className="text-gray-600">
+                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
+                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2019-10"].title}</p>
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
                     {t.timeline["2019-10"].description}
                   </p>
                 </div>
@@ -680,13 +680,13 @@ export default function About() {
 
               {/* 2014年 */}
               <div className="relative flex items-start">
-                <div className="w-32 md:w-48 text-right pr-8 pt-1">
-                  <h3 className="text-lg font-bold text-gray-900">{t.timeline["2014-04"].dateLabel}</h3>
+                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
+                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2014-04"].dateLabel}</h3>
                 </div>
-                <div className="absolute left-32 md:left-48 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-8">
-                  <p className="text-gray-700 font-semibold mb-1">{t.timeline["2014-04"].title}</p>
-                  <p className="text-gray-600">
+                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
+                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
+                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2014-04"].title}</p>
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
                     {t.timeline["2014-04"].description}
                   </p>
                 </div>
@@ -695,33 +695,33 @@ export default function About() {
           </div>
 
           {/* モバイル表示の場合の注記 */}
-          <p className="text-center text-sm text-gray-500 mt-12 md:hidden">
+          <p className="text-center text-xs sm:text-sm text-gray-500 mt-6 sm:mt-8 lg:mt-12 md:hidden">
             {t.mobileNote}
           </p>
         </div>
       </section>
 
       {/* Map Section */}
-      <section className="py-16 bg-white">
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">{t.accessInfo}</h2>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-4 sm:mb-6 lg:mb-8">{t.accessInfo}</h2>
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3251.2931610577148!2d140.2955048!3d35.422767199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022b90f6da84b7b%3A0x2f0faea551e8aed!2z44CSMjk3LTAwMjQg5Y2D6JGJ55yM6IyC5Y6f5biC5YWr5Y2D5Luj77yS5LiB55uu77yW4oiS77yR77yT!5e0!3m2!1sja!2sjp!4v1755905617223!5m2!1sja!2sjp&maptype=roadmap&zoom=16" 
               width="100%" 
-              height="450" 
+              height="300" 
               style={{ border: 0 }} 
               allowFullScreen 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full"
+              className="w-full sm:h-80 lg:h-96"
             />
           </div>
-          <div className="mt-6 text-center">
-            <p className="text-gray-700 text-lg">
+          <div className="mt-4 sm:mt-6 text-center">
+            <p className="text-gray-700 text-sm sm:text-base lg:text-lg">
               〒297-0026 千葉県茂原市八千代2丁目6番地の13
             </p>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-xs sm:text-sm text-gray-500 mt-2">
               ※ {lang === 'ja' ? '地図の左下にあるストリートビュー画像をクリックすると360度ビューに切り替わります' : 
                   lang === 'en' ? 'Click the Street View image at the bottom left of the map to switch to 360° view' :
                   lang === 'zh-CN' ? '点击地图左下角的街景图像可切换到360度视图' :
