@@ -17,7 +17,6 @@ export default function About() {
   const params = useParams();
   const lang = params.lang as Locale;
   const [expandedMember, setExpandedMember] = useState<string | null>(null);
-  const [showStreetView, setShowStreetView] = useState(false);
 
   // 多言語コンテンツ
   const content = {
@@ -48,8 +47,6 @@ export default function About() {
       ceoMessage2: "当事務所では、お客様一人ひとりの状況に合わせた最適な解決策を提案し、迅速かつ丁寧な対応を心がけております。",
       ceoMessage3: "お困りごとがございましたら、お気軽にご相談ください。",
       accessInfo: "アクセス情報",
-      mapView: "地図表示",
-      streetView: "ストリートビュー",
       officeHistory: "事務所の沿革",
       historyDescription: "地域の皆様と共に歩んできた、私たちの歴史をご紹介します",
       timeline: {
@@ -118,8 +115,6 @@ export default function About() {
       ceoMessage2: "At our office, we propose optimal solutions tailored to each client's situation and strive for prompt and courteous service.",
       ceoMessage3: "Please feel free to contact us if you have any concerns.",
       accessInfo: "Access Information",
-      mapView: "Map View",
-      streetView: "Street View",
       officeHistory: "Office History",
       historyDescription: "Introducing our history of walking together with the local community",
       timeline: {
@@ -188,8 +183,6 @@ export default function About() {
       ceoMessage2: "本事务所根据每位客户的具体情况提出最佳解决方案，致力于迅速细致的应对。",
       ceoMessage3: "如有困扰，请随时咨询。",
       accessInfo: "交通信息",
-      mapView: "地图显示",
-      streetView: "街景视图",
       officeHistory: "事务所沿革",
       historyDescription: "介绍与地区居民共同走过的历史",
       timeline: {
@@ -258,8 +251,6 @@ export default function About() {
       ceoMessage2: "本事務所根據每位客戶的具體情況提出最佳解決方案，致力於迅速細緻的應對。",
       ceoMessage3: "如有困擾，請隨時諮詢。",
       accessInfo: "交通資訊",
-      mapView: "地圖顯示",
-      streetView: "街景視圖",
       officeHistory: "事務所沿革",
       historyDescription: "介紹與地區居民共同走過的歷史",
       timeline: {
@@ -328,8 +319,6 @@ export default function About() {
       ceoMessage2: "Văn phòng chúng tôi đề xuất giải pháp tối ưu phù hợp với tình hình của từng khách hàng, luôn hướng tới phản hồi nhanh chóng và tỉ mỉ.",
       ceoMessage3: "Nếu có khó khăn gì, xin vui lòng tư vấn thoải mái.",
       accessInfo: "Thông tin tiếp cận",
-      mapView: "Hiển thị bản đồ",
-      streetView: "Góc nhìn đường phố",
       officeHistory: "Lịch sử văn phòng",
       historyDescription: "Giới thiệu lịch sử của chúng tôi, đã đồng hành cùng mọi người trong khu vực",
       timeline: {
@@ -716,70 +705,29 @@ export default function About() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">{t.accessInfo}</h2>
-          
-          {/* Toggle buttons */}
-          <div className="flex justify-center mb-6">
-            <div className="bg-gray-100 rounded-lg p-1 inline-flex">
-              <button
-                onClick={() => setShowStreetView(false)}
-                className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                  !showStreetView 
-                    ? 'bg-white text-blue-600 shadow-sm' 
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
-              >
-                {t.mapView}
-              </button>
-              <button
-                onClick={() => setShowStreetView(true)}
-                className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                  showStreetView 
-                    ? 'bg-white text-blue-600 shadow-sm' 
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
-              >
-                {t.streetView}
-              </button>
-            </div>
-          </div>
-
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            {!showStreetView ? (
-              // 通常の地図
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3251.2931610577148!2d140.2955048!3d35.422767199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022b90f6da84b7b%3A0x2f0faea551e8aed!2z44CSMjk3LTAwMjQg5Y2D6JGJ55yM6IyC5Y6f5biC5YWr5Y2D5Luj77yS5LiB55uu77yW4oiS77yR77yT!5e0!3m2!1sja!2sjp!4v1755905617223!5m2!1sja!2sjp" 
-                width="100%" 
-                height="450" 
-                style={{ border: 0 }} 
-                allowFullScreen 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full"
-              />
-            ) : (
-              // 360度ストリートビュー
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!4v1755905617223!6m8!1m7!1sCAoSLEFGMVFpcE9fVXJxVkVuRjVjRExfSGN5YVE0QW1lVlpxekZHZEJsWU9Ib1NR!2m2!1d35.422767199999996!2d140.2955048!3f0!4f0!5f0.7820865974627469"
-                width="100%" 
-                height="450" 
-                style={{ border: 0 }} 
-                allowFullScreen 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full"
-              />
-            )}
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3251.2931610577148!2d140.2955048!3d35.422767199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022b90f6da84b7b%3A0x2f0faea551e8aed!2z44CSMjk3LTAwMjQg5Y2D6JGJ55yM6IyC5Y6f5biC5YWr5Y2D5Luj77yS5LiB55uu77yW4oiS77yR77yT!5e0!3m2!1sja!2sjp!4v1755905617223!5m2!1sja!2sjp&maptype=roadmap&zoom=16" 
+              width="100%" 
+              height="450" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+            />
           </div>
-          
           <div className="mt-6 text-center">
             <p className="text-gray-700 text-lg">
               〒297-0026 千葉県茂原市八千代2丁目6番地の13
             </p>
-            {showStreetView && (
-              <p className="text-sm text-gray-500 mt-2">
-                ※ {lang === 'ja' ? 'マウスやタッチで360度ビューを操作できます' : 'You can navigate the 360° view with mouse or touch'}
-              </p>
-            )}
+            <p className="text-sm text-gray-500 mt-2">
+              ※ {lang === 'ja' ? '地図の左下にあるストリートビュー画像をクリックすると360度ビューに切り替わります' : 
+                  lang === 'en' ? 'Click the Street View image at the bottom left of the map to switch to 360° view' :
+                  lang === 'zh-CN' ? '点击地图左下角的街景图像可切换到360度视图' :
+                  lang === 'zh-TW' ? '點擊地圖左下角的街景圖像可切換到360度視圖' :
+                  'Nhấp vào hình ảnh Street View ở góc dưới bên trái của bản đồ để chuyển đổi sang chế độ xem 360°'}
+            </p>
           </div>
         </div>
       </section>
