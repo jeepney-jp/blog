@@ -509,11 +509,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Members Section */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-6 sm:mb-8 lg:mb-12">{staffData.title}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 gap-y-6 sm:gap-y-8 lg:gap-y-12">
             {staff.map((member) => (
               <div key={member._id} className="group">
@@ -576,9 +571,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Office History Timeline Section */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-4">
@@ -693,13 +685,6 @@ export default function About() {
               </div>
             </div>
           </div>
-
-          {/* モバイル表示の場合の注記 */}
-          <p className="text-center text-xs sm:text-sm text-gray-500 mt-6 sm:mt-8 lg:mt-12 md:hidden">
-            {t.mobileNote}
-          </p>
-        </div>
-      </section>
 
       {/* Map Section */}
       <section className="py-8 sm:py-12 lg:py-16 bg-white">

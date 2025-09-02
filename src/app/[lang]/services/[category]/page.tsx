@@ -119,14 +119,11 @@ export default async function CategoryPage({ params }: Props) {
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/2">
                         {hardcodedData.tableHeaders.serviceName}
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/2">
                         {hardcodedData.tableHeaders.serviceOverview}
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/6">
-                        {hardcodedData.tableHeaders.pricingGuide}
                       </th>
                     </tr>
                   </thead>
@@ -139,15 +136,6 @@ export default async function CategoryPage({ params }: Props) {
                         <td className="px-6 py-4 text-sm text-gray-500">
                           <div className="max-w-md">
                             {service.target}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 text-sm text-gray-500">
-                          <div className="whitespace-nowrap">
-                            {service.priceMin && service.priceMax
-                              ? `¥${service.priceMin.toLocaleString()}〜¥${service.priceMax.toLocaleString()}`
-                              : service.priceMin
-                              ? `¥${service.priceMin.toLocaleString()}〜`
-                              : service.priceNote ?? '個別見積り'}
                           </div>
                         </td>
                       </tr>
@@ -168,17 +156,6 @@ export default async function CategoryPage({ params }: Props) {
                       <div className="flex flex-col">
                         <span className="text-xs font-medium text-gray-500 mb-1">{hardcodedData.tableHeaders.serviceOverview}</span>
                         <span className="text-xs sm:text-sm text-gray-700 leading-relaxed">{service.target}</span>
-                      </div>
-                      
-                      <div className="flex flex-col">
-                        <span className="text-xs font-medium text-gray-500 mb-1">{hardcodedData.tableHeaders.pricingGuide}</span>
-                        <span className="text-xs sm:text-sm font-medium text-gray-900">
-                          {service.priceMin && service.priceMax
-                            ? `¥${service.priceMin.toLocaleString()}〜¥${service.priceMax.toLocaleString()}`
-                            : service.priceMin
-                            ? `¥${service.priceMin.toLocaleString()}〜`
-                            : service.priceNote ?? '個別見積り'}
-                        </span>
                       </div>
                     </div>
                   </div>
