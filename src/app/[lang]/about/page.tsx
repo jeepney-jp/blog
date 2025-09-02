@@ -4,19 +4,16 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { useState } from "react";
 import { useParams } from "next/navigation";
 import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import { Locale } from "@/lib/i18n/types";
-import { staffContent } from "@/data/staff-content";
 import { breadcrumbContent } from "@/data/breadcrumb-content";
 
 
 export default function About() {
   const params = useParams();
   const lang = params.lang as Locale;
-  const [expandedMember, setExpandedMember] = useState<string | null>(null);
 
   // 多言語コンテンツ
   const content = {
@@ -363,12 +360,6 @@ export default function About() {
   };
 
   const t = content[lang];
-  const staffData = staffContent[lang];
-  const staff = staffData.staff;
-
-  const toggleMember = (id: string) => {
-    setExpandedMember(expandedMember === id ? null : id);
-  };
 
   return (
     <div className="min-h-screen bg-gray-50">

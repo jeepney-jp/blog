@@ -5,9 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import PageHeader from '@/components/PageHeader';
-import { FaqAccordion } from '@/components/FaqAccordion';
 import { Locale } from '@/lib/i18n/types';
-import { featuresFaqContent } from '@/data/features-faq-content';
 import { breadcrumbContent } from '@/data/breadcrumb-content';
 
 // 多言語コンテンツ
@@ -453,8 +451,6 @@ interface PageProps {
 export default async function FeaturesPage({ params }: PageProps) {
   const { lang } = await params;
   const t = content[lang];
-  const faqData = featuresFaqContent[lang];
-  const faqs = faqData.faqs;
   
   return (
     <div className="min-h-screen bg-gray-50">
