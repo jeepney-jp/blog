@@ -4,19 +4,16 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { useState } from "react";
 import { useParams } from "next/navigation";
 import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import { Locale } from "@/lib/i18n/types";
-import { staffContent } from "@/data/staff-content";
 import { breadcrumbContent } from "@/data/breadcrumb-content";
 
 
 export default function About() {
   const params = useParams();
   const lang = params.lang as Locale;
-  const [expandedMember, setExpandedMember] = useState<string | null>(null);
 
   // 多言語コンテンツ
   const content = {
@@ -363,12 +360,6 @@ export default function About() {
   };
 
   const t = content[lang];
-  const staffData = staffContent[lang];
-  const staff = staffData.staff;
-
-  const toggleMember = (id: string) => {
-    setExpandedMember(expandedMember === id ? null : id);
-  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -510,196 +501,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Members Section */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-6 sm:mb-8 lg:mb-12">{staffData.title}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 gap-y-6 sm:gap-y-8 lg:gap-y-12">
-            {staff.map((member) => (
-              <div key={member._id} className="group">
-                <div className="bg-gray-50 rounded-lg p-4 sm:p-6 hover:shadow-lg transition-shadow">
-                  {/* メンバー写真 - 正方形 */}
-                  <div className="mb-3 sm:mb-4 relative">
-                    <div className="w-full aspect-square bg-gray-200 rounded-lg overflow-hidden relative">
-                      <Image 
-                        src={member.photo.asset.url} 
-                        alt={member.photo.alt || member.name}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover object-[center_30%]"
-                      />
-                    </div>
-                    
-                    {/* プラスボタン - 写真の右下に配置 */}
-                    <button
-                      onClick={() => toggleMember(member._id)}
-                      className="absolute bottom-2 right-2 w-7 h-7 sm:w-8 sm:h-8 bg-gray-700 text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all shadow-lg"
-                      aria-label={`${member.name}の詳細を${expandedMember === member._id ? '閉じる' : '開く'}`}
-                    >
-                      <svg 
-                        className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 ${expandedMember === member._id ? 'rotate-45' : ''}`} 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                      </svg>
-                    </button>
-                  </div>
-                  
-                  {/* 名前 */}
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 text-center mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 text-center mb-2 sm:mb-3">
-                    {member.nameRomaji}
-                  </p>
-                  {member.position && (
-                    <p className="text-xs sm:text-sm text-gray-500 text-center mb-2 sm:mb-3">
-                      {member.position}
-                    </p>
-                  )}
-                  
-                  {/* 自己紹介（展開時） */}
-                  <div className={`overflow-hidden transition-all duration-500 ${
-                    expandedMember === member._id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  }`}>
-                    <div className="pt-3 sm:pt-4 border-t border-gray-200">
-                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                        {member.introduction}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Office History Timeline Section */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-4">
-              {t.officeHistory}
-            </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-              {t.historyDescription}
-            </p>
-          </div>
-
-          <div className="relative max-w-4xl mx-auto">
-            {/* 縦のライン - 左寄りに配置 */}
-            <div className="absolute left-24 sm:left-32 md:left-48 h-full w-0.5 bg-gray-300"></div>
-            
-            <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-              {/* 2024年 */}
-              <div className="relative flex items-start">
-                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
-                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2024-01"].dateLabel}</h3>
-                </div>
-                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
-                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2024-01"].title}</p>
-                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
-                    {t.timeline["2024-01"].description}
-                  </p>
-                </div>
-              </div>
-
-              {/* 2023年 */}
-              <div className="relative flex items-start">
-                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
-                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2023-06"].dateLabel}</h3>
-                </div>
-                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
-                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2023-06"].title}</p>
-                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
-                    {t.timeline["2023-06"].description}
-                  </p>
-                </div>
-              </div>
-
-              {/* 2022年 */}
-              <div className="relative flex items-start">
-                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
-                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2022-09"].dateLabel}</h3>
-                </div>
-                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
-                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2022-09"].title}</p>
-                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
-                    {t.timeline["2022-09"].description}
-                  </p>
-                </div>
-              </div>
-
-              {/* 2021年 */}
-              <div className="relative flex items-start">
-                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
-                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2021-12"].dateLabel}</h3>
-                </div>
-                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
-                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2021-12"].title}</p>
-                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
-                    {t.timeline["2021-12"].description}
-                  </p>
-                </div>
-              </div>
-
-              {/* 2008年 */}
-              <div className="relative flex items-start">
-                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
-                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2008-01"].dateLabel}</h3>
-                </div>
-                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
-                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2008-01"].title}</p>
-                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
-                    {t.timeline["2008-01"].description}
-                  </p>
-                </div>
-              </div>
-
-              {/* 2019年 */}
-              <div className="relative flex items-start">
-                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
-                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2019-10"].dateLabel}</h3>
-                </div>
-                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
-                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2019-10"].title}</p>
-                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
-                    {t.timeline["2019-10"].description}
-                  </p>
-                </div>
-              </div>
-
-              {/* 2014年 */}
-              <div className="relative flex items-start">
-                <div className="w-24 sm:w-32 md:w-48 text-right pr-4 sm:pr-6 lg:pr-8 pt-1">
-                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{t.timeline["2014-04"].dateLabel}</h3>
-                </div>
-                <div className="absolute left-24 sm:left-32 md:left-48 w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 rounded-full border-2 sm:border-4 border-white shadow mt-1"></div>
-                <div className="flex-1 pl-4 sm:pl-6 lg:pl-8">
-                  <p className="text-sm sm:text-base text-gray-700 font-semibold mb-1">{t.timeline["2014-04"].title}</p>
-                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">
-                    {t.timeline["2014-04"].description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* モバイル表示の場合の注記 */}
-          <p className="text-center text-xs sm:text-sm text-gray-500 mt-6 sm:mt-8 lg:mt-12 md:hidden">
-            {t.mobileNote}
-          </p>
-        </div>
-      </section>
 
       {/* Map Section */}
       <section className="py-8 sm:py-12 lg:py-16 bg-white">

@@ -5,9 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import PageHeader from '@/components/PageHeader';
-import { FaqAccordion } from '@/components/FaqAccordion';
 import { Locale } from '@/lib/i18n/types';
-import { featuresFaqContent } from '@/data/features-faq-content';
 import { breadcrumbContent } from '@/data/breadcrumb-content';
 
 // 多言語コンテンツ
@@ -123,13 +121,6 @@ const content = {
         description: "お急ぎの申請にも迅速に対応します。初回のご相談から申請手続きまでオンラインで完結できるため、事務所へお越しいただかなくても、全国どこからでもご依頼いただけます。"
       }
     },
-    trustTitle: "信頼の理由",
-    trustSubtitle: "導入企業数・業界シェア共に実績が豊富です",
-    trustCompanies: "導入企業は業界を問わず0000社以上",
-    trustLogo: "導入企業ロゴ",
-    faqTitle: "よくあるご質問",
-    faqSubtitle: "よくご質問いただく内容をご紹介します",
-    faqEmpty: "現在、よくある質問を準備中です。"
   },
   en: {
     pageTitle: "Our Features",
@@ -242,13 +233,6 @@ const content = {
         description: "We respond quickly to urgent applications. From initial consultation to application procedures can be completed online, allowing you to request our services from anywhere in Japan without visiting our office."
       }
     },
-    trustTitle: "Reasons for Trust",
-    trustSubtitle: "Rich track record in both number of client companies and industry share",
-    trustCompanies: "Over 0000 client companies across all industries",
-    trustLogo: "Client Company Logo",
-    faqTitle: "Frequently Asked Questions",
-    faqSubtitle: "Introducing commonly asked questions",
-    faqEmpty: "We are currently preparing frequently asked questions."
   },
   'zh-CN': {
     pageTitle: "本事务所特色",
@@ -291,13 +275,6 @@ const content = {
       point3: { label: "要点3", title: "可靠的多语言支持", languagesTitle: "支持语言（9种语言）", languages: ["英语", "中文", "越南语", "他加禄语", "韩语", "葡萄牙语"], description: "多语言工作人员用您的母语提供支持" },
       point4: { label: "要点4", title: "快速响应和在线完成便利性", feature1: "当日响应", feature1Sub: "紧急案件安全处理", feature2: "在线完成", feature2Sub: "无需到访事务所", description: "对紧急申请快速响应" }
     },
-    trustTitle: "信赖的理由",
-    trustSubtitle: "在客户企业数量和行业份额方面都拥有丰富实绩",
-    trustCompanies: "全行业超过0000家客户企业",
-    trustLogo: "客户企业标志",
-    faqTitle: "常见问题",
-    faqSubtitle: "介绍常见问题",
-    faqEmpty: "目前正在准备常见问题。"
   },
   'zh-TW': {
     pageTitle: "本事務所特色",
@@ -340,13 +317,6 @@ const content = {
       point3: { label: "要點3", title: "可靠的多語言支援", languagesTitle: "支援語言（9種語言）", languages: ["英語", "中文", "越南語", "他加祿語", "韓語", "葡萄牙語"], description: "多語言工作人員用您的母語提供支援" },
       point4: { label: "要點4", title: "快速響應和線上完成便利性", feature1: "當日響應", feature1Sub: "緊急案件安全處理", feature2: "線上完成", feature2Sub: "無需到訪事務所", description: "對緊急申請快速響應" }
     },
-    trustTitle: "信賴的理由",
-    trustSubtitle: "在客戶企業數量和行業份額方面都擁有豐富實績",
-    trustCompanies: "全行業超過0000家客戶企業",
-    trustLogo: "客戶企業標誌",
-    faqTitle: "常見問題",
-    faqSubtitle: "介紹常見問題",
-    faqEmpty: "目前正在準備常見問題。"
   },
   vi: {
     pageTitle: "Đặc điểm văn phòng chúng tôi",
@@ -465,13 +435,6 @@ const content = {
       point3: { label: "Điểm 3", title: "Hỗ trợ an tâm với nhiều ngôn ngữ", feature1: "Hỗ trợ 9 thứ tiếng", feature1Sub: "Bởi nhân viên tiếng mẹ đẻ", feature2: "Hỗ trợ văn hóa", feature2Sub: "Hiểu biết về văn hóa", description: "Nhân viên hỗ trợ đa ngôn ngữ sẽ hỗ trợ bằng tiếng mẹ đẻ" },
       point4: { label: "Điểm 4", title: "Đối ứng nhanh chóng và hoàn thành trực tuyến tiện lợi", feature1: "Phản hồi trong ngày", feature1Sub: "Xử lý an toàn các vụ việc khẩn cấp", feature2: "Hoàn thành trực tuyến", feature2Sub: "Không cần đến văn phòng", description: "Phản hồi nhanh đối với đơn xin khẩn cấp" }
     },
-    trustTitle: "Lý do được tin tưởng",
-    trustSubtitle: "Có thành tích phong phú về cả số lượng doanh nghiệp khách hàng và thị phần ngành",
-    trustCompanies: "Hơn 0000 doanh nghiệp khách hàng trong tất cả các ngành",
-    trustLogo: "Logo doanh nghiệp khách hàng",
-    faqTitle: "Câu hỏi thường gặp",
-    faqSubtitle: "Giới thiệu các câu hỏi thường gặp",
-    faqEmpty: "Hiện đang chuẩn bị câu hỏi thường gặp."
   }
 };
 
@@ -488,8 +451,6 @@ interface PageProps {
 export default async function FeaturesPage({ params }: PageProps) {
   const { lang } = await params;
   const t = content[lang];
-  const faqData = featuresFaqContent[lang];
-  const faqs = faqData.faqs;
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -807,55 +768,6 @@ export default async function FeaturesPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Trust Reasons Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              {t.trustTitle}
-            </h2>
-            <h3 className="text-2xl font-semibold text-gray-800">
-              {t.trustSubtitle}
-            </h3>
-          </div>
-
-          {/* Company Logos Grid */}
-          <div className="bg-gray-50 p-8 rounded-lg">
-            <p className="text-center text-gray-700 mb-8">
-              {t.trustCompanies}
-            </p>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-              {[...Array(24)].map((_, i) => (
-                <div key={i} className="bg-gray-200 p-4 rounded flex items-center justify-center">
-                  <span className="text-sm text-gray-500">{t.trustLogo}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-              {faqData.title}
-            </h2>
-            <h3 className="text-xl font-medium text-gray-800">
-              {faqData.subtitle}
-            </h3>
-          </div>
-
-          {faqs.length > 0 ? (
-            <FaqAccordion faqs={faqs} />
-          ) : (
-            <div className="text-center py-8 text-gray-500">
-              {t.faqEmpty}
-            </div>
-          )}
-        </div>
-      </section>
 
       <NewCTASection lang={lang} />
       <UnifiedFooter lang={lang} />
