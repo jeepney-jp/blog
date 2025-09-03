@@ -20,8 +20,7 @@ const content = {
     name: "お名前",
     email: "メールアドレス",
     phone: "電話番号",
-    service: "ご相談内容",
-    message: "メッセージ",
+    message: "ご相談内容",
     privacy: "プライバシーポリシーに同意します",
     submit: "送信する",
     submitting: "送信中...",
@@ -69,8 +68,7 @@ const content = {
     name: "Name",
     email: "Email Address",
     phone: "Phone Number",
-    service: "Consultation Topic",
-    message: "Message",
+    message: "Consultation Details",
     privacy: "I agree to the Privacy Policy",
     submit: "Send",
     submitting: "Sending...",
@@ -118,8 +116,7 @@ const content = {
     name: "姓名",
     email: "邮箱地址",
     phone: "电话号码",
-    service: "咨询内容",
-    message: "留言",
+    message: "咨询详情",
     privacy: "我同意隐私政策",
     submit: "发送",
     submitting: "发送中...",
@@ -167,8 +164,7 @@ const content = {
     name: "姓名",
     email: "郵箱地址",
     phone: "電話號碼",
-    service: "諮詢內容",
-    message: "留言",
+    message: "咨询详情",
     privacy: "我同意隱私政策",
     submit: "發送",
     submitting: "發送中...",
@@ -216,8 +212,7 @@ const content = {
     name: "Họ tên",
     email: "Địa chỉ email",
     phone: "Số điện thoại",
-    service: "Nội dung tư vấn",
-    message: "Tin nhắn",
+    message: "Chi tiết tư vấn",
     privacy: "Tôi đồng ý với chính sách bảo mật",
     submit: "Gửi",
     submitting: "Đang gửi...",
@@ -274,7 +269,6 @@ type FormData = {
   name: string;
   email: string;
   phone: string;
-  service: string;
   message: string;
   privacy: boolean;
 };
@@ -287,7 +281,6 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
-    service: '',
     message: '',
     privacy: false,
   });
@@ -341,7 +334,6 @@ export default function Contact() {
           name: '',
           email: '',
           phone: '',
-          service: '',
           message: '',
           privacy: false,
         });
@@ -444,25 +436,6 @@ export default function Contact() {
                     />
                   </div>
                   
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t.service}
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base"
-                    >
-                      <option value="">{t.serviceOptions[""]}</option>
-                      <option value="permit">{t.serviceOptions.permit}</option>
-                      <option value="inheritance">{t.serviceOptions.inheritance}</option>
-                      <option value="company">{t.serviceOptions.company}</option>
-                      <option value="contract">{t.serviceOptions.contract}</option>
-                      <option value="other">{t.serviceOptions.other}</option>
-                    </select>
-                  </div>
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
@@ -549,43 +522,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Access Map */}
-      <section className="bg-gray-100 py-8 sm:py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-6 sm:mb-8 lg:mb-12">{t.accessTitle}</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-            <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.nearestStations}</h3>
-              <div className="space-y-3 sm:space-y-4">
-                <div>
-                  <h4 className="font-medium text-gray-900 text-sm sm:text-base">東京駅</h4>
-                  <p className="text-gray-600 text-xs sm:text-sm">{t.byTrain.tokyo}</p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900 text-sm sm:text-base">大手町駅</h4>
-                  <p className="text-gray-600 text-xs sm:text-sm">{t.byTrain.otemachi}</p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900 text-sm sm:text-base">二重橋前駅</h4>
-                  <p className="text-gray-600 text-xs sm:text-sm">{t.byTrain.nijubashimae}</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.byCar}</h3>
-              <div className="space-y-2">
-                <p className="text-gray-700 text-sm sm:text-base">
-                  {t.carDirection}
-                </p>
-                <p className="text-xs sm:text-sm text-gray-600">
-                  {t.carParkingNote}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <UnifiedFooter lang={lang} />
 
