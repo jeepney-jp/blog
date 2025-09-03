@@ -31,8 +31,7 @@ export default function About() {
       teamMembers: "スタッフ紹介",
       memberNote: "※スタッフ紹介は一部サンプルデータを含みます",
       weekdays: "平日: 9:00 - 18:00",
-      saturday: "土曜: 9:00 - 17:00",
-      holiday: "日祝: 休業",
+      holiday: "土日祝: 休業",
       qualification: "行政書士（登録番号：第08100026号）",
       association: "千葉県行政書士会所属",
       businessContent: "ビザ申請、各種許認可申請、契約書作成、外国人材生活支援等",
@@ -99,8 +98,7 @@ export default function About() {
       teamMembers: "Our Team",
       memberNote: "※Staff introduction includes some sample data",
       weekdays: "Weekdays: 9:00 - 18:00",
-      saturday: "Saturday: 9:00 - 17:00",
-      holiday: "Sunday & Holidays: Closed",
+      holiday: "Weekends & Holidays: Closed",
       qualification: "Administrative Scrivener (Registration No.: 08100026)",
       association: "Member of Chiba Prefectural Administrative Scriveners Association",
       businessContent: "Visa applications, various licensing applications, contract drafting, foreign worker life support, etc.",
@@ -167,8 +165,7 @@ export default function About() {
       teamMembers: "员工介绍",
       memberNote: "※员工介绍包含部分样例数据",
       weekdays: "平日: 9:00 - 18:00",
-      saturday: "周六: 9:00 - 17:00",
-      holiday: "周日及节假日: 休业",
+      holiday: "周末及节假日: 休业",
       qualification: "行政书士（登记号码：第08100026号）",
       association: "千叶县行政书士会所属",
       businessContent: "签证申请、各种许可认证申请、合同制作、外国人才生活支援等",
@@ -235,8 +232,7 @@ export default function About() {
       teamMembers: "員工介紹",
       memberNote: "※員工介紹包含部分樣例資料",
       weekdays: "平日: 9:00 - 18:00",
-      saturday: "週六: 9:00 - 17:00",
-      holiday: "週日及節假日: 休業",
+      holiday: "週末及節假日: 休業",
       qualification: "行政書士（登記號碼：第08100026號）",
       association: "千葉縣行政書士會所屬",
       businessContent: "簽證申請、各種許可認證申請、合約製作、外國人才生活支援等",
@@ -303,8 +299,7 @@ export default function About() {
       teamMembers: "Giới thiệu nhân viên",
       memberNote: "※Giới thiệu nhân viên bao gồm một phần dữ liệu mẫu",
       weekdays: "Ngày thường: 9:00 - 18:00",
-      saturday: "Thứ 7: 9:00 - 17:00",
-      holiday: "Chủ nhật & Lễ: Nghỉ",
+      holiday: "Cuối tuần & Lễ: Nghỉ",
       qualification: "Hành chính (Số đăng ký: 第08100026号)",
       association: "Thuộc Hiệp hội Hành chính tỉnh Chiba",
       businessContent: "Đơn xin visa, đơn xin giấy phép các loại, tạo hợp đồng, hỗ trợ cuộc sống nhân lực nước ngoài, v.v.",
@@ -434,8 +429,7 @@ export default function About() {
                   <div>
                     <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{t.contact}</h3>
                     <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                      TEL: 0475-22-8741<br />
-                      FAX: 0475-22-8742<br />
+                      TEL: 070-5462-6133<br />
                       Email: info@fortia-office.com
                     </p>
                   </div>
@@ -444,7 +438,6 @@ export default function About() {
                     <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{t.businessHours}</h3>
                     <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       {t.weekdays}<br />
-                      {t.saturday}<br />
                       {t.holiday}
                     </p>
                   </div>

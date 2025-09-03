@@ -162,10 +162,10 @@ export default function NewCTASection({ serviceName, lang }: NewCTASectionProps)
             <div className="text-center">
               <p className="text-gray-600 mb-2 text-sm">{t.phoneLabel}</p>
               <a 
-                href="tel:0475444499" 
+                href="tel:07054626133" 
                 className="inline-flex items-center text-2xl sm:text-3xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
               >
-                📞 0475-44-4499
+                📞 070-5462-6133
               </a>
               <p className="text-gray-500 mt-1 text-xs sm:text-sm">{t.hours}</p>
             </div>

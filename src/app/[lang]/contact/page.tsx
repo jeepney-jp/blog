@@ -34,8 +34,7 @@ const content = {
     officeAddress: "事務所住所",
     businessHours: {
       weekdays: "平日: 9:00 - 18:00",
-      saturday: "土曜: 9:00 - 17:00",
-      holiday: "日祝: 休業"
+      holiday: "土日祝: 休業"
     },
     available24h: "24時間受付",
     available24hWithReply: "24時間受付（返信は営業時間内）",
@@ -84,8 +83,7 @@ const content = {
     officeAddress: "Office Address",
     businessHours: {
       weekdays: "Weekdays: 9:00 - 18:00",
-      saturday: "Saturday: 9:00 - 17:00",
-      holiday: "Sunday & Holidays: Closed"
+      holiday: "Weekends & Holidays: Closed"
     },
     available24h: "Available 24/7",
     available24hWithReply: "Available 24/7 (replies during business hours)",
@@ -134,8 +132,7 @@ const content = {
     officeAddress: "事务所地址",
     businessHours: {
       weekdays: "工作日: 9:00 - 18:00",
-      saturday: "周六: 9:00 - 17:00",
-      holiday: "周日及节假日: 休业"
+      holiday: "周末及节假日: 休业"
     },
     available24h: "24小时受理",
     available24hWithReply: "24小时受理（营业时间内回复）",
@@ -184,8 +181,7 @@ const content = {
     officeAddress: "事務所地址",
     businessHours: {
       weekdays: "工作日: 9:00 - 18:00",
-      saturday: "週六: 9:00 - 17:00",
-      holiday: "週日及節假日: 休業"
+      holiday: "週末及節假日: 休業"
     },
     available24h: "24小時受理",
     available24hWithReply: "24小時受理（營業時間內回覆）",
@@ -234,8 +230,7 @@ const content = {
     officeAddress: "Địa chỉ văn phòng",
     businessHours: {
       weekdays: "Ngày thường: 9:00 - 18:00",
-      saturday: "Thứ 7: 9:00 - 17:00",
-      holiday: "Chủ nhật & Lễ: Nghỉ"
+      holiday: "Cuối tuần & Lễ: Nghỉ"
     },
     available24h: "Tiếp nhận 24 giờ",
     available24hWithReply: "Tiếp nhận 24 giờ (Phản hồi trong giờ làm việc)",
@@ -519,27 +514,19 @@ export default function Contact() {
                 <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
                   <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.phoneContact}</h3>
                   <div className="space-y-2">
-                    <p className="text-xl sm:text-2xl font-bold text-blue-600">03-1234-5678</p>
+                    <p className="text-xl sm:text-2xl font-bold text-blue-600">070-5462-6133</p>
                     <p className="text-sm sm:text-base text-gray-600">
                       {t.businessHours.weekdays}<br />
-                      {t.businessHours.saturday}<br />
                       {t.businessHours.holiday}
                     </p>
                   </div>
                 </div>
                 
-                <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.faxContact}</h3>
-                  <div className="space-y-2">
-                    <p className="text-xl font-bold text-gray-900">03-1234-5679</p>
-                    <p className="text-sm sm:text-base text-gray-600">{t.available24h}</p>
-                  </div>
-                </div>
                 
                 <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
                   <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.emailContact}</h3>
                   <div className="space-y-2">
-                    <p className="text-lg font-medium text-gray-900">info@tanaka-gyosei.com</p>
+                    <p className="text-lg font-medium text-gray-900">info@fortia-office.com</p>
                     <p className="text-sm sm:text-base text-gray-600">{t.available24hWithReply}</p>
                   </div>
                 </div>
@@ -548,9 +535,8 @@ export default function Contact() {
                   <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.officeAddress}</h3>
                   <div className="space-y-2">
                     <p className="text-gray-700">
-                      〒100-0001<br />
-                      東京都千代田区千代田1-1-1<br />
-                      千代田ビル3階
+                      〒297-0026<br />
+                      千葉県茂原市八千代2丁目6番地の13
                     </p>
                     <p className="text-sm text-gray-600">
                       {t.parkingNote}
