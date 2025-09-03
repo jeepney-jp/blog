@@ -15,8 +15,7 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
       companyNameFull: "行政書士事務所",
       businessHours: "営業時間",
       weekdays: "平日: 9:00 - 18:00",
-      saturday: "土曜: 9:00 - 17:00",
-      holiday: "日祝: 休業",
+      holiday: "土日祝: 休業",
       serviceAreas: "主要業務エリア",
       areasText: "東京都、千葉県、埼玉県、神奈川県",
       otherAreas: "※その他地域もご相談ください",
@@ -32,8 +31,7 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
       companyNameFull: "Administrative Scrivener Office",
       businessHours: "Business Hours",
       weekdays: "Weekdays: 9:00 - 18:00",
-      saturday: "Saturday: 9:00 - 17:00",
-      holiday: "Sunday & Holidays: Closed",
+      holiday: "Weekends & Holidays: Closed",
       serviceAreas: "Service Areas",
       areasText: "Tokyo, Chiba, Saitama, Kanagawa",
       otherAreas: "※Other areas available upon consultation",
@@ -49,8 +47,7 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
       companyNameFull: "行政书士事务所",
       businessHours: "营业时间",
       weekdays: "工作日: 9:00 - 18:00",
-      saturday: "周六: 9:00 - 17:00",
-      holiday: "周日及节假日: 休业",
+      holiday: "周末及节假日: 休业",
       serviceAreas: "主要业务区域",
       areasText: "东京都、千叶县、埼玉县、神奈川县",
       otherAreas: "※其他地区也可咨询",
@@ -66,8 +63,7 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
       companyNameFull: "行政書士事務所",
       businessHours: "營業時間",
       weekdays: "工作日: 9:00 - 18:00",
-      saturday: "週六: 9:00 - 17:00",
-      holiday: "週日及節假日: 休業",
+      holiday: "週末及節假日: 休業",
       serviceAreas: "主要業務區域",
       areasText: "東京都、千葉縣、埼玉縣、神奈川縣",
       otherAreas: "※其他地區也可諮詢",
@@ -83,8 +79,7 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
       companyNameFull: "Văn phòng Hành chính",
       businessHours: "Giờ làm việc",
       weekdays: "Ngày thường: 9:00 - 18:00",
-      saturday: "Thứ 7: 9:00 - 17:00",
-      holiday: "Chủ nhật & Lễ: Nghỉ",
+      holiday: "Cuối tuần & Lễ: Nghỉ",
       serviceAreas: "Khu vực dịch vụ chính",
       areasText: "Tokyo, Chiba, Saitama, Kanagawa",
       otherAreas: "※Các khu vực khác có thể tư vấn",
@@ -122,7 +117,6 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
               <h4 className="text-xs sm:text-sm font-semibold mb-2">{t.businessHours}</h4>
               <p className="text-gray-400 text-xs sm:text-sm">
                 {t.weekdays}<br />
-                {t.saturday}<br />
                 {t.holiday}
               </p>
             </div>
