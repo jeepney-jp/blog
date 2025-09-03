@@ -519,7 +519,7 @@ export default function Contact() {
                 <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
                   <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.phoneContact}</h3>
                   <div className="space-y-2">
-                    <p className="text-xl sm:text-2xl font-bold text-blue-600">03-1234-5678</p>
+                    <p className="text-xl sm:text-2xl font-bold text-blue-600">070-5462-6133</p>
                     <p className="text-sm sm:text-base text-gray-600">
                       {t.businessHours.weekdays}<br />
                       {t.businessHours.saturday}<br />
@@ -528,18 +528,11 @@ export default function Contact() {
                   </div>
                 </div>
                 
-                <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.faxContact}</h3>
-                  <div className="space-y-2">
-                    <p className="text-xl font-bold text-gray-900">03-1234-5679</p>
-                    <p className="text-sm sm:text-base text-gray-600">{t.available24h}</p>
-                  </div>
-                </div>
                 
                 <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm">
                   <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.emailContact}</h3>
                   <div className="space-y-2">
-                    <p className="text-lg font-medium text-gray-900">info@tanaka-gyosei.com</p>
+                    <p className="text-lg font-medium text-gray-900">info@fortia-office.com</p>
                     <p className="text-sm sm:text-base text-gray-600">{t.available24hWithReply}</p>
                   </div>
                 </div>
@@ -548,9 +541,8 @@ export default function Contact() {
                   <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.officeAddress}</h3>
                   <div className="space-y-2">
                     <p className="text-gray-700">
-                      〒100-0001<br />
-                      東京都千代田区千代田1-1-1<br />
-                      千代田ビル3階
+                      〒297-0026<br />
+                      千葉県茂原市八千代2丁目6番地の13
                     </p>
                     <p className="text-sm text-gray-600">
                       {t.parkingNote}

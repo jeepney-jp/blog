@@ -434,8 +434,7 @@ export default function About() {
                   <div>
                     <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{t.contact}</h3>
                     <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                      TEL: 0475-22-8741<br />
-                      FAX: 0475-22-8742<br />
+                      TEL: 070-5462-6133<br />
                       Email: info@fortia-office.com
                     </p>
                   </div>
