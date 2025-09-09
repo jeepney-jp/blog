@@ -46,32 +46,66 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
   
   const metadata = {
     ja: {
-      title: "フォルティア行政書士事務所",
-      description: "茂原市の行政書士事務所。外国人ビザ、建設業許可、法人設立など幅広い業務に対応。",
+      title: "フォルティア行政書士事務所 | 茂原市の行政書士",
+      description: "茂原市の行政書士事務所。外国人ビザ、建設業許可、法人設立など幅広い業務に対応。完全成果報酬制で安心。初回相談無料。",
     },
     en: {
-      title: "Fortia Administrative Scrivener Office",
-      description: "Administrative scrivener office in Mobara City. We handle foreign visas, construction business permits, corporate establishment, and a wide range of services.",
+      title: "Fortia Administrative Scrivener Office | Mobara City",
+      description: "Administrative scrivener office in Mobara City. We handle foreign visas, construction business permits, corporate establishment, and a wide range of services. Free initial consultation.",
     },
     'zh-CN': {
-      title: "Fortia行政书士事务所",
-      description: "茂原市的行政书士事务所。处理外国人签证、建筑业许可、法人设立等广泛业务。",
+      title: "Fortia行政书士事务所 | 茂原市",
+      description: "茂原市的行政书士事务所。处理外国人签证、建筑业许可、法人设立等广泛业务。完全成果报酬制，首次咨询免费。",
     },
     'zh-TW': {
-      title: "Fortia行政書士事務所",
-      description: "茂原市的行政書士事務所。處理外國人簽證、建築業許可、法人設立等廣泛業務。",
+      title: "Fortia行政書士事務所 | 茂原市",
+      description: "茂原市的行政書士事務所。處理外國人簽證、建築業許可、法人設立等廣泛業務。完全成果報酬制，首次諮詢免費。",
     },
     vi: {
-      title: "Văn phòng Hành chính Fortia",
-      description: "Văn phòng hành chính tại thành phố Mobara. Xử lý visa người nước ngoài, giấy phép kinh doanh xây dựng, thành lập pháp nhân và nhiều dịch vụ khác.",
+      title: "Văn phòng Hành chính Fortia | Thành phố Mobara",
+      description: "Văn phòng hành chính tại thành phố Mobara. Xử lý visa người nước ngoài, giấy phép kinh doanh xây dựng, thành lập pháp nhân và nhiều dịch vụ khác. Tư vấn miễn phí lần đầu.",
     },
   };
+
+  const baseUrl = 'https://fortia-office.com';
 
   return {
     title: metadata[lang].title,
     description: metadata[lang].description,
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: `${baseUrl}/${lang}`,
+      languages: {
+        'ja': `${baseUrl}/ja`,
+        'en': `${baseUrl}/en`,
+        'zh-CN': `${baseUrl}/zh-CN`,
+        'zh-TW': `${baseUrl}/zh-TW`,
+        'vi': `${baseUrl}/vi`,
+      },
+    },
     openGraph: {
+      title: metadata[lang].title,
+      description: metadata[lang].description,
+      url: `${baseUrl}/${lang}`,
+      siteName: 'フォルティア行政書士事務所',
       locale: lang === 'ja' ? 'ja_JP' : lang === 'en' ? 'en_US' : lang === 'zh-CN' ? 'zh_CN' : lang === 'zh-TW' ? 'zh_TW' : 'vi_VN',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: metadata[lang].title,
+      description: metadata[lang].description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   };
 }

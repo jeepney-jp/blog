@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Sitemap
+Sitemap: https://fortia-office.com/sitemap.xml
