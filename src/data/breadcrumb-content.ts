@@ -8,7 +8,6 @@ type BreadcrumbContent = {
     features: string;
     news: string;
     services: string;
-    faq: string;
   };
 };
 
@@ -19,8 +18,7 @@ export const breadcrumbContent: BreadcrumbContent = {
     contact: 'お問い合わせ',
     features: '特徴・強み',
     news: 'ニュース',
-    services: 'サービス',
-    faq: 'よくあるご質問'
+    services: 'サービス'
   },
   en: {
     home: 'Home',
@@ -28,8 +26,7 @@ export const breadcrumbContent: BreadcrumbContent = {
     contact: 'Contact',
     features: 'Features',
     news: 'News',
-    services: 'Services',
-    faq: 'FAQ'
+    services: 'Services'
   },
   'zh-CN': {
     home: '首页',
@@ -37,8 +34,7 @@ export const breadcrumbContent: BreadcrumbContent = {
     contact: '联系我们',
     features: '特色・优势',
     news: '新闻',
-    services: '服务',
-    faq: '常见问题'
+    services: '服务'
   },
   'zh-TW': {
     home: '首頁',
@@ -46,8 +42,7 @@ export const breadcrumbContent: BreadcrumbContent = {
     contact: '聯絡我們',
     features: '特色・優勢',
     news: '新聞',
-    services: '服務',
-    faq: '常見問題'
+    services: '服務'
   },
   vi: {
     home: 'Trang chủ',
@@ -55,7 +50,6 @@ export const breadcrumbContent: BreadcrumbContent = {
     contact: 'Liên hệ',
     features: 'Đặc điểm・Ưu thế',
     news: 'Tin tức',
-    services: 'Dịch vụ',
-    faq: 'Câu hỏi thường gặp'
+    services: 'Dịch vụ'
   }
 };
