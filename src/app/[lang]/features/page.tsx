@@ -438,11 +438,74 @@ const content = {
   }
 };
 
-export const metadata: Metadata = {
-  title: '当事務所の特徴 | フォルティア行政書士事務所',
-  description: 'フォルティア行政書士事務所の特徴をご紹介します。豊富な実績と専門知識で、お客様のニーズにお応えします。',
-};
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { lang } = await params;
+  
+  const metaContent = {
+    ja: {
+      title: '当事務所の特徴 | フォルティア行政書士事務所',
+      description: 'フォルティア行政書士事務所の特徴をご紹介します。10,000件超の申請実績、業界最安水準の料金、9言語対応、オンライン完結で安心サポート。',
+    },
+    en: {
+      title: 'Our Features | Fortia Administrative Law Office',
+      description: 'Discover the features of Fortia Administrative Law Office. Over 10,000 application cases, industry-low pricing, 9-language support, and complete online services.',
+    },
+    'zh-CN': {
+      title: '本事务所特色 | Fortia行政书士事务所',
+      description: '介绍Fortia行政书士事务所的特色。超过10,000件申请实绩、业界最低价格、9种语言支持、在线完成服务。',
+    },
+    'zh-TW': {
+      title: '本事務所特色 | Fortia行政書士事務所',
+      description: '介紹Fortia行政書士事務所的特色。超過10,000件申請實績、業界最低價格、9種語言支援、線上完成服務。',
+    },
+    vi: {
+      title: 'Đặc điểm của chúng tôi | Văn phòng Hành chính Fortia',
+      description: 'Giới thiệu đặc điểm của Văn phòng Hành chính Fortia. Hơn 10,000 hồ sơ xử lý, giá thấp nhất ngành, hỗ trợ 9 ngôn ngữ, hoàn thành trực tuyến.',
+    },
+  };
 
+  const baseUrl = 'https://fortia-office.com';
+  const currentMeta = metaContent[lang] || metaContent.ja;
+
+  return {
+    title: currentMeta.title,
+    description: currentMeta.description,
+    alternates: {
+      canonical: `${baseUrl}/${lang}/features`,
+      languages: {
+        'ja': `${baseUrl}/ja/features`,
+        'en': `${baseUrl}/en/features`,
+        'zh-CN': `${baseUrl}/zh-CN/features`,
+        'zh-TW': `${baseUrl}/zh-TW/features`,
+        'vi': `${baseUrl}/vi/features`,
+      },
+    },
+    openGraph: {
+      title: currentMeta.title,
+      description: currentMeta.description,
+      url: `${baseUrl}/${lang}/features`,
+      siteName: 'フォルティア行政書士事務所',
+      locale: lang === 'ja' ? 'ja_JP' : lang === 'en' ? 'en_US' : lang === 'zh-CN' ? 'zh_CN' : lang === 'zh-TW' ? 'zh_TW' : 'vi_VN',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: currentMeta.title,
+      description: currentMeta.description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+  };
+}
 
 interface PageProps {
   params: Promise<{ lang: Locale }>;

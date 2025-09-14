@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Header from "@/components/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHeader from "@/components/PageHeader";
@@ -46,6 +47,75 @@ const categoryImages: Record<string, string> = {
 
 interface PageProps {
   params: Promise<{ lang: Locale }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { lang } = await params;
+  
+  const metaContent = {
+    ja: {
+      title: 'サービス一覧 | フォルティア行政書士事務所',
+      description: '外国人関連、建設業・不動産、自動車関連、飲食・風俗営業、法人設立など幅広いサービスをご提供。',
+    },
+    en: {
+      title: 'Services | Fortia Administrative Law Office',
+      description: 'We provide a wide range of services including foreign residence, construction, automotive, food service, and corporate establishment.',
+    },
+    'zh-CN': {
+      title: '服务一览 | Fortia行政书士事务所',
+      description: '提供外国人相关、建筑业・不动产、汽车相关、餐饮・风俗营业、法人设立等广泛服务。',
+    },
+    'zh-TW': {
+      title: '服務一覽 | Fortia行政書士事務所',
+      description: '提供外國人相關、建築業・不動產、汽車相關、餐飲・風俗營業、法人設立等廣泛服務。',
+    },
+    vi: {
+      title: 'Danh sách dịch vụ | Văn phòng Hành chính Fortia',
+      description: 'Cung cấp các dịch vụ đa dạng bao gồm người nước ngoài, xây dựng, ô tô, nhà hàng, và thành lập doanh nghiệp.',
+    },
+  };
+
+  const baseUrl = 'https://fortia-office.com';
+  const currentMeta = metaContent[lang] || metaContent.ja;
+
+  return {
+    title: currentMeta.title,
+    description: currentMeta.description,
+    alternates: {
+      canonical: `${baseUrl}/${lang}/services`,
+      languages: {
+        'ja': `${baseUrl}/ja/services`,
+        'en': `${baseUrl}/en/services`,
+        'zh-CN': `${baseUrl}/zh-CN/services`,
+        'zh-TW': `${baseUrl}/zh-TW/services`,
+        'vi': `${baseUrl}/vi/services`,
+      },
+    },
+    openGraph: {
+      title: currentMeta.title,
+      description: currentMeta.description,
+      url: `${baseUrl}/${lang}/services`,
+      siteName: 'フォルティア行政書士事務所',
+      locale: lang === 'ja' ? 'ja_JP' : lang === 'en' ? 'en_US' : lang === 'zh-CN' ? 'zh_CN' : lang === 'zh-TW' ? 'zh_TW' : 'vi_VN',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: currentMeta.title,
+      description: currentMeta.description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+  };
 }
 
 export default async function Services({ params }: PageProps) {
