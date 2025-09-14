@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -108,6 +109,75 @@ const getCategoryMap = (lang: Locale): Record<CategoryKey, { name: string; color
 
 interface PageProps {
   params: Promise<{ lang: Locale }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { lang } = await params;
+  
+  const metaContent = {
+    ja: {
+      title: 'お知らせ | フォルティア行政書士事務所',
+      description: 'フォルティア行政書士事務所からの最新情報、営業案内、新サービス、制度改正情報などをお届けします。',
+    },
+    en: {
+      title: 'News | Fortia Administrative Law Office',
+      description: 'Latest information, business notices, new services, and legal updates from Fortia Administrative Law Office.',
+    },
+    'zh-CN': {
+      title: '新闻 | Fortia行政书士事务所',
+      description: 'Fortia行政书士事务所的最新信息、营业通知、新服务、制度改革信息等。',
+    },
+    'zh-TW': {
+      title: '新聞 | Fortia行政書士事務所',
+      description: 'Fortia行政書士事務所的最新資訊、營業通知、新服務、制度改革資訊等。',
+    },
+    vi: {
+      title: 'Tin tức | Văn phòng Hành chính Fortia',
+      description: 'Thông tin mới nhất, thông báo kinh doanh, dịch vụ mới, và cải cách chế độ từ Văn phòng Hành chính Fortia.',
+    },
+  };
+
+  const baseUrl = 'https://fortia-office.com';
+  const currentMeta = metaContent[lang] || metaContent.ja;
+
+  return {
+    title: currentMeta.title,
+    description: currentMeta.description,
+    alternates: {
+      canonical: `${baseUrl}/${lang}/news`,
+      languages: {
+        'ja': `${baseUrl}/ja/news`,
+        'en': `${baseUrl}/en/news`,
+        'zh-CN': `${baseUrl}/zh-CN/news`,
+        'zh-TW': `${baseUrl}/zh-TW/news`,
+        'vi': `${baseUrl}/vi/news`,
+      },
+    },
+    openGraph: {
+      title: currentMeta.title,
+      description: currentMeta.description,
+      url: `${baseUrl}/${lang}/news`,
+      siteName: 'フォルティア行政書士事務所',
+      locale: lang === 'ja' ? 'ja_JP' : lang === 'en' ? 'en_US' : lang === 'zh-CN' ? 'zh_CN' : lang === 'zh-TW' ? 'zh_TW' : 'vi_VN',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: currentMeta.title,
+      description: currentMeta.description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+  };
 }
 
 export default async function NewsPage({ params }: PageProps) {
