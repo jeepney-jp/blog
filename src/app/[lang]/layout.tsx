@@ -75,13 +75,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
     description: metadata[lang].description,
     metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `${baseUrl}/${lang}`,
+      canonical: `${baseUrl}/ja`, // Always use Japanese version as canonical
       languages: {
         'ja': `${baseUrl}/ja`,
         'en': `${baseUrl}/en`,
         'zh-CN': `${baseUrl}/zh-CN`,
         'zh-TW': `${baseUrl}/zh-TW`,
         'vi': `${baseUrl}/vi`,
+        'x-default': `${baseUrl}/ja`, // Set Japanese as default
       },
     },
     openGraph: {

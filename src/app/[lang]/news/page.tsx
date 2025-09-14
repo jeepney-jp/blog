@@ -144,13 +144,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: currentMeta.title,
     description: currentMeta.description,
     alternates: {
-      canonical: `${baseUrl}/${lang}/news`,
+      canonical: `${baseUrl}/ja/news`, // Always use Japanese version as canonical
       languages: {
         'ja': `${baseUrl}/ja/news`,
         'en': `${baseUrl}/en/news`,
         'zh-CN': `${baseUrl}/zh-CN/news`,
         'zh-TW': `${baseUrl}/zh-TW/news`,
         'vi': `${baseUrl}/vi/news`,
+        'x-default': `${baseUrl}/ja/news`, // Set Japanese as default
       },
     },
     openGraph: {
