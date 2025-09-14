@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/features',
     '/contact',
     '/news',
-    '/faq',
   ]
   
   const sitemapEntries: MetadataRoute.Sitemap = []
