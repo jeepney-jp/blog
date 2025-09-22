@@ -69,7 +69,7 @@ export default async function CategoryPage({ params }: Props) {
           streetAddress: '茂原579',
           addressLocality: '茂原市',
           addressRegion: '千葉県',
-          postalCode: '297-0026',
+          postalCode: '297-0024',
           addressCountry: 'JP'
         }
       },

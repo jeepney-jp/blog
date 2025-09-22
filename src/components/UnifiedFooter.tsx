@@ -108,8 +108,8 @@ export default function UnifiedFooter({ lang = 'ja' }: UnifiedFooterProps) {
             </Link>
             <div className="mb-3 sm:mb-4">
               <p className="text-gray-400 text-sm sm:text-base">
-                〒297-0026<br />
-                {lang === 'ja' ? '千葉県茂原市八千代2丁目6番地の13' : '2-6-13 Yachiyo, Mobara-shi, Chiba 297-0026'}<br />
+                〒297-0024<br />
+                {lang === 'ja' ? '千葉県茂原市八千代2丁目6番地の13' : '2-6-13 Yachiyo, Mobara-shi, Chiba 297-0024'}<br />
                 TEL: 070-5462-6133
               </p>
             </div>

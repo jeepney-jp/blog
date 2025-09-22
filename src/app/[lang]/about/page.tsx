@@ -421,7 +421,7 @@ export default function About() {
                   <div>
                     <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{t.address}</h3>
                     <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                      〒297-0026<br />
+                      〒297-0024<br />
                       千葉県茂原市八千代2丁目6番地の13
                     </p>
                   </div>
@@ -514,7 +514,7 @@ export default function About() {
           </div>
           <div className="mt-4 sm:mt-6 text-center">
             <p className="text-gray-700 text-sm sm:text-base lg:text-lg">
-              〒297-0026 千葉県茂原市八千代2丁目6番地の13
+              〒297-0024 千葉県茂原市八千代2丁目6番地の13
             </p>
             <p className="text-xs sm:text-sm text-gray-500 mt-2">
               ※ {lang === 'ja' ? '地図の左下にあるストリートビュー画像をクリックすると360度ビューに切り替わります' : 

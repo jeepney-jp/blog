@@ -508,7 +508,7 @@ export default function Contact() {
                   <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{t.officeAddress}</h3>
                   <div className="space-y-2">
                     <p className="text-gray-700">
-                      〒297-0026<br />
+                      〒297-0024<br />
                       千葉県茂原市八千代2丁目6番地の13
                     </p>
                     <p className="text-sm text-gray-600">
