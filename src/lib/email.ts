@@ -90,14 +90,14 @@ ${message}
 本メールに返信いただいても確認できませんので、
 ご質問等がございましたら上記連絡先までお願いいたします。
 
-行政書士事務所
+フォルティア行政書士事務所
 〒297-0024 千葉県茂原市八千代2丁目6番地の13
   `.trim();
 
   const autoReplyOptions = {
     from: process.env.LOLIPOP_EMAIL,
     to: email,
-    subject: '【自動返信】お問い合わせを受け付けました - 行政書士事務所',
+    subject: '【自動返信】お問い合わせを受け付けました - フォルティア行政書士事務所',
     text: autoReplyContent,
   };
 
