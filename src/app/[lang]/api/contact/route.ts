@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { writeClient } from '@/lib/sanity.client';
-import { sendContactEmail } from '@/lib/email';
+import { sendContactEmail, sendAutoReplyEmail } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -40,20 +40,31 @@ export async function POST(request: NextRequest) {
 
     console.log('問い合わせをSanityに保存しました:', contact._id);
 
-    // メール送信
+    // メール送信（管理者への通知と自動返信）
+    const emailData = {
+      name: body.name,
+      email: body.email,
+      phone: body.phone,
+      service: body.service,
+      message: body.message,
+    };
+
     try {
-      await sendContactEmail({
-        name: body.name,
-        email: body.email,
-        phone: body.phone,
-        service: body.service,
-        message: body.message,
-      });
-      console.log('通知メールを送信しました');
+      // 管理者への通知メール
+      await sendContactEmail(emailData);
+      console.log('管理者通知メールを送信しました');
     } catch (emailError) {
-      // メール送信に失敗してもSanityには保存されているため、エラーログのみ出力
-      console.error('メール送信エラー:', emailError);
+      console.error('管理者通知メール送信エラー:', emailError);
       // メール送信失敗は通知しない（UXを考慮）
+    }
+
+    try {
+      // お客様への自動返信メール
+      await sendAutoReplyEmail(emailData);
+      console.log('自動返信メールを送信しました');
+    } catch (autoReplyError) {
+      console.error('自動返信メール送信エラー:', autoReplyError);
+      // 自動返信失敗は通知しない（UXを考慮）
     }
 
     return NextResponse.json({
