@@ -87,14 +87,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     `)
     
     if (newsArticles && newsArticles.length > 0) {
-      languages.forEach(lang => {
+      // 日本語ニュース記事を優先
+      newsArticles.forEach((article: { slug: string }) => {
+        if (article.slug) {
+          sitemapEntries.push({
+            url: `${baseUrl}/ja/news/${article.slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.7,
+          })
+        }
+      })
+      
+      // その他の言語のニュース記事
+      languages.filter(lang => lang !== 'ja').forEach(lang => {
         newsArticles.forEach((article: { slug: string }) => {
           if (article.slug) {
             sitemapEntries.push({
               url: `${baseUrl}/${lang}/news/${article.slug}`,
               lastModified: new Date(),
               changeFrequency: 'monthly',
-              priority: 0.6,
+              priority: 0.2,
             })
           }
         })
