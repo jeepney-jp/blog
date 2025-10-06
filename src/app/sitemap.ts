@@ -32,26 +32,48 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   
   const sitemapEntries: MetadataRoute.Sitemap = []
   
-  // 静的ルート
-  languages.forEach(lang => {
+  // 静的ルート（日本語を優先）
+  staticRoutes.forEach(route => {
+    // 日本語ページを最優先
+    sitemapEntries.push({
+      url: `${baseUrl}/ja${route}`,
+      lastModified: new Date(),
+      changeFrequency: route === '' ? 'daily' : 'weekly',
+      priority: route === '' ? 1.0 : 0.9,
+    })
+  })
+  
+  // その他の言語は優先度を下げる
+  languages.filter(lang => lang !== 'ja').forEach(lang => {
     staticRoutes.forEach(route => {
       sitemapEntries.push({
         url: `${baseUrl}/${lang}${route}`,
         lastModified: new Date(),
-        changeFrequency: route === '' ? 'daily' : 'weekly',
-        priority: route === '' ? 1 : 0.8,
+        changeFrequency: 'monthly',
+        priority: 0.3,
       })
     })
   })
   
-  // サービスカテゴリページ
-  languages.forEach(lang => {
+  // サービスカテゴリページ（日本語を優先）
+  serviceCategories.forEach(category => {
+    // 日本語サービスページを優先
+    sitemapEntries.push({
+      url: `${baseUrl}/ja/services/${category}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    })
+  })
+  
+  // その他の言語のサービスページ
+  languages.filter(lang => lang !== 'ja').forEach(lang => {
     serviceCategories.forEach(category => {
       sitemapEntries.push({
         url: `${baseUrl}/${lang}/services/${category}`,
         lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.7,
+        changeFrequency: 'monthly',
+        priority: 0.2,
       })
     })
   })
