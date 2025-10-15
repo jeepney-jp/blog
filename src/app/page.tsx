@@ -1,4 +1,4 @@
-import { redirect } from 'next/navigation'
+import { permanentRedirect } from 'next/navigation'
 import { headers } from 'next/headers'
 
 export default async function RootPage() {
@@ -6,5 +6,5 @@ export default async function RootPage() {
   const acceptLanguage = headersList.get('accept-language') || ''
   const detectedLocale = acceptLanguage.toLowerCase().startsWith('en') ? 'en' : 'ja'
   
-  redirect(`/${detectedLocale}`)
+  permanentRedirect(`/${detectedLocale}`)
 }
