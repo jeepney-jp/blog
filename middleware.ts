@@ -34,9 +34,10 @@ export function middleware(request: NextRequest) {
       detectedLocale = 'en'
     }
 
-    // 適切なロケールパスにリダイレクト
+    // 適切なロケールパスにリダイレクト（301 恒久的リダイレクト）
     return NextResponse.redirect(
-      new URL(`/${detectedLocale}${pathname}`, request.url)
+      new URL(`/${detectedLocale}${pathname}`, request.url),
+      { status: 301 }
     )
   }
 
