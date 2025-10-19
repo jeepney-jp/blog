@@ -3,8 +3,9 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
+import BlogSection from '@/components/BlogSection';
 import ScrollAnimationWrapper from '@/components/ScrollAnimationWrapper';
-import { getNews } from '@/lib/sanity';
+import { getNews, getBlogs } from '@/lib/sanity';
 import { Locale } from '@/lib/i18n/types';
 import { servicesContent } from '@/data/services-content';
 
@@ -352,9 +353,11 @@ export default async function Home({ params }: PageProps) {
   
   // データ取得
   let newsItems: NewsItem[] = [];
+  let blogArticles: unknown[] = [];
   
   try {
     newsItems = await getNews().catch(() => []);
+    blogArticles = await getBlogs().catch(() => []);
   } catch (error) {
     console.error('Error fetching data:', error);
   }
@@ -660,6 +663,17 @@ export default async function Home({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* ブログセクション */}
+      <BlogSection articles={blogArticles as {
+        _id: string;
+        title: string;
+        slug: { current: string };
+        category: string;
+        publishedAt: string;
+        thumbnailUrl?: string;
+        thumbnailAlt?: string;
+      }[]} />
 
       <NewCTASection lang={lang} />
       <UnifiedFooter lang={lang} />

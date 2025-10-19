@@ -41,3 +41,34 @@ export async function getNewsBySlug(slug: string) {
     }
   `, { slug })
 }
+
+// ブログ記事取得用のクエリ
+export async function getBlogs() {
+  return await client.fetch(`
+    *[_type == "blog" && isPublished == true] | order(publishedAt desc) {
+      _id,
+      title,
+      slug,
+      publishedAt,
+      category,
+      "thumbnailUrl": thumbnail.asset->url,
+      "thumbnailAlt": thumbnail.alt
+    }
+  `)
+}
+
+// 個別ブログ記事取得用のクエリ
+export async function getBlogBySlug(slug: string) {
+  return await client.fetch(`
+    *[_type == "blog" && slug.current == $slug && isPublished == true][0] {
+      _id,
+      title,
+      slug,
+      publishedAt,
+      category,
+      content,
+      "thumbnailUrl": thumbnail.asset->url,
+      "thumbnailAlt": thumbnail.alt
+    }
+  `, { slug })
+}
