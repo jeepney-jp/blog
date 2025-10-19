@@ -47,8 +47,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
   
   const metadata = {
     ja: {
-      title: "フォルティア行政書士事務所 | 茂原市の行政書士",
-      description: "茂原市の行政書士事務所。申請実績10,000件超、許可率99%の信頼。外国人ビザ・建設業許可・法人設立を業界最安水準で対応。英語・中国語・ベトナム語など多言語サポート。初回相談無料。",
+      title: "フォルティア行政書士事務所【公式】茂原市 | 外国人ビザ・建設業許可専門",
+      description: "【公式サイト】茂原市のフォルティア行政書士事務所。申請実績10,000件超、許可率99%の信頼。外国人ビザ・建設業許可・法人設立を業界最安水準で対応。英語・中国語・ベトナム語など多言語サポート。初回相談無料。",
     },
     en: {
       title: "Fortia Administrative Scrivener Office | Mobara City",

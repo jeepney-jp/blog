@@ -3,7 +3,7 @@
 echo "🚀 Sanity Studioを起動します..."
 
 # Sanityディレクトリに移動
-cd /Users/hidakatakurou/Desktop/blog/administrative-lawyer-site/sanity
+cd /Users/hidakatakurou/Development/fresh-blog/sanity
 
 # 既存のSanityプロセスをチェック
 if pgrep -f "sanity dev" > /dev/null; then
