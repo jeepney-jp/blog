@@ -20,9 +20,38 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // ロケールが含まれていない場合（ただし、ルートページは除く）
-  if (pathnameIsMissingLocale && pathname !== '/') {
-    // ブラウザの言語設定から優先言語を取得
+  // ロケールが含まれていない場合
+  if (pathnameIsMissingLocale) {
+    // ルートページの場合、デフォルトロケールにリダイレクト
+    if (pathname === '/') {
+      // Googleクローラーの場合は常に日本語版へリダイレクト
+      const userAgent = request.headers.get('user-agent') || ''
+      if (userAgent.toLowerCase().includes('googlebot')) {
+        return NextResponse.redirect(
+          new URL('/ja', request.url),
+          { status: 308 } // 308: 恒久的リダイレクト（メソッド保持）
+        )
+      }
+      
+      // 一般ユーザーの場合は言語設定に基づいてリダイレクト
+      const acceptLanguage = request.headers.get('accept-language') || ''
+      let detectedLocale = defaultLocale
+      
+      if (acceptLanguage.toLowerCase().includes('zh-cn') || acceptLanguage.toLowerCase().includes('zh-hans')) {
+        detectedLocale = 'zh-CN'
+      } else if (acceptLanguage.toLowerCase().includes('zh-tw') || acceptLanguage.toLowerCase().includes('zh-hant')) {
+        detectedLocale = 'zh-TW'
+      } else if (acceptLanguage.toLowerCase().startsWith('en')) {
+        detectedLocale = 'en'
+      }
+      
+      return NextResponse.redirect(
+        new URL(`/${detectedLocale}`, request.url),
+        { status: 308 } // 308: 恒久的リダイレクト（メソッド保持）
+      )
+    }
+    
+    // その他のパスの場合も言語検出してリダイレクト
     const acceptLanguage = request.headers.get('accept-language') || ''
     let detectedLocale = defaultLocale
     
@@ -34,10 +63,10 @@ export function middleware(request: NextRequest) {
       detectedLocale = 'en'
     }
 
-    // 適切なロケールパスにリダイレクト（301 恒久的リダイレクト）
+    // 適切なロケールパスにリダイレクト
     return NextResponse.redirect(
       new URL(`/${detectedLocale}${pathname}`, request.url),
-      { status: 301 }
+      { status: 308 } // 308: 恒久的リダイレクト（メソッド保持）
     )
   }
 
