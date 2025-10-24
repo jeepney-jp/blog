@@ -143,6 +143,20 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ lan
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="bg-white rounded-lg shadow-sm p-8">
             {/* 記事ヘッダー */}
+            {/* サムネイル画像を最上部に配置 */}
+            {article.thumbnailUrl && (
+              <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden -mx-8 -mt-8 mb-6">
+                <Image
+                  src={article.thumbnailUrl}
+                  alt={article.thumbnailAlt || article.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 800px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            )}
+            
             <header className="mb-8">
               <div className="flex items-center space-x-4 mb-4">
                 <time className="text-sm text-gray-500">
@@ -152,24 +166,6 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ lan
                   {categoryLabels[article.category] || article.category}
                 </span>
               </div>
-              
-              <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                {article.title}
-              </h1>
-              
-              {/* サムネイル画像 */}
-              {article.thumbnailUrl && (
-                <div className="relative w-full aspect-[16/9] mb-8 rounded-lg overflow-hidden">
-                  <Image
-                    src={article.thumbnailUrl}
-                    alt={article.thumbnailAlt || article.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 800px"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-              )}
             </header>
 
             {/* 記事本文 */}
