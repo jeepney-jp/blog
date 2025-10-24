@@ -2,24 +2,19 @@ import { PortableText, PortableTextComponents } from '@portabletext/react';
 import { PortableTextBlock } from '@portabletext/types';
 import Image from 'next/image';
 import { urlFor } from '@/lib/sanityImage';
+import ManualTableOfContents from './ManualTableOfContents';
 
 interface PortableTextWithTocProps {
   content: PortableTextBlock[];
-  headingIndexRef: { current: number };
+  headingIndexRef?: { current: number };
 }
 
-export default function PortableTextWithToc({ content, headingIndexRef }: PortableTextWithTocProps) {
+export default function PortableTextWithToc({ content }: PortableTextWithTocProps) {
   const components: PortableTextComponents = {
     block: {
       h1: ({ children }) => <h1 className="text-2xl sm:text-3xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">{children}</h1>,
-      h2: ({ children }) => {
-        const id = `heading-${headingIndexRef.current++}`;
-        return <h2 id={id} className="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4 scroll-mt-24">{children}</h2>;
-      },
-      h3: ({ children }) => {
-        const id = `heading-${headingIndexRef.current++}`;
-        return <h3 id={id} className="text-lg sm:text-xl font-bold mt-4 sm:mt-6 mb-2 sm:mb-3 scroll-mt-24">{children}</h3>;
-      },
+      h2: ({ children }) => <h2 className="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4 scroll-mt-24">{children}</h2>,
+      h3: ({ children }) => <h3 className="text-lg sm:text-xl font-bold mt-4 sm:mt-6 mb-2 sm:mb-3 scroll-mt-24">{children}</h3>,
       h4: ({ children }) => <h4 className="text-base sm:text-lg font-bold mt-4 sm:mt-6 mb-2 sm:mb-3">{children}</h4>,
       h5: ({ children }) => <h5 className="text-sm sm:text-base font-bold mt-3 sm:mt-4 mb-2">{children}</h5>,
       h6: ({ children }) => <h6 className="text-sm font-bold mt-3 sm:mt-4 mb-2">{children}</h6>,
@@ -112,13 +107,19 @@ export default function PortableTextWithToc({ content, headingIndexRef }: Portab
           <code className="text-sm">{value.code}</code>
         </pre>
       ),
-      blockquote: ({ value }) => (
+      quote: ({ value }) => (
         <blockquote className="border-l-4 border-blue-500 pl-6 my-6 italic">
           <p className="mb-2">{value.text}</p>
-          {value.cite && (
-            <cite className="text-sm text-gray-600 not-italic">— {value.cite}</cite>
+          {value.author && (
+            <cite className="text-sm text-gray-600 not-italic">— {value.author}</cite>
           )}
         </blockquote>
+      ),
+      tableOfContents: ({ value }) => (
+        <ManualTableOfContents 
+          title={value?.title} 
+          includeLevels={value?.includeLevels}
+        />
       ),
     },
   };

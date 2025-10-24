@@ -151,6 +151,51 @@ export const richContentArray = {
         },
       ],
     },
+    {
+      type: 'object',
+      name: 'tableOfContents',
+      title: '目次',
+      fields: [
+        {
+          name: 'title',
+          type: 'string',
+          title: 'タイトル',
+          initialValue: '目次',
+        },
+        {
+          name: 'includeLevels',
+          type: 'array',
+          title: '表示する見出しレベル',
+          of: [{type: 'string'}],
+          options: {
+            list: [
+              {title: 'H1', value: 'h1'},
+              {title: 'H2', value: 'h2'},
+              {title: 'H3', value: 'h3'},
+              {title: 'H4', value: 'h4'},
+              {title: 'H5', value: 'h5'},
+              {title: 'H6', value: 'h6'},
+            ],
+            layout: 'grid',
+          },
+          initialValue: ['h2', 'h3'],
+          validation: (rule: Rule) => rule.min(1).error('少なくとも1つの見出しレベルを選択してください'),
+        },
+      ],
+      preview: {
+        select: {
+          title: 'title',
+          levels: 'includeLevels',
+        },
+        prepare({ title, levels }: { title?: string; levels?: string[] }) {
+          const levelText = levels ? levels.join(', ').toUpperCase() : 'H2, H3';
+          return {
+            title: title || '目次',
+            subtitle: `表示レベル: ${levelText}`,
+          };
+        },
+      },
+    },
     tableBlock,
   ],
 }
