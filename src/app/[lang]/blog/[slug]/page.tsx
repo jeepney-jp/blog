@@ -7,7 +7,7 @@ import UnifiedFooter from '@/components/UnifiedFooter';
 import NewCTASection from '@/components/NewCTASection';
 import { getBlogBySlug } from "@/lib/sanity";
 import { Locale } from '@/lib/i18n/types';
-import { PortableText } from '@portabletext/react';
+import PortableTextWithToc from '@/components/PortableTextWithToc';
 
 // ブログの型定義
 interface BlogArticle {
@@ -175,85 +175,9 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ lan
             {/* 記事本文 */}
             <div className="prose prose-lg max-w-none">
               {article.content && Array.isArray(article.content) ? (
-                <PortableText 
+                <PortableTextWithToc 
                   // @ts-expect-error PortableText type compatibility
-                  value={article.content}
-                  components={{
-                    block: {
-                      normal: ({children}) => <p className="text-gray-700 leading-relaxed mb-4">{children}</p>,
-                      h1: ({children}) => <h1 className="text-3xl font-bold text-gray-900 mt-8 mb-4">{children}</h1>,
-                      h2: ({children}) => <h2 className="text-2xl font-bold text-gray-900 mt-6 mb-3">{children}</h2>,
-                      h3: ({children}) => <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">{children}</h3>,
-                      h4: ({children}) => <h4 className="text-lg font-bold text-gray-900 mt-4 mb-2">{children}</h4>,
-                      h5: ({children}) => <h5 className="text-base font-bold text-gray-900 mt-4 mb-2">{children}</h5>,
-                      h6: ({children}) => <h6 className="text-sm font-bold text-gray-900 mt-4 mb-2">{children}</h6>,
-                    },
-                    list: {
-                      bullet: ({children}) => <ul className="list-disc list-inside space-y-2 mb-4">{children}</ul>,
-                      number: ({children}) => <ol className="list-decimal list-inside space-y-2 mb-4">{children}</ol>,
-                    },
-                    listItem: {
-                      bullet: ({children}) => <li className="text-gray-700">{children}</li>,
-                      number: ({children}) => <li className="text-gray-700">{children}</li>,
-                    },
-                    marks: {
-                      strong: ({children}) => <strong className="font-bold">{children}</strong>,
-                      em: ({children}) => <em className="italic">{children}</em>,
-                      underline: ({children}) => <u className="underline">{children}</u>,
-                      code: ({children}) => <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono">{children}</code>,
-                      link: ({value, children}) => (
-                        <a href={value?.href} className="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener noreferrer">
-                          {children}
-                        </a>
-                      ),
-                    },
-                    types: {
-                      image: ({value}) => (
-                        <div className="my-6">
-                          <Image 
-                            src={value.asset.url} 
-                            alt={value.alt || ''} 
-                            width={800}
-                            height={400}
-                            className="w-full rounded-lg"
-                          />
-                          {value.caption && (
-                            <p className="text-sm text-gray-600 text-center mt-2">{value.caption}</p>
-                          )}
-                        </div>
-                      ),
-                      youtube: ({value}) => {
-                        const videoId = value.url?.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1];
-                        return videoId ? (
-                          <div className="my-6">
-                            <iframe
-                              width="100%"
-                              height="400"
-                              src={`https://www.youtube.com/embed/${videoId}`}
-                              frameBorder="0"
-                              allowFullScreen
-                              className="rounded-lg"
-                            />
-                          </div>
-                        ) : null;
-                      },
-                      code: ({value}) => (
-                        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto my-6">
-                          <code className={`language-${value.language || 'text'}`}>
-                            {value.code}
-                          </code>
-                        </pre>
-                      ),
-                      quote: ({value}) => (
-                        <blockquote className="border-l-4 border-blue-500 pl-4 py-2 my-6 bg-gray-50">
-                          <p className="text-gray-700 italic mb-2">{value.text}</p>
-                          {value.author && (
-                            <cite className="text-sm text-gray-600">— {value.author}</cite>
-                          )}
-                        </blockquote>
-                      ),
-                    }
-                  }}
+                  content={article.content}
                 />
               ) : (
                 <p className="text-gray-500 text-center py-8">

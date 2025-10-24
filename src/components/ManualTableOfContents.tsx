@@ -1,17 +1,32 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { TocItem } from '@/utils/generateToc';
 
-interface TableOfContentsProps {
-  items: TocItem[];
+interface ManualTableOfContentsProps {
   title?: string;
 }
 
-export default function TableOfContents({ items, title = '目次' }: TableOfContentsProps) {
+export default function ManualTableOfContents({ title = '目次' }: ManualTableOfContentsProps) {
+  const [tocItems, setTocItems] = useState<Array<{ id: string; text: string; level: number }>>([]);
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
+    // ページ内のh2, h3要素を自動検出
+    const headings = document.querySelectorAll('h2, h3');
+    const items = Array.from(headings).map((heading, index) => {
+      const id = heading.id || `heading-${index}`;
+      if (!heading.id) {
+        heading.id = id;
+      }
+      return {
+        id,
+        text: heading.textContent || '',
+        level: parseInt(heading.tagName.charAt(1)),
+      };
+    });
+    setTocItems(items);
+
+    // IntersectionObserver for active heading
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -25,42 +40,36 @@ export default function TableOfContents({ items, title = '目次' }: TableOfCont
       }
     );
 
-    items.forEach((item) => {
-      const element = document.getElementById(item.id);
-      if (element) {
-        observer.observe(element);
-      }
+    headings.forEach((heading) => {
+      observer.observe(heading);
     });
 
     return () => {
-      items.forEach((item) => {
-        const element = document.getElementById(item.id);
-        if (element) {
-          observer.unobserve(element);
-        }
+      headings.forEach((heading) => {
+        observer.unobserve(heading);
       });
     };
-  }, [items]);
-
-  if (items.length === 0) {
-    return null;
-  }
+  }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -80; // ヘッダーの高さ分のオフセット
+      const yOffset = -80;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 
+  if (tocItems.length === 0) {
+    return null;
+  }
+
   return (
     <nav className="bg-gray-50 rounded-lg p-6 mb-8">
       <h2 className="text-lg font-bold text-gray-900 mb-4">{title}</h2>
       <ul className="space-y-2">
-        {items.map((item) => (
+        {tocItems.map((item) => (
           <li
             key={item.id}
             className={item.level === 3 ? 'ml-4' : ''}

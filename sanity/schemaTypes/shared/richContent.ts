@@ -151,6 +151,27 @@ export const richContentArray = {
         },
       ],
     },
+    {
+      type: 'object',
+      name: 'tableOfContents',
+      title: '目次',
+      fields: [
+        {
+          name: 'title',
+          type: 'string',
+          title: 'タイトル',
+          initialValue: '目次',
+        },
+      ],
+      preview: {
+        prepare() {
+          return {
+            title: '目次',
+            subtitle: 'ここに目次が表示されます',
+          };
+        },
+      },
+    },
     tableBlock,
   ],
 }
