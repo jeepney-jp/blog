@@ -18,7 +18,7 @@ export default function PortableTextWithToc({ content }: PortableTextWithTocProp
       h4: ({ children }) => <h4 className="text-base sm:text-lg font-bold mt-4 sm:mt-6 mb-2 sm:mb-3">{children}</h4>,
       h5: ({ children }) => <h5 className="text-sm sm:text-base font-bold mt-3 sm:mt-4 mb-2">{children}</h5>,
       h6: ({ children }) => <h6 className="text-sm font-bold mt-3 sm:mt-4 mb-2">{children}</h6>,
-      normal: ({ children }) => <p className="text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">{children}</p>,
+      normal: ({ children }) => <p className="text-sm sm:text-base mb-8 sm:mb-16 leading-loose">{children}</p>,
       blockquote: ({ children }) => (
         <blockquote className="border-l-4 border-gray-300 pl-4 my-4 italic">{children}</blockquote>
       ),
