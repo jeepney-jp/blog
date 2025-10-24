@@ -665,15 +665,18 @@ export default async function Home({ params }: PageProps) {
       </section>
 
       {/* ブログセクション */}
-      <BlogSection articles={blogArticles as {
-        _id: string;
-        title: string;
-        slug: { current: string };
-        category: string;
-        publishedAt: string;
-        thumbnailUrl?: string;
-        thumbnailAlt?: string;
-      }[]} />
+      <BlogSection 
+        articles={blogArticles as {
+          _id: string;
+          title: string;
+          slug: { current: string };
+          category: string;
+          publishedAt: string;
+          thumbnailUrl?: string;
+          thumbnailAlt?: string;
+        }[]} 
+        lang={lang}
+      />
 
       <NewCTASection lang={lang} />
       <UnifiedFooter lang={lang} />
