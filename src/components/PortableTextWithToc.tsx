@@ -121,6 +121,37 @@ export default function PortableTextWithToc({ content }: PortableTextWithTocProp
           includeLevels={value?.includeLevels}
         />
       ),
+      tableBlock: ({ value }) => {
+        if (!value?.rows || !Array.isArray(value.rows)) return null;
+        
+        return (
+          <div className="my-8 overflow-x-auto">
+            <table className="min-w-full border-collapse border border-gray-300">
+              <tbody>
+                {value.rows.map((row: { cells?: { content?: string; isHeader?: boolean }[] }, rowIndex: number) => (
+                  <tr key={rowIndex} className="border-b border-gray-200">
+                    {row.cells?.map((cell: { content?: string; isHeader?: boolean }, cellIndex: number) => {
+                      const Tag = cell.isHeader ? 'th' : 'td';
+                      return (
+                        <Tag
+                          key={cellIndex}
+                          className={`px-4 py-3 text-left border-r border-gray-200 last:border-r-0 ${
+                            cell.isHeader 
+                              ? 'bg-gray-50 font-semibold text-gray-900' 
+                              : 'text-gray-700'
+                          }`}
+                        >
+                          {cell.content || ''}
+                        </Tag>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+      },
     },
   };
 
