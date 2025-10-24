@@ -12,7 +12,7 @@ interface PortableTextWithTocProps {
 export default function PortableTextWithToc({ content }: PortableTextWithTocProps) {
   const components: PortableTextComponents = {
     block: {
-      h1: ({ children }) => <h2 className="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4 scroll-mt-24">{children}</h2>,
+      h1: ({ children }) => <h1 className="text-2xl sm:text-3xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">{children}</h1>,
       h2: ({ children }) => <h2 className="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4 scroll-mt-24">{children}</h2>,
       h3: ({ children }) => <h3 className="text-lg sm:text-xl font-bold mt-4 sm:mt-6 mb-2 sm:mb-3 scroll-mt-24">{children}</h3>,
       h4: ({ children }) => <h4 className="text-base sm:text-lg font-bold mt-4 sm:mt-6 mb-2 sm:mb-3">{children}</h4>,
