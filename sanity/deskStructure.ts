@@ -6,6 +6,7 @@ export const deskStructure = (S: StructureBuilder) =>
     .id('root')
     .items([
       // 明示的に表示するドキュメントタイプのみ
-      S.documentTypeListItem('news'),
-      S.documentTypeListItem('contact'),
+      S.documentTypeListItem('blog').title('ブログ'),
+      S.documentTypeListItem('news').title('ニュース'),
+      S.documentTypeListItem('contact').title('お問い合わせ'),
     ])
