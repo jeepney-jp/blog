@@ -116,7 +116,10 @@ export default function PortableTextWithToc({ content }: PortableTextWithTocProp
         </blockquote>
       ),
       tableOfContents: ({ value }) => (
-        <ManualTableOfContents title={value?.title} />
+        <ManualTableOfContents 
+          title={value?.title} 
+          includeLevels={value?.includeLevels}
+        />
       ),
     },
   };

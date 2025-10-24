@@ -4,15 +4,21 @@ import { useEffect, useState } from 'react';
 
 interface ManualTableOfContentsProps {
   title?: string;
+  includeLevels?: string[];
 }
 
-export default function ManualTableOfContents({ title = '目次' }: ManualTableOfContentsProps) {
+export default function ManualTableOfContents({ title = '目次', includeLevels = ['h2', 'h3'] }: ManualTableOfContentsProps) {
   const [tocItems, setTocItems] = useState<Array<{ id: string; text: string; level: number }>>([]);
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
-    // ページ内のh2, h3要素を自動検出
-    const headings = document.querySelectorAll('h2, h3');
+    // 記事本文のコンテナ内のみの見出しを検出（CTAやフッターを除外）
+    const articleContent = document.querySelector('.prose');
+    if (!articleContent) return;
+    
+    // 選択されたレベルの見出しセレクタを作成
+    const selector = includeLevels.join(', ');
+    const headings = articleContent.querySelectorAll(selector);
     const items = Array.from(headings).map((heading, index) => {
       const id = heading.id || `heading-${index}`;
       if (!heading.id) {
@@ -49,7 +55,7 @@ export default function ManualTableOfContents({ title = '目次' }: ManualTableO
         observer.unobserve(heading);
       });
     };
-  }, []);
+  }, [includeLevels]);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
