@@ -24,7 +24,8 @@ export const tableBlock = defineType({
                     {
                       name: 'content',
                       title: '内容',
-                      type: 'string',
+                      type: 'text',
+                      rows: 3,
                     },
                     {
                       name: 'isHeader',

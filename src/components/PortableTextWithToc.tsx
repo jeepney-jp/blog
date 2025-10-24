@@ -135,7 +135,7 @@ export default function PortableTextWithToc({ content }: PortableTextWithTocProp
                       return (
                         <Tag
                           key={cellIndex}
-                          className={`px-4 py-3 text-left border-r border-gray-200 last:border-r-0 ${
+                          className={`px-4 py-3 text-left border-r border-gray-200 last:border-r-0 whitespace-pre-wrap ${
                             cell.isHeader 
                               ? 'bg-gray-50 font-semibold text-gray-900' 
                               : 'text-gray-700'
