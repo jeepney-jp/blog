@@ -15,6 +15,7 @@ interface BlogArticle {
 
 interface BlogSectionProps {
   articles: BlogArticle[];
+  lang: string;
 }
 
 // カテゴリのラベルマップ
@@ -33,7 +34,7 @@ const categoryLabels: Record<string, string> = {
   farmland: '農地転用',
 };
 
-export default function BlogSection({ articles }: BlogSectionProps) {
+export default function BlogSection({ articles, lang }: BlogSectionProps) {
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,7 +52,7 @@ export default function BlogSection({ articles }: BlogSectionProps) {
             <div className="hidden md:grid md:grid-cols-3 gap-8 lg:gap-12">
               {articles.slice(0, 3).map((article) => (
                 <article key={article._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow h-full">
-                  <Link href={`/blog/${article.slug.current}`} className="block">
+                  <Link href={`/${lang}/blog/${article.slug.current}`} className="block">
                     <div className="relative w-full aspect-[16/9] overflow-hidden bg-gray-100">
                       {article.thumbnailUrl ? (
                         <Image
@@ -79,7 +80,7 @@ export default function BlogSection({ articles }: BlogSectionProps) {
                         {categoryLabels[article.category] || article.category}
                       </span>
                     </div>
-                    <Link href={`/blog/${article.slug.current}`} className="block group">
+                    <Link href={`/${lang}/blog/${article.slug.current}`} className="block group">
                       <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
                         {article.title}
                       </h3>
@@ -105,7 +106,7 @@ export default function BlogSection({ articles }: BlogSectionProps) {
                 <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory scrollbar-hide">
                   {articles.map((article) => (
                     <article key={article._id} className="flex-none w-80 snap-start bg-white rounded-lg shadow-sm overflow-hidden">
-                      <Link href={`/blog/${article.slug.current}`} className="block">
+                      <Link href={`/${lang}/blog/${article.slug.current}`} className="block">
                         <div className="relative w-full aspect-[16/9] overflow-hidden bg-gray-100">
                           {article.thumbnailUrl ? (
                             <Image
@@ -133,7 +134,7 @@ export default function BlogSection({ articles }: BlogSectionProps) {
                             {categoryLabels[article.category] || article.category}
                           </span>
                         </div>
-                        <Link href={`/blog/${article.slug.current}`} className="block">
+                        <Link href={`/${lang}/blog/${article.slug.current}`} className="block">
                           <h3 className="text-base font-bold text-gray-900 line-clamp-2">
                             {article.title}
                           </h3>
@@ -148,7 +149,7 @@ export default function BlogSection({ articles }: BlogSectionProps) {
             {/* ブログ一覧へのリンク */}
             <div className="text-center mt-8 sm:mt-12">
               <Link
-                href="/blog"
+                href={`/${lang}/blog`}
                 className="inline-flex items-center text-[#004080] hover:text-[#003366] font-medium text-sm sm:text-base"
               >
                 ブログ一覧はこちら
