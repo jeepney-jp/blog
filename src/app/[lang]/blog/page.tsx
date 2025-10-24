@@ -2,13 +2,11 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHeader from "@/components/PageHeader";
 import { getBlogs } from "@/lib/sanity";
 import NewCTASection from "@/components/NewCTASection";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import { Locale } from "@/lib/i18n/types";
-import { breadcrumbContent } from "@/data/breadcrumb-content";
 
 // ブログの型定義
 interface BlogArticle {
@@ -58,17 +56,31 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: Loc
     console.error('Error fetching blog articles:', error);
   }
 
-  // パンくずリスト設定
-  const breadcrumbs = [
-    { 
-      href: `/${lang}`, 
-      name: breadcrumbContent[lang].home 
+  const t = {
+    ja: {
+      home: "ホーム",
+      blog: "ブログ"
     },
-    { 
-      href: `/${lang}/blog`, 
-      name: "ブログ" 
+    en: {
+      home: "Home", 
+      blog: "Blog"
+    },
+    'zh-CN': {
+      home: "首页",
+      blog: "博客"
+    },
+    'zh-TW': {
+      home: "首頁",
+      blog: "部落格"
+    },
+    vi: {
+      home: "Trang chủ",
+      blog: "Blog"
     }
-  ];
+  }[lang] || {
+    home: "ホーム",
+    blog: "ブログ"
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -80,7 +92,18 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: Loc
           description="フォルティアからの情報発信 - 各分野の専門知識や最新情報をお届けします"
         />
         
-        <Breadcrumbs segments={breadcrumbs} />
+        {/* Breadcrumb */}
+        <nav className="bg-white border-b">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-center space-x-2 text-sm text-gray-500">
+              <Link href={`/${lang}`} className="hover:text-gray-700">
+                {t.home}
+              </Link>
+              <span>／</span>
+              <span className="text-gray-900">{t.blog}</span>
+            </div>
+          </div>
+        </nav>
         
         <section className="py-12 lg:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
