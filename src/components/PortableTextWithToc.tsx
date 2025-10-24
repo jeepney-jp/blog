@@ -153,6 +153,66 @@ export default function PortableTextWithToc({ content }: PortableTextWithTocProp
           </div>
         );
       },
+      calloutBox: ({ value }) => {
+        if (!value?.content) return null;
+        
+        const typeConfig = {
+          info: {
+            bg: 'bg-blue-50',
+            border: 'border-blue-200',
+            icon: 'ℹ️',
+            title: '情報',
+            textColor: 'text-blue-900',
+          },
+          warning: {
+            bg: 'bg-yellow-50',
+            border: 'border-yellow-200',
+            icon: '⚠️',
+            title: '警告',
+            textColor: 'text-yellow-900',
+          },
+          error: {
+            bg: 'bg-red-50',
+            border: 'border-red-200',
+            icon: '🚨',
+            title: 'エラー・注意',
+            textColor: 'text-red-900',
+          },
+          success: {
+            bg: 'bg-green-50',
+            border: 'border-green-200',
+            icon: '✅',
+            title: '成功',
+            textColor: 'text-green-900',
+          },
+          tip: {
+            bg: 'bg-purple-50',
+            border: 'border-purple-200',
+            icon: '💡',
+            title: 'ヒント',
+            textColor: 'text-purple-900',
+          },
+        };
+        
+        const config = typeConfig[value.type as keyof typeof typeConfig] || typeConfig.info;
+        const displayTitle = value.title || config.title;
+        
+        return (
+          <div className={`my-6 p-4 rounded-lg border-l-4 ${config.bg} ${config.border}`}>
+            <div className="flex items-start space-x-3">
+              <span className="text-lg flex-shrink-0 mt-0.5">{config.icon}</span>
+              <div className="flex-1">
+                <h4 className={`font-semibold mb-2 ${config.textColor}`}>
+                  {displayTitle}
+                </h4>
+                <div className={`${config.textColor} whitespace-pre-wrap leading-relaxed`}>
+                  {value.content}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      },
     },
   };
 

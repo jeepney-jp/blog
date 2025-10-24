@@ -1,5 +1,6 @@
 import { Rule } from 'sanity'
 import { tableBlock } from '../customBlocks/tableBlock'
+import { calloutBox } from '../customBlocks/calloutBox'
 
 export const richContentArray = {
   type: 'array',
@@ -197,5 +198,6 @@ export const richContentArray = {
       },
     },
     tableBlock,
+    calloutBox,
   ],
 }
