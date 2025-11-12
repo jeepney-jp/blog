@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Header from "@/components/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -271,6 +271,7 @@ type FormData = {
   phone: string;
   message: string;
   privacy: boolean;
+  honeypot?: string;
 };
 
 export default function Contact() {
@@ -283,6 +284,7 @@ export default function Contact() {
     phone: '',
     message: '',
     privacy: false,
+    honeypot: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
@@ -290,6 +292,7 @@ export default function Contact() {
     message: string;
   }>({ type: null, message: '' });
   const [showToast, setShowToast] = useState(false);
+  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -306,8 +309,21 @@ export default function Contact() {
     }
   };
 
+  // ボット対策：ページロード後3秒でボタンを有効化
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsButtonEnabled(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // ボタンがまだ有効化されていない場合は送信しない
+    if (!isButtonEnabled) {
+      return;
+    }
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: '' });
 
@@ -336,6 +352,7 @@ export default function Contact() {
           phone: '',
           message: '',
           privacy: false,
+          honeypot: '',
         });
       } else {
         setSubmitStatus({
@@ -422,6 +439,22 @@ export default function Contact() {
                     />
                   </div>
                   
+                  {/* Honeypot field - hidden from real users */}
+                  <div style={{ position: 'absolute', left: '-9999px' }}>
+                    <label htmlFor="website">
+                      Website
+                      <input
+                        type="text"
+                        id="website"
+                        name="honeypot"
+                        value={formData.honeypot}
+                        onChange={handleChange}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </label>
+                  </div>
+                  
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       {t.phone}
@@ -470,10 +503,10 @@ export default function Contact() {
                   
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !isButtonEnabled}
                     className="w-full bg-blue-600 text-white py-3 sm:py-4 px-4 rounded-md hover:bg-blue-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed text-base sm:text-lg"
                   >
-                    {isSubmitting ? t.submitting : t.submit}
+                    {isSubmitting ? t.submitting : (!isButtonEnabled ? '準備中...' : t.submit)}
                   </button>
                 </form>
               </div>
