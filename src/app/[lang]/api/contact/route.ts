@@ -13,7 +13,7 @@ function getClientIp(request: NextRequest): string {
 }
 
 // ランダム文字列を検出する関数
-function detectRandomString(text: string): boolean {
+function detectRandomString(text: string, isName: boolean = false): boolean {
   // 連続した子音が多い場合（通常の言語では稀）
   const consonantPattern = /[bcdfghjklmnpqrstvwxyz]{5,}/gi;
   if (consonantPattern.test(text)) return true;
@@ -22,8 +22,8 @@ function detectRandomString(text: string): boolean {
   const mixedCasePattern = /([A-Z][a-z]){5,}|([a-z][A-Z]){5,}/;
   if (mixedCasePattern.test(text)) return true;
   
-  // 極端に短いメッセージ（10文字未満）
-  if (text.length < 10) return true;
+  // メッセージの場合のみ、極端に短いテキストをチェック（名前では不適切）
+  if (!isName && text.length < 10) return true;
   
   return false;
 }
@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
     }
     
     // 名前がランダム文字列でないかチェック
-    if (detectRandomString(body.name)) {
+    if (detectRandomString(body.name, true)) {
       console.log('Random string detected in name - potential spam');
       return NextResponse.json(
         { error: '正しいお名前を入力してください' },
