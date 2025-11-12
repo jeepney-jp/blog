@@ -12,18 +12,29 @@ function getClientIp(request: NextRequest): string {
   return forwarded?.split(',')[0] || realIp || 'unknown';
 }
 
-// ランダム文字列を検出する関数
-function detectRandomString(text: string, isName: boolean = false): boolean {
-  // 連続した子音が多い場合（通常の言語では稀）
-  const consonantPattern = /[bcdfghjklmnpqrstvwxyz]{5,}/gi;
-  if (consonantPattern.test(text)) return true;
+// 明らかなスパム/ランダム文字列を検出する関数
+function detectObviousSpam(text: string): boolean {
+  // 完全にランダムな文字列のパターン（例：XuudeNjUxmVFhBWXCuwQUtX）
+  // 大文字小文字がランダムに混在し、母音が極端に少ない
+  const randomPatternCount = (text.match(/[A-Z]/g) || []).length;
+  const vowelCount = (text.match(/[aeiouAEIOU]/g) || []).length;
+  const totalLetters = (text.match(/[a-zA-Z]/g) || []).length;
   
-  // 意味のない大文字小文字の混在
-  const mixedCasePattern = /([A-Z][a-z]){5,}|([a-z][A-Z]){5,}/;
-  if (mixedCasePattern.test(text)) return true;
+  // 英字が8文字以上ある場合で、母音が20%未満かつ大小文字が混在している
+  if (totalLetters >= 8) {
+    const vowelRatio = vowelCount / totalLetters;
+    const hasUpperCase = /[A-Z]/.test(text);
+    const hasLowerCase = /[a-z]/.test(text);
+    
+    // 母音が極端に少なく（20%未満）、かつ大小文字がランダムに混在
+    if (vowelRatio < 0.2 && hasUpperCase && hasLowerCase && randomPatternCount >= 3) {
+      return true;
+    }
+  }
   
-  // メッセージの場合のみ、極端に短いテキストをチェック（名前では不適切）
-  if (!isName && text.length < 10) return true;
+  // 繰り返しパターン（例：abcabcabc, 123123123）
+  const repeatPattern = /(.)\1{9,}/; // 同じ文字が10回以上連続
+  if (repeatPattern.test(text)) return true;
   
   return false;
 }
@@ -86,17 +97,17 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // 名前のバリデーション（3文字以上、50文字以下）
-    if (body.name.length < 3 || body.name.length > 50) {
+    // 名前のバリデーション（2文字以上、100文字以下に緩和）
+    if (body.name.length < 2 || body.name.length > 100) {
       return NextResponse.json(
-        { error: 'お名前は3文字以上50文字以内で入力してください' },
+        { error: 'お名前は2文字以上100文字以内で入力してください' },
         { status: 400 }
       );
     }
     
-    // 名前がランダム文字列でないかチェック
-    if (detectRandomString(body.name, true)) {
-      console.log('Random string detected in name - potential spam');
+    // 名前が明らかなスパムでないかチェック
+    if (detectObviousSpam(body.name)) {
+      console.log('Obvious spam detected in name:', body.name);
       return NextResponse.json(
         { error: '正しいお名前を入力してください' },
         { status: 400 }
@@ -112,10 +123,14 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // 使い捨てメールアドレスの簡易チェック
-    const disposableEmailDomains = ['tempmail', 'throwaway', 'guerrillamail', '10minutemail', 'mailinator'];
-    const emailDomain = body.email.split('@')[1].toLowerCase();
-    if (disposableEmailDomains.some(domain => emailDomain.includes(domain))) {
+    // 使い捨てメールアドレスの簡易チェック（完全一致のみ）
+    const disposableEmailDomains = [
+      'tempmail.com', 'throwawaymail.com', 'guerrillamail.com', 
+      '10minutemail.com', 'mailinator.com', 'yopmail.com',
+      'temp-mail.org', 'fakeinbox.com', 'trashmail.com'
+    ];
+    const emailDomain = body.email.split('@')[1]?.toLowerCase();
+    if (disposableEmailDomains.includes(emailDomain)) {
       return NextResponse.json(
         { error: '一時的なメールアドレスは使用できません' },
         { status: 400 }
@@ -134,17 +149,17 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // メッセージのバリデーション（10文字以上、2000文字以下）
-    if (body.message.length < 10 || body.message.length > 2000) {
+    // メッセージのバリデーション（5文字以上、5000文字以下に緩和）
+    if (body.message.length < 5 || body.message.length > 5000) {
       return NextResponse.json(
-        { error: 'メッセージは10文字以上2000文字以内で入力してください' },
+        { error: 'メッセージは5文字以上5000文字以内で入力してください' },
         { status: 400 }
       );
     }
     
-    // メッセージがランダム文字列でないかチェック
-    if (detectRandomString(body.message)) {
-      console.log('Random string detected in message - potential spam');
+    // メッセージが明らかなスパムでないかチェック
+    if (detectObviousSpam(body.message)) {
+      console.log('Obvious spam detected in message:', body.message.substring(0, 50));
       return NextResponse.json(
         { error: '正しいメッセージを入力してください' },
         { status: 400 }
