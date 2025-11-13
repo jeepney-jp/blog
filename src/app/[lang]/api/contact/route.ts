@@ -20,14 +20,17 @@ function detectObviousSpam(text: string): boolean {
   const vowelCount = (text.match(/[aeiouAEIOU]/g) || []).length;
   const totalLetters = (text.match(/[a-zA-Z]/g) || []).length;
   
-  // 英字が8文字以上ある場合で、母音が20%未満かつ大小文字が混在している
+  // 英字が8文字以上ある場合で、母音が25%未満かつ大小文字が混在している
   if (totalLetters >= 8) {
     const vowelRatio = vowelCount / totalLetters;
     const hasUpperCase = /[A-Z]/.test(text);
     const hasLowerCase = /[a-z]/.test(text);
     
-    // 母音が極端に少なく（20%未満）、かつ大小文字がランダムに混在
-    if (vowelRatio < 0.2 && hasUpperCase && hasLowerCase && randomPatternCount >= 3) {
+    // 母音が極端に少なく（25%未満）、かつ大小文字がランダムに混在
+    // または、大文字が40%以上でランダムパターン
+    const upperCaseRatio = randomPatternCount / totalLetters;
+    if ((vowelRatio < 0.25 && hasUpperCase && hasLowerCase && randomPatternCount >= 3) ||
+        (upperCaseRatio > 0.4 && vowelRatio < 0.3)) {
       return true;
     }
   }
