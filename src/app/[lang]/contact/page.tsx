@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useParams } from "next/navigation";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageHeader from "@/components/PageHeader";
@@ -9,6 +10,16 @@ import ToastNotification from "@/components/ToastNotification";
 import UnifiedFooter from "@/components/UnifiedFooter";
 import { Locale } from "@/lib/i18n/types";
 import { breadcrumbContent } from "@/data/breadcrumb-content";
+
+// reCAPTCHAの型定義
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
+}
 
 // 多言語コンテンツ
 const content = {
@@ -312,12 +323,30 @@ export default function Contact() {
     setSubmitStatus({ type: null, message: '' });
 
     try {
+      // reCAPTCHA トークンを取得
+      const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!;
+      let recaptchaToken = '';
+      
+      if (typeof window !== 'undefined' && window.grecaptcha) {
+        try {
+          recaptchaToken = await window.grecaptcha.execute(siteKey, {
+            action: 'contact_submit'
+          });
+        } catch (recaptchaError) {
+          console.error('reCAPTCHA error:', recaptchaError);
+          // reCAPTCHAエラーの場合は警告を出して続行
+        }
+      }
+
       const response = await fetch(`/${lang}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken
+        }),
       });
 
       const data = await response.json();
@@ -356,6 +385,12 @@ export default function Contact() {
   };
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* reCAPTCHA Script */}
+      <Script
+        src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+        strategy="afterInteractive"
+      />
+      
       <Header lang={lang} />
 
       <PageHeader
