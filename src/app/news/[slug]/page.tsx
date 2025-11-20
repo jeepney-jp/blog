@@ -116,11 +116,12 @@ const getCategoryMap = (lang: Locale): { [key: string]: { name: string; color: s
 };
 
 interface PageProps {
-  params: Promise<{ slug: string; lang: Locale }>;
+  params: Promise<{ slug: string }>;
 }
 
 export default async function NewsDetailPage({ params }: PageProps) {
-  const { slug, lang } = await params;
+  const { slug } = await params;
+  const lang = 'ja' as Locale; // ルートページは日本語固定
   const t = content[lang];
   const categoryMap = getCategoryMap(lang);
   

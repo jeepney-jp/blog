@@ -12,7 +12,7 @@ import { categoryPagesContent } from '@/data/category-pages-content';
 import { servicesContent } from '@/data/services-content';
 
 type Props = {
-  params: Promise<{ category: string; lang: Locale }>;
+  params: Promise<{ category: string }>;
 };
 
 export async function generateStaticParams() {
@@ -21,7 +21,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { category, lang } = await params;
+  const { category } = await params;
+  const lang = 'ja' as Locale; // ルートページは日本語固定
   
   // ハードコーディングデータのみを使用 - Sanity依存なし
   const hardcodedData = categoryPagesContent[lang]?.[category];
@@ -43,7 +44,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function CategoryPage({ params }: Props) {
-  const { category, lang } = await params;
+  const { category } = await params;
+  const lang = 'ja' as Locale; // ルートページは日本語固定
   
   // すべてのカテゴリーをハードコード化、Sanityフォールバックを削除
   const hardcodedCategories = ['foreign', 'construction', 'automotive', 'food-entertainment', 'waste-management', 'travel-hospitality', 'corporate', 'business-license', 'land', 'legal-documentation', 'medical-care', 'other'];
