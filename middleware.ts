@@ -22,13 +22,16 @@ export function middleware(request: NextRequest) {
 
   // ロケールが含まれていない場合
   if (pathnameIsMissingLocale) {
-    // ルートページの場合、リダイレクトせず日本語コンテンツを表示
-    if (pathname === '/') {
-      // リダイレクトを行わず、そのままルートページを表示
+    // 日本語サブページの場合、リダイレクトせずそのまま表示
+    const japaneseSubPages = ['/', '/about', '/services', '/contact', '/news', '/features']
+    const isJapaneseSubPage = japaneseSubPages.includes(pathname) || pathname.startsWith('/services/')
+    
+    if (isJapaneseSubPage) {
+      // リダイレクトを行わず、そのままページを表示
       return NextResponse.next()
     }
     
-    // その他のパスの場合も言語検出してリダイレクト
+    // その他のパスの場合は言語検出してリダイレクト
     const acceptLanguage = request.headers.get('accept-language') || ''
     let detectedLocale = defaultLocale
     
