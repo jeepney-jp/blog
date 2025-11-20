@@ -13,16 +13,20 @@ export function getLocaleFromPath(pathname: string): Locale {
     return potentialLocale
   }
   
+  // ルートパスまたは日本語パスの場合は日本語として扱う
   return defaultLocale
 }
 
 export function getPathWithoutLocale(pathname: string): string {
   const segments = pathname.split('/')
-  if (isValidLocale(segments[1])) {
+  
+  // 言語パス（/en, /zh-CN等）がある場合は除去
+  if (segments.length > 1 && isValidLocale(segments[1])) {
     segments.splice(1, 1)
     return segments.join('/') || '/'
   }
   
+  // ルートパスまたは日本語パスの場合はそのまま返す
   return pathname
 }
 
