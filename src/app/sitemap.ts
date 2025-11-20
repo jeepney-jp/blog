@@ -32,11 +32,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   
   const sitemapEntries: MetadataRoute.Sitemap = []
   
-  // 静的ルート（日本語を優先）
+  // 静的ルート（日本語を優先 - ルートページを使用）
   staticRoutes.forEach(route => {
-    // 日本語ページを最優先
+    // 日本語ページを最優先（ルートパスを使用）
     sitemapEntries.push({
-      url: `${baseUrl}/ja${route}`,
+      url: `${baseUrl}${route}`,
       lastModified: new Date(),
       changeFrequency: route === '' ? 'daily' : 'weekly',
       priority: route === '' ? 1.0 : 0.9,
@@ -55,11 +55,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   })
   
-  // サービスカテゴリページ（日本語を優先）
+  // サービスカテゴリページ（日本語を優先 - ルートパスを使用）
   serviceCategories.forEach(category => {
-    // 日本語サービスページを優先
+    // 日本語サービスページを優先（ルートパスを使用）
     sitemapEntries.push({
-      url: `${baseUrl}/ja/services/${category}`,
+      url: `${baseUrl}/services/${category}`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -87,11 +87,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     `)
     
     if (newsArticles && newsArticles.length > 0) {
-      // 日本語ニュース記事を優先
+      // 日本語ニュース記事を優先（ルートパスを使用）
       newsArticles.forEach((article: { slug: string }) => {
         if (article.slug) {
           sitemapEntries.push({
-            url: `${baseUrl}/ja/news/${article.slug}`,
+            url: `${baseUrl}/news/${article.slug}`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.7,
