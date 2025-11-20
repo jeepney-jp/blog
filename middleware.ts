@@ -22,33 +22,10 @@ export function middleware(request: NextRequest) {
 
   // ロケールが含まれていない場合
   if (pathnameIsMissingLocale) {
-    // ルートページの場合、デフォルトロケールにリダイレクト
+    // ルートページの場合、リダイレクトせず日本語コンテンツを表示
     if (pathname === '/') {
-      // Googleクローラーの場合は常に日本語版へリダイレクト
-      const userAgent = request.headers.get('user-agent') || ''
-      if (userAgent.toLowerCase().includes('googlebot')) {
-        return NextResponse.redirect(
-          new URL('/ja', request.url),
-          { status: 308 } // 308: 恒久的リダイレクト（メソッド保持）
-        )
-      }
-      
-      // 一般ユーザーの場合は言語設定に基づいてリダイレクト
-      const acceptLanguage = request.headers.get('accept-language') || ''
-      let detectedLocale = defaultLocale
-      
-      if (acceptLanguage.toLowerCase().includes('zh-cn') || acceptLanguage.toLowerCase().includes('zh-hans')) {
-        detectedLocale = 'zh-CN'
-      } else if (acceptLanguage.toLowerCase().includes('zh-tw') || acceptLanguage.toLowerCase().includes('zh-hant')) {
-        detectedLocale = 'zh-TW'
-      } else if (acceptLanguage.toLowerCase().startsWith('en')) {
-        detectedLocale = 'en'
-      }
-      
-      return NextResponse.redirect(
-        new URL(`/${detectedLocale}`, request.url),
-        { status: 308 } // 308: 恒久的リダイレクト（メソッド保持）
-      )
+      // リダイレクトを行わず、そのままルートページを表示
+      return NextResponse.next()
     }
     
     // その他のパスの場合も言語検出してリダイレクト
