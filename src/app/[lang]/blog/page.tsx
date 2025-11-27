@@ -122,7 +122,7 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: Loc
                             alt={article.thumbnailAlt || article.title}
                             fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className="object-contain"
+                            className="object-contain hover:scale-105 transition-transform duration-300"
                           />
                         ) : (
                           <div className="w-full h-full bg-gradient-to-br from-blue-100 to-gray-100 flex items-center justify-center">
