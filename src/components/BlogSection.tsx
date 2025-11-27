@@ -53,14 +53,14 @@ export default function BlogSection({ articles, lang }: BlogSectionProps) {
               {articles.slice(0, 3).map((article) => (
                 <article key={article._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow h-full">
                   <Link href={`/${lang}/blog/${article.slug.current}`} className="block">
-                    <div className="relative w-full aspect-[16/9] overflow-hidden bg-gray-100">
+                    <div className="relative w-full aspect-square overflow-hidden bg-gray-100">
                       {article.thumbnailUrl ? (
                         <Image
                           src={article.thumbnailUrl}
                           alt={article.thumbnailAlt || article.title}
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover hover:scale-105 transition-transform duration-300"
+                          className="object-contain hover:scale-105 transition-transform duration-300"
                         />
                       ) : (
                         <div className="w-full h-full bg-gradient-to-br from-blue-100 to-gray-100 flex items-center justify-center">
@@ -80,11 +80,6 @@ export default function BlogSection({ articles, lang }: BlogSectionProps) {
                         {categoryLabels[article.category] || article.category}
                       </span>
                     </div>
-                    <Link href={`/${lang}/blog/${article.slug.current}`} className="block group">
-                      <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
-                        {article.title}
-                      </h3>
-                    </Link>
                   </div>
                 </article>
               ))}
@@ -107,14 +102,14 @@ export default function BlogSection({ articles, lang }: BlogSectionProps) {
                   {articles.map((article) => (
                     <article key={article._id} className="flex-none w-80 snap-start bg-white rounded-lg shadow-sm overflow-hidden">
                       <Link href={`/${lang}/blog/${article.slug.current}`} className="block">
-                        <div className="relative w-full aspect-[16/9] overflow-hidden bg-gray-100">
+                        <div className="relative w-full aspect-square overflow-hidden bg-gray-100">
                           {article.thumbnailUrl ? (
                             <Image
                               src={article.thumbnailUrl}
                               alt={article.thumbnailAlt || article.title}
                               fill
                               sizes="320px"
-                              className="object-cover"
+                              className="object-contain hover:scale-105 transition-transform duration-300"
                             />
                           ) : (
                             <div className="w-full h-full bg-gradient-to-br from-blue-100 to-gray-100 flex items-center justify-center">
@@ -134,11 +129,6 @@ export default function BlogSection({ articles, lang }: BlogSectionProps) {
                             {categoryLabels[article.category] || article.category}
                           </span>
                         </div>
-                        <Link href={`/${lang}/blog/${article.slug.current}`} className="block">
-                          <h3 className="text-base font-bold text-gray-900 line-clamp-2">
-                            {article.title}
-                          </h3>
-                        </Link>
                       </div>
                     </article>
                   ))}

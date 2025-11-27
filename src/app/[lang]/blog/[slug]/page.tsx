@@ -145,13 +145,13 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ lan
             {/* 記事ヘッダー */}
             {/* サムネイル画像を最上部に配置 */}
             {article.thumbnailUrl && (
-              <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden -mx-8 -mt-8 mb-6">
+              <div className="relative w-full aspect-square rounded-lg overflow-hidden -mx-8 -mt-8 mb-6">
                 <Image
                   src={article.thumbnailUrl}
                   alt={article.thumbnailAlt || article.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 800px"
-                  className="object-cover"
+                  className="object-contain"
                   priority
                 />
               </div>

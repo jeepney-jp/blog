@@ -115,14 +115,14 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: Loc
                     className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow h-full"
                   >
                     <Link href={`/${lang}/blog/${article.slug.current}`} className="block">
-                      <div className="relative w-full aspect-[16/9] overflow-hidden bg-gray-100">
+                      <div className="relative w-full aspect-square overflow-hidden bg-gray-100">
                         {article.thumbnailUrl ? (
                           <Image
                             src={article.thumbnailUrl}
                             alt={article.thumbnailAlt || article.title}
                             fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className="object-cover hover:scale-105 transition-transform duration-300"
+                            className="object-contain hover:scale-105 transition-transform duration-300"
                           />
                         ) : (
                           <div className="w-full h-full bg-gradient-to-br from-blue-100 to-gray-100 flex items-center justify-center">
@@ -144,21 +144,6 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: Loc
                         </span>
                       </div>
                       
-                      <Link href={`/${lang}/blog/${article.slug.current}`} className="block group">
-                        <h2 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-3 mb-4">
-                          {article.title}
-                        </h2>
-                      </Link>
-                      
-                      <Link 
-                        href={`/${lang}/blog/${article.slug.current}`}
-                        className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
-                      >
-                        続きを読む
-                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
                     </div>
                   </article>
                 ))}
