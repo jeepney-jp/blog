@@ -53,7 +53,7 @@ export default function BlogSection({ articles, lang }: BlogSectionProps) {
               {articles.slice(0, 3).map((article) => (
                 <article key={article._id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow h-full">
                   <Link href={`/${lang}/blog/${article.slug.current}`} className="block">
-                    <div className="relative w-full aspect-[16/9] overflow-hidden bg-gray-100">
+                    <div className="relative w-full aspect-square overflow-hidden bg-gray-100">
                       {article.thumbnailUrl ? (
                         <Image
                           src={article.thumbnailUrl}
@@ -80,11 +80,6 @@ export default function BlogSection({ articles, lang }: BlogSectionProps) {
                         {categoryLabels[article.category] || article.category}
                       </span>
                     </div>
-                    <Link href={`/${lang}/blog/${article.slug.current}`} className="block group">
-                      <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
-                        {article.title}
-                      </h3>
-                    </Link>
                   </div>
                 </article>
               ))}
@@ -107,7 +102,7 @@ export default function BlogSection({ articles, lang }: BlogSectionProps) {
                   {articles.map((article) => (
                     <article key={article._id} className="flex-none w-80 snap-start bg-white rounded-lg shadow-sm overflow-hidden">
                       <Link href={`/${lang}/blog/${article.slug.current}`} className="block">
-                        <div className="relative w-full aspect-[16/9] overflow-hidden bg-gray-100">
+                        <div className="relative w-full aspect-square overflow-hidden bg-gray-100">
                           {article.thumbnailUrl ? (
                             <Image
                               src={article.thumbnailUrl}
@@ -134,11 +129,6 @@ export default function BlogSection({ articles, lang }: BlogSectionProps) {
                             {categoryLabels[article.category] || article.category}
                           </span>
                         </div>
-                        <Link href={`/${lang}/blog/${article.slug.current}`} className="block">
-                          <h3 className="text-base font-bold text-gray-900 line-clamp-2">
-                            {article.title}
-                          </h3>
-                        </Link>
                       </div>
                     </article>
                   ))}
