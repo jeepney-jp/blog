@@ -12,7 +12,6 @@ export const localeNames: Record<Locale, string> = {
 }
 
 export const localePrefixes = {
-  ja: '/ja',
   en: '/en',
   'zh-CN': '/zh-CN',
   'zh-TW': '/zh-TW',

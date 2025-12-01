@@ -75,20 +75,20 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
     description: metadata[lang].description,
     metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `${baseUrl}/ja`, // Always use Japanese version as canonical
+      canonical: `${baseUrl}/${lang}/`,
       languages: {
-        'ja': `${baseUrl}/ja`,
-        'en': `${baseUrl}/en`,
-        'zh-CN': `${baseUrl}/zh-CN`,
-        'zh-TW': `${baseUrl}/zh-TW`,
-        'vi': `${baseUrl}/vi`,
-        'x-default': `${baseUrl}/ja`, // Set Japanese as default
+        'ja': `${baseUrl}/`,
+        'en': `${baseUrl}/en/`,
+        'zh-CN': `${baseUrl}/zh-CN/`,
+        'zh-TW': `${baseUrl}/zh-TW/`,
+        'vi': `${baseUrl}/vi/`,
+        'x-default': `${baseUrl}/`,
       },
     },
     openGraph: {
       title: metadata[lang].title,
       description: metadata[lang].description,
-      url: `${baseUrl}/${lang}`,
+      url: `${baseUrl}/${lang}/`,
       siteName: 'フォルティア行政書士事務所',
       locale: lang === 'ja' ? 'ja_JP' : lang === 'en' ? 'en_US' : lang === 'zh-CN' ? 'zh_CN' : lang === 'zh-TW' ? 'zh_TW' : 'vi_VN',
       type: 'website',

@@ -4,12 +4,7 @@ import { defaultLocale, locales } from '@/lib/i18n/constants'
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  // 静的ファイルとAPIルートをスキップ
-  const pathnameIsMissingLocale = locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-  )
-
-  // APIルート、静的ファイル、画像などをスキップ
+  // APIルート、静的ファイル、画像などを先にスキップ
   if (
     pathname.startsWith('/api/') ||
     pathname.startsWith('/_next/') ||
@@ -19,6 +14,18 @@ export function middleware(request: NextRequest) {
   ) {
     return NextResponse.next()
   }
+
+  // /ja/* から /* への301リダイレクト処理（静的ファイルチェック後に実行）
+  if (pathname.startsWith('/ja/') || pathname === '/ja') {
+    const newPath = pathname === '/ja' ? '/' : pathname.substring(3)
+    const response = NextResponse.redirect(new URL(newPath, request.url), 301)
+    return response
+  }
+
+  // ロケールチェック
+  const pathnameIsMissingLocale = locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  )
 
   // ロケールが含まれていない場合
   if (pathnameIsMissingLocale) {
