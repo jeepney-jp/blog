@@ -1,9 +1,9 @@
 import { MetadataRoute } from 'next'
 import { client } from '@/lib/sanity'
 
+// メインサイトマップ - 日本語コンテンツのみ
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://fortia-office.com'
-  const languages = ['ja', 'en', 'zh-CN', 'zh-TW', 'vi']
   
   const staticRoutes = [
     '',
@@ -32,32 +32,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   
   const sitemapEntries: MetadataRoute.Sitemap = []
   
-  // 静的ルート（日本語を優先 - ルートページを使用）
+  // 静的ルート（日本語のみ）
   staticRoutes.forEach(route => {
-    // 日本語ページを最優先（ルートパスを使用）
     sitemapEntries.push({
       url: `${baseUrl}${route}`,
       lastModified: new Date(),
       changeFrequency: route === '' ? 'daily' : 'weekly',
-      priority: route === '' ? 1.0 : 0.9,
+      priority: route === '' ? 1.0 : route === '/about' || route === '/services' ? 0.9 : 0.8,
     })
   })
   
-  // その他の言語は優先度を下げる
-  languages.filter(lang => lang !== 'ja').forEach(lang => {
-    staticRoutes.forEach(route => {
-      sitemapEntries.push({
-        url: `${baseUrl}/${lang}${route}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.3,
-      })
-    })
-  })
-  
-  // サービスカテゴリページ（日本語を優先 - ルートパスを使用）
+  // サービスカテゴリページ（日本語のみ）
   serviceCategories.forEach(category => {
-    // 日本語サービスページを優先（ルートパスを使用）
     sitemapEntries.push({
       url: `${baseUrl}/services/${category}`,
       lastModified: new Date(),
@@ -66,56 +52,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   })
   
-  // その他の言語のサービスページ
-  languages.filter(lang => lang !== 'ja').forEach(lang => {
-    serviceCategories.forEach(category => {
-      sitemapEntries.push({
-        url: `${baseUrl}/${lang}/services/${category}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.2,
-      })
-    })
-  })
-  
-  // ニュース記事の動的ページを追加
+  // ニュース記事の動的ページ（日本語のみ）
   try {
     const newsArticles = await client.fetch(`
       *[_type == "news"] {
-        "slug": slug.current
+        "slug": slug.current,
+        _updatedAt
       }
     `)
     
     if (newsArticles && newsArticles.length > 0) {
-      // 日本語ニュース記事を優先（ルートパスを使用）
-      newsArticles.forEach((article: { slug: string }) => {
+      newsArticles.forEach((article: { slug: string; _updatedAt: string }) => {
         if (article.slug) {
           sitemapEntries.push({
             url: `${baseUrl}/news/${article.slug}`,
-            lastModified: new Date(),
+            lastModified: article._updatedAt ? new Date(article._updatedAt) : new Date(),
             changeFrequency: 'weekly',
             priority: 0.7,
           })
         }
       })
-      
-      // その他の言語のニュース記事
-      languages.filter(lang => lang !== 'ja').forEach(lang => {
-        newsArticles.forEach((article: { slug: string }) => {
-          if (article.slug) {
-            sitemapEntries.push({
-              url: `${baseUrl}/${lang}/news/${article.slug}`,
-              lastModified: new Date(),
-              changeFrequency: 'monthly',
-              priority: 0.2,
-            })
-          }
-        })
-      })
     }
   } catch (error) {
     console.error('Failed to fetch news articles for sitemap:', error)
-    // エラーが発生してもサイトマップ生成を続行
   }
   
   return sitemapEntries
