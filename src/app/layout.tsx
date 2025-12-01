@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: 'フォルティア行政書士事務所 | 外国人ビザ・在留資格・許認可申請の専門家',
     description: '外国人ビザ・在留資格申請、許認可申請の専門家。企業様・個人様の国際業務と許認可をサポート。',
     images: ['/og-image.png'],
-    url: 'https://fortia-office.com',
+    url: 'https://fortia-office.com/',
     siteName: 'フォルティア行政書士事務所',
     locale: 'ja_JP',
     type: 'website'
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     images: ['/og-image.png']
   },
   alternates: {
-    canonical: 'https://fortia-office.com',
+    canonical: 'https://fortia-office.com/',
     languages: {
-      'ja': 'https://fortia-office.com',
-      'en': 'https://fortia-office.com/en',
-      'zh-CN': 'https://fortia-office.com/zh-CN',
-      'zh-TW': 'https://fortia-office.com/zh-TW',
-      'vi': 'https://fortia-office.com/vi'
+      'ja': 'https://fortia-office.com/',
+      'en': 'https://fortia-office.com/en/',
+      'zh-CN': 'https://fortia-office.com/zh-CN/',
+      'zh-TW': 'https://fortia-office.com/zh-TW/',
+      'vi': 'https://fortia-office.com/vi/'
     }
   },
   robots: {
