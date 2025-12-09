@@ -35,15 +35,16 @@ const notoSans = Noto_Sans({
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: string }>;
 };
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
+  const locale = lang as Locale;
   
   const metadata = {
     ja: {
@@ -71,11 +72,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
   const baseUrl = 'https://fortia-office.com';
 
   return {
-    title: metadata[lang].title,
-    description: metadata[lang].description,
+    title: metadata[locale].title,
+    description: metadata[locale].description,
     metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `${baseUrl}/${lang}/`,
+      canonical: `${baseUrl}/${locale}/`,
       languages: {
         'ja': `${baseUrl}/`,
         'en': `${baseUrl}/en/`,
@@ -86,17 +87,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
       },
     },
     openGraph: {
-      title: metadata[lang].title,
-      description: metadata[lang].description,
-      url: `${baseUrl}/${lang}/`,
+      title: metadata[locale].title,
+      description: metadata[locale].description,
+      url: `${baseUrl}/${locale}/`,
       siteName: 'フォルティア行政書士事務所',
-      locale: lang === 'ja' ? 'ja_JP' : lang === 'en' ? 'en_US' : lang === 'zh-CN' ? 'zh_CN' : lang === 'zh-TW' ? 'zh_TW' : 'vi_VN',
+      locale: locale === 'ja' ? 'ja_JP' : locale === 'en' ? 'en_US' : locale === 'zh-CN' ? 'zh_CN' : locale === 'zh-TW' ? 'zh_TW' : 'vi_VN',
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: metadata[lang].title,
-      description: metadata[lang].description,
+      title: metadata[locale].title,
+      description: metadata[locale].description,
     },
     robots: {
       index: true,
@@ -114,18 +115,19 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
 
 export default async function RootLayout({ children, params }: Props) {
   const { lang } = await params;
+  const locale = lang as Locale;
   
   // 言語に応じてフォントクラスを選択
-  const fontClass = lang === 'zh-CN' 
+  const fontClass = locale === 'zh-CN' 
     ? `${notoSansSC.variable} ${firaCode.variable}`
-    : lang === 'zh-TW'
+    : locale === 'zh-TW'
     ? `${notoSansTC.variable} ${firaCode.variable}`
-    : lang === 'vi'
+    : locale === 'vi'
     ? `${notoSans.variable} ${firaCode.variable}`
     : `${inter.variable} ${firaCode.variable}`;
   
   return (
-    <html lang={lang}>
+    <html lang={locale}>
       <head>
         <Script
           id="gtm-script"
